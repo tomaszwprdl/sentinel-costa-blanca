@@ -1,0 +1,19 @@
+# Sentinel — pre-live review deployment (Netlify + Next.js)
+# Connect this repo in Netlify UI; do not enable public indexing until go-live.
+
+[build]
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+  PRE_LIVE_REVIEW = "true"
+  NEXT_TURBOPACK_EXPERIMENTAL_USE_SYSTEM_TLS_CERTS = "1"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Pre-live: block search indexing (header + metadata robots)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"

@@ -1,0 +1,1764 @@
+{
+  "common": {
+    "siteName": "Sentinel",
+    "meta": {
+      "defaultTitle": "Sentinel — Structured Property Oversight",
+      "defaultDescription": "Structured property oversight. Torrevieja + 50–70 km radius."
+    },
+    "nav": {
+      "home": "Home",
+      "services": "Services",
+      "howItWorks": "How It Works",
+      "faq": "FAQ",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "footer": {
+      "navigation": "Navigation",
+      "legal": "Legal",
+      "contact": "Contact",
+      "serviceArea": "Service Area",
+      "serviceAreaText": "Torrevieja + 50-70km radius",
+      "operatingHours": "Operating hours",
+      "copyright": "All rights reserved.",
+      "termsConditions": "Terms & Conditions",
+      "privacyPolicy": "Privacy Policy"
+    },
+    "contact": {
+      "phone": "+34 XXX XXX XXX",
+      "email": "contact@sentinel.example",
+      "hours": "Mon-Fri 9:00-18:00"
+    },
+    "language": "Language",
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "switchToLight": "Switch to light mode",
+      "switchToDark": "Switch to dark mode"
+    },
+    "submit": "Submit",
+    "loading": "Loading...",
+    "disclosure": {
+      "showDetails": "Show details",
+      "hideDetails": "Hide details"
+    },
+    "menu": {
+      "open": "Open menu",
+      "close": "Close menu",
+      "home": "Home"
+    },
+    "confidenceBar": {
+      "title": "Key Operating Parameters",
+      "serviceArea": {
+        "label": "Service Area",
+        "text": "Torrevieja + 50-70km radius; no exceptions"
+      },
+      "sla": {
+        "label": "SLA Definition",
+        "text": "Reaction/decision time, not guaranteed resolution time"
+      },
+      "scope": {
+        "label": "Scope Rule",
+        "text": "If not explicitly listed in package → not included"
+      }
+    }
+  },
+  "home": {
+    "hero": {
+      "wordmark": "SENTINEL",
+      "descriptor": "Local owner representation",
+      "line3": "We take over property care in your absence.",
+      "line4": "Scope of action defined in advance.",
+      "line5": "Every action is documented.",
+      "area": "Area of operation: southern Costa Blanca.",
+      "ctaPrimary": "See how it works"
+    },
+    "exposure": {
+      "title": "What do you really risk without local representation?",
+      "p1": "When you are not on site, you lose ongoing control over your home.",
+      "p2": "Small problems do not make noise. They grow when no one checks.",
+      "p3": "You find out about them when you are 1500 km away — without keys and without the ability to react immediately.",
+      "p4": "A few days of delay is enough for a minor fault to become a serious cost.",
+      "close1": "It is not about whether something will happen.",
+      "close2": "It is that you will find out too late."
+    },
+    "contrast": {
+      "title": "Without us / With us",
+      "intro": "Below is the difference between no local representation and fixed control on site.",
+      "leftHeading": "Without us",
+      "left1": "The property isn't checked regularly while you're away.",
+      "left2": "You learn about a problem when someone notices it — not when it starts.",
+      "left3": "Every situation begins with logistics: who can go, who has keys, who has time.",
+      "left4": "You make decisions remotely, without the full picture.",
+      "left5": "Contractors act, but there is no stable reference for the property's condition.",
+      "left6": "Coordination responsibility stays on your side.",
+      "leftClosing": "The response starts with arranging things.",
+      "rightHeading": "With us",
+      "right1": "The property is kept clean and prepared for your return or your guests.",
+      "right2": "It's checked regularly on an agreed schedule.",
+      "right3": "Its condition is documented and compared over time.",
+      "right4": "Keys and access are on-site — no improvisation.",
+      "right5": "When something happens, the response starts with action.",
+      "right6": "Within the agreed limit, a decision can be made immediately.",
+      "right7": "Responsibility and scope are defined in advance.",
+      "rightClosing": "Order runs this, not chance."
+    },
+    "systemIntro": {
+      "title": "How the Sentinel system works",
+      "intro": "Sentinel provides fixed, local control over your property.",
+      "scopeTitle": "Scope",
+      "scope1": "Scope of action is clearly defined — you know what is checked and how often.",
+      "scope2": "You have a transparent operating model based on fixed rules.",
+      "procedureTitle": "Procedure",
+      "procedure1": "Every visit follows the same steps.",
+      "procedure2": "The same actions, the same order, the same control.",
+      "procedure3": "You know the actual state of your home, not an approximate picture.",
+      "docsTitle": "Documentation",
+      "docs1": "After each inspection you receive documentation: photos, description, and a record of changes over time.",
+      "docs2": "You have continuity of information and the ability to compare property condition over time.",
+      "decisionsTitle": "Decisions",
+      "decisions1": "We act when the situation requires it.",
+      "decisions2a": "Thanks to local presence we can act immediately —",
+      "decisions2b": "whether on technical matters or access for you and your guests.",
+      "decisions3": "We take action without unnecessary delay.",
+      "close1": "Sentinel takes over operational presence.",
+      "close2": "Strategic control remains with you."
+    },
+    "levels": {
+      "title": "Package scope",
+      "intro": "Choosing a package defines the scope of local control.",
+      "axis1": "Control",
+      "axis2": "Control + Access",
+      "axis3": "Control + Access + Decisions",
+      "ctaCompare": "Compare packages in detail",
+      "level1Title": "Basic package",
+      "level1_1": "Minimum 1 visit per month",
+      "level1_2": "Photo documentation and report",
+      "level1_3": "Key storage",
+      "level1_6": "Limitations: no access coordination; no autonomous decisions.",
+      "level2Title": "Extended package",
+      "level2_1": "Organisation and supervision of third-party access",
+      "level2_2": "Documentation of access events",
+      "level2_3": "Coordination of initial repair actions",
+      "level2_6": "Limitations: decisions require owner approval.",
+      "level3Title": "Full package",
+      "level3_1": "Emergency response with physical presence",
+      "level3_2": "Autonomous decisions within limit (€300 / €500)",
+      "level3_3": "Extended coordination of works",
+      "level3_6": "Limitations: above limit owner approval is required.",
+      "systemRuleTitle": "System principle",
+      "systemRule1": "Scope is determined solely by the chosen package.",
+      "systemRule2": "Services not listed are not included.",
+      "systemRule3": "Every action is subject to documentation."
+    },
+    "distinction": {
+      "title": "What distinguishes Sentinel",
+      "block1Title": "Fixed rules, clear responsibility",
+      "block1p1": "The scope of cooperation is defined before work begins. Each property goes through a qualification process before cooperation starts.",
+      "block1p2": "Specific people are responsible for delivery, under the same rules on every visit. We do not act at random. We act within agreed frameworks.",
+      "block2Title": "Control instead of after-the-fact reaction",
+      "block2p1": "Occasional help reacts when a problem appears. We operate to a schedule and procedure.",
+      "block2p2": "That makes it possible to spot situations earlier, not only when they become costly.",
+      "block3Title": "Documentation instead of assurances",
+      "block3p1": "Every visit leaves a record: photos, description, date, scope of actions. Operational events are recorded together with decisions taken.",
+      "block3p2": "You have a history of actions and the ability to compare property condition over time. It is not based on memory or goodwill. It is based on record.",
+      "block4Title": "Decisions within defined limits",
+      "block4p1": "When a situation requires a response, it is clear:",
+      "block4list1": "who acts",
+      "block4list2": "in what scope",
+      "block4list3": "within what limit",
+      "block4p2": "Events outside the agreed scope require separate agreement. Agreement precedes action.",
+      "block4p3": "There is no improvisation or guesswork. Responsibility is clearly assigned.",
+      "block5Title": "System delivered by people",
+      "block5p1": "The model defines the structure. People are responsible for execution.",
+      "block5p2": "Fixed rules keep the standard; personal responsibility means actions are not anonymous.",
+      "block5p3": "The team has over 25 years of technical experience.",
+      "block5p4": "That combination gives stability that informal help does not provide."
+    },
+    "differentiation": {
+      "title": "Why this model is not concierge or rental management",
+      "concierge1": "The concierge model relies on flexible scope, with no fixed boundaries of responsibility.",
+      "concierge2": "Scope expands with each new situation.",
+      "sentinelScope": "Sentinel operates only within predefined levels of involvement. Scope is defined before cooperation begins.",
+      "rental1": "Rental management focuses on guests and operational revenue.",
+      "rental2": "Owner representation is not the priority.",
+      "adhoc1": "One-off local help does not create a system or a history of changes.",
+      "adhoc2": "No system means no fixed point of control.",
+      "modelDiffTitle": "Model difference",
+      "modelDiff1": "Fixed jurisdiction.",
+      "modelDiff2": "Fixed boundaries.",
+      "modelDiff3": "Fixed documentation.",
+      "modelDiff4": "Fixed geography.",
+      "modelBasis": "The model is not based on personal relationship. It is based on operational repeatability."
+    },
+    "principles": {
+      "title": "Operational principles",
+      "intro": "The system operates within defined boundaries.",
+      "introWhy": "Boundaries exist so that responsibility is unambiguous.",
+      "rule1": "Every action is documented and archived.",
+      "rule1b": "Documentation provides a fixed reference point for property condition.",
+      "rule2": "Scope of action is determined solely by the chosen level of involvement.",
+      "rule2b": "Scope does not expand automatically with new situations.",
+      "rule3": "Financial authority has a defined limit.",
+      "rule3b": "The limit defines the scope of independent operational decisions.",
+      "rule4": "Events outside the agreed scope require separate agreement.",
+      "rule4b": "Agreement precedes action.",
+      "rule5": "Area of operation is fixed (Torrevieja + 50–70 km radius)."
+    },
+    "serviceArea": {
+      "title": "Area of operation",
+      "subtitle": "Fixed operational jurisdiction",
+      "intro": "Sentinel operates only in Torrevieja and within a 50–70 km radius.",
+      "introNote1": "The geographic boundary is not a marketing element.",
+      "introNote2": "It is an operational parameter.",
+      "bulletsTitle": "Fixed distance enables:",
+      "bullet1": "predictable reaction time",
+      "bullet2": "physical presence at events",
+      "bullet3": "repeatable inspection visits",
+      "bullet4": "quality control of execution",
+      "close": "Jurisdiction remains fixed to maintain responsibility and operational standard."
+    },
+    "capacity": {
+      "title": "Operational capacity",
+      "intro": "The system is built on documented onboarding procedures.",
+      "item1": "Each property goes through qualification and scope configuration.",
+      "item2": "After each visit a photo report is produced.",
+      "item3": "Operational events are recorded together with decisions taken.",
+      "item4": "Execution takes place through ongoing cooperation with local contractors.",
+      "item5": "The team has over 25 years of technical experience."
+    },
+    "finalCta": {
+      "title": "You can manage reactively. Or operate within the system.",
+      "p1": "Reactive management is based on reacting. The system is based on steady control.",
+      "p2": "Sentinel is a defined model of owner representation. The choice is about the structure of property management.",
+      "cta": "Verify whether your property qualifies for the Sentinel system"
+    }
+  },
+  "services": {
+    "meta": {
+      "title": "Service Packages - Sentinel",
+      "description": "Scope and responsibility of Sentinel service packages"
+    },
+    "intro": {
+      "headline": "Service Packages — Scope and Responsibility",
+      "lead1": "Sentinel operates on three levels of involvement.",
+      "lead2": "They differ in scope of responsibility, access coordination, and decision authority. If a service is not explicitly included in a package, it is not part of its scope.",
+      "engagementTerms": "Minimum commitment: 3 months. Monthly billing in advance."
+    },
+    "comparison": {
+      "title": "Package Comparison Table",
+      "footerNote": "SLA defines reaction and decision time, not guaranteed resolution time. External factors (parts availability, technician schedules) affect actual resolution.",
+      "columns": {
+        "serviceElement": "Service Element",
+        "green": "Basic (Green)",
+        "orange": "Extended (Orange)",
+        "red": "Full (Red)"
+      },
+      "categories": {
+        "inspections": "INSPECTIONS",
+        "accessCoordination": "ACCESS COORDINATION",
+        "emergencyDecisions": "EMERGENCY & DECISIONS",
+        "sla": "RESPONSE TIME (SLA)"
+      },
+      "rows": {
+        "visitsPerMonth": "Control visits per month",
+        "doorWindowInspection": "Door/window/lock inspection",
+        "ventilationCheck": "Ventilation / humidity check",
+        "waterSystemCheck": "Water system check",
+        "electricalCheck": "Electrical system check",
+        "boilerInspection": "Boiler inspection",
+        "meterReading": "Meter reading/photos",
+        "plantWatering": "Indoor plant watering",
+        "photoReport": "Photo report after visit",
+        "keyStorage": "Key storage",
+        "thirdPartyAccess": "Third-party access (cleaners, technicians, guests)",
+        "accessEventsIncluded": "Access events included per month",
+        "waitingForTechnicians": "Waiting for technicians on-site",
+        "emergencyResponseIncluded": "Emergency response included",
+        "propertySecuring": "Property securing (emergency limit)",
+        "decisionsWithoutApproval": "Decisions without owner approval",
+        "decisionAuthorityLimit": "Decision authority limit",
+        "repairCoordination": "Repair coordination",
+        "onsitePresence": "On-site presence during repairs",
+        "requestAck": "Request acknowledgment",
+        "situationAssessment": "Situation assessment",
+        "emergencyAction": "Emergency action",
+        "servicePriority": "Service priority level"
+      },
+      "values": {
+        "visual": "(visual)",
+        "basic": "(basic)",
+        "asAgreed": "(as agreed)",
+        "limited": "(limited)",
+        "fairUse": "Fair use",
+        "separateCharge": "(separate charge)",
+        "paidService": "(paid service)",
+        "afterApproval": "After approval",
+        "immediate": "Immediate",
+        "withinLimit": "(within limit)",
+        "within24h": "within 24h",
+        "within48h": "within 48h",
+        "within4h": "within 4h",
+        "within8h": "within 8h",
+        "within12to24h": "12-24h",
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High",
+        "twoToFour": "2-4",
+        "euroLimit300": "€300 limit",
+        "euroLimit300to500": "€300-500"
+      }
+    },
+    "green": {
+      "title": "Basic Package",
+      "badgeLabel": "Green",
+      "definition": "Scheduled property checks.",
+      "suitableForTitle": "Suitable for",
+      "suitableItems": {
+        "rarelyUsed": "Properties left vacant between visits",
+        "ownRepairs": "Owners who coordinate repairs independently",
+        "regularVisits": "Regular inspection and reporting needs"
+      },
+      "visitScopeTitle": "Visit Scope (minimum 1 per month)",
+      "visitScopeIntro": "During each visit:",
+      "visitItems": {
+        "accessSecurity": "Verification of access points and security",
+        "roomsInstallations": "Visual inspection of rooms and key systems",
+        "moistureDamage": "Check for signs of moisture, damage, irregularities",
+        "photoReport": "Photo documentation and written report"
+      },
+      "visitScopeDisclosureLabel": "Detailed inspection checklist",
+      "visitScopeDisclosureBody": "Full list of inspection points (doors, windows, ventilation, systems, meters, plants, etc.) agreed during onboarding and documented in the service agreement.",
+      "keyStorageTitle": "Key Holding",
+      "keyStorageItems": {
+        "minimum": "Minimum 2 key sets required",
+        "secure": "Secure storage between visits"
+      },
+      "emergencyTitle": "Limited Emergency Response",
+      "emergencyIntro": "In urgent situations:",
+      "emergencyItems": {
+        "assessment": "Initial assessment",
+        "actions": "Immediate protective action within agreed limit",
+        "documentation": "Documentation and owner notification"
+      },
+      "notIncludedTitle": "Not Included",
+      "notIncludedItems": {
+        "thirdPartyAccess": "Third-party access coordination",
+        "repairCoordination": "Repair supervision",
+        "financialDecisions": "Independent financial decisions beyond limit",
+        "contractorOversight": "Contractor oversight"
+      },
+      "slaTitle": "Response Time (SLA)",
+      "slaItems": {
+        "ack": "Acknowledgement: within 48 hours",
+        "intervention": "Scheduled intervention: according to visit cycle"
+      },
+      "summary": {
+        "visitsLabel": "Visits:",
+        "visitsValue": "min. 1/month",
+        "accessLabel": "Access:",
+        "accessValue": "no",
+        "decisionsLabel": "Emergency decisions:",
+        "decisionsValue": "limited"
+      }
+    },
+    "orange": {
+      "title": "Extended Package",
+      "badgeLabel": "Orange",
+      "definition": "Scheduled checks and access coordination.",
+      "fromBasic": "Includes everything from the Basic Package, plus:",
+      "accessTitle": "Access Coordination",
+      "accessItems": {
+        "arranging": "Arranging and supervising third-party access",
+        "scheduling": "Scheduling service providers",
+        "verification": "Entry/exit verification",
+        "documentation": "Visit documentation"
+      },
+      "emergencyTitle": "Emergency Handling",
+      "emergencyItems": {
+        "faster": "Faster response window",
+        "coordination": "Coordination of initial repair actions",
+        "contractors": "Communication with contractors (no full project oversight)"
+      },
+      "notIncludedTitle": "Not Included",
+      "notIncludedItems": {
+        "renovationSupervision": "Ongoing renovation supervision",
+        "extendedResponsibility": "Autonomous financial authority beyond defined limits",
+        "majorWorks": "Project management services"
+      },
+      "slaTitle": "Response Time (SLA)",
+      "slaItems": {
+        "ack": "Acknowledgement: within 24 hours",
+        "accessCoordination": "Access coordination: after written owner approval"
+      },
+      "summary": {
+        "visitsLabel": "Visits:",
+        "visitsValue": "min. 1/month",
+        "accessLabel": "Access:",
+        "accessValue": "yes",
+        "decisionsLabel": "Emergency decisions:",
+        "decisionsValue": "per schedule"
+      }
+    },
+    "red": {
+      "title": "Full Package",
+      "badgeLabel": "Red",
+      "definition": "Checks, access, and local decision authority.",
+      "fromExtended": "Includes everything from the Extended Package, plus:",
+      "emergencyTitle": "Emergency Response",
+      "emergencyItems": {
+        "immediate": "Immediate presence when justified",
+        "protective": "Protective measures without prior approval (within limit)",
+        "repairOrg": "Repair coordination"
+      },
+      "decisionTitle": "Decision Authority",
+      "decisionItems": {
+        "operational": "Operational decisions within agreed financial limit",
+        "contractorEngagement": "Contractor engagement for urgent matters",
+        "coordinationUntilEnd": "On-site oversight during critical works"
+      },
+      "coordinationTitle": "Priority Handling",
+      "coordinationItems": {
+        "presence": "Higher service priority",
+        "verification": "Shorter response window",
+        "priority": "Extended coordination scope"
+      },
+      "notIncludedTitle": "Not Included",
+      "notIncludedItems": {
+        "contractorResult": "Guarantee of contractor results",
+        "contractorQuality": "Responsibility for third-party contractor outcomes",
+        "availability24x7": "24/7 availability for non-emergency matters",
+        "conciergeServices": "Concierge services"
+      },
+      "slaTitle": "Response Time (SLA)",
+      "slaItems": {
+        "ack": "Acknowledgement: within 12 hours",
+        "intervention": "Intervention: according to urgency level"
+      },
+      "summary": {
+        "visitsLabel": "Visits:",
+        "visitsValue": "min. 1/month",
+        "accessLabel": "Access:",
+        "accessValue": "yes",
+        "decisionsLabel": "Emergency decisions:",
+        "decisionsValue": "yes"
+      }
+    },
+    "addons": {
+      "overline": "Operational layer",
+      "title": "Operational modules (billed by use)",
+      "intro": "Operational modules extend the scope of activity within an active package. They do not change the level of responsibility or decision limits.",
+      "rental": {
+        "title": "Rental / Holiday Support",
+        "items": {
+          "preparation": "Property preparation coordination",
+          "cleaning": "Cleaning coordination",
+          "guests": "Guest arrival support"
+        },
+        "notPM": "This is not full property management."
+      },
+      "transfers": {
+        "title": "Transfers & Vehicle Services",
+        "provider": "Provided through external partner."
+      },
+      "seasonal": {
+        "title": "Seasonal Services",
+        "items": {
+          "openingClosing": "Seasonal opening / closing",
+          "preparation": "Property preparation for arrival",
+          "extraVisit": "Additional inspection visit"
+        }
+      }
+    },
+    "executionOnly": {
+      "microLabel": "Limited option",
+      "title": "Operational services without a package",
+      "intro": "In exceptional cases, individual operational services may be requested without an active oversight package. Scope is limited. No scheduled visits or SLA.",
+      "availableTitle": "Available services:",
+      "availableItems": {
+        "keyHolding": "Key holding",
+        "cleaning": "Cleaning coordination",
+        "oneTimeAccess": "One-off access coordination",
+        "seasonalPrep": "Seasonal property preparation"
+      },
+      "limitationsTitle": "Limitations:",
+      "limitationsItems": {
+        "noRegularChecks": "No regular inspections",
+        "noCyclicReporting": "No cyclic reporting",
+        "noEmergencySLA": "No emergency response under SLA",
+        "noDecisionAuthority": "No decision authority"
+      },
+      "closing": "This model does not replace oversight packages. It applies only to the delivery of individual operational tasks."
+    },
+    "notIncluded": {
+      "title": "Services Not Provided",
+      "intro": "Sentinel does not provide:",
+      "items": {
+        "noGuaranteeFixes": "Insurance guarantees",
+        "contractorResponsibility": "Responsibility for third-party contractor outcomes",
+        "concierge": "Concierge services",
+        "construction": "Construction work execution",
+        "outsideArea": "Services outside the defined service area",
+        "operationalWithoutScope": "Operational services without prior agreement of scope"
+      },
+      "areaNote": "Properties outside Torrevieja + 50–70 km are not serviced."
+    },
+    "summaryTitle": "In short",
+    "framework": {
+      "title": "System Framework",
+      "visitSchedulingTitle": "Visit Scheduling",
+      "visitSchedulingItems": {
+        "scheduled": "Visits occur within defined time windows",
+        "additional": "Additional visits by agreement"
+      },
+      "decisionLimitsTitle": "Decision Limits",
+      "decisionLimitsText": "Each package defines a maximum financial decision limit per action. Decisions above that require owner approval.",
+      "communicationTitle": "Communication",
+      "communicationItems": {
+        "reports": "Operational matters: phone / email",
+        "afterVisit": "Reports: after each visit",
+        "archived": "All actions documented"
+      },
+      "minCommitmentTitle": "Minimum Commitment",
+      "minCommitmentText": "3 months. Monthly billing in advance."
+    },
+    "selection": {
+      "title": "Package Selection Guide",
+      "greenTitle": "Choose Basic if:",
+      "greenItems": {
+        "regularVisits": "You require regular checks",
+        "ownRepairs": "You manage contractors independently",
+        "noAccess": "No third-party access coordination is needed"
+      },
+      "orangeTitle": "Choose Extended if:",
+      "orangeItems": {
+        "accessNeeded": "You require access coordination",
+        "technicalWorks": "You engage service providers remotely",
+        "oversight": "You retain financial decision authority"
+      },
+      "redTitle": "Choose Full if:",
+      "redItems": {
+        "localDecisions": "You want local decision-making authority",
+        "emergencyResponse": "You require emergency responsiveness",
+        "minimalInvolvement": "You prefer minimal personal involvement"
+      }
+    },
+    "estimator": {
+      "heading": "Define Your Service Scope",
+      "groupJurisdiction": "Jurisdiction (Package)",
+      "groupJurisdictionAnchor": "Jurisdiction defines scope of representation and level of decision authority.",
+      "packageLabel": "Package",
+      "packages": {
+        "structured_presence": "Basic",
+        "active_oversight": "Extended",
+        "extended_jurisdiction": "Full"
+      },
+      "packageDescriptor": {
+        "structured_presence": "Regular inspections only. No third-party representation.",
+        "active_oversight": "Inspections and access coordination.",
+        "extended_jurisdiction": "Full representation with emergency authority."
+      },
+      "groupMode": "Operational Mode",
+      "groupModeAnchor": "Operational mode reflects oversight intensity resulting from property usage.",
+      "modeLabel": "Operational Mode",
+      "modePrivateUse": "Private Use Mode",
+      "modeActiveGuest": "Active Guest Mode",
+      "modeSublinePrivateUse": "Standard oversight intensity.",
+      "modeSublineActiveGuest": "Higher oversight intensity associated with guest turnover.",
+      "modeDescriptor": {
+        "private_use": "No regular guest rotation.",
+        "active_guest": "Regular guest rotation / short-term rental."
+      },
+      "groupParameters": "Property parameters",
+      "groupParametersAnchor": "Parameters affect operational scope and coordination complexity.",
+      "sizeLabel": "Property area (m²)",
+      "sizeHelper": "Total floor area of the unit (excluding balconies and terraces).",
+      "bedroomsLabel": "Number of independent sleeping rooms",
+      "bedroomsHelper": "Rooms suitable for permanent overnight stay; affect complexity especially in guest mode.",
+      "bedrooms": { "1": "1", "2": "2", "3": "3", "4p": "4+" },
+      "groupOptional": "Operational modules (billed by use)",
+      "groupOptionalAnchor": "They do not change jurisdiction scope. They concern operational delivery.",
+      "overlaysLabel": "Operational modules",
+      "overlays": {
+        "cleaning": "Cleaning company coordination",
+        "linen": "Linen and changeover management",
+        "guest_check": "Guest check support",
+        "key_holding": "Key holding"
+      },
+      "calculate": "Determine range",
+      "recalculate": "Recalculate",
+      "paramsChangedCue": "Parameters changed. Recalculate.",
+      "compatibilityWarning": "Selected package may not include full coordination for guest turnover.",
+      "compatibilityNote": "Note: This package may be insufficient for regular guest turnover.",
+      "reasonWhatModeling": "You are modeling jurisdiction, usage intensity, property parameters, and optional operational modules.",
+      "reasonGuestModeChange": "Guest Mode increases visit frequency, coordination load, and communication.",
+      "reasonSelectedStructure": "Selected structure",
+      "reasonPriceAfterCalculate": "Price appears only after Calculate.",
+      "modeWhatPrivate1": "Standard visit frequency.",
+      "modeWhatPrivate2": "Standard operational coordination.",
+      "modeWhatGuest1": "Higher frequency of control visits.",
+      "modeWhatGuest2": "Higher operational coordination.",
+      "modeWhatGuest3": "Higher communication and event handling.",
+      "overlayBilledByUse": "Billed by use.",
+      "gateBefore": "Range will appear after parameters are set.",
+      "gateAfter": "Range set for the parameters above.",
+      "sqmValidationMin": "Minimum area: 20 m².",
+      "sqmValidationMax": "For properties over 1000 m² please contact us directly.",
+      "resultTitle": "Result",
+      "rangeWordingHeading": "Range reflects:",
+      "driverBullet1": "jurisdiction level",
+      "driverBullet2": "oversight intensity",
+      "driverBullet3": "property parameters",
+      "driverBullet4": "selected operational modules",
+      "driverBulletGuest": "guest turnover",
+      "resultJurisdiction": "Jurisdiction",
+      "resultMode": "Mode",
+      "resultArea": "Area",
+      "resultBedrooms": "Bedrooms",
+      "resultModules": "Modules",
+      "rangeTitle": "Estimated monthly range",
+      "rangeSuffix": "/ month",
+      "disclaimer": "Estimate is indicative. Final scope confirmed after structured review.",
+      "ctaProceed": "Proceed to structured review"
+    },
+    "cta": {
+      "headline": "Request package comparison",
+      "subheadline": "Contact to discuss package fit and parameters.",
+      "primaryButton": "Request structured review",
+      "secondaryButton": "I have questions"
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact - Sentinel",
+      "description": "Get in touch with Sentinel for property oversight services in Torrevieja"
+    },
+    "intro": {
+      "headline": "Contact Sentinel",
+      "description": "To ensure we can serve you effectively, we require basic information about your property and expected service needs before our first conversation. Please complete the contact form below or use the direct contact methods provided.",
+      "responseCommitment": "All inquiries are responded to within 24-48 hours. If your property is within our service area and your needs align with our package model, we will contact you to discuss next steps."
+    },
+    "estimatorContext": {
+      "title": "Estimator context",
+      "package": "Package",
+      "mode": "Operational mode",
+      "size": "Area",
+      "bedrooms": "Bedrooms",
+      "overlays": "Overlays",
+      "range": "Estimated monthly range"
+    },
+    "directContact": {
+      "title": "DIRECT CONTACT",
+      "subtitle": "For initial inquiries and onboarding:",
+      "email": "Email",
+      "phone": "Phone/WhatsApp",
+      "hoursTitle": "Operating hours:",
+      "mondayFriday": "Monday-Friday",
+      "saturday": "Saturday",
+      "sundayHolidays": "Sunday/Holidays: Email only (responses within 48 hours)",
+      "prepareTitle": "What to prepare before contact:",
+      "prepareItems": {
+        "location": "Your property location (town or address)",
+        "propertyType": "Property type (apartment/house/villa)",
+        "expectedPackage": "Expected package (Basic/Extended/Full) or \"need consultation\"",
+        "serviceNeeds": "Primary service needs or concerns"
+      },
+      "emergencyTitle": "Emergency contact (active clients only):",
+      "emergencyText": "Emergency contact is available only to active Full Package (Red) clients. If you are an active client with an emergency, use the dedicated emergency number provided during onboarding."
+    },
+    "form": {
+      "title": "CONTACT FORM",
+      "requiredInfo": "Required Information",
+      "yourDetails": "Your Details:",
+      "fullName": "Full Name",
+      "emailAddress": "Email Address",
+      "phoneNumber": "Phone Number (including country code)",
+      "preferredContact": "Preferred Contact Method",
+      "preferredLanguage": "Preferred Language",
+      "contactMethods": {
+        "email": "Email",
+        "whatsapp": "WhatsApp",
+        "phone": "Phone"
+      },
+      "languages": {
+        "english": "English",
+        "polish": "Polish"
+      },
+      "propertyInfo": "Property Information:",
+      "propertyLocation": "Property Location",
+      "propertyLocationPlaceholder": "Town/city or full address",
+      "propertyLocationHelp": "We serve properties within Torrevieja + 50-70km radius",
+      "propertyType": "Property Type",
+      "propertyTypes": {
+        "apartment": "Apartment",
+        "house": "House",
+        "villa": "Villa",
+        "other": "Other (specify)"
+      },
+      "propertyStatus": "Current Property Status",
+      "propertyStatuses": {
+        "emptyMostYear": "Empty most of the year",
+        "occasionalUse": "Occasional personal use",
+        "shortTermRental": "Short-term rental",
+        "other": "Other (specify)"
+      },
+      "serviceRequirements": "Service Requirements:",
+      "expectedPackage": "Expected Package",
+      "packages": {
+        "green": "Basic Package (Green)",
+        "orange": "Extended Package (Orange)",
+        "red": "Full Package (Red)",
+        "consultation": "Not sure - need consultation"
+      },
+      "accessFrequency": "Expected Access Frequency (if Extended or Full)",
+      "accessFrequencies": {
+        "oneToTwo": "1-2 times per month",
+        "threeToFive": "3-5 times per month",
+        "moreThanFive": "More than 5 times per month",
+        "seasonal": "Varies seasonally"
+      },
+      "primaryNeeds": "Primary Service Needs",
+      "primaryNeedsPlaceholder": "Brief description of what you need from Sentinel (optional)",
+      "acknowledgment": "I understand that Sentinel operates on a package-based service model. Services not included in the selected package are arranged and priced separately.",
+      "submitButton": "Submit Inquiry",
+      "requiredField": "Required field"
+    },
+    "confirmation": {
+      "title": "INQUIRY SUBMITTED",
+      "thankYou": "Thank you for your inquiry.",
+      "received": "Your request has been received and will be reviewed within 24-48 hours.",
+      "nextStepsTitle": "Next steps:",
+      "nextSteps": {
+        "step1": "You will receive an automatic confirmation email at {email}",
+        "step2": "Sentinel will review your property location and service requirements",
+        "step3": "If your property is within our service area and your needs align with our service model, we will contact you via your preferred method to discuss onboarding"
+      },
+      "outsideAreaTitle": "What if my property is outside the service area?",
+      "outsideAreaText": "You will be notified via email. We cannot service properties beyond Torrevieja + 50-70km radius.",
+      "noResponseTitle": "What if I don't hear back?",
+      "noResponseText": "Check your spam folder. If you have not received any communication within 48 hours, contact us directly at {email} or {phone}.",
+      "referenceNumber": "Reference number:",
+      "returnToHome": "Return to Home"
+    },
+    "activeClients": {
+      "title": "ACTIVE CLIENTS",
+      "subtitle": "For active service clients:",
+      "intro": "If you are an existing Sentinel client, please use your dedicated contact channels provided during onboarding:",
+      "channels": {
+        "operational": "Operational requests: Primary WhatsApp/phone line (provided in your onboarding documentation)",
+        "formal": "Formal inquiries: Email: {email}",
+        "emergency": "Emergency (Full Package / Red only): Emergency number (provided in your onboarding documentation)"
+      },
+      "doNotUseTitle": "Do not use this contact form for:",
+      "doNotUseItems": {
+        "accessRequests": "Access event requests",
+        "emergencies": "Emergency situations",
+        "routineQuestions": "Routine service questions"
+      },
+      "fasterResponse": "Use your dedicated client communication channels for faster response."
+    },
+    "serviceArea": {
+      "title": "SERVICE AREA",
+      "description": "Sentinel services properties within Torrevieja and approximately 50-70km radius.",
+      "mapPlaceholder": "[Service Area Map - Static Image Placeholder]",
+      "mapNote": "Map showing Torrevieja + 50-70km radius will be added here",
+      "examplesTitle": "Covered areas include (examples)",
+      "examplesText": "Torrevieja, Orihuela Costa, Pilar de la Horadada, San Miguel de Salinas, and other towns within the radius.",
+      "coveredTitle": "Covered areas include (examples):",
+      "coveredAreas": {
+        "torrevieja": "Torrevieja",
+        "orihuelaCosta": "Orihuela Costa",
+        "pilarHoradada": "Pilar de la Horadada",
+        "sanMiguel": "San Miguel de Salinas"
+      },
+      "notCoveredTitle": "Not covered:",
+      "notCoveredText": "Properties outside this radius cannot be serviced.",
+      "detailLink": "For detailed service area information, see our Service Area page."
+    },
+    "cannotHelp": {
+      "title": "SERVICES WE DO NOT PROVIDE",
+      "intro": "Sentinel cannot assist with:",
+      "items": {
+        "outsideArea": "Properties outside Torrevieja + 50-70km service area",
+        "oneTime": "One-time or ad-hoc services without monthly package",
+        "fullPM": "Full property management or rental agency services (available only as add-on to package)",
+        "concierge": "24/7 concierge or unlimited personal assistance",
+        "construction": "Construction/renovation project management as general contractor"
+      },
+      "notAppropriate": "If your needs fall into these categories, Sentinel is not the appropriate service.",
+      "proceedText": "For package-based property oversight, inspection, access coordination, and local representation within our service area, please proceed with the contact form above."
+    }
+  },
+  "howItWorks": {
+    "meta": {
+      "title": "How It Works - Sentinel",
+      "description": "Complete onboarding process from initial contact to active service"
+    },
+    "intro": {
+      "headline": "How Sentinel Service Works",
+      "description": "Sentinel follows a structured onboarding process to ensure clear understanding, proper documentation, and operational readiness before service activation. This page outlines each step from initial contact to active service. Service is not activated until onboarding is complete.",
+      "processOverview": "The process consists of: Qualification → Package Selection → Property Documentation → Initial Inspection → Service Activation. Timeline depends on property availability and documentation completion."
+    },
+    "sampleReport": {
+      "label": "Sample Initial Inspection Report (Redacted Example)",
+      "headerBlock": "INITIAL PROPERTY INSPECTION REPORT\n\nReport ID: GCB-INS-2026-001 (example)\nProperty Type: Apartment\nLocation: Torrevieja (redacted)\nInspection Date: January 2026\nInspector: Sentinel\nService Package: Full (Red)",
+      "scopeConfirmation": "Inspection conducted as part of initial onboarding.\nPurpose: establish baseline property condition prior to service activation.\nThis report reflects observed conditions at the time of inspection only.",
+      "status": {
+        "ok": "OK",
+        "observation": "Observation",
+        "issue": "Issue"
+      },
+      "checklist": {
+        "title": "Inspection checklist",
+        "columns": {
+          "item": "Item",
+          "status": "Status",
+          "notes": "Notes"
+        },
+        "items": {
+          "accessSecurity": "Access & Security",
+          "doorsWindows": "Doors & Windows",
+          "waterSystemVisual": "Water System (visual)",
+          "electricalVisual": "Electrical (visual)",
+          "boilerHvacVisual": "Boiler / HVAC (visual)",
+          "interiorCondition": "Interior Condition",
+          "signsOfMoisture": "Signs of Moisture",
+          "odorsVentilation": "Odors / Ventilation"
+        },
+        "notes": {
+          "waterSystemObservation": "Minor corrosion observed on valve under kitchen sink. No active leak at time of inspection."
+        }
+      },
+      "photos": {
+        "title": "Photo references (labels only)",
+        "items": {
+          "ref01": "Photo Ref 01 – Main water valve",
+          "ref02": "Photo Ref 02 – Boiler unit",
+          "ref03": "Photo Ref 03 – Bathroom ceiling (moisture check)"
+        }
+      },
+      "summary": {
+        "title": "Summary & recommendations",
+        "body": "Summary:\nNo critical issues identified at time of inspection.\n\nRecommendations:\nMonitor kitchen valve during first month of service.\nNo immediate action required."
+      },
+      "acknowledgement": "Client acknowledgement required to confirm baseline condition.\nThis report serves as the reference point for future inspections."
+    },
+    "photoGrid": {
+      "label": "Example: On-site visit documentation (anonymized)",
+      "placeholderLabel": "Photo placeholder {number}",
+      "ownerProvidedNote": "Image provided by owner",
+      "captions": {
+        "waterShutoff": "Main water shut-off valve — visual check",
+        "boilerUnit": "Boiler unit — status verification",
+        "electricalPanel": "Electrical panel — access check",
+        "frontDoorLock": "Front door lock — access inspection"
+      }
+    },
+    "step0": {
+      "title": "STEP 0: INITIAL QUALIFICATION",
+      "subtitle": "Before formal onboarding begins, Sentinel verifies:",
+      "geographicTitle": "Geographic eligibility:",
+      "geographicItems": {
+        "radius": "Property must be located within Torrevieja + 50-70km radius",
+        "outside": "Properties outside this area cannot be serviced"
+      },
+      "propertyTypeTitle": "Property type:",
+      "propertyTypeItems": {
+        "types": "Apartment, house, or villa",
+        "access": "Access feasibility (building access, key availability)"
+      },
+      "usagePatternTitle": "Usage pattern:",
+      "usagePatternItems": {
+        "usage": "Empty property, occasional use, or rental coordination",
+        "frequency": "Expected access frequency and service needs"
+      },
+      "expectationsTitle": "Client expectations:",
+      "expectationsItems": {
+        "understanding": "Understanding of package-based model",
+        "acceptance": "Acceptance that services outside package require separate arrangement",
+        "procedures": "Willingness to follow documented procedures"
+      },
+      "disqualifyingTitle": "Disqualifying factors:",
+      "disqualifyingIntro": "If any of the following are present, Sentinel reserves the right to decline service:",
+      "disqualifyingItems": {
+        "outsideArea": "Property outside service area",
+        "unlimitedExpectation": "Expectation of unlimited/concierge-style service",
+        "boundaries": "Unwillingness to accept package boundaries",
+        "pressure": "Pressure for exceptions before service begins"
+      },
+      "outcomeTitle": "Outcome:",
+      "outcomeText": "If qualification is successful, proceed to Step 1. If not suitable, Sentinel will decline or suggest alternatives."
+    },
+    "step1": {
+      "title": "STEP 1: CLIENT AND PROPERTY DATA COLLECTION",
+      "subtitle": "Sentinel collects the following information before first visit:",
+      "ownerInfoTitle": "Owner information:",
+      "ownerInfoItems": {
+        "fullName": "Full name",
+        "permanentAddress": "Permanent address",
+        "phone": "Phone number",
+        "email": "Email address",
+        "language": "Preferred language (Polish / English)"
+      },
+      "emergencyContactTitle": "Emergency contact:",
+      "emergencyContactItems": {
+        "alternative": "Alternative contact person (optional but recommended)",
+        "unreachable": "Contact method in case owner is unreachable"
+      },
+      "propertyInfoTitle": "Property information:",
+      "propertyInfoItems": {
+        "address": "Complete address",
+        "unit": "Apartment/unit number, floor, building access codes",
+        "size": "Approximate size and room count",
+        "type": "Property type (apartment/house/villa)"
+      },
+      "systemsTitle": "Installation and systems:",
+      "systemsItems": {
+        "water": "Water system (main shutoff valve location)",
+        "electrical": "Electrical system (fuse box location, meter accessibility)",
+        "boiler": "Boiler type and location",
+        "climate": "Climate control systems (if applicable)",
+        "alarm": "Alarm or security system (codes, deactivation procedure)"
+      },
+      "keysTitle": "Keys:",
+      "keysItems": {
+        "minimum": "Minimum 2 complete key sets required",
+        "types": "Key types: entrance, building gate, mailbox, alarm, other",
+        "handover": "Method of key handover"
+      },
+      "incompleteDataTitle": "Incomplete data:",
+      "incompleteDataText": "If required information is not provided, onboarding cannot proceed to inspection phase."
+    },
+    "step2": {
+      "title": "STEP 2: PACKAGE SELECTION AND TERMS CONFIRMATION",
+      "subtitle": "Client selects initial package based on expected needs:",
+      "packages": {
+        "green": "Basic (Green)",
+        "orange": "Extended (Orange)",
+        "red": "Full (Red)"
+      },
+      "confirmationsTitle": "Required confirmations:",
+      "confirmationsIntro": "Client must confirm understanding and acceptance of:",
+      "confirmationsItems": {
+        "scope": "Package scope (included services)",
+        "limitations": "Package limitations (excluded services)",
+        "sla": "Service Level Agreement (SLA) for selected package",
+        "authority": "Decision authority limits (if applicable to package)",
+        "pricing": "Pricing for selected package and add-on services (if any)"
+      },
+      "redPackageTitle": "For Full Package (Red) specifically:",
+      "redPackageText": "Client must specify decision authority limit:",
+      "redPackageLimits": {
+        "standard": "Standard: €300 per single decision",
+        "optional": "Optional: €500 per single decision"
+      },
+      "documentationTitle": "Documentation:",
+      "documentationText": "Package selection and terms are documented in writing (email confirmation or signed agreement).",
+      "changesTitle": "Changes after activation:",
+      "changesText": "Package can be changed at any time upon mutual agreement and updated documentation."
+    },
+    "step3": {
+      "title": "STEP 3: INITIAL INSPECTION (VISIT ZERO)",
+      "purposeTitle": "Purpose:",
+      "purposeText": "The initial inspection establishes the reference state of the property and identifies any existing issues before regular service begins.",
+      "scopeTitle": "Inspection scope:",
+      "scopeIntro": "Sentinel conducts a complete property inspection including:",
+      "scopeItems": {
+        "visual": "Full visual inspection of all rooms",
+        "doors": "Doors, windows, locks, and closure systems",
+        "water": "Water system and plumbing (visual check, leak indicators)",
+        "electrical": "Electrical system and appliances",
+        "boiler": "Boiler and climate systems",
+        "condition": "Current condition of floors, walls, humidity indicators",
+        "damage": "Identification of any pre-existing damage or issues"
+      },
+      "documentationTitle": "Documentation:",
+      "documentationItems": {
+        "photos": "Comprehensive photo documentation of property condition",
+        "meters": "Meter readings (if accessible)",
+        "notes": "Notes on any existing issues or concerns",
+        "recommendations": "Recommendations (if any)"
+      },
+      "reportTitle": "Initial report:",
+      "reportIntro": "Client receives:",
+      "reportItems": {
+        "condition": "Written report of property condition \"as found\"",
+        "photos": "Photo documentation",
+        "concerns": "List of identified concerns (if any)",
+        "immediate": "Recommendations for immediate attention (if applicable)"
+      },
+      "approvalTitle": "Client approval:",
+      "approvalText": "Client reviews and acknowledges the initial report. This report becomes the reference baseline for all future inspections.",
+      "timelineTitle": "Timeline:",
+      "timelineText": "Initial inspection is scheduled based on property availability and key handover. Report delivered within 48 hours of inspection."
+    },
+    "step4": {
+      "title": "STEP 4: OPERATIONAL SETUP",
+      "scheduleTitle": "Schedule parameters:",
+      "scheduleIntro": "Client and Sentinel agree on:",
+      "scheduleItems": {
+        "preferred": "Preferred visit days/times (within operational windows)",
+        "frequency": "Visit frequency per package",
+        "seasonal": "Seasonal adjustments (if applicable)"
+      },
+      "emergencyTitle": "Emergency procedures:",
+      "emergencyIntro": "For packages including emergency provisions:",
+      "emergencyItems": {
+        "definition": "Definition of what constitutes an emergency",
+        "priority": "Contact priority (primary/secondary)",
+        "protocol": "Action protocol if client is unreachable",
+        "limits": "Financial decision limits confirmation"
+      },
+      "specialTitle": "Special requirements:",
+      "specialIntro": "Documentation of any property-specific needs:",
+      "specialItems": {
+        "plants": "Plant watering schedule and quantity",
+        "pets": "Pets (if temporary care required)",
+        "attention": "Items requiring special attention",
+        "seasonal": "Seasonal considerations"
+      },
+      "accessTitle": "Access procedures:",
+      "accessIntro": "For Extended and Full packages:",
+      "accessItems": {
+        "contacts": "Approved third-party contacts (cleaners, technicians)",
+        "scheduling": "Access event scheduling process",
+        "reporting": "Reporting after access events"
+      },
+      "communicationTitle": "Communication protocol:",
+      "communicationItems": {
+        "primary": "Primary contact method (WhatsApp/phone/email)",
+        "response": "Expected response times based on package SLA",
+        "reporting": "Reporting format and frequency"
+      },
+      "keyHandoverTitle": "Key handover:",
+      "keyHandoverItems": {
+        "transfer": "Physical transfer of minimum 2 complete key sets",
+        "inventory": "Key inventory documentation",
+        "storage": "Secure storage confirmation"
+      },
+      "checklistTitle": "Final checklist:",
+      "checklistIntro": "Service activation requires:",
+      "checklistItems": {
+        "data": "All client/property data collected",
+        "package": "Package and terms confirmed",
+        "inspection": "Initial inspection completed and approved",
+        "parameters": "Operational parameters agreed",
+        "keys": "Keys transferred"
+      }
+    },
+    "step5": {
+      "title": "STEP 5: SERVICE ACTIVATION",
+      "confirmationTitle": "Activation confirmation:",
+      "confirmationText": "Once all onboarding steps are complete, Sentinel confirms service activation in writing (email).",
+      "fromDateTitle": "From activation date:",
+      "fromDateItems": {
+        "sla": "Package SLA applies to all requests",
+        "schedule": "Regular visit schedule begins",
+        "emergency": "Emergency provisions (if package includes) are active",
+        "terms": "All package terms are in effect"
+      },
+      "firstVisitTitle": "First regular visit:",
+      "firstVisitText": "Scheduled within agreed timeframe after activation. This is the first visit under regular service (not the initial inspection).",
+      "ongoingTitle": "Ongoing operations:",
+      "ongoingItems": {
+        "visits": "Visits conducted per package schedule",
+        "reports": "Photo reports delivered after each visit",
+        "access": "Access coordination (if applicable to package)",
+        "emergency": "Emergency response (if applicable to package)"
+      },
+      "changesTitle": "Post-activation changes:",
+      "changesItems": {
+        "package": "Package changes: available upon request and mutual agreement",
+        "additions": "Scope additions: require separate arrangement and pricing",
+        "temporary": "Temporary service adjustments: discussed case-by-case"
+      }
+    },
+    "ongoing": {
+      "title": "ONGOING SERVICE OPERATIONS",
+      "visitsTitle": "Regular visits:",
+      "visitsItems": {
+        "schedule": "Conducted per package schedule",
+        "windows": "Within agreed time windows (not fixed appointments)",
+        "documented": "Photo-documented",
+        "reported": "Reported within 24-48 hours"
+      },
+      "reportsTitle": "Visit reports include:",
+      "reportsItems": {
+        "datetime": "Date and time of visit",
+        "checklist": "Checklist completion confirmation",
+        "photos": "Photos of key areas",
+        "observations": "Any observations or concerns",
+        "meters": "Meter readings (if applicable)",
+        "actions": "Actions taken (if any)"
+      },
+      "accessTitle": "Access coordination (Extended/Full):",
+      "accessItems": {
+        "requested": "Requested via primary contact method",
+        "confirmation": "Written confirmation required",
+        "scheduled": "Scheduled within SLA timeframe",
+        "report": "Brief report after each access event"
+      },
+      "emergencyTitle": "Emergency response (Full):",
+      "emergencyItems": {
+        "contact": "Client contact attempted immediately",
+        "assessment": "Assessment and decision within SLA",
+        "action": "Action taken per package authority",
+        "documentation": "Detailed documentation and immediate report"
+      },
+      "communicationTitle": "Communication frequency:",
+      "communicationItems": {
+        "regular": "Regular reports: after each visit",
+        "adhoc": "Ad-hoc requests: responded per SLA",
+        "emergency": "Emergency situations: immediate contact attempt",
+        "monthly": "Monthly summary: optional, upon request"
+      },
+      "outsideScopeTitle": "Requests outside package scope:",
+      "outsideScopeItems": {
+        "discussed": "Discussed and quoted separately",
+        "approval": "Require written approval before execution",
+        "billed": "Billed independently of package"
+      }
+    },
+    "changes": {
+      "title": "SERVICE CHANGES AND TERMINATION",
+      "packageChangesTitle": "Package changes:",
+      "packageChangesIntro": "Client may request package upgrade or downgrade at any time.",
+      "packageChangesItems": {
+        "request": "Request submitted in writing",
+        "terms": "New terms confirmed",
+        "effective": "Change effective from agreed date",
+        "retroactive": "No retroactive adjustments"
+      },
+      "additionsTitle": "Scope additions:",
+      "additionsIntro": "Additional services or modules:",
+      "additionsItems": {
+        "quoted": "Quoted separately",
+        "added": "Added to existing package upon agreement",
+        "noAlter": "Do not alter core package terms"
+      },
+      "temporaryTitle": "Temporary adjustments:",
+      "temporaryIntro": "Seasonal or temporary service modifications:",
+      "temporaryItems": {
+        "caseByCase": "Discussed case-by-case",
+        "documented": "Documented in writing",
+        "return": "Return to standard terms specified"
+      },
+      "clientTerminationTitle": "Service termination by client:",
+      "clientTerminationItems": {
+        "effective": "Termination becomes effective at the end of the current billing period unless agreed otherwise",
+        "finalVisit": "Final visit conducted (optional)",
+        "keysReturned": "Keys returned",
+        "finalReport": "Final report provided (upon request)"
+      },
+      "guardianTerminationTitle": "Service termination by Sentinel:",
+      "guardianTerminationIntro": "Sentinel reserves the right to terminate service in case of:",
+      "guardianTerminationItems": {
+        "violations": "Repeated scope violations or abuse",
+        "nonPayment": "Non-payment",
+        "impossibility": "Operational impossibility",
+        "behavior": "Client behavior preventing safe/effective service"
+      },
+      "processTitle": "Termination process:",
+      "processItems": {
+        "notice": "Written notice provided",
+        "settled": "Outstanding items settled",
+        "keys": "Keys returned",
+        "documentation": "Final documentation exchanged"
+      }
+    },
+    "timeline": {
+      "title": "TYPICAL ONBOARDING TIMELINE",
+      "subtitle": "Approximate timeframes:",
+      "steps": {
+        "step0": {
+          "title": "Step 0 - Qualification: 1-2 days",
+          "description": "Initial inquiry to qualification decision"
+        },
+        "step1": {
+          "title": "Step 1 - Data Collection: 2-5 days",
+          "description": "Depends on client information provision speed"
+        },
+        "step2": {
+          "title": "Step 2 - Package Selection: 1-2 days",
+          "description": "Confirmation and documentation"
+        },
+        "step3": {
+          "title": "Step 3 - Initial Inspection: Scheduled based on availability",
+          "description": "Visit scheduling + report delivery: 3-7 days"
+        },
+        "step4": {
+          "title": "Step 4 - Operational Setup: 1-3 days",
+          "description": "Final agreements and key handover"
+        },
+        "step5": {
+          "title": "Step 5 - Activation: Immediate upon completion",
+          "description": "First regular visit: within package schedule"
+        }
+      },
+      "totalTitle": "Total typical timeline:",
+      "totalText": "1-3 weeks from initial contact to activation",
+      "delaysTitle": "Delays occur when:",
+      "delaysItems": {
+        "incomplete": "Client information is incomplete",
+        "access": "Property access is limited",
+        "keys": "Keys are not yet available",
+        "approval": "Client approval of initial report is pending"
+      },
+      "fasterTitle": "Faster activation possible if:",
+      "fasterItems": {
+        "immediate": "All information provided immediately",
+        "available": "Property available for immediate inspection",
+        "ready": "Keys ready for handover",
+        "responsive": "Client responsive to approvals"
+      }
+    },
+    "faq": {
+      "title": "PROCESS FAQ",
+      "questions": {
+        "q1": {
+          "question": "Can I start immediately without full onboarding?",
+          "answer": "No. Service is activated only after complete onboarding. This protects both parties."
+        },
+        "q2": {
+          "question": "What if I don't have all information yet?",
+          "answer": "Onboarding will pause until required information is provided. Service cannot begin with incomplete data."
+        },
+        "q3": {
+          "question": "Can I change my package during onboarding?",
+          "answer": "Yes, before activation. After activation, package changes require new agreement."
+        },
+        "q4": {
+          "question": "What if the initial inspection reveals problems?",
+          "answer": "Issues are documented in the initial report. Client decides whether to address them before service begins or accept property \"as is\" with documented baseline."
+        },
+        "q5": {
+          "question": "Do I pay before or after activation?",
+          "answer": "Payment terms are specified during package confirmation (Step 2). Service activation may require initial payment or deposit as per agreed terms."
+        },
+        "q6": {
+          "question": "Can someone else be present during initial inspection?",
+          "answer": "Yes, if arranged in advance. Not required."
+        },
+        "q7": {
+          "question": "What if I need to delay activation after onboarding?",
+          "answer": "Discuss with Sentinel. If activation is delayed significantly after onboarding, a re-check may be required before service starts to confirm the baseline condition remains accurate."
+        }
+      }
+    },
+    "cta": {
+      "title": "READY TO START?",
+      "subtitle": "To begin onboarding:",
+      "steps": {
+        "step1": "Verify your property is within service area (Torrevieja + 50-70km)",
+        "step2": "Review package options on Services page",
+        "step3": "Contact Sentinel with:",
+        "step3Items": {
+          "location": "Property location",
+          "package": "Expected package selection",
+          "availability": "Availability for initial inspection"
+        }
+      },
+      "contactTitle": "Contact methods:",
+      "contactItems": {
+        "phone": "Phone/WhatsApp: {phone}",
+        "email": "Email: {email}",
+        "form": "Contact form: {link}"
+      },
+      "nextTitle": "What happens next:",
+      "nextIntro": "Sentinel will respond within 24-48 hours to:",
+      "nextItems": {
+        "confirm": "Confirm geographic eligibility",
+        "request": "Request required information",
+        "schedule": "Schedule initial discussion",
+        "begin": "Begin formal onboarding process"
+      }
+    }
+  },
+  "faq": {
+    "meta": {
+      "title": "Frequently Asked Questions - Sentinel",
+      "description": "Operational policies, package boundaries, and service rules"
+    },
+    "pageTitle": "Frequently Asked Questions",
+    "policyNotice": {
+      "title": "POLICY NOTICE",
+      "intro": "Sentinel operates on documented policies and defined scope.",
+      "rules": {
+        "rule1": "If a service is not explicitly listed in your package, it is not included.",
+        "rule2": "Sentinel does not make exceptions that contradict documented policy.",
+        "rule3": "Answers below reflect operational rules, not negotiable preferences."
+      },
+      "footer": "For questions not addressed here, contact Sentinel directly."
+    },
+    "search": {
+      "placeholder": "Search policies and questions..."
+    },
+    "sectionsLabel": "Sections",
+    "noResults": "No questions match your search.",
+    "sections": {
+      "serviceModel": {
+        "title": "Service Model & Packages",
+        "description": "Questions about Sentinel's service structure, package boundaries, and what is/isn't included.",
+        "questions": {
+          "q1": {
+            "question": "What exactly is Sentinel?",
+            "answer": "Sentinel is a local property representation service operating on package-based contracts with defined scope. Services include physical presence, inspection, coordination, and reporting within explicitly defined package boundaries—not concierge or unlimited assistance. Review Services page for complete package specifications; if your needs don't align with package structure, Sentinel may not be appropriate."
+          },
+          "q2": {
+            "question": "Can I order a single visit without a package?",
+            "answer": "No. Sentinel operates exclusively on monthly package basis to ensure service continuity and operational accountability. If you need one-time assistance, contact a local contractor or agency; Sentinel can only engage after onboarding under a monthly package."
+          },
+          "q3": {
+            "question": "What if I need something not in my package?",
+            "answer": "Services outside your package are quoted separately and require written approval before execution. Sentinel does not perform \"small favors\" or undocumented services; all work outside package scope must be formally arranged and priced. Contact Sentinel with specific request; you will receive quote and can approve, decline, or upgrade package if recurring need exists."
+          },
+          "q4": {
+            "question": "Can you let in a cleaner or technician if I have Basic package?",
+            "answer": "No. Basic package does not include third-party access coordination; this requires Extended or Full package. Upgrade to Extended package for access coordination, or arrange access yourself and maintain Basic for inspection-only service."
+          },
+          "q5": {
+            "question": "What exactly is an \"access event\"?",
+            "answer": "Every opening and closing of the property for a third party counts as one access event, regardless of duration. Access event includes travel, unlocking, supervision, securing, and brief report—whether visit lasts 15 minutes or 3 hours. Extended includes 2 events/month; additional events are billed separately. Full includes fair-use access (reasonable operational frequency)."
+          },
+          "q6": {
+            "question": "Can I ask for entry \"just for a moment\"?",
+            "answer": "No—brief visits still count as access events. Duration does not affect access event classification; operational cost (travel, coordination, securing) is identical regardless of time on-site. Plan access needs appropriately within package allocation, or upgrade to RED for fair-use access without strict monthly limits."
+          }
+        }
+      },
+      "operations": {
+        "title": "Operations & Scheduling",
+        "description": "Questions about visit timing, technician coordination, and operational windows.",
+        "questions": {
+          "q7": {
+            "question": "What if a technician arrives \"between 9 AM and 2 PM\"?",
+            "answer": "Sentinel operates within time windows, not fixed appointments. Long on-site waiting for technicians is not included in Basic or Extended packages; Full package includes on-site presence during service visits. Basic/Extended clients coordinate technician timing themselves; Full clients receive on-site supervision as part of package."
+          },
+          "q8": {
+            "question": "Do you react immediately to every request?",
+            "answer": "No—response time depends on package SLA (Service Level Agreement). SLA defines reaction and decision time, not guaranteed resolution time; Basic acknowledges within 48h, Extended within 24h, Full within 12h. Review package SLA commitments on Services page; external factors (technician availability, parts) affect actual resolution beyond Sentinel's control."
+          }
+        }
+      },
+      "emergencies": {
+        "title": "Emergencies & Decision Authority",
+        "description": "Questions about emergency response, decision-making authority, and financial limits.",
+        "questions": {
+          "q9": {
+            "question": "What is considered an emergency?",
+            "answer": "Events causing or threatening immediate material damage, property loss, or safety hazard. Emergencies include active leaks, broken security, fire damage, gas leaks, electrical hazards—NOT WiFi issues, comfort problems, or guest complaints. Full package includes emergency response; Basic/Extended receive emergency action only after owner approval or if property securing is immediately necessary (€300 limit)."
+          },
+          "q10": {
+            "question": "What happens in emergency if I don't answer phone?",
+            "answer": "Sentinel takes property-securing action up to €300 limit if owner is unreachable and threat is immediate. All packages include limited emergency securing authority when immediate property threat exists and owner contact fails; all actions documented and reported. Provide reliable emergency contact information during onboarding; RED package clients receive immediate action within approved decision limit (€300-500)."
+          },
+          "q11": {
+            "question": "What is the decision limit in Full package?",
+            "answer": "Standard limit is €300 per single decision; optional increase to €500 can be specified during onboarding. Limit applies per individual decision (not cumulative monthly); decisions above limit require owner approval before action. Specify preferred limit during onboarding; Sentinel will not exceed approved limit without explicit permission."
+          },
+          "q12": {
+            "question": "Do you take financial responsibility for damages?",
+            "answer": "No. Sentinel coordinates and represents but does not provide insurance-level liability or guarantee prevention of all incidents. Property owners must maintain adequate insurance coverage; Sentinel's accountability is limited to service delivery within package scope."
+          }
+        }
+      },
+      "practical": {
+        "title": "Practical Operations",
+        "description": "Questions about day-to-day service details, visit frequency, and package changes.",
+        "questions": {
+          "q13": {
+            "question": "Can you store valuables?",
+            "answer": "Short-term storage is possible after specific arrangement; Sentinel does not assume liability for undeclared valuables. Safe storage available for documented items only; Sentinel is not responsible for valuables not explicitly declared and logged. Discuss specific storage needs during onboarding; ensure adequate insurance coverage for stored items."
+          },
+          "q14": {
+            "question": "Can you take care of animals?",
+            "answer": "Short-term animal care is possible after advance arrangement; regular pet care is not part of any package. Occasional brief animal supervision can be arranged separately; Sentinel does not provide ongoing pet care services. Contact Sentinel with specific needs; permanent pet care requires separate local arrangement."
+          },
+          "q15": {
+            "question": "Do you check utility meters?",
+            "answer": "Yes—Basic includes visual check or reading as agreed during onboarding; Extended/Full include reading and photos. Meter inspection method is specified during onboarding; format and frequency depend on package and property access. Confirm meter inspection preferences during onboarding; photos available if meters are accessible."
+          },
+          "q16": {
+            "question": "Can I have only one visit per month?",
+            "answer": "Standard is 2 visits/month; less frequent visits require individual arrangement and may affect service scope. Reduced visit frequency increases risk and may limit Sentinel's accountability; any deviation from standard schedule must be explicitly agreed. Discuss reduced frequency during onboarding; understand that longer intervals between visits reduce early problem detection."
+          },
+          "q17": {
+            "question": "Can I change my package during cooperation?",
+            "answer": "Yes—package changes are possible at any time upon mutual agreement. Changes require written confirmation of new package terms and take effect from agreed date (typically next billing period). Contact Sentinel to discuss package upgrade/downgrade; new terms documented before change activation."
+          },
+          "q18": {
+            "question": "Do you handle short-term rental (Airbnb)?",
+            "answer": "Not as primary service—rental support is available only as add-on module to existing package. Sentinel does not provide full property management, guest communication, or booking services; rental support covers only property preparation and post-departure inspection. Review Rental/Holiday Support add-on module on Services page; requires base package (Basic, Extended, or Full) plus separate arrangement."
+          }
+        }
+      },
+      "communication": {
+        "title": "Communication & Policies",
+        "description": "Questions about how to contact Sentinel, policy changes, and service refusal.",
+        "questions": {
+          "q19": {
+            "question": "How does communication work?",
+            "answer": "Operational communication via dedicated phone/WhatsApp; formal documentation via email. Sentinel maintains separate channels for prospects (general contact) and active clients (dedicated operational line); no communication through personal team numbers. Use contact form or general number for initial inquiry; active clients receive dedicated contact information during onboarding."
+          },
+          "q20": {
+            "question": "Can you refuse cooperation?",
+            "answer": "Yes—Sentinel reserves right to decline service or terminate cooperation. Sentinel may refuse service if property is outside service area, expectations don't align with package model, or operational fit is not viable. Qualification occurs before onboarding; Sentinel evaluates property location, service needs, and client expectations before accepting engagement."
+          },
+          "q21": {
+            "question": "Can prices and terms change?",
+            "answer": "Yes, but changes are communicated in advance and apply from next billing period (not retroactively). Sentinel may adjust pricing or terms with advance notice; existing clients receive notification before changes take effect. Changes do not affect current billing period; clients can accept new terms or terminate service at end of current period."
+          },
+          "q22": {
+            "question": "What if something isn't described in the documentation?",
+            "answer": "If not explicitly listed, it's not included in the package. Services, procedures, and commitments exist only as documented; undocumented services require separate arrangement and approval. Legal and regulatory compliance for the property remains the sole responsibility of the owner. Contact Sentinel with specific request; anything outside documented package scope will be quoted separately."
+          },
+          "q23": {
+            "question": "Why are there so many rules?",
+            "answer": "Rules protect both parties by defining scope, preventing disputes, and enabling accountability. Documentation ensures service delivery doesn't depend on individual interpretation or goodwill; clear boundaries enable reliable, professional service. Review Services and How It Works pages to understand operational framework; rules exist to support long-term service quality."
+          }
+        }
+      },
+      "meta": {
+        "title": "Meta / Purpose of Rules",
+        "description": "Questions about where these policies apply and why this documentation exists.",
+        "questions": {
+          "q24": {
+            "question": "Where do these policies apply?",
+            "answer": "Policies apply to all Sentinel operations: website, communications, service agreements, and client relations. No verbal agreements or informal exceptions override documented policies; all service terms must be explicitly agreed and documented. Acceptance of documented policies is required for service activation; disagreement with policies means Sentinel is not appropriate service provider."
+          },
+          "q25": {
+            "question": "What is the purpose of this FAQ document?",
+            "answer": "This document prevents misunderstandings, clarifies boundaries, establishes shared reference point, and protects both parties. FAQ serves as operational policy reference and dispute resolution tool; answers are consistent with service terms and package specifications. Use this FAQ as first resource for questions; contact Sentinel if your specific situation is not addressed."
+          }
+        }
+      }
+    },
+    "notAnswered": {
+      "title": "Question Not Answered?",
+      "intro": "If your question is not addressed above, contact Sentinel directly.",
+      "important": "Important: Services not documented in packages or this FAQ are not automatically available. All requests outside documented scope require individual evaluation and separate arrangement.",
+      "footer": "Sentinel operates on defined scope and documented procedures. If your needs require significant customization or fall outside the package-based model, Sentinel may not be the appropriate service provider."
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "About - Sentinel",
+      "description": "Operational philosophy, system design, and service boundaries"
+    },
+    "pageTitle": "About Sentinel",
+    "intro": {
+      "description": "Sentinel is a local property representation service operating on a package-based model with defined scope and documented procedures. This page explains our operational philosophy, geographic focus, system design, and the operational resources that support service delivery.",
+      "subtext": "We do not operate on personality-driven trust or concierge flexibility. We operate on documented procedures, defined scope, and enforceable accountability."
+    },
+    "philosophy": {
+      "title": "Why Package-Based Property Representation",
+      "intro": "Sentinel was designed to solve a specific operational problem: property owners living outside Spain need reliable local representation, but traditional models—key holding, concierge services, or full property management—create misaligned expectations and undefined responsibility.",
+      "subtitle": "Package-based service model exists because:",
+      "reasons": {
+        "scopeClarity": {
+          "title": "Scope clarity prevents disputes:",
+          "description": "When services are defined in advance, both parties know exactly what is included and what requires separate arrangement."
+        },
+        "procedures": {
+          "title": "Documented procedures enable consistency:",
+          "description": "Standardized checklists, inspection protocols, and reporting ensure service quality does not depend on individual discretion."
+        },
+        "responsibility": {
+          "title": "Defined responsibility protects both parties:",
+          "description": "Clear boundaries prevent scope creep, unrealistic expectations, and operational overreach."
+        },
+        "geographic": {
+          "title": "Geographic focus enables accountability:",
+          "description": "Limiting service area to Torrevieja + 50-70km ensures realistic response times and sustainable service quality."
+        }
+      },
+      "practice": "What this means in practice: If a service is not explicitly listed in your package, it is not included. This is not inflexibility—it is the foundation of reliable, accountable service delivery."
+    },
+    "geographic": {
+      "title": "Geographic Boundary: Operational Rationale",
+      "intro": "Sentinel services properties within Torrevieja and approximately 50-70km radius. This geographic limitation is permanent and applies to all clients without exception.",
+      "subtitle": "Why geographic boundaries exist:",
+      "reasons": {
+        "responseTime": "Response time commitments: Full package clients receive shorter response times and 8-hour decision timelines. This is only sustainable within manageable distance.",
+        "visitFrequency": "Visit frequency reliability: Regular biweekly or weekly visits require proximity. Distant properties create scheduling conflicts and service degradation.",
+        "emergencyAccess": "Emergency access capability: Property securing in case of active leaks, broken locks, or weather damage requires rapid physical presence.",
+        "qualityControl": "Quality control: Local presence enables relationship management with cleaners, technicians, and municipal services. Distance erodes these operational relationships.",
+        "sustainability": "Cost sustainability: Travel time beyond 70km makes service economically unsustainable without pricing that defeats the purpose."
+      },
+      "footer": "Properties outside this area cannot be serviced—not temporarily, not as exceptions, not at premium pricing. This boundary is designed to protect service quality for clients within the area, not to limit growth arbitrarily."
+    },
+    "system": {
+      "title": "Operational System and Process Framework",
+      "intro": "Sentinel operates on documented procedures covering all aspects of service delivery:",
+      "onboarding": {
+        "title": "Onboarding Process:",
+        "items": {
+          "qualification": "Structured qualification (geographic, operational fit)",
+          "dataCollection": "Complete data collection (property details, access codes, emergency contacts)",
+          "inspection": "Initial inspection (Visit Zero) establishing baseline property condition",
+          "activation": "Documented approval and service activation"
+        }
+      },
+      "operations": {
+        "title": "Regular Operations:",
+        "items": {
+          "checklists": "Visit checklists ensuring consistent inspection coverage",
+          "documentation": "Photo documentation of every visit",
+          "reports": "Written reports delivered within 24-48 hours",
+          "assessments": "Meter readings, system checks, and condition assessments"
+        }
+      },
+      "access": {
+        "title": "Access Coordination (Extended/Full packages):",
+        "items": {
+          "approval": "Written approval required for all access events",
+          "supervision": "Supervision of entry and exit",
+          "reports": "Brief reports after each third-party visit",
+          "tracking": "Event tracking and documentation"
+        }
+      },
+      "emergency": {
+        "title": "Emergency Response (Full package):",
+        "items": {
+          "criteria": "Defined emergency criteria (material damage, safety hazard)",
+          "limits": "Decision authority limits (€300-500)",
+          "contact": "Immediate owner contact attempts",
+          "documentation": "Action documentation and reporting"
+        }
+      },
+      "communication": {
+        "title": "Communication Protocols:",
+        "items": {
+          "dedicated": "Dedicated operational contact lines (separate from prospect inquiries)",
+          "sla": "Service Level Agreements (SLA) by package tier",
+          "formal": "Formal documentation via email for decisions and changes"
+        }
+      },
+      "footer": "What this means: Service delivery does not depend on individual judgment or goodwill. Procedures are documented, repeatable, and enforceable. This is what enables accountability."
+    },
+    "resources": {
+      "title": "Operational Resources and Capacity",
+      "intro": "Sentinel service delivery is enabled by local operational resources and established partnerships:",
+      "inspection": {
+        "title": "Property Inspection and Maintenance:",
+        "items": {
+          "cleaner": "Dedicated cleaner with hotel industry background and property oversight experience",
+          "technician": "Experienced technician with 25+ years in plumbing, electrical work, and construction",
+          "network": "Local vendor network for specialized services (HVAC, pool maintenance, garden care)"
+        }
+      },
+      "coordination": {
+        "title": "Coordination and Client Communication:",
+        "items": {
+          "coordinator": "Operational coordinator managing client communication, scheduling, and decision-making",
+          "reporting": "Documented reporting and photo management system",
+          "protocols": "Emergency contact protocols and escalation procedures"
+        }
+      },
+      "transportation": {
+        "title": "Transportation and Transfers:",
+        "items": {
+          "partnership": "Partnership with NowRent.eu for airport transfers and vehicle services",
+          "scheduling": "Advance scheduling required (14+ days in summer season)",
+          "availability": "Subject to availability and separate pricing"
+        }
+      },
+      "capacity": {
+        "title": "Capacity and Availability:",
+        "items": {
+          "limited": "Service capacity is limited by geographic focus and resource availability",
+          "seasonal": "Seasonal demand affects scheduling flexibility (particularly June-September)",
+          "decline": "Sentinel reserves the right to decline service when capacity limits are reached"
+        }
+      },
+      "notIncluded": {
+        "title": "What this does NOT include:",
+        "items": {
+          "contractor": "Sentinel does not employ general contractors for major renovation work",
+          "availability": "Sentinel does not provide 24/7 unlimited availability",
+          "individuals": "Sentinel does not guarantee specific individuals for every visit"
+        }
+      },
+      "footer": "Operational capability exists to deliver package commitments reliably—not to provide unlimited flexibility."
+    },
+    "notWhat": {
+      "title": "What Sentinel Is Not",
+      "intro": "To prevent misunderstanding, Sentinel explicitly states what it is NOT:",
+      "insurance": {
+        "title": "Not an insurance provider:",
+        "items": {
+          "prevention": "Sentinel does not guarantee prevention of all incidents",
+          "liability": "Sentinel does not assume insurance-level liability",
+          "forceMajeure": "Sentinel does not cover losses from force majeure events",
+          "coverage": "Property owners remain responsible for adequate insurance coverage"
+        }
+      },
+      "concierge": {
+        "title": "Not a concierge service:",
+        "items": {
+          "unlimited": "Sentinel does not provide unlimited personal assistance",
+          "errands": "Sentinel does not handle errands, shopping, or lifestyle management",
+          "flexibility": "Sentinel does not operate on \"whatever you need\" flexibility",
+          "separate": "Services outside packages require separate arrangement and pricing"
+        }
+      },
+      "propertyManagement": {
+        "title": "Not a full property management company:",
+        "items": {
+          "bookings": "Sentinel does not manage bookings or guest communication (except as add-on)",
+          "support": "Sentinel does not provide 24/7 guest support",
+          "agency": "Sentinel does not act as rental agency or booking platform",
+          "addon": "Rental support is available only as add-on module to core packages"
+        }
+      },
+      "contractor": {
+        "title": "Not a general contractor:",
+        "items": {
+          "coordinates": "Sentinel coordinates repairs but does not execute construction work",
+          "quality": "Sentinel is not liable for quality of work performed by third-party contractors",
+          "projects": "Sentinel does not manage renovation projects",
+          "licensed": "Specialized work requires engagement of licensed contractors"
+        }
+      },
+      "availability": {
+        "title": "Not available 24/7 for non-emergencies:",
+        "items": {
+          "sla": "Service Level Agreements define response times by package",
+          "red": "Emergency response is available only to Full package clients",
+          "timeframes": "Non-emergency requests are handled within SLA timeframes",
+          "guarantee": "Immediate availability outside SLA is not guaranteed"
+        }
+      },
+      "footer": "Sentinel is a local property representation service operating within defined scope, documented procedures, and clear accountability boundaries."
+    },
+    "accountability": {
+      "title": "Accountability Within Defined Scope",
+      "intro": "Sentinel is accountable for:",
+      "service": {
+        "title": "Service delivery within package scope:",
+        "items": {
+          "visits": "Completing scheduled visits per package frequency",
+          "checklists": "Executing inspection checklists as documented",
+          "reports": "Delivering photo reports within committed timeframes",
+          "sla": "Responding to requests within Service Level Agreement (SLA)"
+        }
+      },
+      "documentation": {
+        "title": "Documentation and reporting:",
+        "items": {
+          "photos": "Photo documentation of all visits and access events",
+          "written": "Written reports of observations, actions taken, and concerns identified",
+          "meters": "Accurate meter readings and system condition notes",
+          "emergency": "Emergency action documentation with timeline and decision rationale"
+        }
+      },
+      "decisions": {
+        "title": "Decision-making within authority limits (Full package):",
+        "items": {
+          "operational": "Operational decisions up to approved financial limit (€300-€500)",
+          "securing": "Property securing actions in case of immediate threat",
+          "repair": "Emergency repair coordination within decision authority",
+          "documented": "All decisions documented and reported"
+        }
+      },
+      "communication": {
+        "title": "Communication and transparency:",
+        "items": {
+          "response": "Response to client inquiries within SLA timeframes",
+          "notice": "Advance notice of schedule changes or limitations",
+          "clarity": "Clear communication when requests fall outside package scope",
+          "written": "Written documentation of all agreements and changes"
+        }
+      },
+      "notIncluded": {
+        "title": "What accountability does NOT include:",
+        "items": {
+          "prevention": "Guarantee of preventing all incidents or losses",
+          "contractors": "Liability for third-party contractor errors",
+          "control": "Responsibility for events outside Sentinel's control (weather, municipal services, force majeure)",
+          "unlimited": "Unlimited availability beyond package commitments"
+        }
+      },
+      "footer": "Accountability is enforceable because scope is defined, procedures are documented, and commitments are explicit."
+    },
+    "nextSteps": {
+      "title": "Working With Sentinel",
+      "intro": "If your property and service requirements meet Sentinel's operational criteria:",
+      "steps": {
+        "step1": "Review service packages to understand scope and boundaries",
+        "step2": "Verify your property location falls within service area (Torrevieja + 50-70km)",
+        "step3": "Review the onboarding process to understand requirements and timeline",
+        "step4": "Contact Sentinel for evaluation of your property and service requirements"
+      },
+      "required": {
+        "title": "Required for service:",
+        "items": {
+          "location": "Property within geographic service area",
+          "acceptance": "Acceptance of package-based service model",
+          "keys": "Minimum 2 complete key sets",
+          "procedures": "Willingness to follow documented procedures"
+        }
+      },
+      "declines": {
+        "title": "Sentinel reserves the right to decline service if:",
+        "items": {
+          "outside": "Property is outside service area",
+          "needs": "Expected service needs do not align with package model",
+          "expectations": "Client expectations are incompatible with defined scope"
+        }
+      }
+    }
+  },
+  "terms": {
+    "meta": {
+      "title": "Terms & Conditions - Sentinel",
+      "description": "Terms of Service"
+    },
+    "pageTitle": "Terms of Service",
+    "subtitle": "Sentinel — terms of service",
+    "lastUpdated": "Last updated: 2026-02-23",
+    "sections": [
+      { "title": "1. Definition of Service", "body": "Sentinel provides a package-based local property representation service within a defined operational scope.\n\nThe service is not:\n\nInsurance\nA concierge service\nA rental agency\nA general contractor\nFull-scope property management" },
+      { "title": "2. Geographic Area", "body": "The service is provided only within Torrevieja and a 50–70 km radius.\n\nProperties outside this area cannot be served." },
+      { "title": "3. Package Model", "body": "Services are delivered only under monthly packages:\n\nBasic (Green)\nExtended (Orange)\nFull (Red)\n\nIf a service is not explicitly listed in the package, it is not included.\n\nAdditional services require separate agreement and quotation." },
+      { "title": "4. SLA", "body": "SLA defines:\n\nResponse time\nDecision time\n\nSLA does not guarantee time to full resolution of an issue." },
+      { "title": "5. Decision Authority", "body": "In the Full Package (Red) a decision limit applies:\n\nStandard: €300 per single decision\nOptional: €500 (if agreed)\n\nDecisions above the limit require owner approval." },
+      { "title": "6. Liability", "body": "Sentinel is responsible for:\n\nDelivery of services in accordance with the package\nDocumentation of actions\nResponse in line with SLA\n\nSentinel is not responsible for:\n\nForce majeure\nErrors by third-party contractors\nInsurance-type losses\nFailure to prevent all incidents" },
+      { "title": "7. Payments", "body": "The service is billed:\n\nMonthly in advance\nMinimum engagement period: 3 months\n\nPayment may be made by:\n\nBank transfer\nOnline via the payment system\n\nNon-payment may result in suspension or termination of the service." },
+      { "title": "8. Termination", "body": "The client may terminate the service at the end of the billing period.\n\nSentinel may terminate the service in case of:\n\nBreach of scope\nNon-payment\nOperational impossibility\nConduct that prevents safe delivery of the service" },
+      { "title": "9. Package Changes", "body": "A package change requires:\n\nMutual agreement\nWritten documentation\n\nChanges do not apply retroactively." },
+      { "title": "10. Jurisdiction", "body": "These terms are governed by the law of Spain.\n\nDisputes are resolved by the competent courts." }
+    ]
+  },
+  "privacy": {
+    "meta": {
+      "title": "Privacy Policy - Sentinel",
+      "description": "Data protection and processing"
+    },
+    "pageTitle": "Privacy Policy",
+    "subtitle": "Sentinel — data protection",
+    "lastUpdated": "Last updated: 2026-02-23",
+    "sections": [
+      { "title": "1. Data Controller", "body": "The data controller is Sentinel, a local property representation service operating in Torrevieja and within a 50–70 km radius.\n\nContact for data protection matters:\nEmail: contact@sentinel.example" },
+      { "title": "2. Scope of Data Processed", "body": "Sentinel processes only data necessary for:\n\nResponding to enquiries sent via the contact form\nConclusion and performance of the package agreement\nInvoicing\nOnline payment processing\nOperational communication with the client\n\nData may include:\n\nName\nEmail address\nPhone number\nProperty location\nBilling details\nInformation required in the service onboarding process\n\nSentinel does not process data for marketing purposes without explicit consent." },
+      { "title": "3. Legal Basis for Processing", "body": "Data is processed on the basis of:\n\nPerformance of contract or pre-contractual steps\nLegal obligations (e.g. accounting)\nLegitimate interest of the controller (operational communication)\nUser consent (where applicable)" },
+      { "title": "4. Data Retention", "body": "Data is retained:\n\nFor the duration of the engagement\nFor periods required by law (e.g. accounting records)\nUntil withdrawal of consent, where processing is based on consent\n\nAfter the required periods, data is deleted or anonymised." },
+      { "title": "5. Online Payments", "body": "For online payments, transaction data is processed by external payment service providers.\n\nSentinel does not store full payment card data.\n\nPayment providers act as independent data controllers under their own terms." },
+      { "title": "6. Cookies", "body": "The site may use:\n\nTechnical cookies (necessary for the site to function)\nFunctional cookies\nAnalytics cookies (if enabled)\n\nUsers may manage cookies via browser settings.\n\nDisabling some cookies may affect site functionality." },
+      { "title": "7. User Rights", "body": "Users have the right to:\n\nAccess their data\nRectification of data\nErasure of data\nRestriction of processing\nData portability\nObject to processing\nWithdraw consent at any time\n\nRequests should be sent to the controller's email address." },
+      { "title": "8. Data Sharing", "body": "Data may be disclosed to:\n\nAccounting service providers\nPayment providers\nTechnology partners operating the site infrastructure\n\nData is not sold or shared for marketing purposes." },
+      { "title": "9. Security", "body": "Sentinel applies appropriate technical and organisational measures to protect data against unauthorised access, loss or disclosure." },
+      { "title": "10. Policy Changes", "body": "The Privacy Policy may be updated following legal or operational changes. The current version is published on the site." }
+    ]
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "body": "The requested page does not exist or has been moved.",
+    "returnTo": "Return to:",
+    "home": "Home",
+    "services": "Services",
+    "howItWorks": "How It Works",
+    "contact": "Contact",
+    "contactPrompt": "If you believe this is an error, contact Sentinel."
+  }
+}

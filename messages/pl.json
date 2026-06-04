@@ -1,0 +1,1765 @@
+{
+  "common": {
+    "siteName": "Sentinel",
+    "meta": {
+      "defaultTitle": "Sentinel — Pakietowa Reprezentacja Nieruchomości",
+      "defaultDescription": "Sentinel — Reprezentacja właściciela na miejscu. Torrevieja + 50–70 km."
+    },
+    "nav": {
+      "home": "Strona główna",
+      "services": "Usługi",
+      "howItWorks": "Jak to działa",
+      "faq": "FAQ",
+      "about": "O nas",
+      "contact": "Kontakt"
+    },
+    "footer": {
+      "navigation": "Nawigacja",
+      "legal": "Prawne",
+      "contact": "Kontakt",
+      "serviceArea": "Obszar Obsługi",
+      "serviceAreaText": "Torrevieja + promień 50-70km",
+      "operatingHours": "Godziny pracy",
+      "copyright": "Wszelkie prawa zastrzeżone.",
+      "termsConditions": "Regulamin",
+      "privacyPolicy": "Polityka Prywatności"
+    },
+    "contact": {
+      "phone": "+34 XXX XXX XXX",
+      "email": "contact@sentinel.example",
+      "hours": "Pon-Pią 9:00-18:00"
+    },
+    "language": "Język",
+    "theme": {
+      "light": "Jasny",
+      "dark": "Ciemny",
+      "switchToLight": "Włącz tryb jasny",
+      "switchToDark": "Włącz tryb ciemny"
+    },
+    "submit": "Wyślij",
+    "loading": "Ładowanie...",
+    "disclosure": {
+      "showDetails": "Pokaż szczegóły",
+      "hideDetails": "Ukryj szczegóły"
+    },
+    "menu": {
+      "open": "Otwórz menu",
+      "close": "Zamknij menu",
+      "home": "Strona główna"
+    },
+    "confidenceBar": {
+      "title": "Kluczowe Parametry Operacyjne",
+      "serviceArea": {
+        "label": "Obszar Obsługi",
+        "text": "Torrevieja + promień 50-70km; bez wyjątków"
+      },
+      "sla": {
+        "label": "Definicja SLA",
+        "text": "Czas reakcji/decyzji, nie gwarantowany czas rozwiązania"
+      },
+      "scope": {
+        "label": "Zasada Zakresu",
+        "text": "Jeśli nie jest wyraźnie wymienione w pakiecie → nie jest wliczone"
+      }
+    }
+  },
+  "home": {
+    "hero": {
+      "wordmark": "SENTINEL",
+      "descriptor": "Lokalna reprezentacja właściciela",
+      "line3": "Przejmujemy obsługę nieruchomości pod Twoją nieobecność.",
+      "line4": "Zakres działania określony z góry.",
+      "line5": "Każde działanie jest dokumentowane.",
+      "area": "Obszar działania: południowa Costa Blanca.",
+      "ctaPrimary": "Zobacz, to działa"
+    },
+    "exposure": {
+      "title": "Czym naprawdę ryzykujesz bez lokalnej reprezentacji?",
+      "p1": "Gdy nie ma Cię na miejscu, tracisz bieżącą kontrolę nad swoim domem.",
+      "p2": "Małe problemy nie robią hałasu. Rosną, gdy nikt ich nie sprawdza.",
+      "p3": "Dowiadujesz się o nich, gdy jesteś 1500 km dalej — bez kluczy i bez możliwości natychmiastowej reakcji.",
+      "p4": "Kilka dni zwłoki wystarczy, by drobna usterka stała się poważnym kosztem.",
+      "close1": "Nie chodzi o to, czy coś się wydarzy.",
+      "close2": "Chodzi o to, że dowiesz się o tym za późno."
+    },
+    "contrast": {
+      "title": "Bez nas / Z nami",
+      "intro": "Poniżej różnica między sytuacją bez lokalnej reprezentacji a stałą kontrolą na miejscu.",
+      "leftHeading": "Bez nas",
+      "left1": "Nieruchomość nie jest regularnie sprawdzana, gdy Cię nie ma.",
+      "left2": "O problemie dowiadujesz się wtedy, gdy ktoś go zauważy — nie gdy powstaje.",
+      "left3": "Każda sytuacja zaczyna się od szukania: kto może pojechać, kto ma klucze, kto ma czas.",
+      "left4": "Decyzje podejmujesz zdalnie, bez pełnego obrazu sytuacji.",
+      "left5": "Wykonawcy działają, ale nikt nie ma stałego punktu odniesienia stanu nieruchomości.",
+      "left6": "Odpowiedzialność za koordynację pozostaje po Twojej stronie.",
+      "leftClosing": "Reakcja zaczyna się od organizowania.",
+      "rightHeading": "Z nami",
+      "right1": "Nieruchomość jest utrzymywana w czystości i przygotowana na Twój przyjazd lub przyjazd gości.",
+      "right2": "Jest regularnie sprawdzana według ustalonego harmonogramu.",
+      "right3": "Jej stan jest dokumentowany i porównywany w czasie.",
+      "right4": "Klucze i dostęp są na miejscu — bez improwizacji.",
+      "right5": "Gdy coś się dzieje, reakcja zaczyna się od działania.",
+      "right6": "W ustalonym limicie decyzja może zostać podjęta od razu.",
+      "right7": "Odpowiedzialność i zakres są jasno określone.",
+      "rightClosing": "Tu działa porządek, nie przypadek."
+    },
+    "systemIntro": {
+      "title": "Jak działa system Sentinel",
+      "intro": "Sentinel wprowadza stałą, lokalną kontrolę nad Twoją nieruchomością.",
+      "scopeTitle": "Zakres",
+      "scope1": "Zakres działań jest jasno określony — wiesz, co jest sprawdzane i jak często.",
+      "scope2": "Masz przejrzysty model działania oparty na stałych zasadach.",
+      "procedureTitle": "Procedura",
+      "procedure1": "Każda wizyta przebiega według tych samych kroków.",
+      "procedure2": "Te same czynności, ta sama kolejność, ta sama kontrola.",
+      "procedure3": "Dzięki temu znasz rzeczywisty stan swojego domu, a nie jego przybliżony obraz.",
+      "docsTitle": "Dokumentacja",
+      "docs1": "Po każdej kontroli otrzymujesz dokumentację: zdjęcia, opis i rejestr zmian w czasie.",
+      "docs2": "Masz ciągłość informacji i możliwość porównania stanu nieruchomości w czasie.",
+      "decisionsTitle": "Decyzje",
+      "decisions1": "Reagujemy wtedy, gdy sytuacja tego wymaga.",
+      "decisions2a": "Dzięki lokalnej obecności możemy działać od razu —",
+      "decisions2b": "czy to w sprawach technicznych, czy przy obsłudze dostępu dla Ciebie i Twoich gości.",
+      "decisions3": "Podejmujemy działania bez zbędnej zwłoki.",
+      "close1": "Sentinel przejmuje operacyjną obecność.",
+      "close2": "Kontrola strategiczna pozostaje po Twojej stronie."
+    },
+    "levels": {
+      "title": "Zakres pakietów",
+      "intro": "Wybór pakietu określa zakres lokalnej kontroli.",
+      "axis1": "Kontrola",
+      "axis2": "Kontrola + Dostęp",
+      "axis3": "Kontrola + Dostęp + Decyzje",
+      "ctaCompare": "Porównaj pakiety szczegółowo",
+      "level1Title": "Pakiet Podstawowy",
+      "level1_1": "Minimum 1 wizyta miesięcznie",
+      "level1_2": "Dokumentacja fotograficzna i raport",
+      "level1_3": "Przechowywanie kluczy",
+      "level1_6": "Ograniczenia: brak organizacji dostępu; brak autonomicznych decyzji.",
+      "level2Title": "Pakiet Rozszerzony",
+      "level2_1": "Organizacja i nadzór wejść osób trzecich",
+      "level2_2": "Dokumentacja zdarzeń dostępu",
+      "level2_3": "Koordynacja pierwszych działań naprawczych",
+      "level2_6": "Ograniczenia: decyzje wymagają zatwierdzenia właściciela.",
+      "level3Title": "Pakiet Pełny",
+      "level3_1": "Reakcja awaryjna z fizyczną obecnością",
+      "level3_2": "Autonomiczne decyzje w limicie (300€ / 500€)",
+      "level3_3": "Rozszerzona koordynacja prac",
+      "level3_6": "Ograniczenia: powyżej limitu wymagana zgoda właściciela.",
+      "systemRuleTitle": "Zasada systemowa",
+      "systemRule1": "Zakres wynika wyłącznie z wybranego pakietu.",
+      "systemRule2": "Usługi niewymienione nie są wliczone.",
+      "systemRule3": "Każde działanie podlega dokumentacji."
+    },
+    "distinction": {
+      "title": "Co wyróżnia Sentinel",
+      "block1Title": "Stałe zasady, konkretna odpowiedzialność",
+      "block1p1": "Zakres współpracy jest określony przed rozpoczęciem działań. Każda nieruchomość przechodzi proces kwalifikacji przed startem współpracy.",
+      "block1p2": "Za realizację odpowiadają konkretne osoby, według tych samych zasad przy każdej wizycie. Nie działamy przypadkowo. Działamy w ustalonych ramach.",
+      "block2Title": "Kontrola zamiast reakcji po fakcie",
+      "block2p1": "Pomoc okazjonalna reaguje wtedy, gdy pojawia się problem. My działamy według harmonogramu i procedury.",
+      "block2p2": "To pozwala wykrywać sytuacje wcześniej, a nie dopiero wtedy, gdy staną się kosztowne.",
+      "block3Title": "Dokumentacja zamiast zapewnień",
+      "block3p1": "Każda wizyta zostawia zapis: zdjęcia, opis, datę, zakres czynności. Zdarzenia operacyjne są rejestrowane wraz z podjętymi decyzjami.",
+      "block3p2": "Masz historię działań i możliwość porównania stanu nieruchomości w czasie. To nie opiera się na pamięci ani dobrej woli. Opiera się na zapisie.",
+      "block4Title": "Decyzje w określonych granicach",
+      "block4p1": "W sytuacjach wymagających reakcji wiadomo:",
+      "block4list1": "kto działa",
+      "block4list2": "w jakim zakresie",
+      "block4list3": "w jakim limicie",
+      "block4p2": "Zdarzenia wykraczające poza ustalony zakres wymagają osobnego uzgodnienia. Uzgodnienie poprzedza działanie.",
+      "block4p3": "Nie ma improwizacji ani domysłów. Odpowiedzialność jest jasno przypisana.",
+      "block5Title": "System realizowany przez ludzi",
+      "block5p1": "Model określa strukturę. Ludzie odpowiadają za wykonanie.",
+      "block5p2": "Stałe zasady pozwalają utrzymać poziom, a osobista odpowiedzialność sprawia, że działania nie są anonimowe.",
+      "block5p3": "Zespół posiada ponad 25 lat doświadczenia technicznego.",
+      "block5p4": "To połączenie daje stabilność, której nie zapewnia pomoc nieformalna."
+    },
+    "differentiation": {
+      "title": "Dlaczego ten model nie jest concierge ani zarządzaniem najmem",
+      "concierge1": "Model concierge opiera się na elastycznym zakresie, bez stałych granic odpowiedzialności.",
+      "concierge2": "Zakres rozszerza się wraz z kolejnymi sytuacjami.",
+      "sentinelScope": "Sentinel działa wyłącznie w ramach z góry określonych poziomów zaangażowania. Zakres jest zdefiniowany przed rozpoczęciem współpracy.",
+      "rental1": "Zarządzanie najmem koncentruje się na gościach i przychodzie operacyjnym.",
+      "rental2": "Priorytetem nie jest reprezentacja właściciela.",
+      "adhoc1": "Jednorazowa pomoc lokalna nie tworzy systemu ani historii zmian.",
+      "adhoc2": "Brak systemu oznacza brak stałego punktu kontroli.",
+      "modelDiffTitle": "Różnica modelu",
+      "modelDiff1": "Stała jurysdykcja.",
+      "modelDiff2": "Stałe granice.",
+      "modelDiff3": "Stała dokumentacja.",
+      "modelDiff4": "Stała geografia.",
+      "modelBasis": "Model nie opiera się na relacji osobistej. Opiera się na powtarzalności operacyjnej."
+    },
+    "principles": {
+      "title": "Zasady operacyjne",
+      "intro": "System działa w określonych granicach.",
+      "introWhy": "Granice istnieją po to, aby odpowiedzialność była jednoznaczna.",
+      "rule1": "Każde działanie jest udokumentowane i archiwizowane.",
+      "rule1b": "Dokumentacja stanowi stały punkt odniesienia stanu nieruchomości.",
+      "rule2": "Zakres działań wynika wyłącznie z wybranego poziomu zaangażowania.",
+      "rule2b": "Zakres nie rozszerza się automatycznie wraz z nowymi sytuacjami.",
+      "rule3": "Uprawnienia finansowe posiadają określony limit.",
+      "rule3b": "Limit definiuje zakres samodzielnych decyzji operacyjnych.",
+      "rule4": "Zdarzenia wykraczające poza ustalony zakres wymagają osobnego uzgodnienia.",
+      "rule4b": "Uzgodnienie poprzedza działanie.",
+      "rule5": "Obszar działania jest stały (Torrevieja + promień 50–70 km)."
+    },
+    "serviceArea": {
+      "title": "Obszar działania",
+      "subtitle": "Stała jurysdykcja operacyjna",
+      "intro": "Sentinel działa wyłącznie na terenie Torrevieja i w promieniu 50–70 km.",
+      "introNote1": "Granica geograficzna nie jest elementem marketingowym.",
+      "introNote2": "Jest parametrem operacyjnym.",
+      "bulletsTitle": "Stała odległość umożliwia:",
+      "bullet1": "przewidywalny czas reakcji",
+      "bullet2": "fizyczną obecność przy zdarzeniach",
+      "bullet3": "powtarzalność wizyt kontrolnych",
+      "bullet4": "kontrolę jakości wykonania",
+      "close": "Jurysdykcja pozostaje stała, aby utrzymać odpowiedzialność i poziom operacyjny."
+    },
+    "capacity": {
+      "title": "Zdolność operacyjna",
+      "intro": "System opiera się na udokumentowanych procedurach wdrożeniowych.",
+      "item1": "Każda nieruchomość przechodzi proces kwalifikacji i konfiguracji zakresu.",
+      "item2": "Po każdej wizycie tworzony jest raport fotograficzny.",
+      "item3": "Zdarzenia operacyjne są rejestrowane wraz z podjętymi decyzjami.",
+      "item4": "Realizacja odbywa się przy stałej współpracy z lokalnymi wykonawcami.",
+      "item5": "Zespół posiada ponad 25 lat doświadczenia technicznego."
+    },
+    "finalCta": {
+      "title": "Możesz zarządzać reaktywnie. Albo działać w ramach systemu.",
+      "p1": "Zarządzanie reaktywne opiera się na reagowaniu. System opiera się na stałej kontroli.",
+      "p2": "Sentinel to zdefiniowany model reprezentacji właściciela. Wybór dotyczy struktury zarządzania nieruchomością.",
+      "cta": "Zweryfikuj, czy Twoja nieruchomość kwalifikuje się do systemu Sentinel"
+    }
+  },
+  "services": {
+    "meta": {
+      "title": "Pakiety Usług - Sentinel",
+      "description": "Zakres i odpowiedzialność pakietów usług Sentinel"
+    },
+    "intro": {
+      "headline": "Pakiety usług — zakres i odpowiedzialność",
+      "lead1": "Sentinel działa w oparciu o trzy poziomy zaangażowania.",
+      "lead2": "Różnią się zakresem odpowiedzialności, dostępem do nieruchomości i możliwością podejmowania decyzji. Jeśli dana usługa nie jest wskazana w pakiecie, oznacza to, że nie jest w jego zakresie.",
+      "engagementTerms": "Minimalny okres współpracy: 3 miesiące. Rozliczenie miesięczne z góry."
+    },
+    "comparison": {
+      "title": "Tabela Porównawcza Pakietów",
+      "footerNote": "SLA określa czas reakcji i decyzji, nie gwarantowany czas rozwiązania. Czynniki zewnętrzne (dostępność części, harmonogramy techników) wpływają na faktyczne rozwiązanie.",
+      "columns": {
+        "serviceElement": "Element Usługi",
+        "green": "Podstawowy (Zielony)",
+        "orange": "Rozszerzony (Pomarańczowy)",
+        "red": "Pełny (Czerwony)"
+      },
+      "categories": {
+        "inspections": "KONTROLE",
+        "accessCoordination": "KOORDYNACJA DOSTĘPU",
+        "emergencyDecisions": "NAGŁE WYPADKI I DECYZJE",
+        "sla": "CZAS REAKCJI (SLA)"
+      },
+      "rows": {
+        "visitsPerMonth": "Wizyty kontrolne miesięcznie",
+        "doorWindowInspection": "Kontrola drzwi/okien/zamków",
+        "ventilationCheck": "Wentylacja / kontrola wilgoci",
+        "waterSystemCheck": "Kontrola systemu wodnego",
+        "electricalCheck": "Kontrola systemu elektrycznego",
+        "boilerInspection": "Kontrola kotła",
+        "meterReading": "Odczyt liczników/zdjęcia",
+        "plantWatering": "Podlewanie roślin doniczkowych",
+        "photoReport": "Raport fotograficzny po wizycie",
+        "keyStorage": "Przechowywanie kluczy",
+        "thirdPartyAccess": "Dostęp osób trzecich (sprzątaczki, technicy, goście)",
+        "accessEventsIncluded": "Zdarzenia dostępu wliczone miesięcznie",
+        "waitingForTechnicians": "Oczekiwanie na techników na miejscu",
+        "emergencyResponseIncluded": "Reakcja awaryjna wliczona",
+        "propertySecuring": "Zabezpieczenie nieruchomości (limit awaryjny)",
+        "decisionsWithoutApproval": "Decyzje bez zgody właściciela",
+        "decisionAuthorityLimit": "Limit uprawnień decyzyjnych",
+        "repairCoordination": "Koordynacja napraw",
+        "onsitePresence": "Obecność na miejscu podczas napraw",
+        "requestAck": "Potwierdzenie żądania",
+        "situationAssessment": "Ocena sytuacji",
+        "emergencyAction": "Działanie awaryjne",
+        "servicePriority": "Poziom priorytetu usługi"
+      },
+      "values": {
+        "visual": "(wzrokowa)",
+        "basic": "(podstawowa)",
+        "asAgreed": "(według ustaleń)",
+        "limited": "(ograniczona)",
+        "fairUse": "Rozsądne użycie",
+        "separateCharge": "(oddzielna opłata)",
+        "paidService": "(płatna usługa)",
+        "afterApproval": "Po zatwierdzeniu",
+        "immediate": "Natychmiastowa",
+        "withinLimit": "(w ramach limitu)",
+        "within24h": "w ciągu 24h",
+        "within48h": "w ciągu 48h",
+        "within4h": "w ciągu 4h",
+        "within8h": "w ciągu 8h",
+        "within12to24h": "12-24h",
+        "low": "Niski",
+        "medium": "Średni",
+        "high": "Wysoki",
+        "twoToFour": "2-4",
+        "euroLimit300": "limit 300€",
+        "euroLimit300to500": "300-500€"
+      }
+    },
+    "green": {
+      "title": "Pakiet Podstawowy",
+      "badgeLabel": "Zielony",
+      "definition": "Stała kontrola nieruchomości.",
+      "suitableForTitle": "Dla kogo",
+      "suitableItems": {
+        "rarelyUsed": "Nieruchomości rzadko użytkowane",
+        "ownRepairs": "Właściciele samodzielnie organizujący naprawy i dostęp",
+        "regularVisits": "Potrzeba regularnych wizyt i raportów"
+      },
+      "visitScopeTitle": "Zakres wizyt (minimum 1 w miesiącu)",
+      "visitScopeIntro": "Podczas każdej wizyty:",
+      "visitItems": {
+        "accessSecurity": "Sprawdzenie dostępu i stanu zabezpieczeń",
+        "roomsInstallations": "Kontrola pomieszczeń i widocznych instalacji",
+        "moistureDamage": "Weryfikacja oznak wilgoci, uszkodzeń i nieprawidłowości",
+        "photoReport": "Dokumentacja fotograficzna i raport"
+      },
+      "visitScopeDisclosureLabel": "Szczegółowy zakres kontroli",
+      "visitScopeDisclosureBody": "Pełna lista punktów kontroli (drzwi, okna, wentylacja, instalacje, liczniki, rośliny itd.) ustalana podczas wdrożenia i udokumentowana w umowie.",
+      "keyStorageTitle": "Przechowywanie kluczy",
+      "keyStorageItems": {
+        "minimum": "Minimum 2 komplety wymagane",
+        "secure": "Bezpieczne przechowywanie"
+      },
+      "emergencyTitle": "Zdarzenia awaryjne (ograniczone)",
+      "emergencyIntro": "W nagłych przypadkach:",
+      "emergencyItems": {
+        "assessment": "Wstępna ocena sytuacji",
+        "actions": "Podjęcie działań zabezpieczających do ustalonego limitu",
+        "documentation": "Dokumentacja i kontakt z właścicielem"
+      },
+      "notIncludedTitle": "Nie obejmuje",
+      "notIncludedItems": {
+        "thirdPartyAccess": "Organizacji dostępu osób trzecich",
+        "repairCoordination": "Koordynacji prac technicznych",
+        "financialDecisions": "Samodzielnych decyzji finansowych powyżej limitu",
+        "contractorOversight": "Nadzoru nad wykonawcami"
+      },
+      "slaTitle": "Czas reakcji (SLA)",
+      "slaItems": {
+        "ack": "Potwierdzenie zgłoszenia: do 48h",
+        "intervention": "Interwencja planowana: według harmonogramu"
+      },
+      "summary": {
+        "visitsLabel": "Wizyty:",
+        "visitsValue": "min. 1/mies.",
+        "accessLabel": "Dostęp:",
+        "accessValue": "nie",
+        "decisionsLabel": "Decyzje awaryjne:",
+        "decisionsValue": "ograniczone"
+      }
+    },
+    "orange": {
+      "title": "Pakiet Rozszerzony",
+      "badgeLabel": "Pomarańczowy",
+      "definition": "Kontrola i organizacja dostępu.",
+      "fromBasic": "Zawiera wszystko z Pakietu Podstawowego oraz:",
+      "accessTitle": "Organizacja dostępu",
+      "accessItems": {
+        "arranging": "Umawianie i nadzór nad wejściem osób trzecich",
+        "scheduling": "Koordynacja terminów",
+        "verification": "Weryfikacja wykonania zleconych prac",
+        "documentation": "Dokumentacja wizyt"
+      },
+      "emergencyTitle": "Zdarzenia awaryjne",
+      "emergencyItems": {
+        "faster": "Szybsza reakcja",
+        "coordination": "Koordynacja pierwszych działań naprawczych",
+        "contractors": "Kontakt z wykonawcami (bez nadzoru pełnego)"
+      },
+      "notIncludedTitle": "Nie obejmuje",
+      "notIncludedItems": {
+        "renovationSupervision": "Stałego nadzoru nad remontami",
+        "extendedResponsibility": "Rozszerzonej odpowiedzialności decyzyjnej",
+        "majorWorks": "Samodzielnego zlecania większych prac bez zgody właściciela"
+      },
+      "slaTitle": "Czas reakcji (SLA)",
+      "slaItems": {
+        "ack": "Potwierdzenie zgłoszenia: do 24h",
+        "accessCoordination": "Koordynacja dostępu: po zatwierdzeniu przez właściciela"
+      },
+      "summary": {
+        "visitsLabel": "Wizyty:",
+        "visitsValue": "min. 1/mies.",
+        "accessLabel": "Dostęp:",
+        "accessValue": "tak",
+        "decisionsLabel": "Decyzje awaryjne:",
+        "decisionsValue": "wg harmonogramu"
+      }
+    },
+    "red": {
+      "title": "Pakiet Pełny",
+      "badgeLabel": "Czerwony",
+      "definition": "Kontrola, dostęp i decyzje na miejscu.",
+      "fromExtended": "Zawiera wszystko z Pakietu Rozszerzonego oraz:",
+      "emergencyTitle": "Reakcja awaryjna",
+      "emergencyItems": {
+        "immediate": "Natychmiastowa obecność w uzasadnionych przypadkach",
+        "protective": "Samodzielne działania zabezpieczające",
+        "repairOrg": "Organizacja napraw"
+      },
+      "decisionTitle": "Uprawnienia decyzyjne",
+      "decisionItems": {
+        "operational": "Decyzje operacyjne w ustalonym limicie finansowym",
+        "contractorEngagement": "Zlecanie prac niezbędnych do zabezpieczenia nieruchomości",
+        "coordinationUntilEnd": "Koordynacja wykonawców do momentu zakończenia"
+      },
+      "coordinationTitle": "Rozszerzona koordynacja",
+      "coordinationItems": {
+        "presence": "Obecność przy kluczowych pracach",
+        "verification": "Weryfikacja zakresu wykonania",
+        "priority": "Priorytetowa obsługa zgłoszeń"
+      },
+      "notIncludedTitle": "Nie obejmuje",
+      "notIncludedItems": {
+        "contractorResult": "Gwarancji rezultatu prac wykonawców",
+        "contractorQuality": "Odpowiedzialności za jakość usług firm zewnętrznych",
+        "availability24x7": "Stałej dostępności 24/7 poza ustalonym SLA",
+        "conciergeServices": "Usług concierge"
+      },
+      "slaTitle": "Czas reakcji (SLA)",
+      "slaItems": {
+        "ack": "Potwierdzenie zgłoszenia: do 12h",
+        "intervention": "Interwencja: zgodnie z poziomem zdarzenia"
+      },
+      "summary": {
+        "visitsLabel": "Wizyty:",
+        "visitsValue": "min. 1/mies.",
+        "accessLabel": "Dostęp:",
+        "accessValue": "tak",
+        "decisionsLabel": "Decyzje awaryjne:",
+        "decisionsValue": "tak"
+      }
+    },
+    "addons": {
+      "overline": "Warstwa operacyjna",
+      "title": "Moduły operacyjne (rozliczane według użycia)",
+      "intro": "Moduły operacyjne rozszerzają zakres działań w ramach aktywnego pakietu. Nie zmieniają poziomu odpowiedzialności ani limitów decyzyjnych.",
+      "rental": {
+        "title": "Wsparcie wynajmu / wakacji",
+        "items": {
+          "preparation": "Koordynacja przygotowania nieruchomości",
+          "cleaning": "Organizacja sprzątania",
+          "guests": "Wsparcie przy przyjazdach gości"
+        },
+        "notPM": "Nie jest to zarządzanie najmem."
+      },
+      "transfers": {
+        "title": "Transfery i usługi pojazdowe",
+        "provider": "Realizowane przez partnera zewnętrznego."
+      },
+      "seasonal": {
+        "title": "Usługi sezonowe",
+        "items": {
+          "openingClosing": "Otwarcie / zamknięcie sezonowe",
+          "preparation": "Przygotowanie nieruchomości do przyjazdu",
+          "extraVisit": "Dodatkowa wizyta kontrolna"
+        }
+      }
+    },
+    "executionOnly": {
+      "microLabel": "Opcja ograniczona",
+      "title": "Usługi operacyjne bez pakietu",
+      "intro": "W wyjątkowych przypadkach możliwe jest zlecenie pojedynczych usług operacyjnych bez aktywnego pakietu nadzoru. Zakres ograniczony. Brak stałych wizyt i SLA.",
+      "availableTitle": "Dostępne usługi:",
+      "availableItems": {
+        "keyHolding": "Przechowywanie kluczy",
+        "cleaning": "Organizacja sprzątania",
+        "oneTimeAccess": "Jednorazowa koordynacja dostępu",
+        "seasonalPrep": "Sezonowe przygotowanie nieruchomości"
+      },
+      "limitationsTitle": "Ograniczenia:",
+      "limitationsItems": {
+        "noRegularChecks": "Brak regularnych kontroli",
+        "noCyclicReporting": "Brak raportowania cyklicznego",
+        "noEmergencySLA": "Brak reakcji awaryjnej w ramach SLA",
+        "noDecisionAuthority": "Brak uprawnień decyzyjnych"
+      },
+      "closing": "Ten model nie zastępuje pakietów nadzoru. Dotyczy wyłącznie realizacji pojedynczych czynności operacyjnych."
+    },
+    "notIncluded": {
+      "title": "Usługi nieobjęte żadnym pakietem",
+      "intro": "Sentinel nie zapewnia:",
+      "items": {
+        "noGuaranteeFixes": "Gwarancji usunięcia wszystkich usterek",
+        "contractorResponsibility": "Odpowiedzialności za pracę firm zewnętrznych",
+        "concierge": "Usług concierge",
+        "construction": "Wykonywania prac budowlanych",
+        "outsideArea": "Obsługi poza ustalonym obszarem działania",
+        "operationalWithoutScope": "Usług operacyjnych bez wcześniejszego uzgodnienia zakresu"
+      },
+      "areaNote": "Nieruchomości poza obszarem Torrevieja + 50–70 km nie są obsługiwane."
+    },
+    "summaryTitle": "W skrócie",
+    "framework": {
+      "title": "Ramy systemu",
+      "visitSchedulingTitle": "Planowanie wizyt",
+      "visitSchedulingItems": {
+        "scheduled": "Wizyty planowane według harmonogramu",
+        "additional": "Dodatkowe wizyty po uzgodnieniu"
+      },
+      "decisionLimitsTitle": "Limity decyzyjne",
+      "decisionLimitsText": "Każdy pakiet określa maksymalny limit pojedynczej decyzji finansowej. Decyzje powyżej limitu wymagają zgody właściciela.",
+      "communicationTitle": "Komunikacja",
+      "communicationItems": {
+        "reports": "Zgłoszenia: e-mail / telefon",
+        "afterVisit": "Raporty: po każdej wizycie",
+        "archived": "Dokumentacja: archiwizowana"
+      },
+      "minCommitmentTitle": "Minimalny okres współpracy",
+      "minCommitmentText": "3 miesiące. Rozliczenie miesięczne z góry."
+    },
+    "selection": {
+      "title": "Który pakiet wybrać?",
+      "greenTitle": "Wybierz Podstawowy, jeśli:",
+      "greenItems": {
+        "regularVisits": "Potrzebujesz regularnych wizyt",
+        "ownRepairs": "Samodzielnie organizujesz naprawy",
+        "noAccess": "Nie potrzebujesz koordynacji dostępu"
+      },
+      "orangeTitle": "Wybierz Rozszerzony, jeśli:",
+      "orangeItems": {
+        "accessNeeded": "Potrzebujesz organizacji dostępu",
+        "technicalWorks": "Zlecasz prace techniczne",
+        "oversight": "Chcesz mieć nadzór nad wykonawcami"
+      },
+      "redTitle": "Wybierz Pełny, jeśli:",
+      "redItems": {
+        "localDecisions": "Oczekujesz lokalnych decyzji na miejscu",
+        "emergencyResponse": "Potrzebujesz zdolności reagowania awaryjnego",
+        "minimalInvolvement": "Chcesz ograniczyć własne zaangażowanie",
+        "frequentIntervention": "Nieruchomość wymaga częstszej interwencji"
+      }
+    },
+    "estimator": {
+      "heading": "Określ swój zakres nadzoru",
+      "groupJurisdiction": "Jurysdykcja (Pakiet)",
+      "groupJurisdictionAnchor": "Jurysdykcja określa zakres reprezentacji i poziom decyzyjności.",
+      "packageLabel": "Pakiet",
+      "packages": {
+        "structured_presence": "Podstawowy",
+        "active_oversight": "Rozszerzony",
+        "extended_jurisdiction": "Pełny"
+      },
+      "packageDescriptor": {
+        "structured_presence": "Regularne wizyty kontrolne. Brak reprezentacji wobec podmiotów trzecich.",
+        "active_oversight": "Wizyty kontrolne i koordynacja dostępu.",
+        "extended_jurisdiction": "Pełna reprezentacja z uprawnieniami awaryjnymi."
+      },
+      "groupMode": "Tryb operacyjny",
+      "groupModeAnchor": "Tryb operacyjny określa intensywność nadzoru wynikającą z użytkowania nieruchomości.",
+      "modeLabel": "Tryb operacyjny",
+      "modePrivateUse": "Tryb Użytkowania Prywatnego",
+      "modeActiveGuest": "Active Guest Mode",
+      "modeSublinePrivateUse": "Standardowa intensywność nadzoru.",
+      "modeSublineActiveGuest": "Zwiększona intensywność nadzoru związana z rotacją gości.",
+      "modeDescriptor": {
+        "private_use": "Brak regularnej rotacji gości.",
+        "active_guest": "Regularna rotacja gości / wynajem krótkoterminowy."
+      },
+      "groupParameters": "Parametry nieruchomości",
+      "groupParametersAnchor": "Parametry wpływają na zakres operacyjny i złożoność koordynacji.",
+      "sizeLabel": "Metraż nieruchomości (m²)",
+      "sizeHelper": "Powierzchnia całkowita lokalu (bez balkonów i tarasów).",
+      "bedroomsLabel": "Liczba niezależnych pokoi noclegowych",
+      "bedroomsHelper": "Pomieszczenia umożliwiające stały nocleg; wpływają na złożoność szczególnie w trybie gościnnym.",
+      "bedrooms": { "1": "1", "2": "2", "3": "3", "4p": "4+" },
+      "groupOptional": "Moduły operacyjne (rozliczane według użycia)",
+      "groupOptionalAnchor": "Nie zmieniają zakresu jurysdykcji. Dotyczą realizacji operacyjnej.",
+      "overlaysLabel": "Moduły operacyjne",
+      "overlays": {
+        "cleaning": "Koordynacja firmy sprzątającej",
+        "linen": "Zarządzanie pościelą i wymianą",
+        "guest_check": "Wsparcie przy check-in/out gości",
+        "key_holding": "Przechowywanie kluczy"
+      },
+      "calculate": "Ustal zakres",
+      "recalculate": "Ustal ponownie",
+      "paramsChangedCue": "Parametry zmienione. Ustal zakres ponownie.",
+      "compatibilityWarning": "Wybrany pakiet może nie obejmować pełnej koordynacji przy rotacji gości.",
+      "compatibilityNote": "Uwaga: Ten pakiet może być niewystarczający przy regularnej rotacji gości.",
+      "reasonWhatModeling": "Modelujesz jurysdykcję, intensywność użytkowania, parametry nieruchomości oraz opcjonalne moduły operacyjne.",
+      "reasonGuestModeChange": "Tryb gościnny zwiększa częstotliwość wizyt, obciążenie koordynacją i komunikację.",
+      "reasonSelectedStructure": "Wybrana struktura",
+      "reasonPriceAfterCalculate": "Zakres pojawi się po naciśnięciu Ustal zakres.",
+      "modeWhatPrivate1": "Standardowa częstotliwość wizyt.",
+      "modeWhatPrivate2": "Standardowa koordynacja operacyjna.",
+      "modeWhatGuest1": "Zwiększona częstotliwość wizyt kontrolnych.",
+      "modeWhatGuest2": "Większa koordynacja operacyjna.",
+      "modeWhatGuest3": "Większa komunikacja i obsługa zdarzeń.",
+      "overlayBilledByUse": "Rozliczane według użycia.",
+      "gateBefore": "Zakres pojawi się po ustaleniu parametrów.",
+      "gateAfter": "Zakres ustalony dla powyższych parametrów.",
+      "sqmValidationMin": "Minimalny metraż: 20 m².",
+      "sqmValidationMax": "W przypadku nieruchomości powyżej 1000 m² prosimy o kontakt bezpośredni.",
+      "resultTitle": "Wynik",
+      "rangeWordingHeading": "Zakres wynika z:",
+      "driverBullet1": "poziomu jurysdykcji",
+      "driverBullet2": "intensywności nadzoru",
+      "driverBullet3": "parametrów nieruchomości",
+      "driverBullet4": "wybranych modułów operacyjnych",
+      "driverBulletGuest": "rotacji gości",
+      "resultJurisdiction": "Jurysdykcja",
+      "resultMode": "Tryb",
+      "resultArea": "Metraż",
+      "resultBedrooms": "Sypialnie",
+      "resultModules": "Moduły",
+      "rangeTitle": "Szacunkowy zakres miesięczny",
+      "rangeSuffix": "/ miesiąc",
+      "disclaimer": "Szacunek ma charakter orientacyjny. Ostateczny zakres ustalany po ustrukturyzowanej weryfikacji.",
+      "ctaProceed": "Przejdź do ustrukturyzowanej weryfikacji"
+    },
+    "cta": {
+      "headline": "Zapytaj o porównanie pakietów",
+      "subheadline": "Skontaktuj się w sprawie dopasowania pakietu i parametrów.",
+      "primaryButton": "Złóż zapytanie o pakiet",
+      "secondaryButton": "Mam pytania"
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Kontakt - Sentinel",
+      "description": "Skontaktuj się z Sentinel w sprawie opieki nad nieruchomością w Torrevieja"
+    },
+    "intro": {
+      "headline": "Kontakt z Sentinel",
+      "description": "Aby móc skutecznie Państwu służyć, wymagamy podstawowych informacji o Państwa nieruchomości i oczekiwanych potrzebach usługowych przed naszą pierwszą rozmową. Prosimy o wypełnienie formularza kontaktowego poniżej lub skorzystanie z podanych bezpośrednich metod kontaktu.",
+      "responseCommitment": "Wszystkie zapytania są odpowiadane w ciągu 24-48 godzin. Jeśli Państwa nieruchomość znajduje się w naszym obszarze obsługi, a Państwa potrzeby są zgodne z naszym modelem pakietowym, skontaktujemy się z Państwem w celu omówienia kolejnych kroków."
+    },
+    "estimatorContext": {
+      "title": "Kontekst kalkulacji",
+      "package": "Pakiet",
+      "mode": "Tryb operacyjny",
+      "size": "Metraż",
+      "bedrooms": "Sypialnie",
+      "overlays": "Moduły dodatkowe",
+      "range": "Szacunkowy zakres miesięczny"
+    },
+    "directContact": {
+      "title": "KONTAKT BEZPOŚREDNI",
+      "subtitle": "W sprawie wstępnych zapytań i wdrożenia:",
+      "email": "Email",
+      "phone": "Telefon/WhatsApp",
+      "hoursTitle": "Godziny pracy:",
+      "mondayFriday": "Poniedziałek-Piątek",
+      "saturday": "Sobota",
+      "sundayHolidays": "Niedziela/Święta: Tylko email (odpowiedzi w ciągu 48 godzin)",
+      "prepareTitle": "Co przygotować przed kontaktem:",
+      "prepareItems": {
+        "location": "Lokalizacja Państwa nieruchomości (miasto lub adres)",
+        "propertyType": "Typ nieruchomości (apartament/dom/willa)",
+        "expectedPackage": "Oczekiwany pakiet (Podstawowy/Rozszerzony/Pełny) lub \"potrzebuję konsultacji\"",
+        "serviceNeeds": "Podstawowe potrzeby lub obawy dotyczące usług"
+      },
+      "emergencyTitle": "Kontakt awaryjny (tylko aktywni klienci):",
+      "emergencyText": "Kontakt awaryjny jest dostępny tylko dla aktywnych klientów Pakietu Pełnego (Czerwony). Jeśli są Państwo aktywnym klientem w sytuacji awaryjnej, proszę użyć dedykowanego numeru awaryjnego dostarczonego podczas wdrożenia."
+    },
+    "form": {
+      "title": "FORMULARZ KONTAKTOWY",
+      "requiredInfo": "Wymagane Informacje",
+      "yourDetails": "Państwa Dane:",
+      "fullName": "Imię i Nazwisko",
+      "emailAddress": "Adres Email",
+      "phoneNumber": "Numer Telefonu (z kodem kraju)",
+      "preferredContact": "Preferowana Metoda Kontaktu",
+      "preferredLanguage": "Preferowany Język",
+      "contactMethods": {
+        "email": "Email",
+        "whatsapp": "WhatsApp",
+        "phone": "Telefon"
+      },
+      "languages": {
+        "english": "Angielski",
+        "polish": "Polski"
+      },
+      "propertyInfo": "Informacje o Nieruchomości:",
+      "propertyLocation": "Lokalizacja Nieruchomości",
+      "propertyLocationPlaceholder": "Miasto lub pełny adres",
+      "propertyLocationHelp": "Obsługujemy nieruchomości w promieniu Torrevieja + 50-70km",
+      "propertyType": "Typ Nieruchomości",
+      "propertyTypes": {
+        "apartment": "Apartament",
+        "house": "Dom",
+        "villa": "Willa",
+        "other": "Inne (proszę określić)"
+      },
+      "propertyStatus": "Obecny Status Nieruchomości",
+      "propertyStatuses": {
+        "emptyMostYear": "Pusta przez większość roku",
+        "occasionalUse": "Okazjonalne użycie osobiste",
+        "shortTermRental": "Wynajem krótkoterminowy",
+        "other": "Inne (proszę określić)"
+      },
+      "serviceRequirements": "Wymagania Usługowe:",
+      "expectedPackage": "Oczekiwany Pakiet",
+      "packages": {
+        "green": "Pakiet Podstawowy (Zielony)",
+        "orange": "Pakiet Rozszerzony (Pomarańczowy)",
+        "red": "Pakiet Pełny (Czerwony)",
+        "consultation": "Nie jestem pewien - potrzebuję konsultacji"
+      },
+      "accessFrequency": "Oczekiwana Częstotliwość Dostępu (jeśli Rozszerzony lub Pełny)",
+      "accessFrequencies": {
+        "oneToTwo": "1-2 razy w miesiącu",
+        "threeToFive": "3-5 razy w miesiącu",
+        "moreThanFive": "Więcej niż 5 razy w miesiącu",
+        "seasonal": "Różnie w zależności od sezonu"
+      },
+      "primaryNeeds": "Główne Potrzeby Usługowe",
+      "primaryNeedsPlaceholder": "Krótki opis czego Państwo potrzebują od Sentinel (opcjonalne)",
+      "acknowledgment": "Rozumiem, że Sentinel działa w oparciu o model usługi pakietowej. Usługi nie zawarte w wybranym pakiecie są organizowane i wyceniane osobno.",
+      "submitButton": "Wyślij Zapytanie",
+      "requiredField": "Pole wymagane"
+    },
+    "confirmation": {
+      "title": "ZAPYTANIE WYSŁANE",
+      "thankYou": "Dziękujemy za Państwa zapytanie.",
+      "received": "Państwa żądanie zostało otrzymane i zostanie przejrzane w ciągu 24-48 godzin.",
+      "nextStepsTitle": "Kolejne kroki:",
+      "nextSteps": {
+        "step1": "Otrzymają Państwo automatyczny email potwierdzający na adres {email}",
+        "step2": "Sentinel przejrzy lokalizację Państwa nieruchomości i wymagania usługowe",
+        "step3": "Jeśli Państwa nieruchomość znajduje się w naszym obszarze obsługi, a Państwa potrzeby są zgodne z naszym modelem usługi, skontaktujemy się z Państwem preferowaną metodą w celu omówienia wdrożenia"
+      },
+      "outsideAreaTitle": "Co jeśli moja nieruchomość jest poza obszarem obsługi?",
+      "outsideAreaText": "Zostanie Państwo powiadomieni emailem. Nie możemy obsługiwać nieruchomości poza promieniem Torrevieja + 50-70km.",
+      "noResponseTitle": "Co jeśli nie otrzymam odpowiedzi?",
+      "noResponseText": "Proszę sprawdzić folder ze spamem. Jeśli nie otrzymają Państwo żadnej komunikacji w ciągu 48 godzin, proszę skontaktować się bezpośrednio pod adresem {email} lub {phone}.",
+      "referenceNumber": "Numer referencyjny:",
+      "returnToHome": "Powrót do strony głównej"
+    },
+    "activeClients": {
+      "title": "AKTYWNI KLIENCI",
+      "subtitle": "Dla aktywnych klientów usług:",
+      "intro": "Jeśli są Państwo istniejącym klientem Sentinel, proszę użyć dedykowanych kanałów kontaktowych dostarczonych podczas wdrożenia:",
+      "channels": {
+        "operational": "Żądania operacyjne: Główna linia WhatsApp/telefon (dostarczona w dokumentacji wdrożeniowej)",
+        "formal": "Zapytania formalne: Email: {email}",
+        "emergency": "Nagłe wypadki (tylko Pakiet Pełny / Czerwony): Numer awaryjny (dostarczony w dokumentacji wdrożeniowej)"
+      },
+      "doNotUseTitle": "Nie używaj tego formularza kontaktowego do:",
+      "doNotUseItems": {
+        "accessRequests": "Żądań zdarzeń dostępu",
+        "emergencies": "Sytuacji awaryjnych",
+        "routineQuestions": "Rutynowych pytań o usługi"
+      },
+      "fasterResponse": "Używaj dedykowanych kanałów komunikacji klienta dla szybszej odpowiedzi."
+    },
+    "serviceArea": {
+      "title": "OBSZAR OBSŁUGI",
+      "description": "Sentinel obsługuje nieruchomości w Torrevieja i w przybliżonym promieniu 50-70km.",
+      "mapPlaceholder": "[Mapa Obszaru Obsługi - Statyczny Placeholder Obrazu]",
+      "mapNote": "Mapa pokazująca Torrevieja + promień 50-70km zostanie tutaj dodana",
+      "examplesTitle": "Pokryte obszary obejmują (przykłady)",
+      "examplesText": "Torrevieja, Orihuela Costa, Pilar de la Horadada, San Miguel de Salinas oraz inne miasta w promieniu.",
+      "coveredTitle": "Pokryte obszary obejmują (przykłady):",
+      "coveredAreas": {
+        "torrevieja": "Torrevieja",
+        "orihuelaCosta": "Orihuela Costa",
+        "pilarHoradada": "Pilar de la Horadada",
+        "sanMiguel": "San Miguel de Salinas"
+      },
+      "notCoveredTitle": "Nie pokryte:",
+      "notCoveredText": "Nieruchomości poza tym promieniem nie mogą być obsługiwane.",
+      "detailLink": "Szczegółowe informacje o obszarze obsługi można znaleźć na naszej stronie Obszar Obsługi."
+    },
+    "cannotHelp": {
+      "title": "USŁUGI, KTÓRYCH NIE ŚWIADCZYMY",
+      "intro": "Sentinel nie może pomóc w:",
+      "items": {
+        "outsideArea": "Nieruchomościach poza obszarem obsługi Torrevieja + 50-70km",
+        "oneTime": "Usługach jednorazowych lub ad-hoc bez pakietu miesięcznego",
+        "fullPM": "Pełnym zarządzaniu nieruchomością lub usługach agencji wynajmu (dostępne tylko jako dodatek do pakietu)",
+        "concierge": "Usługach concierge 24/7 lub nieograniczonej pomocy osobistej",
+        "construction": "Zarządzaniu projektem budowlanym/remontowym jako generalny wykonawca"
+      },
+      "notAppropriate": "Jeśli Państwa potrzeby należą do tych kategorii, Sentinel nie jest odpowiednią usługą.",
+      "proceedText": "W przypadku pakietowej opieki nad nieruchomością, kontroli, koordynacji dostępu i lokalnej reprezentacji w naszym obszarze obsługi, proszę przejść do formularza kontaktowego powyżej."
+    }
+  },
+  "howItWorks": {
+    "meta": {
+      "title": "Jak to Działa - Sentinel",
+      "description": "Kompletny proces wdrożenia od pierwszego kontaktu do aktywnej usługi"
+    },
+    "intro": {
+      "headline": "Jak Działa Usługa Sentinel",
+      "description": "Sentinel stosuje ustrukturyzowany proces wdrożenia w celu zapewnienia jasnego zrozumienia, właściwej dokumentacji i gotowości operacyjnej przed aktywacją usługi. Ta strona przedstawia każdy krok od pierwszego kontaktu do aktywnej usługi. Usługa nie jest aktywowana do czasu zakończenia wdrożenia.",
+      "processOverview": "Proces składa się z: Kwalifikacja → Wybór Pakietu → Dokumentacja Nieruchomości → Kontrola Wstępna → Aktywacja Usługi. Czas trwania zależy od dostępności nieruchomości i kompletności dokumentacji."
+    },
+    "sampleReport": {
+      "label": "Przykładowy raport kontroli wstępnej (przykład zanonimizowany)",
+      "headerBlock": "RAPORT KONTROLI WSTĘPNEJ NIERUCHOMOŚCI\n\nID raportu: GCB-INS-2026-001 (przykład)\nTyp nieruchomości: Apartament\nLokalizacja: Torrevieja (zanonimizowane)\nData kontroli: styczeń 2026\nInspektor: Sentinel\nPakiet usługi: Pełny (Czerwony)",
+      "scopeConfirmation": "Kontrola wykonana w ramach wdrożenia (onboarding).\nCel: ustalenie stanu bazowego nieruchomości przed aktywacją usługi.\nRaport odzwierciedla stan zaobserwowany w dniu kontroli.",
+      "status": {
+        "ok": "OK",
+        "observation": "Obserwacja",
+        "issue": "Problem"
+      },
+      "checklist": {
+        "title": "Lista kontrolna",
+        "columns": {
+          "item": "Element",
+          "status": "Status",
+          "notes": "Uwagi"
+        },
+        "items": {
+          "accessSecurity": "Dostęp i zabezpieczenia",
+          "doorsWindows": "Drzwi i okna",
+          "waterSystemVisual": "Instalacja wodna (wizualnie)",
+          "electricalVisual": "Instalacja elektryczna (wizualnie)",
+          "boilerHvacVisual": "Bojler / HVAC (wizualnie)",
+          "interiorCondition": "Stan wnętrza",
+          "signsOfMoisture": "Oznaki wilgoci",
+          "odorsVentilation": "Zapachy / wentylacja"
+        },
+        "notes": {
+          "waterSystemObservation": "Niewielka korozja na zaworze pod zlewem kuchennym. Brak aktywnego wycieku w momencie kontroli."
+        }
+      },
+      "photos": {
+        "title": "Odniesienia do zdjęć (tylko etykiety)",
+        "items": {
+          "ref01": "Ref. foto 01 – Główny zawór wody",
+          "ref02": "Ref. foto 02 – Jednostka bojlera",
+          "ref03": "Ref. foto 03 – Sufit łazienki (kontrola wilgoci)"
+        }
+      },
+      "summary": {
+        "title": "Podsumowanie i rekomendacje",
+        "body": "Podsumowanie:\nW momencie kontroli nie stwierdzono krytycznych problemów.\n\nRekomendacje:\nMonitorować zawór kuchenny w pierwszym miesiącu usługi.\nBrak potrzeby działań natychmiastowych."
+      },
+      "acknowledgement": "Wymagane potwierdzenie klienta w celu zatwierdzenia stanu bazowego.\nTen raport stanowi punkt odniesienia dla przyszłych kontroli."
+    },
+    "photoGrid": {
+      "label": "Przykład: Dokumentacja wizyty na miejscu (zanonimizowana)",
+      "placeholderLabel": "Placeholder zdjęcia {number}",
+      "ownerProvidedNote": "Zdjęcie dostarczone przez właściciela",
+      "captions": {
+        "waterShutoff": "Główny zawór wody — kontrola wizualna",
+        "boilerUnit": "Bojler — weryfikacja stanu",
+        "electricalPanel": "Skrzynka elektryczna — kontrola dostępu",
+        "frontDoorLock": "Zamek drzwi wejściowych — kontrola dostępu"
+      }
+    },
+    "step0": {
+      "title": "KROK 0: KWALIFIKACJA WSTĘPNA",
+      "subtitle": "Przed rozpoczęciem formalnego wdrożenia Sentinel weryfikuje:",
+      "geographicTitle": "Kwalifikacja geograficzna:",
+      "geographicItems": {
+        "radius": "Nieruchomość musi znajdować się w promieniu Torrevieja + 50-70km",
+        "outside": "Nieruchomości poza tym obszarem nie mogą być obsługiwane"
+      },
+      "propertyTypeTitle": "Typ nieruchomości:",
+      "propertyTypeItems": {
+        "types": "Apartament, dom lub willa",
+        "access": "Możliwość dostępu (dostęp do budynku, dostępność kluczy)"
+      },
+      "usagePatternTitle": "Wzorzec użytkowania:",
+      "usagePatternItems": {
+        "usage": "Pusta nieruchomość, okazjonalne użycie lub koordynacja wynajmu",
+        "frequency": "Oczekiwana częstotliwość dostępu i potrzeby usługowe"
+      },
+      "expectationsTitle": "Oczekiwania klienta:",
+      "expectationsItems": {
+        "understanding": "Zrozumienie modelu pakietowego",
+        "acceptance": "Akceptacja, że usługi poza pakietem wymagają osobnego uzgodnienia",
+        "procedures": "Gotowość przestrzegania udokumentowanych procedur"
+      },
+      "disqualifyingTitle": "Czynniki dyskwalifikujące:",
+      "disqualifyingIntro": "Jeśli którykolwiek z poniższych jest obecny, Sentinel zastrzega sobie prawo do odmowy usługi:",
+      "disqualifyingItems": {
+        "outsideArea": "Nieruchomość poza obszarem obsługi",
+        "unlimitedExpectation": "Oczekiwanie nieograniczonej/concierge usługi",
+        "boundaries": "Niechęć do akceptacji granic pakietu",
+        "pressure": "Nacisk na wyjątki przed rozpoczęciem usługi"
+      },
+      "outcomeTitle": "Wynik:",
+      "outcomeText": "Jeśli kwalifikacja zakończy się sukcesem, przejdź do Kroku 1. Jeśli nie jest odpowiednie, Sentinel odmówi lub zasugeruje alternatywy."
+    },
+    "step1": {
+      "title": "KROK 1: ZBIERANIE DANYCH KLIENTA I NIERUCHOMOŚCI",
+      "subtitle": "Sentinel zbiera następujące informacje przed pierwszą wizytą:",
+      "ownerInfoTitle": "Informacje o właścicielu:",
+      "ownerInfoItems": {
+        "fullName": "Imię i nazwisko",
+        "permanentAddress": "Stały adres",
+        "phone": "Numer telefonu",
+        "email": "Adres email",
+        "language": "Preferowany język (Polski / Angielski)"
+      },
+      "emergencyContactTitle": "Kontakt awaryjny:",
+      "emergencyContactItems": {
+        "alternative": "Alternatywna osoba kontaktowa (opcjonalna, ale zalecana)",
+        "unreachable": "Metoda kontaktu w przypadku niedostępności właściciela"
+      },
+      "propertyInfoTitle": "Informacje o nieruchomości:",
+      "propertyInfoItems": {
+        "address": "Pełny adres",
+        "unit": "Numer apartamentu/jednostki, piętro, kody dostępu do budynku",
+        "size": "Przybliżony rozmiar i liczba pokoi",
+        "type": "Typ nieruchomości (apartament/dom/willa)"
+      },
+      "systemsTitle": "Instalacje i systemy:",
+      "systemsItems": {
+        "water": "System wodny (lokalizacja głównego zaworu odcinającego)",
+        "electrical": "System elektryczny (lokalizacja skrzynki bezpiecznikowej, dostępność licznika)",
+        "boiler": "Typ i lokalizacja kotła",
+        "climate": "Systemy klimatyzacyjne (jeśli dotyczy)",
+        "alarm": "System alarmowy lub zabezpieczający (kody, procedura dezaktywacji)"
+      },
+      "keysTitle": "Klucze:",
+      "keysItems": {
+        "minimum": "Wymagane minimum 2 komplety kluczy",
+        "types": "Typy kluczy: wejście, brama budynku, skrzynka pocztowa, alarm, inne",
+        "handover": "Metoda przekazania kluczy"
+      },
+      "incompleteDataTitle": "Niekompletne dane:",
+      "incompleteDataText": "Jeśli wymagane informacje nie zostaną dostarczone, wdrożenie nie może przejść do fazy kontroli."
+    },
+    "step2": {
+      "title": "KROK 2: WYBÓR PAKIETU I POTWIERDZENIE WARUNKÓW",
+      "subtitle": "Klient wybiera początkowy pakiet na podstawie oczekiwanych potrzeb:",
+      "packages": {
+        "green": "Podstawowy (Zielony)",
+        "orange": "Rozszerzony (Pomarańczowy)",
+        "red": "Pełny (Czerwony)"
+      },
+      "confirmationsTitle": "Wymagane potwierdzenia:",
+      "confirmationsIntro": "Klient musi potwierdzić zrozumienie i akceptację:",
+      "confirmationsItems": {
+        "scope": "Zakres pakietu (usługi wliczone)",
+        "limitations": "Ograniczenia pakietu (usługi wyłączone)",
+        "sla": "Umowa poziomu usług (SLA) dla wybranego pakietu",
+        "authority": "Limity uprawnień decyzyjnych (jeśli dotyczy pakietu)",
+        "pricing": "Cennik dla wybranego pakietu i usług dodatkowych (jeśli dotyczy)"
+      },
+      "redPackageTitle": "Specjalnie dla Pakietu Pełnego (Czerwony):",
+      "redPackageText": "Klient musi określić limit uprawnień decyzyjnych:",
+      "redPackageLimits": {
+        "standard": "Standard: 300€ na pojedynczą decyzję",
+        "optional": "Opcjonalnie: 500€ na pojedynczą decyzję"
+      },
+      "documentationTitle": "Dokumentacja:",
+      "documentationText": "Wybór pakietu i warunki są dokumentowane na piśmie (potwierdzenie emailem lub podpisana umowa).",
+      "changesTitle": "Zmiany po aktywacji:",
+      "changesText": "Pakiet może być zmieniony w dowolnym momencie po wzajemnej zgodzie i zaktualizowanej dokumentacji."
+    },
+    "step3": {
+      "title": "KROK 3: KONTROLA WSTĘPNA (WIZYTA ZERO)",
+      "purposeTitle": "Cel:",
+      "purposeText": "Kontrola wstępna ustala stan referencyjny nieruchomości i identyfikuje wszelkie istniejące problemy przed rozpoczęciem regularnej usługi.",
+      "scopeTitle": "Zakres kontroli:",
+      "scopeIntro": "Sentinel przeprowadza kompletną kontrolę nieruchomości obejmującą:",
+      "scopeItems": {
+        "visual": "Pełną wzrokową kontrolę wszystkich pomieszczeń",
+        "doors": "Drzwi, okna, zamki i systemy zamykania",
+        "water": "System wodny i hydraulikę (kontrola wzrokowa, wskaźniki wycieków)",
+        "electrical": "System elektryczny i urządzenia",
+        "boiler": "Kocioł i systemy klimatyzacyjne",
+        "condition": "Obecny stan podłóg, ścian, wskaźników wilgoci",
+        "damage": "Identyfikację wszelkich istniejących uszkodzeń lub problemów"
+      },
+      "documentationTitle": "Dokumentacja:",
+      "documentationItems": {
+        "photos": "Kompleksową dokumentację fotograficzną stanu nieruchomości",
+        "meters": "Odczyty liczników (jeśli dostępne)",
+        "notes": "Notatki o wszelkich istniejących problemach lub obawach",
+        "recommendations": "Rekomendacje (jeśli dotyczy)"
+      },
+      "reportTitle": "Raport wstępny:",
+      "reportIntro": "Klient otrzymuje:",
+      "reportItems": {
+        "condition": "Pisemny raport o stanie nieruchomości \"jak zastano\"",
+        "photos": "Dokumentację fotograficzną",
+        "concerns": "Listę zidentyfikowanych problemów (jeśli dotyczy)",
+        "immediate": "Rekomendacje dla natychmiastowej uwagi (jeśli dotyczy)"
+      },
+      "approvalTitle": "Zatwierdzenie klienta:",
+      "approvalText": "Klient przegląda i potwierdza raport wstępny. Raport ten staje się bazowym punktem odniesienia dla wszystkich przyszłych kontroli.",
+      "timelineTitle": "Czas trwania:",
+      "timelineText": "Kontrola wstępna jest planowana na podstawie dostępności nieruchomości i przekazania kluczy. Raport dostarczany w ciągu 48 godzin od kontroli."
+    },
+    "step4": {
+      "title": "KROK 4: KONFIGURACJA OPERACYJNA",
+      "scheduleTitle": "Parametry harmonogramu:",
+      "scheduleIntro": "Klient i Sentinel uzgadniają:",
+      "scheduleItems": {
+        "preferred": "Preferowane dni/godziny wizyt (w ramach okien operacyjnych)",
+        "frequency": "Częstotliwość wizyt według pakietu",
+        "seasonal": "Dostosowania sezonowe (jeśli dotyczy)"
+      },
+      "emergencyTitle": "Procedury awaryjne:",
+      "emergencyIntro": "Dla pakietów zawierających przepisy awaryjne:",
+      "emergencyItems": {
+        "definition": "Definicja tego, co stanowi nagły wypadek",
+        "priority": "Priorytet kontaktu (główny/dodatkowy)",
+        "protocol": "Protokół działania, jeśli klient jest nieosiągalny",
+        "limits": "Potwierdzenie limitów decyzji finansowych"
+      },
+      "specialTitle": "Specjalne wymagania:",
+      "specialIntro": "Dokumentacja wszelkich specyficznych potrzeb nieruchomości:",
+      "specialItems": {
+        "plants": "Harmonogram i ilość podlewania roślin",
+        "pets": "Zwierzęta domowe (jeśli wymagana jest tymczasowa obsługa)",
+        "attention": "Elementy wymagające specjalnej uwagi",
+        "seasonal": "Rozważania sezonowe"
+      },
+      "accessTitle": "Procedury dostępu:",
+      "accessIntro": "Dla pakietów Rozszerzony i Pełny:",
+      "accessItems": {
+        "contacts": "Zatwierdzone kontakty osób trzecich (sprzątaczki, technicy)",
+        "scheduling": "Proces planowania zdarzeń dostępu",
+        "reporting": "Raportowanie po zdarzeniach dostępu"
+      },
+      "communicationTitle": "Protokół komunikacji:",
+      "communicationItems": {
+        "primary": "Główna metoda kontaktu (WhatsApp/telefon/email)",
+        "response": "Oczekiwane czasy reakcji na podstawie SLA pakietu",
+        "reporting": "Format i częstotliwość raportowania"
+      },
+      "keyHandoverTitle": "Przekazanie kluczy:",
+      "keyHandoverItems": {
+        "transfer": "Fizyczne przekazanie minimum 2 kompletów kluczy",
+        "inventory": "Dokumentacja inwentaryzacji kluczy",
+        "storage": "Potwierdzenie bezpiecznego przechowywania"
+      },
+      "checklistTitle": "Lista kontrolna końcowa:",
+      "checklistIntro": "Aktywacja usługi wymaga:",
+      "checklistItems": {
+        "data": "Zebranie wszystkich danych klienta/nieruchomości",
+        "package": "Potwierdzenie pakietu i warunków",
+        "inspection": "Ukończenie i zatwierdzenie kontroli wstępnej",
+        "parameters": "Uzgodnienie parametrów operacyjnych",
+        "keys": "Przekazanie kluczy"
+      }
+    },
+    "step5": {
+      "title": "KROK 5: AKTYWACJA USŁUGI",
+      "confirmationTitle": "Potwierdzenie aktywacji:",
+      "confirmationText": "Po ukończeniu wszystkich kroków wdrożenia Sentinel potwierdza aktywację usługi na piśmie (email).",
+      "fromDateTitle": "Od daty aktywacji:",
+      "fromDateItems": {
+        "sla": "SLA pakietu ma zastosowanie do wszystkich żądań",
+        "schedule": "Rozpoczyna się regularny harmonogram wizyt",
+        "emergency": "Przepisy awaryjne (jeśli pakiet zawiera) są aktywne",
+        "terms": "Wszystkie warunki pakietu są w mocy"
+      },
+      "firstVisitTitle": "Pierwsza regularna wizyta:",
+      "firstVisitText": "Zaplanowana w uzgodnionych ramach czasowych po aktywacji. To jest pierwsza wizyta w ramach regularnej usługi (nie kontrola wstępna).",
+      "ongoingTitle": "Operacje bieżące:",
+      "ongoingItems": {
+        "visits": "Wizyty przeprowadzane według harmonogramu pakietu",
+        "reports": "Raporty fotograficzne dostarczane po każdej wizycie",
+        "access": "Koordynacja dostępu (jeśli dotyczy pakietu)",
+        "emergency": "Reakcja awaryjna (jeśli dotyczy pakietu)"
+      },
+      "changesTitle": "Zmiany po aktywacji:",
+      "changesItems": {
+        "package": "Zmiany pakietu: dostępne na żądanie i po wzajemnej zgodzie",
+        "additions": "Dodatki do zakresu: wymagają osobnego uzgodnienia i cennika",
+        "temporary": "Tymczasowe dostosowania usługi: omawiane indywidualnie"
+      }
+    },
+    "ongoing": {
+      "title": "OPERACJE BIEŻĄCEJ USŁUGI",
+      "visitsTitle": "Regularne wizyty:",
+      "visitsItems": {
+        "schedule": "Przeprowadzane według harmonogramu pakietu",
+        "windows": "W uzgodnionych oknach czasowych (nie ustalone terminy)",
+        "documented": "Udokumentowane fotograficznie",
+        "reported": "Raportowane w ciągu 24-48 godzin"
+      },
+      "reportsTitle": "Raporty z wizyt zawierają:",
+      "reportsItems": {
+        "datetime": "Data i godzina wizyty",
+        "checklist": "Potwierdzenie ukończenia listy kontrolnej",
+        "photos": "Zdjęcia kluczowych obszarów",
+        "observations": "Wszelkie obserwacje lub obawy",
+        "meters": "Odczyty liczników (jeśli dotyczy)",
+        "actions": "Podjęte działania (jeśli dotyczy)"
+      },
+      "accessTitle": "Koordynacja dostępu (Rozszerzony/Pełny):",
+      "accessItems": {
+        "requested": "Żądanie przez główną metodę kontaktu",
+        "confirmation": "Wymagane pisemne potwierdzenie",
+        "scheduled": "Planowane w ramach czasowych SLA",
+        "report": "Krótki raport po każdym zdarzeniu dostępu"
+      },
+      "emergencyTitle": "Reakcja awaryjna (Pełny):",
+      "emergencyItems": {
+        "contact": "Próba kontaktu z klientem natychmiast",
+        "assessment": "Ocena i decyzja w ramach SLA",
+        "action": "Działanie podjęte zgodnie z uprawnieniami pakietu",
+        "documentation": "Szczegółowa dokumentacja i natychmiastowy raport"
+      },
+      "communicationTitle": "Częstotliwość komunikacji:",
+      "communicationItems": {
+        "regular": "Regularne raporty: po każdej wizycie",
+        "adhoc": "Żądania ad-hoc: odpowiadane zgodnie z SLA",
+        "emergency": "Sytuacje awaryjne: natychmiastowa próba kontaktu",
+        "monthly": "Podsumowanie miesięczne: opcjonalne, na żądanie"
+      },
+      "outsideScopeTitle": "Żądania poza zakresem pakietu:",
+      "outsideScopeItems": {
+        "discussed": "Omawiane i wyceniane osobno",
+        "approval": "Wymagają pisemnej zgody przed wykonaniem",
+        "billed": "Rozliczane niezależnie od pakietu"
+      }
+    },
+    "changes": {
+      "title": "ZMIANY USŁUGI I ROZWIĄZANIE",
+      "packageChangesTitle": "Zmiany pakietu:",
+      "packageChangesIntro": "Klient może zażądać podwyższenia lub obniżenia pakietu w dowolnym momencie.",
+      "packageChangesItems": {
+        "request": "Żądanie złożone na piśmie",
+        "terms": "Potwierdzone nowe warunki",
+        "effective": "Zmiana obowiązująca od uzgodnionej daty",
+        "retroactive": "Brak dostosowań wstecznych"
+      },
+      "additionsTitle": "Dodatki do zakresu:",
+      "additionsIntro": "Dodatkowe usługi lub moduły:",
+      "additionsItems": {
+        "quoted": "Wyceniane osobno",
+        "added": "Dodawane do istniejącego pakietu po uzgodnieniu",
+        "noAlter": "Nie zmieniają podstawowych warunków pakietu"
+      },
+      "temporaryTitle": "Dostosowania tymczasowe:",
+      "temporaryIntro": "Sezonowe lub tymczasowe modyfikacje usługi:",
+      "temporaryItems": {
+        "caseByCase": "Omawiane indywidualnie",
+        "documented": "Udokumentowane na piśmie",
+        "return": "Określony powrót do standardowych warunków"
+      },
+      "clientTerminationTitle": "Rozwiązanie usługi przez klienta:",
+      "clientTerminationItems": {
+        "effective": "Rozwiązanie staje się skuteczne z końcem obecnego okresu rozliczeniowego, chyba że uzgodniono inaczej",
+        "finalVisit": "Przeprowadzona wizyta końcowa (opcjonalna)",
+        "keysReturned": "Zwrot kluczy",
+        "finalReport": "Dostarczony raport końcowy (na żądanie)"
+      },
+      "guardianTerminationTitle": "Rozwiązanie usługi przez Sentinel:",
+      "guardianTerminationIntro": "Sentinel zastrzega sobie prawo do rozwiązania usługi w przypadku:",
+      "guardianTerminationItems": {
+        "violations": "Powtarzających się naruszeń zakresu lub nadużyć",
+        "nonPayment": "Braku płatności",
+        "impossibility": "Niemożności operacyjnej",
+        "behavior": "Zachowania klienta uniemożliwiającego bezpieczną/skuteczną usługę"
+      },
+      "processTitle": "Proces rozwiązania:",
+      "processItems": {
+        "notice": "Dostarczone pisemne zawiadomienie",
+        "settled": "Rozliczone zaległe sprawy",
+        "keys": "Zwrot kluczy",
+        "documentation": "Wymieniona końcowa dokumentacja"
+      }
+    },
+    "timeline": {
+      "title": "TYPOWY HARMONOGRAM WDROŻENIA",
+      "subtitle": "Przybliżone ramy czasowe:",
+      "steps": {
+        "step0": {
+          "title": "Krok 0 - Kwalifikacja: 1-2 dni",
+          "description": "Zapytanie wstępne do decyzji kwalifikacyjnej"
+        },
+        "step1": {
+          "title": "Krok 1 - Zbieranie Danych: 2-5 dni",
+          "description": "Zależy od szybkości dostarczania informacji przez klienta"
+        },
+        "step2": {
+          "title": "Krok 2 - Wybór Pakietu: 1-2 dni",
+          "description": "Potwierdzenie i dokumentacja"
+        },
+        "step3": {
+          "title": "Krok 3 - Kontrola Wstępna: Planowana w zależności od dostępności",
+          "description": "Planowanie wizyty + dostarczenie raportu: 3-7 dni"
+        },
+        "step4": {
+          "title": "Krok 4 - Konfiguracja Operacyjna: 1-3 dni",
+          "description": "Końcowe uzgodnienia i przekazanie kluczy"
+        },
+        "step5": {
+          "title": "Krok 5 - Aktywacja: Natychmiast po ukończeniu",
+          "description": "Pierwsza regularna wizyta: w ramach harmonogramu pakietu"
+        }
+      },
+      "totalTitle": "Całkowity typowy harmonogram:",
+      "totalText": "1-3 tygodnie od pierwszego kontaktu do aktywacji",
+      "delaysTitle": "Opóźnienia występują, gdy:",
+      "delaysItems": {
+        "incomplete": "Informacje klienta są niekompletne",
+        "access": "Dostęp do nieruchomości jest ograniczony",
+        "keys": "Klucze nie są jeszcze dostępne",
+        "approval": "Oczekuje się na zatwierdzenie raportu wstępnego przez klienta"
+      },
+      "fasterTitle": "Szybsza aktywacja możliwa, jeśli:",
+      "fasterItems": {
+        "immediate": "Wszystkie informacje dostarczone natychmiast",
+        "available": "Nieruchomość dostępna do natychmiastowej kontroli",
+        "ready": "Klucze gotowe do przekazania",
+        "responsive": "Klient reaguje szybko na zatwierdzenia"
+      }
+    },
+    "faq": {
+      "title": "FAQ PROCESU",
+      "questions": {
+        "q1": {
+          "question": "Czy mogę rozpocząć natychmiast bez pełnego wdrożenia?",
+          "answer": "Nie. Usługa jest aktywowana tylko po kompletnym wdrożeniu. To chroni obie strony."
+        },
+        "q2": {
+          "question": "Co jeśli nie mam jeszcze wszystkich informacji?",
+          "answer": "Wdrożenie zostanie wstrzymane do czasu dostarczenia wymaganych informacji. Usługa nie może rozpocząć się z niekompletnymi danymi."
+        },
+        "q3": {
+          "question": "Czy mogę zmienić mój pakiet podczas wdrożenia?",
+          "answer": "Tak, przed aktywacją. Po aktywacji zmiany pakietu wymagają nowej umowy."
+        },
+        "q4": {
+          "question": "Co jeśli kontrola wstępna ujawni problemy?",
+          "answer": "Problemy są dokumentowane w raporcie wstępnym. Klient decyduje, czy rozwiązać je przed rozpoczęciem usługi, czy zaakceptować nieruchomość \"jak jest\" z udokumentowaną bazą."
+        },
+        "q5": {
+          "question": "Czy płacę przed czy po aktywacji?",
+          "answer": "Warunki płatności są określone podczas potwierdzania pakietu (Krok 2). Aktywacja usługi może wymagać płatności wstępnej lub depozytu zgodnie z uzgodnionymi warunkami."
+        },
+        "q6": {
+          "question": "Czy ktoś inny może być obecny podczas kontroli wstępnej?",
+          "answer": "Tak, jeśli uzgodniono z wyprzedzeniem. Nie jest wymagane."
+        },
+        "q7": {
+          "question": "Co jeśli muszę opóźnić aktywację po wdrożeniu?",
+          "answer": "Omów z Sentinel. Jeśli aktywacja zostanie znacznie opóźniona po wdrożeniu, może być wymagane ponowne sprawdzenie przed rozpoczęciem usługi w celu potwierdzenia, że stan bazowy pozostaje dokładny."
+        }
+      }
+    },
+    "cta": {
+      "title": "GOTOWY DO ROZPOCZĘCIA?",
+      "subtitle": "Aby rozpocząć wdrożenie:",
+      "steps": {
+        "step1": "Zweryfikuj, czy Twoja nieruchomość znajduje się w obszarze obsługi (Torrevieja + 50-70km)",
+        "step2": "Przejrzyj opcje pakietów na stronie Usługi",
+        "step3": "Skontaktuj się z Sentinel podając:",
+        "step3Items": {
+          "location": "Lokalizację nieruchomości",
+          "package": "Oczekiwany wybór pakietu",
+          "availability": "Dostępność do kontroli wstępnej"
+        }
+      },
+      "contactTitle": "Metody kontaktu:",
+      "contactItems": {
+        "phone": "Telefon/WhatsApp: {phone}",
+        "email": "Email: {email}",
+        "form": "Formularz kontaktowy: {link}"
+      },
+      "nextTitle": "Co dzieje się dalej:",
+      "nextIntro": "Sentinel odpowie w ciągu 24-48 godzin aby:",
+      "nextItems": {
+        "confirm": "Potwierdzić kwalifikację geograficzną",
+        "request": "Zażądać wymaganych informacji",
+        "schedule": "Zaplanować wstępną dyskusję",
+        "begin": "Rozpocząć formalny proces wdrożenia"
+      }
+    }
+  },
+  "faq": {
+    "meta": {
+      "title": "Najczęściej Zadawane Pytania - Sentinel",
+      "description": "Polityki operacyjne, granice pakietów i zasady usług"
+    },
+    "pageTitle": "Najczęściej Zadawane Pytania",
+    "policyNotice": {
+      "title": "UWAGA DOTYCZĄCA POLITYKI",
+      "intro": "Sentinel działa w oparciu o udokumentowane polityki i określony zakres.",
+      "rules": {
+        "rule1": "Jeśli usługa nie jest wyraźnie wymieniona w Państwa pakiecie, nie jest wliczona.",
+        "rule2": "Sentinel nie dokonuje wyjątków, które są sprzeczne z udokumentowaną polityką.",
+        "rule3": "Odpowiedzi poniżej odzwierciedlają zasady operacyjne, a nie negocjowalne preferencje."
+      },
+      "footer": "W przypadku pytań, na które nie ma tutaj odpowiedzi, proszę skontaktować się bezpośrednio z Sentinel."
+    },
+    "search": {
+      "placeholder": "Szukaj polityk i pytań..."
+    },
+    "sectionsLabel": "Sekcje",
+    "noResults": "Żadne pytanie nie pasuje do wyszukiwania.",
+    "sections": {
+      "serviceModel": {
+        "title": "Model Usługi i Pakiety",
+        "description": "Pytania dotyczące struktury usług Sentinel, granic pakietów i tego, co jest/nie jest wliczone.",
+        "questions": {
+          "q1": {
+            "question": "Czym dokładnie jest Sentinel?",
+            "answer": "Sentinel to lokalna usługa reprezentacji nieruchomości działająca na podstawie umów pakietowych z określonym zakresem. Usługi obejmują fizyczną obecność, kontrolę, koordynację i raportowanie w ramach wyraźnie określonych granic pakietów—nie usługi concierge ani nieograniczoną pomoc. Przejrzyj stronę Usługi w celu uzyskania pełnych specyfikacji pakietów; jeśli Państwa potrzeby nie są zgodne ze strukturą pakietu, Sentinel może nie być odpowiedni."
+          },
+          "q2": {
+            "question": "Czy mogę zamówić pojedynczą wizytę bez pakietu?",
+            "answer": "Nie. Sentinel działa wyłącznie na podstawie pakietu miesięcznego w celu zapewnienia ciągłości usługi i odpowiedzialności operacyjnej. Jeśli potrzebują Państwo jednorazowej pomocy, proszę skontaktować się z lokalnym wykonawcą lub agencją; Sentinel może zaangażować się dopiero po wdrożeniu w ramach pakietu miesięcznego."
+          },
+          "q3": {
+            "question": "Co jeśli potrzebuję czegoś, co nie jest w moim pakiecie?",
+            "answer": "Usługi poza Państwa pakietem są wyceniane osobno i wymagają pisemnej zgody przed wykonaniem. Sentinel nie wykonuje \"małych przysług\" ani nieudokumentowanych usług; wszystkie prace poza zakresem pakietu muszą być formalnie uzgodnione i wycenione. Skontaktuj się z Sentinel z konkretnym żądaniem; otrzymają Państwo wycenę i mogą ją zatwierdzić, odrzucić lub ulepszyć pakiet, jeśli istnieje powtarzająca się potrzeba."
+          },
+          "q4": {
+            "question": "Czy możecie wpuścić sprzątaczkę lub technika, jeśli mam Pakiet Podstawowy?",
+            "answer": "Nie. Pakiet Podstawowy nie obejmuje koordynacji dostępu osób trzecich; wymaga to Pakietu Rozszerzonego lub Pełnego. Uaktualnij do Pakietu Rozszerzonego w celu koordynacji dostępu lub zorganizuj dostęp samodzielnie i zachowaj Podstawowy tylko do kontroli."
+          },
+          "q5": {
+            "question": "Czym dokładnie jest \"zdarzenie dostępu\"?",
+            "answer": "Każde otwarcie i zamknięcie nieruchomości dla osoby trzeciej liczy się jako jedno zdarzenie dostępu, niezależnie od czasu trwania. Zdarzenie dostępu obejmuje podróż, odblokowywanie, nadzór, zabezpieczanie i krótki raport—niezależnie od tego, czy wizyta trwa 15 minut, czy 3 godziny. Pakiet Rozszerzony obejmuje 2 zdarzenia/miesiąc; dodatkowe zdarzenia są rozliczane osobno. Pakiet Pełny obejmuje dostęp w rozsądnym zakresie (rozsądna częstotliwość operacyjna)."
+          },
+          "q6": {
+            "question": "Czy mogę poprosić o wejście \"tylko na chwilę\"?",
+            "answer": "Nie—krótkie wizyty nadal liczą się jako zdarzenia dostępu. Czas trwania nie wpływa na klasyfikację zdarzenia dostępu; koszt operacyjny (podróż, koordynacja, zabezpieczanie) jest identyczny niezależnie od czasu spędzonego na miejscu. Zaplanuj potrzeby dostępu odpowiednio w ramach alokacji pakietu lub ulepsz do CZERWONEGO w celu dostępu w rozsądnym zakresie bez ścisłych limitów miesięcznych."
+          }
+        }
+      },
+      "operations": {
+        "title": "Operacje i Planowanie",
+        "description": "Pytania dotyczące czasu wizyt, koordynacji techników i okien operacyjnych.",
+        "questions": {
+          "q7": {
+            "question": "Co jeśli technik przyjedzie \"między 9 a 14\"?",
+            "answer": "Sentinel działa w oknach czasowych, a nie w ustalonych terminach. Długie oczekiwanie na miejscu na techników nie jest wliczone w pakiety Podstawowy lub Rozszerzony; Pakiet Pełny obejmuje obecność na miejscu podczas wizyt serwisowych. Klienci Podstawowy/Rozszerzony koordynują czas technika samodzielnie; klienci Pełny otrzymują nadzór na miejscu w ramach pakietu."
+          },
+          "q8": {
+            "question": "Czy reagujecie natychmiast na każde żądanie?",
+            "answer": "Nie—czas reakcji zależy od SLA pakietu (Umowa Poziomu Usług). SLA określa czas reakcji i decyzji, a nie gwarantowany czas rozwiązania; Podstawowy potwierdza w ciągu 48h, Rozszerzony w ciągu 24h, Pełny w ciągu 12h. Przejrzyj zobowiązania SLA pakietu na stronie Usługi; czynniki zewnętrzne (dostępność technika, części) wpływają na faktyczne rozwiązanie poza kontrolą Sentinel."
+          }
+        }
+      },
+      "emergencies": {
+        "title": "Nagłe Wypadki i Uprawnienia Decyzyjne",
+        "description": "Pytania dotyczące reagowania awaryjnego, uprawnień decyzyjnych i limitów finansowych.",
+        "questions": {
+          "q9": {
+            "question": "Co jest uważane za nagły wypadek?",
+            "answer": "Zdarzenia powodujące lub grożące natychmiastowymi szkodami materialnymi, utratą mienia lub zagrożeniem bezpieczeństwa. Nagłe wypadki obejmują aktywne wycieki, uszkodzone zabezpieczenia, uszkodzenia pożarowe, wycieki gazu, zagrożenia elektryczne—NIE problemy z WiFi, problemy z komfortem lub skargi gości. Pakiet Pełny obejmuje reakcję awaryjną; Podstawowy/Rozszerzony otrzymują działanie awaryjne tylko po zatwierdzeniu właściciela lub jeśli zabezpieczenie nieruchomości jest natychmiast konieczne (limit 300€)."
+          },
+          "q10": {
+            "question": "Co się dzieje w nagłym wypadku, jeśli nie odbieram telefonu?",
+            "answer": "Sentinel podejmuje działania zabezpieczające nieruchomość do limitu 300€, jeśli właściciel jest nieosiągalny, a zagrożenie jest natychmiastowe. Wszystkie pakiety obejmują ograniczone uprawnienia do zabezpieczania awaryjnego, gdy istnieje bezpośrednie zagrożenie dla nieruchomości, a kontakt z właścicielem się nie udaje; wszystkie działania są udokumentowane i zgłoszone. Podaj niezawodne informacje kontaktowe w nagłych wypadkach podczas wdrożenia; klienci pakietu CZERWONEGO otrzymują natychmiastowe działanie w ramach zatwierdzonego limitu decyzji (300-500€)."
+          },
+          "q11": {
+            "question": "Jaki jest limit decyzji w Pakiecie Pełnym?",
+            "answer": "Standardowy limit to 300€ na pojedynczą decyzję; opcjonalny wzrost do 500€ może zostać określony podczas wdrożenia. Limit dotyczy pojedynczej decyzji (nie skumulowanej miesięcznej); decyzje powyżej limitu wymagają zgody właściciela przed działaniem. Określ preferowany limit podczas wdrożenia; Sentinel nie przekroczy zatwierdzonego limitu bez wyraźnego pozwolenia."
+          },
+          "q12": {
+            "question": "Czy bierzecie odpowiedzialność finansową za szkody?",
+            "answer": "Nie. Sentinel koordynuje i reprezentuje, ale nie zapewnia odpowiedzialności na poziomie ubezpieczenia ani nie gwarantuje zapobiegania wszystkim incydentom. Właściciele nieruchomości muszą utrzymywać odpowiednie ubezpieczenie; odpowiedzialność Sentinel ogranicza się do świadczenia usług w ramach zakresu pakietu."
+          }
+        }
+      },
+      "practical": {
+        "title": "Operacje Praktyczne",
+        "description": "Pytania dotyczące codziennych szczegółów usługi, częstotliwości wizyt i zmian pakietów.",
+        "questions": {
+          "q13": {
+            "question": "Czy możecie przechowywać kosztowności?",
+            "answer": "Krótkoterminowe przechowywanie jest możliwe po konkretnym uzgodnieniu; Sentinel nie przyjmuje odpowiedzialności za niezadeklarowane kosztowności. Bezpieczne przechowywanie dostępne tylko dla udokumentowanych przedmiotów; Sentinel nie ponosi odpowiedzialności za kosztowności, które nie zostały wyraźnie zadeklarowane i zarejestrowane. Omów konkretne potrzeby przechowywania podczas wdrożenia; zapewnij odpowiednie ubezpieczenie dla przechowywanych przedmiotów."
+          },
+          "q14": {
+            "question": "Czy możecie opiekować się zwierzętami?",
+            "answer": "Krótkoterminowa obsługa zwierząt jest możliwa po wcześniejszym uzgodnieniu; regularna obsługa zwierząt nie jest częścią żadnego pakietu. Okazjonalny krótki nadzór nad zwierzętami może być uzgodniony osobno; Sentinel nie świadczy usług bieżącej obsługi zwierząt. Skontaktuj się z Sentinel w sprawie konkretnych potrzeb; stała obsługa zwierząt wymaga osobnego lokalnego uzgodnienia."
+          },
+          "q15": {
+            "question": "Czy sprawdzacie liczniki mediów?",
+            "answer": "Tak—Pakiet Podstawowy obejmuje kontrolę wzrokową lub odczyt według ustaleń podczas wdrożenia; Rozszerzony/Pełny obejmują odczyt i zdjęcia. Metoda kontroli licznika jest określona podczas wdrożenia; format i częstotliwość zależą od pakietu i dostępu do nieruchomości. Potwierdź preferencje kontroli licznika podczas wdrożenia; zdjęcia dostępne, jeśli liczniki są dostępne."
+          },
+          "q16": {
+            "question": "Czy mogę mieć tylko jedną wizytę w miesiącu?",
+            "answer": "Standard to 2 wizyty/miesiąc; rzadsze wizyty wymagają indywidualnego uzgodnienia i mogą wpłynąć na zakres usług. Zmniejszona częstotliwość wizyt zwiększa ryzyko i może ograniczyć odpowiedzialność Sentinel; wszelkie odstępstwa od standardowego harmonogramu muszą być wyraźnie uzgodnione. Omów zmniejszoną częstotliwość podczas wdrożenia; zrozum, że dłuższe odstępy między wizytami zmniejszają wczesne wykrywanie problemów."
+          },
+          "q17": {
+            "question": "Czy mogę zmienić pakiet podczas współpracy?",
+            "answer": "Tak—zmiany pakietu są możliwe w dowolnym momencie po wzajemnej zgodzie. Zmiany wymagają pisemnego potwierdzenia nowych warunków pakietu i wchodzą w życie od uzgodnionej daty (zazwyczaj następny okres rozliczeniowy). Skontaktuj się z Sentinel w celu omówienia uaktualnienia/obniżenia pakietu; nowe warunki udokumentowane przed aktywacją zmiany."
+          },
+          "q18": {
+            "question": "Czy obsługujecie wynajem krótkoterminowy (Airbnb)?",
+            "answer": "Nie jako główna usługa—wsparcie wynajmu jest dostępne tylko jako moduł dodatkowy do istniejącego pakietu. Sentinel nie zapewnia pełnego zarządzania nieruchomością, komunikacji z gośćmi ani usług rezerwacyjnych; wsparcie wynajmu obejmuje tylko przygotowanie nieruchomości i kontrolę po wyjeździe. Przejrzyj moduł dodatkowy Wsparcie Wynajmu / Wakacji na stronie Usługi; wymaga pakietu podstawowego (Podstawowy, Rozszerzony lub Pełny) plus osobne uzgodnienie."
+          }
+        }
+      },
+      "communication": {
+        "title": "Komunikacja i Polityki",
+        "description": "Pytania o to, jak skontaktować się z Sentinel, zmiany polityki i odmowę usługi.",
+        "questions": {
+          "q19": {
+            "question": "Jak działa komunikacja?",
+            "answer": "Komunikacja operacyjna przez dedykowany telefon/WhatsApp; formalna dokumentacja przez email. Sentinel utrzymuje osobne kanały dla potencjalnych klientów (kontakt ogólny) i aktywnych klientów (dedykowana linia operacyjna); brak komunikacji przez osobiste numery członków zespołu. Użyj formularza kontaktowego lub ogólnego numeru dla wstępnego zapytania; aktywni klienci otrzymują dedykowane informacje kontaktowe podczas wdrożenia."
+          },
+          "q20": {
+            "question": "Czy możecie odmówić współpracy?",
+            "answer": "Tak—Sentinel zastrzega sobie prawo do odmowy usługi lub rozwiązania współpracy. Sentinel może odmówić usługi, jeśli nieruchomość znajduje się poza obszarem obsługi, oczekiwania nie są zgodne z modelem pakietowym lub dopasowanie operacyjne nie jest wykonalne. Kwalifikacja następuje przed wdrożeniem; Sentinel ocenia lokalizację nieruchomości, potrzeby usługowe i oczekiwania klienta przed zaakceptowaniem zaangażowania."
+          },
+          "q21": {
+            "question": "Czy ceny i warunki mogą się zmieniać?",
+            "answer": "Tak, ale zmiany są komunikowane z wyprzedzeniem i mają zastosowanie od następnego okresu rozliczeniowego (nie wstecz). Sentinel może dostosować ceny lub warunki z wcześniejszym powiadomieniem; istniejący klienci otrzymują powiadomienie przed wejściem zmian w życie. Zmiany nie wpływają na obecny okres rozliczeniowy; klienci mogą zaakceptować nowe warunki lub rozwiązać usługę na koniec obecnego okresu."
+          },
+          "q22": {
+            "question": "Co jeśli coś nie jest opisane w dokumentacji?",
+            "answer": "Jeśli nie jest wyraźnie wymienione, nie jest wliczone w pakiet. Usługi, procedury i zobowiązania istnieją tylko jako udokumentowane; nieudokumentowane usługi wymagają osobnego uzgodnienia i zatwierdzenia. Zgodność prawna i regulacyjna nieruchomości pozostaje wyłączną odpowiedzialnością właściciela. Skontaktuj się z Sentinel z konkretnym żądaniem; wszystko poza udokumentowanym zakresem pakietu będzie wycenione osobno."
+          },
+          "q23": {
+            "question": "Dlaczego jest tak wiele zasad?",
+            "answer": "Zasady chronią obie strony poprzez określenie zakresu, zapobieganie sporom i umożliwienie odpowiedzialności. Dokumentacja zapewnia, że świadczenie usług nie zależy od indywidualnej interpretacji lub dobrej woli; wyraźne granice umożliwiają niezawodną, profesjonalną usługę. Przejrzyj strony Usługi i Jak to działa, aby zrozumieć ramy operacyjne; zasady istnieją, aby wspierać długoterminową jakość usług."
+          }
+        }
+      },
+      "meta": {
+        "title": "Meta / Cel Zasad",
+        "description": "Pytania o to, gdzie te polityki mają zastosowanie i dlaczego ta dokumentacja istnieje.",
+        "questions": {
+          "q24": {
+            "question": "Gdzie te polityki mają zastosowanie?",
+            "answer": "Polityki mają zastosowanie do wszystkich operacji Sentinel: strony internetowej, komunikacji, umów serwisowych i relacji z klientami. Żadne ustne umowy ani nieformalne wyjątki nie zastępują udokumentowanych polityk; wszystkie warunki usługi muszą być wyraźnie uzgodnione i udokumentowane. Akceptacja udokumentowanych polityk jest wymagana do aktywacji usługi; niezgoda z politykami oznacza, że Sentinel nie jest odpowiednim dostawcą usług."
+          },
+          "q25": {
+            "question": "Jaki jest cel tego dokumentu FAQ?",
+            "answer": "Ten dokument zapobiega nieporozumieniom, wyjaśnia granice, ustanawia wspólny punkt odniesienia i chroni obie strony. FAQ służy jako odniesienie do polityki operacyjnej i narzędzie rozwiązywania sporów; odpowiedzi są zgodne z warunkami usługi i specyfikacjami pakietów. Użyj tego FAQ jako pierwszego źródła pytań; skontaktuj się z Sentinel, jeśli Twoja konkretna sytuacja nie jest omówiona."
+          }
+        }
+      }
+    },
+    "notAnswered": {
+      "title": "Pytanie bez Odpowiedzi?",
+      "intro": "Jeśli na Państwa pytanie nie ma odpowiedzi powyżej, proszę skontaktować się bezpośrednio z Sentinel.",
+      "important": "Ważne: Usługi nie udokumentowane w pakietach ani w tym FAQ nie są automatycznie dostępne. Wszystkie żądania poza udokumentowanym zakresem wymagają indywidualnej oceny i osobnego uzgodnienia.",
+      "footer": "Sentinel działa w określonym zakresie i udokumentowanych procedurach. Jeśli Państwa potrzeby wymagają znacznej personalizacji lub wykraczają poza model pakietowy, Sentinel może nie być odpowiednim dostawcą usług."
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "O nas - Sentinel",
+      "description": "Filozofia operacyjna, projekt systemu i granice usług"
+    },
+    "pageTitle": "O Sentinel",
+    "intro": {
+      "description": "Sentinel to lokalna usługa reprezentacji nieruchomości działająca w oparciu o model pakietowy z określonym zakresem i udokumentowanymi procedurami. Ta strona wyjaśnia naszą filozofię operacyjną, skupienie geograficzne, projekt systemu i zasoby operacyjne wspierające świadczenie usług.",
+      "subtext": "Nie działamy w oparciu o zaufanie oparte na osobowości ani elastyczność concierge. Działamy w oparciu o udokumentowane procedury, określony zakres i egzekwowalną odpowiedzialność."
+    },
+    "philosophy": {
+      "title": "Dlaczego Pakietowa Reprezentacja Nieruchomości",
+      "intro": "Sentinel został zaprojektowany, aby rozwiązać konkretny problem operacyjny: właściciele nieruchomości mieszkający poza Hiszpanią potrzebują niezawodnej lokalnej reprezentacji, ale tradycyjne modele—przechowywanie kluczy, usługi concierge czy pełne zarządzanie nieruchomością—tworzą niewłaściwe oczekiwania i nieokreśloną odpowiedzialność.",
+      "subtitle": "Model usługi pakietowej istnieje, ponieważ:",
+      "reasons": {
+        "scopeClarity": {
+          "title": "Jasność zakresu zapobiega sporom:",
+          "description": "Gdy usługi są określone z wyprzedzeniem, obie strony wiedzą dokładnie, co jest wliczone, a co wymaga osobnego uzgodnienia."
+        },
+        "procedures": {
+          "title": "Udokumentowane procedury zapewniają spójność:",
+          "description": "Standardowe listy kontrolne, protokoły kontrolne i raportowanie zapewniają, że jakość usługi nie zależy od indywidualnego uznania."
+        },
+        "responsibility": {
+          "title": "Określona odpowiedzialność chroni obie strony:",
+          "description": "Jasne granice zapobiegają pełzaniu zakresu, nierealistycznym oczekiwaniom i operacyjnemu przekroczeniu."
+        },
+        "geographic": {
+          "title": "Skupienie geograficzne umożliwia odpowiedzialność:",
+          "description": "Ograniczenie obszaru obsługi do Torrevieja + 50-70km zapewnia realistyczne czasy reakcji i zrównoważoną jakość usług."
+        }
+      },
+      "practice": "Co to oznacza w praktyce: Jeśli usługa nie jest wyraźnie wymieniona w Państwa pakiecie, nie jest wliczona. To nie jest brak elastyczności—to podstawa niezawodnego, odpowiedzialnego świadczenia usług."
+    },
+    "geographic": {
+      "title": "Granica Geograficzna: Uzasadnienie Operacyjne",
+      "intro": "Sentinel obsługuje nieruchomości w Torrevieja i w przybliżonym promieniu 50-70km. To geograficzne ograniczenie jest stałe i dotyczy wszystkich klientów bez wyjątku.",
+      "subtitle": "Dlaczego istnieją granice geograficzne:",
+      "reasons": {
+        "responseTime": "Zobowiązania dotyczące czasu reakcji: Klienci pakietu CZERWONEGO otrzymują 4-godzinne potwierdzenie i 8-godzinne terminy decyzji. Jest to możliwe tylko w zarządzalnej odległości.",
+        "visitFrequency": "Niezawodność częstotliwości wizyt: Regularne wizyty dwutygodniowe lub tygodniowe wymagają bliskości. Odległe nieruchomości tworzą konflikty w harmonogramie i degradację usługi.",
+        "emergencyAccess": "Zdolność dostępu awaryjnego: Zabezpieczanie nieruchomości w przypadku aktywnych wycieków, złamanych zamków lub uszkodzeń pogodowych wymaga szybkiej fizycznej obecności.",
+        "qualityControl": "Kontrola jakości: Lokalna obecność umożliwia zarządzanie relacjami ze sprzątaczkami, technikami i usługami miejskimi. Odległość niszczy te relacje operacyjne.",
+        "sustainability": "Zrównoważone koszty: Czas podróży powyżej 70km sprawia, że usługa jest ekonomicznie niezrównoważona bez cen, które zaprzeczają celowi."
+      },
+      "footer": "Nieruchomości poza tym obszarem nie mogą być obsługiwane—nie tymczasowo, nie jako wyjątki, nie po cenie premium. Ta granica została zaprojektowana, aby chronić jakość usługi dla klientów w tym obszarze, a nie ograniczać wzrostu arbitralnie."
+    },
+    "system": {
+      "title": "System Operacyjny i Ramy Procesu",
+      "intro": "Sentinel działa w oparciu o udokumentowane procedury obejmujące wszystkie aspekty świadczenia usług:",
+      "onboarding": {
+        "title": "Proces Wdrożenia:",
+        "items": {
+          "qualification": "Strukturalna kwalifikacja (geograficzna, dopasowanie operacyjne)",
+          "dataCollection": "Pełne zbieranie danych (szczegóły nieruchomości, kody dostępu, kontakty awaryjne)",
+          "inspection": "Kontrola wstępna (Wizyta Zero) ustanawiająca bazowy stan nieruchomości",
+          "activation": "Udokumentowane zatwierdzenie i aktywacja usługi"
+        }
+      },
+      "operations": {
+        "title": "Regularne Operacje:",
+        "items": {
+          "checklists": "Listy kontrolne wizyt zapewniające spójny zasięg kontroli",
+          "documentation": "Dokumentacja fotograficzna każdej wizyty",
+          "reports": "Pisemne raporty dostarczane w ciągu 24-48 godzin",
+          "assessments": "Odczyty liczników, kontrole systemu i oceny stanu"
+        }
+      },
+      "access": {
+        "title": "Koordynacja Dostępu (pakiety Rozszerzony/Pełny):",
+        "items": {
+          "approval": "Pisemne zatwierdzenie wymagane dla wszystkich zdarzeń dostępu",
+          "supervision": "Nadzór wejścia i wyjścia",
+          "reports": "Krótkie raporty po każdej wizycie osoby trzeciej",
+          "tracking": "Śledzenie i dokumentacja zdarzeń"
+        }
+      },
+      "emergency": {
+        "title": "Reakcja Awaryjna (Pakiet Pełny):",
+        "items": {
+          "criteria": "Określone kryteria nagłego wypadku (szkody materialne, zagrożenie bezpieczeństwa)",
+          "limits": "Limity uprawnień decyzyjnych (300-500€)",
+          "contact": "Natychmiastowe próby kontaktu z właścicielem",
+          "documentation": "Dokumentacja działań i raportowanie"
+        }
+      },
+      "communication": {
+        "title": "Protokoły Komunikacji:",
+        "items": {
+          "dedicated": "Dedykowane linie kontaktowe operacyjne (oddzielne od zapytań potencjalnych)",
+          "sla": "Umowy poziomu usług (SLA) według poziomu pakietu",
+          "formal": "Formalna dokumentacja przez email dla decyzji i zmian"
+        }
+      },
+      "footer": "Co to oznacza: Świadczenie usług nie zależy od indywidualnego osądu lub dobrej woli. Procedury są udokumentowane, powtarzalne i egzekwowalne. To właśnie umożliwia odpowiedzialność."
+    },
+    "resources": {
+      "title": "Zasoby Operacyjne i Zdolność",
+      "intro": "Świadczenie usług Sentinel jest umożliwione przez lokalne zasoby operacyjne i ustalone partnerstwa:",
+      "inspection": {
+        "title": "Kontrola i Utrzymanie Nieruchomości:",
+        "items": {
+          "cleaner": "Dedykowana sprzątaczka z doświadczeniem w branży hotelarskiej i opiece nad nieruchomościami",
+          "technician": "Doświadczony technik z ponad 25-letnim doświadczeniem w hydraulice, pracach elektrycznych i budownictwie",
+          "network": "Lokalna sieć dostawców dla usług specjalistycznych (HVAC, utrzymanie basenu, utrzymanie ogrodu)"
+        }
+      },
+      "coordination": {
+        "title": "Koordynacja i Komunikacja z Klientem:",
+        "items": {
+          "coordinator": "Koordynator operacyjny zarządzający komunikacją z klientem, planowaniem i podejmowaniem decyzji",
+          "reporting": "Udokumentowany system raportowania i zarządzania zdjęciami",
+          "protocols": "Protokoły kontaktów awaryjnych i procedury eskalacji"
+        }
+      },
+      "transportation": {
+        "title": "Transport i Transfery:",
+        "items": {
+          "partnership": "Partnerstwo z NowRent.eu dla transferów lotniskowych i usług pojazdowych",
+          "scheduling": "Wymagane planowanie z wyprzedzeniem (14+ dni w sezonie letnim)",
+          "availability": "Zależnie od dostępności i oddzielnego cennika"
+        }
+      },
+      "capacity": {
+        "title": "Zdolność i Dostępność:",
+        "items": {
+          "limited": "Zdolność usługowa jest ograniczona przez skupienie geograficzne i dostępność zasobów",
+          "seasonal": "Popyt sezonowy wpływa na elastyczność planowania (szczególnie czerwiec-wrzesień)",
+          "decline": "Sentinel zastrzega sobie prawo do odmowy usługi po osiągnięciu limitów zdolności"
+        }
+      },
+      "notIncluded": {
+        "title": "Czego to NIE obejmuje:",
+        "items": {
+          "contractor": "Sentinel nie zatrudnia generalnych wykonawców do dużych prac remontowych",
+          "availability": "Sentinel nie zapewnia nieograniczonej dostępności 24/7",
+          "individuals": "Sentinel nie gwarantuje konkretnych osób dla każdej wizyty"
+        }
+      },
+      "footer": "Zdolność operacyjna istnieje, aby niezawodnie dostarczać zobowiązania pakietowe—a nie zapewniać nieograniczoną elastyczność."
+    },
+    "notWhat": {
+      "title": "Czym Sentinel NIE Jest",
+      "intro": "Aby zapobiec nieporozumieniom, Sentinel wyraźnie określa, czym NIE jest:",
+      "insurance": {
+        "title": "Nie dostawcą ubezpieczeń:",
+        "items": {
+          "prevention": "Sentinel nie gwarantuje zapobiegania wszystkim incydentom",
+          "liability": "Sentinel nie przyjmuje odpowiedzialności na poziomie ubezpieczenia",
+          "forceMajeure": "Sentinel nie pokrywa strat z wydarzeń siły wyższej",
+          "coverage": "Właściciele nieruchomości pozostają odpowiedzialni za odpowiednie ubezpieczenie"
+        }
+      },
+      "concierge": {
+        "title": "Nie usługą concierge:",
+        "items": {
+          "unlimited": "Sentinel nie zapewnia nieograniczonej pomocy osobistej",
+          "errands": "Sentinel nie zajmuje się sprawami, zakupami ani zarządzaniem stylem życia",
+          "flexibility": "Sentinel nie działa w elastyczności \"cokolwiek potrzebujesz\"",
+          "separate": "Usługi poza pakietami wymagają osobnego uzgodnienia i cennika"
+        }
+      },
+      "propertyManagement": {
+        "title": "Nie pełną firmą zarządzania nieruchomościami:",
+        "items": {
+          "bookings": "Sentinel nie zarządza rezerwacjami ani komunikacją z gośćmi (z wyjątkiem dodatku)",
+          "support": "Sentinel nie zapewnia wsparcia gości 24/7",
+          "agency": "Sentinel nie działa jako agencja wynajmu ani platforma rezerwacyjna",
+          "addon": "Wsparcie wynajmu jest dostępne tylko jako moduł dodatkowy do pakietów podstawowych"
+        }
+      },
+      "contractor": {
+        "title": "Nie generalnym wykonawcą:",
+        "items": {
+          "coordinates": "Sentinel koordynuje naprawy, ale nie wykonuje prac budowlanych",
+          "quality": "Sentinel nie ponosi odpowiedzialności za jakość pracy wykonanej przez zewnętrznych wykonawców",
+          "projects": "Sentinel nie zarządza projektami remontowymi",
+          "licensed": "Specjalistyczne prace wymagają zaangażowania licencjonowanych wykonawców"
+        }
+      },
+      "availability": {
+        "title": "Nie jest dostępny 24/7 dla spraw nieawaryjnych:",
+        "items": {
+          "sla": "Umowy poziomu usług określają czasy reakcji według pakietu",
+          "red": "Reakcja awaryjna jest dostępna tylko dla klientów pakietu CZERWONEGO",
+          "timeframes": "Żądania nieawaryjne są obsługiwane w ramach czasowych SLA",
+          "guarantee": "Natychmiastowa dostępność poza SLA nie jest gwarantowana"
+        }
+      },
+      "footer": "Sentinel to lokalna usługa reprezentacji nieruchomości działająca w określonym zakresie, udokumentowanych procedurach i wyraźnych granicach odpowiedzialności."
+    },
+    "accountability": {
+      "title": "Odpowiedzialność w Określonym Zakresie",
+      "intro": "Sentinel odpowiada za:",
+      "service": {
+        "title": "Świadczenie usług w zakresie pakietu:",
+        "items": {
+          "visits": "Ukończenie zaplanowanych wizyt według częstotliwości pakietu",
+          "checklists": "Wykonywanie list kontrolnych zgodnie z dokumentacją",
+          "reports": "Dostarczanie raportów fotograficznych w zobowiązanych ramach czasowych",
+          "sla": "Odpowiadanie na żądania w ramach Umowy Poziomu Usług (SLA)"
+        }
+      },
+      "documentation": {
+        "title": "Dokumentacja i raportowanie:",
+        "items": {
+          "photos": "Dokumentacja fotograficzna wszystkich wizyt i zdarzeń dostępu",
+          "written": "Pisemne raporty obserwacji, podjętych działań i zidentyfikowanych obaw",
+          "meters": "Dokładne odczyty liczników i notatki o stanie systemu",
+          "emergency": "Dokumentacja działań awaryjnych z chronologią i uzasadnieniem decyzji"
+        }
+      },
+      "decisions": {
+        "title": "Podejmowanie decyzji w granicach uprawnień (Pakiet Pełny):",
+        "items": {
+          "operational": "Decyzje operacyjne do zatwierdzonego limitu finansowego (300-500€)",
+          "securing": "Działania zabezpieczające nieruchomość w przypadku bezpośredniego zagrożenia",
+          "repair": "Koordynacja napraw awaryjnych w ramach uprawnień decyzyjnych",
+          "documented": "Wszystkie decyzje udokumentowane i zgłoszone"
+        }
+      },
+      "communication": {
+        "title": "Komunikacja i przejrzystość:",
+        "items": {
+          "response": "Odpowiedź na zapytania klientów w ramach czasowych SLA",
+          "notice": "Wcześniejsze powiadomienie o zmianach harmonogramu lub ograniczeniach",
+          "clarity": "Jasna komunikacja, gdy żądania wykraczają poza zakres pakietu",
+          "written": "Pisemna dokumentacja wszystkich uzgodnień i zmian"
+        }
+      },
+      "notIncluded": {
+        "title": "Czego odpowiedzialność NIE obejmuje:",
+        "items": {
+          "prevention": "Gwarancji zapobiegania wszystkim incydentom lub stratom",
+          "contractors": "Odpowiedzialności za błędy zewnętrznych wykonawców",
+          "control": "Odpowiedzialności za wydarzenia poza kontrolą Sentinel (pogoda, usługi miejskie, siła wyższa)",
+          "unlimited": "Nieograniczonej dostępności poza zobowiązaniami pakietowymi"
+        }
+      },
+      "footer": "Odpowiedzialność jest egzekwowalna, ponieważ zakres jest określony, procedury są udokumentowane, a zobowiązania są wyraźne."
+    },
+    "nextSteps": {
+      "title": "Współpraca z Sentinel",
+      "intro": "Jeśli Państwa nieruchomość i wymagania usługowe spełniają kryteria operacyjne Sentinel:",
+      "steps": {
+        "step1": "Przejrzyj pakiety usług, aby zrozumieć zakres i granice",
+        "step2": "Zweryfikuj, czy lokalizacja Państwa nieruchomości mieści się w obszarze obsługi (Torrevieja + 50-70km)",
+        "step3": "Przejrzyj proces wdrożenia, aby zrozumieć wymagania i harmonogram",
+        "step4": "Skontaktuj się z Sentinel w celu oceny Państwa nieruchomości i wymagań usługowych"
+      },
+      "required": {
+        "title": "Wymagane do usługi:",
+        "items": {
+          "location": "Nieruchomość w geograficznym obszarze obsługi",
+          "acceptance": "Akceptacja modelu usługi pakietowej",
+          "keys": "Minimum 2 komplety kluczy",
+          "procedures": "Gotowość przestrzegania udokumentowanych procedur"
+        }
+      },
+      "declines": {
+        "title": "Sentinel zastrzega sobie prawo do odmowy usługi, jeśli:",
+        "items": {
+          "outside": "Nieruchomość znajduje się poza obszarem obsługi",
+          "needs": "Oczekiwane potrzeby usługowe nie są zgodne z modelem pakietowym",
+          "expectations": "Oczekiwania klienta są niezgodne z określonym zakresem"
+        }
+      }
+    }
+  },
+  "terms": {
+    "meta": {
+      "title": "Regulamin - Sentinel",
+      "description": "Warunki Świadczenia Usług"
+    },
+    "pageTitle": "Regulamin Świadczenia Usług",
+    "subtitle": "Sentinel — warunki świadczenia usług",
+    "lastUpdated": "Ostatnia aktualizacja: 2026-02-23",
+    "sections": [
+      { "title": "1. Definicja Usługi", "body": "Sentinel świadczy pakietową usługę lokalnej reprezentacji nieruchomości w określonym zakresie operacyjnym.\n\nUsługa nie stanowi:\n\nUbezpieczenia\nUsługi concierge\nAgencji wynajmu\nGeneralnego wykonawcy\nZarządzania nieruchomością w pełnym zakresie" },
+      { "title": "2. Obszar Geograficzny", "body": "Usługa świadczona jest wyłącznie na terenie Torrevieja i w promieniu 50–70 km.\n\nNieruchomości poza tym obszarem nie mogą być obsługiwane." },
+      { "title": "3. Model Pakietowy", "body": "Usługi realizowane są wyłącznie w oparciu o miesięczne pakiety:\n\nPodstawowy (Zielony)\nRozszerzony (Pomarańczowy)\nPełny (Czerwony)\n\nJeżeli dana usługa nie jest wyraźnie wymieniona w pakiecie, nie jest wliczona.\n\nUsługi dodatkowe wymagają osobnego uzgodnienia i wyceny." },
+      { "title": "4. SLA", "body": "SLA określa:\n\nCzas reakcji\nCzas podjęcia decyzji\n\nSLA nie stanowi gwarancji czasu pełnego rozwiązania problemu." },
+      { "title": "5. Uprawnienia Decyzyjne", "body": "W Pakiecie Pełnym (Czerwony) obowiązuje limit decyzyjny:\n\nStandard: 300 € na pojedynczą decyzję\nOpcjonalnie: 500 € (jeśli ustalone)\n\nDecyzje powyżej limitu wymagają zgody właściciela." },
+      { "title": "6. Odpowiedzialność", "body": "Sentinel odpowiada za:\n\nRealizację usług zgodnie z pakietem\nDokumentację działań\nReakcję zgodną z SLA\n\nSentinel nie odpowiada za:\n\nZdarzenia siły wyższej\nBłędy wykonawców zewnętrznych\nStraty o charakterze ubezpieczeniowym\nBrak zapobieżenia wszystkim incydentom" },
+      { "title": "7. Płatności", "body": "Usługa rozliczana jest:\n\nMiesięcznie z góry\nMinimalny okres współpracy: 3 miesiące\n\nPłatność może być realizowana:\n\nPrzelewem\nOnline poprzez system płatności\n\nBrak płatności może skutkować zawieszeniem lub rozwiązaniem usługi." },
+      { "title": "8. Rozwiązanie Umowy", "body": "Klient może rozwiązać usługę z końcem okresu rozliczeniowego.\n\nSentinel może rozwiązać usługę w przypadku:\n\nNaruszenia zakresu\nBraku płatności\nNiemożności operacyjnej\nZachowań uniemożliwiających bezpieczne świadczenie usługi" },
+      { "title": "9. Zmiany Pakietu", "body": "Zmiana pakietu wymaga:\n\nWzajemnego uzgodnienia\nDokumentacji pisemnej\n\nZmiany nie działają wstecz." },
+      { "title": "10. Jurysdykcja", "body": "Regulamin podlega prawu obowiązującemu na terytorium Hiszpanii.\n\nSpory rozstrzygane są przez właściwy sąd." }
+    ]
+  },
+  "privacy": {
+    "meta": {
+      "title": "Polityka Prywatności - Sentinel",
+      "description": "Ochrona danych osobowych"
+    },
+    "pageTitle": "Polityka Prywatności",
+    "subtitle": "Sentinel — ochrona danych osobowych",
+    "lastUpdated": "Ostatnia aktualizacja: 2026-02-23",
+    "sections": [
+      { "title": "1. Administrator Danych", "body": "Administratorem danych osobowych jest Sentinel, lokalna usługa reprezentacji nieruchomości działająca na terenie Torrevieja i w promieniu 50–70 km.\n\nKontakt w sprawach dotyczących danych osobowych:\nEmail: contact@sentinel.example" },
+      { "title": "2. Zakres Przetwarzanych Danych", "body": "Sentinel przetwarza wyłącznie dane niezbędne do:\n\nOdpowiedzi na zapytania wysłane przez formularz kontaktowy\nZawarcia i realizacji umowy pakietowej\nWystawiania faktur\nObsługi płatności online\nKomunikacji operacyjnej z klientem\n\nDane mogą obejmować:\n\nImię i nazwisko\nAdres email\nNumer telefonu\nLokalizację nieruchomości\nDane rozliczeniowe\nInformacje wymagane w procesie wdrożenia usługi\n\nSentinel nie przetwarza danych w celach marketingowych bez wyraźnej zgody." },
+      { "title": "3. Podstawa Prawna Przetwarzania", "body": "Dane przetwarzane są na podstawie:\n\nRealizacji umowy lub działań przed jej zawarciem\nObowiązków prawnych (np. księgowych)\nUzasadnionego interesu administratora (komunikacja operacyjna)\nZgody użytkownika (jeśli dotyczy)" },
+      { "title": "4. Okres Przechowywania Danych", "body": "Dane przechowywane są:\n\nPrzez czas trwania współpracy\nPrzez okres wymagany przepisami prawa (np. dokumentacja księgowa)\nDo momentu wycofania zgody, jeśli przetwarzanie odbywa się na jej podstawie\n\nPo upływie wymaganych okresów dane są usuwane lub anonimizowane." },
+      { "title": "5. Płatności Online", "body": "W przypadku płatności online dane transakcyjne przetwarzane są przez zewnętrznych dostawców usług płatniczych.\n\nSentinel nie przechowuje pełnych danych kart płatniczych.\n\nDostawcy płatności działają jako niezależni administratorzy danych zgodnie z własnymi regulaminami." },
+      { "title": "6. Pliki Cookies", "body": "Strona może wykorzystywać:\n\nCookies techniczne (niezbędne do działania strony)\nCookies funkcjonalne\nCookies analityczne (jeśli aktywowane)\n\nUżytkownik może zarządzać cookies poprzez ustawienia przeglądarki.\n\nWyłączenie niektórych cookies może wpłynąć na działanie strony." },
+      { "title": "7. Prawa Użytkownika", "body": "Użytkownik ma prawo do:\n\nDostępu do swoich danych\nSprostowania danych\nUsunięcia danych\nOgraniczenia przetwarzania\nPrzenoszenia danych\nWniesienia sprzeciwu wobec przetwarzania\nCofnięcia zgody w dowolnym momencie\n\nWnioski należy kierować na adres email administratora." },
+      { "title": "8. Udostępnianie Danych", "body": "Dane mogą być przekazywane:\n\nPodmiotom świadczącym usługi księgowe\nDostawcom płatności\nPartnerom technologicznym obsługującym infrastrukturę strony\n\nDane nie są sprzedawane ani udostępniane w celach marketingowych." },
+      { "title": "9. Bezpieczeństwo", "body": "Sentinel stosuje odpowiednie środki techniczne i organizacyjne w celu ochrony danych przed nieautoryzowanym dostępem, utratą lub nieuprawnionym ujawnieniem." },
+      { "title": "10. Zmiany Polityki", "body": "Polityka Prywatności może być aktualizowana w przypadku zmian prawnych lub operacyjnych. Aktualna wersja publikowana jest na stronie." }
+    ]
+  },
+  "notFound": {
+    "title": "Strona nie znaleziona",
+    "body": "Żądana strona nie istnieje lub została przeniesiona.",
+    "returnTo": "Powrót do:",
+    "home": "Strona główna",
+    "services": "Usługi",
+    "howItWorks": "Jak to działa",
+    "contact": "Kontakt",
+    "contactPrompt": "Jeśli uważasz, że to błąd, skontaktuj się z Sentinel."
+  }
+}

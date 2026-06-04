@@ -1,26 +1,464 @@
 @import "tailwindcss";
 
+/* --------------------------------------------------------------------------
+   DECISIONS §14 — Locked palette. No legacy aliases. Roles only.
+   Light: base | authority | support | structural-a/b | neutral | accent (signature only).
+   Dark: near-black bg; role order preserved; accent micro only.
+   -------------------------------------------------------------------------- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Canonical palette (exact hex) */
+  --authority: #203A5F;
+  --support: #2E507A;
+  --base: #F4F6F8;
+  --base-alt: #EEF1F4;
+  --structural-a: #4F6460;
+  --structural-b: #51677A;
+  --neutral: #707B86;
+  --accent: #6E3A44;
+
+  /* Derived (no extra hex) */
+  --authority-on-dark: #F4F6F8;
+  --authority-hover: #1a3150;
+  --authority-bg: #203A5F;
+
+  /* Role mapping for layout (single name per role) */
+  --surface-light: var(--base);
+  --surface-light-alt: var(--base-alt);
+  --surface-card: var(--base);
+  --structural-light: var(--structural-a);
+  --structural-muted: var(--structural-b);
+  --body: var(--authority);
+  --heading: var(--authority);
+  --muted: var(--neutral);
+
+  /* Task 6.1 — Spec token names (aliases) */
+  --bg: var(--surface-light);
+  --surface: var(--base);
+  --card: var(--surface-card);
+  --text: var(--body);
+  --border: var(--structural-a);
+
+  /* Package semantics (desaturated; not accent) */
+  --package-green: #5a6b5a;
+  --package-orange: #8b7355;
+  --package-red: #7a6b5d;
+
+  /* LAYOUT COMPOSITION §6–§8 — canonical layout tokens (Task 5D-1B) */
+  --container-max: 1120px;
+  --text-max: 720px;
+  --space-20: 20px;
+  --space-40: 40px;
+  --space-120: 120px;
+  --space-160: 160px;
+  --hero-max: 70vh;
+
+  /* §14.3c — Single radius (Task 5D-4). One token, one class .r. */
+  --radius: 0.375rem;
+}
+
+/* Dark mode — [data-theme="dark"]. No invert. Near-black bg; authority = brand navy, not page background. */
+[data-theme="dark"] {
+  --base: #0d1117;
+  --base-alt: #161b22;
+  --surface-light: #0d1117;
+  --surface-light-alt: #161b22;
+  --surface-card: #161b22;
+  --structural-light: #30363d;
+  --structural-muted: #21262d;
+  --structural-a: #30363d;
+  --structural-b: #21262d;
+  --body: #e6edf3;
+  --heading: #e6edf3;
+  --muted: #8b949e;
+  --neutral: #8b949e;
+  --support: #4B79AD;
+  --authority: #203A5F;
+  --authority-on-dark: #f4f6f8;
+  --authority-hover: #2d4a6f;
+  --authority-bg: #203A5F;
+  --bg: var(--surface-light);
+  --surface: var(--base);
+  --card: var(--surface-card);
+  --text: var(--body);
+  --border: var(--structural-a);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface-light: var(--surface-light);
+  --color-surface-light-alt: var(--surface-light-alt);
+  --color-surface-card: var(--surface-card);
+  --color-authority: var(--authority);
+  --color-authority-on-dark: var(--authority-on-dark);
+  --color-authority-hover: var(--authority-hover);
+  --color-authority-bg: var(--authority-bg);
+  --color-support: var(--support);
+  --color-structural-a: var(--structural-a);
+  --color-structural-b: var(--structural-b);
+  --color-structural-light: var(--structural-light);
+  --color-structural-muted: var(--structural-muted);
+  --color-neutral: var(--neutral);
+  --color-body: var(--body);
+  --color-heading: var(--heading);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--surface-light);
+  color: var(--body);
+  font-family: var(--font-sans), 'Inter', ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+/* Typography — canonical hierarchy (Task 5D-2). Single system; spacing from scale 20/40 only. */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif), 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--heading);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5.5vw, 3.75rem);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-top: 0;
+  margin-bottom: var(--space-20);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  line-height: 1.2;
+  margin-top: var(--space-40);
+  margin-bottom: var(--space-20);
+}
+
+h2:first-child {
+  margin-top: 0;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  line-height: 1.3;
+  margin-top: var(--space-20);
+  margin-bottom: var(--space-20);
+}
+
+h3:first-child {
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: var(--space-20);
+  line-height: 1.75;
+}
+
+/* Section labels — authority (support optional for underline; Pattern A uses accent only on ConfidenceBar) */
+.section-label {
+  font-family: var(--font-serif), 'Source Serif 4', Georgia, serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--heading);
+}
+
+/* H2 system — unified section titles (Task 6.11) */
+.h2-system {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--heading);
+  line-height: 1.25;
+}
+@media (min-width: 768px) {
+  .h2-system {
+    font-size: 1.875rem;
+  }
+}
+.h2-system--center {
+  text-align: center;
+}
+
+/* Section padding: use Section primitive; no default to avoid drift (Task 5D-1B) */
+section {
+  padding-block: 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+/* Single radius — LAYOUT §14.3c (Task 5D-4). Use .r everywhere; no rounded-* variants. */
+.r {
+  border-radius: var(--radius);
+}
+
+/* Readable text cap — LAYOUT §6.5–§6.6 (720px, pixels) */
+.text-column {
+  max-width: var(--text-max);
+}
+
+/* Section primitive padding (used by components/layout/Section.tsx) */
+.section-primitive {
+  padding-block: var(--space-120);
+}
+
+.section-primitive--major {
+  padding-block: var(--space-160);
+}
+
+.section-primitive--first {
+  padding-top: var(--space-40);
+  padding-bottom: var(--space-120);
+}
+
+/* Hero — LAYOUT §8.2 max height 70vh; reflow via padding (Task 5D-1B) */
+.hero-zone {
+  max-height: var(--hero-max);
+  display: flex;
+  flex-direction: column;
+  padding-block: var(--space-40);
+}
+
+.section-intro {
+  max-width: 75ch;
+  margin-bottom: 2.5rem;
+}
+
+.section-pause {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+}
+
+.prose { max-width: 65ch; }
+
+/* Buttons — primary = authority; hover = token. No accent on buttons. */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  background: var(--authority-bg);
+  color: var(--authority-on-dark);
+  border: 2px solid var(--authority-bg);
+  font-family: var(--font-sans), 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+  border-radius: var(--radius);
+  letter-spacing: 0.01em;
+}
+
+.btn-primary:hover {
+  background: var(--authority-hover);
+  border-color: var(--authority-hover);
+  color: var(--authority-on-dark);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: var(--authority);
+  border: 2px solid var(--structural-light);
+  font-family: var(--font-sans), 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+  border-radius: var(--radius);
+  letter-spacing: 0.01em;
+}
+
+.btn-secondary:hover {
+  background: var(--surface-card);
+  border-color: var(--structural-muted);
+  color: var(--authority);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container { padding: 0 2.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .container { padding: 0 3rem; }
+}
+
+/* LAYOUT §6.1–6.3, §12 — Alignment grid (Task 5D-1C). Mobile 4 / Tablet 8 / Desktop 12. */
+.grid-frame {
+  display: grid;
+  gap: var(--space-20);
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (min-width: 641px) {
+  .grid-frame {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .grid-frame {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+/* Region spans: mobile always full (4). Tablet: full (8) or half (4) support only. Desktop: full (12), half (6), third (4), quarter (3). */
+.region-m-full { grid-column: 1 / -1; }
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .region-tb-full { grid-column: 1 / -1; }
+  .region-tb-half { grid-column: span 4; }
+}
+
+@media (min-width: 1025px) {
+  .region-dt-full { grid-column: 1 / -1; }
+  .region-dt-half { grid-column: span 6; }
+  .region-dt-third { grid-column: span 4; }
+  .region-dt-quarter { grid-column: span 3; }
+}
+
+.package-green {
+  border-color: var(--package-green) !important;
+  color: var(--package-green);
+}
+
+.package-orange {
+  border-color: var(--package-orange) !important;
+  color: var(--package-orange);
+}
+
+.package-red {
+  border-color: var(--package-red) !important;
+  color: var(--package-red);
+}
+
+/* Package chip — 8px dot for hierarchy (Task 6.14; no emoji) */
+.package-chip {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.package-chip--green { background: var(--package-green); }
+.package-chip--orange { background: var(--package-orange); }
+.package-chip--red { background: var(--package-red); }
+
+/* Package card: non-text color marker only (thin left accent) */
+.package-card-accent--green { border-left: 4px solid var(--package-green); }
+.package-card-accent--orange { border-left: 4px solid var(--package-orange); }
+.package-card-accent--red { border-left: 4px solid var(--package-red); }
+
+/* Report table — dark-mode parity (Task 6.14). Surface bg, structural borders, header contrast. */
+.report-table-card {
+  background: var(--surface-card);
+}
+.report-table-frame {
+  background: var(--surface-light);
+}
+.report-table {
+  background: var(--surface-light);
+}
+.report-table__th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: var(--heading);
+  background: var(--surface-light-alt);
+  border-bottom: 1px solid var(--structural-a);
+}
+.report-table__tr {
+  border-bottom: 1px solid var(--structural-muted);
+}
+.report-table__tr:last-child {
+  border-bottom: 0;
+}
+.report-table__td {
+  padding: 0.75rem 1rem;
+  color: var(--body);
+}
+.report-table__td--status {
+  font-weight: 500;
+}
+
+/* Link system — dark-mode contrast; body-level, restrained (Task 6.14) */
+.link-system {
+  color: var(--body);
+  text-decoration: none;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+.link-system:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--structural-a);
+}
+
+/* Notice — Structural border only (no accent). Accent is ConfidenceBar only. */
+.notice-panel {
+  background: var(--surface-card);
+  border-left: 4px solid var(--structural-a);
+  padding: 1.25rem 1.5rem;
+}
+.notice-panel__marker {
+  flex-shrink: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.75rem;
+  margin-top: 0.35rem;
+  background: var(--structural-a);
+}
+
+/* Focus — Support (secondary), not accent */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--support);
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
+
+/* Form controls — tokenized for dark mode (Task 6.1). Padding uses ladder (e.g. px-5 py-5); density via type. */
+input,
+select,
+textarea {
+  background: var(--surface-card);
+  color: var(--body);
+  border-color: var(--structural-light);
+  font-size: 0.875rem;
+  line-height: 1.25;
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--authority);
+  box-shadow: 0 0 0 2px var(--authority);
 }
