@@ -1,3 +1,4 @@
+import UsagePathwayLayer from '@/components/UsagePathwayLayer';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
@@ -49,19 +50,7 @@ export default async function HomePage({
           </div>
         </section>
 
-        {/* 2. EXPOSURE — max-w-3xl, prose spacing space-y-5, closure one paragraph */}
-        <Section tone="alt">
-          <div className="max-w-3xl text-left">
-            <h2 className="h2-system font-bold mb-10">{t('exposure.title')}</h2>
-            <div className="space-y-5">
-              <p className="text-body leading-relaxed">{t('exposure.p1')}</p>
-              <p className="text-body leading-relaxed">{t('exposure.p2')}</p>
-              <p className="text-body leading-relaxed">{t('exposure.p3')}</p>
-              <p className="text-body leading-relaxed">{t('exposure.p4')}</p>
-              <p className="text-body leading-relaxed mt-5">{t('exposure.close1')} {t('exposure.close2')}</p>
-            </div>
-          </div>
-        </Section>
+        <UsagePathwayLayer />
 
         {/* 3. SYSTEM — max-w-3xl, 2 cols gap-x-10, space-y-5 in blocks; reduced top padding for flow from Exposure */}
         <Section tone="alt" variant="major" className="!pt-10">

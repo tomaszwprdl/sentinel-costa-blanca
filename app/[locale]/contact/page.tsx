@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -15,6 +15,13 @@ import DisclosureBlock from '@/components/DisclosureBlock';
 import Section from '@/components/layout/Section';
 import GridFrame from '@/components/layout/GridFrame';
 import Region from '@/components/layout/Region';
+
+const PATHWAY_PARAM_VALUES = ['private-absence', 'active-guest-use', 'mixed-undetermined'] as const;
+type PathwayParam = (typeof PATHWAY_PARAM_VALUES)[number];
+
+function isPathwayParam(value: string | null): value is PathwayParam {
+  return value !== null && PATHWAY_PARAM_VALUES.includes(value as PathwayParam);
+}
 
 // Schema will be created dynamically with translated messages
 // For now, keep English validation messages (they're internal)
@@ -72,6 +79,10 @@ function ContactPageInner() {
       rangeDisplay,
     };
   }, [searchParams]);
+
+  const pathwayParam = searchParams.get('pathway');
+  const pathwayKey = isPathwayParam(pathwayParam) ? pathwayParam : null;
+
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [referenceNumber, setReferenceNumber] = useState<string | null>(null);
@@ -83,10 +94,18 @@ function ContactPageInner() {
     register,
     handleSubmit,
     watch,
+    setValue,
     formState: { errors },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
   });
+
+  useEffect(() => {
+    if (pathwayKey) {
+      const label = t(`pathwayContext.${pathwayKey}`);
+      setValue('primaryServiceNeeds', `${t('pathwayContext.prefillPrefix')} ${label}`);
+    }
+  }, [pathwayKey, setValue, t]);
 
   const expectedPackage = watch('expectedPackage');
 
@@ -313,6 +332,13 @@ function ContactPageInner() {
         <Section tone="light">
           <div>
               <h2 className="h2-system">{t('form.title')}</h2>
+
+              {pathwayKey && (
+                <div className="bg-surface-light-alt border border-structural-light p-6 mb-10 r">
+                  <h3 className="text-body font-medium mb-2">{t('pathwayContext.title')}</h3>
+                  <p className="text-sm text-body">{t(`pathwayContext.${pathwayKey}`)}</p>
+                </div>
+              )}
 
               {estimatorPrefill && (
                 <div className="bg-surface-light-alt border border-structural-light p-6 mb-10 r">

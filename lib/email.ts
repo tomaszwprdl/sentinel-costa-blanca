@@ -28,7 +28,7 @@ export async function sendAutoResponseEmail(
 
   try {
     await resend.emails.send({
-      from: 'Sentinel <noreply@sentinel.example>',
+      from: 'Sentinel <sentinelcostablanca@gmail.com>',
       to: [to],
       subject: `Sentinel - Inquiry Received [Reference: ${referenceNumber}]`,
       html: `
@@ -123,7 +123,7 @@ export async function sendNotificationEmail(
 
   try {
     await resend.emails.send({
-      from: 'Sentinel Contact Form <noreply@sentinel.example>',
+      from: 'Sentinel Contact Form <sentinelcostablanca@gmail.com>',
       to: [guardianEmail],
       subject: `New Inquiry - ${referenceNumber} - ${formData.propertyLocation}`,
       html: `

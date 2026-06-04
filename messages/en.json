@@ -25,8 +25,8 @@
       "privacyPolicy": "Privacy Policy"
     },
     "contact": {
-      "phone": "+34 XXX XXX XXX",
-      "email": "contact@sentinel.example",
+      "phone": "+34 694 22 90 35",
+      "email": "sentinelcostablanca@gmail.com",
       "hours": "Mon-Fri 9:00-18:00"
     },
     "language": "Language",
@@ -66,12 +66,57 @@
   "home": {
     "hero": {
       "wordmark": "SENTINEL",
-      "descriptor": "Local owner representation",
-      "line3": "We take over property care in your absence.",
+      "descriptor": "Structured Property Oversight",
+      "line3": "We provide structured local oversight of your property in your absence.",
       "line4": "Scope of action defined in advance.",
       "line5": "Every action is documented.",
       "area": "Area of operation: southern Costa Blanca.",
       "ctaPrimary": "See how it works"
+    },
+    "pathway": {
+      "selectorTitle": "What situation are you trying to control?",
+      "cta": "Discuss this situation",
+      "cards": {
+        "private-absence": {
+          "title": "Private Absence",
+          "description": "The property remains unused for long periods."
+        },
+        "active-guest-use": {
+          "title": "Active Guest Use",
+          "description": "The property is regularly accessed by guests, cleaners, or technicians."
+        },
+        "mixed-undetermined": {
+          "title": "Mixed / Not Decided",
+          "description": "The use pattern is not fixed yet."
+        }
+      },
+      "framing": {
+        "private-absence": {
+          "lead": "Nobody is using the property, so nobody detects slow problems early.",
+          "point1": "Leaks, humidity, smell, ventilation",
+          "point2": "Visible water, electricity, and boiler checks",
+          "point3": "Keyholding and controlled access",
+          "point4": "Pre-arrival cleaning and readiness",
+          "point5": "Documented condition reporting"
+        },
+        "active-guest-use": {
+          "lead": "The property is active, but responsibility is fragmented between guests, cleaners, technicians, and the remote owner.",
+          "point1": "Turnover cleaning and readiness",
+          "point2": "Keyholding and access events",
+          "point3": "Post-stay condition checks",
+          "point4": "Damage documentation",
+          "point5": "Cleaner, vendor, and technician coordination",
+          "point6": "Reducing operational noise for the owner"
+        },
+        "mixed-undetermined": {
+          "lead": "The owner does not yet know which operating model the property needs.",
+          "point1": "Private use now, possible rental later",
+          "point2": "Avoiding wrong package choice",
+          "point3": "Avoiding unnecessary guest-service intensity",
+          "point4": "Avoiding under-structuring if guest activity starts",
+          "point5": "Scope confirmed after structured review"
+        }
+      }
     },
     "exposure": {
       "title": "What do you really risk without local representation?",
@@ -561,8 +606,8 @@
       "groupMode": "Operational Mode",
       "groupModeAnchor": "Operational mode reflects oversight intensity resulting from property usage.",
       "modeLabel": "Operational Mode",
-      "modePrivateUse": "Private Use Mode",
-      "modeActiveGuest": "Active Guest Mode",
+      "modePrivateUse": "Private Absence",
+      "modeActiveGuest": "Active Guest Use",
       "modeSublinePrivateUse": "Standard oversight intensity.",
       "modeSublineActiveGuest": "Higher oversight intensity associated with guest turnover.",
       "modeDescriptor": {
@@ -646,6 +691,13 @@
       "bedrooms": "Bedrooms",
       "overlays": "Overlays",
       "range": "Estimated monthly range"
+    },
+    "pathwayContext": {
+      "title": "Usage pathway context",
+      "private-absence": "Private Absence",
+      "active-guest-use": "Active Guest Use",
+      "mixed-undetermined": "Mixed / Undetermined Use",
+      "prefillPrefix": "Usage pathway:"
     },
     "directContact": {
       "title": "DIRECT CONTACT",
@@ -1739,7 +1791,7 @@
     "subtitle": "Sentinel — data protection",
     "lastUpdated": "Last updated: 2026-02-23",
     "sections": [
-      { "title": "1. Data Controller", "body": "The data controller is Sentinel, a local property representation service operating in Torrevieja and within a 50–70 km radius.\n\nContact for data protection matters:\nEmail: contact@sentinel.example" },
+      { "title": "1. Data Controller", "body": "The data controller is Sentinel, a local property representation service operating in Torrevieja and within a 50–70 km radius.\n\nContact for data protection matters:\nEmail: sentinelcostablanca@gmail.com" },
       { "title": "2. Scope of Data Processed", "body": "Sentinel processes only data necessary for:\n\nResponding to enquiries sent via the contact form\nConclusion and performance of the package agreement\nInvoicing\nOnline payment processing\nOperational communication with the client\n\nData may include:\n\nName\nEmail address\nPhone number\nProperty location\nBilling details\nInformation required in the service onboarding process\n\nSentinel does not process data for marketing purposes without explicit consent." },
       { "title": "3. Legal Basis for Processing", "body": "Data is processed on the basis of:\n\nPerformance of contract or pre-contractual steps\nLegal obligations (e.g. accounting)\nLegitimate interest of the controller (operational communication)\nUser consent (where applicable)" },
       { "title": "4. Data Retention", "body": "Data is retained:\n\nFor the duration of the engagement\nFor periods required by law (e.g. accounting records)\nUntil withdrawal of consent, where processing is based on consent\n\nAfter the required periods, data is deleted or anonymised." },

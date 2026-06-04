@@ -25,8 +25,8 @@
       "privacyPolicy": "Polityka Prywatności"
     },
     "contact": {
-      "phone": "+34 XXX XXX XXX",
-      "email": "contact@sentinel.example",
+      "phone": "+34 694 22 90 35",
+      "email": "sentinelcostablanca@gmail.com",
       "hours": "Pon-Pią 9:00-18:00"
     },
     "language": "Język",
@@ -72,6 +72,51 @@
       "line5": "Każde działanie jest dokumentowane.",
       "area": "Obszar działania: południowa Costa Blanca.",
       "ctaPrimary": "Zobacz, to działa"
+    },
+    "pathway": {
+      "selectorTitle": "Jaką sytuację chcesz zabezpieczyć?",
+      "cta": "Omów tę sytuację",
+      "cards": {
+        "private-absence": {
+          "title": "Prywatna nieobecność",
+          "description": "Nieruchomość pozostaje nieużywana przez dłuższy czas."
+        },
+        "active-guest-use": {
+          "title": "Aktywne użycie przez gości",
+          "description": "Do nieruchomości regularnie wchodzą goście, sprzątanie lub technicy."
+        },
+        "mixed-undetermined": {
+          "title": "Tryb mieszany / brak decyzji",
+          "description": "Sposób używania nieruchomości nie jest jeszcze stały."
+        }
+      },
+      "framing": {
+        "private-absence": {
+          "lead": "Nikt nie używa nieruchomości, więc powolne problemy mogą pozostać niezauważone.",
+          "point1": "Przecieki, wilgoć, zapach, wentylacja",
+          "point2": "Widoczne kontrole wody, prądu i bojlera",
+          "point3": "Przechowanie kluczy i kontrolowany dostęp",
+          "point4": "Sprzątanie i przygotowanie przed przyjazdem",
+          "point5": "Udokumentowany raport stanu"
+        },
+        "active-guest-use": {
+          "lead": "Nieruchomość jest aktywna, ale odpowiedzialność rozprasza się między gości, sprzątanie, techników i właściciela zdalnego.",
+          "point1": "Sprzątanie i przygotowanie między pobytami",
+          "point2": "Przechowanie kluczy i obsługa dostępu",
+          "point3": "Kontrola stanu po pobycie",
+          "point4": "Dokumentacja szkód",
+          "point5": "Koordynacja sprzątania, techników i wykonawców",
+          "point6": "Ograniczenie chaosu operacyjnego dla właściciela"
+        },
+        "mixed-undetermined": {
+          "lead": "Właściciel nie wie jeszcze, jaki model obsługi będzie właściwy dla tej nieruchomości.",
+          "point1": "Dziś użytek prywatny, później możliwy wynajem",
+          "point2": "Uniknięcie złego wyboru zakresu",
+          "point3": "Uniknięcie niepotrzebnej intensywności obsługi gości",
+          "point4": "Uniknięcie zbyt słabej struktury, jeśli pojawi się wynajem",
+          "point5": "Zakres potwierdzany po uporządkowanym przeglądzie"
+        }
+      }
     },
     "exposure": {
       "title": "Czym naprawdę ryzykujesz bez lokalnej reprezentacji?",
@@ -562,8 +607,8 @@
       "groupMode": "Tryb operacyjny",
       "groupModeAnchor": "Tryb operacyjny określa intensywność nadzoru wynikającą z użytkowania nieruchomości.",
       "modeLabel": "Tryb operacyjny",
-      "modePrivateUse": "Tryb Użytkowania Prywatnego",
-      "modeActiveGuest": "Active Guest Mode",
+      "modePrivateUse": "Prywatna nieobecność",
+      "modeActiveGuest": "Aktywne użycie przez gości",
       "modeSublinePrivateUse": "Standardowa intensywność nadzoru.",
       "modeSublineActiveGuest": "Zwiększona intensywność nadzoru związana z rotacją gości.",
       "modeDescriptor": {
@@ -647,6 +692,13 @@
       "bedrooms": "Sypialnie",
       "overlays": "Moduły dodatkowe",
       "range": "Szacunkowy zakres miesięczny"
+    },
+    "pathwayContext": {
+      "title": "Kontekst ścieżki użycia",
+      "private-absence": "Prywatna nieobecność",
+      "active-guest-use": "Aktywne użycie przez gości",
+      "mixed-undetermined": "Tryb mieszany / nieustalony",
+      "prefillPrefix": "Ścieżka użycia:"
     },
     "directContact": {
       "title": "KONTAKT BEZPOŚREDNI",
@@ -1740,7 +1792,7 @@
     "subtitle": "Sentinel — ochrona danych osobowych",
     "lastUpdated": "Ostatnia aktualizacja: 2026-02-23",
     "sections": [
-      { "title": "1. Administrator Danych", "body": "Administratorem danych osobowych jest Sentinel, lokalna usługa reprezentacji nieruchomości działająca na terenie Torrevieja i w promieniu 50–70 km.\n\nKontakt w sprawach dotyczących danych osobowych:\nEmail: contact@sentinel.example" },
+      { "title": "1. Administrator Danych", "body": "Administratorem danych osobowych jest Sentinel, lokalna usługa reprezentacji nieruchomości działająca na terenie Torrevieja i w promieniu 50–70 km.\n\nKontakt w sprawach dotyczących danych osobowych:\nEmail: sentinelcostablanca@gmail.com" },
       { "title": "2. Zakres Przetwarzanych Danych", "body": "Sentinel przetwarza wyłącznie dane niezbędne do:\n\nOdpowiedzi na zapytania wysłane przez formularz kontaktowy\nZawarcia i realizacji umowy pakietowej\nWystawiania faktur\nObsługi płatności online\nKomunikacji operacyjnej z klientem\n\nDane mogą obejmować:\n\nImię i nazwisko\nAdres email\nNumer telefonu\nLokalizację nieruchomości\nDane rozliczeniowe\nInformacje wymagane w procesie wdrożenia usługi\n\nSentinel nie przetwarza danych w celach marketingowych bez wyraźnej zgody." },
       { "title": "3. Podstawa Prawna Przetwarzania", "body": "Dane przetwarzane są na podstawie:\n\nRealizacji umowy lub działań przed jej zawarciem\nObowiązków prawnych (np. księgowych)\nUzasadnionego interesu administratora (komunikacja operacyjna)\nZgody użytkownika (jeśli dotyczy)" },
       { "title": "4. Okres Przechowywania Danych", "body": "Dane przechowywane są:\n\nPrzez czas trwania współpracy\nPrzez okres wymagany przepisami prawa (np. dokumentacja księgowa)\nDo momentu wycofania zgody, jeśli przetwarzanie odbywa się na jej podstawie\n\nPo upływie wymaganych okresów dane są usuwane lub anonimizowane." },
