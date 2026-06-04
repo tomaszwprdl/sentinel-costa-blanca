@@ -35,7 +35,11 @@ Sentinel is not:
 
 - A concierge service  
 - A property management platform  
-- A cleaning company  
+- A cleaning-company brand  
+
+Keyholding and cleaning are core operational capabilities when delivered inside Sentinel’s structured oversight system.
+
+They must be presented as controlled practical functions, not as the public identity of the brand.
 
 All service structuring decisions must preserve this identity.
 
@@ -59,15 +63,30 @@ Future modifications must preserve this escalation axis.
 
 ## 4. Service Architecture Overview
 
-### Two Structural Layers
+### Three Structural Layers
 
 **Layer 1 — Oversight Packages (Primary Offering)**  
 Jurisdiction + inspection + decision framework.
 
-**Layer 2 — Operational Support (Secondary / Non-Preferred)**  
+**Layer 2 — Core Operational Capability Layer (Inside Packages)**  
+Practical local execution functions required to make oversight real.
+
+Includes:
+- Keyholding
+- Cleaning / cleaning coordination
+- Access coordination
+- Arrival readiness
+- Guest turnover support
+- Vendor / technician coordination
+
+**Layer 3 — Execution-Only Support (Secondary / Subordinate)**  
 Execution-only services without structured oversight.
 
-Layer 2 must never redefine Layer 1.
+Layer 2 may exist inside packages.  
+Layer 3 must never redefine Layer 1.
+
+Sentinel leads with oversight.  
+Operational functions prove the system can act.
 
 ---
 
@@ -94,6 +113,16 @@ Each package defines:
 - Response priority (SLA)  
 - Operational allocation level  
 - Estimated monthly range (final amount)
+
+Core operational capabilities may be included or coordinated according to package scope and usage pathway:
+
+- Keyholding
+- Cleaning / readiness cleaning
+- Turnover cleaning support
+- Access coordination
+- Vendor / technician coordination
+
+These capabilities do not replace package jurisdiction.
 
 ---
 
@@ -190,46 +219,123 @@ Fixed limit + owner escalation (Model C).
 
 ---
 
-## 9. Operational Mode Overlay
+## 9. Usage Pathway Model
 
-Two modes:
+Usage pathway classifies how the property is used while the owner is absent.
 
-- Residential Mode (default)  
-- Active Guest Mode  
+Three pathways:
 
-Mode does not change package level.
+- Private Absence
+- Active Guest Use
+- Mixed / Undetermined Use
 
-Mode adjusts operational intensity.
+Pathway does not change package level.
+
+Pathway adjusts:
+
+- Problem framing
+- Operational emphasis
+- Estimator default state
+- Contact context
+- Examples shown in the interface
+
+Pathway does not adjust:
+
+- SLA tier
+- Emergency decision limit
+- Geographic constraint
+- Legal boundary
+- Core identity
 
 ---
 
-### 9.1 Residential Mode
+### 9.1 Private Absence
 
-Standard oversight allocation.  
-No event-driven coordination.
+Profile:
+Property is primarily unused while the owner is away.
+
+Primary risk:
+Problems develop without regular human presence.
+
+Operational emphasis:
+
+- Scheduled inspections
+- Keyholding
+- Visible water / power / humidity checks
+- Ventilation / condition observation where scoped
+- Pre-arrival cleaning and readiness
+- Vendor access if an issue is detected
+
+Does NOT imply:
+
+- Constant cleaning frequency
+- Guest turnover support by default
+- Lifestyle concierge services
 
 ---
 
-### 9.2 Active Guest Mode
+### 9.2 Active Guest Use
 
-Includes:
+Profile:
+Property is regularly accessed by guests, cleaners, technicians, or rental-related parties.
 
-- Operational readiness allocation  
-- Turnover coordination (per event billing)  
-- Cleaning coordination (execution billed separately)  
-- Damage verification checks  
-- Increased event-driven communication  
+Primary risk:
+The property is active, but responsibility becomes fragmented.
 
-Does NOT:
+Operational emphasis:
 
-- Change decision limit  
-- Change SLA category  
-- Include physical labor in package  
+- Keyholding
+- Turnover cleaning support
+- Access coordination
+- Guest check support where scoped
+- Post-stay condition verification
+- Damage documentation
+- Vendor / technician coordination between bookings
 
-Guest Mode pricing model:
+Does NOT imply:
 
-- Additional fixed monthly operational allocation  
-- Per-event execution billing  
+- Different package jurisdiction
+- Different SLA tier
+- Different emergency authority level
+- Rental licensing verification
+
+Pricing model:
+
+- Additional fixed monthly operational allocation may apply
+- Per-event execution billing may apply
+
+---
+
+### 9.3 Mixed / Undetermined Use
+
+Profile:
+The owner may alternate between private use, empty periods, and guest activity, or has not selected an operating model.
+
+Primary risk:
+The wrong structure may be chosen too early.
+
+Operational emphasis:
+
+- Usage classification
+- Baseline oversight review
+- Scope confirmation after structured review
+- Pathway adjustment before final package confirmation
+
+Does NOT imply:
+
+- A fourth package
+- Custom undocumented service logic
+- Open-ended flexibility
+
+---
+
+### 9.4 Pathway Boundary Rule
+
+Usage pathway is a qualification layer.
+
+It may change what is emphasized.
+
+It may not change what Sentinel structurally is.
 
 ---
 
@@ -252,9 +358,11 @@ Sentinel's role is limited to operational oversight.
 Public display:
 
 - Estimated monthly range (final amount)  
-- Range reflects Residential baseline  
+- Range reflects package jurisdiction plus usage pathway / operational mode.  
 
-Guest Mode adjustment displayed via switch.
+Active Guest Use adjustment displayed through estimator logic.  
+
+Mixed / Undetermined Use is classification-first.  
 
 Final pricing confirmed after structured review.
 
@@ -276,27 +384,32 @@ Disclosure cannot conceal core parameters.
 
 ---
 
-## 13. Operational Support (Without Oversight)
+## 13. Execution-Only Support (Without Oversight)
 
 Separate section.  
 Not equal to packages.
 
-Available for clients requiring execution-only services.
+Available only for clients requiring limited execution without active oversight responsibility.
 
-Includes:
+May include:
 
-- Cleaning coordination  
-- Key holding  
-- Event-based assistance  
+- Cleaning
+- Cleaning coordination
+- Keyholding
+- Event-based access assistance
 
 Excludes:
 
-- Structured oversight  
-- Inspection framework  
-- Autonomous decision authority  
-- SLA commitment  
+- Structured oversight
+- Inspection framework
+- Autonomous decision authority
+- SLA commitment
+- Jurisdictional responsibility
+- Ongoing reporting cadence
 
 Clear limitation of responsibility must be stated.
+
+Execution-only support must not be visually equal to packages.
 
 ---
 

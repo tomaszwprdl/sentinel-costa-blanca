@@ -17,12 +17,12 @@ If this document becomes aspirational, it has failed.
 | Field | Value |
 |-------|-------|
 | Project | Sentinel |
-| State | Task 6 COMPLETE / LOCKED; Task 8 next eligible (not active); Task 7 deferred until Task 8 freeze |
-| Active Task | None (Task 8 — Functional Interaction Layer is next eligible) |
+| State | Task 6 COMPLETE / LOCKED; Task 8 ACTIVE; Task 7 deferred until Task 8 freeze |
+| Active Task | Task 8 — Functional Interaction Layer (Estimator & Usage Pathway Modeling) |
 | Website | Technically functional |
 | Identity Core | Locked (per DECISIONS.md) |
 | Public Readiness | Not ready |
-| Last Verified | AUDIT-6.15 + Micro-compliance patch B1–B3 + Internal-density normalization (16/24 cleanup) |
+| Last Verified | Usage Pathway Doctrine Patch + Core Operational Capability Correction |
 
 ---
 
@@ -53,8 +53,10 @@ The following decisions are implemented and aligned with DECISIONS.md:
 - SLA defined as response/decision time
 - Emergency authority limited and documented
 - Three-level jurisdictional escalation model locked
-- Operational Mode overlay (Residential / Active Guest)
+- Usage Pathway model (Private Absence / Active Guest Use / Mixed / Undetermined Use)
+- Operational mode remains below package jurisdiction
 - Emergency authority Model C (fixed limit + owner escalation)
+- Keyholding and cleaning recognized as core operational capabilities inside structured oversight
 - Execution-only layer structurally separated
 - Minimum 3-month engagement model
 - Monthly advance billing
@@ -115,7 +117,7 @@ All Task 5 doctrine layers (5A–5G) have been audited and marked CLOSED.
 # Incomplete Layers
 
 The structural system is defined.  
-Remaining gaps concern implementation fidelity and evidence articulation.
+Remaining gaps concern implementation fidelity, usage pathway embodiment, and evidence articulation.
 
 ---
 
@@ -131,8 +133,9 @@ Remaining work concerns execution consistency across pages:
 - Responsive grid calibration (desktop / tablet / mobile)
 - Cross-page containment consistency
 - Controlled disclosure rhythm verification
-- Guest Mode switch interaction implementation
-- Operational Support visual separation enforcement
+- Usage Pathway selector implementation
+- Estimator alignment to three pathway model
+- Execution-only support visual separation enforcement
 
 These are implementation refinements, not structural uncertainties.
 
@@ -157,11 +160,13 @@ No promotional proof artifacts implemented.
 
 ## Service Interface Integration
 
-Estimator implementation belongs to Task 8. Pending structural alignment:
+Task 8 is active. Pending implementation:
 
-- Overlay logic between package and Guest Mode
+- Homepage usage pathway selector
+- Package × Usage Pathway estimator matrix
 - Range recalculation logic
-- Execution-only separation logic
+- Contact prefill using pathway context
+- Execution-only support visual separation logic
 - One-click disclosure compliance validation
 
 ---
@@ -183,6 +188,29 @@ Pending:
 These are controlled implementation layers.
 
 No structural doctrine remains undefined.
+
+# Usage Pathway Doctrine Patch
+
+Owner correction recorded:
+
+- Keyholding and cleaning are core operational capabilities inside Sentinel’s service system.
+- They must not be treated as peripheral only.
+- They must not become brand positioning.
+- Sentinel remains Structured Property Oversight / Reprezentacja właściciela na miejscu.
+
+Current pathway model:
+
+1. Private Absence — empty-property / dormancy risk.
+2. Active Guest Use — event-driven / turnover risk.
+3. Mixed / Undetermined Use — classification-first pathway.
+
+Implementation status:
+
+- Doctrine updated.
+- Website implementation pending in Task 8.
+- Contact placeholder replacement pending in implementation.
+
+---
 
 # Active Risks
 
@@ -233,13 +261,13 @@ Task 5G — Copy Discipline Codex
 Task 6 — Core System Embodiment & Integrity
 
 Active:
-None
+Task 8 — Functional Interaction Layer (Estimator & Usage Pathway Modeling)
 
 System layer 1–6 complete.
 Task 6 is frozen.
 
-Next eligible: Task 8 — Functional Interaction Layer (Estimator & Usage Modeling) (not yet active).
-Task 7 — Visual System Completion (deferred until Task 8 freeze).
+Task 8 is active.
+Task 7 — Visual System Completion remains deferred until Task 8 freeze.
 
 Future:
 Task 7 — Visual System Completion (deferred until Task 8 freeze)

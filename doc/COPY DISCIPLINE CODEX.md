@@ -135,6 +135,31 @@ Not allowed:
 - “Learn more about how we care”
 - “Discover how we support you”
 
+
+---
+
+## 4.4 Operational Capability Language
+
+Keyholding and cleaning are permitted terms.
+
+They must be framed as operational capabilities inside a structured oversight system.
+
+Allowed:
+
+- "Keyholding is handled within the agreed scope."
+- "Cleaning / readiness cleaning may be included according to usage pathway."
+- "Turnover cleaning support is available for Active Guest Use."
+- "Access coordination is documented."
+
+Not allowed:
+
+- "We are your cleaning service."
+- "We take care of everything."
+- "Complete rental management."
+- "Holiday home care."
+
+Operational capability copy must state scope, frequency, or condition where relevant.
+
 ---
 
 # 5. Prohibited Language (PL & EN)
@@ -184,6 +209,37 @@ EN:
 - exceptional
 - unmatched
 - industry-leading
+
+
+---
+
+## 5.4 Prohibited Segment Labels
+
+Do not label people by casual customer type.
+
+Not allowed:
+
+PL:
+- klient wynajmujący
+- klient od pustego mieszkania
+- niezdecydowany klient
+
+EN:
+- rental customer
+- empty apartment customer
+- undecided customer
+
+Allowed structural labels:
+
+PL:
+- Nieobecność prywatna
+- Aktywne użycie przez gości
+- Użycie mieszane / nieustalone
+
+EN:
+- Private Absence
+- Active Guest Use
+- Mixed / Undetermined Use
 
 ---
 

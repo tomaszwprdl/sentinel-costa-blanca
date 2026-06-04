@@ -81,10 +81,46 @@ The following English terms are structurally locked:
 - Structured report
 - Response window
 - Physical presence window
-- Guest Mode
-- Residential Mode
+- Usage Pathway
+- Private Absence
+- Active Guest Use
+- Mixed / Undetermined Use
+- Keyholding
+- Cleaning / readiness cleaning
+- Turnover cleaning support
+- Guest check support
 
 Cursor must preserve these terms unless Owner overrides.
+
+
+---
+
+# 4A. Usage Pathway Terminology (Binding)
+
+Public English pathway labels:
+
+- Private Absence
+- Active Guest Use
+- Mixed / Undetermined Use
+
+Allowed contextual variants:
+
+- Private Use (only inside estimator controls where space is constrained)
+- Mixed / Not Decided (homepage card label only)
+
+Not allowed:
+
+- Empty apartment customer
+- Rental customer
+- Undecided customer
+- Holiday-home care
+- Rental management
+
+Rules:
+
+- Pathway labels classify property use, not customer personality.
+- Do not imply different packages or different SLA.
+- Do not soften into hospitality language.
 
 ---
 

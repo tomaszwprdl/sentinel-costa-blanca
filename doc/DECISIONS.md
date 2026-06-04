@@ -489,25 +489,54 @@ Preserve structural clarity and institutional positioning.
 
 ---
 
-# 18. Operational Mode Overlay
+# 18. Usage Pathway Segmentation
 
-Decision: Guest activity handled via operational overlay, not separate packages.  
+Decision: Sentinel uses one service architecture with three contextual usage pathways.  
+Status: LOCKED
+
+Pathways:
+- Private Absence
+- Active Guest Use
+- Mixed / Undetermined Use
+
+Definition:
+Usage pathways classify the owner's operating situation and adjust the visible problem framing, examples, operational emphasis, estimator default, and contact context.
+
+Rules:
+- Pathways do NOT create separate websites.
+- Pathways do NOT create separate packages.
+- Pathways do NOT change SLA tier.
+- Pathways do NOT change emergency authority limits.
+- Pathways do NOT change legal boundaries or geographic constraint.
+- Pathways do NOT change Sentinel’s core identity.
+
+Purpose:
+Allow the website to reduce the correct anxiety for each owner type without fragmenting the service architecture.
+
+---
+
+# 18A. Operational Mode Overlay
+
+Decision: Guest activity is handled as an operational overlay inside the same package system.  
 Status: LOCKED
 
 Definition:
-Two operational modes exist:
+Operational mode models activity intensity. It sits below package jurisdiction.
 
-- Residential Mode (default baseline)
-- Active Guest Mode (overlay)
+Public pathway labels:
+- Private Absence — property is mainly unused while the owner is away.
+- Active Guest Use — property is regularly accessed by guests, cleaners, or technicians.
+- Mixed / Undetermined Use — property use is not fixed or requires classification.
 
 Rules:
 - Operational mode does NOT change package level.
 - Operational mode does NOT change SLA tier.
 - Operational mode does NOT change emergency authority limit.
-- Active Guest Mode introduces additional operational allocation and per-event billing.
+- Active Guest Use introduces event-driven operational allocation and may introduce per-event billing.
+- Mixed / Undetermined Use must route toward structured review and classification, not invented pricing.
 
 Purpose:
-Separate jurisdiction (package) from activity intensity (mode).
+Separate jurisdiction (package) from activity intensity (mode) and from owner anxiety framing (pathway).
 
 ---
 
@@ -537,18 +566,20 @@ Definition:
 Publicly displayed pricing must:
 
 - Present estimated monthly range
-- Reflect Residential baseline
 - Represent final payable amount (no "+ VAT" exposure in interface)
+- Reflect package jurisdiction plus usage pathway / operational mode
 
 Prohibited:
 - "Starting from" pricing anchors
 - Hidden pricing behind contact forms
 - Dynamic pricing without disclosure
 
-Guest Mode pricing:
-Displayed via visible switch and operational allocation logic.
+Usage pathway pricing:
+Displayed through visible estimator logic using package × usage pathway / operational mode matrix.
 
-Final pricing confirmed after structured review.
+Active Guest Use may include additional event-driven operational allocation and per-event execution billing.
+
+Mixed / Undetermined Use must be treated as classification-first. Final pricing is confirmed after structured review.
 
 Purpose:
 Preserve Clarity Doctrine and institutional transparency.
@@ -570,28 +601,42 @@ No long-term lock-in model (12-month mandatory) permitted.
 
 ---
 
-# 22. Operational Support Layer
+# 22. Core Operational Capability Layer and Execution-Only Support
 
-Decision: Execution-only services permitted but structurally secondary.  
+Decision: Keyholding and cleaning are core operational capabilities when delivered inside Sentinel’s structured oversight system.  
 Status: LOCKED
 
 Definition:
-Execution services (e.g., cleaning coordination, key holding, event-based assistance)
-may be offered without active oversight package.
+Sentinel’s public identity remains Structured Property Oversight / Reprezentacja właściciela na miejscu.
+
+Inside active packages, Sentinel may include or coordinate practical operational functions required for local execution:
+
+- Keyholding
+- Cleaning / cleaning coordination
+- Arrival readiness
+- Turnover cleaning support
+- Access coordination
+- Guest / technician entry support
+- Vendor coordination
 
 Rules:
+- These capabilities are core practical functions, not brand positioning.
+- Sentinel must not be presented as a cleaning company or generic keyholding service.
+- Operational capabilities must be framed as controlled functions inside a defined oversight system.
+- Frequency, responsibility, and billing must be explicitly scoped.
+
+Execution-only support:
+Execution-only services may be offered without an active oversight package, but remain structurally subordinate.
+
+Execution-only rules:
 - No inspection framework
 - No autonomous decision authority
 - No SLA guarantees
 - No jurisdictional responsibility
-
-Operational Support must:
-- Be presented separately from oversight packages
-- Be visually and structurally subordinate
-- Never redefine Sentinel’s core positioning
+- No implication of ongoing oversight
 
 Purpose:
-Allow market entry flexibility without diluting oversight identity.
+Reflect the real operational offer without diluting Sentinel’s institutional positioning.
 
 ---
 

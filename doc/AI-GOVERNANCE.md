@@ -195,14 +195,35 @@ Current position:
 Task 5 — Identity & System Layer CLOSED (5A–5G audited and structurally sovereign)
 Task 6 — Core System Embodiment & Integrity COMPLETE / LOCKED (Frozen)
 
-Next eligible task:
-Task 8 — Functional Interaction Layer (ACTIVE NEXT)
-Task 7 — Visual System Completion (DEFERRED until Task 8 freeze)
+Active task:
+Task 8 — Functional Interaction Layer (Estimator & Usage Pathway Modeling)
+
+Deferred:
+Task 7 — Visual System Completion (deferred until Task 8 freeze)
 
 No work beyond active task is permitted unless explicitly promoted by Owner.
 Task 8 must be completed and frozen before Task 7 activation.
 
 Visual polish outside locked identity system is prohibited.
+
+---
+
+
+## 4A. Current Structural Correction
+
+Owner correction locked into doctrine:
+
+- Sentinel uses one service architecture with three usage pathways:
+  1. Private Absence
+  2. Active Guest Use
+  3. Mixed / Undetermined Use
+- Pathways change framing and operational emphasis only.
+- Pathways do not change packages, SLA, emergency authority, geography, legal boundaries, or identity.
+- Keyholding and cleaning are core operational capabilities inside structured oversight.
+- Keyholding and cleaning must not become brand positioning.
+- Execution-only cleaning/keyholding/access may exist only as subordinate support without oversight responsibility.
+
+Implementation belongs to Task 8.
 
 ---
 

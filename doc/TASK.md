@@ -637,18 +637,18 @@ Status: ⏸️ DEFERRED (until Task 8 freeze)
 
 ---
 
-# TASK 8 — Functional Interaction Layer (ACTIVE NEXT)
+# TASK 8 — Functional Interaction Layer (ACTIVE)
 
-Task 8 — Functional Interaction Layer (Estimator & Usage Modeling) is the next active task.
+Task 8 — Functional Interaction Layer (Estimator & Usage Pathway Modeling) is active.
 
 ## 8.0 Purpose
 
 Estimator is a procedural qualification interface that models:
 
 * Jurisdiction (Package)
-* Operational Usage Mode
+* Usage Pathway / Operational Mode
 * Property Load
-* Optional Operational Overlays
+* Optional Operational Scope Elements
 
 It outputs:
 
@@ -662,6 +662,7 @@ It is not:
 * A lead magnet
 * A dynamic pricing engine
 * An onboarding system
+* A separate package selector
 
 ## 8.1 Structural Axes
 
@@ -669,20 +670,24 @@ Define explicitly:
 
 **Axis 1 — Package** (Structured Presence / Active Oversight / Extended Jurisdiction)
 
-**Axis 2 — Usage Mode**
-* Private residence
-* Mixed usage
-* Active short-term rental
+**Axis 2 — Usage Pathway**
+* Private Absence
+* Active Guest Use
+* Mixed / Undetermined Use
 
 **Axis 3 — Property Load**
 * Size bracket (range only)
 * Bedrooms (1 / 2 / 3 / 4+)
 
-**Axis 4 — Optional Overlays**
-* Cleaning coordination
+**Axis 4 — Operational Scope Elements**
+* Cleaning / readiness cleaning
+* Turnover cleaning support
 * Linen handling
 * Guest check support
-* Key holding (if applicable)
+* Keyholding
+* Vendor / technician access coordination
+
+Operational scope elements must be finite. Cursor must not add new options without doctrine update.
 
 ## 8.2 Calculation Model (Mandatory)
 
@@ -693,16 +698,23 @@ No formulas.
 Define:
 
 **Base matrix:**
-Package × Usage Mode → Base monthly range
+Package × Usage Pathway → Base monthly range
 
 **Adjustments:**
 Size bracket → Adjustment band
-Bedrooms → Guest complexity band
-Overlays → Fixed additive range
+Bedrooms → Complexity band
+Operational scope elements → Fixed additive range
 
 All outputs remain ranges.
 
 No exact numbers.
+
+Mixed / Undetermined Use may either:
+
+* Produce a conservative classification range; or
+* Route to structured review without numeric output if pricing cannot be responsibly modeled.
+
+Cursor must document which option is implemented. Cursor must not invent undocumented pricing logic.
 
 ## 8.3 Output Doctrine
 
@@ -710,9 +722,10 @@ After "Calculate":
 
 Must display:
 
-1. Estimated monthly range (large, calm typography)
-2. Structural explanation (base + usage + overlays)
-3. Procedural note:
+1. Structural Summary (chosen parameters)
+2. Estimated monthly range (large, calm typography)
+3. Structural explanation (base + usage pathway + property load + scope elements)
+4. Procedural note:
    "Estimate is indicative. Final scope confirmed after structured review."
 
 Must not display:
@@ -722,6 +735,7 @@ Must not display:
 * "Starting from"
 * Savings
 * Anchors
+* Recommended / best choice language
 
 ## 8.4 Placement Doctrine
 
@@ -732,6 +746,8 @@ Estimator must:
 * Not exceed 70vh on first render
 * Not be full-screen
 * Not appear in hero
+
+Homepage pathway selector is separate from the estimator.
 
 ## 8.5 Interaction Boundary
 
@@ -749,56 +765,111 @@ Estimator may:
 Pre-filled fields:
 
 * Package
-* Usage mode
+* Usage pathway
 * Size bracket
 * Bedrooms
-* Overlays
+* Operational scope elements
+* Estimated range, if calculated
 
-## 8.6 Guest Mode Governance
+## 8.6 Usage Pathway Governance
 
-Guest Mode:
+Usage pathway:
 
-* Is operational overlay
+* Is a qualification layer
+* Changes problem framing and operational emphasis
 * Does not change jurisdiction
 * Does not change SLA
 * Does not change authority level
 * Affects operational intensity only
 
-Guest Mode switch must:
+Active Guest Use:
 
-* Exist inside estimator
-* May exist informationally on Services page (non-calculating)
+* Is event-risk oriented
+* May include turnover cleaning support
+* May include guest check support
+* May include event-driven access and vendor coordination
 
-## 8.7 Completion Criteria
+Private Absence:
 
-Task 8 complete when:
+* Is dormancy-risk oriented
+* May include scheduled checks
+* May include keyholding
+* May include pre-arrival cleaning/readiness
 
-* Matrix documented in repository
-* Estimator implemented
-* Pre-fill logic working
-* PL/EN parity verified
-* No doctrine violation
-* QA entry added
+Mixed / Undetermined Use:
 
-## 8.8 Matrix Logic Blueprint (Implementation-Safe)
+* Is classification-first
+* Must not imply custom uncontrolled scope
+* Should route toward structured review when uncertainty remains
 
-### 8.8.1 Goal
+## 8.7 Homepage Pathway Selector
 
-The estimator models jurisdiction + operational intensity into a monthly final-amount range (indicative). It does not compute an exact price. Output must remain a range at every step.
+Homepage must include a controlled selector after hero.
 
-### 8.8.2 Inputs (finite set, no expansion)
+Heading intent:
+"How is the property used while you are absent?"
+
+Pathways:
+
+1. Private Absence
+2. Active Guest Use
+3. Mixed / Not Decided
+
+Selector behavior may:
+
+* Route to pathway-specific pages; or
+* Scroll/update a contextual block on the same page.
+
+Selector behavior must not:
+
+* Create three separate websites
+* Change packages
+* Change SLA
+* Change legal terms
+* Trigger personal-data collection
+
+## 8.8 Contextual Content Adaptation
+
+Shared content remains 85–90% of the website.
+
+Contextual adaptation is limited to:
+
+* Hero subtext / pathway intro
+* First pain/problem block
+* “Without Sentinel / With Sentinel” examples
+* Operational emphasis block
+* Estimator default state
+* Contact form context
+
+Contextual adaptation must not affect:
+
+* Packages
+* SLA
+* Emergency authority
+* Geographic limit
+* Legal pages
+* Identity system
+* Core navigation
+
+## 8.9 Matrix Logic Blueprint (Implementation-Safe)
+
+### 8.9.1 Goal
+
+The estimator models package jurisdiction + usage pathway + property load + operational scope into a monthly final-amount range (indicative). It does not compute an exact price. Output must remain a range at every step.
+
+### 8.9.2 Inputs (finite set, no expansion)
 
 **Axis A — Package (Jurisdiction):**
 
-* Structured Presence
-* Active Oversight
-* Extended Jurisdiction
+* structured_presence
+* active_oversight
+* extended_jurisdiction
 
-**Axis B — Operational Mode:**
+**Axis B — Usage Pathway:**
 
-* EN: Private Use Mode
-* PL: Tryb Użytkowania Prywatnego
-* Active Guest Mode (overlay)
+* private_absence
+* active_guest_use
+* mixed_undetermined
 
 **Axis C — Size bracket (categorical, not precise):**
 
@@ -808,29 +879,31 @@ The estimator models jurisdiction + operational intensity into a monthly final-a
 
 **Axis D — Bedrooms (categorical):**
 
-* 1
-* 2
-* 3
-* 4+
+* B1
+* B2
+* B3
+* B4P
 
-**Axis E — Optional overlays (checkboxes, execution-only overlays):**
+**Axis E — Operational scope elements:**
 
-* Cleaning coordination
-* Linen handling
-* Guest check support
-* Key holding (only if not already implied by core model)
+* cleaning_readiness
+* turnover_cleaning
+* linen
+* guest_check
+* keyholding
+* vendor_access
 
 No other inputs are allowed in Task 8 without a doctrine update.
 
-### 8.8.3 Core model (matrix + additive bands)
+### 8.9.3 Core model (matrix + additive bands)
 
 Computation is matrix-based + additive bands.
 
 **Base Range Matrix**
 
-A 3×2 matrix defines the base monthly range by:
+A 3×3 matrix defines the base monthly range by:
 
-Package × Operational Mode → baseRange
+Package × Usage Pathway → baseRange
 
 **Adjustments**
 
@@ -838,15 +911,15 @@ Each additional axis adds an adjustment range:
 
 * sizeAdjRange from Size bracket
 * bedroomsAdjRange from Bedrooms category
-* overlaysAdjRange = sum of selected overlay ranges
+* scopeAdjRange = sum of selected operational scope ranges
 
 **Final Range Aggregation**
 
-finalRange = baseRange + sizeAdjRange + bedroomsAdjRange + overlaysAdjRange
+finalRange = baseRange + sizeAdjRange + bedroomsAdjRange + scopeAdjRange
 
 All operands are ranges.
 
-### 8.8.4 Range arithmetic rules (strict)
+### 8.9.4 Range arithmetic rules (strict)
 
 Represent a range as:
 
@@ -856,32 +929,24 @@ Range = { min: number, max: number }
 
 addRanges(a,b) = { min: a.min + b.min, max: a.max + b.max }
 
-**Overlay sum:**
+**Scope sum:**
 
-Start from {min:0, max:0} and add each overlay's Range.
+Start from {min:0, max:0} and add each selected operational scope element's Range.
 
 No weighting, no multipliers, no formulas. Only controlled mapping + additive ranges.
 
-### 8.8.5 Data definition (JSON-ready, single source)
+### 8.9.5 Data definition (JSON-ready, single source)
 
 Store all ranges in a single deterministic structure (e.g. estimatorMatrix.ts), shaped like:
 
-* BASE_MATRIX[packageKey][modeKey] -> Range
+* BASE_MATRIX[packageKey][pathwayKey] -> Range
 * SIZE_ADJ[sizeKey] -> Range
 * BEDROOMS_ADJ[bedroomsKey] -> Range
-* OVERLAY_ADJ[overlayKey] -> Range
+* SCOPE_ADJ[scopeKey] -> Range
 
 Keys must be stable (no human-readable strings as keys).
 
-**Example keys:**
-
-* package: structured_presence | active_oversight | extended_jurisdiction
-* mode: private_use | active_guest
-* size: S | M | L
-* bedrooms: B1 | B2 | B3 | B4P
-* overlays: cleaning | linen | guest_check | key_holding
-
-### 8.8.6 UI behavior required by doctrine
+### 8.9.6 UI behavior required by doctrine
 
 * All inputs visible simultaneously (no step wizard).
 * User must click Calculate to generate result.
@@ -901,7 +966,7 @@ Estimator must be contained and must not dominate the viewport:
 * Located after pricing explanation
 * Initial rendered block must not exceed ~70vh (without forcing full scroll capture)
 
-### 8.8.7 Output layout order (non-negotiable)
+### 8.9.7 Output layout order (non-negotiable)
 
 When calculated, output must show in this order:
 
@@ -916,7 +981,7 @@ When calculated, output must show in this order:
 * "Recommended/Best choice"
 * animated emphasis on price
 
-### 8.8.8 Contact pre-fill (handoff protocol)
+### 8.9.8 Contact pre-fill (handoff protocol)
 
 After result, provide CTA:
 
@@ -927,24 +992,49 @@ On click:
 * Navigate to Contact page and pre-fill a structured context payload.
 * Prefill must include:
   * package
-  * operational mode
+  * usage pathway
   * size bracket
   * bedrooms
-  * overlays selected
-  * computed monthly range (display string)
+  * operational scope elements selected
+  * computed monthly range (display string), if calculated
 * No personal data collected by estimator. No storage. No auto-submit.
 
 **Implementation note:**
 
 Use a deterministic encoding (query params or state transfer) that works in both locales and survives refresh if query-based.
 
-### 8.8.9 QA checks (minimum)
+### 8.9.9 QA checks (minimum)
 
 * Same inputs always produce same output range.
 * PL and EN labels correct; keys identical.
 * Result collapses on any input change.
-* No off-ladder spacing introduced; estimator uses existing spacing system.
+* Homepage pathway selector does not create package or SLA differences.
 * Contact prefill works and does not submit automatically.
+* No off-ladder spacing introduced; estimator uses existing spacing system.
+
+## 8.10 Contact Details Patch
+
+Replace visible placeholder contact data across all pages:
+
+* Email: sentinelcostablanca@gmail.com
+* Phone / WhatsApp: +34 694 22 90 35
+
+Pre-live Gmail is permitted.
+
+Final public launch should prefer branded domain email once available.
+
+## 8.11 Completion Criteria
+
+Task 8 complete when:
+
+* Usage pathway selector implemented
+* Matrix documented in repository
+* Estimator aligned to usage pathway model
+* Contact pre-fill logic working
+* Contact details placeholders removed
+* PL/EN parity verified
+* No doctrine violation
+* QA entry added
 
 ---
 
@@ -965,7 +1055,7 @@ Completed:
 ✅ Task 6 — Core System Embodiment & Integrity  
 
 Active:
-None — Task 6 frozen. Task 8 (Functional Interaction Layer) is next active. Task 7 (Visual System Completion) deferred until Task 8 freeze.
+Task 8 — Functional Interaction Layer (Estimator & Usage Pathway Modeling). Task 7 (Visual System Completion) deferred until Task 8 freeze.
 
 Note: Task 8 must be completed and frozen before Task 7 activation.
 
