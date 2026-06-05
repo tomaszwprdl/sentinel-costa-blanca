@@ -1,16 +1,19 @@
+import OperationalCaptureFrame from '@/components/visuals/OperationalCaptureFrame';
+
 type Translator = (key: string, values?: Record<string, string | number | Date>) => string;
 
 type PhotoSlot = {
   number: string;
   caption: string;
+  kind: 'water' | 'boiler' | 'electrical' | 'lock';
 };
 
 export default function OnSiteVisitPhotoGrid({ t }: { t: Translator }) {
   const slots: PhotoSlot[] = [
-    { number: '01', caption: t('photoGrid.captions.waterShutoff') },
-    { number: '02', caption: t('photoGrid.captions.boilerUnit') },
-    { number: '03', caption: t('photoGrid.captions.electricalPanel') },
-    { number: '04', caption: t('photoGrid.captions.frontDoorLock') },
+    { number: '01', caption: t('photoGrid.captions.waterShutoff'), kind: 'water' },
+    { number: '02', caption: t('photoGrid.captions.boilerUnit'), kind: 'boiler' },
+    { number: '03', caption: t('photoGrid.captions.electricalPanel'), kind: 'electrical' },
+    { number: '04', caption: t('photoGrid.captions.frontDoorLock'), kind: 'lock' },
   ];
 
   return (
@@ -22,21 +25,15 @@ export default function OnSiteVisitPhotoGrid({ t }: { t: Translator }) {
       <div className="grid grid-cols-2 gap-5">
         {slots.map((slot) => (
           <div key={slot.number}>
-            <div className="border border-structural-muted bg-surface-light-alt aspect-[4/3] p-5 flex flex-col justify-between">
-              <div className="text-sm font-medium text-authority">
-                {t('photoGrid.placeholderLabel', { number: slot.number })}
-              </div>
-              <div className="text-xs text-muted">
-                {t('photoGrid.ownerProvidedNote')}
-              </div>
-            </div>
-            <div className="mt-2 text-sm text-body">
-              {slot.caption}
-            </div>
+            <OperationalCaptureFrame
+              reference={t('photoGrid.captureLabel', { number: slot.number })}
+              label={slot.caption}
+              note={t('photoGrid.ownerProvidedNote')}
+              kind={slot.kind}
+            />
           </div>
         ))}
       </div>
     </div>
   );
 }
-

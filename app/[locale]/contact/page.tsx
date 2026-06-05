@@ -15,6 +15,7 @@ import DisclosureBlock from '@/components/DisclosureBlock';
 import Section from '@/components/layout/Section';
 import GridFrame from '@/components/layout/GridFrame';
 import Region from '@/components/layout/Region';
+import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
 
 import { normalizePathwayParam } from '@/lib/pathway';
 import {
@@ -78,6 +79,13 @@ function ContactPageInner() {
   const tEst = useTranslations('services.estimator');
   const tCommon = useTranslations('common');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const serviceAreaMapLabels = {
+    title: tCommon('serviceAreaMap.title'),
+    center: tCommon('serviceAreaMap.center'),
+    radius: tCommon('serviceAreaMap.radius'),
+    boundary: tCommon('serviceAreaMap.boundary'),
+    caption: tCommon('serviceAreaMap.caption'),
+  };
 
   const estimatorPrefill = useMemo(() => {
     const package_ = searchParams.get('est_package');
@@ -336,11 +344,8 @@ function ContactPageInner() {
               <p className="text-body mb-5">
                 {t('serviceArea.description')}
               </p>
-              <div className="bg-surface-card border border-structural-light p-10 flex items-center justify-center mb-10">
-                <p className="text-muted text-center">
-                  {t('serviceArea.mapPlaceholder')}<br />
-                  <span className="text-sm">{t('serviceArea.mapNote')}</span>
-                </p>
+              <div className="mb-10">
+                <ServiceAreaMap labels={serviceAreaMapLabels} />
               </div>
               <DisclosureBlock 
                 label={t('serviceArea.examplesTitle')}

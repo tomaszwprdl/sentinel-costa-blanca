@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import Section from '@/components/layout/Section';
 import GridFrame from '@/components/layout/GridFrame';
 import Region from '@/components/layout/Region';
+import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
 import {
   PATHWAY_KEYS,
   type PathwayKey,
@@ -27,6 +28,14 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'home' });
+  const tCommon = await getTranslations({ locale, namespace: 'common' });
+  const serviceAreaMapLabels = {
+    title: tCommon('serviceAreaMap.title'),
+    center: tCommon('serviceAreaMap.center'),
+    radius: tCommon('serviceAreaMap.radius'),
+    boundary: tCommon('serviceAreaMap.boundary'),
+    caption: tCommon('serviceAreaMap.caption'),
+  };
 
   return (
     <>
@@ -244,7 +253,7 @@ export default async function HomePage({
               </div>
             </Region>
             <Region name="support" tabletSpan="half" desktopSpan="half">
-              <div className="bg-surface-light-alt p-10 flex items-center justify-center r min-h-[200px]" aria-hidden />
+              <ServiceAreaMap labels={serviceAreaMapLabels} />
             </Region>
           </GridFrame>
         </Section>

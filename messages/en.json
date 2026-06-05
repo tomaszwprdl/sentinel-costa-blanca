@@ -61,6 +61,13 @@
         "label": "Scope Rule",
         "text": "If not explicitly listed in package → not included"
       }
+    },
+    "serviceAreaMap": {
+      "title": "Service area map",
+      "center": "Torrevieja",
+      "radius": "50-70 km",
+      "boundary": "Operational centre",
+      "caption": "Static jurisdiction map. The service area is an operational radius, not a flexible coverage promise."
     }
   },
   "home": {
@@ -875,8 +882,8 @@
     "serviceArea": {
       "title": "SERVICE AREA",
       "description": "Sentinel services properties within Torrevieja and approximately 50-70km radius.",
-      "mapPlaceholder": "[Service Area Map - Static Image Placeholder]",
-      "mapNote": "Map showing Torrevieja + 50-70km radius will be added here",
+      "mapPlaceholder": "Service area map",
+      "mapNote": "Torrevieja + 50-70km operational radius.",
       "examplesTitle": "Covered areas include (examples)",
       "examplesText": "Torrevieja, Orihuela Costa, Pilar de la Horadada, San Miguel de Salinas, and other towns within the radius.",
       "coveredTitle": "Covered areas include (examples):",
@@ -945,11 +952,11 @@
         }
       },
       "photos": {
-        "title": "Photo references (labels only)",
-        "items": {
-          "ref01": "Photo Ref 01 – Main water valve",
-          "ref02": "Photo Ref 02 – Boiler unit",
-          "ref03": "Photo Ref 03 – Bathroom ceiling (moisture check)"
+        "title": "Redacted photo references",
+      "items": {
+        "ref01": "Photo Ref 01 – Main water valve",
+        "ref02": "Photo Ref 02 – Boiler unit",
+        "ref03": "Photo Ref 03 – Bathroom ceiling (moisture check)"
         }
       },
       "summary": {
@@ -960,8 +967,8 @@
     },
     "photoGrid": {
       "label": "Example: On-site visit documentation (anonymized)",
-      "placeholderLabel": "Photo placeholder {number}",
-      "ownerProvidedNote": "Image provided by owner",
+      "captureLabel": "SEN-CAP-{number}",
+      "ownerProvidedNote": "Redacted operational capture",
       "captions": {
         "waterShutoff": "Main water shut-off valve — visual check",
         "boilerUnit": "Boiler unit — status verification",

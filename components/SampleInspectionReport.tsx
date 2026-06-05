@@ -1,5 +1,6 @@
 import GridFrame from '@/components/layout/GridFrame';
 import Region from '@/components/layout/Region';
+import OperationalCaptureFrame from '@/components/visuals/OperationalCaptureFrame';
 
 type Translator = (key: string, values?: Record<string, string | number | Date>) => string;
 
@@ -26,9 +27,9 @@ export default function SampleInspectionReport({ t }: { t: Translator }) {
   ];
 
   const photoRefs = [
-    t('sampleReport.photos.items.ref01'),
-    t('sampleReport.photos.items.ref02'),
-    t('sampleReport.photos.items.ref03'),
+    { reference: 'SEN-CAP-01', label: t('sampleReport.photos.items.ref01'), kind: 'water' as const },
+    { reference: 'SEN-CAP-02', label: t('sampleReport.photos.items.ref02'), kind: 'boiler' as const },
+    { reference: 'SEN-CAP-03', label: t('sampleReport.photos.items.ref03'), kind: 'electrical' as const },
   ];
 
   return (
@@ -91,10 +92,13 @@ export default function SampleInspectionReport({ t }: { t: Translator }) {
         </h4>
         <GridFrame className="gap-3">
           {photoRefs.map((ref) => (
-            <Region key={ref} name="main" desktopSpan="third">
-              <div className="border border-structural-muted bg-surface-light-alt px-5 py-5 text-sm text-body">
-                <span className="font-medium text-authority">{ref}</span>
-              </div>
+            <Region key={ref.reference} name="main" desktopSpan="third">
+              <OperationalCaptureFrame
+                reference={ref.reference}
+                label={ref.label}
+                kind={ref.kind}
+                compact
+              />
             </Region>
           ))}
         </GridFrame>
@@ -119,4 +123,3 @@ export default function SampleInspectionReport({ t }: { t: Translator }) {
     </div>
   );
 }
-

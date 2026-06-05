@@ -5,10 +5,18 @@ import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import GridFrame from '@/components/layout/GridFrame';
 import Region from '@/components/layout/Region';
+import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
 
 export default function Footer() {
   const locale = useLocale();
   const t = useTranslations('common');
+  const serviceAreaMapLabels = {
+    title: t('serviceAreaMap.title'),
+    center: t('serviceAreaMap.center'),
+    radius: t('serviceAreaMap.radius'),
+    boundary: t('serviceAreaMap.boundary'),
+    caption: t('serviceAreaMap.caption'),
+  };
 
   return (
     <footer className="mt-[var(--space-120)] border-t border-authority-on-dark/20 bg-authority-bg text-authority-on-dark">
@@ -102,6 +110,12 @@ export default function Footer() {
             <p className="text-sm text-authority-on-dark/80 leading-relaxed">
               {t('footer.serviceAreaText')}
             </p>
+            <ServiceAreaMap
+              labels={serviceAreaMapLabels}
+              compact
+              inverse
+              className="mt-4 max-w-52"
+            />
             </div>
           </Region>
         </GridFrame>

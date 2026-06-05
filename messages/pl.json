@@ -61,6 +61,13 @@
         "label": "Zasada Zakresu",
         "text": "Jeśli nie jest wyraźnie wymienione w pakiecie → nie jest wliczone"
       }
+    },
+    "serviceAreaMap": {
+      "title": "Mapa obszaru obsługi",
+      "center": "Torrevieja",
+      "radius": "50-70 km",
+      "boundary": "Centrum operacyjne",
+      "caption": "Statyczna mapa jurysdykcji. Obszar obsługi jest promieniem operacyjnym, nie elastyczną obietnicą zasięgu."
     }
   },
   "home": {
@@ -875,8 +882,8 @@
     "serviceArea": {
       "title": "OBSZAR OBSŁUGI",
       "description": "Sentinel obsługuje nieruchomości w Torrevieja i w przybliżonym promieniu 50-70km.",
-      "mapPlaceholder": "[Mapa Obszaru Obsługi - Statyczny Placeholder Obrazu]",
-      "mapNote": "Mapa pokazująca Torrevieja + promień 50-70km zostanie tutaj dodana",
+      "mapPlaceholder": "Mapa obszaru obsługi",
+      "mapNote": "Torrevieja + promień operacyjny 50-70 km.",
       "examplesTitle": "Pokryte obszary obejmują (przykłady)",
       "examplesText": "Torrevieja, Orihuela Costa, Pilar de la Horadada, San Miguel de Salinas oraz inne miasta w promieniu.",
       "coveredTitle": "Pokryte obszary obejmują (przykłady):",
@@ -945,7 +952,7 @@
         }
       },
       "photos": {
-        "title": "Odniesienia do zdjęć (tylko etykiety)",
+        "title": "Zanonimizowane odniesienia do zdjęć",
         "items": {
           "ref01": "Ref. foto 01 – Główny zawór wody",
           "ref02": "Ref. foto 02 – Jednostka bojlera",
@@ -960,8 +967,8 @@
     },
     "photoGrid": {
       "label": "Przykład: Dokumentacja wizyty na miejscu (zanonimizowana)",
-      "placeholderLabel": "Placeholder zdjęcia {number}",
-      "ownerProvidedNote": "Zdjęcie dostarczone przez właściciela",
+      "captureLabel": "SEN-CAP-{number}",
+      "ownerProvidedNote": "Zanonimizowane ujęcie operacyjne",
       "captions": {
         "waterShutoff": "Główny zawór wody — kontrola wizualna",
         "boilerUnit": "Bojler — weryfikacja stanu",
