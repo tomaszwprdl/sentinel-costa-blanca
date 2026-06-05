@@ -48,13 +48,17 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
   const isUnlocked = hasSelection;
   const showFullGate = !hasSelection;
   const showPicker = !hasSelection || isChanging;
+  const gateSectionClassName = [
+    'section-primitive--first',
+    !hasSelection ? 'flex-1 !max-h-none' : '!pb-10 md:!pb-12',
+  ].join(' ');
 
   return (
     <>
-      <Section tone="light" className="section-primitive--first hero-zone !pb-8 md:!pb-10">
+      <Section tone="light" className={gateSectionClassName}>
         <div className="container max-w-7xl">
           {showFullGate && (
-            <div className="mb-8 md:mb-10">
+            <div>
               <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 lg:items-start">
                 <div className="max-w-xl">
                   <h1 className="text-2xl md:text-3xl font-bold tracking-tight leading-tight text-heading">
@@ -83,7 +87,9 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
                     t={tp}
                   />
                   {!hasSelection && (
-                    <p className="mt-5 text-sm text-muted leading-relaxed">{tp('gateInstruction')}</p>
+                    <p className="mt-5 text-sm text-muted leading-relaxed max-w-2xl">
+                      {tp('gateInstruction')}
+                    </p>
                   )}
                 </div>
               )}
@@ -106,7 +112,7 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
 
           {hasSelection && !isChanging && selected && (
             <>
-              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2 mb-6 text-sm text-body border-b border-structural-light pb-4">
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2 mb-5 text-sm text-body border-b border-structural-light pb-4">
                 <span>
                   <span className="text-muted">{tp('selectedSituationLabel')}</span>{' '}
                   <span className="font-medium text-heading">{tp(`cards.${selected}.title`)}</span>
@@ -143,7 +149,7 @@ function PathwayCards({
   t: ReturnType<typeof useTranslations<'home.pathway'>>;
 }) {
   return (
-    <div className="grid grid-cols-1 gap-4 md:gap-5">
+    <div className="grid grid-cols-1 gap-3 md:gap-4">
       {PATHWAY_KEYS.map((key) => {
         const isSelected = selected === key && !isChanging;
         return (
@@ -152,13 +158,13 @@ function PathwayCards({
             type="button"
             onClick={() => onSelect(key)}
             aria-pressed={isSelected}
-            className={`text-left w-full min-h-[7.5rem] md:min-h-[8.5rem] p-5 md:p-6 border r transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-authority focus-visible:ring-offset-2 ${
+            className={`text-left w-full p-4 md:p-5 border r transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-authority focus-visible:ring-offset-2 ${
               isSelected
                 ? 'border-authority border-l-4 bg-surface-light-alt'
                 : 'border-structural-light bg-surface-card hover:border-structural-muted hover:bg-surface-light-alt/40'
             }`}
           >
-            <p className="text-base font-semibold text-heading mb-2 leading-snug">
+            <p className="text-base font-semibold text-heading mb-1.5 leading-snug">
               {t(`cards.${key}.title`)}
             </p>
             <p className="text-sm text-body leading-relaxed">{t(`cards.${key}.description`)}</p>
@@ -179,27 +185,42 @@ function PathwayDetailPanel({
   t: ReturnType<typeof useTranslations<'home.pathway'>>;
 }) {
   return (
-    <div className="w-full border border-structural-light bg-surface-light-alt r p-6 md:p-8 mb-8 md:mb-10">
-      <p className="text-base text-body leading-relaxed mb-3">
-        <span className="text-muted">{t('selectedLabel')}</span>{' '}
-        <span className="font-semibold text-heading">{t(`cards.${pathway}.title`)}</span>
-      </p>
-      <p className="text-base text-body leading-relaxed mb-6">
-        <span className="text-muted">{t('priorityLabel')}</span>{' '}
-        {t(`detail.${pathway}.priority`)}
-      </p>
-      <p className="text-sm font-semibold text-heading mb-3">{t('changesLabel')}</p>
-      <ul className="list-disc pl-5 space-y-2 text-body leading-relaxed mb-6 max-w-3xl">
-        {Array.from({ length: PATHWAY_POINT_COUNTS[pathway] }, (_, i) => (
-          <li key={i}>{t(`detail.${pathway}.point${i + 1}`)}</li>
-        ))}
-      </ul>
-      <Link
-        href={`/${locale}/contact?pathway=${pathway}`}
-        className="btn-primary inline-flex w-fit"
-      >
-        {t('cta')}
-      </Link>
+    <div className="mb-8 md:mb-10 border-l-4 border-authority bg-surface-light-alt r">
+      <div className="p-6 md:p-8 space-y-6">
+        <div>
+          <p className="text-sm text-muted mb-1">{t('selectedLabel')}</p>
+          <p className="text-lg font-semibold text-heading leading-snug">
+            {t(`cards.${pathway}.title`)}
+          </p>
+        </div>
+
+        <div className="h-px bg-structural-light" aria-hidden />
+
+        <div>
+          <p className="text-sm text-muted mb-2">{t('priorityLabel')}</p>
+          <p className="text-base text-body leading-relaxed">{t(`detail.${pathway}.priority`)}</p>
+        </div>
+
+        <div className="h-px bg-structural-light" aria-hidden />
+
+        <div>
+          <p className="text-sm font-semibold text-heading mb-3">{t('changesLabel')}</p>
+          <ul className="list-disc pl-5 space-y-2 text-body leading-relaxed max-w-3xl">
+            {Array.from({ length: PATHWAY_POINT_COUNTS[pathway] }, (_, i) => (
+              <li key={i}>{t(`detail.${pathway}.point${i + 1}`)}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="pt-1">
+          <Link
+            href={`/${locale}/contact?pathway=${pathway}`}
+            className="btn-primary inline-flex w-fit"
+          >
+            {t('cta')}
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
