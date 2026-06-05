@@ -258,4 +258,14 @@ it must be reduced.
 
 ---
 
+# 13. Task 8 Freeze QA Record
+
+Task 8 functional-layer freeze QA (2026-06-04):
+
+- Record: doc/AUDIT-TASK-8-FREEZE.md
+- Baseline commit: `23a7a36`
+- Verdict: Task 8 COMPLETE / FROZEN; Task 7 next eligible
+
+---
+
 End of Audit Protocol

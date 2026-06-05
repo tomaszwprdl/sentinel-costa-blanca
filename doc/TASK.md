@@ -633,13 +633,16 @@ Parking list from Task 6 audits (candidate only; not executed):
 - Services package block repetition → possible PackageBlock abstraction (T7 candidate)
 - Terms/Privacy prose section loop → possible abstraction (T7 candidate)
 
-Status: ⏸️ DEFERRED (until Task 8 freeze)
+Status: ⏸️ DEFERRED → **NEXT ELIGIBLE** (Task 8 frozen; not yet executed)
 
 ---
 
-# TASK 8 — Functional Interaction Layer (ACTIVE)
+# TASK 8 — Functional Interaction Layer (COMPLETE / FROZEN)
 
-Task 8 — Functional Interaction Layer (Estimator & Usage Pathway Modeling) is active.
+Task 8 — Functional Interaction Layer (Estimator & Usage Pathway Modeling) is complete and frozen (2026-06-04).
+
+Freeze QA: doc/AUDIT-TASK-8-FREEZE.md  
+Closure commits: `affa636`, `fa1cc20`, `23a7a36` (plus `aaef36b`, `409d58b` for homepage adaptation).
 
 ## 8.0 Purpose
 
@@ -852,7 +855,11 @@ Content adaptation for shared homepage sections is governed by Task 8.12 and doc
 
 ## 8.12 Homepage Usage-Situation Content Adaptation Pass
 
-Status: PENDING (next eligible homepage-only pass)
+Status: ✅ COMPLETE (frozen with Task 8)
+
+Commits:
+- `aaef36b` — Adapt homepage content by usage situation
+- `409d58b` — Consolidate homepage pathway content
 
 Purpose:
 Tune shared homepage sections to the selected usage situation without changing service architecture, packages, or gate mechanics.
@@ -1092,15 +1099,17 @@ Final public launch should prefer branded domain email once available.
 
 Task 8 complete when:
 
-* Homepage hard diagnostic gate implemented and frozen
-* Homepage usage-situation content adaptation pass complete (Task 8.12)
-* Matrix documented in repository
-* Estimator aligned to usage situation / operational mode model
-* Contact pre-fill logic working
-* Contact details placeholders removed
-* PL/EN parity verified
-* No doctrine violation
-* QA entry added
+* Homepage hard diagnostic gate implemented and frozen — ✅
+* Homepage usage-situation content adaptation pass complete (Task 8.12) — ✅
+* Matrix documented in repository — ✅
+* Estimator aligned to usage situation / operational mode model — ✅
+* Contact pre-fill logic working — ✅
+* Contact details placeholders removed — ✅
+* PL/EN parity verified — ✅
+* No doctrine violation — ✅
+* QA entry added — ✅ doc/AUDIT-TASK-8-FREEZE.md
+
+Status: ✅ COMPLETE / FROZEN (2026-06-04)
 
 ---
 
@@ -1119,11 +1128,12 @@ Completed:
 ✅ Task 5F — EN Adaptation Layer  
 ✅ Task 5G — Copy Discipline Codex  
 ✅ Task 6 — Core System Embodiment & Integrity  
+✅ Task 8 — Functional Interaction Layer (Estimator & Usage Pathway Modeling) — FROZEN 2026-06-04
 
-Active:
-Task 8 — Functional Interaction Layer (Estimator & Usage Pathway Modeling). Task 7 (Visual System Completion) deferred until Task 8 freeze.
+Next eligible (not yet executed):
+Task 7 — Visual System Completion
 
-Note: Task 8 must be completed and frozen before Task 7 activation.
+Note: Task 8 is frozen. Task 7 may begin when Owner activates it. Public launch remains locked until Task 7 and final launch QA.
 
 ---
 

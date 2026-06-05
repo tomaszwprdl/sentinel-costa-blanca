@@ -17,12 +17,12 @@ If this document becomes aspirational, it has failed.
 | Field | Value |
 |-------|-------|
 | Project | Sentinel |
-| State | Task 6 COMPLETE / LOCKED; Task 8 ACTIVE; Task 7 deferred until Task 8 freeze |
-| Active Task | Task 8 — Functional Interaction Layer (Estimator & Usage Pathway Modeling) |
-| Website | Technically functional |
+| State | Task 6 COMPLETE / LOCKED; Task 8 COMPLETE / FROZEN; Task 7 next eligible (not yet executed) |
+| Active Task | None (Task 7 deferred until Owner activates) |
+| Website | Technically functional — pre-live |
 | Identity Core | Locked (per DECISIONS.md) |
-| Public Readiness | Not ready |
-| Last Verified | Homepage hard diagnostic gate, hydration fallback, gate presentation (48258d5), and selected-state result panel (3e5a7e7) implemented |
+| Public Readiness | Not ready for launch or paid traffic |
+| Last Verified | Task 8 freeze QA — `23a7a36` (2026-06-04); see doc/AUDIT-TASK-8-FREEZE.md |
 
 ---
 
@@ -156,37 +156,34 @@ Includes:
 No promotional proof artifacts implemented.
 ---
 
-## Service Interface Integration
+## Service Interface Integration (Task 8 — FROZEN)
 
-Task 8 is active.
+Task 8 functional layer is complete and frozen (2026-06-04).
 
-Implemented / aligned:
+Implemented / verified:
 
-- Homepage identity + hard diagnostic gate as first screen (no default pathway on `/pl` or `/en`)
-- No-selection gate shows identity, diagnostic question, three usage situations, and gate instruction only
-- Homepage sections below the gate hidden until a valid usage situation is selected
-- Direct URLs with valid `?pathway=` param reveal selected diagnostic result panel and shared homepage sections immediately
-- Server-rendered hydration fallback matches no-selection gate structure
-- Gate presentation containment (Task 8E) and selected-state result panel baseline (Task 8F)
-- Pathway names/slugs: `private-use-only`, `regular-guest-stays`, `mixed-not-defined`
-- Estimator visible labels aligned to the current usage situation model
-- Estimator remains limited to two calculable operational modes:
-  - private_use
-  - active_guest
-- Mixed / Not Yet Defined routes to structured review / classification and does not generate a numeric estimate
-- Contact pathway context and visible contact details updated
-- Email environment naming updated to SENTINEL_EMAIL / SENTINEL_PHONE
-- Contact form hardcoded English labels removed
-- Lint hygiene patch completed
-- AGENTS.md tracked in repository
+- Homepage identity + hard diagnostic gate (no default pathway on `/pl` or `/en`)
+- Usage-situation homepage content adaptation (Task 8.12) — commits `aaef36b`, `409d58b`
+- Gate presentation and selected-state result panel — `48258d5`, `3e5a7e7`
+- Pathway slugs: `private-use-only`, `regular-guest-stays`, `mixed-not-defined`
+- Public terminology cleanup — `affa636`
+- Estimator: two calculable modes (`private_use`, `active_guest`); six operational scope elements; `est_scope` handoff — `fa1cc20`
+- Contact pathway + estimator context preservation in submission and owner email — `23a7a36`
+- Contact details: `sentinelcostablanca@gmail.com`, `+34 694 22 90 35`; `SENTINEL_EMAIL` / `SENTINEL_PHONE`
+- Mixed / Not Yet Defined → structured review / classification; no third pricing mode on homepage
+- Freeze QA record: doc/AUDIT-TASK-8-FREEZE.md
 
-Still pending:
+Estimator matrix status:
 
-- Homepage usage-situation content adaptation pass (shared homepage sections not yet fully tuned per usage situation)
-- Execution-only support visual separation logic
-- One-click disclosure compliance validation
-- Final range recalculation QA
-- Contact prefill end-to-end QA
+- Values in `lib/estimatorMatrix.ts` are **PRE-LIVE INDICATIVE** for review/testing only
+- Final commercial ranges require Owner confirmation before public launch or paid traffic
+
+Deferred to Task 7 or post-freeze non-blockers:
+
+- Execution-only support visual separation
+- Full one-click disclosure cross-page manual QA
+- Visual rhythm / composition polish
+- Browser E2E with live email provider (requires `RESEND_API_KEY` in environment)
 
 ---
 
@@ -259,7 +256,11 @@ Implementation status:
 - Contact form hardcoded English labels removed.
 - Lint hygiene patch completed.
 - AGENTS.md tracked in repository.
-- Homepage usage-situation content adaptation pass pending (see doc/HOMEPAGE-USAGE-SITUATION-PASS.md).
+- Homepage usage-situation content adaptation complete (Task 8.12 — `aaef36b`, `409d58b`).
+- Public terminology cleanup complete (`affa636`).
+- Estimator scope contract aligned (`fa1cc20`).
+- Contact handoff and email context preservation complete (`23a7a36`).
+- Task 8 freeze QA passed — doc/AUDIT-TASK-8-FREEZE.md.
 
 ---
 
@@ -310,19 +311,14 @@ Task 5E — Evidence Architecture
 Task 5F — EN Adaptation Layer
 Task 5G — Copy Discipline Codex
 Task 6 — Core System Embodiment & Integrity
-
-Active:
 Task 8 — Functional Interaction Layer (Estimator & Usage Pathway Modeling)
 
-System layer 1–6 complete.
-Task 6 is frozen.
+Next eligible (not yet executed):
+Task 7 — Visual System Completion
 
-Task 8 is active.
-Task 7 — Visual System Completion remains deferred until Task 8 freeze.
+System layers 1–6 and Task 8 functional layer are complete/frozen.
 
-Future:
-Task 7 — Visual System Completion (deferred until Task 8 freeze)
-Task 8 — Functional Interaction Layer (next eligible)
+Public readiness remains **not ready** for launch or paid traffic until Task 7 and final launch QA.
 
 ---
 

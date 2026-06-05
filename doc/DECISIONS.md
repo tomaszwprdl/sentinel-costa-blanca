@@ -689,3 +689,23 @@ Rules:
 
 Purpose:
 Support Primary customer depth without overwhelming structure.
+
+---
+
+# 23. Estimator Matrix — Pre-Live Indicative Values
+
+Decision: Current values in `lib/estimatorMatrix.ts` are accepted as pre-live indicative values for review and testing only.  
+Status: LOCKED (pre-live scope; not a final commercial pricing lock)
+
+Definition:
+- Matrix bands may be used in the estimator UI and contact handoff for qualification and structured review.
+- Values support internal review, QA, and pre-live testing.
+
+Not locked:
+- Final commercial ranges before public launch or paid traffic.
+- Matrix tuning session outcomes (Owner confirmation required).
+
+Purpose:
+Allow Task 8 functional freeze without treating placeholder matrix bands as launch-ready pricing.
+
+Final commercial ranges remain subject to Owner confirmation before public launch or paid traffic.
