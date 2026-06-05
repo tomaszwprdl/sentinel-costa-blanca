@@ -74,33 +74,37 @@
       "ctaPrimary": "See how it works"
     },
     "pathway": {
-      "selectorTitle": "What situation are you trying to control?",
+      "selectorTitle": "How is the property used while you are away?",
+      "selectorIntro": "The right scope depends less on the apartment itself and more on how risk appears when you are not there.",
+      "selectedLabel": "Selected pathway:",
+      "priorityLabel": "Sentinel priority:",
+      "changesLabel": "What this changes:",
       "cta": "Discuss this situation",
       "cards": {
         "private-absence": {
           "title": "Private Absence",
           "description": "The property remains unused for long periods."
         },
-        "active-guest-use": {
-          "title": "Active Guest Use",
-          "description": "The property is regularly accessed by guests, cleaners, or technicians."
+        "regular-guest-stays": {
+          "title": "Regular Guest Stays",
+          "description": "The property is regularly used by guests, cleaners, or technicians."
         },
         "mixed-undetermined": {
-          "title": "Mixed / Not Decided",
+          "title": "Mixed / Undetermined Use",
           "description": "The use pattern is not fixed yet."
         }
       },
-      "framing": {
+      "detail": {
         "private-absence": {
-          "lead": "Nobody is using the property, so nobody detects slow problems early.",
-          "point1": "Leaks, humidity, smell, ventilation",
+          "priority": "Regular presence, visible risk checks, keyholding, and readiness before arrival.",
+          "point1": "Leaks, humidity, smell, and ventilation",
           "point2": "Visible water, electricity, and boiler checks",
           "point3": "Keyholding and controlled access",
           "point4": "Pre-arrival cleaning and readiness",
           "point5": "Documented condition reporting"
         },
-        "active-guest-use": {
-          "lead": "The property is active, but responsibility is fragmented between guests, cleaners, technicians, and the remote owner.",
+        "regular-guest-stays": {
+          "priority": "Turnover order, access, cleaning, condition checks, and event documentation.",
           "point1": "Turnover cleaning and readiness",
           "point2": "Keyholding and access events",
           "point3": "Post-stay condition checks",
@@ -109,9 +113,9 @@
           "point6": "Reducing operational noise for the owner"
         },
         "mixed-undetermined": {
-          "lead": "The owner does not yet know which operating model the property needs.",
+          "priority": "First classify the use pattern, then define the scope without guessing.",
           "point1": "Private use now, possible rental later",
-          "point2": "Avoiding wrong package choice",
+          "point2": "Avoiding the wrong package choice",
           "point3": "Avoiding unnecessary guest-service intensity",
           "point4": "Avoiding under-structuring if guest activity starts",
           "point5": "Scope confirmed after structured review"
@@ -695,7 +699,7 @@
     "pathwayContext": {
       "title": "Usage pathway context",
       "private-absence": "Private Absence",
-      "active-guest-use": "Active Guest Use",
+      "regular-guest-stays": "Regular Guest Stays",
       "mixed-undetermined": "Mixed / Undetermined Use",
       "prefillPrefix": "Usage pathway:"
     },

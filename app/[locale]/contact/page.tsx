@@ -16,7 +16,7 @@ import Section from '@/components/layout/Section';
 import GridFrame from '@/components/layout/GridFrame';
 import Region from '@/components/layout/Region';
 
-const PATHWAY_PARAM_VALUES = ['private-absence', 'active-guest-use', 'mixed-undetermined'] as const;
+const PATHWAY_PARAM_VALUES = ['private-absence', 'regular-guest-stays', 'mixed-undetermined'] as const;
 type PathwayParam = (typeof PATHWAY_PARAM_VALUES)[number];
 
 function isPathwayParam(value: string | null): value is PathwayParam {

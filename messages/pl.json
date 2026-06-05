@@ -74,42 +74,46 @@
       "ctaPrimary": "Zobacz, to działa"
     },
     "pathway": {
-      "selectorTitle": "Jaką sytuację chcesz zabezpieczyć?",
+      "selectorTitle": "Jak używana jest nieruchomość, gdy Cię nie ma?",
+      "selectorIntro": "Właściwy zakres zależy nie tylko od samego lokalu, ale od tego, jak powstaje ryzyko pod Twoją nieobecność.",
+      "selectedLabel": "Wybrany tryb:",
+      "priorityLabel": "Priorytet Sentinel:",
+      "changesLabel": "Co to zmienia:",
       "cta": "Omów tę sytuację",
       "cards": {
         "private-absence": {
           "title": "Prywatna nieobecność",
-          "description": "Nieruchomość pozostaje nieużywana przez dłuższy czas."
+          "description": "Lokal stoi pusty przez dłuższy czas."
         },
-        "active-guest-use": {
-          "title": "Aktywne użycie przez gości",
-          "description": "Do nieruchomości regularnie wchodzą goście, sprzątanie lub technicy."
+        "regular-guest-stays": {
+          "title": "Regularne pobyty gości",
+          "description": "Lokal jest regularnie używany przez gości, osoby sprzątające lub techników."
         },
         "mixed-undetermined": {
-          "title": "Tryb mieszany / brak decyzji",
+          "title": "Tryb mieszany / nieustalony",
           "description": "Sposób używania nieruchomości nie jest jeszcze stały."
         }
       },
-      "framing": {
+      "detail": {
         "private-absence": {
-          "lead": "Nikt nie używa nieruchomości, więc powolne problemy mogą pozostać niezauważone.",
-          "point1": "Przecieki, wilgoć, zapach, wentylacja",
+          "priority": "Regularna obecność, kontrola widocznych ryzyk, klucze i przygotowanie lokalu przed przyjazdem.",
+          "point1": "Przecieki, wilgoć, zapach i wentylacja",
           "point2": "Widoczne kontrole wody, prądu i bojlera",
           "point3": "Przechowanie kluczy i kontrolowany dostęp",
           "point4": "Sprzątanie i przygotowanie przed przyjazdem",
           "point5": "Udokumentowany raport stanu"
         },
-        "active-guest-use": {
-          "lead": "Nieruchomość jest aktywna, ale odpowiedzialność rozprasza się między gości, sprzątanie, techników i właściciela zdalnego.",
+        "regular-guest-stays": {
+          "priority": "Porządek między pobytami, dostęp, sprzątanie, kontrola stanu i dokumentacja zdarzeń.",
           "point1": "Sprzątanie i przygotowanie między pobytami",
           "point2": "Przechowanie kluczy i obsługa dostępu",
           "point3": "Kontrola stanu po pobycie",
           "point4": "Dokumentacja szkód",
-          "point5": "Koordynacja sprzątania, techników i wykonawców",
+          "point5": "Koordynacja sprzątania, wykonawców i techników",
           "point6": "Ograniczenie chaosu operacyjnego dla właściciela"
         },
         "mixed-undetermined": {
-          "lead": "Właściciel nie wie jeszcze, jaki model obsługi będzie właściwy dla tej nieruchomości.",
+          "priority": "Najpierw klasyfikacja sposobu używania, potem dobór zakresu bez zgadywania.",
           "point1": "Dziś użytek prywatny, później możliwy wynajem",
           "point2": "Uniknięcie złego wyboru zakresu",
           "point3": "Uniknięcie niepotrzebnej intensywności obsługi gości",
@@ -696,7 +700,7 @@
     "pathwayContext": {
       "title": "Kontekst ścieżki użycia",
       "private-absence": "Prywatna nieobecność",
-      "active-guest-use": "Aktywne użycie przez gości",
+      "regular-guest-stays": "Regularne pobyty gości",
       "mixed-undetermined": "Tryb mieszany / nieustalony",
       "prefillPrefix": "Ścieżka użycia:"
     },
