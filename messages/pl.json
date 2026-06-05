@@ -749,7 +749,7 @@
       "mode": "Tryb operacyjny",
       "size": "Metraż",
       "bedrooms": "Sypialnie",
-      "overlays": "Zakres operacyjny",
+      "scopeElements": "Zakres operacyjny",
       "range": "Szacunkowy zakres miesięczny"
     },
     "pathwayContext": {
@@ -808,12 +808,11 @@
         "villa": "Willa",
         "other": "Inne (proszę określić)"
       },
-      "propertyStatus": "Obecny Status Nieruchomości",
+      "propertyStatus": "Sytuacja użytkowania nieruchomości",
       "propertyStatuses": {
-        "emptyMostYear": "Pusta przez większość roku",
-        "occasionalUse": "Okazjonalne użycie osobiste",
-        "shortTermRental": "Regularne pobyty gości",
-        "other": "Inne (proszę określić)"
+        "private-use-only": "Tylko użytek prywatny",
+        "regular-guest-stays": "Regularne pobyty gości",
+        "mixed-not-defined": "Model mieszany / jeszcze nieustalony"
       },
       "serviceRequirements": "Wymagania Usługowe:",
       "expectedPackage": "Oczekiwany Pakiet",

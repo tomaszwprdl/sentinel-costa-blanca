@@ -17,9 +17,43 @@ import GridFrame from '@/components/layout/GridFrame';
 import Region from '@/components/layout/Region';
 
 import { normalizePathwayParam } from '@/lib/pathway';
+import {
+  parseScopeElementParam,
+  SQM_INPUT_MIN,
+  SQM_INPUT_MAX,
+  type PackageKey,
+  type ModeKey,
+  type SizeKey,
+  type BedroomsKey,
+} from '@/lib/estimatorMatrix';
 
-// Schema will be created dynamically with translated messages
-// For now, keep English validation messages (they're internal)
+const USAGE_SITUATION_SLUGS = [
+  'private-use-only',
+  'regular-guest-stays',
+  'mixed-not-defined',
+] as const;
+
+const PACKAGE_KEYS: PackageKey[] = ['structured_presence', 'active_oversight', 'extended_jurisdiction'];
+const MODE_KEYS: ModeKey[] = ['private_use', 'active_guest'];
+const SIZE_KEYS: SizeKey[] = ['S', 'M', 'L'];
+const BEDROOMS_KEYS: BedroomsKey[] = ['B1', 'B2', 'B3', 'B4P'];
+
+function isPackageKey(value: string): value is PackageKey {
+  return PACKAGE_KEYS.includes(value as PackageKey);
+}
+
+function isModeKey(value: string): value is ModeKey {
+  return MODE_KEYS.includes(value as ModeKey);
+}
+
+function isSizeKey(value: string): value is SizeKey {
+  return SIZE_KEYS.includes(value as SizeKey);
+}
+
+function isBedroomsKey(value: string): value is BedroomsKey {
+  return BEDROOMS_KEYS.includes(value as BedroomsKey);
+}
+
 const createContactFormSchema = (t: (key: string) => string) => z.object({
   fullName: z.string().min(2, t('form.requiredField')),
   email: z.string().email(t('form.requiredField')),
@@ -28,7 +62,7 @@ const createContactFormSchema = (t: (key: string) => string) => z.object({
   preferredLanguage: z.enum(['English', 'Polish']),
   propertyLocation: z.string().min(3, t('form.requiredField')),
   propertyType: z.enum(['Apartment', 'House', 'Villa', 'Other']),
-  currentStatus: z.enum(['Empty most of the year', 'Occasional personal use', 'Short-term rental', 'Other']),
+  currentStatus: z.enum(['private-use-only', 'regular-guest-stays', 'mixed-not-defined']),
   expectedPackage: z.enum(['Basic', 'Extended', 'Full', 'Not sure - need consultation']),
   expectedAccessFrequency: z.string().optional(),
   primaryServiceNeeds: z.string().max(500, t('form.requiredField')).optional(),
@@ -51,12 +85,17 @@ function ContactPageInner() {
     const size = searchParams.get('est_size');
     const sqmParam = searchParams.get('est_sqm');
     const bedrooms = searchParams.get('est_bedrooms');
-    const overlays = searchParams.get('est_overlays');
+    const scopeParam = searchParams.get('est_scope') ?? searchParams.get('est_overlays');
     const range = searchParams.get('est_range');
+
     if (!package_ || !mode || !size || !bedrooms) return null;
+    if (!isPackageKey(package_) || !isModeKey(mode) || !isSizeKey(size) || !isBedroomsKey(bedrooms)) {
+      return null;
+    }
+
     const num = sqmParam ? Number(sqmParam) : NaN;
-    const sqm = Number.isFinite(num) ? Math.max(20, Math.min(1000, Math.round(num))) : null;
-    const overlayList = overlays ? overlays.split(',').filter(Boolean) : [];
+    const sqm = Number.isFinite(num) ? Math.max(SQM_INPUT_MIN, Math.min(SQM_INPUT_MAX, Math.round(num))) : null;
+    const scopeElements = parseScopeElementParam(scopeParam);
     const rangeParts = range
       ? range.split('-').map(Number).filter((n) => Number.isFinite(n)).slice(0, 2)
       : [];
@@ -64,14 +103,17 @@ function ContactPageInner() {
       rangeParts.length === 2
         ? `€${rangeParts[0]}–€${rangeParts[1]}`
         : (range || '—');
+
     return {
       package: package_,
       mode,
       size,
       sqm: Number.isFinite(sqm) ? sqm : null,
       bedrooms,
-      overlays: overlayList,
+      scopeElements,
+      scopeSerialized: scopeElements.join(','),
       rangeDisplay,
+      rangeRaw: rangeParts.length === 2 ? `${rangeParts[0]}-${rangeParts[1]}` : (range ?? ''),
     };
   }, [searchParams]);
 
@@ -96,6 +138,7 @@ function ContactPageInner() {
 
   useEffect(() => {
     if (pathwayKey) {
+      setValue('currentStatus', pathwayKey);
       const label = t(`pathwayContext.${pathwayKey}`);
       setValue('primaryServiceNeeds', `${t('pathwayContext.prefillPrefix')} ${label}`);
     }
@@ -107,13 +150,26 @@ function ContactPageInner() {
     setIsSubmitting(true);
     setSubmitError(null);
 
+    const payload = {
+      ...data,
+      pathwaySlug: pathwayKey ?? undefined,
+      pathwayLabel: pathwayKey ? t(`pathwayContext.${pathwayKey}`) : undefined,
+      estimatorPackage: estimatorPrefill?.package,
+      estimatorMode: estimatorPrefill?.mode,
+      estimatorSize: estimatorPrefill?.size,
+      estimatorSqm: estimatorPrefill?.sqm ?? undefined,
+      estimatorBedrooms: estimatorPrefill?.bedrooms,
+      estimatorScope: estimatorPrefill?.scopeSerialized || undefined,
+      estimatorRange: estimatorPrefill?.rangeRaw || undefined,
+    };
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       });
 
       const result = await response.json();
@@ -342,7 +398,7 @@ function ContactPageInner() {
                     <li><strong>{t('estimatorContext.mode')}:</strong> {estimatorPrefill.mode === 'private_use' ? tEst('modePrivateUse') : tEst('modeActiveGuest')}</li>
                     <li><strong>{t('estimatorContext.size')}:</strong> {estimatorPrefill.sqm != null ? `${estimatorPrefill.sqm} m²` : '—'}</li>
                     <li><strong>{t('estimatorContext.bedrooms')}:</strong> {estimatorPrefill.bedrooms === 'B4P' ? '4+' : estimatorPrefill.bedrooms.slice(1)}</li>
-                    <li><strong>{t('estimatorContext.overlays')}:</strong> {estimatorPrefill.overlays.length ? estimatorPrefill.overlays.map((k) => tEst(`overlays.${k}`)).join(', ') : '—'}</li>
+                    <li><strong>{t('estimatorContext.scopeElements')}:</strong> {estimatorPrefill.scopeElements.length ? estimatorPrefill.scopeElements.map((k) => tEst(`scopeElements.${k}`)).join(', ') : '—'}</li>
                     <li><strong>{t('estimatorContext.range')}:</strong> {estimatorPrefill.rangeDisplay}</li>
                   </ul>
                 </div>
@@ -506,10 +562,11 @@ function ContactPageInner() {
                           className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority"
                         >
                           <option value="">{t('form.selectPlaceholder')}</option>
-                          <option value="Empty most of the year">{t('form.propertyStatuses.emptyMostYear')}</option>
-                          <option value="Occasional personal use">{t('form.propertyStatuses.occasionalUse')}</option>
-                          <option value="Short-term rental">{t('form.propertyStatuses.shortTermRental')}</option>
-                          <option value="Other">{t('form.propertyStatuses.other')}</option>
+                          {USAGE_SITUATION_SLUGS.map((slug) => (
+                            <option key={slug} value={slug}>
+                              {t(`form.propertyStatuses.${slug}`)}
+                            </option>
+                          ))}
                         </select>
                         {errors.currentStatus && (
                           <p className="mt-1 text-sm text-neutral">{errors.currentStatus.message}</p>

@@ -749,7 +749,7 @@
       "mode": "Operational mode",
       "size": "Area",
       "bedrooms": "Bedrooms",
-      "overlays": "Operational scope",
+      "scopeElements": "Operational scope",
       "range": "Estimated monthly range"
     },
     "pathwayContext": {
@@ -808,12 +808,11 @@
         "villa": "Villa",
         "other": "Other (specify)"
       },
-      "propertyStatus": "Current Property Status",
+      "propertyStatus": "Property usage situation",
       "propertyStatuses": {
-        "emptyMostYear": "Empty most of the year",
-        "occasionalUse": "Occasional personal use",
-        "shortTermRental": "Regular Guest Stays",
-        "other": "Other (specify)"
+        "private-use-only": "Private Use Only",
+        "regular-guest-stays": "Regular Guest Stays",
+        "mixed-not-defined": "Mixed / Not Yet Defined"
       },
       "serviceRequirements": "Service Requirements:",
       "expectedPackage": "Expected Package",
