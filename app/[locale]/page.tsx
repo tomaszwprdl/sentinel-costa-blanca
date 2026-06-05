@@ -84,13 +84,11 @@ export default async function HomePage({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-10 items-start">
               <div className="min-w-0 space-y-4 md:pr-6">
                 <h3 className="text-lg font-semibold text-heading mt-0 pl-5">{t('contrast.leftHeading')}</h3>
-                <ul className="list-disc pl-5 space-y-4 leading-relaxed text-base text-body">
+                <ul className="list-disc pl-5 space-y-3 leading-relaxed text-base text-body">
                   <li><PathwayCopy path="contrast.left1" /></li>
                   <li><PathwayCopy path="contrast.left2" /></li>
                   <li><PathwayCopy path="contrast.left3" /></li>
                   <li><PathwayCopy path="contrast.left4" /></li>
-                  <li><PathwayCopy path="contrast.left5" /></li>
-                  <li><PathwayCopy path="contrast.left6" /></li>
                 </ul>
                 <p className="mt-2 text-sm text-body/80 leading-relaxed">
                   <PathwayCopy path="contrast.leftClosing" />
@@ -98,14 +96,11 @@ export default async function HomePage({
               </div>
               <div className="min-w-0 space-y-4 md:pl-6">
                 <h3 className="text-lg font-semibold text-heading mt-0 pl-5">{t('contrast.rightHeading')}</h3>
-                <ul className="list-disc pl-5 space-y-4 leading-relaxed text-base text-body">
+                <ul className="list-disc pl-5 space-y-3 leading-relaxed text-base text-body">
                   <li><PathwayCopy path="contrast.right1" /></li>
                   <li><PathwayCopy path="contrast.right2" /></li>
                   <li><PathwayCopy path="contrast.right3" /></li>
                   <li><PathwayCopy path="contrast.right4" /></li>
-                  <li><PathwayCopy path="contrast.right5" /></li>
-                  <li><PathwayCopy path="contrast.right6" /></li>
-                  <li><PathwayCopy path="contrast.right7" /></li>
                 </ul>
                 <p className="mt-2 text-sm text-body/80 leading-relaxed">
                   <PathwayCopy path="contrast.rightClosing" />
@@ -118,47 +113,53 @@ export default async function HomePage({
 
         {/* 5. ZAKRES PAKIETÓW — jedna oś: wrapper flex flex-col items-center; tekst max-w-[72ch]; grid w-full max-w-[1120px] mx-auto justify-items-center; karty w-full */}
         <Section tone="light">
-          <div className="flex flex-col items-center w-full">
+          <div className="flex flex-col items-center w-full max-w-[1080px] mx-auto">
             <h2 className="h2-system text-center max-w-[72ch] w-full">{t('levels.title')}</h2>
             <p className="text-body text-center max-w-[72ch] mx-auto mt-5">{t('levels.intro')}</p>
-            <div className="w-full max-w-[1120px] mx-auto mt-10 grid grid-cols-1 md:grid-cols-3 gap-10 items-stretch justify-items-center">
-              {/* Pakiet Podstawowy */}
-              <div className="flex flex-col h-full w-full p-6 border border-structural-muted">
-                <h3 className="text-lg font-semibold text-heading">{t('levels.level1Title')}</h3>
-                <p className="mt-3 text-base font-medium text-body">{t('levels.axis1')}</p>
-                <ul className="mt-5 space-y-5 text-sm text-body leading-relaxed list-disc pl-5">
-                  <li>{t('levels.level1_1')}</li>
-                  <li>{t('levels.level1_2')}</li>
-                  <li>{t('levels.level1_3')}</li>
-                </ul>
-                <div className="mt-auto pt-5 border-t border-structural-muted">
-                  <p className="text-sm text-body leading-relaxed">{t('levels.level1_6')}</p>
+            <div className="w-full mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-5 items-stretch">
+              <div className="flex flex-col h-full border border-structural-light bg-surface-card r overflow-hidden">
+                <div className="px-5 py-4 md:px-6 md:py-5 border-b border-structural-light bg-surface-light-alt">
+                  <h3 className="text-base font-semibold text-heading">{t('levels.level1Title')}</h3>
+                  <p className="mt-2 text-sm font-semibold tracking-tight text-heading">{t('levels.axis1')}</p>
+                </div>
+                <div className="flex flex-col flex-1 p-5 md:p-6">
+                  <ul className="space-y-2.5 text-sm text-body leading-relaxed list-disc pl-4 marker:text-muted">
+                    <li>{t('levels.level1_1')}</li>
+                    <li>{t('levels.level1_2')}</li>
+                  </ul>
+                  <p className="mt-auto pt-5 border-t border-structural-light text-xs text-muted leading-relaxed">
+                    {t('levels.level1_6')}
+                  </p>
                 </div>
               </div>
-              {/* Pakiet Rozszerzony */}
-              <div className="flex flex-col h-full w-full p-6 border border-structural-muted">
-                <h3 className="text-lg font-semibold text-heading">{t('levels.level2Title')}</h3>
-                <p className="mt-3 text-base font-medium text-body">{t('levels.axis2')}</p>
-                <ul className="mt-5 space-y-5 text-sm text-body leading-relaxed list-disc pl-5">
-                  <li>{t('levels.level2_1')}</li>
-                  <li>{t('levels.level2_2')}</li>
-                  <li>{t('levels.level2_3')}</li>
-                </ul>
-                <div className="mt-auto pt-5 border-t border-structural-muted">
-                  <p className="text-sm text-body leading-relaxed">{t('levels.level2_6')}</p>
+              <div className="flex flex-col h-full border border-structural-light border-l-2 border-l-structural-muted bg-surface-card r overflow-hidden">
+                <div className="px-5 py-4 md:px-6 md:py-5 border-b border-structural-light bg-surface-light-alt">
+                  <h3 className="text-base font-semibold text-heading">{t('levels.level2Title')}</h3>
+                  <p className="mt-2 text-sm font-semibold tracking-tight text-heading">{t('levels.axis2')}</p>
+                </div>
+                <div className="flex flex-col flex-1 p-5 md:p-6">
+                  <ul className="space-y-2.5 text-sm text-body leading-relaxed list-disc pl-4 marker:text-muted">
+                    <li>{t('levels.level2_1')}</li>
+                    <li>{t('levels.level2_2')}</li>
+                  </ul>
+                  <p className="mt-auto pt-5 border-t border-structural-light text-xs text-muted leading-relaxed">
+                    {t('levels.level2_6')}
+                  </p>
                 </div>
               </div>
-              {/* Pakiet Pełny */}
-              <div className="flex flex-col h-full w-full p-6 border border-structural-muted">
-                <h3 className="text-lg font-semibold text-heading">{t('levels.level3Title')}</h3>
-                <p className="mt-3 text-base font-medium text-body">{t('levels.axis3')}</p>
-                <ul className="mt-5 space-y-5 text-sm text-body leading-relaxed list-disc pl-5">
-                  <li>{t('levels.level3_1')}</li>
-                  <li>{t('levels.level3_2')}</li>
-                  <li>{t('levels.level3_3')}</li>
-                </ul>
-                <div className="mt-auto pt-5 border-t border-structural-muted">
-                  <p className="text-sm text-body leading-relaxed">{t('levels.level3_6')}</p>
+              <div className="flex flex-col h-full border border-structural-light border-l-2 border-l-authority bg-surface-card r overflow-hidden">
+                <div className="px-5 py-4 md:px-6 md:py-5 border-b border-structural-light bg-surface-light-alt">
+                  <h3 className="text-base font-semibold text-heading">{t('levels.level3Title')}</h3>
+                  <p className="mt-2 text-sm font-semibold tracking-tight text-heading">{t('levels.axis3')}</p>
+                </div>
+                <div className="flex flex-col flex-1 p-5 md:p-6">
+                  <ul className="space-y-2.5 text-sm text-body leading-relaxed list-disc pl-4 marker:text-muted">
+                    <li>{t('levels.level3_1')}</li>
+                    <li>{t('levels.level3_2')}</li>
+                  </ul>
+                  <p className="mt-auto pt-5 border-t border-structural-light text-xs text-muted leading-relaxed">
+                    {t('levels.level3_6')}
+                  </p>
                 </div>
               </div>
             </div>
@@ -182,10 +183,10 @@ export default async function HomePage({
         {/* 6. CO WYRÓŻNIA SENTINEL — bloki deklaracji modelu, 2 kolumny, bez card/badge, oś centralna */}
         <Section tone="alt">
           <h2 className="h2-system text-center">{t('distinction.title')}</h2>
-          <p className="mt-5 text-body text-center max-w-[72ch] mx-auto leading-relaxed">
+          <p className="mt-4 text-body text-center max-w-[56ch] mx-auto leading-relaxed">
             <PathwayCopy path="distinctionIntro" />
           </p>
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-[1120px] mx-auto">
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-[1120px] mx-auto">
             <div>
               <h3 className="text-lg font-semibold text-heading">{t('distinction.block1Title')}</h3>
               <p className="mt-3 text-body leading-relaxed">{t('distinction.block1p1')}</p>
