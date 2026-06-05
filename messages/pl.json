@@ -2,7 +2,7 @@
   "common": {
     "siteName": "Sentinel",
     "meta": {
-      "defaultTitle": "Sentinel — Pakietowa Reprezentacja Nieruchomości",
+      "defaultTitle": "Sentinel — Reprezentacja właściciela na miejscu",
       "defaultDescription": "Sentinel — Reprezentacja właściciela na miejscu. Torrevieja + 50–70 km."
     },
     "nav": {
@@ -334,7 +334,7 @@
     "finalCta": {
       "title": "Możesz zarządzać reaktywnie. Albo działać w ramach systemu.",
       "p1": "Zarządzanie reaktywne opiera się na reagowaniu. System opiera się na stałej kontroli.",
-      "p2": "Sentinel to zdefiniowany model reprezentacji właściciela. Wybór dotyczy struktury zarządzania nieruchomością.",
+      "p2": "Sentinel to zdefiniowany model reprezentacji właściciela. Wybór dotyczy struktury lokalnego nadzoru i reprezentacji właściciela.",
       "cta": "Zweryfikuj, czy Twoja nieruchomość kwalifikuje się do systemu Sentinel"
     }
   },
@@ -354,9 +354,9 @@
       "footerNote": "SLA określa czas reakcji i decyzji, nie gwarantowany czas rozwiązania. Czynniki zewnętrzne (dostępność części, harmonogramy techników) wpływają na faktyczne rozwiązanie.",
       "columns": {
         "serviceElement": "Element Usługi",
-        "green": "Podstawowy (Zielony)",
-        "orange": "Rozszerzony (Pomarańczowy)",
-        "red": "Pełny (Czerwony)"
+        "green": "Podstawowy",
+        "orange": "Rozszerzony",
+        "red": "Pełny"
       },
       "categories": {
         "inspections": "KONTROLE",
@@ -415,7 +415,7 @@
     },
     "green": {
       "title": "Pakiet Podstawowy",
-      "badgeLabel": "Zielony",
+      "badgeLabel": "Podstawowy",
       "definition": "Stała kontrola nieruchomości.",
       "suitableForTitle": "Dla kogo",
       "suitableItems": {
@@ -468,7 +468,7 @@
     },
     "orange": {
       "title": "Pakiet Rozszerzony",
-      "badgeLabel": "Pomarańczowy",
+      "badgeLabel": "Rozszerzony",
       "definition": "Kontrola i organizacja dostępu.",
       "fromBasic": "Zawiera wszystko z Pakietu Podstawowego oraz:",
       "accessTitle": "Organizacja dostępu",
@@ -506,7 +506,7 @@
     },
     "red": {
       "title": "Pakiet Pełny",
-      "badgeLabel": "Czerwony",
+      "badgeLabel": "Pełny",
       "definition": "Kontrola, dostęp i decyzje na miejscu.",
       "fromExtended": "Zawiera wszystko z Pakietu Rozszerzonego oraz:",
       "emergencyTitle": "Reakcja awaryjna",
@@ -628,19 +628,19 @@
     },
     "selection": {
       "title": "Który pakiet wybrać?",
-      "greenTitle": "Wybierz Podstawowy, jeśli:",
+      "greenTitle": "Zakres Pakietu Podstawowego dotyczy sytuacji, gdy:",
       "greenItems": {
         "regularVisits": "Potrzebujesz regularnych wizyt",
         "ownRepairs": "Samodzielnie organizujesz naprawy",
         "noAccess": "Nie potrzebujesz koordynacji dostępu"
       },
-      "orangeTitle": "Wybierz Rozszerzony, jeśli:",
+      "orangeTitle": "Zakres Pakietu Rozszerzonego dotyczy sytuacji, gdy:",
       "orangeItems": {
         "accessNeeded": "Potrzebujesz organizacji dostępu",
         "technicalWorks": "Zlecasz prace techniczne",
         "oversight": "Chcesz mieć nadzór nad wykonawcami"
       },
-      "redTitle": "Wybierz Pełny, jeśli:",
+      "redTitle": "Zakres Pakietu Pełnego dotyczy sytuacji, gdy:",
       "redItems": {
         "localDecisions": "Oczekujesz lokalnych decyzji na miejscu",
         "emergencyResponse": "Potrzebujesz zdolności reagowania awaryjnego",
@@ -671,7 +671,7 @@
       "modeSublineActiveGuest": "Zwiększona intensywność nadzoru związana z rotacją gości.",
       "modeDescriptor": {
         "private_use": "Brak regularnej rotacji gości.",
-        "active_guest": "Regularna rotacja gości / wynajem krótkoterminowy."
+        "active_guest": "Regularna rotacja gości / regularne pobyty gości."
       },
       "groupParameters": "Parametry nieruchomości",
       "groupParametersAnchor": "Parametry wpływają na zakres operacyjny i złożoność koordynacji.",
@@ -776,7 +776,7 @@
         "serviceNeeds": "Podstawowe potrzeby lub obawy dotyczące usług"
       },
       "emergencyTitle": "Kontakt awaryjny (tylko aktywni klienci):",
-      "emergencyText": "Kontakt awaryjny jest dostępny tylko dla aktywnych klientów Pakietu Pełnego (Czerwony). Jeśli są Państwo aktywnym klientem w sytuacji awaryjnej, proszę użyć dedykowanego numeru awaryjnego dostarczonego podczas wdrożenia."
+      "emergencyText": "Kontakt awaryjny jest dostępny tylko dla aktywnych klientów Pakietu Pełnego. Jeśli są Państwo aktywnym klientem w sytuacji awaryjnej, proszę użyć dedykowanego numeru awaryjnego dostarczonego podczas wdrożenia."
     },
     "form": {
       "title": "FORMULARZ KONTAKTOWY",
@@ -811,15 +811,15 @@
       "propertyStatuses": {
         "emptyMostYear": "Pusta przez większość roku",
         "occasionalUse": "Okazjonalne użycie osobiste",
-        "shortTermRental": "Wynajem krótkoterminowy",
+        "shortTermRental": "Regularne pobyty gości",
         "other": "Inne (proszę określić)"
       },
       "serviceRequirements": "Wymagania Usługowe:",
       "expectedPackage": "Oczekiwany Pakiet",
       "packages": {
-        "green": "Pakiet Podstawowy (Zielony)",
-        "orange": "Pakiet Rozszerzony (Pomarańczowy)",
-        "red": "Pakiet Pełny (Czerwony)",
+        "green": "Pakiet Podstawowy",
+        "orange": "Pakiet Rozszerzony",
+        "red": "Pakiet Pełny",
         "consultation": "Nie jestem pewien - potrzebuję konsultacji"
       },
       "accessFrequency": "Oczekiwana Częstotliwość Dostępu (jeśli Rozszerzony lub Pełny)",
@@ -862,7 +862,7 @@
       "channels": {
         "operational": "Żądania operacyjne: Główna linia WhatsApp/telefon (dostarczona w dokumentacji wdrożeniowej)",
         "formal": "Zapytania formalne: Email: {email}",
-        "emergency": "Nagłe wypadki (tylko Pakiet Pełny / Czerwony): Numer awaryjny (dostarczony w dokumentacji wdrożeniowej)"
+        "emergency": "Nagłe wypadki (tylko Pakiet Pełny): Numer awaryjny (dostarczony w dokumentacji wdrożeniowej)"
       },
       "doNotUseTitle": "Nie używaj tego formularza kontaktowego do:",
       "doNotUseItems": {
@@ -916,7 +916,7 @@
     },
     "sampleReport": {
       "label": "Przykładowy raport kontroli wstępnej (przykład zanonimizowany)",
-      "headerBlock": "RAPORT KONTROLI WSTĘPNEJ NIERUCHOMOŚCI\n\nID raportu: GCB-INS-2026-001 (przykład)\nTyp nieruchomości: Apartament\nLokalizacja: Torrevieja (zanonimizowane)\nData kontroli: styczeń 2026\nInspektor: Sentinel\nPakiet usługi: Pełny (Czerwony)",
+      "headerBlock": "RAPORT KONTROLI WSTĘPNEJ NIERUCHOMOŚCI\n\nID raportu: SEN-INS-2026-001 (przykład)\nTyp nieruchomości: Apartament\nLokalizacja: Torrevieja (zanonimizowane)\nData kontroli: styczeń 2026\nInspektor: Sentinel\nPakiet usługi: Pełny",
       "scopeConfirmation": "Kontrola wykonana w ramach wdrożenia (onboarding).\nCel: ustalenie stanu bazowego nieruchomości przed aktywacją usługi.\nRaport odzwierciedla stan zaobserwowany w dniu kontroli.",
       "status": {
         "ok": "OK",
@@ -1048,9 +1048,9 @@
       "title": "KROK 2: WYBÓR PAKIETU I POTWIERDZENIE WARUNKÓW",
       "subtitle": "Klient wybiera początkowy pakiet na podstawie oczekiwanych potrzeb:",
       "packages": {
-        "green": "Podstawowy (Zielony)",
-        "orange": "Rozszerzony (Pomarańczowy)",
-        "red": "Pełny (Czerwony)"
+        "green": "Podstawowy",
+        "orange": "Rozszerzony",
+        "red": "Pełny"
       },
       "confirmationsTitle": "Wymagane potwierdzenia:",
       "confirmationsIntro": "Klient musi potwierdzić zrozumienie i akceptację:",
@@ -1061,7 +1061,7 @@
         "authority": "Limity uprawnień decyzyjnych (jeśli dotyczy pakietu)",
         "pricing": "Cennik dla wybranego pakietu i usług dodatkowych (jeśli dotyczy)"
       },
-      "redPackageTitle": "Specjalnie dla Pakietu Pełnego (Czerwony):",
+      "redPackageTitle": "Specjalnie dla Pakietu Pełnego:",
       "redPackageText": "Klient musi określić limit uprawnień decyzyjnych:",
       "redPackageLimits": {
         "standard": "Standard: 300€ na pojedynczą decyzję",
@@ -1437,7 +1437,7 @@
           },
           "q6": {
             "question": "Czy mogę poprosić o wejście \"tylko na chwilę\"?",
-            "answer": "Nie—krótkie wizyty nadal liczą się jako zdarzenia dostępu. Czas trwania nie wpływa na klasyfikację zdarzenia dostępu; koszt operacyjny (podróż, koordynacja, zabezpieczanie) jest identyczny niezależnie od czasu spędzonego na miejscu. Zaplanuj potrzeby dostępu odpowiednio w ramach alokacji pakietu lub ulepsz do CZERWONEGO w celu dostępu w rozsądnym zakresie bez ścisłych limitów miesięcznych."
+            "answer": "Nie—krótkie wizyty nadal liczą się jako zdarzenia dostępu. Czas trwania nie wpływa na klasyfikację zdarzenia dostępu; koszt operacyjny (podróż, koordynacja, zabezpieczanie) jest identyczny niezależnie od czasu spędzonego na miejscu. Zaplanuj potrzeby dostępu odpowiednio w ramach alokacji pakietu lub przejdź na Pakiet Rozszerzony lub Pełny w celu dostępu w rozsądnym zakresie bez ścisłych limitów miesięcznych."
           }
         }
       },
@@ -1465,7 +1465,7 @@
           },
           "q10": {
             "question": "Co się dzieje w nagłym wypadku, jeśli nie odbieram telefonu?",
-            "answer": "Sentinel podejmuje działania zabezpieczające nieruchomość do limitu 300€, jeśli właściciel jest nieosiągalny, a zagrożenie jest natychmiastowe. Wszystkie pakiety obejmują ograniczone uprawnienia do zabezpieczania awaryjnego, gdy istnieje bezpośrednie zagrożenie dla nieruchomości, a kontakt z właścicielem się nie udaje; wszystkie działania są udokumentowane i zgłoszone. Podaj niezawodne informacje kontaktowe w nagłych wypadkach podczas wdrożenia; klienci pakietu CZERWONEGO otrzymują natychmiastowe działanie w ramach zatwierdzonego limitu decyzji (300-500€)."
+            "answer": "Sentinel podejmuje działania zabezpieczające nieruchomość do limitu 300€, jeśli właściciel jest nieosiągalny, a zagrożenie jest natychmiastowe. Wszystkie pakiety obejmują ograniczone uprawnienia do zabezpieczania awaryjnego, gdy istnieje bezpośrednie zagrożenie dla nieruchomości, a kontakt z właścicielem się nie udaje; wszystkie działania są udokumentowane i zgłoszone. Podaj niezawodne informacje kontaktowe w nagłych wypadkach podczas wdrożenia; klienci Pakietu Pełnego otrzymują natychmiastowe działanie w ramach zatwierdzonego limitu decyzji (300-500€)."
           },
           "q11": {
             "question": "Jaki jest limit decyzji w Pakiecie Pełnym?",
@@ -1502,7 +1502,7 @@
             "answer": "Tak—zmiany pakietu są możliwe w dowolnym momencie po wzajemnej zgodzie. Zmiany wymagają pisemnego potwierdzenia nowych warunków pakietu i wchodzą w życie od uzgodnionej daty (zazwyczaj następny okres rozliczeniowy). Skontaktuj się z Sentinel w celu omówienia uaktualnienia/obniżenia pakietu; nowe warunki udokumentowane przed aktywacją zmiany."
           },
           "q18": {
-            "question": "Czy obsługujecie wynajem krótkoterminowy (Airbnb)?",
+            "question": "Czy obsługujecie nieruchomości z regularnymi pobytami gości?",
             "answer": "Nie jako główna usługa—wsparcie wynajmu jest dostępne tylko jako moduł dodatkowy do istniejącego pakietu. Sentinel nie zapewnia pełnego zarządzania nieruchomością, komunikacji z gośćmi ani usług rezerwacyjnych; wsparcie wynajmu obejmuje tylko przygotowanie nieruchomości i kontrolę po wyjeździe. Przejrzyj moduł dodatkowy Wsparcie Wynajmu / Wakacji na stronie Usługi; wymaga pakietu podstawowego (Podstawowy, Rozszerzony lub Pełny) plus osobne uzgodnienie."
           }
         }
@@ -1566,7 +1566,7 @@
       "subtext": "Nie działamy w oparciu o zaufanie oparte na osobowości ani elastyczność concierge. Działamy w oparciu o udokumentowane procedury, określony zakres i egzekwowalną odpowiedzialność."
     },
     "philosophy": {
-      "title": "Dlaczego Pakietowa Reprezentacja Nieruchomości",
+      "title": "Dlaczego reprezentacja właściciela na miejscu",
       "intro": "Sentinel został zaprojektowany, aby rozwiązać konkretny problem operacyjny: właściciele nieruchomości mieszkający poza Hiszpanią potrzebują niezawodnej lokalnej reprezentacji, ale tradycyjne modele—przechowywanie kluczy, usługi concierge czy pełne zarządzanie nieruchomością—tworzą niewłaściwe oczekiwania i nieokreśloną odpowiedzialność.",
       "subtitle": "Model usługi pakietowej istnieje, ponieważ:",
       "reasons": {
@@ -1594,7 +1594,7 @@
       "intro": "Sentinel obsługuje nieruchomości w Torrevieja i w przybliżonym promieniu 50-70km. To geograficzne ograniczenie jest stałe i dotyczy wszystkich klientów bez wyjątku.",
       "subtitle": "Dlaczego istnieją granice geograficzne:",
       "reasons": {
-        "responseTime": "Zobowiązania dotyczące czasu reakcji: Klienci pakietu CZERWONEGO otrzymują 4-godzinne potwierdzenie i 8-godzinne terminy decyzji. Jest to możliwe tylko w zarządzalnej odległości.",
+        "responseTime": "Zobowiązania dotyczące czasu reakcji: Klienci Pakietu Pełnego otrzymują 4-godzinne potwierdzenie i 8-godzinne terminy decyzji. Jest to możliwe tylko w zarządzalnej odległości.",
         "visitFrequency": "Niezawodność częstotliwości wizyt: Regularne wizyty dwutygodniowe lub tygodniowe wymagają bliskości. Odległe nieruchomości tworzą konflikty w harmonogramie i degradację usługi.",
         "emergencyAccess": "Zdolność dostępu awaryjnego: Zabezpieczanie nieruchomości w przypadku aktywnych wycieków, złamanych zamków lub uszkodzeń pogodowych wymaga szybkiej fizycznej obecności.",
         "qualityControl": "Kontrola jakości: Lokalna obecność umożliwia zarządzanie relacjami ze sprzątaczkami, technikami i usługami miejskimi. Odległość niszczy te relacje operacyjne.",
@@ -1739,7 +1739,7 @@
         "title": "Nie jest dostępny 24/7 dla spraw nieawaryjnych:",
         "items": {
           "sla": "Umowy poziomu usług określają czasy reakcji według pakietu",
-          "red": "Reakcja awaryjna jest dostępna tylko dla klientów pakietu CZERWONEGO",
+          "red": "Reakcja awaryjna jest dostępna tylko dla klientów Pakietu Pełnego",
           "timeframes": "Żądania nieawaryjne są obsługiwane w ramach czasowych SLA",
           "guarantee": "Natychmiastowa dostępność poza SLA nie jest gwarantowana"
         }
@@ -1835,9 +1835,9 @@
     "sections": [
       { "title": "1. Definicja Usługi", "body": "Sentinel świadczy pakietową usługę lokalnej reprezentacji nieruchomości w określonym zakresie operacyjnym.\n\nUsługa nie stanowi:\n\nUbezpieczenia\nUsługi concierge\nAgencji wynajmu\nGeneralnego wykonawcy\nZarządzania nieruchomością w pełnym zakresie" },
       { "title": "2. Obszar Geograficzny", "body": "Usługa świadczona jest wyłącznie na terenie Torrevieja i w promieniu 50–70 km.\n\nNieruchomości poza tym obszarem nie mogą być obsługiwane." },
-      { "title": "3. Model Pakietowy", "body": "Usługi realizowane są wyłącznie w oparciu o miesięczne pakiety:\n\nPodstawowy (Zielony)\nRozszerzony (Pomarańczowy)\nPełny (Czerwony)\n\nJeżeli dana usługa nie jest wyraźnie wymieniona w pakiecie, nie jest wliczona.\n\nUsługi dodatkowe wymagają osobnego uzgodnienia i wyceny." },
+      { "title": "3. Model Pakietowy", "body": "Usługi realizowane są wyłącznie w oparciu o miesięczne pakiety:\n\nPodstawowy\nRozszerzony\nPełny\n\nJeżeli dana usługa nie jest wyraźnie wymieniona w pakiecie, nie jest wliczona.\n\nUsługi dodatkowe wymagają osobnego uzgodnienia i wyceny." },
       { "title": "4. SLA", "body": "SLA określa:\n\nCzas reakcji\nCzas podjęcia decyzji\n\nSLA nie stanowi gwarancji czasu pełnego rozwiązania problemu." },
-      { "title": "5. Uprawnienia Decyzyjne", "body": "W Pakiecie Pełnym (Czerwony) obowiązuje limit decyzyjny:\n\nStandard: 300 € na pojedynczą decyzję\nOpcjonalnie: 500 € (jeśli ustalone)\n\nDecyzje powyżej limitu wymagają zgody właściciela." },
+      { "title": "5. Uprawnienia Decyzyjne", "body": "W Pakiecie Pełnym obowiązuje limit decyzyjny:\n\nStandard: 300 € na pojedynczą decyzję\nOpcjonalnie: 500 € (jeśli ustalone)\n\nDecyzje powyżej limitu wymagają zgody właściciela." },
       { "title": "6. Odpowiedzialność", "body": "Sentinel odpowiada za:\n\nRealizację usług zgodnie z pakietem\nDokumentację działań\nReakcję zgodną z SLA\n\nSentinel nie odpowiada za:\n\nZdarzenia siły wyższej\nBłędy wykonawców zewnętrznych\nStraty o charakterze ubezpieczeniowym\nBrak zapobieżenia wszystkim incydentom" },
       { "title": "7. Płatności", "body": "Usługa rozliczana jest:\n\nMiesięcznie z góry\nMinimalny okres współpracy: 3 miesiące\n\nPłatność może być realizowana:\n\nPrzelewem\nOnline poprzez system płatności\n\nBrak płatności może skutkować zawieszeniem lub rozwiązaniem usługi." },
       { "title": "8. Rozwiązanie Umowy", "body": "Klient może rozwiązać usługę z końcem okresu rozliczeniowego.\n\nSentinel może rozwiązać usługę w przypadku:\n\nNaruszenia zakresu\nBraku płatności\nNiemożności operacyjnej\nZachowań uniemożliwiających bezpieczne świadczenie usługi" },

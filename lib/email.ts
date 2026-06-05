@@ -58,7 +58,7 @@ export async function sendAutoResponseEmail(
           <ul style="color: #1a1a1a; font-size: 16px; line-height: 1.6; padding-left: 20px;">
             <li>Confirm property location eligibility</li>
             <li>Discuss your specific service requirements</li>
-            <li>Recommend the appropriate package</li>
+            <li>Confirm scope and package fit in structured review</li>
             <li>Outline the onboarding process</li>
           </ul>
           

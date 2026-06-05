@@ -334,7 +334,7 @@
     "finalCta": {
       "title": "You can manage reactively. Or operate within the system.",
       "p1": "Reactive management is based on reacting. The system is based on steady control.",
-      "p2": "Sentinel is a defined model of owner representation. The choice is about the structure of property management.",
+      "p2": "Sentinel is a defined model of owner representation. The choice is about the structure of local oversight and owner representation.",
       "cta": "Verify whether your property qualifies for the Sentinel system"
     }
   },
@@ -354,9 +354,9 @@
       "footerNote": "SLA defines reaction and decision time, not guaranteed resolution time. External factors (parts availability, technician schedules) affect actual resolution.",
       "columns": {
         "serviceElement": "Service Element",
-        "green": "Basic (Green)",
-        "orange": "Extended (Orange)",
-        "red": "Full (Red)"
+        "green": "Basic",
+        "orange": "Extended",
+        "red": "Full"
       },
       "categories": {
         "inspections": "INSPECTIONS",
@@ -415,7 +415,7 @@
     },
     "green": {
       "title": "Basic Package",
-      "badgeLabel": "Green",
+      "badgeLabel": "Basic",
       "definition": "Scheduled property checks.",
       "suitableForTitle": "Suitable for",
       "suitableItems": {
@@ -468,7 +468,7 @@
     },
     "orange": {
       "title": "Extended Package",
-      "badgeLabel": "Orange",
+      "badgeLabel": "Extended",
       "definition": "Scheduled checks and access coordination.",
       "fromBasic": "Includes everything from the Basic Package, plus:",
       "accessTitle": "Access Coordination",
@@ -506,7 +506,7 @@
     },
     "red": {
       "title": "Full Package",
-      "badgeLabel": "Red",
+      "badgeLabel": "Full",
       "definition": "Checks, access, and local decision authority.",
       "fromExtended": "Includes everything from the Extended Package, plus:",
       "emergencyTitle": "Emergency Response",
@@ -628,19 +628,19 @@
     },
     "selection": {
       "title": "Package Selection Guide",
-      "greenTitle": "Choose Basic if:",
+      "greenTitle": "Basic applies when:",
       "greenItems": {
         "regularVisits": "You require regular checks",
         "ownRepairs": "You manage contractors independently",
         "noAccess": "No third-party access coordination is needed"
       },
-      "orangeTitle": "Choose Extended if:",
+      "orangeTitle": "Extended applies when:",
       "orangeItems": {
         "accessNeeded": "You require access coordination",
         "technicalWorks": "You engage service providers remotely",
         "oversight": "You retain financial decision authority"
       },
-      "redTitle": "Choose Full if:",
+      "redTitle": "Full applies when:",
       "redItems": {
         "localDecisions": "You want local decision-making authority",
         "emergencyResponse": "You require emergency responsiveness",
@@ -671,7 +671,7 @@
       "modeSublineActiveGuest": "Higher oversight intensity associated with guest turnover.",
       "modeDescriptor": {
         "private_use": "No regular guest rotation.",
-        "active_guest": "Regular guest rotation / short-term rental."
+        "active_guest": "Regular guest rotation / regular guest stays."
       },
       "groupParameters": "Property parameters",
       "groupParametersAnchor": "Parameters affect operational scope and coordination complexity.",
@@ -776,7 +776,7 @@
         "serviceNeeds": "Primary service needs or concerns"
       },
       "emergencyTitle": "Emergency contact (active clients only):",
-      "emergencyText": "Emergency contact is available only to active Full Package (Red) clients. If you are an active client with an emergency, use the dedicated emergency number provided during onboarding."
+      "emergencyText": "Emergency contact is available only to active Full Package clients. If you are an active client with an emergency, use the dedicated emergency number provided during onboarding."
     },
     "form": {
       "title": "CONTACT FORM",
@@ -811,15 +811,15 @@
       "propertyStatuses": {
         "emptyMostYear": "Empty most of the year",
         "occasionalUse": "Occasional personal use",
-        "shortTermRental": "Short-term rental",
+        "shortTermRental": "Regular Guest Stays",
         "other": "Other (specify)"
       },
       "serviceRequirements": "Service Requirements:",
       "expectedPackage": "Expected Package",
       "packages": {
-        "green": "Basic Package (Green)",
-        "orange": "Extended Package (Orange)",
-        "red": "Full Package (Red)",
+        "green": "Basic Package",
+        "orange": "Extended Package",
+        "red": "Full Package",
         "consultation": "Not sure - need consultation"
       },
       "accessFrequency": "Expected Access Frequency (if Extended or Full)",
@@ -862,7 +862,7 @@
       "channels": {
         "operational": "Operational requests: Primary WhatsApp/phone line (provided in your onboarding documentation)",
         "formal": "Formal inquiries: Email: {email}",
-        "emergency": "Emergency (Full Package / Red only): Emergency number (provided in your onboarding documentation)"
+        "emergency": "Emergency (Full Package only): Emergency number (provided in your onboarding documentation)"
       },
       "doNotUseTitle": "Do not use this contact form for:",
       "doNotUseItems": {
@@ -916,7 +916,7 @@
     },
     "sampleReport": {
       "label": "Sample Initial Inspection Report (Redacted Example)",
-      "headerBlock": "INITIAL PROPERTY INSPECTION REPORT\n\nReport ID: GCB-INS-2026-001 (example)\nProperty Type: Apartment\nLocation: Torrevieja (redacted)\nInspection Date: January 2026\nInspector: Sentinel\nService Package: Full (Red)",
+      "headerBlock": "INITIAL PROPERTY INSPECTION REPORT\n\nReport ID: SEN-INS-2026-001 (example)\nProperty Type: Apartment\nLocation: Torrevieja (redacted)\nInspection Date: January 2026\nInspector: Sentinel\nService Package: Full",
       "scopeConfirmation": "Inspection conducted as part of initial onboarding.\nPurpose: establish baseline property condition prior to service activation.\nThis report reflects observed conditions at the time of inspection only.",
       "status": {
         "ok": "OK",
@@ -1048,9 +1048,9 @@
       "title": "STEP 2: PACKAGE SELECTION AND TERMS CONFIRMATION",
       "subtitle": "Client selects initial package based on expected needs:",
       "packages": {
-        "green": "Basic (Green)",
-        "orange": "Extended (Orange)",
-        "red": "Full (Red)"
+        "green": "Basic",
+        "orange": "Extended",
+        "red": "Full"
       },
       "confirmationsTitle": "Required confirmations:",
       "confirmationsIntro": "Client must confirm understanding and acceptance of:",
@@ -1061,7 +1061,7 @@
         "authority": "Decision authority limits (if applicable to package)",
         "pricing": "Pricing for selected package and add-on services (if any)"
       },
-      "redPackageTitle": "For Full Package (Red) specifically:",
+      "redPackageTitle": "For Full Package specifically:",
       "redPackageText": "Client must specify decision authority limit:",
       "redPackageLimits": {
         "standard": "Standard: €300 per single decision",
@@ -1437,7 +1437,7 @@
           },
           "q6": {
             "question": "Can I ask for entry \"just for a moment\"?",
-            "answer": "No—brief visits still count as access events. Duration does not affect access event classification; operational cost (travel, coordination, securing) is identical regardless of time on-site. Plan access needs appropriately within package allocation, or upgrade to RED for fair-use access without strict monthly limits."
+            "answer": "No—brief visits still count as access events. Duration does not affect access event classification; operational cost (travel, coordination, securing) is identical regardless of time on-site. Plan access needs appropriately within package allocation, or move to Extended or Full package for fair-use access without strict monthly limits."
           }
         }
       },
@@ -1465,7 +1465,7 @@
           },
           "q10": {
             "question": "What happens in emergency if I don't answer phone?",
-            "answer": "Sentinel takes property-securing action up to €300 limit if owner is unreachable and threat is immediate. All packages include limited emergency securing authority when immediate property threat exists and owner contact fails; all actions documented and reported. Provide reliable emergency contact information during onboarding; RED package clients receive immediate action within approved decision limit (€300-500)."
+            "answer": "Sentinel takes property-securing action up to €300 limit if owner is unreachable and threat is immediate. All packages include limited emergency securing authority when immediate property threat exists and owner contact fails; all actions documented and reported. Provide reliable emergency contact information during onboarding; Full package clients receive immediate action within approved decision limit (€300-500)."
           },
           "q11": {
             "question": "What is the decision limit in Full package?",
@@ -1502,7 +1502,7 @@
             "answer": "Yes—package changes are possible at any time upon mutual agreement. Changes require written confirmation of new package terms and take effect from agreed date (typically next billing period). Contact Sentinel to discuss package upgrade/downgrade; new terms documented before change activation."
           },
           "q18": {
-            "question": "Do you handle short-term rental (Airbnb)?",
+            "question": "Do you support properties with regular guest stays?",
             "answer": "Not as primary service—rental support is available only as add-on module to existing package. Sentinel does not provide full property management, guest communication, or booking services; rental support covers only property preparation and post-departure inspection. Review Rental/Holiday Support add-on module on Services page; requires base package (Basic, Extended, or Full) plus separate arrangement."
           }
         }
@@ -1835,9 +1835,9 @@
     "sections": [
       { "title": "1. Definition of Service", "body": "Sentinel provides a package-based local property representation service within a defined operational scope.\n\nThe service is not:\n\nInsurance\nA concierge service\nA rental agency\nA general contractor\nFull-scope property management" },
       { "title": "2. Geographic Area", "body": "The service is provided only within Torrevieja and a 50–70 km radius.\n\nProperties outside this area cannot be served." },
-      { "title": "3. Package Model", "body": "Services are delivered only under monthly packages:\n\nBasic (Green)\nExtended (Orange)\nFull (Red)\n\nIf a service is not explicitly listed in the package, it is not included.\n\nAdditional services require separate agreement and quotation." },
+      { "title": "3. Package Model", "body": "Services are delivered only under monthly packages:\n\nBasic\nExtended\nFull\n\nIf a service is not explicitly listed in the package, it is not included.\n\nAdditional services require separate agreement and quotation." },
       { "title": "4. SLA", "body": "SLA defines:\n\nResponse time\nDecision time\n\nSLA does not guarantee time to full resolution of an issue." },
-      { "title": "5. Decision Authority", "body": "In the Full Package (Red) a decision limit applies:\n\nStandard: €300 per single decision\nOptional: €500 (if agreed)\n\nDecisions above the limit require owner approval." },
+      { "title": "5. Decision Authority", "body": "In the Full Package a decision limit applies:\n\nStandard: €300 per single decision\nOptional: €500 (if agreed)\n\nDecisions above the limit require owner approval." },
       { "title": "6. Liability", "body": "Sentinel is responsible for:\n\nDelivery of services in accordance with the package\nDocumentation of actions\nResponse in line with SLA\n\nSentinel is not responsible for:\n\nForce majeure\nErrors by third-party contractors\nInsurance-type losses\nFailure to prevent all incidents" },
       { "title": "7. Payments", "body": "The service is billed:\n\nMonthly in advance\nMinimum engagement period: 3 months\n\nPayment may be made by:\n\nBank transfer\nOnline via the payment system\n\nNon-payment may result in suspension or termination of the service." },
       { "title": "8. Termination", "body": "The client may terminate the service at the end of the billing period.\n\nSentinel may terminate the service in case of:\n\nBreach of scope\nNon-payment\nOperational impossibility\nConduct that prevents safe delivery of the service" },
