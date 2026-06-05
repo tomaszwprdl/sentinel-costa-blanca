@@ -17,6 +17,8 @@ const PATHWAY_POINT_COUNTS: Record<PathwayKey, number> = {
   'mixed-not-defined': 5,
 };
 
+const DIAGNOSTIC_SHELL_CLASS = 'mx-auto w-full max-w-3xl';
+
 type UsagePathwayLayerProps = {
   children: ReactNode;
 };
@@ -50,57 +52,40 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
   const showPicker = !hasSelection || isChanging;
   const gateSectionClassName = [
     'section-primitive--first',
-    !hasSelection ? 'flex-1 !max-h-none' : '!pb-10 md:!pb-12',
+    !hasSelection
+      ? 'flex-1 !max-h-none flex flex-col justify-center'
+      : '!pb-10 md:!pb-12',
   ].join(' ');
 
   return (
     <>
-      <Section tone="light" className={gateSectionClassName}>
-        <div className="container max-w-7xl">
+      <Section tone={hasSelection ? 'light' : 'alt'} className={gateSectionClassName}>
+        <div className={DIAGNOSTIC_SHELL_CLASS}>
           {showFullGate && (
-            <div>
-              <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 lg:items-start">
-                <div className="max-w-xl">
-                  <h1 className="text-2xl md:text-3xl font-bold tracking-tight leading-tight text-heading">
-                    {t('hero.wordmark')}
-                  </h1>
-                  <h2 className="text-lg md:text-xl font-normal text-body mt-4 leading-snug">
-                    {t('hero.descriptor')}
-                  </h2>
-                  <p className="text-base text-body mt-4 leading-relaxed">{t('hero.line3')}</p>
-                  <p className="text-base text-body mt-3 leading-relaxed">{t('hero.line4')}</p>
-                </div>
-
-                <div className="lg:pt-2">
-                  <h2 className="text-lg md:text-xl font-semibold text-heading leading-snug">
-                    {tp('selectorTitle')}
-                  </h2>
-                </div>
-              </div>
-
+            <DiagnosticGateIntro t={t} tp={tp}>
               {showPicker && (
-                <div className="mt-5 lg:mt-8">
-                  <PathwayCards
+                <>
+                  <DiagnosticChoiceBlock
                     selected={selected}
                     isChanging={isChanging}
                     onSelect={selectPathway}
                     t={tp}
                   />
                   {!hasSelection && (
-                    <p className="mt-5 text-sm text-muted leading-relaxed max-w-2xl">
+                    <p className="mt-5 text-sm text-muted leading-relaxed">
                       {tp('gateInstruction')}
                     </p>
                   )}
-                </div>
+                </>
               )}
-            </div>
+            </DiagnosticGateIntro>
           )}
 
           {!showFullGate && showPicker && (
             <div className="mb-8">
               <h2 className="text-lg font-semibold text-heading">{tp('selectorTitle')}</h2>
               <div className="mt-5">
-                <PathwayCards
+                <DiagnosticChoiceBlock
                   selected={selected}
                   isChanging={isChanging}
                   onSelect={selectPathway}
@@ -137,7 +122,42 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
   );
 }
 
-function PathwayCards({
+function DiagnosticGateIntro({
+  t,
+  tp,
+  children,
+}: {
+  t: ReturnType<typeof useTranslations<'home'>>;
+  tp: ReturnType<typeof useTranslations<'home.pathway'>>;
+  children: ReactNode;
+}) {
+  return (
+    <div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 lg:gap-y-6 pb-6 md:pb-8 mb-6 md:mb-8 border-b border-structural-light">
+        <div>
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight leading-tight text-heading">
+            {t('hero.wordmark')}
+          </h1>
+          <h2 className="text-lg md:text-xl font-normal text-body mt-4 leading-snug">
+            {t('hero.descriptor')}
+          </h2>
+          <p className="text-base text-body mt-4 leading-relaxed">{t('hero.line3')}</p>
+          <p className="text-base text-body mt-3 leading-relaxed">{t('hero.line4')}</p>
+        </div>
+
+        <div className="lg:pt-1">
+          <h2 className="text-lg md:text-xl font-semibold text-heading leading-snug">
+            {tp('selectorTitle')}
+          </h2>
+        </div>
+      </div>
+
+      {children}
+    </div>
+  );
+}
+
+function DiagnosticChoiceBlock({
   selected,
   isChanging,
   onSelect,
@@ -149,28 +169,30 @@ function PathwayCards({
   t: ReturnType<typeof useTranslations<'home.pathway'>>;
 }) {
   return (
-    <div className="grid grid-cols-1 gap-3 md:gap-4">
-      {PATHWAY_KEYS.map((key) => {
-        const isSelected = selected === key && !isChanging;
-        return (
-          <button
-            key={key}
-            type="button"
-            onClick={() => onSelect(key)}
-            aria-pressed={isSelected}
-            className={`text-left w-full p-4 md:p-5 border r transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-authority focus-visible:ring-offset-2 ${
-              isSelected
-                ? 'border-authority border-l-4 bg-surface-light-alt'
-                : 'border-structural-light bg-surface-card hover:border-structural-muted hover:bg-surface-light-alt/40'
-            }`}
-          >
-            <p className="text-base font-semibold text-heading mb-1.5 leading-snug">
-              {t(`cards.${key}.title`)}
-            </p>
-            <p className="text-sm text-body leading-relaxed">{t(`cards.${key}.description`)}</p>
-          </button>
-        );
-      })}
+    <div className="border border-structural-light bg-surface-card r overflow-hidden">
+      <div className="divide-y divide-structural-light">
+        {PATHWAY_KEYS.map((key) => {
+          const isSelected = selected === key && !isChanging;
+          return (
+            <button
+              key={key}
+              type="button"
+              onClick={() => onSelect(key)}
+              aria-pressed={isSelected}
+              className={`text-left w-full p-4 md:p-5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-authority ${
+                isSelected
+                  ? 'border-l-4 border-authority bg-surface-light-alt pl-[calc(1rem-3px)] md:pl-[calc(1.25rem-3px)]'
+                  : 'bg-surface-card hover:bg-surface-light-alt/40'
+              }`}
+            >
+              <p className="text-base font-semibold text-heading mb-1.5 leading-snug">
+                {t(`cards.${key}.title`)}
+              </p>
+              <p className="text-sm text-body leading-relaxed">{t(`cards.${key}.description`)}</p>
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -185,7 +207,7 @@ function PathwayDetailPanel({
   t: ReturnType<typeof useTranslations<'home.pathway'>>;
 }) {
   return (
-    <div className="mb-8 md:mb-10 border-l-4 border-authority bg-surface-light-alt r">
+    <div className="mb-10 md:mb-12 border border-structural-light border-l-4 border-l-authority bg-surface-card r">
       <div className="p-6 md:p-8 space-y-6">
         <div>
           <p className="text-sm text-muted mb-1">{t('selectedLabel')}</p>
@@ -205,7 +227,7 @@ function PathwayDetailPanel({
 
         <div>
           <p className="text-sm font-semibold text-heading mb-3">{t('changesLabel')}</p>
-          <ul className="list-disc pl-5 space-y-2 text-body leading-relaxed max-w-3xl">
+          <ul className="list-disc pl-5 space-y-2 text-body leading-relaxed">
             {Array.from({ length: PATHWAY_POINT_COUNTS[pathway] }, (_, i) => (
               <li key={i}>{t(`detail.${pathway}.point${i + 1}`)}</li>
             ))}

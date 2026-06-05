@@ -18,6 +18,8 @@ const PATHWAY_POINT_COUNTS: Record<PathwayKey, number> = {
   'mixed-not-defined': 5,
 };
 
+const DIAGNOSTIC_SHELL_CLASS = 'mx-auto w-full max-w-3xl';
+
 export default async function HomePage({
   params
 }: {
@@ -281,14 +283,18 @@ function UsagePathwayFallback({
 
   return (
     <Section
-      tone="light"
-      className={hasSelection ? 'section-primitive--first !pb-10 md:!pb-12' : 'section-primitive--first flex-1 !max-h-none'}
+      tone={hasSelection ? 'light' : 'alt'}
+      className={
+        hasSelection
+          ? 'section-primitive--first !pb-10 md:!pb-12'
+          : 'section-primitive--first flex-1 !max-h-none flex flex-col justify-center'
+      }
     >
-      <div className="container max-w-7xl">
+      <div className={DIAGNOSTIC_SHELL_CLASS}>
         {!hasSelection && (
           <div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 lg:items-start">
-              <div className="max-w-xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 lg:gap-y-6 pb-6 md:pb-8 mb-6 md:mb-8 border-b border-structural-light">
+              <div>
                 <h1 className="text-2xl md:text-3xl font-bold tracking-tight leading-tight text-heading">
                   {t('hero.wordmark')}
                 </h1>
@@ -299,19 +305,15 @@ function UsagePathwayFallback({
                 <p className="text-base text-body mt-3 leading-relaxed">{t('hero.line4')}</p>
               </div>
 
-              <div className="lg:pt-2">
+              <div className="lg:pt-1">
                 <h2 className="text-lg md:text-xl font-semibold text-heading leading-snug">
                   {t('pathway.selectorTitle')}
                 </h2>
               </div>
             </div>
 
-            <div className="mt-5 lg:mt-8">
-              <FallbackPathwayCards locale={locale} selected={selected} t={t} />
-              <p className="mt-5 text-sm text-muted leading-relaxed max-w-2xl">
-                {t('pathway.gateInstruction')}
-              </p>
-            </div>
+            <FallbackDiagnosticChoiceBlock locale={locale} selected={selected} t={t} />
+            <p className="mt-5 text-sm text-muted leading-relaxed">{t('pathway.gateInstruction')}</p>
           </div>
         )}
 
@@ -330,7 +332,7 @@ function UsagePathwayFallback({
               </Link>
             </div>
 
-            <div className="mb-8 md:mb-10 border-l-4 border-authority bg-surface-light-alt r">
+            <div className="mb-10 md:mb-12 border border-structural-light border-l-4 border-l-authority bg-surface-card r">
               <div className="p-6 md:p-8 space-y-6">
                 <div>
                   <p className="text-sm text-muted mb-1">{t('pathway.selectedLabel')}</p>
@@ -352,7 +354,7 @@ function UsagePathwayFallback({
 
                 <div>
                   <p className="text-sm font-semibold text-heading mb-3">{t('pathway.changesLabel')}</p>
-                  <ul className="list-disc pl-5 space-y-2 text-body leading-relaxed max-w-3xl">
+                  <ul className="list-disc pl-5 space-y-2 text-body leading-relaxed">
                     {Array.from({ length: PATHWAY_POINT_COUNTS[selected] }, (_, i) => (
                       <li key={i}>{t(`pathway.detail.${selected}.point${i + 1}`)}</li>
                     ))}
@@ -373,7 +375,7 @@ function UsagePathwayFallback({
   );
 }
 
-function FallbackPathwayCards({
+function FallbackDiagnosticChoiceBlock({
   locale,
   selected,
   t,
@@ -383,27 +385,29 @@ function FallbackPathwayCards({
   t: (key: string) => string;
 }) {
   return (
-    <div className="grid grid-cols-1 gap-3 md:gap-4">
-      {PATHWAY_KEYS.map((key) => {
-        const isSelected = selected === key;
-        return (
-          <Link
-            key={key}
-            href={`/${locale}?pathway=${key}`}
-            aria-current={isSelected ? 'true' : undefined}
-            className={`block text-left w-full p-4 md:p-5 border r transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-authority focus-visible:ring-offset-2 ${
-              isSelected
-                ? 'border-authority border-l-4 bg-surface-light-alt'
-                : 'border-structural-light bg-surface-card hover:border-structural-muted hover:bg-surface-light-alt/40'
-            }`}
-          >
-            <p className="text-base font-semibold text-heading mb-1.5 leading-snug">
-              {t(`pathway.cards.${key}.title`)}
-            </p>
-            <p className="text-sm text-body leading-relaxed">{t(`pathway.cards.${key}.description`)}</p>
-          </Link>
-        );
-      })}
+    <div className="border border-structural-light bg-surface-card r overflow-hidden">
+      <div className="divide-y divide-structural-light">
+        {PATHWAY_KEYS.map((key) => {
+          const isSelected = selected === key;
+          return (
+            <Link
+              key={key}
+              href={`/${locale}?pathway=${key}`}
+              aria-current={isSelected ? 'true' : undefined}
+              className={`block text-left w-full p-4 md:p-5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-authority ${
+                isSelected
+                  ? 'border-l-4 border-authority bg-surface-light-alt pl-[calc(1rem-3px)] md:pl-[calc(1.25rem-3px)]'
+                  : 'bg-surface-card hover:bg-surface-light-alt/40'
+              }`}
+            >
+              <p className="text-base font-semibold text-heading mb-1.5 leading-snug">
+                {t(`pathway.cards.${key}.title`)}
+              </p>
+              <p className="text-sm text-body leading-relaxed">{t(`pathway.cards.${key}.description`)}</p>
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 }
