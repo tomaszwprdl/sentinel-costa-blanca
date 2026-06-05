@@ -356,6 +356,19 @@
       "lead2": "Różnią się zakresem odpowiedzialności, dostępem do nieruchomości i możliwością podejmowania decyzji. Jeśli dana usługa nie jest wskazana w pakiecie, oznacza to, że nie jest w jego zakresie.",
       "engagementTerms": "Minimalny okres współpracy: 3 miesiące. Rozliczenie miesięczne z góry."
     },
+    "diagrams": {
+      "sla": {
+        "eyebrow": "Dyscyplina reakcji",
+        "axisLabel": "Pasmo reakcji",
+        "sameDay": "w tym samym dniu"
+      },
+      "escalation": {
+        "eyebrow": "Model uprawnień",
+        "title": "Trzy poziomy nadzoru",
+        "intro": "Poziom pakietu określa uzgodniony zakres: kontrolę, dostęp i prowadzenie decyzji w ustalonych granicach.",
+        "footerNote": "Prowadzenie decyzji pozostaje ograniczone wybranym pakietem, uprawnieniami awaryjnymi i udokumentowanymi zgodami właściciela."
+      }
+    },
     "comparison": {
       "title": "Tabela Porównawcza Pakietów",
       "footerNote": "SLA określa czas reakcji i decyzji, nie gwarantowany czas rozwiązania. Czynniki zewnętrzne (dostępność części, harmonogramy techników) wpływają na faktyczne rozwiązanie.",
@@ -543,7 +556,7 @@
       },
       "slaTitle": "Czas reakcji (SLA)",
       "slaItems": {
-        "ack": "Potwierdzenie zgłoszenia: do 12h",
+        "ack": "Potwierdzenie zgłoszenia: w tym samym dniu",
         "intervention": "Interwencja: zgodnie z poziomem zdarzenia"
       },
       "summary": {
@@ -920,6 +933,11 @@
       "headline": "Jak Działa Usługa Sentinel",
       "description": "Sentinel stosuje ustrukturyzowany proces wdrożenia w celu zapewnienia jasnego zrozumienia, właściwej dokumentacji i gotowości operacyjnej przed aktywacją usługi. Ta strona przedstawia każdy krok od pierwszego kontaktu do aktywnej usługi. Usługa nie jest aktywowana do czasu zakończenia wdrożenia.",
       "processOverview": "Proces składa się z: Kwalifikacja → Wybór Pakietu → Dokumentacja Nieruchomości → Kontrola Wstępna → Aktywacja Usługi. Czas trwania zależy od dostępności nieruchomości i kompletności dokumentacji."
+    },
+    "diagrams": {
+      "onboarding": {
+        "eyebrow": "Sekwencja startu"
+      }
     },
     "sampleReport": {
       "label": "Przykładowy raport kontroli wstępnej (przykład zanonimizowany)",
@@ -1458,7 +1476,7 @@
           },
           "q8": {
             "question": "Czy reagujecie natychmiast na każde żądanie?",
-            "answer": "Nie—czas reakcji zależy od SLA pakietu (Umowa Poziomu Usług). SLA określa czas reakcji i decyzji, a nie gwarantowany czas rozwiązania; Podstawowy potwierdza w ciągu 48h, Rozszerzony w ciągu 24h, Pełny w ciągu 12h. Przejrzyj zobowiązania SLA pakietu na stronie Usługi; czynniki zewnętrzne (dostępność technika, części) wpływają na faktyczne rozwiązanie poza kontrolą Sentinel."
+            "answer": "Nie—czas reakcji zależy od SLA pakietu (Umowa Poziomu Usług). SLA określa czas reakcji i decyzji, a nie gwarantowany czas rozwiązania; Podstawowy potwierdza w ciągu 48h, Rozszerzony w ciągu 24h, Pełny działa w dyscyplinie reakcji tego samego dnia. Przejrzyj zobowiązania SLA pakietu na stronie Usługi; czynniki zewnętrzne (dostępność technika, części) wpływają na faktyczne rozwiązanie poza kontrolą Sentinel."
           }
         }
       },
@@ -1601,7 +1619,7 @@
       "intro": "Sentinel obsługuje nieruchomości w Torrevieja i w przybliżonym promieniu 50-70km. To geograficzne ograniczenie jest stałe i dotyczy wszystkich klientów bez wyjątku.",
       "subtitle": "Dlaczego istnieją granice geograficzne:",
       "reasons": {
-        "responseTime": "Zobowiązania dotyczące czasu reakcji: Klienci Pakietu Pełnego otrzymują 4-godzinne potwierdzenie i 8-godzinne terminy decyzji. Jest to możliwe tylko w zarządzalnej odległości.",
+        "responseTime": "Zobowiązania dotyczące czasu reakcji: Klienci Pakietu Pełnego otrzymują dyscyplinę reakcji tego samego dnia w określonych granicach decyzyjnych. Jest to możliwe tylko w zarządzalnej odległości.",
         "visitFrequency": "Niezawodność częstotliwości wizyt: Regularne wizyty dwutygodniowe lub tygodniowe wymagają bliskości. Odległe nieruchomości tworzą konflikty w harmonogramie i degradację usługi.",
         "emergencyAccess": "Zdolność dostępu awaryjnego: Zabezpieczanie nieruchomości w przypadku aktywnych wycieków, złamanych zamków lub uszkodzeń pogodowych wymaga szybkiej fizycznej obecności.",
         "qualityControl": "Kontrola jakości: Lokalna obecność umożliwia zarządzanie relacjami ze sprzątaczkami, technikami i usługami miejskimi. Odległość niszczy te relacje operacyjne.",

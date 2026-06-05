@@ -356,6 +356,19 @@
       "lead2": "They differ in scope of responsibility, access coordination, and decision authority. If a service is not explicitly included in a package, it is not part of its scope.",
       "engagementTerms": "Minimum commitment: 3 months. Monthly billing in advance."
     },
+    "diagrams": {
+      "sla": {
+        "eyebrow": "Response discipline",
+        "axisLabel": "Response band",
+        "sameDay": "same-day"
+      },
+      "escalation": {
+        "eyebrow": "Jurisdiction model",
+        "title": "Three oversight levels",
+        "intro": "The package level defines the authorised scope: control, access, and decision handling inside agreed limits.",
+        "footerNote": "Decision handling remains bounded by the selected package, emergency authority, and documented owner approvals."
+      }
+    },
     "comparison": {
       "title": "Package Comparison Table",
       "footerNote": "SLA defines reaction and decision time, not guaranteed resolution time. External factors (parts availability, technician schedules) affect actual resolution.",
@@ -543,7 +556,7 @@
       },
       "slaTitle": "Response Time (SLA)",
       "slaItems": {
-        "ack": "Acknowledgement: within 12 hours",
+        "ack": "Acknowledgement: same-day",
         "intervention": "Intervention: according to urgency level"
       },
       "summary": {
@@ -920,6 +933,11 @@
       "headline": "How Sentinel Service Works",
       "description": "Sentinel follows a structured onboarding process to ensure clear understanding, proper documentation, and operational readiness before service activation. This page outlines each step from initial contact to active service. Service is not activated until onboarding is complete.",
       "processOverview": "The process consists of: Qualification → Package Selection → Property Documentation → Initial Inspection → Service Activation. Timeline depends on property availability and documentation completion."
+    },
+    "diagrams": {
+      "onboarding": {
+        "eyebrow": "Start sequence"
+      }
     },
     "sampleReport": {
       "label": "Sample Initial Inspection Report (Redacted Example)",
@@ -1458,7 +1476,7 @@
           },
           "q8": {
             "question": "Do you react immediately to every request?",
-            "answer": "No—response time depends on package SLA (Service Level Agreement). SLA defines reaction and decision time, not guaranteed resolution time; Basic acknowledges within 48h, Extended within 24h, Full within 12h. Review package SLA commitments on Services page; external factors (technician availability, parts) affect actual resolution beyond Sentinel's control."
+            "answer": "No—response time depends on package SLA (Service Level Agreement). SLA defines reaction and decision time, not guaranteed resolution time; Basic acknowledges within 48h, Extended within 24h, Full follows same-day response discipline. Review package SLA commitments on Services page; external factors (technician availability, parts) affect actual resolution beyond Sentinel's control."
           }
         }
       },
@@ -1601,7 +1619,7 @@
       "intro": "Sentinel services properties within Torrevieja and approximately 50-70km radius. This geographic limitation is permanent and applies to all clients without exception.",
       "subtitle": "Why geographic boundaries exist:",
       "reasons": {
-        "responseTime": "Response time commitments: Full package clients receive shorter response times and 8-hour decision timelines. This is only sustainable within manageable distance.",
+        "responseTime": "Response time commitments: Full package clients receive same-day response discipline within defined decision boundaries. This is only sustainable within manageable distance.",
         "visitFrequency": "Visit frequency reliability: Regular biweekly or weekly visits require proximity. Distant properties create scheduling conflicts and service degradation.",
         "emergencyAccess": "Emergency access capability: Property securing in case of active leaks, broken locks, or weather damage requires rapid physical presence.",
         "qualityControl": "Quality control: Local presence enables relationship management with cleaners, technicians, and municipal services. Distance erodes these operational relationships.",

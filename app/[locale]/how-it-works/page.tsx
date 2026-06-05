@@ -7,6 +7,7 @@ import DisclosureBlock from '@/components/DisclosureBlock';
 import SampleInspectionReport from '@/components/SampleInspectionReport';
 import OnSiteVisitPhotoGrid from '@/components/OnSiteVisitPhotoGrid';
 import Section from '@/components/layout/Section';
+import OnboardingTimeline from '@/components/diagrams/OnboardingTimeline';
 
 export default async function HowItWorksPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -451,63 +452,69 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
 
         {/* SECTION 10: TIMELINE SUMMARY */}
         <Section tone="alt">
-          <div>
+          <div className="max-w-4xl">
               <h2 className="h2-system">{t('timeline.title')}</h2>
 
               <h3>{t('timeline.subtitle')}</h3>
-              
-              <div className="mb-10">
-                <p className="text-body mb-2"><strong>{t('timeline.steps.step0.title')}</strong></p>
-                <p className="text-sm text-muted ml-4">{t('timeline.steps.step0.description')}</p>
-              </div>
 
-              <div className="mb-10">
-                <p className="text-body mb-2"><strong>{t('timeline.steps.step1.title')}</strong></p>
-                <p className="text-sm text-muted ml-4">{t('timeline.steps.step1.description')}</p>
-              </div>
+              <OnboardingTimeline
+                eyebrow={t('diagrams.onboarding.eyebrow')}
+                summaryLabel={t('timeline.totalTitle')}
+                summaryText={t('timeline.totalText')}
+                items={[
+                  {
+                    marker: '00',
+                    title: t('timeline.steps.step0.title'),
+                    description: t('timeline.steps.step0.description'),
+                  },
+                  {
+                    marker: '01',
+                    title: t('timeline.steps.step1.title'),
+                    description: t('timeline.steps.step1.description'),
+                  },
+                  {
+                    marker: '02',
+                    title: t('timeline.steps.step2.title'),
+                    description: t('timeline.steps.step2.description'),
+                  },
+                  {
+                    marker: '03',
+                    title: t('timeline.steps.step3.title'),
+                    description: t('timeline.steps.step3.description'),
+                  },
+                  {
+                    marker: '04',
+                    title: t('timeline.steps.step4.title'),
+                    description: t('timeline.steps.step4.description'),
+                  },
+                  {
+                    marker: '05',
+                    title: t('timeline.steps.step5.title'),
+                    description: t('timeline.steps.step5.description'),
+                  },
+                ]}
+              />
 
-              <div className="mb-10">
-                <p className="text-body mb-2"><strong>{t('timeline.steps.step2.title')}</strong></p>
-                <p className="text-sm text-muted ml-4">{t('timeline.steps.step2.description')}</p>
-              </div>
+              <div className="mt-10 max-w-[65ch]">
+                <DisclosureBlock
+                  label={t('timeline.delaysTitle')}
+                >
+                  <ul className="list-disc list-inside space-y-2 text-body ml-4">
+                    <li>{t('timeline.delaysItems.incomplete')}</li>
+                    <li>{t('timeline.delaysItems.access')}</li>
+                    <li>{t('timeline.delaysItems.keys')}</li>
+                    <li>{t('timeline.delaysItems.approval')}</li>
+                  </ul>
+                </DisclosureBlock>
 
-              <div className="mb-10">
-                <p className="text-body mb-2"><strong>{t('timeline.steps.step3.title')}</strong></p>
-                <p className="text-sm text-muted ml-4">{t('timeline.steps.step3.description')}</p>
-              </div>
-
-              <div className="mb-10">
-                <p className="text-body mb-2"><strong>{t('timeline.steps.step4.title')}</strong></p>
-                <p className="text-sm text-muted ml-4">{t('timeline.steps.step4.description')}</p>
-              </div>
-
-              <div className="mb-10">
-                <p className="text-body mb-2"><strong>{t('timeline.steps.step5.title')}</strong></p>
-                <p className="text-sm text-muted ml-4">{t('timeline.steps.step5.description')}</p>
-              </div>
-
-              <p className="text-lg font-semibold text-authority mb-10">
-                <strong>{t('timeline.totalTitle')}</strong> {t('timeline.totalText')}
-              </p>
-
-              <DisclosureBlock 
-                label={t('timeline.delaysTitle')}
-              >
-                <ul className="list-disc list-inside space-y-2 text-body ml-4">
-                  <li>{t('timeline.delaysItems.incomplete')}</li>
-                  <li>{t('timeline.delaysItems.access')}</li>
-                  <li>{t('timeline.delaysItems.keys')}</li>
-                  <li>{t('timeline.delaysItems.approval')}</li>
+                <h3 className="mt-10">{t('timeline.fasterTitle')}</h3>
+                <ul className="list-disc list-inside space-y-2 text-body mb-10 ml-4">
+                  <li>{t('timeline.fasterItems.immediate')}</li>
+                  <li>{t('timeline.fasterItems.available')}</li>
+                  <li>{t('timeline.fasterItems.ready')}</li>
+                  <li>{t('timeline.fasterItems.responsive')}</li>
                 </ul>
-              </DisclosureBlock>
-
-              <h3>{t('timeline.fasterTitle')}</h3>
-              <ul className="list-disc list-inside space-y-2 text-body mb-10 ml-4">
-                <li>{t('timeline.fasterItems.immediate')}</li>
-                <li>{t('timeline.fasterItems.available')}</li>
-                <li>{t('timeline.fasterItems.ready')}</li>
-                <li>{t('timeline.fasterItems.responsive')}</li>
-              </ul>
+              </div>
           </div>
         </Section>
 

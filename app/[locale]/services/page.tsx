@@ -7,6 +7,8 @@ import Section from '@/components/layout/Section';
 import GridFrame from '@/components/layout/GridFrame';
 import Region from '@/components/layout/Region';
 import Estimator from '@/components/Estimator';
+import SlaTimeline from '@/components/diagrams/SlaTimeline';
+import EscalationLevels from '@/components/diagrams/EscalationLevels';
 
 const NOT_INCLUDED_ITEM_KEYS = [
   'noGuaranteeFixes',
@@ -60,6 +62,80 @@ export default async function ServicesPage({
         {/* 2. TRZY PAKIETY — neutral jurisdictional escalation blocks */}
         <Section tone="alt">
           <div className="max-w-4xl mx-auto space-y-10">
+            <SlaTimeline
+              eyebrow={t('diagrams.sla.eyebrow')}
+              axisLabel={t('diagrams.sla.axisLabel')}
+              footerNote={t('comparison.footerNote')}
+              items={[
+                {
+                  marker: '01',
+                  packageName: t('green.title'),
+                  scopeLabel: tHomeLevels('axis1'),
+                  value: '48h',
+                  note: t('green.slaItems.ack'),
+                  band: 'long',
+                },
+                {
+                  marker: '02',
+                  packageName: t('orange.title'),
+                  scopeLabel: tHomeLevels('axis2'),
+                  value: '24h',
+                  note: t('orange.slaItems.ack'),
+                  band: 'medium',
+                },
+                {
+                  marker: '03',
+                  packageName: t('red.title'),
+                  scopeLabel: tHomeLevels('axis3'),
+                  value: t('diagrams.sla.sameDay'),
+                  note: t('red.slaItems.ack'),
+                  band: 'short',
+                },
+              ]}
+            />
+
+            <EscalationLevels
+              eyebrow={t('diagrams.escalation.eyebrow')}
+              title={t('diagrams.escalation.title')}
+              intro={t('diagrams.escalation.intro')}
+              footerNote={t('diagrams.escalation.footerNote')}
+              levels={[
+                {
+                  marker: '01',
+                  packageName: t('green.title'),
+                  axisLabel: tHomeLevels('axis1'),
+                  boundary: tHomeLevels('level1_6'),
+                  parameters: [
+                    { label: t('green.summary.visitsLabel'), value: t('green.summary.visitsValue') },
+                    { label: t('green.summary.accessLabel'), value: t('green.summary.accessValue') },
+                    { label: t('green.summary.decisionsLabel'), value: t('green.summary.decisionsValue') },
+                  ],
+                },
+                {
+                  marker: '02',
+                  packageName: t('orange.title'),
+                  axisLabel: tHomeLevels('axis2'),
+                  boundary: tHomeLevels('level2_6'),
+                  parameters: [
+                    { label: t('orange.summary.visitsLabel'), value: t('orange.summary.visitsValue') },
+                    { label: t('orange.summary.accessLabel'), value: t('orange.summary.accessValue') },
+                    { label: t('orange.summary.decisionsLabel'), value: t('orange.summary.decisionsValue') },
+                  ],
+                },
+                {
+                  marker: '03',
+                  packageName: t('red.title'),
+                  axisLabel: tHomeLevels('axis3'),
+                  boundary: tHomeLevels('level3_6'),
+                  parameters: [
+                    { label: t('red.summary.visitsLabel'), value: t('red.summary.visitsValue') },
+                    { label: t('red.summary.accessLabel'), value: t('red.summary.accessValue') },
+                    { label: t('red.summary.decisionsLabel'), value: t('red.summary.decisionsValue') },
+                  ],
+                },
+              ]}
+            />
+
             {/* KARTA 1: Podstawowy */}
             <article className="relative max-w-4xl mx-auto border border-structural-light border-t-2 border-t-structural-muted bg-surface-card r overflow-hidden">
               <div className="bg-surface-light-alt/60 border-b border-structural-light px-5 py-6 md:px-10 md:py-10">
