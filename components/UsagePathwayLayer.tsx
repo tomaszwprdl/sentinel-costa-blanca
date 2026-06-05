@@ -130,6 +130,29 @@ export function PathwayCopy({ path }: { path: string }) {
   return <>{t(`pathwayContent.${selected}.${path}`)}</>;
 }
 
+export function PathwayFinalCtaLink({
+  locale,
+  className,
+  children,
+}: {
+  locale: string;
+  className?: string;
+  children: ReactNode;
+}) {
+  const searchParams = useSearchParams();
+  const pathway = normalizePathwayParam(searchParams.get('pathway'));
+  const href =
+    pathway === 'mixed-not-defined'
+      ? `/${locale}/contact?pathway=mixed-not-defined`
+      : `/${locale}/services#qualification`;
+
+  return (
+    <Link href={href} className={className}>
+      {children}
+    </Link>
+  );
+}
+
 function DiagnosticGateIntro({
   t,
   tp,

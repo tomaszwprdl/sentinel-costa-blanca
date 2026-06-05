@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import UsagePathwayLayer, { PathwayCopy } from '@/components/UsagePathwayLayer';
+import UsagePathwayLayer, { PathwayCopy, PathwayFinalCtaLink } from '@/components/UsagePathwayLayer';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
@@ -258,12 +258,12 @@ export default async function HomePage({
               <p>{t('finalCta.p2')}</p>
             </div>
             <div className="mt-10">
-              <Link
-                href={`/${locale}/services#qualification`}
+              <PathwayFinalCtaLink
+                locale={locale}
                 className="btn-primary !bg-surface-light !text-authority hover:!bg-surface-light-alt !border-surface-light inline-block"
               >
                 {t('finalCta.cta')}
-              </Link>
+              </PathwayFinalCtaLink>
             </div>
           </div>
         </Section>

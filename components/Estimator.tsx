@@ -8,7 +8,8 @@ import {
   type ModeKey,
   type SizeKey,
   type BedroomsKey,
-  type OverlayKey,
+  type ScopeElementKey,
+  SCOPE_ELEMENT_KEYS,
   computeEstimate,
   getSizeKeyFromSqm,
   SQM_INPUT_MIN,
@@ -18,10 +19,13 @@ import Section from '@/components/layout/Section';
 
 const PACKAGE_KEYS: PackageKey[] = ['structured_presence', 'active_oversight', 'extended_jurisdiction'];
 const BEDROOMS_KEYS: BedroomsKey[] = ['B1', 'B2', 'B3', 'B4P'];
-const OVERLAY_KEYS: OverlayKey[] = ['cleaning', 'linen', 'guest_check', 'key_holding'];
 
 function formatRange(min: number, max: number): string {
   return `€${min}–€${max}`;
+}
+
+function sortScopeElements(keys: ScopeElementKey[]): ScopeElementKey[] {
+  return [...keys].sort((a, b) => SCOPE_ELEMENT_KEYS.indexOf(a) - SCOPE_ELEMENT_KEYS.indexOf(b));
 }
 
 export default function Estimator() {
@@ -31,7 +35,7 @@ export default function Estimator() {
   const [modeKey, setModeKey] = useState<ModeKey>('private_use');
   const [sqm, setSqm] = useState<number>(80);
   const [bedroomsKey, setBedroomsKey] = useState<BedroomsKey>('B2');
-  const [overlays, setOverlays] = useState<OverlayKey[]>([]);
+  const [scopeElements, setScopeElements] = useState<ScopeElementKey[]>([]);
   const [result, setResult] = useState<{ min: number; max: number } | null>(null);
   const [hasCalculated, setHasCalculated] = useState(false);
   const [hasCalculatedOnce, setHasCalculatedOnce] = useState(false);
@@ -66,21 +70,19 @@ export default function Estimator() {
     setBedroomsKey(v);
     collapseResult();
   };
-  const handleOverlayToggle = (k: OverlayKey) => {
-    setOverlays((prev) => (prev.includes(k) ? prev.filter((x) => x !== k) : [...prev, k]));
+  const handleScopeToggle = (k: ScopeElementKey) => {
+    setScopeElements((prev) => (prev.includes(k) ? prev.filter((x) => x !== k) : [...prev, k]));
     collapseResult();
   };
 
   const handleCalculate = () => {
-    const r = computeEstimate(packageKey, modeKey, sizeKey, bedroomsKey, overlays);
+    const r = computeEstimate(packageKey, modeKey, sizeKey, bedroomsKey, sortScopeElements(scopeElements));
     setResult(r);
     setHasCalculated(true);
     setHasCalculatedOnce(true);
   };
 
-  const overlaysSerialized = [...overlays]
-    .sort((a, b) => OVERLAY_KEYS.indexOf(a) - OVERLAY_KEYS.indexOf(b))
-    .join(',');
+  const scopeSerialized = sortScopeElements(scopeElements).join(',');
   const contactPayload = result
     ? new URLSearchParams({
         est_package: packageKey,
@@ -88,7 +90,7 @@ export default function Estimator() {
         est_size: sizeKey,
         est_sqm: String(clampedSqm),
         est_bedrooms: bedroomsKey,
-        est_overlays: overlaysSerialized,
+        est_scope: scopeSerialized,
         est_range: `${result.min}-${result.max}`,
       })
     : null;
@@ -115,10 +117,10 @@ export default function Estimator() {
         <dt className="text-muted shrink-0">{t('resultBedrooms')}:</dt>
         <dd className="text-body">{bedroomsKey === 'B4P' ? '4+' : bedroomsKey.slice(1)}</dd>
       </div>
-      {overlays.length > 0 && (
+      {scopeElements.length > 0 && (
         <div className="flex gap-2">
-          <dt className="text-muted shrink-0">{t('resultModules')}:</dt>
-          <dd className="text-body">{overlays.map((k) => t(`overlays.${k}`)).join(', ')}</dd>
+          <dt className="text-muted shrink-0">{t('resultScopeElements')}:</dt>
+          <dd className="text-body">{sortScopeElements(scopeElements).map((k) => t(`scopeElements.${k}`)).join(', ')}</dd>
         </div>
       )}
     </dl>
@@ -167,9 +169,7 @@ export default function Estimator() {
         <h2 className="h2-system mb-10">{t('heading')}</h2>
 
         <div className="lg:grid lg:grid-cols-[1fr_320px] lg:gap-10 lg:items-start">
-          {/* LEFT COLUMN — Decisions (desktop) / stacked (mobile) */}
           <div className="space-y-8">
-            {/* 1) Jurisdiction + compatibility note */}
             <fieldset className="space-y-0 border-0 p-0 m-0">
               <legend className="text-body font-semibold mb-2 block">{t('groupJurisdiction')}</legend>
               <p className="text-xs text-muted mb-4">{t('groupJurisdictionAnchor')}</p>
@@ -206,7 +206,6 @@ export default function Estimator() {
               )}
             </fieldset>
 
-            {/* 2) Operational Mode + "what changes" (both visible, inactive dimmed) */}
             <fieldset className="space-y-0 border-0 p-0 m-0">
               <legend className="text-body text-sm font-medium text-muted mb-2 block">{t('groupMode')}</legend>
               <p className="text-xs text-muted mb-3">{t('groupModeAnchor')}</p>
@@ -247,7 +246,6 @@ export default function Estimator() {
               </div>
             </fieldset>
 
-            {/* 3) Property parameters */}
             <fieldset className="space-y-0 border-0 p-0 m-0">
               <legend className="text-body text-sm font-medium text-muted mb-2 block">{t('groupParameters')}</legend>
               <p className="text-xs text-muted mb-3">{t('groupParametersAnchor')}</p>
@@ -290,37 +288,35 @@ export default function Estimator() {
               </div>
             </fieldset>
 
-            {/* 4) Operational modules — overlay chips (row: name + billed by use + toggle) */}
             <fieldset className="space-y-0 border-0 p-0 m-0">
-              <legend className="text-body text-sm text-muted mb-2 block">{t('groupOptional')}</legend>
-              <p className="text-xs text-muted mb-3">{t('groupOptionalAnchor')}</p>
+              <legend className="text-body text-sm text-muted mb-2 block">{t('groupScopeElements')}</legend>
+              <p className="text-xs text-muted mb-3">{t('groupScopeElementsAnchor')}</p>
               <div className="space-y-4">
-                {OVERLAY_KEYS.map((k) => (
+                {SCOPE_ELEMENT_KEYS.map((k) => (
                   <div key={k} className="flex items-center justify-between gap-4 py-3 border-b border-structural-muted/30 last:border-0">
                     <div>
-                      <p className="text-sm text-body font-medium">{t(`overlays.${k}`)}</p>
-                      <p className="text-xs text-muted">{t('overlayBilledByUse')}</p>
+                      <p className="text-sm text-body font-medium">{t(`scopeElements.${k}`)}</p>
+                      <p className="text-xs text-muted">{t('scopeElementBilledByUse')}</p>
                     </div>
                     <button
                       type="button"
                       role="switch"
-                      aria-checked={overlays.includes(k)}
-                      aria-label={t(`overlays.${k}`)}
-                      onClick={() => handleOverlayToggle(k)}
+                      aria-checked={scopeElements.includes(k)}
+                      aria-label={t(`scopeElements.${k}`)}
+                      onClick={() => handleScopeToggle(k)}
                       className={`shrink-0 w-11 h-6 r transition-colors border-2 ${
-                        overlays.includes(k)
+                        scopeElements.includes(k)
                           ? 'bg-authority border-authority'
                           : 'bg-surface-light border-structural-muted'
                       }`}
                     >
-                      <span className={`block w-5 h-5 mt-0.5 ml-0.5 r bg-white border border-structural-muted transition-transform ${overlays.includes(k) ? 'translate-x-6' : 'translate-x-0'}`} aria-hidden />
+                      <span className={`block w-5 h-5 mt-0.5 ml-0.5 r bg-white border border-structural-muted transition-transform ${scopeElements.includes(k) ? 'translate-x-6' : 'translate-x-0'}`} aria-hidden />
                     </button>
                   </div>
                 ))}
               </div>
             </fieldset>
 
-            {/* Gate line + primary action */}
             <div className="pt-2">
               <p className="text-sm text-muted mb-3" role="status">{gateMessage}</p>
               <button
@@ -333,14 +329,12 @@ export default function Estimator() {
               </button>
             </div>
 
-            {/* MOBILE ONLY: reason panel + result below */}
             <div className="lg:hidden space-y-4">
               {reasonPanel}
               {resultPanel}
             </div>
           </div>
 
-          {/* RIGHT COLUMN (desktop): reason panel + docked result */}
           <div className="hidden lg:block lg:sticky lg:top-6">
             {reasonPanel}
             {resultPanel}

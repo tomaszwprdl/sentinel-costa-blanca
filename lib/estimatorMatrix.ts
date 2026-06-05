@@ -1,11 +1,12 @@
-// TEMP MATRIX VALUES — to be tuned by Owner.
+// PRE-LIVE INDICATIVE VALUES — Owner confirmation required before Task 8 freeze.
 // Task 8 §8.8: matrix-based + additive bands only. No formulas.
 //
 // TODO (Matrix Integrity Session):
 // - Bedroom adjustment multiplier must be higher in Guest Mode than Private Mode.
 // - Area band transitions must avoid sharp jumps at thresholds.
-// - Overlay additions must never exceed 40% of base jurisdiction band.
+// - Scope element additions must never exceed 40% of base jurisdiction band.
 // - Guest Mode must always ≥ Private Mode for identical inputs.
+// - turnover_cleaning and vendor_access bands are provisional (mapped from closest legacy values).
 
 export type Range = { min: number; max: number };
 
@@ -17,7 +18,50 @@ export type PackageKey = 'structured_presence' | 'active_oversight' | 'extended_
 export type ModeKey = 'private_use' | 'active_guest';
 export type SizeKey = 'S' | 'M' | 'L';
 export type BedroomsKey = 'B1' | 'B2' | 'B3' | 'B4P';
-export type OverlayKey = 'cleaning' | 'linen' | 'guest_check' | 'key_holding';
+export type ScopeElementKey =
+  | 'cleaning_readiness'
+  | 'turnover_cleaning'
+  | 'linen'
+  | 'guest_check'
+  | 'keyholding'
+  | 'vendor_access';
+
+/** Deterministic display / serialization order for operational scope elements */
+export const SCOPE_ELEMENT_KEYS: ScopeElementKey[] = [
+  'cleaning_readiness',
+  'turnover_cleaning',
+  'linen',
+  'guest_check',
+  'keyholding',
+  'vendor_access',
+];
+
+const LEGACY_SCOPE_ALIASES: Record<string, ScopeElementKey> = {
+  cleaning: 'cleaning_readiness',
+  key_holding: 'keyholding',
+};
+
+export function normalizeScopeElementKey(value: string): ScopeElementKey | null {
+  if (SCOPE_ELEMENT_KEYS.includes(value as ScopeElementKey)) {
+    return value as ScopeElementKey;
+  }
+  return LEGACY_SCOPE_ALIASES[value] ?? null;
+}
+
+/** Parse comma-separated scope params; supports legacy keys for backward compatibility. */
+export function parseScopeElementParam(serialized: string | null): ScopeElementKey[] {
+  if (!serialized) return [];
+  const keys: ScopeElementKey[] = [];
+  for (const part of serialized.split(',')) {
+    const trimmed = part.trim();
+    if (!trimmed) continue;
+    const normalized = normalizeScopeElementKey(trimmed);
+    if (normalized && !keys.includes(normalized)) {
+      keys.push(normalized);
+    }
+  }
+  return keys.sort((a, b) => SCOPE_ELEMENT_KEYS.indexOf(a) - SCOPE_ELEMENT_KEYS.indexOf(b));
+}
 
 /** Base monthly range by Package × Operational Mode */
 export const BASE_MATRIX: Record<PackageKey, Record<ModeKey, Range>> = {
@@ -65,12 +109,14 @@ export const BEDROOMS_ADJ: Record<BedroomsKey, Range> = {
   B4P: { min: 25, max: 45 },
 };
 
-/** Per-overlay additive range */
-export const OVERLAY_ADJ: Record<OverlayKey, Range> = {
-  cleaning: { min: 20, max: 35 },
+/** Per operational scope element additive range */
+export const SCOPE_ELEMENT_ADJ: Record<ScopeElementKey, Range> = {
+  cleaning_readiness: { min: 20, max: 35 },
+  turnover_cleaning: { min: 20, max: 35 },
   linen: { min: 15, max: 25 },
   guest_check: { min: 25, max: 40 },
-  key_holding: { min: 10, max: 20 },
+  keyholding: { min: 10, max: 20 },
+  vendor_access: { min: 10, max: 20 },
 };
 
 export function computeEstimate(
@@ -78,14 +124,14 @@ export function computeEstimate(
   modeKey: ModeKey,
   sizeKey: SizeKey,
   bedroomsKey: BedroomsKey,
-  overlayKeys: OverlayKey[]
+  scopeElementKeys: ScopeElementKey[]
 ): Range {
   let r = BASE_MATRIX[packageKey][modeKey];
   r = addRanges(r, SIZE_ADJ[sizeKey]);
   r = addRanges(r, BEDROOMS_ADJ[bedroomsKey]);
-  let overlaySum: Range = { min: 0, max: 0 };
-  for (const k of overlayKeys) {
-    overlaySum = addRanges(overlaySum, OVERLAY_ADJ[k]);
+  let scopeSum: Range = { min: 0, max: 0 };
+  for (const k of scopeElementKeys) {
+    scopeSum = addRanges(scopeSum, SCOPE_ELEMENT_ADJ[k]);
   }
-  return addRanges(r, overlaySum);
+  return addRanges(r, scopeSum);
 }
