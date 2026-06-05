@@ -16,12 +16,7 @@ import Section from '@/components/layout/Section';
 import GridFrame from '@/components/layout/GridFrame';
 import Region from '@/components/layout/Region';
 
-const PATHWAY_PARAM_VALUES = ['private-absence', 'regular-guest-stays', 'mixed-undetermined'] as const;
-type PathwayParam = (typeof PATHWAY_PARAM_VALUES)[number];
-
-function isPathwayParam(value: string | null): value is PathwayParam {
-  return value !== null && PATHWAY_PARAM_VALUES.includes(value as PathwayParam);
-}
+import { normalizePathwayParam } from '@/lib/pathway';
 
 // Schema will be created dynamically with translated messages
 // For now, keep English validation messages (they're internal)
@@ -80,8 +75,7 @@ function ContactPageInner() {
     };
   }, [searchParams]);
 
-  const pathwayParam = searchParams.get('pathway');
-  const pathwayKey = isPathwayParam(pathwayParam) ? pathwayParam : null;
+  const pathwayKey = normalizePathwayParam(searchParams.get('pathway'));
 
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);

@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import UsagePathwayLayer from '@/components/UsagePathwayLayer';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
@@ -19,40 +20,8 @@ export default async function HomePage({
     <>
       <HeaderClient />
       <main className="min-h-screen bg-surface-light">
-        {/* 1. HERO — 20/40 spacing only; body lines same size; geo 85–88% + muted */}
-        <section className="bg-surface-light hero-zone">
-          <div className="container">
-            <div className="section-intro max-w-[720px] text-left">
-              <h1 className="text-2xl md:text-3xl font-bold tracking-tight leading-tight mb-10 text-heading">
-                {t('hero.wordmark')}
-              </h1>
-              <h2 className="text-lg md:text-xl font-normal text-body mb-5 leading-[1.25]">
-                {t('hero.descriptor')}
-              </h2>
-              <p className="text-base text-body font-normal mb-5 leading-relaxed">
-                {t('hero.line3')}
-              </p>
-              <p className="text-base text-[var(--structural-muted)] leading-relaxed mb-5">
-                {t('hero.line4')} {t('hero.line5')}
-              </p>
-              <p className="text-sm text-[var(--structural-muted)] mb-10 leading-relaxed">
-                {t('hero.area')}
-              </p>
-              <div>
-                <Link
-                  href={`/${locale}/how-it-works`}
-                  className="btn-primary w-fit inline-flex px-6 py-6"
-                >
-                  {t('hero.ctaPrimary')}
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <UsagePathwayLayer />
-
-        {/* 3. SYSTEM — max-w-3xl, 2 cols gap-x-10, space-y-5 in blocks; reduced top padding for flow from Exposure */}
+        <Suspense fallback={null}>
+          <UsagePathwayLayer>
         <Section tone="alt" variant="major" className="!pt-10">
           <div className="max-w-3xl text-left">
             <h2 className="h2-system font-bold mb-10">{t('systemIntro.title')}</h2>
@@ -281,6 +250,8 @@ export default async function HomePage({
             </div>
           </div>
         </Section>
+          </UsagePathwayLayer>
+        </Suspense>
       </main>
       <Footer />
     </>

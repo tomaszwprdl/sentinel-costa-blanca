@@ -68,35 +68,37 @@
       "wordmark": "SENTINEL",
       "descriptor": "Structured Property Oversight",
       "line3": "We provide structured local oversight of your property in your absence.",
-      "line4": "Scope of action defined in advance.",
+      "line4": "The right scope depends on how the property is used while you are away.",
       "line5": "Every action is documented.",
       "area": "Area of operation: southern Costa Blanca.",
       "ctaPrimary": "See how it works"
     },
     "pathway": {
       "selectorTitle": "How is the property used while you are away?",
-      "selectorIntro": "The right scope depends less on the apartment itself and more on how risk appears when you are not there.",
-      "selectedLabel": "Selected pathway:",
+      "gateInstruction": "Choose the situation to see the relevant oversight structure.",
+      "selectedSituationLabel": "Selected situation:",
+      "changeSituation": "Change situation",
+      "selectedLabel": "Selected situation:",
       "priorityLabel": "Sentinel priority:",
       "changesLabel": "What this changes:",
       "cta": "Discuss this situation",
       "cards": {
-        "private-absence": {
-          "title": "Private Absence",
-          "description": "The property remains unused for long periods."
+        "empty-between-visits": {
+          "title": "Empty Between Your Visits",
+          "description": "The property is vacant for long periods and must be ready when you arrive."
         },
         "regular-guest-stays": {
           "title": "Regular Guest Stays",
           "description": "The property is regularly used by guests, cleaners, or technicians."
         },
-        "mixed-undetermined": {
-          "title": "Mixed / Undetermined Use",
-          "description": "The use pattern is not fixed yet."
+        "mixed-not-defined": {
+          "title": "Mixed / Not Yet Defined",
+          "description": "The use pattern is not fixed yet or may change over time."
         }
       },
       "detail": {
-        "private-absence": {
-          "priority": "Regular presence, visible risk checks, keyholding, and readiness before arrival.",
+        "empty-between-visits": {
+          "priority": "Regular presence, visible risk checks, keyholding, and readiness before your arrival.",
           "point1": "Leaks, humidity, smell, and ventilation",
           "point2": "Visible water, electricity, and boiler checks",
           "point3": "Keyholding and controlled access",
@@ -112,7 +114,7 @@
           "point5": "Cleaner, vendor, and technician coordination",
           "point6": "Reducing operational noise for the owner"
         },
-        "mixed-undetermined": {
+        "mixed-not-defined": {
           "priority": "First classify the use pattern, then define the scope without guessing.",
           "point1": "Private use now, possible rental later",
           "point2": "Avoiding the wrong package choice",
@@ -698,9 +700,9 @@
     },
     "pathwayContext": {
       "title": "Usage pathway context",
-      "private-absence": "Private Absence",
+      "empty-between-visits": "Empty Between Your Visits",
       "regular-guest-stays": "Regular Guest Stays",
-      "mixed-undetermined": "Mixed / Undetermined Use",
+      "mixed-not-defined": "Mixed / Not Yet Defined",
       "prefillPrefix": "Usage pathway:"
     },
     "directContact": {

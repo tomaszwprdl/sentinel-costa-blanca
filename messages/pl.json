@@ -66,37 +66,39 @@
   "home": {
     "hero": {
       "wordmark": "SENTINEL",
-      "descriptor": "Lokalna reprezentacja właściciela",
-      "line3": "Przejmujemy obsługę nieruchomości pod Twoją nieobecność.",
-      "line4": "Zakres działania określony z góry.",
+      "descriptor": "Reprezentacja właściciela na miejscu",
+      "line3": "Zajmujemy się nieruchomością pod Twoją nieobecność.",
+      "line4": "Zakres zależy od tego, jak nieruchomość jest używana, gdy Cię nie ma.",
       "line5": "Każde działanie jest dokumentowane.",
       "area": "Obszar działania: południowa Costa Blanca.",
       "ctaPrimary": "Zobacz, to działa"
     },
     "pathway": {
       "selectorTitle": "Jak używana jest nieruchomość, gdy Cię nie ma?",
-      "selectorIntro": "Właściwy zakres zależy nie tylko od samego lokalu, ale od tego, jak powstaje ryzyko pod Twoją nieobecność.",
-      "selectedLabel": "Wybrany tryb:",
+      "gateInstruction": "Wybierz sytuację, żeby zobaczyć właściwy zakres nadzoru.",
+      "selectedSituationLabel": "Wybrana sytuacja:",
+      "changeSituation": "Zmień sytuację",
+      "selectedLabel": "Wybrana sytuacja:",
       "priorityLabel": "Priorytet Sentinel:",
       "changesLabel": "Co to zmienia:",
       "cta": "Omów tę sytuację",
       "cards": {
-        "private-absence": {
-          "title": "Prywatna nieobecność",
-          "description": "Lokal stoi pusty przez dłuższy czas."
+        "empty-between-visits": {
+          "title": "Pusta między Twoimi przyjazdami",
+          "description": "Nieruchomość stoi pusta przez dłuższy czas i ma być gotowa na Twój przyjazd."
         },
         "regular-guest-stays": {
           "title": "Regularne pobyty gości",
-          "description": "Lokal jest regularnie używany przez gości, osoby sprzątające lub techników."
+          "description": "Nieruchomość jest regularnie używana przez gości, ekipę sprzątającą lub techników."
         },
-        "mixed-undetermined": {
-          "title": "Tryb mieszany / nieustalony",
-          "description": "Sposób używania nieruchomości nie jest jeszcze stały."
+        "mixed-not-defined": {
+          "title": "Użycie mieszane / nieustalone",
+          "description": "Sposób używania nieruchomości nie jest jeszcze stały albo może się zmieniać."
         }
       },
       "detail": {
-        "private-absence": {
-          "priority": "Regularna obecność, kontrola widocznych ryzyk, klucze i przygotowanie lokalu przed przyjazdem.",
+        "empty-between-visits": {
+          "priority": "Regularna obecność, kontrola widocznych ryzyk, klucze i przygotowanie lokalu przed Twoim przyjazdem.",
           "point1": "Przecieki, wilgoć, zapach i wentylacja",
           "point2": "Widoczne kontrole wody, prądu i bojlera",
           "point3": "Przechowanie kluczy i kontrolowany dostęp",
@@ -112,7 +114,7 @@
           "point5": "Koordynacja sprzątania, wykonawców i techników",
           "point6": "Ograniczenie chaosu operacyjnego dla właściciela"
         },
-        "mixed-undetermined": {
+        "mixed-not-defined": {
           "priority": "Najpierw klasyfikacja sposobu używania, potem dobór zakresu bez zgadywania.",
           "point1": "Dziś użytek prywatny, później możliwy wynajem",
           "point2": "Uniknięcie złego wyboru zakresu",
@@ -699,9 +701,9 @@
     },
     "pathwayContext": {
       "title": "Kontekst ścieżki użycia",
-      "private-absence": "Prywatna nieobecność",
+      "empty-between-visits": "Pusta między Twoimi przyjazdami",
       "regular-guest-stays": "Regularne pobyty gości",
-      "mixed-undetermined": "Tryb mieszany / nieustalony",
+      "mixed-not-defined": "Użycie mieszane / nieustalone",
       "prefillPrefix": "Ścieżka użycia:"
     },
     "directContact": {
