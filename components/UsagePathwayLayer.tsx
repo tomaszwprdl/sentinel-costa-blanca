@@ -207,27 +207,20 @@ function PathwayDetailPanel({
   t: ReturnType<typeof useTranslations<'home.pathway'>>;
 }) {
   return (
-    <div className="mb-10 md:mb-12 border border-structural-light border-l-4 border-l-authority bg-surface-card r">
-      <div className="p-6 md:p-8 space-y-6">
-        <div>
-          <p className="text-sm text-muted mb-1">{t('selectedLabel')}</p>
-          <p className="text-lg font-semibold text-heading leading-snug">
-            {t(`cards.${pathway}.title`)}
-          </p>
-        </div>
-
-        <div className="h-px bg-structural-light" aria-hidden />
+    <div className="mb-8 md:mb-10 border border-structural-light border-l-2 border-l-authority bg-surface-card r">
+      <div className="p-5 md:p-6 space-y-5">
+        <h3 className="text-base font-semibold text-heading leading-snug">
+          {t(`cards.${pathway}.title`)}
+        </h3>
 
         <div>
-          <p className="text-sm text-muted mb-2">{t('priorityLabel')}</p>
+          <p className="text-sm text-muted mb-1.5">{t('priorityLabel')}</p>
           <p className="text-base text-body leading-relaxed">{t(`detail.${pathway}.priority`)}</p>
         </div>
 
-        <div className="h-px bg-structural-light" aria-hidden />
-
         <div>
-          <p className="text-sm font-semibold text-heading mb-3">{t('changesLabel')}</p>
-          <ul className="list-disc pl-5 space-y-2 text-body leading-relaxed">
+          <p className="text-sm text-muted mb-2">{t('changesLabel')}</p>
+          <ul className="list-disc list-inside space-y-1.5 text-sm text-body leading-relaxed">
             {Array.from({ length: PATHWAY_POINT_COUNTS[pathway] }, (_, i) => (
               <li key={i}>{t(`detail.${pathway}.point${i + 1}`)}</li>
             ))}
@@ -237,7 +230,7 @@ function PathwayDetailPanel({
         <div className="pt-1">
           <Link
             href={`/${locale}/contact?pathway=${pathway}`}
-            className="btn-primary inline-flex w-fit"
+            className="btn-primary inline-flex w-fit text-sm px-5 py-3"
           >
             {t('cta')}
           </Link>

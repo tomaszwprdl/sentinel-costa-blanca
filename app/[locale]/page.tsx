@@ -332,29 +332,22 @@ function UsagePathwayFallback({
               </Link>
             </div>
 
-            <div className="mb-10 md:mb-12 border border-structural-light border-l-4 border-l-authority bg-surface-card r">
-              <div className="p-6 md:p-8 space-y-6">
-                <div>
-                  <p className="text-sm text-muted mb-1">{t('pathway.selectedLabel')}</p>
-                  <p className="text-lg font-semibold text-heading leading-snug">
-                    {t(`pathway.cards.${selected}.title`)}
-                  </p>
-                </div>
-
-                <div className="h-px bg-structural-light" aria-hidden />
+            <div className="mb-8 md:mb-10 border border-structural-light border-l-2 border-l-authority bg-surface-card r">
+              <div className="p-5 md:p-6 space-y-5">
+                <h3 className="text-base font-semibold text-heading leading-snug">
+                  {t(`pathway.cards.${selected}.title`)}
+                </h3>
 
                 <div>
-                  <p className="text-sm text-muted mb-2">{t('pathway.priorityLabel')}</p>
+                  <p className="text-sm text-muted mb-1.5">{t('pathway.priorityLabel')}</p>
                   <p className="text-base text-body leading-relaxed">
                     {t(`pathway.detail.${selected}.priority`)}
                   </p>
                 </div>
 
-                <div className="h-px bg-structural-light" aria-hidden />
-
                 <div>
-                  <p className="text-sm font-semibold text-heading mb-3">{t('pathway.changesLabel')}</p>
-                  <ul className="list-disc pl-5 space-y-2 text-body leading-relaxed">
+                  <p className="text-sm text-muted mb-2">{t('pathway.changesLabel')}</p>
+                  <ul className="list-disc list-inside space-y-1.5 text-sm text-body leading-relaxed">
                     {Array.from({ length: PATHWAY_POINT_COUNTS[selected] }, (_, i) => (
                       <li key={i}>{t(`pathway.detail.${selected}.point${i + 1}`)}</li>
                     ))}
@@ -362,7 +355,10 @@ function UsagePathwayFallback({
                 </div>
 
                 <div className="pt-1">
-                  <Link href={`/${locale}/contact?pathway=${selected}`} className="btn-primary inline-flex w-fit">
+                  <Link
+                    href={`/${locale}/contact?pathway=${selected}`}
+                    className="btn-primary inline-flex w-fit text-sm px-5 py-3"
+                  >
                     {t('pathway.cta')}
                   </Link>
                 </div>
