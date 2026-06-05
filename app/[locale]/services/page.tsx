@@ -34,6 +34,7 @@ export default async function ServicesPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'services' });
+  const tHomeLevels = await getTranslations({ locale, namespace: 'home.levels' });
 
   return (
     <>
@@ -56,19 +57,27 @@ export default async function ServicesPage({
           </GridFrame>
         </Section>
 
-        {/* 2. TRZY PAKIETY — separator bands + header-band + większe sekcje */}
+        {/* 2. TRZY PAKIETY — neutral jurisdictional escalation blocks */}
         <Section tone="alt">
-          <div className="max-w-[min(90rem,100%)] mx-auto space-y-20 md:space-y-28">
+          <div className="max-w-4xl mx-auto space-y-10">
             {/* KARTA 1: Podstawowy */}
-            <article className="package-card-accent--green relative max-w-4xl mx-auto border border-structural-light border-l-0 bg-surface-card rounded-2xl overflow-hidden">
-              <div className="bg-surface-light-alt/40 border-b border-structural-light pt-8 pb-8 md:pt-10 md:pb-10 px-6 sm:px-8 md:px-12">
-                <h2 className="text-2xl lg:text-3xl font-bold tracking-tight text-body">{t('green.title')}</h2>
-                <p className="text-base text-body mt-3 mb-0 leading-relaxed">{t('green.definition')}</p>
+            <article className="relative max-w-4xl mx-auto border border-structural-light border-t-2 border-t-structural-muted bg-surface-card r overflow-hidden">
+              <div className="bg-surface-light-alt/60 border-b border-structural-light px-5 py-6 md:px-10 md:py-10">
+                <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+                  <div className="min-w-0">
+                    <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted">01</p>
+                    <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-heading mb-3">{t('green.title')}</h2>
+                    <p className="text-base text-body mb-0 leading-relaxed">{t('green.definition')}</p>
+                  </div>
+                  <div className="w-full border border-structural-light border-l-2 border-l-structural-muted bg-surface-card r px-4 py-3 md:w-64">
+                    <p className="text-sm font-semibold text-heading leading-snug mb-0">{tHomeLevels('axis1')}</p>
+                  </div>
+                </div>
               </div>
-              <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.38fr] gap-12 lg:gap-14 pt-10 md:pt-10 px-6 sm:px-8 md:px-12 pb-10 md:pb-14">
-                <div className="space-y-14 md:space-y-16">
+              <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(15rem,0.36fr)] gap-10 px-5 py-10 md:px-10">
+                <div className="space-y-10">
                   <section>
-                    <h3 className="text-base font-bold text-body mb-3">{t('green.visitScopeTitle')}</h3>
+                    <h3 className="text-base font-semibold text-heading mb-3">{t('green.visitScopeTitle')}</h3>
                     <p className="text-body text-sm mb-3 leading-relaxed">{t('green.visitScopeIntro')}</p>
                     <ul className="list-disc list-inside space-y-3 text-body text-sm ml-1 leading-relaxed">
                       <li>{t('green.visitItems.accessSecurity')}</li>
@@ -83,21 +92,21 @@ export default async function ServicesPage({
                     </div>
                   </section>
                   <section>
-                    <h3 className="text-sm font-semibold text-body mb-2">{t('green.keyStorageTitle')}</h3>
+                    <h3 className="text-sm font-semibold text-heading mb-2">{t('green.keyStorageTitle')}</h3>
                     <ul className="list-disc list-inside space-y-2 text-body text-sm ml-1 leading-relaxed">
                       <li>{t('green.keyStorageItems.minimum')}</li>
                       <li>{t('green.keyStorageItems.secure')}</li>
                     </ul>
                   </section>
                   <section>
-                    <h3 className="text-sm font-semibold text-body mb-2">{t('green.emergencyTitle')}</h3>
+                    <h3 className="text-sm font-semibold text-heading mb-2">{t('green.emergencyTitle')}</h3>
                     <ul className="list-disc list-inside space-y-2 text-body text-sm ml-1 leading-relaxed">
                       <li>{t('green.emergencyItems.assessment')}</li>
                       <li>{t('green.emergencyItems.actions')}</li>
                       <li>{t('green.emergencyItems.documentation')}</li>
                     </ul>
                   </section>
-                  <section>
+                  <section className="border-t border-structural-light pt-5">
                     <h3 className="text-xs font-medium text-muted/90 mb-1.5">{t('green.notIncludedTitle')}</h3>
                     <ul className="space-y-1 text-muted/90 text-xs leading-snug">
                       <li className="flex gap-2"><span className="text-muted/70" aria-hidden>−</span>{t('green.notIncludedItems.thirdPartyAccess')}</li>
@@ -107,45 +116,50 @@ export default async function ServicesPage({
                     </ul>
                   </section>
                 </div>
-                <div className="flex flex-col gap-6 lg:pt-0">
-                  <div className="bg-surface-light-alt r p-4">
+                <div className="flex flex-col gap-5 border-t border-structural-light pt-5 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
+                  <div className="border border-structural-light bg-surface-light-alt r p-5">
                     <p className="text-xs font-semibold text-muted uppercase tracking-wide mb-3">{t('summaryTitle')}</p>
-                    <p className="text-body text-sm leading-relaxed"><span className="text-muted">{t('green.summary.visitsLabel')}</span> <strong className="font-semibold text-body">{t('green.summary.visitsValue')}</strong></p>
-                    <p className="text-body text-sm leading-relaxed mt-1"><span className="text-muted">{t('green.summary.accessLabel')}</span> <strong className="font-semibold text-body">{t('green.summary.accessValue')}</strong></p>
-                    <p className="text-body text-sm leading-relaxed mt-1"><span className="text-muted">{t('green.summary.decisionsLabel')}</span> <strong className="font-semibold text-body">{t('green.summary.decisionsValue')}</strong></p>
+                    <p className="text-body text-sm leading-relaxed mb-0"><span className="text-muted">{t('green.summary.visitsLabel')}</span> <strong className="font-semibold text-body">{t('green.summary.visitsValue')}</strong></p>
+                    <p className="text-body text-sm leading-relaxed mt-1 mb-0"><span className="text-muted">{t('green.summary.accessLabel')}</span> <strong className="font-semibold text-body">{t('green.summary.accessValue')}</strong></p>
+                    <p className="text-body text-sm leading-relaxed mt-1 mb-0"><span className="text-muted">{t('green.summary.decisionsLabel')}</span> <strong className="font-semibold text-body">{t('green.summary.decisionsValue')}</strong></p>
                   </div>
-                  <section className="max-w-[28ch]">
-                    <h3 className="text-sm font-semibold text-body mb-2">{t('green.suitableForTitle')}</h3>
+                  <section>
+                    <h3 className="text-sm font-semibold text-heading mb-2">{t('green.suitableForTitle')}</h3>
                     <ul className="list-disc list-inside space-y-2 text-body text-sm ml-1 leading-relaxed">
                       <li>{t('green.suitableItems.rarelyUsed')}</li>
                       <li>{t('green.suitableItems.ownRepairs')}</li>
                       <li>{t('green.suitableItems.regularVisits')}</li>
                     </ul>
                   </section>
-                  <div className="bg-surface-light-alt r p-4">
+                  <div className="border border-structural-light bg-surface-light-alt r p-5">
                     <p className="text-xs font-medium text-muted uppercase tracking-wide mb-2">{t('green.slaTitle')}</p>
-                    <p className="text-body text-sm leading-relaxed">{t('green.slaItems.ack')}</p>
-                    <p className="text-body text-sm leading-relaxed mt-1">{t('green.slaItems.intervention')}</p>
+                    <p className="text-body text-sm leading-relaxed mb-0">{t('green.slaItems.ack')}</p>
+                    <p className="text-body text-sm leading-relaxed mt-1 mb-0">{t('green.slaItems.intervention')}</p>
                   </div>
                   <p className="text-muted text-xs mt-auto leading-relaxed">{t('framework.minCommitmentText')}</p>
                 </div>
               </div>
             </article>
 
-            {/* Separator band — pauza między kartami */}
-            <div className="h-8 w-full bg-surface-light-alt flex-shrink-0" aria-hidden />
-
             {/* KARTA 2: Rozszerzony */}
-            <article className="package-card-accent--orange relative max-w-4xl mx-auto border border-structural-light border-l-0 bg-surface-card rounded-2xl overflow-hidden">
-              <div className="bg-surface-light-alt/40 border-b border-structural-light pt-8 pb-8 md:pt-10 md:pb-10 px-6 sm:px-8 md:px-12">
-                <h2 className="text-2xl lg:text-3xl font-bold tracking-tight text-body">{t('orange.title')}</h2>
-                <p className="text-base text-body mt-3 mb-0 leading-relaxed">{t('orange.definition')}</p>
+            <article className="relative max-w-4xl mx-auto border border-structural-light border-t-2 border-t-structural-muted bg-surface-card r overflow-hidden">
+              <div className="bg-surface-light-alt/60 border-b border-structural-light px-5 py-6 md:px-10 md:py-10">
+                <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+                  <div className="min-w-0">
+                    <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted">02</p>
+                    <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-heading mb-3">{t('orange.title')}</h2>
+                    <p className="text-base text-body mb-0 leading-relaxed">{t('orange.definition')}</p>
+                  </div>
+                  <div className="w-full border border-structural-light border-l-2 border-l-structural-muted bg-surface-card r px-4 py-3 md:w-64">
+                    <p className="text-sm font-semibold text-heading leading-snug mb-0">{tHomeLevels('axis2')}</p>
+                  </div>
+                </div>
               </div>
-              <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.38fr] gap-12 lg:gap-14 pt-10 md:pt-10 px-6 sm:px-8 md:px-12 pb-10 md:pb-14">
-                <div className="space-y-14 md:space-y-16">
+              <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(15rem,0.36fr)] gap-10 px-5 py-10 md:px-10">
+                <div className="space-y-10">
                   <p className="text-body text-sm leading-relaxed">{t('orange.fromBasic')}</p>
                   <section>
-                    <h3 className="text-base font-bold text-body mb-3">{t('orange.accessTitle')}</h3>
+                    <h3 className="text-base font-semibold text-heading mb-3">{t('orange.accessTitle')}</h3>
                     <ul className="list-disc list-inside space-y-3 text-body text-sm ml-1 leading-relaxed">
                       <li>{t('orange.accessItems.arranging')}</li>
                       <li>{t('orange.accessItems.scheduling')}</li>
@@ -154,14 +168,14 @@ export default async function ServicesPage({
                     </ul>
                   </section>
                   <section>
-                    <h3 className="text-sm font-semibold text-body mb-2">{t('orange.emergencyTitle')}</h3>
+                    <h3 className="text-sm font-semibold text-heading mb-2">{t('orange.emergencyTitle')}</h3>
                     <ul className="list-disc list-inside space-y-2 text-body text-sm ml-1 leading-relaxed">
                       <li>{t('orange.emergencyItems.faster')}</li>
                       <li>{t('orange.emergencyItems.coordination')}</li>
                       <li>{t('orange.emergencyItems.contractors')}</li>
                     </ul>
                   </section>
-                  <section>
+                  <section className="border-t border-structural-light pt-5">
                     <h3 className="text-xs font-medium text-muted/90 mb-1.5">{t('orange.notIncludedTitle')}</h3>
                     <ul className="space-y-1 text-muted/90 text-xs leading-snug">
                       <li className="flex gap-2"><span className="text-muted/70" aria-hidden>−</span>{t('orange.notIncludedItems.renovationSupervision')}</li>
@@ -170,44 +184,50 @@ export default async function ServicesPage({
                     </ul>
                   </section>
                 </div>
-                <div className="flex flex-col gap-6 lg:pt-0">
-                  <div className="bg-surface-light-alt r p-4">
+                <div className="flex flex-col gap-5 border-t border-structural-light pt-5 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
+                  <div className="border border-structural-light bg-surface-light-alt r p-5">
                     <p className="text-xs font-semibold text-muted uppercase tracking-wide mb-3">{t('summaryTitle')}</p>
-                    <p className="text-body text-sm leading-relaxed"><span className="text-muted">{t('orange.summary.visitsLabel')}</span> <strong className="font-semibold text-body">{t('orange.summary.visitsValue')}</strong></p>
-                    <p className="text-body text-sm leading-relaxed mt-1"><span className="text-muted">{t('orange.summary.accessLabel')}</span> <strong className="font-semibold text-body">{t('orange.summary.accessValue')}</strong></p>
-                    <p className="text-body text-sm leading-relaxed mt-1"><span className="text-muted">{t('orange.summary.decisionsLabel')}</span> <strong className="font-semibold text-body">{t('orange.summary.decisionsValue')}</strong></p>
+                    <p className="text-body text-sm leading-relaxed mb-0"><span className="text-muted">{t('orange.summary.visitsLabel')}</span> <strong className="font-semibold text-body">{t('orange.summary.visitsValue')}</strong></p>
+                    <p className="text-body text-sm leading-relaxed mt-1 mb-0"><span className="text-muted">{t('orange.summary.accessLabel')}</span> <strong className="font-semibold text-body">{t('orange.summary.accessValue')}</strong></p>
+                    <p className="text-body text-sm leading-relaxed mt-1 mb-0"><span className="text-muted">{t('orange.summary.decisionsLabel')}</span> <strong className="font-semibold text-body">{t('orange.summary.decisionsValue')}</strong></p>
                   </div>
-                  <section className="max-w-[28ch]">
-                    <h3 className="text-sm font-semibold text-body mb-2">{t('selection.orangeTitle')}</h3>
+                  <section>
+                    <h3 className="text-sm font-semibold text-heading mb-2">{t('selection.orangeTitle')}</h3>
                     <ul className="list-disc list-inside space-y-2 text-body text-sm ml-1 leading-relaxed">
                       <li>{t('selection.orangeItems.accessNeeded')}</li>
                       <li>{t('selection.orangeItems.technicalWorks')}</li>
                       <li>{t('selection.orangeItems.oversight')}</li>
                     </ul>
                   </section>
-                  <div className="bg-surface-light-alt r p-4">
+                  <div className="border border-structural-light bg-surface-light-alt r p-5">
                     <p className="text-xs font-medium text-muted uppercase tracking-wide mb-2">{t('orange.slaTitle')}</p>
-                    <p className="text-body text-sm leading-relaxed">{t('orange.slaItems.ack')}</p>
-                    <p className="text-body text-sm leading-relaxed mt-1">{t('orange.slaItems.accessCoordination')}</p>
+                    <p className="text-body text-sm leading-relaxed mb-0">{t('orange.slaItems.ack')}</p>
+                    <p className="text-body text-sm leading-relaxed mt-1 mb-0">{t('orange.slaItems.accessCoordination')}</p>
                   </div>
                   <p className="text-muted text-xs mt-auto leading-relaxed">{t('framework.minCommitmentText')}</p>
                 </div>
               </div>
             </article>
 
-            <div className="h-8 w-full bg-surface-light-alt flex-shrink-0" aria-hidden />
-
             {/* KARTA 3: Pełny */}
-            <article className="package-card-accent--red relative max-w-4xl mx-auto border border-structural-light border-l-0 bg-surface-card rounded-2xl overflow-hidden">
-              <div className="bg-surface-light-alt/40 border-b border-structural-light pt-8 pb-8 md:pt-10 md:pb-10 px-6 sm:px-8 md:px-12">
-                <h2 className="text-2xl lg:text-3xl font-bold tracking-tight text-body">{t('red.title')}</h2>
-                <p className="text-base text-body mt-3 mb-0 leading-relaxed">{t('red.definition')}</p>
+            <article className="relative max-w-4xl mx-auto border border-structural-light border-t-2 border-t-structural-muted bg-surface-card r overflow-hidden">
+              <div className="bg-surface-light-alt/60 border-b border-structural-light px-5 py-6 md:px-10 md:py-10">
+                <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+                  <div className="min-w-0">
+                    <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted">03</p>
+                    <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-heading mb-3">{t('red.title')}</h2>
+                    <p className="text-base text-body mb-0 leading-relaxed">{t('red.definition')}</p>
+                  </div>
+                  <div className="w-full border border-structural-light border-l-2 border-l-structural-muted bg-surface-card r px-4 py-3 md:w-64">
+                    <p className="text-sm font-semibold text-heading leading-snug mb-0">{tHomeLevels('axis3')}</p>
+                  </div>
+                </div>
               </div>
-              <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.38fr] gap-12 lg:gap-14 pt-10 md:pt-10 px-6 sm:px-8 md:px-12 pb-10 md:pb-14">
-                <div className="space-y-14 md:space-y-16">
+              <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(15rem,0.36fr)] gap-10 px-5 py-10 md:px-10">
+                <div className="space-y-10">
                   <p className="text-body text-sm leading-relaxed">{t('red.fromExtended')}</p>
                   <section>
-                    <h3 className="text-base font-bold text-body mb-3">{t('red.emergencyTitle')}</h3>
+                    <h3 className="text-base font-semibold text-heading mb-3">{t('red.emergencyTitle')}</h3>
                     <ul className="list-disc list-inside space-y-3 text-body text-sm ml-1 leading-relaxed">
                       <li>{t('red.emergencyItems.immediate')}</li>
                       <li>{t('red.emergencyItems.protective')}</li>
@@ -215,7 +235,7 @@ export default async function ServicesPage({
                     </ul>
                   </section>
                   <section>
-                    <h3 className="text-sm font-semibold text-body mb-2">{t('red.decisionTitle')}</h3>
+                    <h3 className="text-sm font-semibold text-heading mb-2">{t('red.decisionTitle')}</h3>
                     <ul className="list-disc list-inside space-y-2 text-body text-sm ml-1 leading-relaxed">
                       <li>{t('red.decisionItems.operational')}</li>
                       <li>{t('red.decisionItems.contractorEngagement')}</li>
@@ -223,14 +243,14 @@ export default async function ServicesPage({
                     </ul>
                   </section>
                   <section>
-                    <h3 className="text-sm font-semibold text-body mb-2">{t('red.coordinationTitle')}</h3>
+                    <h3 className="text-sm font-semibold text-heading mb-2">{t('red.coordinationTitle')}</h3>
                     <ul className="list-disc list-inside space-y-2 text-body text-sm ml-1 leading-relaxed">
                       <li>{t('red.coordinationItems.presence')}</li>
                       <li>{t('red.coordinationItems.verification')}</li>
                       <li>{t('red.coordinationItems.priority')}</li>
                     </ul>
                   </section>
-                  <section>
+                  <section className="border-t border-structural-light pt-5">
                     <h3 className="text-xs font-medium text-muted/90 mb-1.5">{t('red.notIncludedTitle')}</h3>
                     <ul className="space-y-1 text-muted/90 text-xs leading-snug">
                       {RED_NOT_INCLUDED_KEYS.map((key) => (
@@ -239,25 +259,25 @@ export default async function ServicesPage({
                     </ul>
                   </section>
                 </div>
-                <div className="flex flex-col gap-6 lg:pt-0">
-                  <div className="bg-surface-light-alt r p-4">
+                <div className="flex flex-col gap-5 border-t border-structural-light pt-5 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
+                  <div className="border border-structural-light bg-surface-light-alt r p-5">
                     <p className="text-xs font-semibold text-muted uppercase tracking-wide mb-3">{t('summaryTitle')}</p>
-                    <p className="text-body text-sm leading-relaxed"><span className="text-muted">{t('red.summary.visitsLabel')}</span> <strong className="font-semibold text-body">{t('red.summary.visitsValue')}</strong></p>
-                    <p className="text-body text-sm leading-relaxed mt-1"><span className="text-muted">{t('red.summary.accessLabel')}</span> <strong className="font-semibold text-body">{t('red.summary.accessValue')}</strong></p>
-                    <p className="text-body text-sm leading-relaxed mt-1"><span className="text-muted">{t('red.summary.decisionsLabel')}</span> <strong className="font-semibold text-body">{t('red.summary.decisionsValue')}</strong></p>
+                    <p className="text-body text-sm leading-relaxed mb-0"><span className="text-muted">{t('red.summary.visitsLabel')}</span> <strong className="font-semibold text-body">{t('red.summary.visitsValue')}</strong></p>
+                    <p className="text-body text-sm leading-relaxed mt-1 mb-0"><span className="text-muted">{t('red.summary.accessLabel')}</span> <strong className="font-semibold text-body">{t('red.summary.accessValue')}</strong></p>
+                    <p className="text-body text-sm leading-relaxed mt-1 mb-0"><span className="text-muted">{t('red.summary.decisionsLabel')}</span> <strong className="font-semibold text-body">{t('red.summary.decisionsValue')}</strong></p>
                   </div>
-                  <section className="max-w-[28ch]">
-                    <h3 className="text-sm font-semibold text-body mb-2">{t('selection.redTitle')}</h3>
+                  <section>
+                    <h3 className="text-sm font-semibold text-heading mb-2">{t('selection.redTitle')}</h3>
                     <ul className="list-disc list-inside space-y-2 text-body text-sm ml-1 leading-relaxed">
                       <li>{t('selection.redItems.localDecisions')}</li>
                       <li>{t('selection.redItems.emergencyResponse')}</li>
                       <li>{t('selection.redItems.minimalInvolvement')}</li>
                     </ul>
                   </section>
-                  <div className="bg-surface-light-alt r p-4">
+                  <div className="border border-structural-light bg-surface-light-alt r p-5">
                     <p className="text-xs font-medium text-muted uppercase tracking-wide mb-2">{t('red.slaTitle')}</p>
-                    <p className="text-body text-sm leading-relaxed">{t('red.slaItems.ack')}</p>
-                    <p className="text-body text-sm leading-relaxed mt-1">{t('red.slaItems.intervention')}</p>
+                    <p className="text-body text-sm leading-relaxed mb-0">{t('red.slaItems.ack')}</p>
+                    <p className="text-body text-sm leading-relaxed mt-1 mb-0">{t('red.slaItems.intervention')}</p>
                   </div>
                   <p className="text-muted text-xs mt-auto leading-relaxed">{t('framework.minCommitmentText')}</p>
                 </div>
@@ -303,8 +323,8 @@ export default async function ServicesPage({
 
         {/* 3b. USŁUGI OPERACYJNE BEZ PAKIETU — informacja pomocnicza, nie karta */}
         <Section tone="alt">
-          <div className="max-w-[48ch] mx-auto">
-            <div className="border border-structural-light r py-5 px-4 bg-surface-light-alt/40">
+          <div className="max-w-[44ch] mx-auto">
+            <div className="border-y border-structural-light py-5">
               <p className="text-[11px] font-medium text-muted uppercase tracking-wide mb-1.5">{t('executionOnly.microLabel')}</p>
               <h2 className="text-sm font-semibold text-body mb-2">{t('executionOnly.title')}</h2>
               <p className="text-xs text-muted mb-4 leading-relaxed">{t('executionOnly.intro')}</p>

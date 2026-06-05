@@ -38,11 +38,6 @@
   --text: var(--body);
   --border: var(--structural-a);
 
-  /* Package semantics (desaturated; not accent) */
-  --package-green: #5a6b5a;
-  --package-orange: #8b7355;
-  --package-red: #7a6b5d;
-
   /* LAYOUT COMPOSITION §6–§8 — canonical layout tokens (Task 5D-1B) */
   --container-max: 1120px;
   --text-max: 720px;
@@ -342,38 +337,6 @@ section {
   .region-dt-third { grid-column: span 4; }
   .region-dt-quarter { grid-column: span 3; }
 }
-
-.package-green {
-  border-color: var(--package-green) !important;
-  color: var(--package-green);
-}
-
-.package-orange {
-  border-color: var(--package-orange) !important;
-  color: var(--package-orange);
-}
-
-.package-red {
-  border-color: var(--package-red) !important;
-  color: var(--package-red);
-}
-
-/* Package chip — 8px dot for hierarchy (Task 6.14; no emoji) */
-.package-chip {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.package-chip--green { background: var(--package-green); }
-.package-chip--orange { background: var(--package-orange); }
-.package-chip--red { background: var(--package-red); }
-
-/* Package card: non-text color marker only (thin left accent) */
-.package-card-accent--green { border-left: 4px solid var(--package-green); }
-.package-card-accent--orange { border-left: 4px solid var(--package-orange); }
-.package-card-accent--red { border-left: 4px solid var(--package-red); }
 
 /* Report table — dark-mode parity (Task 6.14). Surface bg, structural borders, header contrast. */
 .report-table-card {

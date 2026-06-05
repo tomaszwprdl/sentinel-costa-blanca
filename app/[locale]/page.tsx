@@ -84,14 +84,14 @@ export default async function HomePage({
           </div>
         </Section>
 
-        {/* 4. BEZ NAS / Z NAMI — panel contrast: document rhythm, max-w-7xl, air frame, closing anchor */}
+        {/* 4. BEZ NAS / Z NAMI — shared section rhythm */}
         <Section tone="light">
-          <div className="max-w-7xl mx-auto px-6 md:px-10 text-left pb-6 md:pb-10 -mb-10 md:-mb-16">
+          <div className="text-left">
             <h2 className="h2-system font-bold">{t('contrast.title')}</h2>
             <div className="mt-3 h-px w-16 bg-structural-muted" aria-hidden />
             <p className="text-body leading-relaxed mt-4 mb-10"><PathwayCopy path="contrast.intro" /></p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-10 items-start">
-              <div className="min-w-0 space-y-4 md:pr-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+              <div className="min-w-0 space-y-5 border-t border-structural-light pt-5">
                 <h3 className="text-lg font-semibold text-heading mt-0 pl-5">{t('contrast.leftHeading')}</h3>
                 <ul className="list-disc pl-5 space-y-3 leading-relaxed text-base text-body">
                   <li><PathwayCopy path="contrast.left1" /></li>
@@ -103,7 +103,7 @@ export default async function HomePage({
                   <PathwayCopy path="contrast.leftClosing" />
                 </p>
               </div>
-              <div className="min-w-0 space-y-4 md:pl-6">
+              <div className="min-w-0 space-y-5 border-t border-structural-light pt-5">
                 <h3 className="text-lg font-semibold text-heading mt-0 pl-5">{t('contrast.rightHeading')}</h3>
                 <ul className="list-disc pl-5 space-y-3 leading-relaxed text-base text-body">
                   <li><PathwayCopy path="contrast.right1" /></li>
@@ -122,12 +122,13 @@ export default async function HomePage({
 
         {/* 5. ZAKRES PAKIETÓW — jedna oś: wrapper flex flex-col items-center; tekst max-w-[72ch]; grid w-full max-w-[1120px] mx-auto justify-items-center; karty w-full */}
         <Section tone="light">
-          <div className="flex flex-col items-center w-full max-w-[1080px] mx-auto">
+          <div className="flex flex-col items-center w-full">
             <h2 className="h2-system text-center max-w-[72ch] w-full">{t('levels.title')}</h2>
             <p className="text-body text-center max-w-[72ch] mx-auto mt-5">{t('levels.intro')}</p>
-            <div className="w-full mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-5 items-stretch">
-              <div className="flex flex-col h-full border border-structural-light bg-surface-card r overflow-hidden">
+            <div className="w-full mt-10 grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
+              <div className="flex flex-col h-full border border-structural-light border-t-2 border-t-structural-muted bg-surface-card r overflow-hidden">
                 <div className="px-5 py-4 md:px-6 md:py-5 border-b border-structural-light bg-surface-light-alt">
+                  <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted">01</p>
                   <h3 className="text-base font-semibold text-heading">{t('levels.level1Title')}</h3>
                   <p className="mt-2 text-sm font-semibold tracking-tight text-heading">{t('levels.axis1')}</p>
                 </div>
@@ -141,8 +142,9 @@ export default async function HomePage({
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col h-full border border-structural-light border-l-2 border-l-structural-muted bg-surface-card r overflow-hidden">
+              <div className="flex flex-col h-full border border-structural-light border-t-2 border-t-structural-muted bg-surface-card r overflow-hidden">
                 <div className="px-5 py-4 md:px-6 md:py-5 border-b border-structural-light bg-surface-light-alt">
+                  <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted">02</p>
                   <h3 className="text-base font-semibold text-heading">{t('levels.level2Title')}</h3>
                   <p className="mt-2 text-sm font-semibold tracking-tight text-heading">{t('levels.axis2')}</p>
                 </div>
@@ -156,8 +158,9 @@ export default async function HomePage({
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col h-full border border-structural-light border-l-2 border-l-authority bg-surface-card r overflow-hidden">
+              <div className="flex flex-col h-full border border-structural-light border-t-2 border-t-structural-muted bg-surface-card r overflow-hidden">
                 <div className="px-5 py-4 md:px-6 md:py-5 border-b border-structural-light bg-surface-light-alt">
+                  <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted">03</p>
                   <h3 className="text-base font-semibold text-heading">{t('levels.level3Title')}</h3>
                   <p className="mt-2 text-sm font-semibold tracking-tight text-heading">{t('levels.axis3')}</p>
                 </div>
