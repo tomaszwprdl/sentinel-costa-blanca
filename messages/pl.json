@@ -98,19 +98,19 @@
       },
       "detail": {
         "private-use-only": {
-          "priority": "Regularna obecność, kontrola widocznych ryzyk, klucze i przygotowanie lokalu przed Twoim przyjazdem.",
+          "priority": "Regularna lokalna obecność, kontrola ryzyk pustego lokalu, klucze pod kontrolą i przygotowanie przed przyjazdem właściciela.",
           "point1": "Przecieki, wilgoć, zapach i wentylacja",
-          "point2": "Widoczne kontrole wody, prądu i bojlera",
+          "point2": "Widoczne kontrole wody, prądu i stanu bojlera",
           "point3": "Przechowanie kluczy i kontrolowany dostęp",
           "point4": "Sprzątanie i przygotowanie przed przyjazdem",
-          "point5": "Udokumentowany raport stanu"
+          "point5": "Udokumentowany stan przed przyjazdem"
         },
         "regular-guest-stays": {
-          "priority": "Porządek między pobytami, dostęp, sprzątanie, kontrola stanu i dokumentacja zdarzeń.",
+          "priority": "Porządek między pobytami, koordynacja dostępu, gotowość po sprzątaniu, kontrola po pobycie i dokumentacja zdarzeń.",
           "point1": "Sprzątanie i przygotowanie między pobytami",
           "point2": "Przechowanie kluczy i obsługa dostępu",
           "point3": "Kontrola stanu po pobycie",
-          "point4": "Dokumentacja szkód",
+          "point4": "Dokumentacja szkód i zdarzeń",
           "point5": "Koordynacja sprzątania, wykonawców i techników",
           "point6": "Ograniczenie chaosu operacyjnego dla właściciela"
         },
@@ -122,6 +122,77 @@
           "point4": "Uniknięcie zbyt słabej struktury, jeśli pojawi się wynajem",
           "point5": "Zakres potwierdzany po uporządkowanym przeglądzie"
         }
+      }
+    },
+    "pathwayContent": {
+      "private-use-only": {
+        "systemIntroContext": "Przy użytku prywatnym system skupia się na ryzyku pustego lokalu: co może wydarzyć się między pobytami i co musi być sprawdzone przed przyjazdem właściciela lub rodziny.",
+        "contrast": {
+          "intro": "Poniżej różnica między pustą nieruchomością pozostawioną przypadkowi a lokalem prywatnym objętym stałą kontrolą na miejscu.",
+          "left1": "Nieruchomość stoi nieużywana między pobytami bez regularnej lokalnej kontroli.",
+          "left2": "Przeciek, wilgoć, zapach, problem z wentylacją lub bojlerem mogą zostać zauważone dopiero przed przyjazdem.",
+          "left3": "Każda potrzeba wejścia zaczyna się od ustalania, kto ma klucze, czas i możliwość dojazdu.",
+          "left4": "Decyzje podejmujesz zdalnie, często bez aktualnej dokumentacji stanu lokalu.",
+          "left5": "Sprzątanie i przygotowanie stają się zadaniem na ostatnią chwilę, zamiast kontrolowanym etapem przed przyjazdem.",
+          "left6": "Punkt odniesienia dla stanu nieruchomości pozostaje nieformalny i rozproszony.",
+          "leftClosing": "Reakcja zaczyna się wtedy, gdy nieobecność zdążyła już stworzyć niepewność.",
+          "right1": "Nieruchomość jest sprawdzana w ustalonym rytmie, gdy nie jest używana.",
+          "right2": "Woda, prąd, bojler, wentylacja, wilgoć i zapach są widocznie kontrolowane tam, gdzie ma to zastosowanie.",
+          "right3": "Klucze i dostęp są lokalnie zabezpieczone w określonych zasadach.",
+          "right4": "Stan lokalu jest udokumentowany przed przyjazdem właściciela lub rodziny.",
+          "right5": "Sprzątanie i przygotowanie przed przyjazdem mogą zostać zorganizowane w ustalonym zakresie.",
+          "right6": "Jeśli problem jest widoczny, reakcja zaczyna się od lokalnej obecności i faktów w dokumentacji.",
+          "right7": "Zakres i odpowiedzialność pozostają ustalone z góry.",
+          "rightClosing": "Lokal prywatny ma lokalny punkt operacyjny, gdy Cię nie ma."
+        },
+        "distinctionIntro": "W tej ścieżce Sentinel jest najmocniejszy tam, gdzie pusty lokal wymaga regularnej obecności, widocznych kontroli i udokumentowanego przygotowania, a nie nieformalnej pomocy na ostatnią chwilę.",
+        "finalContext": "Przy użytku prywatnym wybór dotyczy tego, czy nieobecność jest obsługiwana nieformalnie, czy objęta zaplanowaną lokalną kontrolą przed każdym powrotem."
+      },
+      "regular-guest-stays": {
+        "systemIntroContext": "Przy regularnych pobytach gości system skupia się na ryzyku między pobytami: kto wchodzi, co jest sprawdzane i jak gotowość lokalu jest dokumentowana przed kolejnym użyciem.",
+        "contrast": {
+          "intro": "Poniżej różnica między koordynacją prowadzoną przez właściciela zdalnie a stałą lokalną strukturą wokół każdego pobytu.",
+          "left1": "Sprzątanie, dostęp i gotowość zależą od kilku osób bez jednego stałego punktu odniesienia.",
+          "left2": "Szkoda po pobycie albo zmiana stanu lokalu może zostać wykryta późno albo opisana bez kontekstu.",
+          "left3": "Każda rotacja oznacza logistykę: klucze, termin sprzątania, wejście technika i potwierdzenie.",
+          "left4": "Między pobytami jesteś wciągany w decyzje operacyjne zdalnie.",
+          "left5": "Wykonawcy mogą działać, ale stan przed i po pobycie nie jest konsekwentnie udokumentowany.",
+          "left6": "Małe błędy dostępu mogą wpłynąć na kolejne użycie nieruchomości.",
+          "leftClosing": "Właściciel pozostaje zdalnym centrum operacyjnym.",
+          "right1": "Sprzątanie i gotowość między pobytami są prowadzone w uzgodnionej lokalnej strukturze.",
+          "right2": "Wejścia sprzątania, techników i zatwierdzonych osób są koordynowane i zapisywane.",
+          "right3": "Kontrola po pobycie tworzy udokumentowany punkt odniesienia przed kolejnym użyciem.",
+          "right4": "Szkody, braki i widoczne zdarzenia są zapisywane zamiast omawiane z pamięci.",
+          "right5": "Sprzątanie i technicy mają jeden lokalny punkt operacyjny.",
+          "right6": "Decyzje pozostają w ustalonym zakresie i granicach uprawnień.",
+          "right7": "Właściciel otrzymuje uporządkowaną informację, nie rozproszony szum operacyjny.",
+          "rightClosing": "Rotacja staje się kontrolowanym procesem, nie serią osobnych wiadomości."
+        },
+        "distinctionIntro": "W tej ścieżce Sentinel odsuwa od właściciela codzienny nieporządek rotacji, bez obietnic dotyczących rezerwacji, przychodu ani pełnego zarządzania najmem.",
+        "finalContext": "Przy regularnych pobytach gości wybór dotyczy tego, czy każdy pobyt tworzy zdalną koordynację, czy przechodzi przez udokumentowaną lokalną strukturę."
+      },
+      "mixed-not-defined": {
+        "systemIntroContext": "Przy modelu mieszanym lub jeszcze nieustalonym pierwszym krokiem jest klasyfikacja. Zakres powinien zostać potwierdzony po przeglądzie, a nie zgadywany online.",
+        "contrast": {
+          "intro": "Poniżej różnica między zbyt wczesnym wyborem intensywności a klasyfikacją sposobu używania przed ustaleniem zakresu.",
+          "left1": "Nieruchomość może zostać potraktowana jak wyłącznie prywatna, mimo że później pojawią się pobyty gości.",
+          "left2": "Struktura obsługi gości może zostać rozbudowana zanim jest faktycznie potrzebna.",
+          "left3": "Pakiet i intensywność mogą być wybrane na podstawie założeń, nie rzeczywistego sposobu używania.",
+          "left4": "Odpowiedzialność rozmywa się, gdy lokal przechodzi między użytkiem właściciela a innymi pobytami.",
+          "left5": "Dostęp, sprzątanie i dokumentacja są omawiane przypadek po przypadku, bez stabilnej klasyfikacji.",
+          "left6": "Właściciel ryzykuje albo nadmierne rozbudowanie systemu, albo zbyt słabą strukturę.",
+          "leftClosing": "Nieustalony model używania tworzy zły rodzaj pewności.",
+          "right1": "Sposób używania jest sprawdzany zanim zostanie ustalona intensywność operacyjna.",
+          "right2": "Ryzyko użytku prywatnego i ryzyko pobytów gości są rozdzielane przed potwierdzeniem zakresu.",
+          "right3": "Elementy obsługi gości nie są dodawane przedwcześnie.",
+          "right4": "Jeśli pojawią się pobyty gości, struktura może zostać sklasyfikowana zanim powstanie chaos.",
+          "right5": "Dostęp, sprzątanie i dokumentacja trafiają do właściwej ścieżki po przeglądzie.",
+          "right6": "Dla nieustalonego modelu operacyjnego nie jest wymyślana kwota ani zakres liczbowy.",
+          "right7": "Końcowy zakres jest potwierdzany w uporządkowanym przeglądzie.",
+          "rightClosing": "Najpierw klasyfikacja; zakres dopiero potem."
+        },
+        "distinctionIntro": "W tej ścieżce Sentinel chroni przed przedwczesnym wyborem zakresu: nieruchomość jest najpierw klasyfikowana, a dopiero potem przypisywana do właściwej struktury operacyjnej.",
+        "finalContext": "Przy modelu mieszanym lub nieustalonym wybór nie dotyczy trzeciego trybu wyceny. Właściwym następnym krokiem jest uporządkowany przegląd i klasyfikacja."
       }
     },
     "exposure": {

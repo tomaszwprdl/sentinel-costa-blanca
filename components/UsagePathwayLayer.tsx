@@ -122,6 +122,14 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
   );
 }
 
+export function PathwayCopy({ path }: { path: string }) {
+  const t = useTranslations('home');
+  const searchParams = useSearchParams();
+  const selected = normalizePathwayParam(searchParams.get('pathway')) ?? 'private-use-only';
+
+  return <>{t(`pathwayContent.${selected}.${path}`)}</>;
+}
+
 function DiagnosticGateIntro({
   t,
   tp,

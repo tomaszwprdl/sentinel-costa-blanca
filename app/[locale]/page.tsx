@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import UsagePathwayLayer from '@/components/UsagePathwayLayer';
+import UsagePathwayLayer, { PathwayCopy } from '@/components/UsagePathwayLayer';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
@@ -37,6 +37,7 @@ export default async function HomePage({
         <Section tone="alt" variant="major" className="!pt-10">
           <div className="max-w-3xl text-left">
             <h2 className="h2-system font-bold mb-10">{t('systemIntro.title')}</h2>
+            <p className="text-body leading-relaxed mb-5"><PathwayCopy path="systemIntroContext" /></p>
             <p className="text-body leading-relaxed mb-10">{t('systemIntro.intro')}</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
@@ -79,35 +80,35 @@ export default async function HomePage({
           <div className="max-w-7xl mx-auto px-6 md:px-10 text-left pb-6 md:pb-10 -mb-10 md:-mb-16">
             <h2 className="h2-system font-bold">{t('contrast.title')}</h2>
             <div className="mt-3 h-px w-16 bg-structural-muted" aria-hidden />
-            <p className="text-body leading-relaxed mt-4 mb-10">{t('contrast.intro')}</p>
+            <p className="text-body leading-relaxed mt-4 mb-10"><PathwayCopy path="contrast.intro" /></p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-10 items-start">
               <div className="min-w-0 space-y-4 md:pr-6">
                 <h3 className="text-lg font-semibold text-heading mt-0 pl-5">{t('contrast.leftHeading')}</h3>
                 <ul className="list-disc pl-5 space-y-4 leading-relaxed text-base text-body">
-                  <li>{t('contrast.left1')}</li>
-                  <li>{t('contrast.left2')}</li>
-                  <li>{t('contrast.left3')}</li>
-                  <li>{t('contrast.left4')}</li>
-                  <li>{t('contrast.left5')}</li>
-                  <li>{t('contrast.left6')}</li>
+                  <li><PathwayCopy path="contrast.left1" /></li>
+                  <li><PathwayCopy path="contrast.left2" /></li>
+                  <li><PathwayCopy path="contrast.left3" /></li>
+                  <li><PathwayCopy path="contrast.left4" /></li>
+                  <li><PathwayCopy path="contrast.left5" /></li>
+                  <li><PathwayCopy path="contrast.left6" /></li>
                 </ul>
                 <p className="mt-2 text-sm text-body/80 leading-relaxed">
-                  {t('contrast.leftClosing')}
+                  <PathwayCopy path="contrast.leftClosing" />
                 </p>
               </div>
               <div className="min-w-0 space-y-4 md:pl-6">
                 <h3 className="text-lg font-semibold text-heading mt-0 pl-5">{t('contrast.rightHeading')}</h3>
                 <ul className="list-disc pl-5 space-y-4 leading-relaxed text-base text-body">
-                  <li>{t('contrast.right1')}</li>
-                  <li>{t('contrast.right2')}</li>
-                  <li>{t('contrast.right3')}</li>
-                  <li>{t('contrast.right4')}</li>
-                  <li>{t('contrast.right5')}</li>
-                  <li>{t('contrast.right6')}</li>
-                  <li>{t('contrast.right7')}</li>
+                  <li><PathwayCopy path="contrast.right1" /></li>
+                  <li><PathwayCopy path="contrast.right2" /></li>
+                  <li><PathwayCopy path="contrast.right3" /></li>
+                  <li><PathwayCopy path="contrast.right4" /></li>
+                  <li><PathwayCopy path="contrast.right5" /></li>
+                  <li><PathwayCopy path="contrast.right6" /></li>
+                  <li><PathwayCopy path="contrast.right7" /></li>
                 </ul>
                 <p className="mt-2 text-sm text-body/80 leading-relaxed">
-                  {t('contrast.rightClosing')}
+                  <PathwayCopy path="contrast.rightClosing" />
                 </p>
               </div>
             </div>
@@ -181,6 +182,9 @@ export default async function HomePage({
         {/* 6. CO WYRÓŻNIA SENTINEL — bloki deklaracji modelu, 2 kolumny, bez card/badge, oś centralna */}
         <Section tone="alt">
           <h2 className="h2-system text-center">{t('distinction.title')}</h2>
+          <p className="mt-5 text-body text-center max-w-[72ch] mx-auto leading-relaxed">
+            <PathwayCopy path="distinctionIntro" />
+          </p>
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-[1120px] mx-auto">
             <div>
               <h3 className="text-lg font-semibold text-heading">{t('distinction.block1Title')}</h3>
@@ -249,7 +253,7 @@ export default async function HomePage({
           <div className="text-center max-w-[56ch] mx-auto">
             <h2 className="h2-system text-authority-on-dark">{t('finalCta.title')}</h2>
             <div className="mt-6 space-y-4 text-authority-on-dark/90 text-left">
-              <p>{t('finalCta.p1')}</p>
+              <p><PathwayCopy path="finalContext" /></p>
               <p>{t('finalCta.p2')}</p>
             </div>
             <div className="mt-10">

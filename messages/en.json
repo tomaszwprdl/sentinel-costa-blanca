@@ -98,19 +98,19 @@
       },
       "detail": {
         "private-use-only": {
-          "priority": "Regular presence, visible risk checks, keyholding, and readiness before your arrival.",
-          "point1": "Leaks, humidity, smell, and ventilation",
-          "point2": "Visible water, electricity, and boiler checks",
+          "priority": "Regular local presence, visible dormant-property checks, controlled access, and readiness before owner arrival.",
+          "point1": "Leaks, moisture, smell, and ventilation",
+          "point2": "Visible water, electricity, and boiler condition checks",
           "point3": "Keyholding and controlled access",
           "point4": "Pre-arrival cleaning and readiness",
-          "point5": "Documented condition reporting"
+          "point5": "Documented condition before arrival"
         },
         "regular-guest-stays": {
-          "priority": "Turnover order, access, cleaning, condition checks, and event documentation.",
-          "point1": "Turnover cleaning and readiness",
+          "priority": "Turnover order, access coordination, cleaning readiness, post-stay checks, and event documentation.",
+          "point1": "Cleaning and readiness between stays",
           "point2": "Keyholding and access events",
           "point3": "Post-stay condition checks",
-          "point4": "Damage documentation",
+          "point4": "Damage and event documentation",
           "point5": "Cleaner, vendor, and technician coordination",
           "point6": "Reducing operational noise for the owner"
         },
@@ -122,6 +122,77 @@
           "point4": "Avoiding under-structuring if guest activity starts",
           "point5": "Scope confirmed after structured review"
         }
+      }
+    },
+    "pathwayContent": {
+      "private-use-only": {
+        "systemIntroContext": "For private use, the system is built around dormancy risk: what can happen while the property stands unused, and what must be checked before the owner or family arrives.",
+        "contrast": {
+          "intro": "Below is the difference between an empty property left to chance and a private-use property under fixed local control.",
+          "left1": "The property stands unused between visits without a regular local check.",
+          "left2": "Leaks, moisture, smell, ventilation issues, or boiler faults may be noticed only before arrival.",
+          "left3": "Every access need starts with finding keys, availability, and someone who can attend.",
+          "left4": "You decide remotely, often without current documentation of the property's condition.",
+          "left5": "Cleaning and readiness become last-minute tasks instead of a controlled pre-arrival step.",
+          "left6": "The reference point for condition remains informal and fragmented.",
+          "leftClosing": "The response begins when the absence has already created uncertainty.",
+          "right1": "The property is checked at an agreed rhythm while it is not in use.",
+          "right2": "Water, electricity, boiler, ventilation, moisture, and smell are visibly checked where applicable.",
+          "right3": "Keys and access are held locally under defined control.",
+          "right4": "Condition is documented before owner or family arrival.",
+          "right5": "Cleaning and readiness can be arranged before arrival within the agreed scope.",
+          "right6": "If an issue is visible, the response starts from local presence and documented facts.",
+          "right7": "Scope and responsibility remain fixed in advance.",
+          "rightClosing": "The private-use property has a local operating reference while you are away."
+        },
+        "distinctionIntro": "In this pathway, Sentinel is strongest where an empty home needs routine presence, visible checks, and documented readiness rather than informal last-minute help.",
+        "finalContext": "For a private-use property, the choice is whether absence is handled informally or placed under scheduled local control before each return."
+      },
+      "regular-guest-stays": {
+        "systemIntroContext": "For regular guest stays, the system is built around turnover risk: what happens between stays, who enters, what is checked, and how readiness is documented before the next use.",
+        "contrast": {
+          "intro": "Below is the difference between owner-led coordination from abroad and a fixed local structure around each stay.",
+          "left1": "Cleaning, access, and readiness depend on separate people coordinating without one fixed reference point.",
+          "left2": "Post-stay damage or condition drift may be discovered late or reported without context.",
+          "left3": "Every turnover creates logistics: keys, cleaner timing, technician access, and confirmation.",
+          "left4": "You are pulled into operational decisions remotely between stays.",
+          "left5": "Contractors may act, but the condition before and after a stay is not consistently documented.",
+          "left6": "Small access failures can affect the next use of the property.",
+          "leftClosing": "The owner remains the operational switchboard from abroad.",
+          "right1": "Cleaning and readiness between stays are handled within an agreed local structure.",
+          "right2": "Access events for cleaners, technicians, and approved parties are coordinated and recorded.",
+          "right3": "Post-stay condition checks create a documented reference before the next use.",
+          "right4": "Damage, missing items, and visible events are recorded instead of discussed from memory.",
+          "right5": "Cleaner and technician coordination has one local operating point.",
+          "right6": "Decisions remain inside the agreed scope and authority limits.",
+          "right7": "The owner receives structured information rather than scattered operational noise.",
+          "rightClosing": "Turnover becomes a controlled process, not a sequence of separate messages."
+        },
+        "distinctionIntro": "In this pathway, Sentinel keeps the owner out of day-to-day turnover disorder while avoiding booking, revenue, or full rental-management promises.",
+        "finalContext": "For regular guest stays, the choice is whether each stay creates remote coordination or runs through a documented local structure."
+      },
+      "mixed-not-defined": {
+        "systemIntroContext": "For a mixed or undefined use pattern, the first step is classification. Scope should be confirmed after review, not guessed online.",
+        "contrast": {
+          "intro": "Below is the difference between choosing intensity too early and classifying the use pattern before scope is fixed.",
+          "left1": "The property may be treated as private-use only even if guest activity begins later.",
+          "left2": "Guest-support structure may be built before it is actually needed.",
+          "left3": "Package and intensity can be chosen from assumptions instead of observed use.",
+          "left4": "Responsibilities become unclear when the property changes between owner use and other stays.",
+          "left5": "Access, cleaning, and documentation needs are discussed case by case without a stable classification.",
+          "left6": "The owner risks either overbuilding the system or leaving it too weak.",
+          "leftClosing": "Unclassified use creates the wrong kind of certainty.",
+          "right1": "The use pattern is reviewed before operational intensity is fixed.",
+          "right2": "Private-use risk and guest-stay risk are separated before scope is confirmed.",
+          "right3": "Unneeded guest-support elements are not added prematurely.",
+          "right4": "If guest activity begins, the structure can be classified before it becomes disorder.",
+          "right5": "Access, cleaning, and documentation needs are assigned to the correct pathway after review.",
+          "right6": "No numeric estimate is invented for an undefined operating model.",
+          "right7": "Final scope is confirmed through structured review.",
+          "rightClosing": "Classification comes first; scope follows."
+        },
+        "distinctionIntro": "In this pathway, Sentinel prevents premature scope decisions: the property is classified first, then placed into the correct operational structure.",
+        "finalContext": "For mixed or undefined use, the choice is not a third price mode. The correct next step is structured review and classification."
       }
     },
     "exposure": {
