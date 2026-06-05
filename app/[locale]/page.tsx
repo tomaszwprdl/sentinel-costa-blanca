@@ -283,22 +283,27 @@ function UsagePathwayFallback({
     <Section tone="light" className="section-primitive--first hero-zone !pb-8 md:!pb-10">
       <div className="container max-w-7xl">
         {!hasSelection && (
-          <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 lg:items-start mb-8 md:mb-10">
-            <div className="max-w-xl">
-              <h1 className="text-2xl md:text-3xl font-bold tracking-tight leading-tight text-heading">
-                {t('hero.wordmark')}
-              </h1>
-              <h2 className="text-lg md:text-xl font-normal text-body mt-4 leading-snug">
-                {t('hero.descriptor')}
-              </h2>
-              <p className="text-base text-body mt-4 leading-relaxed">{t('hero.line3')}</p>
-              <p className="text-base text-body mt-3 leading-relaxed">{t('hero.line4')}</p>
+          <div className="mb-8 md:mb-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 lg:items-start">
+              <div className="max-w-xl">
+                <h1 className="text-2xl md:text-3xl font-bold tracking-tight leading-tight text-heading">
+                  {t('hero.wordmark')}
+                </h1>
+                <h2 className="text-lg md:text-xl font-normal text-body mt-4 leading-snug">
+                  {t('hero.descriptor')}
+                </h2>
+                <p className="text-base text-body mt-4 leading-relaxed">{t('hero.line3')}</p>
+                <p className="text-base text-body mt-3 leading-relaxed">{t('hero.line4')}</p>
+              </div>
+
+              <div className="lg:pt-2">
+                <h2 className="text-lg md:text-xl font-semibold text-heading leading-snug">
+                  {t('pathway.selectorTitle')}
+                </h2>
+              </div>
             </div>
 
-            <div className="lg:pt-2">
-              <h2 className="text-lg md:text-xl font-semibold text-heading mb-5 leading-snug">
-                {t('pathway.selectorTitle')}
-              </h2>
+            <div className="mt-5 lg:mt-8">
               <FallbackPathwayCards locale={locale} selected={selected} t={t} />
               <p className="mt-5 text-sm text-muted leading-relaxed">{t('pathway.gateInstruction')}</p>
             </div>
@@ -356,7 +361,7 @@ function FallbackPathwayCards({
   t: (key: string) => string;
 }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+    <div className="grid grid-cols-1 gap-4 md:gap-5">
       {PATHWAY_KEYS.map((key) => {
         const isSelected = selected === key;
         return (
