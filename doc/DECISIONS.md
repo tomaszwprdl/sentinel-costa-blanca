@@ -523,6 +523,12 @@ Rules:
 Purpose:
 Allow the website to reduce the correct anxiety for each owner type without fragmenting the service architecture.
 
+Implementation record (Task 8 homepage):
+
+- Homepage opens with identity + hard diagnostic gate; no content below gate until valid usage situation selected.
+- Selected state shows diagnostic result panel then shared homepage sections.
+- Homepage copy adaptation per usage situation is pending; governed by Task 8.12 and doc/HOMEPAGE-USAGE-SITUATION-PASS.md.
+
 ---
 
 # 18A. Operational Mode Overlay

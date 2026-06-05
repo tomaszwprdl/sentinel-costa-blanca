@@ -22,7 +22,7 @@ If this document becomes aspirational, it has failed.
 | Website | Technically functional |
 | Identity Core | Locked (per DECISIONS.md) |
 | Public Readiness | Not ready |
-| Last Verified | Usage Pathway Doctrine Patch + Core Operational Capability Correction |
+| Last Verified | Homepage hard diagnostic gate, hydration fallback, gate presentation (48258d5), and selected-state result panel (3e5a7e7) implemented |
 
 ---
 
@@ -133,8 +133,6 @@ Remaining work concerns execution consistency across pages:
 - Responsive grid calibration (desktop / tablet / mobile)
 - Cross-page containment consistency
 - Controlled disclosure rhythm verification
-- Usage Pathway selector implementation
-- Estimator alignment to usage situation model
 - Execution-only support visual separation enforcement
 
 These are implementation refinements, not structural uncertainties.
@@ -164,7 +162,13 @@ Task 8 is active.
 
 Implemented / aligned:
 
-- Homepage usage situation selector
+- Homepage identity + hard diagnostic gate as first screen (no default pathway on `/pl` or `/en`)
+- No-selection gate shows identity, diagnostic question, three usage situations, and gate instruction only
+- Homepage sections below the gate hidden until a valid usage situation is selected
+- Direct URLs with valid `?pathway=` param reveal selected diagnostic result panel and shared homepage sections immediately
+- Server-rendered hydration fallback matches no-selection gate structure
+- Gate presentation containment (Task 8E) and selected-state result panel baseline (Task 8F)
+- Pathway names/slugs: `private-use-only`, `regular-guest-stays`, `mixed-not-defined`
 - Estimator visible labels aligned to the current usage situation model
 - Estimator remains limited to two calculable operational modes:
   - private_use
@@ -174,10 +178,11 @@ Implemented / aligned:
 - Email environment naming updated to SENTINEL_EMAIL / SENTINEL_PHONE
 - Contact form hardcoded English labels removed
 - Lint hygiene patch completed
+- AGENTS.md tracked in repository
 
 Still pending:
 
-- Homepage hydration / hard gate robustness
+- Homepage usage-situation content adaptation pass (shared homepage sections not yet fully tuned per usage situation)
 - Execution-only support visual separation logic
 - One-click disclosure compliance validation
 - Final range recalculation QA
@@ -239,7 +244,11 @@ Estimator rule:
 Implementation status:
 
 - Doctrine naming alignment updated.
-- Homepage usage situation selector implemented.
+- Homepage hard diagnostic gate implemented (identity + diagnostic question + three usage situations + instruction).
+- No homepage content below gate until valid usage situation selected; direct pathway URLs reveal selected state immediately.
+- Hydration fallback aligned to no-selection gate structure.
+- Gate presentation containment refined (48258d5).
+- Selected-state diagnostic result panel baseline refined (3e5a7e7).
 - Estimator visible labels aligned to Private Use Only / Regular Guest Stays.
 - Estimator remains limited to two calculable operational modes:
   - private_use
@@ -249,7 +258,8 @@ Implementation status:
 - Email environment naming updated to SENTINEL_EMAIL / SENTINEL_PHONE.
 - Contact form hardcoded English labels removed.
 - Lint hygiene patch completed.
-- Homepage hydration / hard gate robustness remains pending.
+- AGENTS.md tracked in repository.
+- Homepage usage-situation content adaptation pass pending (see doc/HOMEPAGE-USAGE-SITUATION-PASS.md).
 
 ---
 

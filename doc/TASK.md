@@ -814,31 +814,76 @@ Mixed / Not Yet Defined:
 * Must not imply custom uncontrolled scope
 * Should route toward structured review when uncertainty remains
 
-## 8.7 Homepage Usage Situation Selector
+## 8.7 Homepage Hard Diagnostic Gate
 
-Homepage must include a controlled selector after hero.
+Homepage starts with identity + hard diagnostic gate. The diagnostic gate is the first operational interface.
 
-Heading intent:
-"How is the property used while you are absent?"
+Doctrine:
 
-Pathways:
+- Sentinel identity (wordmark, descriptor, short explanatory lines) appears first.
+- Diagnostic question: how the property is used while the owner is away.
+- Three usage situations are offered as stacked decision rows inside a restrained diagnostic block.
+- Gate instruction appears below the choices.
+- No homepage content below the gate renders until a valid usage situation is selected.
+- Direct URLs with a valid `pathway` query param may reveal the selected diagnostic result panel and shared homepage sections immediately.
+- “Change situation” re-opens pathway selection without resetting locale or navigation.
 
-1. Private Use Only
-2. Regular Guest Stays
-3. Mixed / Not Yet Defined
+Canonical slugs:
 
-Selector behavior may:
+1. private-use-only
+2. regular-guest-stays
+3. mixed-not-defined
 
-* Route to pathway-specific pages; or
-* Scroll/update a contextual block on the same page.
+Gate behavior must not:
 
-Selector behavior must not:
+- Create three separate websites
+- Change packages
+- Change SLA
+- Change legal terms
+- Trigger personal-data collection
+- Add a default pathway on `/pl` or `/en`
 
-* Create three separate websites
-* Change packages
-* Change SLA
-* Change legal terms
-* Trigger personal-data collection
+Structural baseline commits:
+
+- 48258d5 — gate presentation containment
+- 3e5a7e7 — selected pathway result panel
+
+Content adaptation for shared homepage sections is governed by Task 8.12 and doc/HOMEPAGE-USAGE-SITUATION-PASS.md.
+
+## 8.12 Homepage Usage-Situation Content Adaptation Pass
+
+Status: PENDING (next eligible homepage-only pass)
+
+Purpose:
+Tune shared homepage sections to the selected usage situation without changing service architecture, packages, or gate mechanics.
+
+Scope: homepage only (`/[locale]` with valid pathway context).
+
+Allowed adaptation:
+
+* Selected diagnostic result panel copy refinement (within existing panel structure)
+* First system intro contextual sentence (`Jak działa system Sentinel` / system intro block)
+* Bez nas / Z nami (`contrast`) examples
+* Co wyróżnia Sentinel (`distinction`) emphasis
+* Final CTA / context line (`finalCta`)
+* Contact pathway context labels if needed for parity
+
+Forbidden adaptation:
+
+* Packages, SLA, emergency authority
+* Estimator pricing logic or matrix expansion
+* Legal pages, service area, identity descriptor
+* Navigation, header, footer
+* Domain / DNS / Netlify settings
+* Adding new services or capabilities
+* Concierge, rental-management, or lifestyle language
+* No-selection gate layout or hard-gate behavior
+* Pathway names, descriptions, or canonical slugs
+
+Execution brief:
+See doc/HOMEPAGE-USAGE-SITUATION-PASS.md for pathway-specific content axes and QA checks.
+
+PL/EN parity required.
 
 ## 8.8 Contextual Content Adaptation
 
@@ -1047,7 +1092,8 @@ Final public launch should prefer branded domain email once available.
 
 Task 8 complete when:
 
-* Usage situation selector implemented
+* Homepage hard diagnostic gate implemented and frozen
+* Homepage usage-situation content adaptation pass complete (Task 8.12)
 * Matrix documented in repository
 * Estimator aligned to usage situation / operational mode model
 * Contact pre-fill logic working
