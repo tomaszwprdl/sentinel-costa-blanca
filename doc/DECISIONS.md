@@ -495,9 +495,19 @@ Decision: Sentinel uses one service architecture with three contextual usage pat
 Status: LOCKED
 
 Pathways:
-- Private Absence
-- Active Guest Use
-- Mixed / Undetermined Use
+- Private Use Only
+- Regular Guest Stays
+- Mixed / Not Yet Defined
+
+PL public labels:
+- Tylko użytek prywatny
+- Regularne pobyty gości
+- Model mieszany / jeszcze nieustalony
+
+Canonical slugs:
+- private-use-only
+- regular-guest-stays
+- mixed-not-defined
 
 Definition:
 Usage pathways classify the owner's operating situation and adjust the visible problem framing, examples, operational emphasis, estimator default, and contact context.
@@ -523,17 +533,18 @@ Status: LOCKED
 Definition:
 Operational mode models activity intensity. It sits below package jurisdiction.
 
-Public pathway labels:
-- Private Absence — property is mainly unused while the owner is away.
-- Active Guest Use — property is regularly accessed by guests, cleaners, or technicians.
-- Mixed / Undetermined Use — property use is not fixed or requires classification.
+Public usage situations map to estimator modes as follows:
+- Private Use Only -> private_use
+- Regular Guest Stays -> active_guest
+- Mixed / Not Yet Defined -> structured review / classification, no direct price calculation
 
 Rules:
 - Operational mode does NOT change package level.
 - Operational mode does NOT change SLA tier.
 - Operational mode does NOT change emergency authority limit.
-- Active Guest Use introduces event-driven operational allocation and may introduce per-event billing.
-- Mixed / Undetermined Use must route toward structured review and classification, not invented pricing.
+- Regular Guest Stays introduces event-driven operational allocation and may introduce per-event billing.
+- Mixed / Not Yet Defined must route toward structured review and classification, not invented pricing.
+- Estimator pricing remains limited to two calculable operational modes unless the Owner explicitly approves a pricing-matrix expansion.
 
 Purpose:
 Separate jurisdiction (package) from activity intensity (mode) and from owner anxiety framing (pathway).
@@ -577,9 +588,9 @@ Prohibited:
 Usage pathway pricing:
 Displayed through visible estimator logic using package × usage pathway / operational mode matrix.
 
-Active Guest Use may include additional event-driven operational allocation and per-event execution billing.
+Regular Guest Stays may include additional event-driven operational allocation and per-event execution billing.
 
-Mixed / Undetermined Use must be treated as classification-first. Final pricing is confirmed after structured review.
+Mixed / Not Yet Defined must be treated as classification-first. Final pricing is confirmed after structured review.
 
 Purpose:
 Preserve Clarity Doctrine and institutional transparency.

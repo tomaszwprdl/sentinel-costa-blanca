@@ -670,10 +670,25 @@ Define explicitly:
 
 **Axis 1 — Package** (Structured Presence / Active Oversight / Extended Jurisdiction)
 
-**Axis 2 — Usage Pathway**
-* Private Absence
-* Active Guest Use
-* Mixed / Undetermined Use
+**Axis 2 — Public Usage Situation**
+* Private Use Only
+* Regular Guest Stays
+* Mixed / Not Yet Defined
+
+PL public labels:
+* Tylko użytek prywatny
+* Regularne pobyty gości
+* Model mieszany / jeszcze nieustalony
+
+Canonical slugs:
+* private-use-only
+* regular-guest-stays
+* mixed-not-defined
+
+Estimator mapping:
+* Private Use Only -> private_use
+* Regular Guest Stays -> active_guest
+* Mixed / Not Yet Defined -> structured review / classification, no direct numeric calculation
 
 **Axis 3 — Property Load**
 * Size bracket (range only)
@@ -698,7 +713,7 @@ No formulas.
 Define:
 
 **Base matrix:**
-Package × Usage Pathway → Base monthly range
+Package × calculable operational mode → Base monthly range
 
 **Adjustments:**
 Size bracket → Adjustment band
@@ -709,12 +724,9 @@ All outputs remain ranges.
 
 No exact numbers.
 
-Mixed / Undetermined Use may either:
+Mixed / Not Yet Defined routes to structured review without numeric output.
 
-* Produce a conservative classification range; or
-* Route to structured review without numeric output if pricing cannot be responsibly modeled.
-
-Cursor must document which option is implemented. Cursor must not invent undocumented pricing logic.
+Cursor must not invent a third pricing mode or expand the matrix without explicit Owner approval.
 
 ## 8.3 Output Doctrine
 
@@ -765,15 +777,15 @@ Estimator may:
 Pre-filled fields:
 
 * Package
-* Usage pathway
+* Usage situation / operational mode
 * Size bracket
 * Bedrooms
 * Operational scope elements
 * Estimated range, if calculated
 
-## 8.6 Usage Pathway Governance
+## 8.6 Usage Situation Governance
 
-Usage pathway:
+Usage situation:
 
 * Is a qualification layer
 * Changes problem framing and operational emphasis
@@ -782,27 +794,27 @@ Usage pathway:
 * Does not change authority level
 * Affects operational intensity only
 
-Active Guest Use:
+Regular Guest Stays:
 
 * Is event-risk oriented
 * May include turnover cleaning support
 * May include guest check support
 * May include event-driven access and vendor coordination
 
-Private Absence:
+Private Use Only:
 
 * Is dormancy-risk oriented
 * May include scheduled checks
 * May include keyholding
 * May include pre-arrival cleaning/readiness
 
-Mixed / Undetermined Use:
+Mixed / Not Yet Defined:
 
 * Is classification-first
 * Must not imply custom uncontrolled scope
 * Should route toward structured review when uncertainty remains
 
-## 8.7 Homepage Pathway Selector
+## 8.7 Homepage Usage Situation Selector
 
 Homepage must include a controlled selector after hero.
 
@@ -811,9 +823,9 @@ Heading intent:
 
 Pathways:
 
-1. Private Absence
-2. Active Guest Use
-3. Mixed / Not Decided
+1. Private Use Only
+2. Regular Guest Stays
+3. Mixed / Not Yet Defined
 
 Selector behavior may:
 
@@ -865,11 +877,18 @@ The estimator models package jurisdiction + usage pathway + property load + oper
 * active_oversight
 * extended_jurisdiction
 
-**Axis B — Usage Pathway:**
+**Axis B — Public Usage Situation / Operational Mode:**
 
-* private_absence
-* active_guest_use
-* mixed_undetermined
+Public slugs:
+* private-use-only
+* regular-guest-stays
+* mixed-not-defined
+
+Calculable estimator modes:
+* private_use
+* active_guest
+
+Mixed / Not Yet Defined is not a calculable estimator mode. It routes to structured review / classification.
 
 **Axis C — Size bracket (categorical, not precise):**
 
@@ -901,9 +920,9 @@ Computation is matrix-based + additive bands.
 
 **Base Range Matrix**
 
-A 3×3 matrix defines the base monthly range by:
+A 3×2 matrix defines the base monthly range by:
 
-Package × Usage Pathway → baseRange
+Package × calculable operational mode → baseRange
 
 **Adjustments**
 
@@ -992,7 +1011,7 @@ On click:
 * Navigate to Contact page and pre-fill a structured context payload.
 * Prefill must include:
   * package
-  * usage pathway
+  * usage situation and/or operational mode
   * size bracket
   * bedrooms
   * operational scope elements selected
@@ -1008,7 +1027,8 @@ Use a deterministic encoding (query params or state transfer) that works in both
 * Same inputs always produce same output range.
 * PL and EN labels correct; keys identical.
 * Result collapses on any input change.
-* Homepage pathway selector does not create package or SLA differences.
+* Homepage usage situation selector does not create package or SLA differences.
+* Mixed / Not Yet Defined does not create or display an invented price range.
 * Contact prefill works and does not submit automatically.
 * No off-ladder spacing introduced; estimator uses existing spacing system.
 
@@ -1027,9 +1047,9 @@ Final public launch should prefer branded domain email once available.
 
 Task 8 complete when:
 
-* Usage pathway selector implemented
+* Usage situation selector implemented
 * Matrix documented in repository
-* Estimator aligned to usage pathway model
+* Estimator aligned to usage situation / operational mode model
 * Contact pre-fill logic working
 * Contact details placeholders removed
 * PL/EN parity verified

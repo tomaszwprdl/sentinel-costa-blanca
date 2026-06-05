@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState, type ReactNode } from 'react';
+import { useCallback, useState, type ReactNode } from 'react';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
@@ -30,19 +30,11 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
   const pathname = usePathname();
 
   const paramPathway = normalizePathwayParam(searchParams.get('pathway'));
-  const [selected, setSelected] = useState<PathwayKey | null>(paramPathway);
   const [isChanging, setIsChanging] = useState(false);
-
-  useEffect(() => {
-    setSelected(paramPathway);
-    if (paramPathway) {
-      setIsChanging(false);
-    }
-  }, [paramPathway]);
+  const selected = paramPathway;
 
   const selectPathway = useCallback(
     (key: PathwayKey) => {
-      setSelected(key);
       setIsChanging(false);
       const params = new URLSearchParams(searchParams.toString());
       params.set('pathway', key);

@@ -591,8 +591,7 @@
       "redItems": {
         "localDecisions": "Oczekujesz lokalnych decyzji na miejscu",
         "emergencyResponse": "Potrzebujesz zdolności reagowania awaryjnego",
-        "minimalInvolvement": "Chcesz ograniczyć własne zaangażowanie",
-        "frequentIntervention": "Nieruchomość wymaga częstszej interwencji"
+        "minimalInvolvement": "Chcesz ograniczyć własne zaangażowanie"
       }
     },
     "estimator": {
@@ -613,8 +612,8 @@
       "groupMode": "Tryb operacyjny",
       "groupModeAnchor": "Tryb operacyjny określa intensywność nadzoru wynikającą z użytkowania nieruchomości.",
       "modeLabel": "Tryb operacyjny",
-      "modePrivateUse": "Prywatna nieobecność",
-      "modeActiveGuest": "Aktywne użycie przez gości",
+      "modePrivateUse": "Tylko użytek prywatny",
+      "modeActiveGuest": "Regularne pobyty gości",
       "modeSublinePrivateUse": "Standardowa intensywność nadzoru.",
       "modeSublineActiveGuest": "Zwiększona intensywność nadzoru związana z rotacją gości.",
       "modeDescriptor": {
@@ -779,6 +778,9 @@
       },
       "primaryNeeds": "Główne Potrzeby Usługowe",
       "primaryNeedsPlaceholder": "Krótki opis czego Państwo potrzebują od Sentinel (opcjonalne)",
+      "selectPlaceholder": "Wybierz...",
+      "optionalLabel": "opcjonalnie",
+      "maxCharacters": "Maksymalnie 500 znaków",
       "acknowledgment": "Rozumiem, że Sentinel działa w oparciu o model usługi pakietowej. Usługi nie zawarte w wybranym pakiecie są organizowane i wyceniane osobno.",
       "submitButton": "Wyślij Zapytanie",
       "requiredField": "Pole wymagane"

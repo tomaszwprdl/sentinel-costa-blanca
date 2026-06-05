@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import SunIcon from '@/components/icons/SunIcon';
 import MoonIcon from '@/components/icons/MoonIcon';
@@ -19,34 +19,18 @@ function applyTheme(theme: Theme) {
   document.documentElement.setAttribute('data-theme', theme);
   try {
     localStorage.setItem(STORAGE_KEY, theme);
-  } catch (_) {}
+  } catch {}
 }
 
 export default function ThemeSwitch() {
   const t = useTranslations('common.theme');
-  const [theme, setTheme] = useState<Theme>('light');
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setTheme(getTheme());
-    setMounted(true);
-  }, []);
+  const [theme, setTheme] = useState<Theme>(getTheme);
 
   const toggle = () => {
     const next: Theme = theme === 'light' ? 'dark' : 'light';
     setTheme(next);
     applyTheme(next);
   };
-
-  if (!mounted) {
-    return (
-      <div className="flex items-center gap-2.5 h-8" aria-hidden>
-        <SunIcon className="w-4 h-4 text-body opacity-80" />
-        <span className="relative w-10 h-5 bg-structural-light rounded-full" />
-        <MoonIcon className="w-4 h-4 text-body opacity-80" />
-      </div>
-    );
-  }
 
   const isDark = theme === 'dark';
 

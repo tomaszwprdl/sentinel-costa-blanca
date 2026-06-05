@@ -612,8 +612,8 @@
       "groupMode": "Operational Mode",
       "groupModeAnchor": "Operational mode reflects oversight intensity resulting from property usage.",
       "modeLabel": "Operational Mode",
-      "modePrivateUse": "Private Absence",
-      "modeActiveGuest": "Active Guest Use",
+      "modePrivateUse": "Private Use Only",
+      "modeActiveGuest": "Regular Guest Stays",
       "modeSublinePrivateUse": "Standard oversight intensity.",
       "modeSublineActiveGuest": "Higher oversight intensity associated with guest turnover.",
       "modeDescriptor": {
@@ -778,6 +778,9 @@
       },
       "primaryNeeds": "Primary Service Needs",
       "primaryNeedsPlaceholder": "Brief description of what you need from Sentinel (optional)",
+      "selectPlaceholder": "Select...",
+      "optionalLabel": "optional",
+      "maxCharacters": "Maximum 500 characters",
       "acknowledgment": "I understand that Sentinel operates on a package-based service model. Services not included in the selected package are arranged and priced separately.",
       "submitButton": "Submit Inquiry",
       "requiredField": "Required field"

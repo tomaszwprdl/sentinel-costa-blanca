@@ -22,7 +22,7 @@ export default function FAQPage() {
   const [searchQuery, setSearchQuery] = useState('');
 
   // Build FAQ sections from translations
-  const faqSections = [
+  const faqSections = useMemo(() => [
   {
     id: 'service-model',
     title: t('sections.serviceModel.title'),
@@ -90,7 +90,7 @@ export default function FAQPage() {
       { id: 'q25', question: t('sections.meta.questions.q25.question'), answer: t('sections.meta.questions.q25.answer') },
     ],
   },
-];
+], [t]);
 
 
   const filteredSections = useMemo(() => {

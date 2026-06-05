@@ -53,7 +53,7 @@ The following decisions are implemented and aligned with DECISIONS.md:
 - SLA defined as response/decision time
 - Emergency authority limited and documented
 - Three-level jurisdictional escalation model locked
-- Usage Pathway model (Private Absence / Active Guest Use / Mixed / Undetermined Use)
+- Usage situation model (Private Use Only / Regular Guest Stays / Mixed / Not Yet Defined)
 - Operational mode remains below package jurisdiction
 - Emergency authority Model C (fixed limit + owner escalation)
 - Keyholding and cleaning recognized as core operational capabilities inside structured oversight
@@ -134,7 +134,7 @@ Remaining work concerns execution consistency across pages:
 - Cross-page containment consistency
 - Controlled disclosure rhythm verification
 - Usage Pathway selector implementation
-- Estimator alignment to three pathway model
+- Estimator alignment to usage situation model
 - Execution-only support visual separation enforcement
 
 These are implementation refinements, not structural uncertainties.
@@ -160,14 +160,28 @@ No promotional proof artifacts implemented.
 
 ## Service Interface Integration
 
-Task 8 is active. Pending implementation:
+Task 8 is active.
 
-- Homepage usage pathway selector
-- Package × Usage Pathway estimator matrix
-- Range recalculation logic
-- Contact prefill using pathway context
+Implemented / aligned:
+
+- Homepage usage situation selector
+- Estimator visible labels aligned to the current usage situation model
+- Estimator remains limited to two calculable operational modes:
+  - private_use
+  - active_guest
+- Mixed / Not Yet Defined routes to structured review / classification and does not generate a numeric estimate
+- Contact pathway context and visible contact details updated
+- Email environment naming updated to SENTINEL_EMAIL / SENTINEL_PHONE
+- Contact form hardcoded English labels removed
+- Lint hygiene patch completed
+
+Still pending:
+
+- Homepage hydration / hard gate robustness
 - Execution-only support visual separation logic
 - One-click disclosure compliance validation
+- Final range recalculation QA
+- Contact prefill end-to-end QA
 
 ---
 
@@ -198,17 +212,44 @@ Owner correction recorded:
 - They must not become brand positioning.
 - Sentinel remains Structured Property Oversight / Reprezentacja właściciela na miejscu.
 
-Current pathway model:
+Current public usage situation model:
 
-1. Private Absence — empty-property / dormancy risk.
-2. Active Guest Use — event-driven / turnover risk.
-3. Mixed / Undetermined Use — classification-first pathway.
+1. Private Use Only — empty-property / dormancy risk.
+2. Regular Guest Stays — event-driven / turnover risk.
+3. Mixed / Not Yet Defined — classification-first pathway.
+
+PL public labels:
+
+1. Tylko użytek prywatny
+2. Regularne pobyty gości
+3. Model mieszany / jeszcze nieustalony
+
+Canonical slugs:
+
+1. private-use-only
+2. regular-guest-stays
+3. mixed-not-defined
+
+Estimator rule:
+
+- Private Use Only maps to the calculable `private_use` operational mode.
+- Regular Guest Stays maps to the calculable `active_guest` operational mode.
+- Mixed / Not Yet Defined routes to structured review / classification and does not invent a third pricing mode.
 
 Implementation status:
 
-- Doctrine updated.
-- Website implementation pending in Task 8.
-- Contact placeholder replacement pending in implementation.
+- Doctrine naming alignment updated.
+- Homepage usage situation selector implemented.
+- Estimator visible labels aligned to Private Use Only / Regular Guest Stays.
+- Estimator remains limited to two calculable operational modes:
+  - private_use
+  - active_guest
+- Mixed / Not Yet Defined routes to structured review / classification and does not generate a numeric estimate.
+- Contact context and visible contact details updated.
+- Email environment naming updated to SENTINEL_EMAIL / SENTINEL_PHONE.
+- Contact form hardcoded English labels removed.
+- Lint hygiene patch completed.
+- Homepage hydration / hard gate robustness remains pending.
 
 ---
 

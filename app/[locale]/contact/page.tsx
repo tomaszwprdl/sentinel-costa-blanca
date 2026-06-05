@@ -418,7 +418,7 @@ function ContactPageInner() {
                         {...register('preferredContactMethod')}
                         className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority"
                       >
-                        <option value="">Select...</option>
+                        <option value="">{t('form.selectPlaceholder')}</option>
                         <option value="Email">{t('form.contactMethods.email')}</option>
                         <option value="WhatsApp">{t('form.contactMethods.whatsapp')}</option>
                         <option value="Phone">{t('form.contactMethods.phone')}</option>
@@ -438,7 +438,7 @@ function ContactPageInner() {
                         {...register('preferredLanguage')}
                         className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority"
                       >
-                        <option value="">Select...</option>
+                        <option value="">{t('form.selectPlaceholder')}</option>
                         <option value="English">{t('form.languages.english')}</option>
                         <option value="Polish">{t('form.languages.polish')}</option>
                       </select>
@@ -484,7 +484,7 @@ function ContactPageInner() {
                           {...register('propertyType')}
                           className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority"
                         >
-                          <option value="">Select...</option>
+                          <option value="">{t('form.selectPlaceholder')}</option>
                           <option value="Apartment">{t('form.propertyTypes.apartment')}</option>
                           <option value="House">{t('form.propertyTypes.house')}</option>
                           <option value="Villa">{t('form.propertyTypes.villa')}</option>
@@ -505,7 +505,7 @@ function ContactPageInner() {
                           {...register('currentStatus')}
                           className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority"
                         >
-                          <option value="">Select...</option>
+                          <option value="">{t('form.selectPlaceholder')}</option>
                           <option value="Empty most of the year">{t('form.propertyStatuses.emptyMostYear')}</option>
                           <option value="Occasional personal use">{t('form.propertyStatuses.occasionalUse')}</option>
                           <option value="Short-term rental">{t('form.propertyStatuses.shortTermRental')}</option>
@@ -533,7 +533,7 @@ function ContactPageInner() {
                         {...register('expectedPackage')}
                         className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority"
                       >
-                        <option value="">Select...</option>
+                        <option value="">{t('form.selectPlaceholder')}</option>
                         <option value="Basic">{t('form.packages.green')}</option>
                         <option value="Extended">{t('form.packages.orange')}</option>
                         <option value="Full">{t('form.packages.red')}</option>
@@ -554,7 +554,7 @@ function ContactPageInner() {
                           {...register('expectedAccessFrequency')}
                           className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority"
                         >
-                          <option value="">Select...</option>
+                          <option value="">{t('form.selectPlaceholder')}</option>
                           <option value="1-2 times per month">{t('form.accessFrequencies.oneToTwo')}</option>
                           <option value="3-5 times per month">{t('form.accessFrequencies.threeToFive')}</option>
                           <option value="More than 5 times per month">{t('form.accessFrequencies.moreThanFive')}</option>
@@ -568,7 +568,7 @@ function ContactPageInner() {
 
                     <div>
                       <label htmlFor="primaryServiceNeeds" className="block text-sm font-medium text-body mb-2">
-                        {t('form.primaryNeeds')} (optional)
+                        {t('form.primaryNeeds')} ({t('form.optionalLabel')})
                       </label>
                       <textarea
                         id="primaryServiceNeeds"
@@ -578,7 +578,7 @@ function ContactPageInner() {
                         maxLength={500}
                         className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority"
                       />
-                      <p className="mt-1 text-sm text-muted">Maximum 500 characters</p>
+                      <p className="mt-1 text-sm text-muted">{t('form.maxCharacters')}</p>
                       {errors.primaryServiceNeeds && (
                         <p className="mt-1 text-sm text-neutral">{errors.primaryServiceNeeds.message}</p>
                       )}
@@ -623,13 +623,15 @@ function ContactPageInner() {
 }
 
 export default function ContactPage() {
+  const tCommon = useTranslations('common');
+
   return (
     <Suspense fallback={
       <>
         <HeaderClient />
         <main className="min-h-screen">
           <Section tone="light" className="section-primitive--first">
-            <div className="py-20"><p className="text-muted">Loading...</p></div>
+            <div className="py-20"><p className="text-muted">{tCommon('loading')}</p></div>
           </Section>
         </main>
         <Footer />

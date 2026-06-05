@@ -1,6 +1,8 @@
 import { Resend } from 'resend';
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
+const SENTINEL_EMAIL = process.env.SENTINEL_EMAIL || 'sentinelcostablanca@gmail.com';
+const SENTINEL_PHONE = process.env.SENTINEL_PHONE || '+34 694 22 90 35';
 
 export function generateReferenceNumber(): string {
   const now = new Date();
@@ -18,9 +20,6 @@ export async function sendAutoResponseEmail(
   preferredContactMethod: string,
   preferredLanguage: string
 ) {
-  const guardianEmail = process.env.GUARDIAN_EMAIL || '[EMAIL]';
-  const guardianPhone = process.env.GUARDIAN_PHONE || '[PHONE]';
-
   if (!resend) {
     console.warn('RESEND_API_KEY not configured. Email not sent.');
     return;
@@ -76,8 +75,8 @@ export async function sendAutoResponseEmail(
             You can reach us directly:
           </p>
           <ul style="color: #1a1a1a; font-size: 16px; line-height: 1.6; padding-left: 20px;">
-            <li>Email: ${guardianEmail}</li>
-            <li>Phone/WhatsApp: ${guardianPhone}</li>
+            <li>Email: ${SENTINEL_EMAIL}</li>
+            <li>Phone/WhatsApp: ${SENTINEL_PHONE}</li>
           </ul>
           
           <p style="color: #1a1a1a; font-size: 14px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e5e5;">
@@ -86,8 +85,8 @@ export async function sendAutoResponseEmail(
           
           <p style="color: #737373; font-size: 14px; margin-top: 20px;">
             Sentinel<br />
-            ${guardianEmail}<br />
-            ${guardianPhone}
+            ${SENTINEL_EMAIL}<br />
+            ${SENTINEL_PHONE}
           </p>
         </div>
       `,
@@ -114,8 +113,6 @@ export async function sendNotificationEmail(
     primaryServiceNeeds?: string;
   }
 ) {
-  const guardianEmail = process.env.GUARDIAN_EMAIL || '[EMAIL]';
-
   if (!resend) {
     console.warn('RESEND_API_KEY not configured. Email not sent.');
     return;
@@ -124,7 +121,7 @@ export async function sendNotificationEmail(
   try {
     await resend.emails.send({
       from: 'Sentinel Contact Form <sentinelcostablanca@gmail.com>',
-      to: [guardianEmail],
+      to: [SENTINEL_EMAIL],
       subject: `New Inquiry - ${referenceNumber} - ${formData.propertyLocation}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
