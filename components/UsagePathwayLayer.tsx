@@ -12,7 +12,7 @@ import {
 } from '@/lib/pathway';
 
 const PATHWAY_POINT_COUNTS: Record<PathwayKey, number> = {
-  'empty-between-visits': 5,
+  'private-use-only': 5,
   'regular-guest-stays': 6,
   'mixed-not-defined': 5,
 };

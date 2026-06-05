@@ -83,21 +83,21 @@
       "changesLabel": "Co to zmienia:",
       "cta": "Omów tę sytuację",
       "cards": {
-        "empty-between-visits": {
-          "title": "Pusta między Twoimi przyjazdami",
-          "description": "Nieruchomość stoi pusta przez dłuższy czas i ma być gotowa na Twój przyjazd."
+        "private-use-only": {
+          "title": "Tylko użytek prywatny",
+          "description": "Z lokalu korzystasz Ty lub Twoja rodzina. Między przyjazdami nikt regularnie z niego nie korzysta."
         },
         "regular-guest-stays": {
           "title": "Regularne pobyty gości",
           "description": "Nieruchomość jest regularnie używana przez gości, ekipę sprzątającą lub techników."
         },
         "mixed-not-defined": {
-          "title": "Użycie mieszane / nieustalone",
-          "description": "Sposób używania nieruchomości nie jest jeszcze stały albo może się zmieniać."
+          "title": "Model mieszany / jeszcze nieustalony",
+          "description": "Sposób używania nieruchomości może się zmieniać albo nie został jeszcze jasno określony."
         }
       },
       "detail": {
-        "empty-between-visits": {
+        "private-use-only": {
           "priority": "Regularna obecność, kontrola widocznych ryzyk, klucze i przygotowanie lokalu przed Twoim przyjazdem.",
           "point1": "Przecieki, wilgoć, zapach i wentylacja",
           "point2": "Widoczne kontrole wody, prądu i bojlera",
@@ -701,9 +701,10 @@
     },
     "pathwayContext": {
       "title": "Kontekst ścieżki użycia",
-      "empty-between-visits": "Pusta między Twoimi przyjazdami",
+      "empty-between-visits": "Tylko użytek prywatny",
+      "private-use-only": "Tylko użytek prywatny",
       "regular-guest-stays": "Regularne pobyty gości",
-      "mixed-not-defined": "Użycie mieszane / nieustalone",
+      "mixed-not-defined": "Model mieszany / jeszcze nieustalony",
       "prefillPrefix": "Ścieżka użycia:"
     },
     "directContact": {

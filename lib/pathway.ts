@@ -1,13 +1,14 @@
-export type PathwayKey = 'empty-between-visits' | 'regular-guest-stays' | 'mixed-not-defined';
+export type PathwayKey = 'private-use-only' | 'regular-guest-stays' | 'mixed-not-defined';
 
 export const PATHWAY_KEYS: PathwayKey[] = [
-  'empty-between-visits',
+  'private-use-only',
   'regular-guest-stays',
   'mixed-not-defined',
 ];
 
 const LEGACY_PATHWAY_ALIASES: Record<string, PathwayKey> = {
-  'private-absence': 'empty-between-visits',
+  'empty-between-visits': 'private-use-only',
+  'private-absence': 'private-use-only',
   'active-guest-use': 'regular-guest-stays',
   'mixed-undetermined': 'mixed-not-defined',
 };

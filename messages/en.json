@@ -83,9 +83,9 @@
       "changesLabel": "What this changes:",
       "cta": "Discuss this situation",
       "cards": {
-        "empty-between-visits": {
-          "title": "Empty Between Your Visits",
-          "description": "The property is vacant for long periods and must be ready when you arrive."
+        "private-use-only": {
+          "title": "Private Use Only",
+          "description": "You or your family use the property. Between visits, it is not regularly used by others."
         },
         "regular-guest-stays": {
           "title": "Regular Guest Stays",
@@ -93,11 +93,11 @@
         },
         "mixed-not-defined": {
           "title": "Mixed / Not Yet Defined",
-          "description": "The use pattern is not fixed yet or may change over time."
+          "description": "The use pattern may change or has not yet been clearly defined."
         }
       },
       "detail": {
-        "empty-between-visits": {
+        "private-use-only": {
           "priority": "Regular presence, visible risk checks, keyholding, and readiness before your arrival.",
           "point1": "Leaks, humidity, smell, and ventilation",
           "point2": "Visible water, electricity, and boiler checks",
@@ -700,7 +700,8 @@
     },
     "pathwayContext": {
       "title": "Usage pathway context",
-      "empty-between-visits": "Empty Between Your Visits",
+      "empty-between-visits": "Private Use Only",
+      "private-use-only": "Private Use Only",
       "regular-guest-stays": "Regular Guest Stays",
       "mixed-not-defined": "Mixed / Not Yet Defined",
       "prefillPrefix": "Usage pathway:"
