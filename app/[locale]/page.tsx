@@ -313,9 +313,9 @@ function UsagePathwayFallback({
       <div className={hasSelection ? DIAGNOSTIC_SHELL_CLASS : COMPANY_SHELL_CLASS}>
         {!hasSelection && (
           <div className="space-y-4 md:space-y-6">
-            <div className="bg-authority-bg text-authority-on-dark r p-5 md:p-7 lg:p-8">
-              <div className="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,0.42fr)] lg:gap-6 lg:items-end">
-                <div>
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.58fr)] lg:gap-5">
+              <div className="bg-authority-bg text-authority-on-dark r p-5 md:p-7 lg:p-8">
+                <div className="flex h-full flex-col">
                   <div className="mb-3 md:mb-4">
                     <p className="mb-1 text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-authority-on-dark/75">
                       {t('hero.wordmark')}
@@ -330,16 +330,16 @@ function UsagePathwayFallback({
                   <p className="mt-4 max-w-[38rem] text-sm md:text-base text-authority-on-dark/85 leading-relaxed">
                     {t('pathway.companyLine')}
                   </p>
+
+                  <div className="mt-5 grid grid-cols-1 gap-2.5 border-t border-authority-on-dark/20 pt-4 md:grid-cols-3 lg:mt-auto">
+                    <FallbackHeroFact value={t('pathway.companyFacts.area.value')} />
+                    <FallbackHeroFact value={t('pathway.companyFacts.documentation.value')} />
+                    <FallbackHeroFact value={t('pathway.companyFacts.access.value')} />
+                  </div>
                 </div>
-
-                <ServiceAreaMap labels={serviceAreaMapLabels} compact inverse className="max-w-[18rem] lg:ml-auto" />
               </div>
 
-              <div className="mt-5 grid grid-cols-1 gap-2.5 border-t border-authority-on-dark/20 pt-4 md:grid-cols-3">
-                <FallbackHeroFact value={t('pathway.companyFacts.area.value')} />
-                <FallbackHeroFact value={t('pathway.companyFacts.documentation.value')} />
-                <FallbackHeroFact value={t('pathway.companyFacts.access.value')} />
-              </div>
+              <FallbackProofAlbum t={t} serviceAreaMapLabels={serviceAreaMapLabels} />
             </div>
 
             <div className="bg-surface-light-alt r p-5 md:p-6">
@@ -412,6 +412,42 @@ function UsagePathwayFallback({
         )}
       </div>
     </Section>
+  );
+}
+
+function FallbackProofAlbum({
+  t,
+  serviceAreaMapLabels,
+}: {
+  t: (key: string) => string;
+  serviceAreaMapLabels: Parameters<typeof ServiceAreaMap>[0]['labels'];
+}) {
+  return (
+    <aside className="border border-structural-light bg-surface-card r p-4 md:p-5">
+      <div className="flex items-center justify-between gap-4">
+        <p className="text-sm font-semibold leading-snug text-heading">{t('pathway.proof.eyebrow')}</p>
+        <p className="text-xs text-muted">1 / 3</p>
+      </div>
+
+      <div className="mt-4">
+        <ServiceAreaMap labels={serviceAreaMapLabels} compact />
+      </div>
+
+      <div className="mt-4">
+        <p className="text-base font-semibold leading-snug text-heading">
+          {t('pathway.companyFacts.area.label')}
+        </p>
+        <p className="mt-1 text-sm leading-relaxed text-body">
+          {t('pathway.companyFacts.area.value')}
+        </p>
+      </div>
+
+      <div className="mt-4 flex gap-2" aria-hidden>
+        <span className="h-2.5 flex-1 r bg-authority" />
+        <span className="h-2.5 flex-1 r bg-structural-light" />
+        <span className="h-2.5 flex-1 r bg-structural-light" />
+      </div>
+    </aside>
   );
 }
 
