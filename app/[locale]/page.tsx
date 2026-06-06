@@ -312,9 +312,9 @@ function UsagePathwayFallback({
       <div className={hasSelection ? DIAGNOSTIC_SHELL_CLASS : COMPANY_SHELL_CLASS}>
         {!hasSelection && (
           <div className="space-y-4 md:space-y-6">
-            <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.58fr)] lg:gap-5">
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.58fr)] lg:items-start lg:gap-5">
               <div className="bg-authority-bg text-authority-on-dark r p-5 md:p-7 lg:p-8">
-                <div className="flex h-full flex-col">
+                <div>
                   <div className="mb-3 md:mb-4">
                     <p className="mb-1 text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-authority-on-dark/75">
                       {t('hero.wordmark')}
@@ -330,7 +330,7 @@ function UsagePathwayFallback({
                     {t('pathway.companyLine')}
                   </p>
 
-                  <div className="mt-5 grid grid-cols-1 gap-2.5 border-t border-authority-on-dark/20 pt-4 md:grid-cols-3 lg:mt-auto">
+                  <div className="mt-5 grid grid-cols-1 gap-2.5 border-t border-authority-on-dark/20 pt-4 md:grid-cols-3">
                     <FallbackHeroFact value={t('pathway.companyFacts.area.value')} />
                     <FallbackHeroFact value={t('pathway.companyFacts.documentation.value')} />
                     <FallbackHeroFact value={t('pathway.companyFacts.access.value')} />
@@ -421,12 +421,7 @@ function FallbackProofAlbum({
 }) {
   return (
     <aside className="border border-structural-light bg-surface-card r p-4 md:p-5">
-      <div className="flex items-center justify-between gap-4">
-        <p className="text-sm font-semibold leading-snug text-heading">{t('pathway.proof.eyebrow')}</p>
-        <p className="text-xs text-muted">1 / 3</p>
-      </div>
-
-      <div className="mt-4">
+      <div>
         <figure className="r overflow-hidden border border-structural-light bg-surface-light-alt">
           <Image
             src="/photos/sentinel-technical-check-placeholder.png"
@@ -435,23 +430,49 @@ function FallbackProofAlbum({
             height={1024}
             className="aspect-[4/3] w-full object-cover"
           />
-          <p className="mt-3 text-xs leading-relaxed text-muted">{t('pathway.proof.capture.note')}</p>
         </figure>
       </div>
 
       <div className="mt-4">
-        <p className="text-base font-semibold leading-snug text-heading">
-          {t('pathway.proof.album.technical.label')}
-        </p>
+        <div className="flex items-baseline justify-between gap-3">
+          <p className="text-base font-semibold leading-snug text-heading">
+            {t('pathway.proof.album.technical.label')}
+          </p>
+          <p className="text-xs text-muted">1 / 3</p>
+        </div>
         <p className="mt-1 text-sm leading-relaxed text-body">
           {t('pathway.proof.album.technical.value')}
         </p>
       </div>
 
-      <div className="mt-4 flex gap-2" aria-hidden>
-        <span className="h-2.5 flex-1 r bg-authority" />
-        <span className="h-2.5 flex-1 r bg-structural-light" />
-        <span className="h-2.5 flex-1 r bg-structural-light" />
+      <div className="mt-4 grid grid-cols-3 gap-2" aria-label={t('pathway.proof.controlsLabel')}>
+        <span className="r overflow-hidden border border-authority">
+          <Image
+            src="/photos/sentinel-technical-check-placeholder.png"
+            alt=""
+            width={160}
+            height={112}
+            className="aspect-[4/3] w-full object-cover"
+          />
+        </span>
+        <span className="r overflow-hidden border border-structural-light">
+          <Image
+            src="/photos/sentinel-report-placeholder.png"
+            alt=""
+            width={160}
+            height={112}
+            className="aspect-[4/3] w-full object-cover"
+          />
+        </span>
+        <span className="r overflow-hidden border border-structural-light">
+          <Image
+            src="/photos/sentinel-access-placeholder.png"
+            alt=""
+            width={160}
+            height={112}
+            className="aspect-[4/3] w-full object-cover"
+          />
+        </span>
       </div>
     </aside>
   );

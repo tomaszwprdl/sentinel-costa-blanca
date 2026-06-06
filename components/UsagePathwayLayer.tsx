@@ -175,9 +175,9 @@ function DiagnosticGateIntro({
 }) {
   return (
     <div className="space-y-4 md:space-y-6">
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.58fr)] lg:gap-5">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.58fr)] lg:items-start lg:gap-5">
         <div className="bg-authority-bg text-authority-on-dark r p-5 md:p-7 lg:p-8">
-          <div className="flex h-full flex-col">
+          <div>
             <div className="mb-3 md:mb-4">
               <p className="mb-1 text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-authority-on-dark/75">
                 {t('hero.wordmark')}
@@ -193,7 +193,7 @@ function DiagnosticGateIntro({
               {tp('companyLine')}
             </p>
 
-            <div className="mt-5 grid grid-cols-1 gap-2.5 border-t border-authority-on-dark/20 pt-4 md:grid-cols-3 lg:mt-auto">
+            <div className="mt-5 grid grid-cols-1 gap-2.5 border-t border-authority-on-dark/20 pt-4 md:grid-cols-3">
               <HeroFact value={tp('companyFacts.area.value')} />
               <HeroFact value={tp('companyFacts.documentation.value')} />
               <HeroFact value={tp('companyFacts.access.value')} />
@@ -231,12 +231,7 @@ function ProofAlbum({
 
   return (
     <aside className="border border-structural-light bg-surface-card r p-4 md:p-5">
-      <div className="flex items-center justify-between gap-4">
-        <p className="text-sm font-semibold leading-snug text-heading">{t('proof.eyebrow')}</p>
-        <p className="text-xs text-muted">{activeIndex + 1} / {PROOF_SLIDES.length}</p>
-      </div>
-
-      <div className="mt-4">
+      <div>
         <ProofSlideVisual
           slide={activeSlide}
           t={t}
@@ -244,15 +239,16 @@ function ProofAlbum({
       </div>
 
       <div className="mt-4">
-        <p className="text-base font-semibold leading-snug text-heading">
-          {t(`proof.album.${activeSlide}.label`)}
-        </p>
-        <p className="mt-1 text-sm leading-relaxed text-body">
-          {t(`proof.album.${activeSlide}.value`)}
-        </p>
+        <div className="flex items-baseline justify-between gap-3">
+          <p className="text-base font-semibold leading-snug text-heading">
+            {t(`proof.album.${activeSlide}.label`)}
+          </p>
+          <p className="text-xs text-muted">{activeIndex + 1} / {PROOF_SLIDES.length}</p>
+        </div>
+        <p className="mt-1 text-sm leading-relaxed text-body">{t(`proof.album.${activeSlide}.value`)}</p>
       </div>
 
-      <div className="mt-4 flex gap-2" role="tablist" aria-label={t('proof.eyebrow')}>
+      <div className="mt-4 grid grid-cols-3 gap-2" role="tablist" aria-label={t('proof.controlsLabel')}>
         {PROOF_SLIDES.map((slide, index) => {
           const isActive = index === activeIndex;
           return (
@@ -262,10 +258,18 @@ function ProofAlbum({
               onClick={() => setActiveIndex(index)}
               aria-pressed={isActive}
               aria-label={t(`proof.album.${slide}.label`)}
-              className={`h-2.5 flex-1 r transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-authority ${
-                isActive ? 'bg-authority' : 'bg-structural-light hover:bg-support'
+              className={`r overflow-hidden border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-authority ${
+                isActive ? 'border-authority' : 'border-structural-light hover:border-support'
               }`}
-            />
+            >
+              <Image
+                src={PROOF_IMAGE_SOURCES[slide]}
+                alt=""
+                width={160}
+                height={112}
+                className="aspect-[4/3] w-full object-cover"
+              />
+            </button>
           );
         })}
       </div>
@@ -289,7 +293,6 @@ function ProofSlideVisual({
         height={1024}
         className="aspect-[4/3] w-full object-cover"
       />
-      <p className="mt-3 text-xs leading-relaxed text-muted">{t('proof.capture.note')}</p>
     </figure>
   );
 }

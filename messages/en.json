@@ -103,6 +103,7 @@
         "eyebrow": "Operating proof",
         "title": "Local presence, documented condition, controlled access.",
         "summary": "The service starts with a real operating area and a record of what happens on site.",
+        "controlsLabel": "Operational example slides",
         "capture": {
           "reference": "SEN-ACCESS",
           "label": "Access and entry record",

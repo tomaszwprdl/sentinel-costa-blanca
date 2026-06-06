@@ -103,6 +103,7 @@
         "eyebrow": "Dowód działania",
         "title": "Lokalna obecność, udokumentowany stan, kontrolowany dostęp.",
         "summary": "Usługa zaczyna się od realnego obszaru działania i zapisu tego, co dzieje się na miejscu.",
+        "controlsLabel": "Slajdy przykładów operacyjnych",
         "capture": {
           "reference": "SEN-ACCESS",
           "label": "Rejestr dostępu i wejścia",
