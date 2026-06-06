@@ -117,7 +117,7 @@
           },
           "documentation": {
             "label": "Dokumentacja",
-            "value": "Kontrole zostawiają zapis stanu nieruchomości.",
+            "value": "Materiał po kontroli zostawia zapis stanu nieruchomości.",
             "alt": "Przykładowy raport stanu nieruchomości z zanonimizowanymi odniesieniami"
           },
           "access": {

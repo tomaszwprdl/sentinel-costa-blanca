@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useState, type ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
@@ -29,6 +29,8 @@ const PROOF_IMAGE_SOURCES: Record<ProofSlideKey, string> = {
   documentation: '/photos/sentinel-report-placeholder.png',
   access: '/photos/sentinel-access-placeholder.png',
 };
+
+const PROOF_AUTOPLAY_MS = 5000;
 
 type UsagePathwayLayerProps = {
   children: ReactNode;
@@ -227,28 +229,66 @@ function ProofAlbum({
   t: ReturnType<typeof useTranslations<'home.pathway'>>;
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const activeSlide = PROOF_SLIDES[activeIndex];
 
-  return (
-    <aside className="border border-structural-light bg-surface-card r p-4 md:p-5">
-      <div>
-        <ProofSlideVisual
-          slide={activeSlide}
-          t={t}
-        />
-      </div>
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const syncPreference = () => setPrefersReducedMotion(mediaQuery.matches);
+    syncPreference();
+    mediaQuery.addEventListener('change', syncPreference);
+    return () => mediaQuery.removeEventListener('change', syncPreference);
+  }, []);
 
-      <div className="mt-4">
-        <div className="flex items-baseline justify-between gap-3">
-          <p className="text-base font-semibold leading-snug text-heading">
+  useEffect(() => {
+    if (prefersReducedMotion || isPaused) {
+      return;
+    }
+
+    const timer = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % PROOF_SLIDES.length);
+    }, PROOF_AUTOPLAY_MS);
+
+    return () => window.clearInterval(timer);
+  }, [isPaused, prefersReducedMotion]);
+
+  return (
+    <aside
+      className="r overflow-hidden border border-structural-light bg-surface-card"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocusCapture={() => setIsPaused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          setIsPaused(false);
+        }
+      }}
+    >
+      <figure className="relative aspect-[4/3] w-full bg-authority-bg">
+        <Image
+          src={PROOF_IMAGE_SOURCES[activeSlide]}
+          alt={t(`proof.album.${activeSlide}.alt`)}
+          width={1456}
+          height={1024}
+          className="absolute inset-0 h-full w-full object-cover"
+          priority
+        />
+        <figcaption className="absolute inset-x-0 bottom-0 bg-authority-bg/85 px-4 py-3 md:px-5 md:py-4">
+          <p className="text-sm md:text-base font-semibold leading-snug text-authority-on-dark">
             {t(`proof.album.${activeSlide}.label`)}
           </p>
-          <p className="text-xs text-muted">{activeIndex + 1} / {PROOF_SLIDES.length}</p>
-        </div>
-        <p className="mt-1 text-sm leading-relaxed text-body">{t(`proof.album.${activeSlide}.value`)}</p>
-      </div>
+          <p className="mt-1 text-xs md:text-sm leading-relaxed text-authority-on-dark/85">
+            {t(`proof.album.${activeSlide}.value`)}
+          </p>
+        </figcaption>
+      </figure>
 
-      <div className="mt-4 grid grid-cols-3 gap-2" role="tablist" aria-label={t('proof.controlsLabel')}>
+      <div
+        className="flex justify-center gap-2 px-4 py-3"
+        role="tablist"
+        aria-label={t('proof.controlsLabel')}
+      >
         {PROOF_SLIDES.map((slide, index) => {
           const isActive = index === activeIndex;
           return (
@@ -258,42 +298,14 @@ function ProofAlbum({
               onClick={() => setActiveIndex(index)}
               aria-pressed={isActive}
               aria-label={t(`proof.album.${slide}.label`)}
-              className={`r overflow-hidden border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-authority ${
-                isActive ? 'border-authority' : 'border-structural-light hover:border-support'
+              className={`h-2 w-2 r transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-authority focus-visible:ring-offset-2 ${
+                isActive ? 'bg-authority' : 'bg-structural-light hover:bg-support'
               }`}
-            >
-              <Image
-                src={PROOF_IMAGE_SOURCES[slide]}
-                alt=""
-                width={160}
-                height={112}
-                className="aspect-[4/3] w-full object-cover"
-              />
-            </button>
+            />
           );
         })}
       </div>
     </aside>
-  );
-}
-
-function ProofSlideVisual({
-  slide,
-  t,
-}: {
-  slide: ProofSlideKey;
-  t: ReturnType<typeof useTranslations<'home.pathway'>>;
-}) {
-  return (
-    <figure className="r overflow-hidden border border-structural-light bg-surface-light-alt">
-      <Image
-        src={PROOF_IMAGE_SOURCES[slide]}
-        alt={t(`proof.album.${slide}.alt`)}
-        width={1456}
-        height={1024}
-        className="aspect-[4/3] w-full object-cover"
-      />
-    </figure>
   );
 }
 

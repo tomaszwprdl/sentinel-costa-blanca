@@ -420,59 +420,34 @@ function FallbackProofAlbum({
   t: (key: string) => string;
 }) {
   return (
-    <aside className="border border-structural-light bg-surface-card r p-4 md:p-5">
-      <div>
-        <figure className="r overflow-hidden border border-structural-light bg-surface-light-alt">
-          <Image
-            src="/photos/sentinel-technical-check-placeholder.png"
-            alt={t('pathway.proof.album.technical.alt')}
-            width={1456}
-            height={1024}
-            className="aspect-[4/3] w-full object-cover"
-          />
-        </figure>
-      </div>
-
-      <div className="mt-4">
-        <div className="flex items-baseline justify-between gap-3">
-          <p className="text-base font-semibold leading-snug text-heading">
+    <aside className="r overflow-hidden border border-structural-light bg-surface-card">
+      <figure className="relative aspect-[4/3] w-full bg-authority-bg">
+        <Image
+          src="/photos/sentinel-technical-check-placeholder.png"
+          alt={t('pathway.proof.album.technical.alt')}
+          width={1456}
+          height={1024}
+          className="absolute inset-0 h-full w-full object-cover"
+          priority
+        />
+        <figcaption className="absolute inset-x-0 bottom-0 bg-authority-bg/85 px-4 py-3 md:px-5 md:py-4">
+          <p className="text-sm md:text-base font-semibold leading-snug text-authority-on-dark">
             {t('pathway.proof.album.technical.label')}
           </p>
-          <p className="text-xs text-muted">1 / 3</p>
-        </div>
-        <p className="mt-1 text-sm leading-relaxed text-body">
-          {t('pathway.proof.album.technical.value')}
-        </p>
-      </div>
+          <p className="mt-1 text-xs md:text-sm leading-relaxed text-authority-on-dark/85">
+            {t('pathway.proof.album.technical.value')}
+          </p>
+        </figcaption>
+      </figure>
 
-      <div className="mt-4 grid grid-cols-3 gap-2" aria-label={t('pathway.proof.controlsLabel')}>
-        <span className="r overflow-hidden border border-authority">
-          <Image
-            src="/photos/sentinel-technical-check-placeholder.png"
-            alt=""
-            width={160}
-            height={112}
-            className="aspect-[4/3] w-full object-cover"
-          />
-        </span>
-        <span className="r overflow-hidden border border-structural-light">
-          <Image
-            src="/photos/sentinel-report-placeholder.png"
-            alt=""
-            width={160}
-            height={112}
-            className="aspect-[4/3] w-full object-cover"
-          />
-        </span>
-        <span className="r overflow-hidden border border-structural-light">
-          <Image
-            src="/photos/sentinel-access-placeholder.png"
-            alt=""
-            width={160}
-            height={112}
-            className="aspect-[4/3] w-full object-cover"
-          />
-        </span>
+      <div
+        className="flex justify-center gap-2 px-4 py-3"
+        role="tablist"
+        aria-label={t('pathway.proof.controlsLabel')}
+      >
+        <span className="h-2 w-2 r bg-authority" aria-hidden />
+        <span className="h-2 w-2 r bg-structural-light" aria-hidden />
+        <span className="h-2 w-2 r bg-structural-light" aria-hidden />
       </div>
     </aside>
   );

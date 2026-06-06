@@ -112,12 +112,12 @@
         "album": {
           "technical": {
             "label": "Technical check",
-            "value": "Water, boiler, and visible utility points are checked on site.",
+            "value": "Water, boiler and visible technical points are checked on site.",
             "alt": "Sample operational image of boiler and utility check details"
           },
           "documentation": {
             "label": "Documentation",
-            "value": "Checks leave a recorded condition reference.",
+            "value": "Post-check material leaves a record of the property condition.",
             "alt": "Sample property condition report with redacted inspection references"
           },
           "access": {
