@@ -176,23 +176,23 @@ function DiagnosticGateIntro({
   children: ReactNode;
 }) {
   return (
-    <div className="space-y-4 md:space-y-6">
-      <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.58fr)] lg:gap-5">
-        <div className="self-start bg-authority-bg text-authority-on-dark r p-5 md:p-6 lg:p-7">
+    <div className="space-y-5 md:space-y-6">
+      <div className="grid grid-cols-1 items-start gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.52fr)] lg:gap-6">
+        <div className="self-start bg-authority-bg text-authority-on-dark r px-6 py-6 md:px-8 md:py-7 lg:px-9 lg:py-8">
           <p className="text-xs font-semibold tracking-[0.08em] uppercase text-authority-on-dark/70">
             {t('hero.wordmark')}
           </p>
           <p className="mt-1 text-xs leading-snug text-authority-on-dark/75 md:text-sm">
             {t('hero.descriptor')}
           </p>
-          <h1 className="!mt-3 !mb-0 max-w-[36rem] text-3xl font-bold tracking-tight leading-[1.12] !text-authority-on-dark md:text-4xl lg:text-5xl">
+          <h1 className="!mt-4 !mb-0 max-w-[33rem] text-3xl font-bold leading-[1.12] !text-authority-on-dark md:text-4xl lg:text-[2.625rem] xl:text-[2.75rem]">
             {tp('companyHeadline')}
           </h1>
-          <p className="!mt-3 !mb-0 max-w-[34rem] text-sm leading-relaxed text-authority-on-dark/80 md:text-[0.9375rem]">
+          <p className="!mt-4 !mb-0 max-w-[31rem] text-sm leading-relaxed text-authority-on-dark/80 md:text-[0.9375rem]">
             {tp('companyLine')}
           </p>
 
-          <div className="mt-4 flex flex-wrap gap-2 border-t border-authority-on-dark/15 pt-3">
+          <div className="mt-5 flex flex-wrap gap-2.5 border-t border-authority-on-dark/15 pt-4">
             <HeroFactChip value={tp('companyFacts.area.value')} />
             <HeroFactChip value={tp('companyFacts.documentation.value')} />
             <HeroFactChip value={tp('companyFacts.access.value')} />
@@ -261,7 +261,7 @@ function ProofAlbum({
         }
       }}
     >
-      <figure className="relative aspect-[6/5] w-full bg-authority-bg">
+      <figure className="relative aspect-[4/3] w-full bg-authority-bg">
         <Image
           src={PROOF_IMAGE_SOURCES[activeSlide]}
           alt={t(`proof.album.${activeSlide}.alt`)}
@@ -307,7 +307,7 @@ function ProofAlbum({
 
 function HeroFactChip({ value }: { value: string }) {
   return (
-    <span className="inline-flex max-w-full items-center border border-authority-on-dark/20 px-2.5 py-1 text-[0.6875rem] leading-snug text-authority-on-dark/70 md:text-xs">
+    <span className="inline-flex max-w-full items-center border border-authority-on-dark/20 bg-authority-on-dark/[0.04] px-3 py-1.5 text-[0.6875rem] leading-snug text-authority-on-dark/70 md:text-xs">
       {value}
     </span>
   );
