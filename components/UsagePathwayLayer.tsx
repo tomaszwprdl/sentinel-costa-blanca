@@ -177,27 +177,18 @@ function DiagnosticGateIntro({
 }) {
   return (
     <div className="space-y-4 md:space-y-6">
-      <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.58fr)] lg:gap-5">
-        <div className="self-start bg-authority-bg text-authority-on-dark r p-5 md:p-6 lg:p-7">
-          <p className="text-xs font-semibold tracking-[0.08em] uppercase text-authority-on-dark/70">
-            {t('hero.wordmark')}
-          </p>
-          <p className="mt-1 text-xs leading-snug text-authority-on-dark/75 md:text-sm">
-            {t('hero.descriptor')}
-          </p>
-          <h1 className="!mt-3 !mb-0 max-w-[36rem] text-3xl font-bold tracking-tight leading-[1.12] !text-authority-on-dark md:text-4xl lg:text-5xl">
-            {tp('companyHeadline')}
-          </h1>
-          <p className="!mt-3 !mb-0 max-w-[34rem] text-sm leading-relaxed text-authority-on-dark/80 md:text-[0.9375rem]">
-            {tp('companyLine')}
-          </p>
-
-          <div className="mt-4 flex flex-wrap gap-2 border-t border-authority-on-dark/15 pt-3">
-            <HeroFactChip value={tp('companyFacts.area.value')} />
-            <HeroFactChip value={tp('companyFacts.documentation.value')} />
-            <HeroFactChip value={tp('companyFacts.access.value')} />
-          </div>
-        </div>
+      <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.58fr)] lg:items-center lg:gap-5">
+        <CompanyHeroPanel
+          wordmark={t('hero.wordmark')}
+          descriptor={t('hero.descriptor')}
+          headline={tp('companyHeadline')}
+          body={tp('companyLine')}
+          facts={[
+            tp('companyFacts.area.value'),
+            tp('companyFacts.documentation.value'),
+            tp('companyFacts.access.value'),
+          ]}
+        />
 
         <ProofAlbum t={tp} />
       </div>
@@ -305,9 +296,50 @@ function ProofAlbum({
   );
 }
 
+function CompanyHeroPanel({
+  wordmark,
+  descriptor,
+  headline,
+  body,
+  facts,
+}: {
+  wordmark: string;
+  descriptor: string;
+  headline: string;
+  body: string;
+  facts: string[];
+}) {
+  return (
+    <div className="self-start bg-authority-bg text-authority-on-dark r px-6 py-6 md:px-8 md:py-7 lg:self-center lg:px-9 lg:py-8">
+      <div className="flex max-w-[32rem] flex-col gap-4">
+        <div className="space-y-1">
+          <p className="text-[0.6875rem] font-semibold tracking-[0.1em] uppercase text-authority-on-dark/65 md:text-xs">
+            {wordmark}
+          </p>
+          <p className="text-xs leading-snug text-authority-on-dark/70">{descriptor}</p>
+        </div>
+
+        <h1 className="!mt-0 !mb-0 max-w-[24rem] text-[1.625rem] font-semibold leading-[1.22] tracking-[-0.02em] !text-authority-on-dark md:max-w-[26rem] md:text-[1.875rem] lg:max-w-[28rem] lg:text-[2rem]">
+          {headline}
+        </h1>
+
+        <p className="!mt-0 !mb-0 max-w-[30rem] text-sm leading-relaxed text-authority-on-dark/75">
+          {body}
+        </p>
+
+        <div className="flex flex-wrap gap-1.5 border-t border-authority-on-dark/12 pt-3.5">
+          {facts.map((value) => (
+            <HeroFactChip key={value} value={value} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function HeroFactChip({ value }: { value: string }) {
   return (
-    <span className="inline-flex max-w-full items-center border border-authority-on-dark/20 px-2.5 py-1 text-[0.6875rem] leading-snug text-authority-on-dark/70 md:text-xs">
+    <span className="inline-flex max-w-full items-center border border-authority-on-dark/15 px-2 py-0.5 text-[0.625rem] leading-snug text-authority-on-dark/65 md:text-[0.6875rem]">
       {value}
     </span>
   );
