@@ -177,29 +177,25 @@ function DiagnosticGateIntro({
 }) {
   return (
     <div className="space-y-4 md:space-y-6">
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.58fr)] lg:items-start lg:gap-5">
-        <div className="bg-authority-bg text-authority-on-dark r p-5 md:p-7 lg:p-8">
-          <div>
-            <div className="mb-3 md:mb-4">
-              <p className="mb-1 text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-authority-on-dark/75">
-                {t('hero.wordmark')}
-              </p>
-              <p className="text-sm text-authority-on-dark/80 leading-snug">
-                {t('hero.descriptor')}
-              </p>
-            </div>
-            <h1 className="max-w-[42rem] text-[2.05rem] md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-authority-on-dark">
-              {tp('companyHeadline')}
-            </h1>
-            <p className="mt-4 max-w-[38rem] text-sm md:text-base text-authority-on-dark/85 leading-relaxed">
-              {tp('companyLine')}
-            </p>
+      <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.58fr)] lg:gap-5">
+        <div className="self-start bg-authority-bg text-authority-on-dark r p-5 md:p-6 lg:p-7">
+          <p className="text-xs font-semibold tracking-[0.08em] uppercase text-authority-on-dark/70">
+            {t('hero.wordmark')}
+          </p>
+          <p className="mt-1 text-xs leading-snug text-authority-on-dark/75 md:text-sm">
+            {t('hero.descriptor')}
+          </p>
+          <h1 className="!mt-3 !mb-0 max-w-[36rem] text-3xl font-bold tracking-tight leading-[1.12] !text-authority-on-dark md:text-4xl lg:text-5xl">
+            {tp('companyHeadline')}
+          </h1>
+          <p className="!mt-3 !mb-0 max-w-[34rem] text-sm leading-relaxed text-authority-on-dark/80 md:text-[0.9375rem]">
+            {tp('companyLine')}
+          </p>
 
-            <div className="mt-5 grid grid-cols-1 gap-2.5 border-t border-authority-on-dark/20 pt-4 md:grid-cols-3">
-              <HeroFact value={tp('companyFacts.area.value')} />
-              <HeroFact value={tp('companyFacts.documentation.value')} />
-              <HeroFact value={tp('companyFacts.access.value')} />
-            </div>
+          <div className="mt-4 flex flex-wrap gap-2 border-t border-authority-on-dark/15 pt-3">
+            <HeroFactChip value={tp('companyFacts.area.value')} />
+            <HeroFactChip value={tp('companyFacts.documentation.value')} />
+            <HeroFactChip value={tp('companyFacts.access.value')} />
           </div>
         </div>
 
@@ -309,12 +305,11 @@ function ProofAlbum({
   );
 }
 
-function HeroFact({ value }: { value: string }) {
+function HeroFactChip({ value }: { value: string }) {
   return (
-    <div className="flex gap-2.5 text-sm leading-snug text-authority-on-dark/85">
-      <span className="mt-2 h-px w-4 shrink-0 bg-authority-on-dark/35" aria-hidden />
-      <p className="mb-0">{value}</p>
-    </div>
+    <span className="inline-flex max-w-full items-center border border-authority-on-dark/20 px-2.5 py-1 text-[0.6875rem] leading-snug text-authority-on-dark/70 md:text-xs">
+      {value}
+    </span>
   );
 }
 
