@@ -307,15 +307,15 @@ function UsagePathwayFallback({
       className={
         hasSelection
           ? 'section-primitive--first !pb-10 md:!pb-12'
-          : 'section-primitive--first flex-1 !max-h-none !pt-6 md:!pt-8 !pb-10 md:!pb-14'
+          : 'section-primitive--first flex-1 !max-h-none !pt-5 md:!pt-6 !pb-8 md:!pb-12'
       }
     >
       <div className={hasSelection ? DIAGNOSTIC_SHELL_CLASS : COMPANY_SHELL_CLASS}>
         {!hasSelection && (
-          <div className="space-y-5 md:space-y-7">
-            <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(21rem,0.68fr)] lg:gap-6">
-              <div className="bg-authority-bg text-authority-on-dark r p-5 md:p-8 lg:p-10">
-                <div className="mb-4 md:mb-6">
+          <div className="space-y-4 md:space-y-6">
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,0.98fr)_minmax(19rem,0.56fr)] lg:gap-5">
+              <div className="bg-authority-bg text-authority-on-dark r p-5 md:p-7 lg:p-8">
+                <div className="mb-3 md:mb-4">
                   <p className="mb-1 text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-authority-on-dark/75">
                     {t('hero.wordmark')}
                   </p>
@@ -330,15 +330,17 @@ function UsagePathwayFallback({
                   {t('pathway.companyLine')}
                 </p>
 
-                <p className="mt-5 md:mt-6 max-w-[34rem] border-l-2 border-authority-on-dark/30 pl-4 text-sm text-authority-on-dark/80 leading-relaxed">
-                  {t('pathway.companyProofLine')}
-                </p>
+                <div className="mt-5 grid grid-cols-1 gap-2.5 border-t border-authority-on-dark/20 pt-4 md:grid-cols-3">
+                  <FallbackHeroFact value={t('pathway.companyFacts.area.value')} />
+                  <FallbackHeroFact value={t('pathway.companyFacts.documentation.value')} />
+                  <FallbackHeroFact value={t('pathway.companyFacts.access.value')} />
+                </div>
               </div>
 
               <FallbackDiagnosticProofPanel t={t} serviceAreaMapLabels={serviceAreaMapLabels} />
             </div>
 
-            <div className="bg-surface-light-alt r p-5 md:p-7">
+            <div className="bg-surface-light-alt r p-5 md:p-6">
               <div className="max-w-3xl">
                 <p className="mb-2 text-sm font-semibold text-support">
                   {t('pathway.selectorEyebrow')}
@@ -349,7 +351,7 @@ function UsagePathwayFallback({
                 <p className="mt-2 text-sm md:text-base text-body leading-relaxed">{t('pathway.selectorInstruction')}</p>
               </div>
 
-              <div className="mt-5 md:mt-6">
+              <div className="mt-5">
                 <FallbackDiagnosticChoiceBlock locale={locale} selected={selected} t={t} />
                 <p className="mt-5 text-sm text-muted leading-relaxed">{t('pathway.gateInstruction')}</p>
               </div>
@@ -411,6 +413,15 @@ function UsagePathwayFallback({
   );
 }
 
+function FallbackHeroFact({ value }: { value: string }) {
+  return (
+    <div className="flex gap-2.5 text-sm leading-snug text-authority-on-dark/85">
+      <span className="mt-2 h-px w-4 shrink-0 bg-authority-on-dark/35" aria-hidden />
+      <p className="mb-0">{value}</p>
+    </div>
+  );
+}
+
 function FallbackDiagnosticProofPanel({
   t,
   serviceAreaMapLabels,
@@ -419,12 +430,8 @@ function FallbackDiagnosticProofPanel({
   serviceAreaMapLabels: Parameters<typeof ServiceAreaMap>[0]['labels'];
 }) {
   return (
-    <div className="border border-structural-light bg-surface-card r p-4 md:p-5">
-      <div className="max-w-[30rem]">
-        <p className="text-xs font-semibold uppercase tracking-[0.08em] text-muted">{t('pathway.proof.eyebrow')}</p>
-        <h2 className="mt-2 text-base md:text-lg font-semibold leading-snug text-heading">{t('pathway.proof.title')}</h2>
-        <p className="mt-2 text-sm text-body leading-relaxed">{t('pathway.proof.summary')}</p>
-      </div>
+    <div className="border border-structural-light bg-surface-card r p-4">
+      <p className="text-sm font-semibold leading-snug text-heading">{t('pathway.proof.eyebrow')}</p>
 
       <ServiceAreaMap labels={serviceAreaMapLabels} compact className="mt-4" />
 
