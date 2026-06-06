@@ -82,6 +82,7 @@
     },
     "pathway": {
       "companyEyebrow": "Lokalna reprezentacja właściciela",
+      "companyHeadline": "Lokalna kontrola nieruchomości, gdy nie ma Cię na miejscu.",
       "companyLine": "Sentinel działa lokalnie w imieniu właściciela pod jego nieobecność: określony obszar, kontrolowany dostęp, udokumentowane kontrole i uporządkowane okna reakcji.",
       "companyProofLine": "Działamy z Torrevieja w określonym promieniu Costa Blanca, z dokumentacją stanu i kontrolowanym prowadzeniem kluczy oraz dostępu.",
       "companyFacts": {
@@ -123,8 +124,10 @@
         }
       },
       "selectorEyebrow": "Sytuacja używania",
-      "selectorTitle": "Jak używana jest nieruchomość, gdy Cię nie ma?",
+      "selectorTitle": "Wybierz sposób używania nieruchomości",
+      "selectorInstruction": "Od tego zależy zakres lokalnego nadzoru.",
       "gateInstruction": "Wybierz sytuację, żeby zobaczyć właściwy zakres nadzoru.",
+      "chooseModel": "Wybierz ten model",
       "selectedSituationLabel": "Wybrana sytuacja:",
       "changeSituation": "Zmień sytuację",
       "selectedLabel": "Wybrana sytuacja:",

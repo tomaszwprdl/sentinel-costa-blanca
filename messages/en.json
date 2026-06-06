@@ -82,6 +82,7 @@
     },
     "pathway": {
       "companyEyebrow": "Local owner representation",
+      "companyHeadline": "Local property control when you are not on site.",
       "companyLine": "Sentinel acts locally for absent property owners: defined area, controlled access, documented checks, and structured response windows.",
       "companyProofLine": "Operating from Torrevieja within a defined Costa Blanca radius, with documented condition checks and controlled key/access handling.",
       "companyFacts": {
@@ -123,8 +124,10 @@
         }
       },
       "selectorEyebrow": "Usage situation",
-      "selectorTitle": "How is the property used while you are away?",
+      "selectorTitle": "Choose how the property is used",
+      "selectorInstruction": "This defines the local oversight structure.",
       "gateInstruction": "Choose the situation to see the relevant oversight structure.",
+      "chooseModel": "Choose this model",
       "selectedSituationLabel": "Selected situation:",
       "changeSituation": "Change situation",
       "selectedLabel": "Selected situation:",

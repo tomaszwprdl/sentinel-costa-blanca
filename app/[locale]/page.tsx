@@ -313,22 +313,24 @@ function UsagePathwayFallback({
       <div className={hasSelection ? DIAGNOSTIC_SHELL_CLASS : COMPANY_SHELL_CLASS}>
         {!hasSelection && (
           <div className="space-y-6 md:space-y-8">
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,0.72fr)] lg:gap-8">
-              <div className="bg-authority-bg text-authority-on-dark r p-7 md:p-10">
-                <p className="mb-5 text-sm font-medium text-authority-on-dark/70">
-                  {t('pathway.companyEyebrow')}
-                </p>
-                <h1 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-authority-on-dark">
-                  {t('hero.wordmark')}
+            <div className="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,0.72fr)] lg:gap-8">
+              <div className="bg-authority-bg text-authority-on-dark r p-6 md:p-10">
+                <div className="mb-5 md:mb-7">
+                  <p className="mb-1 text-sm font-semibold tracking-[0.08em] uppercase text-authority-on-dark/75">
+                    {t('hero.wordmark')}
+                  </p>
+                  <p className="text-sm md:text-base text-authority-on-dark/80 leading-snug">
+                    {t('hero.descriptor')}
+                  </p>
+                </div>
+                <h1 className="max-w-[42rem] text-3xl md:text-5xl font-bold tracking-tight leading-tight text-authority-on-dark">
+                  {t('pathway.companyHeadline')}
                 </h1>
-                <h2 className="text-lg md:text-xl font-normal text-authority-on-dark/90 mt-4 leading-snug">
-                  {t('hero.descriptor')}
-                </h2>
-                <p className="mt-5 max-w-[38rem] text-base md:text-lg text-authority-on-dark/85 leading-relaxed">
+                <p className="mt-5 max-w-[38rem] text-base text-authority-on-dark/85 leading-relaxed">
                   {t('pathway.companyLine')}
                 </p>
 
-                <p className="mt-8 max-w-[34rem] border-l-2 border-authority-on-dark/30 pl-4 text-sm md:text-base text-authority-on-dark/80 leading-relaxed">
+                <p className="mt-6 md:mt-8 max-w-[34rem] border-l-2 border-authority-on-dark/30 pl-4 text-sm md:text-base text-authority-on-dark/80 leading-relaxed">
                   {t('pathway.companyProofLine')}
                 </p>
               </div>
@@ -344,7 +346,7 @@ function UsagePathwayFallback({
                 <h2 className="text-xl md:text-2xl font-semibold text-heading leading-tight mb-0">
                   {t('pathway.selectorTitle')}
                 </h2>
-                <p className="mt-3 text-sm md:text-base text-body leading-relaxed">{t('hero.line4')}</p>
+                <p className="mt-3 text-sm md:text-base text-body leading-relaxed">{t('pathway.selectorInstruction')}</p>
               </div>
 
               <div className="mt-6">
@@ -462,10 +464,10 @@ function FallbackDiagnosticChoiceBlock({
               key={key}
               href={`/${locale}?pathway=${key}`}
               aria-current={isSelected ? 'true' : undefined}
-              className={`block text-left w-full r border p-5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-authority ${
+              className={`group block text-left w-full r border p-5 cursor-pointer transition-[background,border-color,transform] duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-authority hover:-translate-y-0.5 ${
                 isSelected
                   ? 'border-authority bg-surface-light-alt'
-                  : 'border-structural-light bg-surface-light hover:bg-surface-light-alt'
+                  : 'border-structural-light bg-surface-light hover:border-support hover:bg-surface-light-alt'
               }`}
             >
               <p className="text-base font-semibold text-heading mb-1.5 leading-snug">
@@ -475,6 +477,19 @@ function FallbackDiagnosticChoiceBlock({
               <p className="mt-4 text-sm font-medium leading-snug text-support">
                 {t(`pathway.cards.${key}.emphasis`)}
               </p>
+              <span className="mt-5 flex items-center justify-between gap-3 border-t border-structural-light pt-4 text-sm font-semibold text-support">
+                <span>{t('pathway.chooseModel')}</span>
+                <span
+                  className={`flex h-7 w-7 shrink-0 items-center justify-center r border text-base transition-colors ${
+                    isSelected
+                      ? 'border-authority bg-authority text-authority-on-dark'
+                      : 'border-support text-support group-hover:bg-support group-hover:text-authority-on-dark'
+                  }`}
+                  aria-hidden="true"
+                >
+                  -&gt;
+                </span>
+              </span>
             </Link>
           );
         })}
