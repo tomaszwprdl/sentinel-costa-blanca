@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import UsagePathwayLayer, { PathwayCopy, PathwayFinalCtaLink } from '@/components/UsagePathwayLayer';
+import Image from 'next/image';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
@@ -42,7 +43,7 @@ export default async function HomePage({
     <>
       <HeaderClient />
       <main className="min-h-screen flex flex-col bg-surface-light">
-        <Suspense fallback={<UsagePathwayFallback locale={locale} selected={null} t={t} serviceAreaMapLabels={serviceAreaMapLabels} />}>
+        <Suspense fallback={<UsagePathwayFallback locale={locale} selected={null} t={t} />}>
           <UsagePathwayLayer>
         <Section tone="alt" variant="major" className="!pt-10">
           <div className="max-w-3xl text-left">
@@ -292,12 +293,10 @@ function UsagePathwayFallback({
   locale,
   selected,
   t,
-  serviceAreaMapLabels,
 }: {
   locale: string;
   selected: PathwayKey | null;
   t: (key: string) => string;
-  serviceAreaMapLabels: Parameters<typeof ServiceAreaMap>[0]['labels'];
 }) {
   const hasSelection = selected !== null;
 
@@ -339,7 +338,7 @@ function UsagePathwayFallback({
                 </div>
               </div>
 
-              <FallbackProofAlbum t={t} serviceAreaMapLabels={serviceAreaMapLabels} />
+              <FallbackProofAlbum t={t} />
             </div>
 
             <div className="bg-surface-light-alt r p-5 md:p-6">
@@ -417,10 +416,8 @@ function UsagePathwayFallback({
 
 function FallbackProofAlbum({
   t,
-  serviceAreaMapLabels,
 }: {
   t: (key: string) => string;
-  serviceAreaMapLabels: Parameters<typeof ServiceAreaMap>[0]['labels'];
 }) {
   return (
     <aside className="border border-structural-light bg-surface-card r p-4 md:p-5">
@@ -430,15 +427,24 @@ function FallbackProofAlbum({
       </div>
 
       <div className="mt-4">
-        <ServiceAreaMap labels={serviceAreaMapLabels} compact />
+        <figure className="r overflow-hidden border border-structural-light bg-surface-light-alt">
+          <Image
+            src="/photos/sentinel-technical-check-placeholder.png"
+            alt={t('pathway.proof.album.technical.alt')}
+            width={1456}
+            height={1024}
+            className="aspect-[4/3] w-full object-cover"
+          />
+          <p className="mt-3 text-xs leading-relaxed text-muted">{t('pathway.proof.capture.note')}</p>
+        </figure>
       </div>
 
       <div className="mt-4">
         <p className="text-base font-semibold leading-snug text-heading">
-          {t('pathway.companyFacts.area.label')}
+          {t('pathway.proof.album.technical.label')}
         </p>
         <p className="mt-1 text-sm leading-relaxed text-body">
-          {t('pathway.companyFacts.area.value')}
+          {t('pathway.proof.album.technical.value')}
         </p>
       </div>
 

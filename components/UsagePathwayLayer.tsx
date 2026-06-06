@@ -1,12 +1,11 @@
 'use client';
 
 import { useCallback, useState, type ReactNode } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Section from '@/components/layout/Section';
-import OperationalCaptureFrame from '@/components/visuals/OperationalCaptureFrame';
-import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
 import {
   PATHWAY_KEYS,
   normalizePathwayParam,
@@ -21,9 +20,15 @@ const PATHWAY_POINT_COUNTS: Record<PathwayKey, number> = {
 
 const DIAGNOSTIC_SHELL_CLASS = 'mx-auto w-full max-w-3xl';
 const COMPANY_SHELL_CLASS = 'mx-auto w-full max-w-6xl';
-const PROOF_SLIDES = ['area', 'documentation', 'access'] as const;
+const PROOF_SLIDES = ['technical', 'documentation', 'access'] as const;
 
 type ProofSlideKey = (typeof PROOF_SLIDES)[number];
+
+const PROOF_IMAGE_SOURCES: Record<ProofSlideKey, string> = {
+  technical: '/photos/sentinel-technical-check-placeholder.png',
+  documentation: '/photos/sentinel-report-placeholder.png',
+  access: '/photos/sentinel-access-placeholder.png',
+};
 
 type UsagePathwayLayerProps = {
   children: ReactNode;
@@ -33,17 +38,9 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
   const locale = useLocale();
   const t = useTranslations('home');
   const tp = useTranslations('home.pathway');
-  const tCommon = useTranslations('common');
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-  const serviceAreaMapLabels = {
-    title: tCommon('serviceAreaMap.title'),
-    center: tCommon('serviceAreaMap.center'),
-    radius: tCommon('serviceAreaMap.radius'),
-    boundary: tCommon('serviceAreaMap.boundary'),
-    caption: tCommon('serviceAreaMap.caption'),
-  };
 
   const paramPathway = normalizePathwayParam(searchParams.get('pathway'));
   const [isChanging, setIsChanging] = useState(false);
@@ -76,7 +73,7 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
       <Section tone={hasSelection ? 'light' : 'alt'} className={gateSectionClassName}>
         <div className={hasSelection ? DIAGNOSTIC_SHELL_CLASS : COMPANY_SHELL_CLASS}>
           {showFullGate && (
-            <DiagnosticGateIntro t={t} tp={tp} serviceAreaMapLabels={serviceAreaMapLabels}>
+            <DiagnosticGateIntro t={t} tp={tp}>
               {showPicker && (
                 <>
                   <DiagnosticChoiceBlock
@@ -170,12 +167,10 @@ export function PathwayFinalCtaLink({
 function DiagnosticGateIntro({
   t,
   tp,
-  serviceAreaMapLabels,
   children,
 }: {
   t: ReturnType<typeof useTranslations<'home'>>;
   tp: ReturnType<typeof useTranslations<'home.pathway'>>;
-  serviceAreaMapLabels: Parameters<typeof ServiceAreaMap>[0]['labels'];
   children: ReactNode;
 }) {
   return (
@@ -206,7 +201,7 @@ function DiagnosticGateIntro({
           </div>
         </div>
 
-        <ProofAlbum t={tp} serviceAreaMapLabels={serviceAreaMapLabels} />
+        <ProofAlbum t={tp} />
       </div>
 
       <div className="bg-surface-light-alt r p-5 md:p-6">
@@ -228,10 +223,8 @@ function DiagnosticGateIntro({
 
 function ProofAlbum({
   t,
-  serviceAreaMapLabels,
 }: {
   t: ReturnType<typeof useTranslations<'home.pathway'>>;
-  serviceAreaMapLabels: Parameters<typeof ServiceAreaMap>[0]['labels'];
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeSlide = PROOF_SLIDES[activeIndex];
@@ -247,16 +240,15 @@ function ProofAlbum({
         <ProofSlideVisual
           slide={activeSlide}
           t={t}
-          serviceAreaMapLabels={serviceAreaMapLabels}
         />
       </div>
 
       <div className="mt-4">
         <p className="text-base font-semibold leading-snug text-heading">
-          {t(`companyFacts.${activeSlide}.label`)}
+          {t(`proof.album.${activeSlide}.label`)}
         </p>
         <p className="mt-1 text-sm leading-relaxed text-body">
-          {t(`companyFacts.${activeSlide}.value`)}
+          {t(`proof.album.${activeSlide}.value`)}
         </p>
       </div>
 
@@ -269,7 +261,7 @@ function ProofAlbum({
               type="button"
               onClick={() => setActiveIndex(index)}
               aria-pressed={isActive}
-              aria-label={t(`companyFacts.${slide}.label`)}
+              aria-label={t(`proof.album.${slide}.label`)}
               className={`h-2.5 flex-1 r transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-authority ${
                 isActive ? 'bg-authority' : 'bg-structural-light hover:bg-support'
               }`}
@@ -284,49 +276,21 @@ function ProofAlbum({
 function ProofSlideVisual({
   slide,
   t,
-  serviceAreaMapLabels,
 }: {
   slide: ProofSlideKey;
   t: ReturnType<typeof useTranslations<'home.pathway'>>;
-  serviceAreaMapLabels: Parameters<typeof ServiceAreaMap>[0]['labels'];
 }) {
-  if (slide === 'area') {
-    return <ServiceAreaMap labels={serviceAreaMapLabels} compact />;
-  }
-
-  if (slide === 'access') {
-    return (
-      <OperationalCaptureFrame
-        reference={t('proof.capture.reference')}
-        label={t('proof.capture.label')}
-        note={t('proof.capture.note')}
-        kind="lock"
-        compact
-      />
-    );
-  }
-
   return (
-    <div className="border border-structural-light bg-surface-light-alt r p-3">
-      <div className="flex items-start justify-between gap-3">
-        <p className="text-[11px] font-medium uppercase tracking-wide text-muted">SEN-INS</p>
-        <span className="mt-2 h-px w-10 bg-structural-muted" aria-hidden />
-      </div>
-      <div className="mt-3 border border-structural-light bg-surface-card p-3">
-        <div className="h-3 w-24 bg-structural-muted/35" aria-hidden />
-        <div className="mt-4 space-y-2">
-          <div className="h-2 w-full bg-structural-muted/25" aria-hidden />
-          <div className="h-2 w-5/6 bg-structural-muted/25" aria-hidden />
-          <div className="h-2 w-2/3 bg-structural-muted/25" aria-hidden />
-        </div>
-        <div className="mt-4 grid grid-cols-3 gap-2">
-          <span className="h-12 border border-structural-light bg-surface-light-alt" aria-hidden />
-          <span className="h-12 border border-structural-light bg-surface-light-alt" aria-hidden />
-          <span className="h-12 border border-structural-light bg-surface-light-alt" aria-hidden />
-        </div>
-      </div>
+    <figure className="r overflow-hidden border border-structural-light bg-surface-light-alt">
+      <Image
+        src={PROOF_IMAGE_SOURCES[slide]}
+        alt={t(`proof.album.${slide}.alt`)}
+        width={1456}
+        height={1024}
+        className="aspect-[4/3] w-full object-cover"
+      />
       <p className="mt-3 text-xs leading-relaxed text-muted">{t('proof.capture.note')}</p>
-    </div>
+    </figure>
   );
 }
 

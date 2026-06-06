@@ -108,6 +108,23 @@
           "label": "Access and entry record",
           "note": "Structural sample, not client data."
         },
+        "album": {
+          "technical": {
+            "label": "Technical check",
+            "value": "Water, boiler, and visible utility points are checked on site.",
+            "alt": "Sample operational image of boiler and utility check details"
+          },
+          "documentation": {
+            "label": "Documentation",
+            "value": "Checks leave a recorded condition reference.",
+            "alt": "Sample property condition report with redacted inspection references"
+          },
+          "access": {
+            "label": "Access",
+            "value": "Keys and entries remain under agreed control.",
+            "alt": "Sample operational image of controlled door access"
+          }
+        },
         "facts": {
           "response": {
             "label": "Response",

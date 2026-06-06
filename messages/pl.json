@@ -108,6 +108,23 @@
           "label": "Rejestr dostępu i wejścia",
           "note": "Przykład strukturalny, bez danych klienta."
         },
+        "album": {
+          "technical": {
+            "label": "Kontrola techniczna",
+            "value": "Woda, bojler i widoczne punkty techniczne są sprawdzane na miejscu.",
+            "alt": "Przykładowy obraz operacyjny kontroli bojlera i instalacji"
+          },
+          "documentation": {
+            "label": "Dokumentacja",
+            "value": "Kontrole zostawiają zapis stanu nieruchomości.",
+            "alt": "Przykładowy raport stanu nieruchomości z zanonimizowanymi odniesieniami"
+          },
+          "access": {
+            "label": "Dostęp",
+            "value": "Klucze i wejścia pozostają pod uzgodnioną kontrolą.",
+            "alt": "Przykładowy obraz operacyjny kontrolowanego dostępu do drzwi"
+          }
+        },
         "facts": {
           "response": {
             "label": "Reakcja",
