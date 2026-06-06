@@ -6,7 +6,6 @@ import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Section from '@/components/layout/Section';
 import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
-import OperationalCaptureFrame from '@/components/visuals/OperationalCaptureFrame';
 import {
   PATHWAY_KEYS,
   normalizePathwayParam,
@@ -177,9 +176,9 @@ function DiagnosticGateIntro({
 }) {
   return (
     <div className="space-y-6 md:space-y-8">
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,0.82fr)] lg:gap-6">
-        <div className="bg-authority-bg text-authority-on-dark r p-6 md:p-8">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.08em] text-authority-on-dark/70">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,0.72fr)] lg:gap-8">
+        <div className="bg-authority-bg text-authority-on-dark r p-7 md:p-10">
+          <p className="mb-5 text-sm font-medium text-authority-on-dark/70">
             {tp('companyEyebrow')}
           </p>
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-authority-on-dark">
@@ -192,40 +191,27 @@ function DiagnosticGateIntro({
             {tp('companyLine')}
           </p>
 
-          <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
-            <CompanyFact label={tp('companyFacts.area.label')} value={tp('companyFacts.area.value')} />
-            <CompanyFact label={tp('companyFacts.documentation.label')} value={tp('companyFacts.documentation.value')} />
-            <CompanyFact label={tp('companyFacts.access.label')} value={tp('companyFacts.access.value')} />
-          </div>
+          <p className="mt-8 max-w-[34rem] border-l-2 border-authority-on-dark/30 pl-4 text-sm md:text-base text-authority-on-dark/80 leading-relaxed">
+            {tp('companyProofLine')}
+          </p>
         </div>
 
         <DiagnosticProofPanel t={tp} serviceAreaMapLabels={serviceAreaMapLabels} />
       </div>
 
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(16rem,0.36fr)_minmax(0,1fr)]">
-        <div className="border border-structural-light bg-surface-card r p-5 md:p-6">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.08em] text-muted">
+      <div className="bg-surface-card r border border-structural-light p-5 md:p-7">
+        <div className="max-w-3xl">
+          <p className="mb-3 text-sm font-medium text-muted">
             {tp('selectorEyebrow')}
           </p>
-          <h2 className="text-xl md:text-2xl font-semibold text-heading leading-tight">
+          <h2 className="text-xl md:text-2xl font-semibold text-heading leading-tight mb-0">
             {tp('selectorTitle')}
           </h2>
-          <p className="mt-4 text-sm text-body leading-relaxed">{t('hero.line4')}</p>
+          <p className="mt-3 text-sm md:text-base text-body leading-relaxed">{t('hero.line4')}</p>
         </div>
 
-        <div>{children}</div>
+        <div className="mt-6">{children}</div>
       </div>
-    </div>
-  );
-}
-
-function CompanyFact({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="border-t border-authority-on-dark/25 pt-3">
-      <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-authority-on-dark/60">
-        {label}
-      </p>
-      <p className="text-sm font-medium leading-snug text-authority-on-dark">{value}</p>
     </div>
   );
 }
@@ -238,35 +224,29 @@ function DiagnosticProofPanel({
   serviceAreaMapLabels: Parameters<typeof ServiceAreaMap>[0]['labels'];
 }) {
   return (
-    <div className="border border-structural-light bg-surface-card r overflow-hidden">
-      <div className="border-b border-structural-light bg-surface-light-alt px-5 py-4 md:px-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.08em] text-muted">{t('proof.eyebrow')}</p>
-        <h2 className="mt-2 text-lg font-semibold leading-snug text-heading">{t('proof.title')}</h2>
+    <div className="border border-structural-light bg-surface-card r p-5 md:p-6">
+      <div className="max-w-[30rem]">
+        <p className="text-sm font-medium text-muted">{t('proof.eyebrow')}</p>
+        <h2 className="mt-2 text-lg md:text-xl font-semibold leading-snug text-heading">{t('proof.title')}</h2>
+        <p className="mt-3 text-sm text-body leading-relaxed">{t('proof.summary')}</p>
       </div>
-      <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-[minmax(0,1fr)_minmax(9rem,0.55fr)] md:p-5">
-        <ServiceAreaMap labels={serviceAreaMapLabels} compact />
-        <OperationalCaptureFrame
-          compact
-          kind="lock"
-          reference={t('proof.capture.reference')}
-          label={t('proof.capture.label')}
-          note={t('proof.capture.note')}
-        />
-      </div>
-      <div className="grid grid-cols-1 border-t border-structural-light md:grid-cols-3">
-        <ProofFact label={t('proof.facts.response.label')} value={t('proof.facts.response.value')} />
-        <ProofFact label={t('proof.facts.reports.label')} value={t('proof.facts.reports.value')} />
-        <ProofFact label={t('proof.facts.access.label')} value={t('proof.facts.access.value')} />
+
+      <ServiceAreaMap labels={serviceAreaMapLabels} compact className="mt-5" />
+
+      <div className="mt-5 space-y-3">
+        <ProofFact value={t('proof.facts.response.value')} />
+        <ProofFact value={t('proof.facts.reports.value')} />
+        <ProofFact value={t('proof.facts.access.value')} />
       </div>
     </div>
   );
 }
 
-function ProofFact({ label, value }: { label: string; value: string }) {
+function ProofFact({ value }: { value: string }) {
   return (
-    <div className="border-t border-structural-light px-5 py-4 first:border-t-0 md:border-l md:border-t-0 md:first:border-l-0">
-      <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{label}</p>
-      <p className="text-sm font-medium leading-snug text-body">{value}</p>
+    <div className="flex gap-3 text-sm leading-relaxed text-body">
+      <span className="mt-2 h-px w-5 shrink-0 bg-structural-muted" aria-hidden />
+      <p className="mb-0">{value}</p>
     </div>
   );
 }
@@ -283,8 +263,7 @@ function DiagnosticChoiceBlock({
   t: ReturnType<typeof useTranslations<'home.pathway'>>;
 }) {
   return (
-    <div className="border border-structural-light bg-surface-card r overflow-hidden">
-      <div className="divide-y divide-structural-light">
+    <div className="grid grid-cols-1 gap-3 lg:grid-cols-3">
         {PATHWAY_KEYS.map((key) => {
           const isSelected = selected === key && !isChanging;
           return (
@@ -293,23 +272,22 @@ function DiagnosticChoiceBlock({
               type="button"
               onClick={() => onSelect(key)}
               aria-pressed={isSelected}
-              className={`text-left w-full p-4 md:p-5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-authority ${
+              className={`text-left w-full r border p-5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-authority ${
                 isSelected
-                  ? 'border-l-4 border-authority bg-surface-light-alt pl-[calc(1rem-3px)] md:pl-[calc(1.25rem-3px)]'
-                  : 'bg-surface-card hover:bg-surface-light-alt/40'
+                  ? 'border-authority bg-surface-light-alt'
+                  : 'border-structural-light bg-surface-light hover:bg-surface-light-alt'
               }`}
             >
               <p className="text-base font-semibold text-heading mb-1.5 leading-snug">
                 {t(`cards.${key}.title`)}
               </p>
               <p className="text-sm text-body leading-relaxed">{t(`cards.${key}.description`)}</p>
-              <p className="mt-3 border-t border-structural-light pt-3 text-xs font-medium uppercase tracking-[0.08em] text-muted">
+              <p className="mt-4 text-sm font-medium leading-snug text-support">
                 {t(`cards.${key}.emphasis`)}
               </p>
             </button>
           );
         })}
-      </div>
     </div>
   );
 }

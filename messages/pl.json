@@ -83,6 +83,7 @@
     "pathway": {
       "companyEyebrow": "Lokalna reprezentacja właściciela",
       "companyLine": "Sentinel działa lokalnie w imieniu właściciela pod jego nieobecność: określony obszar, kontrolowany dostęp, udokumentowane kontrole i uporządkowane okna reakcji.",
+      "companyProofLine": "Działamy z Torrevieja w określonym promieniu Costa Blanca, z dokumentacją stanu i kontrolowanym prowadzeniem kluczy oraz dostępu.",
       "companyFacts": {
         "area": {
           "label": "Obszar działania",
@@ -100,6 +101,7 @@
       "proof": {
         "eyebrow": "Dowód działania",
         "title": "Lokalna obecność, udokumentowany stan, kontrolowany dostęp.",
+        "summary": "Usługa zaczyna się od realnego obszaru działania i zapisu tego, co dzieje się na miejscu.",
         "capture": {
           "reference": "SEN-ACCESS",
           "label": "Rejestr dostępu i wejścia",

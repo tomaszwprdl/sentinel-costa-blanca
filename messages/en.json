@@ -83,6 +83,7 @@
     "pathway": {
       "companyEyebrow": "Local owner representation",
       "companyLine": "Sentinel acts locally for absent property owners: defined area, controlled access, documented checks, and structured response windows.",
+      "companyProofLine": "Operating from Torrevieja within a defined Costa Blanca radius, with documented condition checks and controlled key/access handling.",
       "companyFacts": {
         "area": {
           "label": "Operating area",
@@ -100,6 +101,7 @@
       "proof": {
         "eyebrow": "Operating proof",
         "title": "Local presence, documented condition, controlled access.",
+        "summary": "The service starts with a real operating area and a record of what happens on site.",
         "capture": {
           "reference": "SEN-ACCESS",
           "label": "Access and entry record",
