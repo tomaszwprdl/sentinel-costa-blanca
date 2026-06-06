@@ -8,6 +8,7 @@ import Section from '@/components/layout/Section';
 import GridFrame from '@/components/layout/GridFrame';
 import Region from '@/components/layout/Region';
 import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
+import OperationalCaptureFrame from '@/components/visuals/OperationalCaptureFrame';
 import {
   PATHWAY_KEYS,
   type PathwayKey,
@@ -20,6 +21,7 @@ const PATHWAY_POINT_COUNTS: Record<PathwayKey, number> = {
 };
 
 const DIAGNOSTIC_SHELL_CLASS = 'mx-auto w-full max-w-3xl';
+const COMPANY_SHELL_CLASS = 'mx-auto w-full max-w-6xl';
 
 export default async function HomePage({
   params
@@ -41,7 +43,7 @@ export default async function HomePage({
     <>
       <HeaderClient />
       <main className="min-h-screen flex flex-col bg-surface-light">
-        <Suspense fallback={<UsagePathwayFallback locale={locale} selected={null} t={t} />}>
+        <Suspense fallback={<UsagePathwayFallback locale={locale} selected={null} t={t} serviceAreaMapLabels={serviceAreaMapLabels} />}>
           <UsagePathwayLayer>
         <Section tone="alt" variant="major" className="!pt-10">
           <div className="max-w-3xl text-left">
@@ -291,10 +293,12 @@ function UsagePathwayFallback({
   locale,
   selected,
   t,
+  serviceAreaMapLabels,
 }: {
   locale: string;
   selected: PathwayKey | null;
   t: (key: string) => string;
+  serviceAreaMapLabels: Parameters<typeof ServiceAreaMap>[0]['labels'];
 }) {
   const hasSelection = selected !== null;
 
@@ -307,30 +311,50 @@ function UsagePathwayFallback({
           : 'section-primitive--first flex-1 !max-h-none flex flex-col justify-center'
       }
     >
-      <div className={DIAGNOSTIC_SHELL_CLASS}>
+      <div className={hasSelection ? DIAGNOSTIC_SHELL_CLASS : COMPANY_SHELL_CLASS}>
         {!hasSelection && (
-          <div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 lg:gap-y-6 pb-6 md:pb-8 mb-6 md:mb-8 border-b border-structural-light">
-              <div>
-                <h1 className="text-2xl md:text-3xl font-bold tracking-tight leading-tight text-heading">
+          <div className="space-y-6 md:space-y-8">
+            <div className="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,0.82fr)] lg:gap-6">
+              <div className="bg-authority-bg text-authority-on-dark r p-6 md:p-8">
+                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.08em] text-authority-on-dark/70">
+                  {t('pathway.companyEyebrow')}
+                </p>
+                <h1 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-authority-on-dark">
                   {t('hero.wordmark')}
                 </h1>
-                <h2 className="text-lg md:text-xl font-normal text-body mt-4 leading-snug">
+                <h2 className="text-lg md:text-xl font-normal text-authority-on-dark/90 mt-4 leading-snug">
                   {t('hero.descriptor')}
                 </h2>
-                <p className="text-base text-body mt-4 leading-relaxed">{t('hero.line3')}</p>
-                <p className="text-base text-body mt-3 leading-relaxed">{t('hero.line4')}</p>
+                <p className="mt-5 max-w-[38rem] text-base md:text-lg text-authority-on-dark/85 leading-relaxed">
+                  {t('pathway.companyLine')}
+                </p>
+
+                <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                  <FallbackCompanyFact label={t('pathway.companyFacts.area.label')} value={t('pathway.companyFacts.area.value')} />
+                  <FallbackCompanyFact label={t('pathway.companyFacts.documentation.label')} value={t('pathway.companyFacts.documentation.value')} />
+                  <FallbackCompanyFact label={t('pathway.companyFacts.access.label')} value={t('pathway.companyFacts.access.value')} />
+                </div>
               </div>
 
-              <div className="lg:pt-1">
-                <h2 className="text-lg md:text-xl font-semibold text-heading leading-snug">
-                  {t('pathway.selectorTitle')}
-                </h2>
-              </div>
+              <FallbackDiagnosticProofPanel t={t} serviceAreaMapLabels={serviceAreaMapLabels} />
             </div>
 
-            <FallbackDiagnosticChoiceBlock locale={locale} selected={selected} t={t} />
-            <p className="mt-5 text-sm text-muted leading-relaxed">{t('pathway.gateInstruction')}</p>
+            <div className="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(16rem,0.36fr)_minmax(0,1fr)]">
+              <div className="border border-structural-light bg-surface-card r p-5 md:p-6">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.08em] text-muted">
+                  {t('pathway.selectorEyebrow')}
+                </p>
+                <h2 className="text-xl md:text-2xl font-semibold text-heading leading-tight">
+                  {t('pathway.selectorTitle')}
+                </h2>
+                <p className="mt-4 text-sm text-body leading-relaxed">{t('hero.line4')}</p>
+              </div>
+
+              <div>
+                <FallbackDiagnosticChoiceBlock locale={locale} selected={selected} t={t} />
+                <p className="mt-5 text-sm text-muted leading-relaxed">{t('pathway.gateInstruction')}</p>
+              </div>
+            </div>
           </div>
         )}
 
@@ -388,6 +412,58 @@ function UsagePathwayFallback({
   );
 }
 
+function FallbackCompanyFact({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="border-t border-authority-on-dark/25 pt-3">
+      <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-authority-on-dark/60">
+        {label}
+      </p>
+      <p className="text-sm font-medium leading-snug text-authority-on-dark">{value}</p>
+    </div>
+  );
+}
+
+function FallbackDiagnosticProofPanel({
+  t,
+  serviceAreaMapLabels,
+}: {
+  t: (key: string) => string;
+  serviceAreaMapLabels: Parameters<typeof ServiceAreaMap>[0]['labels'];
+}) {
+  return (
+    <div className="border border-structural-light bg-surface-card r overflow-hidden">
+      <div className="border-b border-structural-light bg-surface-light-alt px-5 py-4 md:px-6">
+        <p className="text-xs font-semibold uppercase tracking-[0.08em] text-muted">{t('pathway.proof.eyebrow')}</p>
+        <h2 className="mt-2 text-lg font-semibold leading-snug text-heading">{t('pathway.proof.title')}</h2>
+      </div>
+      <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-[minmax(0,1fr)_minmax(9rem,0.55fr)] md:p-5">
+        <ServiceAreaMap labels={serviceAreaMapLabels} compact />
+        <OperationalCaptureFrame
+          compact
+          kind="lock"
+          reference={t('pathway.proof.capture.reference')}
+          label={t('pathway.proof.capture.label')}
+          note={t('pathway.proof.capture.note')}
+        />
+      </div>
+      <div className="grid grid-cols-1 border-t border-structural-light md:grid-cols-3">
+        <FallbackProofFact label={t('pathway.proof.facts.response.label')} value={t('pathway.proof.facts.response.value')} />
+        <FallbackProofFact label={t('pathway.proof.facts.reports.label')} value={t('pathway.proof.facts.reports.value')} />
+        <FallbackProofFact label={t('pathway.proof.facts.access.label')} value={t('pathway.proof.facts.access.value')} />
+      </div>
+    </div>
+  );
+}
+
+function FallbackProofFact({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="border-t border-structural-light px-5 py-4 first:border-t-0 md:border-l md:border-t-0 md:first:border-l-0">
+      <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{label}</p>
+      <p className="text-sm font-medium leading-snug text-body">{value}</p>
+    </div>
+  );
+}
+
 function FallbackDiagnosticChoiceBlock({
   locale,
   selected,
@@ -417,6 +493,9 @@ function FallbackDiagnosticChoiceBlock({
                 {t(`pathway.cards.${key}.title`)}
               </p>
               <p className="text-sm text-body leading-relaxed">{t(`pathway.cards.${key}.description`)}</p>
+              <p className="mt-3 border-t border-structural-light pt-3 text-xs font-medium uppercase tracking-[0.08em] text-muted">
+                {t(`pathway.cards.${key}.emphasis`)}
+              </p>
             </Link>
           );
         })}

@@ -81,6 +81,46 @@
       "ctaPrimary": "Zobacz, to działa"
     },
     "pathway": {
+      "companyEyebrow": "Lokalna reprezentacja właściciela",
+      "companyLine": "Sentinel działa lokalnie w imieniu właściciela pod jego nieobecność: określony obszar, kontrolowany dostęp, udokumentowane kontrole i uporządkowane okna reakcji.",
+      "companyFacts": {
+        "area": {
+          "label": "Obszar działania",
+          "value": "Torrevieja + 50-70 km"
+        },
+        "documentation": {
+          "label": "Dokumentacja",
+          "value": "Kontrole zapisywane w materiale raportowym"
+        },
+        "access": {
+          "label": "Dostęp",
+          "value": "Klucze i wejścia według uzgodnionej kontroli"
+        }
+      },
+      "proof": {
+        "eyebrow": "Dowód działania",
+        "title": "Lokalna obecność, udokumentowany stan, kontrolowany dostęp.",
+        "capture": {
+          "reference": "SEN-ACCESS",
+          "label": "Rejestr dostępu i wejścia",
+          "note": "Przykład strukturalny, bez danych klienta."
+        },
+        "facts": {
+          "response": {
+            "label": "Reakcja",
+            "value": "Określone okna reakcji, nie otwarta dostępność"
+          },
+          "reports": {
+            "label": "Raporty",
+            "value": "Materiał o stanie po uzgodnionych kontrolach"
+          },
+          "access": {
+            "label": "Klucze",
+            "value": "Kontrolowany dostęp do wizyt, sprzątania i techników"
+          }
+        }
+      },
+      "selectorEyebrow": "Sytuacja używania",
       "selectorTitle": "Jak używana jest nieruchomość, gdy Cię nie ma?",
       "gateInstruction": "Wybierz sytuację, żeby zobaczyć właściwy zakres nadzoru.",
       "selectedSituationLabel": "Wybrana sytuacja:",
@@ -92,15 +132,18 @@
       "cards": {
         "private-use-only": {
           "title": "Tylko użytek prywatny",
-          "description": "Z lokalu korzystasz Ty lub Twoja rodzina. Między przyjazdami nikt regularnie z niego nie korzysta."
+          "description": "Z lokalu korzystasz Ty lub Twoja rodzina. Między przyjazdami nikt regularnie z niego nie korzysta.",
+          "emphasis": "Kontrole pustego lokalu i gotowość przed przyjazdem"
         },
         "regular-guest-stays": {
           "title": "Regularne pobyty gości",
-          "description": "Nieruchomość jest regularnie używana przez gości, ekipę sprzątającą lub techników."
+          "description": "Nieruchomość jest regularnie używana przez gości, ekipę sprzątającą lub techników.",
+          "emphasis": "Porządek między pobytami i dokumentacja zdarzeń"
         },
         "mixed-not-defined": {
           "title": "Model mieszany / jeszcze nieustalony",
-          "description": "Sposób używania nieruchomości może się zmieniać albo nie został jeszcze jasno określony."
+          "description": "Sposób używania nieruchomości może się zmieniać albo nie został jeszcze jasno określony.",
+          "emphasis": "Klasyfikacja przed wyborem zakresu"
         }
       },
       "detail": {

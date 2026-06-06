@@ -81,6 +81,46 @@
       "ctaPrimary": "See how it works"
     },
     "pathway": {
+      "companyEyebrow": "Local owner representation",
+      "companyLine": "Sentinel acts locally for absent property owners: defined area, controlled access, documented checks, and structured response windows.",
+      "companyFacts": {
+        "area": {
+          "label": "Operating area",
+          "value": "Torrevieja + 50-70 km"
+        },
+        "documentation": {
+          "label": "Documentation",
+          "value": "Checks recorded with report evidence"
+        },
+        "access": {
+          "label": "Access",
+          "value": "Keys and entries handled under agreed control"
+        }
+      },
+      "proof": {
+        "eyebrow": "Operating proof",
+        "title": "Local presence, documented condition, controlled access.",
+        "capture": {
+          "reference": "SEN-ACCESS",
+          "label": "Access and entry record",
+          "note": "Structural sample, not client data."
+        },
+        "facts": {
+          "response": {
+            "label": "Response",
+            "value": "Structured windows, not open-ended availability"
+          },
+          "reports": {
+            "label": "Reports",
+            "value": "Condition evidence after agreed checks"
+          },
+          "access": {
+            "label": "Keys",
+            "value": "Controlled access for visits, cleaning, and technicians"
+          }
+        }
+      },
+      "selectorEyebrow": "Usage situation",
       "selectorTitle": "How is the property used while you are away?",
       "gateInstruction": "Choose the situation to see the relevant oversight structure.",
       "selectedSituationLabel": "Selected situation:",
@@ -92,15 +132,18 @@
       "cards": {
         "private-use-only": {
           "title": "Private Use Only",
-          "description": "You or your family use the property. Between visits, it is not regularly used by others."
+          "description": "You or your family use the property. Between visits, it is not regularly used by others.",
+          "emphasis": "Dormancy checks and arrival readiness"
         },
         "regular-guest-stays": {
           "title": "Regular Guest Stays",
-          "description": "The property is regularly used by guests, cleaners, or technicians."
+          "description": "The property is regularly used by guests, cleaners, or technicians.",
+          "emphasis": "Turnover order and event documentation"
         },
         "mixed-not-defined": {
           "title": "Mixed / Not Yet Defined",
-          "description": "The use pattern may change or has not yet been clearly defined."
+          "description": "The use pattern may change or has not yet been clearly defined.",
+          "emphasis": "Classification before scope selection"
         }
       },
       "detail": {
