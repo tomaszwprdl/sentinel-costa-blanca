@@ -189,8 +189,8 @@ export default function Estimator() {
                       onChange={() => handlePackageChange(k)}
                       className="sr-only"
                     />
-                    <span className="flex shrink-0 w-5 h-5 mt-0.5 rounded-full border-2 border-structural-muted flex items-center justify-center mr-4">
-                      {packageKey === k && <span className="w-2 h-2 rounded-full bg-authority" aria-hidden />}
+                    <span className="flex shrink-0 w-5 h-5 mt-0.5 border border-structural-muted r items-center justify-center mr-4 bg-surface-card">
+                      {packageKey === k && <span className="w-2.5 h-2.5 r bg-authority" aria-hidden />}
                     </span>
                     <div className="min-w-0">
                       <span className="text-body font-medium block">{t(`packages.${k}`)}</span>
@@ -304,13 +304,13 @@ export default function Estimator() {
                       aria-checked={scopeElements.includes(k)}
                       aria-label={t(`scopeElements.${k}`)}
                       onClick={() => handleScopeToggle(k)}
-                      className={`shrink-0 w-11 h-6 r transition-colors border-2 ${
+                      className={`shrink-0 flex h-8 w-8 items-center justify-center border transition-colors r ${
                         scopeElements.includes(k)
-                          ? 'bg-authority border-authority'
-                          : 'bg-surface-light border-structural-muted'
+                          ? 'border-authority bg-surface-light-alt'
+                          : 'border-structural-muted bg-surface-card'
                       }`}
                     >
-                      <span className={`block w-5 h-5 mt-0.5 ml-0.5 r bg-white border border-structural-muted transition-transform ${scopeElements.includes(k) ? 'translate-x-6' : 'translate-x-0'}`} aria-hidden />
+                      <span className={`block h-3 w-3 r bg-authority transition-opacity ${scopeElements.includes(k) ? 'opacity-100' : 'opacity-0'}`} aria-hidden />
                     </button>
                   </div>
                 ))}
@@ -335,7 +335,7 @@ export default function Estimator() {
             </div>
           </div>
 
-          <div className="hidden lg:block lg:sticky lg:top-6">
+          <div className="hidden lg:block lg:sticky lg:top-24">
             {reasonPanel}
             {resultPanel}
           </div>

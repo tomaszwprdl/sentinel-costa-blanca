@@ -425,3 +425,34 @@ textarea:focus {
   border-color: var(--authority);
   box-shadow: 0 0 0 2px var(--authority);
 }
+
+.form-control {
+  width: 100%;
+  border: 1px solid var(--structural-light);
+  background: var(--surface-card);
+  color: var(--body);
+  padding: 1.25rem;
+  border-radius: var(--radius);
+}
+
+.form-control:focus {
+  border-color: var(--authority);
+  box-shadow: 0 0 0 2px var(--authority);
+}
+
+.form-section {
+  background: var(--surface-light-alt);
+  border: 1px solid var(--structural-light);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.form-section__label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}

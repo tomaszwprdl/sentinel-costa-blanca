@@ -203,7 +203,7 @@ function ContactPageInner() {
           <Section tone="light" className="section-primitive--first">
             <div>
                 <h1>{t('confirmation.title')}</h1>
-                <div className="bg-surface-card border-l-4 border-structural-a p-6 mb-10">
+                <div className="bg-surface-card border-l-4 border-structural-a r p-6 mb-10">
                   <p className="text-lg text-authority mb-5">
                     {t('confirmation.thankYou')}
                   </p>
@@ -212,7 +212,7 @@ function ContactPageInner() {
                   </p>
                 </div>
 
-                <div className="bg-surface-light-alt p-6 mb-10">
+                <div className="bg-surface-light-alt r p-6 mb-10">
                   <h2 className="h2-system">{t('confirmation.nextStepsTitle')}</h2>
                   <ol className="list-decimal list-inside space-y-2 text-body mb-5">
                     <li>{t('confirmation.nextSteps.step1', { email: tCommon('contact.email') })}</li>
@@ -228,7 +228,7 @@ function ContactPageInner() {
                   </p>
                 </div>
 
-                <div className="bg-surface-light-alt p-6 mb-10">
+                <div className="bg-surface-light-alt r p-6 mb-10">
                   <h3>{t('confirmation.noResponseTitle')}</h3>
                   <p className="text-body mb-5">
                     {t('confirmation.noResponseText', { email: tCommon('contact.email'), phone: tCommon('contact.phone') })}
@@ -236,7 +236,7 @@ function ContactPageInner() {
                 </div>
 
                 {referenceNumber && (
-                  <div className="bg-surface-light border border-structural-light p-5 mb-10">
+                  <div className="bg-surface-light border border-structural-light r p-5 mb-10">
                     <p className="text-sm text-muted mb-1">{t('confirmation.referenceNumber')}</p>
                     <p className="text-lg font-semibold text-authority">{referenceNumber}</p>
                   </div>
@@ -277,7 +277,7 @@ function ContactPageInner() {
         <Section tone="alt">
           <div>
               <h2 className="h2-system">{t('directContact.title')}</h2>
-              <div className="bg-surface-light p-6 border border-structural-light mb-10">
+              <div className="bg-surface-light r p-6 border border-structural-light mb-10">
                 <h3>{t('directContact.subtitle')}</h3>
                 <ul className="space-y-2 text-body mb-5">
                   <li><strong>{t('directContact.email')}:</strong> {tCommon('contact.email')}</li>
@@ -291,7 +291,7 @@ function ContactPageInner() {
                 </p>
               </div>
 
-              <DisclosureBlock 
+              <DisclosureBlock
                 label={t('directContact.prepareTitle')}
               >
                 <ul className="list-disc list-inside space-y-2 text-body">
@@ -315,7 +315,7 @@ function ContactPageInner() {
         <Section tone="alt">
           <div>
               <h2 className="h2-system">{t('activeClients.title')}</h2>
-              <div className="bg-surface-light p-6 border border-structural-light">
+              <div className="bg-surface-light r p-6 border border-structural-light">
                 <p className="text-body mb-5">
                   {t('activeClients.intro')}
                 </p>
@@ -347,7 +347,7 @@ function ContactPageInner() {
               <div className="mb-10">
                 <ServiceAreaMap labels={serviceAreaMapLabels} />
               </div>
-              <DisclosureBlock 
+              <DisclosureBlock
                 label={t('serviceArea.examplesTitle')}
               >
                 <p className="text-body">{t('serviceArea.examplesText')}</p>
@@ -362,7 +362,7 @@ function ContactPageInner() {
         <Section tone="alt">
           <div>
               <h2 className="h2-system">{t('cannotHelp.title')}</h2>
-              <div className="bg-surface-light p-6 border border-structural-light">
+              <div className="bg-surface-light r p-6 border border-structural-light">
                 <p className="text-body mb-5">
                   {t('cannotHelp.intro')}
                 </p>
@@ -417,7 +417,8 @@ function ContactPageInner() {
 
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
                 {/* Your Details */}
-                <div className="bg-surface-light-alt p-6 border border-structural-light">
+                <div className="form-section">
+                  <span className="form-section__label">01</span>
                   <h3>{t('form.yourDetails')}</h3>
                   <GridFrame>
                     <Region name="support" tabletSpan="half" desktopSpan="half">
@@ -429,7 +430,7 @@ function ContactPageInner() {
                         type="text"
                         id="fullName"
                         {...register('fullName')}
-                        className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority"
+                        className="form-control"
                       />
                       {errors.fullName && (
                         <p className="mt-1 text-sm text-neutral">{errors.fullName.message}</p>
@@ -445,7 +446,7 @@ function ContactPageInner() {
                         type="email"
                         id="email"
                         {...register('email')}
-                        className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority"
+                        className="form-control"
                       />
                       {errors.email && (
                         <p className="mt-1 text-sm text-neutral">{errors.email.message}</p>
@@ -462,7 +463,7 @@ function ContactPageInner() {
                         id="phone"
                         {...register('phone')}
                         placeholder="+34 123 456 789"
-                        className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority"
+                        className="form-control"
                       />
                       {errors.phone && (
                         <p className="mt-1 text-sm text-neutral">{errors.phone.message}</p>
@@ -477,7 +478,7 @@ function ContactPageInner() {
                       <select
                         id="preferredContactMethod"
                         {...register('preferredContactMethod')}
-                        className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority"
+                        className="form-control"
                       >
                         <option value="">{t('form.selectPlaceholder')}</option>
                         <option value="Email">{t('form.contactMethods.email')}</option>
@@ -497,7 +498,7 @@ function ContactPageInner() {
                       <select
                         id="preferredLanguage"
                         {...register('preferredLanguage')}
-                        className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority"
+                        className="form-control"
                       >
                         <option value="">{t('form.selectPlaceholder')}</option>
                         <option value="English">{t('form.languages.english')}</option>
@@ -512,7 +513,8 @@ function ContactPageInner() {
                 </div>
 
                 {/* Property Information */}
-                <div className="bg-surface-light-alt p-6 border border-structural-light">
+                <div className="form-section">
+                  <span className="form-section__label">02</span>
                   <h3>{t('form.propertyInfo')}</h3>
                   <div className="space-y-5">
                     <div>
@@ -524,7 +526,7 @@ function ContactPageInner() {
                         id="propertyLocation"
                         {...register('propertyLocation')}
                         placeholder={t('form.propertyLocationPlaceholder')}
-                        className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority"
+                        className="form-control"
                       />
                       <p className="mt-1 text-sm text-muted">
                         {t('form.propertyLocationHelp')}
@@ -543,7 +545,7 @@ function ContactPageInner() {
                         <select
                           id="propertyType"
                           {...register('propertyType')}
-                          className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority"
+                          className="form-control"
                         >
                           <option value="">{t('form.selectPlaceholder')}</option>
                           <option value="Apartment">{t('form.propertyTypes.apartment')}</option>
@@ -564,7 +566,7 @@ function ContactPageInner() {
                         <select
                           id="currentStatus"
                           {...register('currentStatus')}
-                          className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority"
+                          className="form-control"
                         >
                           <option value="">{t('form.selectPlaceholder')}</option>
                           {USAGE_SITUATION_SLUGS.map((slug) => (
@@ -583,7 +585,8 @@ function ContactPageInner() {
                 </div>
 
                 {/* Service Requirements */}
-                <div className="bg-surface-light-alt p-6 border border-structural-light">
+                <div className="form-section">
+                  <span className="form-section__label">03</span>
                   <h3>{t('form.serviceRequirements')}</h3>
                   <div className="space-y-5">
                     <div>
@@ -593,7 +596,7 @@ function ContactPageInner() {
                       <select
                         id="expectedPackage"
                         {...register('expectedPackage')}
-                        className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority"
+                        className="form-control"
                       >
                         <option value="">{t('form.selectPlaceholder')}</option>
                         <option value="Basic">{t('form.packages.green')}</option>
@@ -614,7 +617,7 @@ function ContactPageInner() {
                         <select
                           id="expectedAccessFrequency"
                           {...register('expectedAccessFrequency')}
-                          className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority"
+                          className="form-control"
                         >
                           <option value="">{t('form.selectPlaceholder')}</option>
                           <option value="1-2 times per month">{t('form.accessFrequencies.oneToTwo')}</option>
@@ -638,7 +641,7 @@ function ContactPageInner() {
                         placeholder={t('form.primaryNeedsPlaceholder')}
                         rows={4}
                         maxLength={500}
-                        className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority"
+                        className="form-control"
                       />
                       <p className="mt-1 text-sm text-muted">{t('form.maxCharacters')}</p>
                       {errors.primaryServiceNeeds && (
@@ -655,7 +658,7 @@ function ContactPageInner() {
                       type="checkbox"
                       id="acknowledgment"
                       {...register('acknowledgment')}
-                      className="mt-1 mr-3"
+                      className="mt-1 mr-3 h-4 w-4 r"
                     />
                     <label htmlFor="acknowledgment" className="text-sm text-body">
                       {t('form.acknowledgment')} *

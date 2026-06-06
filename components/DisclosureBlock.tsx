@@ -2,6 +2,7 @@
 
 import { useState, useId, ReactNode } from 'react';
 import { useTranslations } from 'next-intl';
+import ChevronIcon from '@/components/icons/ChevronIcon';
 
 interface DisclosureBlockProps {
   label: string;
@@ -36,7 +37,7 @@ export default function DisclosureBlock({
   };
 
   return (
-    <div className={`border border-structural-light ${className}`}>
+    <div className={`border border-structural-light bg-surface-card r overflow-hidden ${className}`}>
       <button
         id={buttonId}
         type="button"
@@ -44,7 +45,7 @@ export default function DisclosureBlock({
         onKeyDown={handleKeyDown}
         aria-expanded={isExpanded}
         aria-controls={contentId}
-        className="w-full px-5 py-5 text-left flex items-center justify-between hover:bg-surface-card transition-colors focus:outline-none focus:ring-2 focus:ring-support focus:ring-offset-2"
+        className="w-full px-5 py-5 text-left flex items-center justify-between bg-surface-card hover:bg-surface-light-alt transition-colors focus:outline-none focus:ring-2 focus:ring-support focus:ring-offset-2"
       >
         <div className="flex-1 pr-4">
           <div className="font-semibold text-authority text-base">{label}</div>
@@ -54,22 +55,11 @@ export default function DisclosureBlock({
         </div>
         <div className="flex items-center gap-2 flex-shrink-0">
           <span className="text-sm text-body hover:underline">{isExpanded ? t('hideDetails') : t('showDetails')}</span>
-          <svg
-            className={`w-5 h-5 text-structural transition-transform duration-200 ${
+          <ChevronIcon
+            className={`h-4 w-4 text-structural-a transition-transform duration-200 ${
               isExpanded ? 'transform rotate-180' : ''
             }`}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
+          />
         </div>
       </button>
       {isExpanded && (

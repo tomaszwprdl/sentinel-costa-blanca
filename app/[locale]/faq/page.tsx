@@ -158,14 +158,14 @@ export default function FAQPage() {
                 placeholder={t('search.placeholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-5 py-5 border border-structural-light focus:ring-2 focus:ring-authority focus:border-authority text-authority"
+                className="form-control text-authority"
               />
             </div>
 
             <div className="space-y-8">
               {/* ANCHOR NAVIGATION — stacked per Task 5D-1C (no tablet 3+ col) */}
               <div>
-                <div className="sticky top-24">
+                <div className="sticky top-32">
                   <h3 className="section-label">{t('sectionsLabel')}</h3>
                   <nav className="space-y-2">
                     {faqSections.map((section) => (

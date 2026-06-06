@@ -33,13 +33,13 @@ export default function SampleInspectionReport({ t }: { t: Translator }) {
   ];
 
   return (
-    <div className="report-table-card mt-10 border border-structural-light bg-surface-card p-6">
+    <div className="report-table-card mt-10 border border-structural-light bg-surface-card r p-6">
       <h3>
         {t('sampleReport.label')}
       </h3>
 
       {/* 1) Header block */}
-      <div className="border border-structural-light bg-surface-light p-5">
+      <div className="border border-structural-light bg-surface-light r p-5">
         <div className="font-mono text-sm text-body whitespace-pre-line">
           {t('sampleReport.headerBlock')}
         </div>
@@ -57,7 +57,7 @@ export default function SampleInspectionReport({ t }: { t: Translator }) {
         <h4 className="text-base font-semibold text-authority mb-3">
           {t('sampleReport.checklist.title')}
         </h4>
-        <div className="report-table-frame overflow-x-auto border border-structural-light bg-surface-light">
+        <div className="report-table-frame overflow-x-auto border border-structural-light bg-surface-light r">
           <table className="report-table w-full border-collapse text-sm">
             <thead>
               <tr>
