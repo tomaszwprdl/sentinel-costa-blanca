@@ -30,7 +30,7 @@ const PROOF_IMAGE_SOURCES: Record<ProofSlideKey, string> = {
   access: '/photos/sentinel-access-placeholder.png',
 };
 
-const PROOF_AUTOPLAY_MS = 5000;
+const PROOF_AUTOPLAY_MS = 4250;
 
 type UsagePathwayLayerProps = {
   children: ReactNode;
@@ -265,7 +265,7 @@ function ProofAlbum({
         }
       }}
     >
-      <figure className="relative aspect-[4/3] w-full bg-authority-bg">
+      <figure className="relative aspect-[6/5] w-full bg-authority-bg">
         <Image
           src={PROOF_IMAGE_SOURCES[activeSlide]}
           alt={t(`proof.album.${activeSlide}.alt`)}
