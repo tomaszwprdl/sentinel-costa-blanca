@@ -77,7 +77,7 @@ export default function OperationalCaptureFrame({
           aria-label={label}
           role="img"
         >
-          <svg viewBox="0 0 350 300" aria-hidden="true" className="h-full w-full text-authority">
+          <svg viewBox="0 0 350 300" aria-hidden="true" className="h-full w-full text-body">
             <rect x="0" y="0" width="350" height="300" fill="currentColor" opacity="0.025" />
             <g fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="square" strokeLinejoin="miter" opacity="0.62">
               <CaptureDrawing kind={kind} />

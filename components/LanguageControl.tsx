@@ -11,7 +11,7 @@ export default function LanguageControl() {
   const switchPath = pathname.replace(`/${locale}`, `/${otherLocale}`);
 
   return (
-    <div className="flex h-8 items-center border border-structural-light rounded-sm overflow-hidden leading-none">
+    <div className="flex h-8 items-center border border-structural-light r overflow-hidden leading-none">
       <Link
         href={locale === 'pl' ? pathname : switchPath}
         className={`flex items-center justify-center h-full px-2.5 text-xs font-medium transition-opacity duration-150 ${

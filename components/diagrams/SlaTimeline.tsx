@@ -54,7 +54,7 @@ export default function SlaTimeline({
             <div className="min-w-0">
               <div className="mb-2 h-px w-full bg-structural-light" aria-hidden />
               <div className="h-4 w-full overflow-hidden border border-structural-light bg-surface-light r" aria-hidden>
-                <div className={`${bandClass[item.band]} h-full border-r border-structural-light bg-structural-muted/30`} />
+                <div className={`${bandClass[item.band]} h-full border-r border-structural-light bg-structural-light/50`} />
               </div>
               <p className="mt-2 text-xs text-muted leading-snug mb-0">{item.note}</p>
             </div>

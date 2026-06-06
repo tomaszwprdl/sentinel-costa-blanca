@@ -26,14 +26,14 @@ export default async function PrivacyPage({
             </p>
 
             <TextColumn>
-              <div className="prose">
+              <div className="legal-prose">
                 {sections?.map((section, i) => (
-                  <div key={i} className="mb-10">
+                  <div key={i} className="legal-prose__section">
                     <h2 className="h2-system">{section.title}</h2>
-                    <div className="text-body whitespace-pre-line">{section.body}</div>
+                    <div className="legal-prose__body">{section.body}</div>
                   </div>
                 ))}
-                <div className="mt-10 pt-10 border-t border-structural-light text-sm text-muted">
+                <div className="legal-prose__updated">
                   <p>{t('lastUpdated')}</p>
                 </div>
               </div>

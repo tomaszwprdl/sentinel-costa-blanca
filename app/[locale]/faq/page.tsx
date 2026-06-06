@@ -158,14 +158,14 @@ export default function FAQPage() {
                 placeholder={t('search.placeholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="form-control text-authority"
+                className="form-control"
               />
             </div>
 
-            <div className="space-y-8">
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-[15rem_minmax(0,1fr)] lg:items-start">
               {/* ANCHOR NAVIGATION — stacked per Task 5D-1C (no tablet 3+ col) */}
-              <div>
-                <div className="sticky top-32">
+              <div className="hidden md:block">
+                <div className="border border-structural-light bg-surface-card r p-5 lg:sticky lg:top-40">
                   <h3 className="section-label">{t('sectionsLabel')}</h3>
                   <nav className="space-y-2">
                     {faqSections.map((section) => (
@@ -184,13 +184,13 @@ export default function FAQPage() {
               {/* FAQ CONTENT */}
               <div>
                 {filteredSections.length === 0 ? (
-                  <div className="bg-surface-light-alt p-10 text-center">
+                  <div className="bg-surface-light-alt p-10 text-center r">
                     <p className="text-body">{t('noResults')}</p>
                   </div>
                 ) : (
                   <div className="space-y-10">
                     {filteredSections.map((section) => (
-                      <div key={section.id} id={section.id} className="scroll-mt-24">
+                      <div key={section.id} id={section.id} className="scroll-mt-40">
                         <DisclosureBlock
                           label={section.title}
                           explainer={section.intro}
@@ -223,7 +223,7 @@ export default function FAQPage() {
             </div>
 
             {/* BOTTOM SECTION */}
-            <div className="mt-10 bg-surface-light-alt p-10 border border-structural-light">
+            <div className="mt-10 bg-surface-light-alt p-10 border border-structural-light r">
               <h2 className="h2-system">{t('notAnswered.title')}</h2>
               <p className="text-body mb-5 leading-relaxed">
                 {t('notAnswered.intro')}

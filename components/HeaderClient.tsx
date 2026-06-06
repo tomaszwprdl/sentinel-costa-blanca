@@ -13,9 +13,9 @@ const AUTHORITY_BAR_HEIGHT = 72;
 function HamburgerIcon({ open }: { open: boolean }) {
   return (
     <span className="block w-5 h-4 relative" aria-hidden>
-      <span className={`absolute left-0 top-0 w-5 h-0.5 bg-body rounded-full transition-transform duration-150 ${open ? 'rotate-45 translate-y-[7px]' : ''}`} />
-      <span className={`absolute left-0 top-[7px] w-5 h-0.5 bg-body rounded-full transition-opacity duration-150 ${open ? 'opacity-0' : ''}`} />
-      <span className={`absolute left-0 top-[14px] w-5 h-0.5 bg-body rounded-full transition-transform duration-150 ${open ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+      <span className={`absolute left-0 top-0 w-5 h-0.5 bg-body r transition-transform duration-150 ${open ? 'rotate-45 translate-y-[7px]' : ''}`} />
+      <span className={`absolute left-0 top-[7px] w-5 h-0.5 bg-body r transition-opacity duration-150 ${open ? 'opacity-0' : ''}`} />
+      <span className={`absolute left-0 top-[14px] w-5 h-0.5 bg-body r transition-transform duration-150 ${open ? '-rotate-45 -translate-y-[7px]' : ''}`} />
     </span>
   );
 }
@@ -42,7 +42,7 @@ export default function HeaderClient() {
             href={`/${locale}`}
             aria-label={t('menu.home')}
             title={t('menu.home')}
-            className="block w-fit hover:opacity-95 hover:brightness-[0.98] transition-[opacity,filter] duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-support focus-visible:ring-offset-2 rounded-sm"
+            className="block w-fit hover:opacity-95 hover:brightness-[0.98] transition-[opacity,filter] duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-support focus-visible:ring-offset-2 r"
           >
             <div className="min-w-[200px] h-12 flex items-center relative translate-y-[1px]">
               <Image
@@ -64,7 +64,7 @@ export default function HeaderClient() {
           <nav className="flex items-center">
             <button
               type="button"
-              className="md:hidden p-2 -ml-2 text-body focus:outline-none focus-visible:ring-2 focus-visible:ring-support focus-visible:ring-offset-2 rounded-sm"
+              className="md:hidden p-2 -ml-2 text-body focus:outline-none focus-visible:ring-2 focus-visible:ring-support focus-visible:ring-offset-2 r"
               onClick={() => setNavOpen((o) => !o)}
               aria-expanded={navOpen}
               aria-controls="header-nav-links"
@@ -80,7 +80,7 @@ export default function HeaderClient() {
                 <Link
                   key={href}
                   href={href}
-                  className="text-sm font-normal text-body/90 hover:text-body transition-colors duration-150 py-2 leading-none focus:outline-none focus-visible:ring-2 focus-visible:ring-support focus-visible:ring-offset-2 rounded-sm"
+                  className="text-sm font-normal text-body/90 hover:text-body transition-colors duration-150 py-2 leading-none focus:outline-none focus-visible:ring-2 focus-visible:ring-support focus-visible:ring-offset-2 r"
                   onClick={() => setNavOpen(false)}
                 >
                   {label}

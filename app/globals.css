@@ -6,6 +6,8 @@
    Dark: near-black bg; role order preserved; accent micro only.
    -------------------------------------------------------------------------- */
 :root {
+  color-scheme: light;
+
   /* Canonical palette (exact hex) */
   --authority: #203A5F;
   --support: #2E507A;
@@ -53,6 +55,8 @@
 
 /* Dark mode — [data-theme="dark"]. No invert. Near-black bg; authority = brand navy, not page background. */
 [data-theme="dark"] {
+  color-scheme: dark;
+
   --base: #0d1117;
   --base-alt: #161b22;
   --surface-light: #0d1117;
@@ -240,6 +244,27 @@ section {
 
 .prose { max-width: 65ch; }
 
+.legal-prose {
+  max-width: var(--text-max);
+}
+
+.legal-prose__section {
+  margin-bottom: var(--space-40);
+}
+
+.legal-prose__body {
+  color: var(--body);
+  white-space: pre-line;
+}
+
+.legal-prose__updated {
+  margin-top: var(--space-40);
+  padding-top: var(--space-40);
+  border-top: 1px solid var(--structural-light);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
 /* Buttons — primary = authority; hover = token. No accent on buttons. */
 .btn-primary {
   display: inline-flex;
@@ -385,6 +410,7 @@ section {
 .notice-panel {
   background: var(--surface-card);
   border-left: 4px solid var(--structural-a);
+  border-radius: var(--radius);
   padding: 1.25rem 1.5rem;
 }
 .notice-panel__marker {

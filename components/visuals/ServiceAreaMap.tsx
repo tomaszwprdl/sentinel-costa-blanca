@@ -23,7 +23,7 @@ export default function ServiceAreaMap({
     'r overflow-hidden border',
     inverse
       ? 'border-authority-on-dark/25 bg-authority-on-dark/5 text-authority-on-dark'
-      : 'border-structural-light bg-surface-card text-authority',
+      : 'border-structural-light bg-surface-card text-body',
     className,
   ].join(' ');
 

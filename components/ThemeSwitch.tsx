@@ -40,12 +40,12 @@ export default function ThemeSwitch() {
       <button
         type="button"
         onClick={toggle}
-        className="flex items-center relative w-10 h-5 bg-structural-light rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-support focus-visible:ring-offset-2 focus-visible:ring-offset-surface-light"
+        className="flex items-center relative w-10 h-5 bg-structural-light r focus:outline-none focus-visible:ring-2 focus-visible:ring-support focus-visible:ring-offset-2 focus-visible:ring-offset-surface-light"
         aria-label={isDark ? t('switchToLight') : t('switchToDark')}
         title={isDark ? t('switchToLight') : t('switchToDark')}
       >
         <span
-          className="absolute top-1 w-3 h-3 bg-authority-on-dark rounded-full transition-[left] duration-150"
+          className="absolute top-1 w-3 h-3 bg-authority-on-dark r transition-[left] duration-150"
           style={{ left: isDark ? '22px' : '4px' }}
         />
       </button>
