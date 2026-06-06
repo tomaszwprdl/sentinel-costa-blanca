@@ -307,30 +307,30 @@ function UsagePathwayFallback({
       className={
         hasSelection
           ? 'section-primitive--first !pb-10 md:!pb-12'
-          : 'section-primitive--first flex-1 !max-h-none flex flex-col justify-center'
+          : 'section-primitive--first flex-1 !max-h-none !pt-6 md:!pt-8 !pb-10 md:!pb-14'
       }
     >
       <div className={hasSelection ? DIAGNOSTIC_SHELL_CLASS : COMPANY_SHELL_CLASS}>
         {!hasSelection && (
-          <div className="space-y-6 md:space-y-8">
-            <div className="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,0.72fr)] lg:gap-8">
-              <div className="bg-authority-bg text-authority-on-dark r p-6 md:p-10">
-                <div className="mb-5 md:mb-7">
-                  <p className="mb-1 text-sm font-semibold tracking-[0.08em] uppercase text-authority-on-dark/75">
+          <div className="space-y-5 md:space-y-7">
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(21rem,0.68fr)] lg:gap-6">
+              <div className="bg-authority-bg text-authority-on-dark r p-5 md:p-8 lg:p-10">
+                <div className="mb-4 md:mb-6">
+                  <p className="mb-1 text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-authority-on-dark/75">
                     {t('hero.wordmark')}
                   </p>
-                  <p className="text-sm md:text-base text-authority-on-dark/80 leading-snug">
+                  <p className="text-sm text-authority-on-dark/80 leading-snug">
                     {t('hero.descriptor')}
                   </p>
                 </div>
-                <h1 className="max-w-[42rem] text-3xl md:text-5xl font-bold tracking-tight leading-tight text-authority-on-dark">
+                <h1 className="max-w-[42rem] text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-authority-on-dark">
                   {t('pathway.companyHeadline')}
                 </h1>
-                <p className="mt-5 max-w-[38rem] text-base text-authority-on-dark/85 leading-relaxed">
+                <p className="mt-4 max-w-[38rem] text-sm md:text-base text-authority-on-dark/85 leading-relaxed">
                   {t('pathway.companyLine')}
                 </p>
 
-                <p className="mt-6 md:mt-8 max-w-[34rem] border-l-2 border-authority-on-dark/30 pl-4 text-sm md:text-base text-authority-on-dark/80 leading-relaxed">
+                <p className="mt-5 md:mt-6 max-w-[34rem] border-l-2 border-authority-on-dark/30 pl-4 text-sm text-authority-on-dark/80 leading-relaxed">
                   {t('pathway.companyProofLine')}
                 </p>
               </div>
@@ -338,18 +338,18 @@ function UsagePathwayFallback({
               <FallbackDiagnosticProofPanel t={t} serviceAreaMapLabels={serviceAreaMapLabels} />
             </div>
 
-            <div className="bg-surface-card r border border-structural-light p-5 md:p-7">
+            <div className="bg-surface-light-alt r p-5 md:p-7">
               <div className="max-w-3xl">
-                <p className="mb-3 text-sm font-medium text-muted">
+                <p className="mb-2 text-sm font-semibold text-support">
                   {t('pathway.selectorEyebrow')}
                 </p>
-                <h2 className="text-xl md:text-2xl font-semibold text-heading leading-tight mb-0">
+                <h2 className="text-xl md:text-2xl font-semibold text-heading leading-tight">
                   {t('pathway.selectorTitle')}
                 </h2>
-                <p className="mt-3 text-sm md:text-base text-body leading-relaxed">{t('pathway.selectorInstruction')}</p>
+                <p className="mt-2 text-sm md:text-base text-body leading-relaxed">{t('pathway.selectorInstruction')}</p>
               </div>
 
-              <div className="mt-6">
+              <div className="mt-5 md:mt-6">
                 <FallbackDiagnosticChoiceBlock locale={locale} selected={selected} t={t} />
                 <p className="mt-5 text-sm text-muted leading-relaxed">{t('pathway.gateInstruction')}</p>
               </div>
@@ -419,16 +419,16 @@ function FallbackDiagnosticProofPanel({
   serviceAreaMapLabels: Parameters<typeof ServiceAreaMap>[0]['labels'];
 }) {
   return (
-    <div className="border border-structural-light bg-surface-card r p-5 md:p-6">
+    <div className="border border-structural-light bg-surface-card r p-4 md:p-5">
       <div className="max-w-[30rem]">
-        <p className="text-sm font-medium text-muted">{t('pathway.proof.eyebrow')}</p>
-        <h2 className="mt-2 text-lg md:text-xl font-semibold leading-snug text-heading">{t('pathway.proof.title')}</h2>
-        <p className="mt-3 text-sm text-body leading-relaxed">{t('pathway.proof.summary')}</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.08em] text-muted">{t('pathway.proof.eyebrow')}</p>
+        <h2 className="mt-2 text-base md:text-lg font-semibold leading-snug text-heading">{t('pathway.proof.title')}</h2>
+        <p className="mt-2 text-sm text-body leading-relaxed">{t('pathway.proof.summary')}</p>
       </div>
 
-      <ServiceAreaMap labels={serviceAreaMapLabels} compact className="mt-5" />
+      <ServiceAreaMap labels={serviceAreaMapLabels} compact className="mt-4" />
 
-      <div className="mt-5 space-y-3">
+      <div className="mt-4 space-y-2.5">
         <FallbackProofFact value={t('pathway.proof.facts.response.value')} />
         <FallbackProofFact value={t('pathway.proof.facts.reports.value')} />
         <FallbackProofFact value={t('pathway.proof.facts.access.value')} />
@@ -456,7 +456,7 @@ function FallbackDiagnosticChoiceBlock({
   t: (key: string) => string;
 }) {
   return (
-    <div className="grid grid-cols-1 gap-3 lg:grid-cols-3">
+    <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         {PATHWAY_KEYS.map((key) => {
           const isSelected = selected === key;
           return (
@@ -464,10 +464,10 @@ function FallbackDiagnosticChoiceBlock({
               key={key}
               href={`/${locale}?pathway=${key}`}
               aria-current={isSelected ? 'true' : undefined}
-              className={`group block text-left w-full r border p-5 cursor-pointer transition-[background,border-color,transform] duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-authority hover:-translate-y-0.5 ${
+              className={`group block text-left w-full r border p-5 cursor-pointer transition-[background,border-color,transform] duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-authority hover:-translate-y-1 active:translate-y-0 ${
                 isSelected
-                  ? 'border-authority bg-surface-light-alt'
-                  : 'border-structural-light bg-surface-light hover:border-support hover:bg-surface-light-alt'
+                  ? 'border-authority bg-surface-card'
+                  : 'border-structural-light bg-surface-card hover:border-authority hover:bg-surface-light'
               }`}
             >
               <p className="text-base font-semibold text-heading mb-1.5 leading-snug">
@@ -477,14 +477,16 @@ function FallbackDiagnosticChoiceBlock({
               <p className="mt-4 text-sm font-medium leading-snug text-support">
                 {t(`pathway.cards.${key}.emphasis`)}
               </p>
-              <span className="mt-5 flex items-center justify-between gap-3 border-t border-structural-light pt-4 text-sm font-semibold text-support">
+              <span
+                className={`mt-5 inline-flex items-center gap-2 r border px-3 py-2 text-sm font-semibold transition-colors ${
+                  isSelected
+                    ? 'border-authority bg-authority text-authority-on-dark'
+                    : 'border-support text-support group-hover:bg-support group-hover:text-authority-on-dark'
+                }`}
+              >
                 <span>{t('pathway.chooseModel')}</span>
                 <span
-                  className={`flex h-7 w-7 shrink-0 items-center justify-center r border text-base transition-colors ${
-                    isSelected
-                      ? 'border-authority bg-authority text-authority-on-dark'
-                      : 'border-support text-support group-hover:bg-support group-hover:text-authority-on-dark'
-                  }`}
+                  className="text-base leading-none"
                   aria-hidden="true"
                 >
                   -&gt;
