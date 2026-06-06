@@ -83,7 +83,7 @@
     "pathway": {
       "companyEyebrow": "Lokalna reprezentacja właściciela",
       "companyHeadline": "Lokalna kontrola nieruchomości, gdy nie ma Cię na miejscu.",
-      "companyLine": "Sentinel działa lokalnie w imieniu właściciela pod jego nieobecność: określony obszar, kontrolowany dostęp, udokumentowane kontrole i uporządkowane okna reakcji.",
+      "companyLine": "Sentinel działa lokalnie w imieniu właściciela: sprawdza stan, kontroluje dostęp i dokumentuje to, co dzieje się na miejscu.",
       "companyProofLine": "Działamy z Torrevieja w określonym promieniu Costa Blanca, z dokumentacją stanu i kontrolowanym prowadzeniem kluczy oraz dostępu.",
       "companyFacts": {
         "area": {
@@ -92,11 +92,11 @@
         },
         "documentation": {
           "label": "Dokumentacja",
-          "value": "Kontrole zapisywane w materiale raportowym"
+          "value": "Dokumentowane kontrole"
         },
         "access": {
           "label": "Dostęp",
-          "value": "Klucze i wejścia według uzgodnionej kontroli"
+          "value": "Kontrolowany dostęp"
         }
       },
       "proof": {
