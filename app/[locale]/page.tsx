@@ -313,31 +313,33 @@ function UsagePathwayFallback({
       <div className={hasSelection ? DIAGNOSTIC_SHELL_CLASS : COMPANY_SHELL_CLASS}>
         {!hasSelection && (
           <div className="space-y-4 md:space-y-6">
-            <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,0.98fr)_minmax(19rem,0.56fr)] lg:gap-5">
-              <div className="bg-authority-bg text-authority-on-dark r p-5 md:p-7 lg:p-8">
-                <div className="mb-3 md:mb-4">
-                  <p className="mb-1 text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-authority-on-dark/75">
-                    {t('hero.wordmark')}
-                  </p>
-                  <p className="text-sm text-authority-on-dark/80 leading-snug">
-                    {t('hero.descriptor')}
+            <div className="bg-authority-bg text-authority-on-dark r p-5 md:p-7 lg:p-8">
+              <div className="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,0.42fr)] lg:gap-6 lg:items-end">
+                <div>
+                  <div className="mb-3 md:mb-4">
+                    <p className="mb-1 text-xs md:text-sm font-semibold tracking-[0.08em] uppercase text-authority-on-dark/75">
+                      {t('hero.wordmark')}
+                    </p>
+                    <p className="text-sm text-authority-on-dark/80 leading-snug">
+                      {t('hero.descriptor')}
+                    </p>
+                  </div>
+                  <h1 className="max-w-[42rem] text-[2.05rem] md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-authority-on-dark">
+                    {t('pathway.companyHeadline')}
+                  </h1>
+                  <p className="mt-4 max-w-[38rem] text-sm md:text-base text-authority-on-dark/85 leading-relaxed">
+                    {t('pathway.companyLine')}
                   </p>
                 </div>
-                <h1 className="max-w-[42rem] text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-authority-on-dark">
-                  {t('pathway.companyHeadline')}
-                </h1>
-                <p className="mt-4 max-w-[38rem] text-sm md:text-base text-authority-on-dark/85 leading-relaxed">
-                  {t('pathway.companyLine')}
-                </p>
 
-                <div className="mt-5 grid grid-cols-1 gap-2.5 border-t border-authority-on-dark/20 pt-4 md:grid-cols-3">
-                  <FallbackHeroFact value={t('pathway.companyFacts.area.value')} />
-                  <FallbackHeroFact value={t('pathway.companyFacts.documentation.value')} />
-                  <FallbackHeroFact value={t('pathway.companyFacts.access.value')} />
-                </div>
+                <ServiceAreaMap labels={serviceAreaMapLabels} compact inverse className="max-w-[18rem] lg:ml-auto" />
               </div>
 
-              <FallbackDiagnosticProofPanel t={t} serviceAreaMapLabels={serviceAreaMapLabels} />
+              <div className="mt-5 grid grid-cols-1 gap-2.5 border-t border-authority-on-dark/20 pt-4 md:grid-cols-3">
+                <FallbackHeroFact value={t('pathway.companyFacts.area.value')} />
+                <FallbackHeroFact value={t('pathway.companyFacts.documentation.value')} />
+                <FallbackHeroFact value={t('pathway.companyFacts.access.value')} />
+              </div>
             </div>
 
             <div className="bg-surface-light-alt r p-5 md:p-6">
@@ -417,37 +419,6 @@ function FallbackHeroFact({ value }: { value: string }) {
   return (
     <div className="flex gap-2.5 text-sm leading-snug text-authority-on-dark/85">
       <span className="mt-2 h-px w-4 shrink-0 bg-authority-on-dark/35" aria-hidden />
-      <p className="mb-0">{value}</p>
-    </div>
-  );
-}
-
-function FallbackDiagnosticProofPanel({
-  t,
-  serviceAreaMapLabels,
-}: {
-  t: (key: string) => string;
-  serviceAreaMapLabels: Parameters<typeof ServiceAreaMap>[0]['labels'];
-}) {
-  return (
-    <div className="border border-structural-light bg-surface-card r p-4">
-      <p className="text-sm font-semibold leading-snug text-heading">{t('pathway.proof.eyebrow')}</p>
-
-      <ServiceAreaMap labels={serviceAreaMapLabels} compact className="mt-4" />
-
-      <div className="mt-4 space-y-2.5">
-        <FallbackProofFact value={t('pathway.proof.facts.response.value')} />
-        <FallbackProofFact value={t('pathway.proof.facts.reports.value')} />
-        <FallbackProofFact value={t('pathway.proof.facts.access.value')} />
-      </div>
-    </div>
-  );
-}
-
-function FallbackProofFact({ value }: { value: string }) {
-  return (
-    <div className="flex gap-3 text-sm leading-relaxed text-body">
-      <span className="mt-2 h-px w-5 shrink-0 bg-structural-muted" aria-hidden />
       <p className="mb-0">{value}</p>
     </div>
   );
