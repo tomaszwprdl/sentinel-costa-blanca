@@ -261,15 +261,30 @@ function ContactPageInner() {
       <main className="min-h-screen">
         {/* SECTION 1: PAGE INTRODUCTION */}
         <Section tone="light" className="section-primitive--first">
-          <div>
-              <h1>{t('intro.headline')}</h1>
-              <p className="text-lg text-body mb-5 leading-relaxed">
-                {t('intro.description')}
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(18rem,0.55fr)] lg:items-start">
+            <div>
+                <p className="section-label">{t('directContact.title')}</p>
+                <h1>{t('intro.headline')}</h1>
+                <p className="text-lg text-body mb-5 leading-relaxed">
+                  {t('intro.description')}
+                </p>
+                <p className="text-base text-muted leading-relaxed mb-10">
+                  {t('intro.responseCommitment')}
+                </p>
+            </div>
+            <aside className="visual-card-strong p-6">
+              <p className="section-label">{t('directContact.subtitle')}</p>
+              <ul className="mt-5 space-y-3 text-body">
+                <li><strong>{t('directContact.email')}:</strong> {tCommon('contact.email')}</li>
+                <li><strong>{t('directContact.phone')}:</strong> {tCommon('contact.phone')}</li>
+              </ul>
+              <p className="mt-5 text-sm text-muted">
+                <strong>{t('directContact.hoursTitle')}</strong> {tCommon('contact.hours')}
               </p>
-              <p className="text-base text-muted leading-relaxed mb-10">
-                {t('intro.responseCommitment')}
-              </p>
-              <ConfidenceBar />
+            </aside>
+          </div>
+          <div className="mt-10">
+            <ConfidenceBar />
           </div>
         </Section>
 
@@ -277,7 +292,7 @@ function ContactPageInner() {
         <Section tone="alt">
           <div>
               <h2 className="h2-system">{t('directContact.title')}</h2>
-              <div className="bg-surface-light r p-6 border border-structural-light mb-10">
+              <div className="visual-card-strong p-6 mb-10">
                 <h3>{t('directContact.subtitle')}</h3>
                 <ul className="space-y-2 text-body mb-5">
                   <li><strong>{t('directContact.email')}:</strong> {tCommon('contact.email')}</li>
@@ -315,7 +330,7 @@ function ContactPageInner() {
         <Section tone="alt">
           <div>
               <h2 className="h2-system">{t('activeClients.title')}</h2>
-              <div className="bg-surface-light r p-6 border border-structural-light">
+              <div className="visual-card p-6">
                 <p className="text-body mb-5">
                   {t('activeClients.intro')}
                 </p>
@@ -362,7 +377,7 @@ function ContactPageInner() {
         <Section tone="alt">
           <div>
               <h2 className="h2-system">{t('cannotHelp.title')}</h2>
-              <div className="bg-surface-light r p-6 border border-structural-light">
+              <div className="visual-card p-6">
                 <p className="text-body mb-5">
                   {t('cannotHelp.intro')}
                 </p>

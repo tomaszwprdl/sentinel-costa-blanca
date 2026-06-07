@@ -127,7 +127,7 @@ export default function Estimator() {
   );
 
   const reasonPanel = (
-    <div className="border border-structural-light bg-surface-light-alt r p-5 h-fit space-y-4">
+    <div className="visual-card h-fit space-y-4 p-5">
       <p className="text-sm text-body">{t('reasonWhatModeling')}</p>
       <p className="text-xs text-muted">{t('reasonGuestModeChange')}</p>
       <div>
@@ -139,7 +139,7 @@ export default function Estimator() {
   );
 
   const resultPanel = result && hasCalculated && (
-    <div className="border border-structural-light bg-surface-light-alt r p-5 mt-4 space-y-3">
+    <div className="mt-5 space-y-3 rounded-2xl border-2 border-accent bg-surface-light-alt p-5 shadow-[0_18px_40px_rgba(184,102,74,0.16)]">
       <h3 className="text-body text-[11px] font-medium uppercase tracking-wide text-muted">{t('resultTitle')}</h3>
       <p className="text-body font-semibold">
         {t('rangeTitle')}: {formatRange(result.min, result.max)} {t('rangeSuffix')}
@@ -165,20 +165,23 @@ export default function Estimator() {
 
   return (
     <Section tone="alt">
-      <div className="max-w-[65ch] lg:max-w-none mx-auto border border-structural-muted bg-surface-light py-10 px-5 r">
-        <h2 className="h2-system mb-10">{t('heading')}</h2>
+      <div className="visual-card-strong mx-auto max-w-[65ch] p-5 md:p-8 lg:max-w-none">
+        <div className="mb-8 max-w-3xl">
+          <p className="section-label">{t('groupJurisdiction')}</p>
+          <h2 className="h2-system mt-2">{t('heading')}</h2>
+        </div>
 
         <div className="lg:grid lg:grid-cols-[1fr_320px] lg:gap-10 lg:items-start">
           <div className="space-y-8">
             <fieldset className="space-y-0 border-0 p-0 m-0">
-              <legend className="text-body font-semibold mb-2 block">{t('groupJurisdiction')}</legend>
+              <legend className="text-body font-bold mb-2 block">{t('groupJurisdiction')}</legend>
               <p className="text-xs text-muted mb-4">{t('groupJurisdictionAnchor')}</p>
               <div className="space-y-2" role="radiogroup" aria-label={t('packageLabel')}>
                 {PACKAGE_KEYS.map((k) => (
                   <label
                     key={k}
-                    className={`flex cursor-pointer border border-structural-light r p-4 transition-colors ${
-                      packageKey === k ? 'border-authority bg-surface-light-alt' : 'bg-surface-light hover:border-structural-muted'
+                    className={`flex cursor-pointer rounded-2xl border p-4 transition-[background,border-color,box-shadow,transform] hover:-translate-y-0.5 ${
+                      packageKey === k ? 'border-accent bg-surface-light-alt shadow-[0_12px_28px_rgba(184,102,74,0.12)]' : 'border-structural-light bg-surface-card hover:border-accent'
                     }`}
                   >
                     <input
@@ -189,8 +192,8 @@ export default function Estimator() {
                       onChange={() => handlePackageChange(k)}
                       className="sr-only"
                     />
-                    <span className="flex shrink-0 w-5 h-5 mt-0.5 border border-structural-muted r items-center justify-center mr-4 bg-surface-card">
-                      {packageKey === k && <span className="w-2.5 h-2.5 r bg-authority" aria-hidden />}
+                    <span className="mr-4 mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-structural-muted bg-surface-card">
+                      {packageKey === k && <span className="h-2.5 w-2.5 rounded-full bg-accent" aria-hidden />}
                     </span>
                     <div className="min-w-0">
                       <span className="text-body font-medium block">{t(`packages.${k}`)}</span>
@@ -209,18 +212,18 @@ export default function Estimator() {
             <fieldset className="space-y-0 border-0 p-0 m-0">
               <legend className="text-body text-sm font-medium text-muted mb-2 block">{t('groupMode')}</legend>
               <p className="text-xs text-muted mb-3">{t('groupModeAnchor')}</p>
-              <div className="inline-flex border border-structural-light r overflow-hidden" role="radiogroup" aria-label={t('modeLabel')}>
+              <div className="inline-flex overflow-hidden rounded-full border border-structural-light bg-surface-card p-1" role="radiogroup" aria-label={t('modeLabel')}>
                 <label
-                  className={`cursor-pointer px-5 py-3 text-sm ${
-                    modeKey === 'private_use' ? 'bg-authority text-authority-on-dark' : 'bg-surface-light text-body hover:bg-surface-light-alt'
+                  className={`cursor-pointer rounded-full px-5 py-3 text-sm font-bold ${
+                    modeKey === 'private_use' ? 'bg-authority text-authority-on-dark' : 'text-body hover:bg-surface-light-alt'
                   }`}
                 >
                   <input type="radio" name="estimator-mode" value="private_use" checked={modeKey === 'private_use'} onChange={() => handleModeChange('private_use')} className="sr-only" />
                   {t('modePrivateUse')}
                 </label>
                 <label
-                  className={`cursor-pointer px-5 py-3 text-sm border-l border-structural-light ${
-                    modeKey === 'active_guest' ? 'bg-authority text-authority-on-dark' : 'bg-surface-light text-body hover:bg-surface-light-alt'
+                  className={`cursor-pointer rounded-full px-5 py-3 text-sm font-bold ${
+                    modeKey === 'active_guest' ? 'bg-authority text-authority-on-dark' : 'text-body hover:bg-surface-light-alt'
                   }`}
                 >
                   <input type="radio" name="estimator-mode" value="active_guest" checked={modeKey === 'active_guest'} onChange={() => handleModeChange('active_guest')} className="sr-only" />
@@ -228,14 +231,14 @@ export default function Estimator() {
                 </label>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
-                <div className={`p-3 border r text-sm ${modeKey === 'private_use' ? 'border-authority bg-surface-light-alt' : 'border-structural-muted/50 opacity-70'}`}>
+                <div className={`rounded-2xl border p-4 text-sm ${modeKey === 'private_use' ? 'border-accent bg-surface-light-alt' : 'border-structural-muted/50 opacity-75'}`}>
                   <p className="font-medium text-body mb-1.5">{t('modePrivateUse')}</p>
                   <ul className="text-xs text-muted space-y-0.5 list-disc list-inside">
                     <li>{t('modeWhatPrivate1')}</li>
                     <li>{t('modeWhatPrivate2')}</li>
                   </ul>
                 </div>
-                <div className={`p-3 border r text-sm ${modeKey === 'active_guest' ? 'border-authority bg-surface-light-alt' : 'border-structural-muted/50 opacity-70'}`}>
+                <div className={`rounded-2xl border p-4 text-sm ${modeKey === 'active_guest' ? 'border-accent bg-surface-light-alt' : 'border-structural-muted/50 opacity-75'}`}>
                   <p className="font-medium text-body mb-1.5">{t('modeActiveGuest')}</p>
                   <ul className="text-xs text-muted space-y-0.5 list-disc list-inside">
                     <li>{t('modeWhatGuest1')}</li>
@@ -263,7 +266,7 @@ export default function Estimator() {
                       if (raw === '') handleSqmChange(SQM_INPUT_MIN);
                       else handleSqmChange(Number(raw));
                     }}
-                    className="w-full px-4 py-3 border border-structural-light bg-surface-light text-body focus:ring-2 focus:ring-authority focus:border-authority r text-sm [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    className="form-control text-sm [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
                     required
                     aria-required="true"
                   />
@@ -277,7 +280,7 @@ export default function Estimator() {
                     id="estimator-bedrooms"
                     value={bedroomsKey}
                     onChange={(e) => handleBedroomsChange(e.target.value as BedroomsKey)}
-                    className="w-full px-4 py-3 border border-structural-light bg-surface-light text-body focus:ring-2 focus:ring-authority focus:border-authority r text-sm"
+                    className="form-control text-sm"
                   >
                     {BEDROOMS_KEYS.map((k) => (
                       <option key={k} value={k}>{k === 'B4P' ? t('bedrooms.4p') : t(`bedrooms.${k.slice(1)}`)}</option>
@@ -293,7 +296,7 @@ export default function Estimator() {
               <p className="text-xs text-muted mb-3">{t('groupScopeElementsAnchor')}</p>
               <div className="space-y-4">
                 {SCOPE_ELEMENT_KEYS.map((k) => (
-                  <div key={k} className="flex items-center justify-between gap-4 py-3 border-b border-structural-muted/30 last:border-0">
+                  <div key={k} className="flex items-center justify-between gap-4 rounded-2xl border border-structural-light bg-surface-card p-4">
                     <div>
                       <p className="text-sm text-body font-medium">{t(`scopeElements.${k}`)}</p>
                       <p className="text-xs text-muted">{t('scopeElementBilledByUse')}</p>
@@ -304,13 +307,13 @@ export default function Estimator() {
                       aria-checked={scopeElements.includes(k)}
                       aria-label={t(`scopeElements.${k}`)}
                       onClick={() => handleScopeToggle(k)}
-                      className={`shrink-0 flex h-8 w-8 items-center justify-center border transition-colors r ${
+                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-colors ${
                         scopeElements.includes(k)
-                          ? 'border-authority bg-surface-light-alt'
+                          ? 'border-accent bg-accent'
                           : 'border-structural-muted bg-surface-card'
                       }`}
                     >
-                      <span className={`block h-3 w-3 r bg-authority transition-opacity ${scopeElements.includes(k) ? 'opacity-100' : 'opacity-0'}`} aria-hidden />
+                      <span className={`block h-3 w-3 rounded-full bg-white transition-opacity ${scopeElements.includes(k) ? 'opacity-100' : 'opacity-0'}`} aria-hidden />
                     </button>
                   </div>
                 ))}
