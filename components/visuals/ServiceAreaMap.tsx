@@ -20,10 +20,10 @@ export default function ServiceAreaMap({
   className = '',
 }: ServiceAreaMapProps) {
   const shellClassName = [
-    'r overflow-hidden border',
+    'overflow-hidden rounded-2xl border shadow-[0_14px_36px_rgba(16,38,63,0.1)]',
     inverse
       ? 'border-authority-on-dark/25 bg-authority-on-dark/5 text-authority-on-dark'
-      : 'border-structural-light bg-surface-card text-body',
+      : 'border-structural-light bg-surface-card text-support',
     className,
   ].join(' ');
 
@@ -36,7 +36,7 @@ export default function ServiceAreaMap({
           aria-hidden="true"
           className={compact ? 'w-full h-auto max-h-36' : 'w-full h-auto'}
         >
-          <rect x="0" y="0" width="640" height="420" fill="currentColor" opacity="0.035" />
+          <rect x="0" y="0" width="640" height="420" fill="currentColor" opacity="0.055" />
 
           <path
             d="M82 52 C124 94 136 138 126 188 C118 230 145 272 196 306 C247 340 284 365 326 382"
@@ -62,7 +62,7 @@ export default function ServiceAreaMap({
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
-            opacity="0.42"
+            opacity="0.54"
           />
           <ellipse
             cx="318"
@@ -73,13 +73,13 @@ export default function ServiceAreaMap({
             stroke="currentColor"
             strokeWidth="1.5"
             strokeDasharray="8 10"
-            opacity="0.32"
+            opacity="0.36"
           />
 
           <line x1="318" y1="220" x2="550" y2="220" stroke="currentColor" strokeWidth="1.5" opacity="0.35" />
           <line x1="318" y1="220" x2="318" y2="80" stroke="currentColor" strokeWidth="1.5" opacity="0.2" />
 
-          <circle cx="318" cy="220" r="8" fill="currentColor" opacity="0.9" />
+          <circle cx="318" cy="220" r="8" fill="currentColor" opacity="0.96" />
           <circle cx="318" cy="220" r="18" fill="none" stroke="currentColor" strokeWidth="2" opacity="0.45" />
 
           <g fontFamily="Inter, Arial, sans-serif" fill="currentColor">

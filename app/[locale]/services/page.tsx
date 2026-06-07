@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
@@ -44,17 +45,40 @@ export default async function ServicesPage({
       <main className="min-h-screen">
         {/* 1. HERO — qualification entry point for homepage CTA */}
         <Section tone="light" className="section-primitive--first" id="qualification">
-          <GridFrame>
-            <Region name="main" desktopSpan="full">
-              <div className="section-intro">
-                <h1>{t('intro.headline')}</h1>
+          <GridFrame className="items-center gap-10">
+            <Region name="main" tabletSpan="half" desktopSpan="half">
+              <div className="section-intro mb-0">
+                <p className="section-label">{t('summaryTitle')}</p>
+                <h1 className="mt-3">{t('intro.headline')}</h1>
                 <p className="text-lg text-body mb-4 leading-relaxed">
                   {t('intro.lead1')}
                 </p>
                 <p className="text-base text-body leading-relaxed">
                   {t('intro.lead2')}
                 </p>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <Link href={`/${locale}/contact`} className="btn-primary">
+                    {t('cta.primaryButton')}
+                  </Link>
+                  <Link href="#estimator" className="btn-secondary">
+                    {t('estimator.calculate')}
+                  </Link>
+                </div>
               </div>
+            </Region>
+            <Region name="support" tabletSpan="half" desktopSpan="half">
+              <figure className="visual-card-strong overflow-hidden">
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src="/photos/sentinel-report-placeholder.png"
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </figure>
             </Region>
           </GridFrame>
         </Section>
@@ -137,7 +161,7 @@ export default async function ServicesPage({
             />
 
             {/* KARTA 1: Podstawowy */}
-            <article className="relative max-w-4xl mx-auto border border-structural-light border-t-2 border-t-structural-muted bg-surface-card r overflow-hidden">
+            <article className="visual-card-strong relative max-w-4xl mx-auto overflow-hidden">
               <div className="bg-surface-light-alt/60 border-b border-structural-light px-5 py-6 md:px-10 md:py-10">
                 <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
                   <div className="min-w-0">
@@ -218,7 +242,7 @@ export default async function ServicesPage({
             </article>
 
             {/* KARTA 2: Rozszerzony */}
-            <article className="relative max-w-4xl mx-auto border border-structural-light border-t-2 border-t-structural-muted bg-surface-card r overflow-hidden">
+            <article className="visual-card-strong relative max-w-4xl mx-auto overflow-hidden">
               <div className="bg-surface-light-alt/60 border-b border-structural-light px-5 py-6 md:px-10 md:py-10">
                 <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
                   <div className="min-w-0">
@@ -286,7 +310,7 @@ export default async function ServicesPage({
             </article>
 
             {/* KARTA 3: Pełny */}
-            <article className="relative max-w-4xl mx-auto border border-structural-light border-t-2 border-t-structural-muted bg-surface-card r overflow-hidden">
+            <article className="visual-card-strong relative max-w-4xl mx-auto overflow-hidden">
               <div className="bg-surface-light-alt/60 border-b border-structural-light px-5 py-6 md:px-10 md:py-10">
                 <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
                   <div className="min-w-0">
@@ -370,7 +394,7 @@ export default async function ServicesPage({
             <p className="text-body text-sm mb-6 leading-relaxed">{t('addons.intro')}</p>
 
             <div className="space-y-5">
-              <div className="border border-structural-light r bg-surface-light-alt/60 py-4 px-4">
+              <div className="visual-card py-4 px-4">
                 <h3 className="text-sm font-semibold text-body mb-2">{t('addons.rental.title')}</h3>
                 <ul className="list-disc list-inside space-y-0.5 text-body text-sm mb-1.5 ml-2">
                   <li>{t('addons.rental.items.preparation')}</li>
@@ -380,7 +404,7 @@ export default async function ServicesPage({
                 <p className="text-xs text-muted mt-1.5">{t('addons.rental.notPM')}</p>
               </div>
 
-              <div className="border border-structural-light r bg-surface-light-alt/60 py-4 px-4">
+              <div className="visual-card py-4 px-4">
                 <h3 className="text-sm font-semibold text-body mb-2">{t('addons.seasonal.title')}</h3>
                 <ul className="list-disc list-inside space-y-0.5 text-body text-sm mb-0 ml-2">
                   <li>{t('addons.seasonal.items.openingClosing')}</li>
@@ -389,7 +413,7 @@ export default async function ServicesPage({
                 </ul>
               </div>
 
-              <div className="border border-structural-light r bg-surface-light-alt/60 py-4 px-4">
+              <div className="visual-card py-4 px-4">
                 <h3 className="text-sm font-semibold text-body mb-1">{t('addons.transfers.title')}</h3>
                 <p className="text-body text-sm mb-0">{t('addons.transfers.provider')}</p>
               </div>
@@ -499,7 +523,9 @@ export default async function ServicesPage({
         </Section>
 
         {/* 7. ESTIMATOR */}
-        <Estimator />
+        <div id="estimator">
+          <Estimator />
+        </div>
 
         {/* CTA */}
         <Section tone="authority">

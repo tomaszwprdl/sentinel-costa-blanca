@@ -8,14 +8,14 @@ export default function ConfidenceBar() {
   const t = useTranslations('common.confidenceBar');
 
   return (
-    <div className="bg-surface-card border border-structural-muted border-l-2 border-l-structural-a r p-6">
+    <div className="visual-card-strong p-6">
       <h3 className="section-label">
         {t('title')}
       </h3>
-      <GridFrame>
+      <GridFrame className="mt-5">
         <Region name="main" desktopSpan="third">
-          <div className="border-t border-structural-light pt-5">
-            <p className="section-label mb-1 text-muted">
+          <div className="h-full rounded-2xl border border-structural-light bg-surface-light-alt p-5">
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-accent">
               {t('serviceArea.label')}
             </p>
             <p className="text-sm text-body leading-relaxed">
@@ -24,8 +24,8 @@ export default function ConfidenceBar() {
           </div>
         </Region>
         <Region name="main" desktopSpan="third">
-          <div className="border-t border-structural-light pt-5">
-            <p className="section-label mb-1 text-muted">
+          <div className="h-full rounded-2xl border border-structural-light bg-surface-light-alt p-5">
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-accent">
               {t('sla.label')}
             </p>
             <p className="text-sm text-body leading-relaxed">
@@ -34,8 +34,8 @@ export default function ConfidenceBar() {
           </div>
         </Region>
         <Region name="main" desktopSpan="third">
-          <div className="border-t border-structural-light pt-5">
-            <p className="section-label mb-1 text-muted">
+          <div className="h-full rounded-2xl border border-structural-light bg-surface-light-alt p-5">
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-accent">
               {t('scope.label')}
             </p>
             <p className="text-sm text-body leading-relaxed">

@@ -62,7 +62,7 @@ export default function OperationalCaptureFrame({
   compact = false,
 }: OperationalCaptureFrameProps) {
   return (
-    <div className="border border-structural-light bg-surface-card r overflow-hidden">
+    <div className="visual-card overflow-hidden">
       <div className={compact ? 'p-3' : 'p-4 md:p-5'}>
         <div className="flex items-start justify-between gap-3">
           <p className="text-[11px] font-medium uppercase tracking-wide text-muted">{reference}</p>
@@ -71,8 +71,8 @@ export default function OperationalCaptureFrame({
         <div
           className={
             compact
-              ? 'mt-3 aspect-[4/3] border border-structural-light bg-surface-light-alt'
-              : 'mt-4 aspect-[4/3] border border-structural-light bg-surface-light-alt'
+              ? 'mt-3 aspect-[4/3] rounded-2xl border border-structural-light bg-surface-light-alt'
+              : 'mt-4 aspect-[4/3] rounded-2xl border border-structural-light bg-surface-light-alt'
           }
           aria-label={label}
           role="img"

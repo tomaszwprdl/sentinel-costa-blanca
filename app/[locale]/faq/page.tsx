@@ -123,7 +123,10 @@ export default function FAQPage() {
       <main className="min-h-screen">
         <Section tone="light" className="section-primitive--first">
           <div>
-            <h1>{t('pageTitle')}</h1>
+            <div className="section-intro">
+              <p className="section-label">FAQ</p>
+              <h1>{t('pageTitle')}</h1>
+            </div>
 
             {/* POLICY NOTICE BANNER */}
             <div className="notice-panel mb-10">
@@ -152,20 +155,20 @@ export default function FAQPage() {
             </div>
 
             {/* SEARCH FIELD */}
-            <div className="mb-10">
+            <div className="mb-10 visual-card-strong p-3">
               <input
                 type="text"
                 placeholder={t('search.placeholder')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="form-control"
+                className="form-control border-0 bg-surface-light-alt text-lg"
               />
             </div>
 
             <div className="grid grid-cols-1 gap-10 lg:grid-cols-[15rem_minmax(0,1fr)] lg:items-start">
               {/* ANCHOR NAVIGATION — stacked per Task 5D-1C (no tablet 3+ col) */}
               <div className="hidden md:block">
-                <div className="border border-structural-light bg-surface-card r p-5 lg:sticky lg:top-40">
+                <div className="visual-card p-5 lg:sticky lg:top-28">
                   <h3 className="section-label">{t('sectionsLabel')}</h3>
                   <nav className="space-y-2">
                     {faqSections.map((section) => (
@@ -184,9 +187,9 @@ export default function FAQPage() {
               {/* FAQ CONTENT */}
               <div>
                 {filteredSections.length === 0 ? (
-                  <div className="bg-surface-light-alt p-10 text-center r">
-                    <p className="text-body">{t('noResults')}</p>
-                  </div>
+                <div className="visual-card p-10 text-center">
+                  <p className="text-body">{t('noResults')}</p>
+                </div>
                 ) : (
                   <div className="space-y-10">
                     {filteredSections.map((section) => (
@@ -223,7 +226,7 @@ export default function FAQPage() {
             </div>
 
             {/* BOTTOM SECTION */}
-            <div className="mt-10 bg-surface-light-alt p-10 border border-structural-light r">
+            <div className="visual-card-strong mt-12 p-8 md:p-10">
               <h2 className="h2-system">{t('notAnswered.title')}</h2>
               <p className="text-body mb-5 leading-relaxed">
                 {t('notAnswered.intro')}

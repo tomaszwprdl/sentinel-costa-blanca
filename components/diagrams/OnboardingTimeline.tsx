@@ -18,14 +18,14 @@ export default function OnboardingTimeline({
   summaryText,
 }: OnboardingTimelineProps) {
   return (
-    <section className="border border-structural-light bg-surface-card r p-6" aria-label={eyebrow}>
+    <section className="visual-card-strong p-6" aria-label={eyebrow}>
       <p className="section-label mb-6">{eyebrow}</p>
 
       <ol className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
         {items.map((item) => (
-          <li key={item.marker} className="border-t border-structural-light pt-5">
+          <li key={item.marker} className="rounded-2xl border border-structural-light bg-surface-light-alt p-5">
             <div className="flex gap-3">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-structural-light text-xs font-semibold text-heading r">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/35 bg-surface-card text-xs font-bold text-accent">
                 {item.marker}
               </span>
               <div className="min-w-0">

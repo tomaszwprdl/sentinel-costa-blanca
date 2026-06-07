@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
@@ -20,14 +21,29 @@ export default async function AboutPage({
       <main className="min-h-screen">
         {/* SECTION 1: PAGE INTRODUCTION */}
         <Section tone="light" className="section-primitive--first">
-          <div>
-              <h1>{t('pageTitle')}</h1>
-              <p className="text-lg text-body mb-5 leading-relaxed">
-                {t('intro.description')}
-              </p>
-              <p className="text-base text-muted leading-relaxed">
-                {t('intro.subtext')}
-              </p>
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(20rem,0.7fr)] lg:items-center">
+            <div className="section-intro mb-0">
+                <p className="section-label">Sentinel Costa Blanca</p>
+                <h1>{t('pageTitle')}</h1>
+                <p className="text-lg text-body mb-5 leading-relaxed">
+                  {t('intro.description')}
+                </p>
+                <p className="text-base text-muted leading-relaxed">
+                  {t('intro.subtext')}
+                </p>
+            </div>
+            <figure className="visual-card-strong overflow-hidden">
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src="/photos/sentinel-technical-check-placeholder.png"
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </figure>
           </div>
         </Section>
 
@@ -418,7 +434,7 @@ export default async function AboutPage({
                 </ul>
               </div>
 
-              <div className="bg-yellow-900 p-6 mb-10">
+              <div className="rounded-2xl border border-accent/40 bg-surface-light-alt p-6 mb-10">
                 <h3>{t('nextSteps.declines.title')}</h3>
                 <ul className="list-disc list-inside space-y-2 text-authority-on-dark/80 ml-4">
                   <li>{t('nextSteps.declines.items.outside')}</li>
