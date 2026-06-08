@@ -136,10 +136,7 @@ export function PathwayFinalCtaLink({
 }) {
   const searchParams = useSearchParams();
   const pathway = normalizePathwayParam(searchParams.get('pathway'));
-  const href =
-    pathway === 'mixed-not-defined'
-      ? `/${locale}/contact?pathway=mixed-not-defined`
-      : `/${locale}/services#qualification`;
+  const href = pathway ? `/${locale}/contact?pathway=${pathway}` : `/${locale}/contact`;
 
   return (
     <Link href={href} className={className}>
@@ -264,23 +261,60 @@ function PathwayDetailPanel({
   pathway: PathwayKey;
   t: ReturnType<typeof useTranslations<'home.pathway'>>;
 }) {
+  const primaryHref =
+    pathway === 'mixed-not-defined'
+      ? `/${locale}/contact?pathway=mixed-not-defined`
+      : `/${locale}/services#qualification`;
+  const secondaryHref =
+    pathway === 'mixed-not-defined'
+      ? `/${locale}/services#qualification`
+      : `/${locale}/contact?pathway=${pathway}`;
+  const primaryLabel = pathway === 'mixed-not-defined' ? t('reviewCta') : t('servicesCta');
+  const secondaryLabel = pathway === 'mixed-not-defined' ? t('servicesCta') : t('reviewCta');
+
   return (
     <div className="diagnostic-result-shell">
-      <div className="grid gap-0 lg:grid-cols-[minmax(0,0.9fr)_minmax(18rem,0.42fr)]">
+      <div className="grid gap-0 lg:grid-cols-[minmax(0,0.95fr)_minmax(18rem,0.45fr)]">
         <div className="p-6 md:p-8">
           <p className="section-label">{t('selectedLabel')}</p>
-          <h3 className="mt-2 text-3xl">
+          <h2 className="mt-2 max-w-[18ch] text-3xl font-black leading-tight text-heading md:text-4xl">
             {t(`cards.${pathway}.title`)}
-          </h3>
+          </h2>
           <p className="mt-5 text-base leading-relaxed text-body">
             {t(`detail.${pathway}.priority`)}
           </p>
-          <div className="mt-7">
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <div className="rounded-2xl border border-structural-light bg-surface-light-alt p-4">
+              <p className="mb-2 text-[11px] font-black uppercase tracking-wide text-muted">
+                {t('meaningLabel')}
+              </p>
+              <p className="mb-0 text-sm leading-relaxed text-body">
+                {t(`detail.${pathway}.meaning`)}
+              </p>
+            </div>
+            <div className="rounded-2xl border border-structural-light bg-surface-light-alt p-4">
+              <p className="mb-2 text-[11px] font-black uppercase tracking-wide text-muted">
+                {t('nextLabel')}
+              </p>
+              <p className="mb-0 text-sm leading-relaxed text-body">
+                {t(`detail.${pathway}.next`)}
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <Link
-              href={`/${locale}/contact?pathway=${pathway}`}
+              href={primaryHref}
               className="btn-primary inline-flex w-fit text-sm"
             >
-              {t('cta')}
+              {primaryLabel}
+            </Link>
+            <Link
+              href={secondaryHref}
+              className="btn-secondary inline-flex w-fit text-sm"
+            >
+              {secondaryLabel}
             </Link>
           </div>
         </div>

@@ -148,10 +148,14 @@
       "chooseModel": "Choose this model",
       "selectedSituationLabel": "Selected situation:",
       "changeSituation": "Change situation",
-      "selectedLabel": "Selected situation:",
-      "priorityLabel": "Sentinel priority:",
-      "changesLabel": "What this changes:",
-      "cta": "Discuss this situation",
+    "selectedLabel": "Selected situation:",
+    "priorityLabel": "Sentinel priority:",
+    "changesLabel": "What this changes:",
+    "cta": "Discuss this situation",
+    "reviewCta": "Proceed to review",
+    "servicesCta": "Compare service scope",
+    "meaningLabel": "Operational meaning",
+    "nextLabel": "Owner next step",
       "cards": {
         "private-use-only": {
           "title": "Private Use Only",
@@ -170,28 +174,34 @@
         }
       },
       "detail": {
-        "private-use-only": {
-          "priority": "Regular local presence, visible dormant-property checks, controlled access, and readiness before owner arrival.",
-          "point1": "Leaks, moisture, smell, and ventilation",
-          "point2": "Visible water, electricity, and boiler condition checks",
-          "point3": "Keyholding and controlled access",
+      "private-use-only": {
+        "priority": "Regular local presence, visible dormant-property checks, controlled access, and readiness before owner arrival.",
+        "meaning": "Scope focuses on property condition between visits, controlled access, and readiness before arrival.",
+        "next": "Review the package levels, then confirm the inspection and readiness rhythm the property requires.",
+        "point1": "Leaks, moisture, smell, and ventilation",
+        "point2": "Visible water, electricity, and boiler condition checks",
+        "point3": "Keyholding and controlled access",
           "point4": "Pre-arrival cleaning and readiness",
           "point5": "Documented condition before arrival"
         },
-        "regular-guest-stays": {
-          "priority": "Turnover order, access coordination, cleaning readiness, post-stay checks, and event documentation.",
-          "point1": "Cleaning and readiness between stays",
-          "point2": "Keyholding and access events",
-          "point3": "Post-stay condition checks",
+      "regular-guest-stays": {
+        "priority": "Turnover order, access coordination, cleaning readiness, post-stay checks, and event documentation.",
+        "meaning": "Scope must handle events between stays: access, cleaning, post-use condition, and a clear record.",
+        "next": "Compare package levels and decide whether access handling and turnover documentation are required.",
+        "point1": "Cleaning and readiness between stays",
+        "point2": "Keyholding and access events",
+        "point3": "Post-stay condition checks",
           "point4": "Damage and event documentation",
           "point5": "Cleaner, vendor, and technician coordination",
           "point6": "Reducing operational noise for the owner"
         },
-        "mixed-not-defined": {
-          "priority": "First classify the use pattern, then define the scope without guessing.",
-          "point1": "Private use now, possible rental later",
-          "point2": "Avoiding the wrong package choice",
-          "point3": "Avoiding unnecessary guest-service intensity",
+      "mixed-not-defined": {
+        "priority": "First classify the use pattern, then define the scope without guessing.",
+        "meaning": "Scope should not be chosen from assumptions when the use pattern may change.",
+        "next": "Move to structured review so private use, guest stays, and required scope can be separated.",
+        "point1": "Private use now, possible rental later",
+        "point2": "Avoiding the wrong package choice",
+        "point3": "Avoiding unnecessary guest-service intensity",
           "point4": "Avoiding under-structuring if guest activity starts",
           "point5": "Scope confirmed after structured review"
         }
@@ -262,10 +272,13 @@
       "close1": "It is not about whether something will happen.",
       "close2": "It is that you will find out too late."
     },
-    "contrast": {
-      "title": "Without us / With us",
-      "intro": "Below is the difference between no local representation and fixed control on site.",
-      "leftHeading": "Without us",
+  "contrast": {
+    "eyebrow": "After selection",
+    "title": "Without us / With us",
+    "intro": "Below is the difference between no local representation and fixed control on site.",
+    "leftModeLabel": "Risk without structure",
+    "rightModeLabel": "Controlled version",
+    "leftHeading": "Without us",
       "left1": "The property isn't checked regularly while you're away.",
       "left2": "You learn about a problem when someone notices it — not when it starts.",
       "left3": "Every situation begins with logistics: who can go, who has keys, who has time.",
@@ -283,10 +296,33 @@
       "right7": "Responsibility and scope are defined in advance.",
       "rightClosing": "Order runs this, not chance."
     },
-    "systemIntro": {
-      "title": "How the Sentinel system works",
-      "intro": "Sentinel provides fixed, local control over your property.",
-      "scopeTitle": "Scope",
+  "systemIntro": {
+    "eyebrow": "Short process",
+    "title": "How the Sentinel system works",
+    "intro": "Sentinel provides fixed, local control over your property.",
+    "process": {
+      "scope": {
+        "label": "Scope",
+        "title": "Boundaries first",
+        "body": "The agreement defines what is checked, how often, and where responsibility stops."
+      },
+      "documentation": {
+        "label": "Documentation",
+        "title": "Record after visit",
+        "body": "Checks and events leave material on property condition and actions performed."
+      },
+      "procedure": {
+        "label": "Procedure",
+        "title": "Same order",
+        "body": "Visits, access, and requests follow repeatable steps rather than improvised handling."
+      },
+      "decisions": {
+        "label": "Decisions",
+        "title": "Limits before response",
+        "body": "Action stays within the agreed scope and the owner's accepted decision limits."
+      }
+    },
+    "scopeTitle": "Scope",
       "scope1": "Scope of action is clearly defined — you know what is checked and how often.",
       "scope2": "You have a transparent operating model based on fixed rules.",
       "procedureTitle": "Procedure",
@@ -304,23 +340,27 @@
       "close1": "Sentinel takes over operational presence.",
       "close2": "Strategic control remains with you."
     },
-    "levels": {
-      "title": "Package scope",
-      "intro": "Choosing a package defines the scope of local control.",
+  "levels": {
+    "eyebrow": "Package scope",
+    "title": "Package scope",
+    "intro": "Choosing a package defines the scope of local control.",
       "axis1": "Control",
       "axis2": "Control + Access",
       "axis3": "Control + Access + Decisions",
       "ctaCompare": "Compare packages in detail",
-      "level1Title": "Basic package",
-      "level1_1": "Regular scheduled inspections",
+    "level1Title": "Basic package",
+    "level1Purpose": "For owners who need scheduled condition checks and controlled keyholding.",
+    "level1_1": "Regular scheduled inspections",
       "level1_2": "Photo report and key storage",
       "level1_6": "Limitations: no access coordination; no autonomous decisions.",
-      "level2Title": "Extended package",
-      "level2_1": "Organisation and supervision of third-party access",
+    "level2Title": "Extended package",
+    "level2Purpose": "For properties that need third-party entry handling in addition to condition control.",
+    "level2_1": "Organisation and supervision of third-party access",
       "level2_2": "Access documentation and initial repair coordination",
       "level2_6": "Limitations: decisions require owner approval.",
-      "level3Title": "Full package",
-      "level3_1": "Emergency response with on-site presence",
+    "level3Title": "Full package",
+    "level3Purpose": "For situations that require emergency response, decisions within limit, and broader coordination.",
+    "level3_1": "Emergency response with on-site presence",
       "level3_2": "Decisions within limit (€300 / €500) and extended work coordination",
       "level3_6": "Limitations: above limit owner approval is required.",
       "systemRuleTitle": "System principle",
@@ -329,7 +369,26 @@
       "systemRule3": "Every action is subject to documentation."
     },
     "distinction": {
+      "eyebrow": "Why the model works",
       "title": "What distinguishes Sentinel",
+      "cards": {
+        "scope": {
+          "title": "Scope before action",
+          "body": "The operating model and responsibility boundaries are defined before local execution starts."
+        },
+        "documentation": {
+          "title": "Documentation after visits",
+          "body": "Checks, access, and events leave a dated record of actions and property condition."
+        },
+        "decisions": {
+          "title": "Decisions within limits",
+          "body": "Responses stay inside agreed boundaries. Above the limit, owner approval is required."
+        },
+        "responsibility": {
+          "title": "Local responsibility",
+          "body": "The model is procedural, but execution has a defined local responsibility point."
+        }
+      },
       "block1Title": "Fixed rules, clear responsibility",
       "block1p1": "The scope of cooperation is defined before work begins. Each property goes through a qualification process before cooperation starts.",
       "block1p2": "Specific people deliver the work under the same rules. We operate within agreed frameworks, not ad hoc.",
@@ -383,6 +442,7 @@
       "rule5": "Area of operation is fixed (Torrevieja + 50–70 km radius)."
     },
     "serviceArea": {
+      "eyebrow": "Service area",
       "title": "Area of operation",
       "subtitle": "Fixed operational jurisdiction",
       "intro": "Sentinel operates only in Torrevieja and within a 50–70 km radius.",
@@ -405,10 +465,12 @@
       "item5": "The team has over 25 years of technical experience."
     },
     "finalCta": {
+      "eyebrow": "Next step",
       "title": "You can manage reactively. Or operate within the system.",
       "p1": "Reactive management is based on reacting. The system is based on steady control.",
       "p2": "Sentinel is a defined model of owner representation. The choice is about the structure of local oversight and owner representation.",
-      "cta": "Verify whether your property qualifies for the Sentinel system"
+      "cta": "Verify fit",
+      "secondaryCta": "View packages"
     }
   },
   "services": {

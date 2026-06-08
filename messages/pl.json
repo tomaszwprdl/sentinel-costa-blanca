@@ -148,10 +148,14 @@
       "chooseModel": "Wybierz ten model",
       "selectedSituationLabel": "Wybrana sytuacja:",
       "changeSituation": "Zmień sytuację",
-      "selectedLabel": "Wybrana sytuacja:",
-      "priorityLabel": "Priorytet Sentinel:",
-      "changesLabel": "Co to zmienia:",
-      "cta": "Omów tę sytuację",
+    "selectedLabel": "Wybrana sytuacja:",
+    "priorityLabel": "Priorytet Sentinel:",
+    "changesLabel": "Co to zmienia:",
+    "cta": "Omów tę sytuację",
+    "reviewCta": "Przejdź do przeglądu",
+    "servicesCta": "Porównaj zakres usług",
+    "meaningLabel": "Znaczenie operacyjne",
+    "nextLabel": "Następny krok właściciela",
       "cards": {
         "private-use-only": {
           "title": "Tylko użytek prywatny",
@@ -170,28 +174,34 @@
         }
       },
       "detail": {
-        "private-use-only": {
-          "priority": "Regularna lokalna obecność, kontrola ryzyk pustego lokalu, klucze pod kontrolą i przygotowanie przed przyjazdem właściciela.",
-          "point1": "Przecieki, wilgoć, zapach i wentylacja",
-          "point2": "Widoczne kontrole wody, prądu i stanu bojlera",
-          "point3": "Przechowanie kluczy i kontrolowany dostęp",
+      "private-use-only": {
+        "priority": "Regularna lokalna obecność, kontrola ryzyk pustego lokalu, klucze pod kontrolą i przygotowanie przed przyjazdem właściciela.",
+        "meaning": "Zakres koncentruje się na stanie lokalu między pobytami, dostępie i przygotowaniu przed przyjazdem.",
+        "next": "Sprawdź pakiety, a następnie potwierdź, jaki rytm kontroli i przygotowania jest potrzebny.",
+        "point1": "Przecieki, wilgoć, zapach i wentylacja",
+        "point2": "Widoczne kontrole wody, prądu i stanu bojlera",
+        "point3": "Przechowanie kluczy i kontrolowany dostęp",
           "point4": "Sprzątanie i przygotowanie przed przyjazdem",
           "point5": "Udokumentowany stan przed przyjazdem"
         },
-        "regular-guest-stays": {
-          "priority": "Porządek między pobytami, koordynacja dostępu, gotowość po sprzątaniu, kontrola po pobycie i dokumentacja zdarzeń.",
-          "point1": "Sprzątanie i przygotowanie między pobytami",
-          "point2": "Przechowanie kluczy i obsługa dostępu",
-          "point3": "Kontrola stanu po pobycie",
+      "regular-guest-stays": {
+        "priority": "Porządek między pobytami, koordynacja dostępu, gotowość po sprzątaniu, kontrola po pobycie i dokumentacja zdarzeń.",
+        "meaning": "Zakres musi obsłużyć zdarzenia między pobytami: dostęp, sprzątanie, stan po użyciu i zapis ustaleń.",
+        "next": "Porównaj poziomy zakresu i ustal, czy potrzebna jest obsługa dostępu oraz dokumentacja rotacji.",
+        "point1": "Sprzątanie i przygotowanie między pobytami",
+        "point2": "Przechowanie kluczy i obsługa dostępu",
+        "point3": "Kontrola stanu po pobycie",
           "point4": "Dokumentacja szkód i zdarzeń",
           "point5": "Koordynacja sprzątania, wykonawców i techników",
           "point6": "Ograniczenie chaosu operacyjnego dla właściciela"
         },
-        "mixed-not-defined": {
-          "priority": "Najpierw klasyfikacja sposobu używania, potem dobór zakresu bez zgadywania.",
-          "point1": "Dziś użytek prywatny, później możliwy wynajem",
-          "point2": "Uniknięcie złego wyboru zakresu",
-          "point3": "Uniknięcie niepotrzebnej intensywności obsługi gości",
+      "mixed-not-defined": {
+        "priority": "Najpierw klasyfikacja sposobu używania, potem dobór zakresu bez zgadywania.",
+        "meaning": "Zakres nie powinien być wybierany na podstawie domysłu, jeśli model używania może się zmienić.",
+        "next": "Przejdź do uporządkowanego przeglądu, aby rozdzielić użytek prywatny, pobyty gości i potrzebny zakres.",
+        "point1": "Dziś użytek prywatny, później możliwy wynajem",
+        "point2": "Uniknięcie złego wyboru zakresu",
+        "point3": "Uniknięcie niepotrzebnej intensywności obsługi gości",
           "point4": "Uniknięcie zbyt słabej struktury, jeśli pojawi się wynajem",
           "point5": "Zakres potwierdzany po uporządkowanym przeglądzie"
         }
@@ -262,10 +272,13 @@
       "close1": "Nie chodzi o to, czy coś się wydarzy.",
       "close2": "Chodzi o to, że dowiesz się o tym za późno."
     },
-    "contrast": {
-      "title": "Bez nas / Z nami",
-      "intro": "Poniżej różnica między sytuacją bez lokalnej reprezentacji a stałą kontrolą na miejscu.",
-      "leftHeading": "Bez nas",
+  "contrast": {
+    "eyebrow": "Po wyborze sytuacji",
+    "title": "Bez nas / Z nami",
+    "intro": "Poniżej różnica między sytuacją bez lokalnej reprezentacji a stałą kontrolą na miejscu.",
+    "leftModeLabel": "Ryzyko bez struktury",
+    "rightModeLabel": "Kontrolowana wersja",
+    "leftHeading": "Bez nas",
       "left1": "Nieruchomość nie jest regularnie sprawdzana, gdy Cię nie ma.",
       "left2": "O problemie dowiadujesz się wtedy, gdy ktoś go zauważy — nie gdy powstaje.",
       "left3": "Każda sytuacja zaczyna się od szukania: kto może pojechać, kto ma klucze, kto ma czas.",
@@ -283,10 +296,33 @@
       "right7": "Odpowiedzialność i zakres są jasno określone.",
       "rightClosing": "Tu działa porządek, nie przypadek."
     },
-    "systemIntro": {
-      "title": "Jak działa system Sentinel",
-      "intro": "Sentinel wprowadza stałą, lokalną kontrolę nad Twoją nieruchomością.",
-      "scopeTitle": "Zakres",
+  "systemIntro": {
+    "eyebrow": "Krótki proces",
+    "title": "Jak działa system Sentinel",
+    "intro": "Sentinel wprowadza stałą, lokalną kontrolę nad Twoją nieruchomością.",
+    "process": {
+      "scope": {
+        "label": "Zakres",
+        "title": "Najpierw granice",
+        "body": "Ustalenia określają, co jest sprawdzane, jak często i gdzie kończy się odpowiedzialność."
+      },
+      "documentation": {
+        "label": "Dokumentacja",
+        "title": "Zapis po wizycie",
+        "body": "Kontrole i zdarzenia zostawiają materiał o stanie lokalu oraz wykonanych działaniach."
+      },
+      "procedure": {
+        "label": "Procedura",
+        "title": "Ten sam porządek",
+        "body": "Wizyty, dostęp i zgłoszenia przechodzą przez powtarzalne kroki, nie przez improwizację."
+      },
+      "decisions": {
+        "label": "Decyzje",
+        "title": "Limity przed reakcją",
+        "body": "Działanie odbywa się w ustalonym zakresie i w granicach zaakceptowanych limitów."
+      }
+    },
+    "scopeTitle": "Zakres",
       "scope1": "Zakres działań jest jasno określony — wiesz, co jest sprawdzane i jak często.",
       "scope2": "Masz przejrzysty model działania oparty na stałych zasadach.",
       "procedureTitle": "Procedura",
@@ -304,23 +340,27 @@
       "close1": "Sentinel przejmuje operacyjną obecność.",
       "close2": "Kontrola strategiczna pozostaje po Twojej stronie."
     },
-    "levels": {
-      "title": "Zakres pakietów",
-      "intro": "Wybór pakietu określa zakres lokalnej kontroli.",
+  "levels": {
+    "eyebrow": "Zakres pakietów",
+    "title": "Zakres pakietów",
+    "intro": "Wybór pakietu określa zakres lokalnej kontroli.",
       "axis1": "Kontrola",
       "axis2": "Kontrola + Dostęp",
       "axis3": "Kontrola + Dostęp + Decyzje",
       "ctaCompare": "Porównaj pakiety szczegółowo",
-      "level1Title": "Pakiet Podstawowy",
-      "level1_1": "Regularne wizyty kontrolne",
+    "level1Title": "Pakiet Podstawowy",
+    "level1Purpose": "Dla właściciela, który potrzebuje regularnej kontroli stanu i uporządkowanego przechowania kluczy.",
+    "level1_1": "Regularne wizyty kontrolne",
       "level1_2": "Raport ze zdjęciami i przechowywanie kluczy",
       "level1_6": "Ograniczenia: brak organizacji dostępu; brak autonomicznych decyzji.",
-      "level2Title": "Pakiet Rozszerzony",
-      "level2_1": "Organizacja i nadzór wejść osób trzecich",
+    "level2Title": "Pakiet Rozszerzony",
+    "level2Purpose": "Dla lokalu, w którym oprócz kontroli potrzebne są wejścia techników, ekip lub innych osób.",
+    "level2_1": "Organizacja i nadzór wejść osób trzecich",
       "level2_2": "Dokumentacja dostępu i pierwsze działania naprawcze",
       "level2_6": "Ograniczenia: decyzje wymagają zatwierdzenia właściciela.",
-      "level3Title": "Pakiet Pełny",
-      "level3_1": "Reakcja awaryjna z obecnością na miejscu",
+    "level3Title": "Pakiet Pełny",
+    "level3Purpose": "Dla sytuacji wymagających reakcji awaryjnej, decyzji w limicie i szerszej koordynacji.",
+    "level3_1": "Reakcja awaryjna z obecnością na miejscu",
       "level3_2": "Decyzje w limicie (300€ / 500€) i rozszerzona koordynacja prac",
       "level3_6": "Ograniczenia: powyżej limitu wymagana zgoda właściciela.",
       "systemRuleTitle": "Zasada systemowa",
@@ -329,7 +369,26 @@
       "systemRule3": "Każde działanie podlega dokumentacji."
     },
     "distinction": {
+      "eyebrow": "Dlaczego model działa",
       "title": "Co wyróżnia Sentinel",
+      "cards": {
+        "scope": {
+          "title": "Zakres przed działaniem",
+          "body": "Najpierw ustalony model i granice odpowiedzialności. Dopiero potem wykonanie na miejscu."
+        },
+        "documentation": {
+          "title": "Dokumentacja po wizycie",
+          "body": "Kontrola, dostęp i zdarzenia zostawiają zapis: datę, zakres czynności i materiał o stanie lokalu."
+        },
+        "decisions": {
+          "title": "Decyzje w limitach",
+          "body": "Reakcje odbywają się w uzgodnionych granicach. Powyżej limitu wymagana jest zgoda właściciela."
+        },
+        "responsibility": {
+          "title": "Lokalna odpowiedzialność",
+          "body": "System jest proceduralny, ale wykonanie ma konkretny lokalny punkt odpowiedzialności."
+        }
+      },
       "block1Title": "Stałe zasady, konkretna odpowiedzialność",
       "block1p1": "Zakres współpracy jest określony przed rozpoczęciem działań. Każda nieruchomość przechodzi proces kwalifikacji przed startem współpracy.",
       "block1p2": "Za wykonanie odpowiadają konkretne osoby według tych samych zasad. Działamy w ustalonych ramach, nie ad hoc.",
@@ -383,6 +442,7 @@
       "rule5": "Obszar działania jest stały (Torrevieja + promień 50–70 km)."
     },
     "serviceArea": {
+      "eyebrow": "Obszar obsługi",
       "title": "Obszar działania",
       "subtitle": "Stała jurysdykcja operacyjna",
       "intro": "Sentinel działa wyłącznie na terenie Torrevieja i w promieniu 50–70 km.",
@@ -405,10 +465,12 @@
       "item5": "Zespół posiada ponad 25 lat doświadczenia technicznego."
     },
     "finalCta": {
+      "eyebrow": "Następny krok",
       "title": "Możesz zarządzać reaktywnie. Albo działać w ramach systemu.",
       "p1": "Zarządzanie reaktywne opiera się na reagowaniu. System opiera się na stałej kontroli.",
       "p2": "Sentinel to zdefiniowany model reprezentacji właściciela. Wybór dotyczy struktury lokalnego nadzoru i reprezentacji właściciela.",
-      "cta": "Zweryfikuj, czy Twoja nieruchomość kwalifikuje się do systemu Sentinel"
+      "cta": "Zweryfikuj dopasowanie",
+      "secondaryCta": "Zobacz pakiety"
     }
   },
   "services": {

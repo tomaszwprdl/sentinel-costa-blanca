@@ -6,8 +6,6 @@ import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
 import Section from '@/components/layout/Section';
-import GridFrame from '@/components/layout/GridFrame';
-import Region from '@/components/layout/Region';
 import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
 import {
   PATHWAY_KEYS,
@@ -19,6 +17,15 @@ const PATHWAY_POINT_COUNTS: Record<PathwayKey, number> = {
   'regular-guest-stays': 6,
   'mixed-not-defined': 5,
 };
+
+const PROCESS_KEYS = ['scope', 'documentation', 'procedure', 'decisions'] as const;
+const PACKAGE_PREVIEW = [
+  { marker: '01', title: 'level1Title', axis: 'axis1', purpose: 'level1Purpose' },
+  { marker: '02', title: 'level2Title', axis: 'axis2', purpose: 'level2Purpose' },
+  { marker: '03', title: 'level3Title', axis: 'axis3', purpose: 'level3Purpose' },
+] as const;
+const CREDIBILITY_KEYS = ['scope', 'documentation', 'decisions', 'responsibility'] as const;
+const SERVICE_AREA_POINTS = ['bullet1', 'bullet2', 'bullet3', 'bullet4'] as const;
 
 export default async function HomePage({
   params
@@ -42,239 +49,207 @@ export default async function HomePage({
       <main className="min-h-screen flex flex-col bg-surface-light">
         <Suspense fallback={<UsagePathwayFallback locale={locale} selected={null} t={t} />}>
           <UsagePathwayLayer>
-        <Section tone="alt" variant="major" className="!pt-10">
-          <div className="max-w-3xl text-left">
-            <h2 className="h2-system font-bold mb-10">{t('systemIntro.title')}</h2>
-            <p className="text-body leading-relaxed mb-5"><PathwayCopy path="systemIntroContext" /></p>
-            <p className="text-body leading-relaxed mb-10">{t('systemIntro.intro')}</p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
-              <div>
-                <h3 className="text-xl font-semibold text-heading mb-4">{t('systemIntro.scopeTitle')}</h3>
-                <div className="space-y-5 mb-10">
-                  <p className="text-body leading-relaxed">{t('systemIntro.scope1')} {t('systemIntro.scope2')}</p>
+        <Section tone="light" className="!py-16 md:!py-20">
+          <div className="visual-card-strong overflow-hidden">
+            <div className="border-b border-structural-light bg-surface-light-alt px-5 py-6 md:px-8">
+              <p className="section-label">{t('systemIntro.eyebrow')}</p>
+              <div className="mt-3 grid gap-4 lg:grid-cols-[minmax(0,0.72fr)_minmax(18rem,0.34fr)] lg:items-end">
+                <div>
+                  <h2 className="h2-system">{t('systemIntro.title')}</h2>
+                  <p className="mt-3 max-w-[62ch] text-body">
+                    <PathwayCopy path="systemIntroContext" />
+                  </p>
                 </div>
-
-                <h3 className="text-xl font-semibold text-heading mb-4 mt-10">{t('systemIntro.procedureTitle')}</h3>
-                <div className="space-y-5">
-                  <p className="text-body leading-relaxed">{t('systemIntro.procedure1')} {t('systemIntro.procedure2')}</p>
-                  <p className="text-body leading-relaxed">{t('systemIntro.procedure3')}</p>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold text-heading mb-4">{t('systemIntro.docsTitle')}</h3>
-                <div className="space-y-5 mb-10">
-                  <p className="text-body leading-relaxed">{t('systemIntro.docs1')} {t('systemIntro.docs2')}</p>
-                </div>
-
-                <h3 className="text-xl font-semibold text-heading mb-4 mt-10">{t('systemIntro.decisionsTitle')}</h3>
-                <div className="space-y-5">
-                  <p className="text-body leading-relaxed">{t('systemIntro.decisions1')}</p>
-                  <p className="text-body leading-relaxed">{t('systemIntro.decisions2a')} {t('systemIntro.decisions2b')}</p>
-                </div>
+                <p className="mb-0 rounded-2xl border border-structural-light bg-surface-card p-4 text-sm leading-relaxed text-body">
+                  {t('systemIntro.intro')}
+                </p>
               </div>
             </div>
 
-            <div className="mt-10 space-y-5">
-              <p className="text-body leading-relaxed">{t('systemIntro.decisions3')}</p>
-              <p className="text-body leading-relaxed">{t('systemIntro.close1')} {t('systemIntro.close2')}</p>
+            <div className="grid gap-0 md:grid-cols-4">
+              {PROCESS_KEYS.map((key, index) => (
+                <article
+                  key={key}
+                  className="border-b border-structural-light p-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 md:p-6"
+                >
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-authority-bg text-xs font-black text-authority-on-dark">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <p className="mt-5 mb-2 text-[11px] font-black uppercase tracking-wide text-muted">
+                    {t(`systemIntro.process.${key}.label`)}
+                  </p>
+                  <h3 className="mb-2 text-xl font-black text-heading">
+                    {t(`systemIntro.process.${key}.title`)}
+                  </h3>
+                  <p className="mb-0 text-sm leading-relaxed text-body">
+                    {t(`systemIntro.process.${key}.body`)}
+                  </p>
+                </article>
+              ))}
             </div>
           </div>
         </Section>
 
         {/* 4. BEZ NAS / Z NAMI — shared section rhythm */}
-        <Section tone="light">
-          <div className="text-left">
-            <h2 className="h2-system font-bold">{t('contrast.title')}</h2>
-            <div className="mt-3 h-px w-16 bg-structural-muted" aria-hidden />
-            <p className="text-body leading-relaxed mt-4 mb-10"><PathwayCopy path="contrast.intro" /></p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-              <div className="min-w-0 space-y-5 border-t border-structural-light pt-5">
-                <h3 className="text-lg font-semibold text-heading mt-0 pl-5">{t('contrast.leftHeading')}</h3>
-                <ul className="list-disc pl-5 space-y-3 leading-relaxed text-base text-body">
-                  <li><PathwayCopy path="contrast.left1" /></li>
-                  <li><PathwayCopy path="contrast.left2" /></li>
-                  <li><PathwayCopy path="contrast.left3" /></li>
-                  <li><PathwayCopy path="contrast.left4" /></li>
-                </ul>
-                <p className="mt-2 text-sm text-body/80 leading-relaxed">
-                  <PathwayCopy path="contrast.leftClosing" />
-                </p>
-              </div>
-              <div className="min-w-0 space-y-5 border-t border-structural-light pt-5">
-                <h3 className="text-lg font-semibold text-heading mt-0 pl-5">{t('contrast.rightHeading')}</h3>
-                <ul className="list-disc pl-5 space-y-3 leading-relaxed text-base text-body">
-                  <li><PathwayCopy path="contrast.right1" /></li>
-                  <li><PathwayCopy path="contrast.right2" /></li>
-                  <li><PathwayCopy path="contrast.right3" /></li>
-                  <li><PathwayCopy path="contrast.right4" /></li>
-                </ul>
-                <p className="mt-2 text-sm text-body/80 leading-relaxed">
-                  <PathwayCopy path="contrast.rightClosing" />
-                </p>
-              </div>
+        <Section tone="alt" className="!py-16 md:!py-20">
+          <div className="grid gap-8 lg:grid-cols-[minmax(16rem,0.34fr)_minmax(0,0.66fr)] lg:items-start">
+            <div>
+              <p className="section-label">{t('contrast.eyebrow')}</p>
+              <h2 className="h2-system mt-3">{t('contrast.title')}</h2>
+              <p className="mt-4 max-w-[46ch] text-body leading-relaxed">
+                <PathwayCopy path="contrast.intro" />
+              </p>
             </div>
-            <div className="mt-10 h-px w-24 bg-structural-muted" aria-hidden />
+
+            <div className="grid gap-4 md:grid-cols-2">
+              <article className="visual-card-strong overflow-hidden">
+                <div className="border-b border-structural-light bg-surface-light-alt px-5 py-4">
+                  <p className="mb-1 text-[11px] font-black uppercase tracking-wide text-accent">
+                    {t('contrast.leftModeLabel')}
+                  </p>
+                  <h3 className="mb-0 text-xl font-black text-heading">{t('contrast.leftHeading')}</h3>
+                </div>
+                <div className="p-5">
+                  <ul className="space-y-3 text-sm leading-relaxed text-body">
+                    {[1, 2, 3, 4].map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden />
+                        <span><PathwayCopy path={`contrast.left${item}`} /></span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-5 border-t border-structural-light pt-4 text-sm font-semibold text-heading">
+                    <PathwayCopy path="contrast.leftClosing" />
+                  </p>
+                </div>
+              </article>
+
+              <article className="visual-card-strong overflow-hidden">
+                <div className="border-b border-structural-light bg-surface-card px-5 py-4">
+                  <p className="mb-1 text-[11px] font-black uppercase tracking-wide text-support">
+                    {t('contrast.rightModeLabel')}
+                  </p>
+                  <h3 className="mb-0 text-xl font-black text-heading">{t('contrast.rightHeading')}</h3>
+                </div>
+                <div className="p-5">
+                  <ul className="space-y-3 text-sm leading-relaxed text-body">
+                    {[1, 2, 3, 4].map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-support" aria-hidden />
+                        <span><PathwayCopy path={`contrast.right${item}`} /></span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-5 border-t border-structural-light pt-4 text-sm font-semibold text-heading">
+                    <PathwayCopy path="contrast.rightClosing" />
+                  </p>
+                </div>
+              </article>
+            </div>
           </div>
         </Section>
 
         {/* 5. ZAKRES PAKIETÓW — jedna oś: wrapper flex flex-col items-center; tekst max-w-[72ch]; grid w-full max-w-[1120px] mx-auto justify-items-center; karty w-full */}
-        <Section tone="light">
-          <div className="flex flex-col items-center w-full">
-            <h2 className="h2-system text-center max-w-[72ch] w-full">{t('levels.title')}</h2>
-            <p className="text-body text-center max-w-[72ch] mx-auto mt-5">{t('levels.intro')}</p>
-            <div className="w-full mt-10 grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
-              <div className="visual-card flex h-full flex-col overflow-hidden">
-                <div className="px-5 py-4 md:px-6 md:py-5 border-b border-structural-light bg-surface-light-alt">
-                  <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted">01</p>
-                  <h3 className="text-base font-semibold text-heading">{t('levels.level1Title')}</h3>
-                  <p className="mt-2 text-sm font-semibold tracking-tight text-heading">{t('levels.axis1')}</p>
-                </div>
-                <div className="flex flex-col flex-1 p-5 md:p-6">
-                  <ul className="space-y-2.5 text-sm text-body leading-relaxed list-disc pl-4 marker:text-muted">
-                    <li>{t('levels.level1_1')}</li>
-                    <li>{t('levels.level1_2')}</li>
-                  </ul>
-                  <p className="mt-auto pt-5 border-t border-structural-light text-xs text-muted leading-relaxed">
-                    {t('levels.level1_6')}
-                  </p>
-                </div>
+        <Section tone="light" className="!py-16 md:!py-20">
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,0.62fr)_minmax(20rem,0.38fr)] lg:items-start">
+            <div className="visual-card-strong overflow-hidden">
+              <div className="border-b border-structural-light bg-surface-light-alt px-5 py-6 md:px-8">
+                <p className="section-label">{t('levels.eyebrow')}</p>
+                <h2 className="h2-system mt-3">{t('levels.title')}</h2>
+                <p className="mt-3 max-w-[62ch] text-body">{t('levels.intro')}</p>
               </div>
-              <div className="visual-card flex h-full flex-col overflow-hidden">
-                <div className="px-5 py-4 md:px-6 md:py-5 border-b border-structural-light bg-surface-light-alt">
-                  <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted">02</p>
-                  <h3 className="text-base font-semibold text-heading">{t('levels.level2Title')}</h3>
-                  <p className="mt-2 text-sm font-semibold tracking-tight text-heading">{t('levels.axis2')}</p>
-                </div>
-                <div className="flex flex-col flex-1 p-5 md:p-6">
-                  <ul className="space-y-2.5 text-sm text-body leading-relaxed list-disc pl-4 marker:text-muted">
-                    <li>{t('levels.level2_1')}</li>
-                    <li>{t('levels.level2_2')}</li>
-                  </ul>
-                  <p className="mt-auto pt-5 border-t border-structural-light text-xs text-muted leading-relaxed">
-                    {t('levels.level2_6')}
-                  </p>
-                </div>
+              <div className="grid gap-0 md:grid-cols-3">
+                {PACKAGE_PREVIEW.map((item) => (
+                  <article
+                    key={item.marker}
+                    className="border-b border-structural-light p-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 md:p-6"
+                  >
+                    <p className="mb-3 text-xs font-black uppercase tracking-wide text-muted">{item.marker}</p>
+                    <h3 className="mb-2 text-xl font-black text-heading">{t(`levels.${item.title}`)}</h3>
+                    <p className="mb-3 text-sm font-bold text-support">{t(`levels.${item.axis}`)}</p>
+                    <p className="mb-0 text-sm leading-relaxed text-body">{t(`levels.${item.purpose}`)}</p>
+                  </article>
+                ))}
               </div>
-              <div className="visual-card flex h-full flex-col overflow-hidden">
-                <div className="px-5 py-4 md:px-6 md:py-5 border-b border-structural-light bg-surface-light-alt">
-                  <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted">03</p>
-                  <h3 className="text-base font-semibold text-heading">{t('levels.level3Title')}</h3>
-                  <p className="mt-2 text-sm font-semibold tracking-tight text-heading">{t('levels.axis3')}</p>
-                </div>
-                <div className="flex flex-col flex-1 p-5 md:p-6">
-                  <ul className="space-y-2.5 text-sm text-body leading-relaxed list-disc pl-4 marker:text-muted">
-                    <li>{t('levels.level3_1')}</li>
-                    <li>{t('levels.level3_2')}</li>
-                  </ul>
-                  <p className="mt-auto pt-5 border-t border-structural-light text-xs text-muted leading-relaxed">
-                    {t('levels.level3_6')}
-                  </p>
-                </div>
+              <div className="flex flex-col gap-4 border-t border-structural-light bg-surface-light-alt px-5 py-5 md:flex-row md:items-center md:justify-between md:px-8">
+                <p className="mb-0 max-w-[58ch] text-sm leading-relaxed text-body">
+                  {t('levels.systemRule1')} {t('levels.systemRule2')} {t('levels.systemRule3')}
+                </p>
+                <Link href={`/${locale}/services#package-fit`} className="btn-secondary w-fit text-sm">
+                  {t('levels.ctaCompare')}
+                </Link>
               </div>
             </div>
-            <div className="max-w-[72ch] mx-auto mt-10 text-center w-full">
-              <p className="text-sm font-medium text-heading">{t('levels.systemRuleTitle')}</p>
-              <p className="mt-2 text-sm text-body leading-relaxed">
-                {t('levels.systemRule1')} {t('levels.systemRule2')} {t('levels.systemRule3')}
-              </p>
-            </div>
-            <p className="text-center mt-5 w-full">
-              <Link
-                href={`/${locale}/how-it-works`}
-                className="text-body font-medium underline underline-offset-2 hover:text-heading focus:outline-none focus:ring-2 focus:ring-structural-muted rounded"
-              >
-                {t('levels.ctaCompare')}
-              </Link>
-            </p>
+
+            <aside className="grid gap-5">
+              <div className="visual-card p-5 md:p-6">
+                <p className="section-label">{t('serviceArea.eyebrow')}</p>
+                <h2 className="mt-3 text-2xl font-black text-heading">{t('serviceArea.title')}</h2>
+                <p className="mt-3 text-sm leading-relaxed text-body">{t('serviceArea.intro')}</p>
+                <div className="mt-5 grid gap-2">
+                  {SERVICE_AREA_POINTS.map((key) => (
+                    <p key={key} className="mb-0 flex gap-3 border-b border-structural-light pb-2 text-sm text-body last:border-b-0 last:pb-0">
+                      <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-support" aria-hidden />
+                      <span>{t(`serviceArea.${key}`)}</span>
+                    </p>
+                  ))}
+                </div>
+              </div>
+              <ServiceAreaMap labels={serviceAreaMapLabels} />
+            </aside>
           </div>
         </Section>
 
         {/* 6. CO WYRÓŻNIA SENTINEL — bloki deklaracji modelu, 2 kolumny, bez card/badge, oś centralna */}
-        <Section tone="alt">
-          <h2 className="h2-system text-center">{t('distinction.title')}</h2>
-          <p className="mt-4 text-body text-center max-w-[56ch] mx-auto leading-relaxed">
-            <PathwayCopy path="distinctionIntro" />
-          </p>
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-[1120px] mx-auto">
-            <div>
-              <h3 className="text-lg font-semibold text-heading">{t('distinction.block1Title')}</h3>
-              <p className="mt-3 text-body leading-relaxed">{t('distinction.block1p1')}</p>
-              <p className="mt-3 text-body leading-relaxed">{t('distinction.block1p2')}</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-heading">{t('distinction.block2Title')}</h3>
-              <p className="mt-3 text-body leading-relaxed">{t('distinction.block2p1')}</p>
-              <p className="mt-3 text-body leading-relaxed">{t('distinction.block2p2')}</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-heading">{t('distinction.block3Title')}</h3>
-              <p className="mt-3 text-body leading-relaxed">{t('distinction.block3p1')}</p>
-              <p className="mt-3 text-body leading-relaxed">{t('distinction.block3p2')}</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-heading">{t('distinction.block4Title')}</h3>
-              <p className="mt-3 text-body leading-relaxed">{t('distinction.block4p1')}</p>
-              <ul className="mt-2 space-y-1 list-none text-body leading-relaxed">
-                <li>{t('distinction.block4list1')}</li>
-                <li>{t('distinction.block4list2')}</li>
-                <li>{t('distinction.block4list3')}</li>
-              </ul>
-              <p className="mt-3 text-body leading-relaxed">{t('distinction.block4p2')}</p>
-              <p className="mt-3 text-body leading-relaxed">{t('distinction.block4p3')}</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-heading">{t('distinction.block5Title')}</h3>
-              <p className="mt-3 text-body leading-relaxed">{t('distinction.block5p1')}</p>
-              <p className="mt-3 text-body leading-relaxed">{t('distinction.block5p2')}</p>
-              <p className="mt-3 text-body leading-relaxed">{t('distinction.block5p3')}</p>
-              <p className="mt-3 text-body leading-relaxed">{t('distinction.block5p4')}</p>
-            </div>
+        <Section tone="alt" className="!py-16 md:!py-20">
+          <div className="max-w-[760px]">
+            <p className="section-label">{t('distinction.eyebrow')}</p>
+            <h2 className="h2-system mt-3">{t('distinction.title')}</h2>
+            <p className="mt-4 text-body leading-relaxed">
+              <PathwayCopy path="distinctionIntro" />
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {CREDIBILITY_KEYS.map((key, index) => (
+              <article key={key} className="visual-card p-5">
+                <p className="mb-3 text-xs font-black uppercase tracking-wide text-accent">
+                  {String(index + 1).padStart(2, '0')}
+                </p>
+                <h3 className="mb-2 text-lg font-black text-heading">
+                  {t(`distinction.cards.${key}.title`)}
+                </h3>
+                <p className="mb-0 text-sm leading-relaxed text-body">
+                  {t(`distinction.cards.${key}.body`)}
+                </p>
+              </article>
+            ))}
           </div>
         </Section>
 
         {/* 7. OBSZAR DZIAŁANIA — H2+H3, lista myślniki, bez placeholderów */}
-        <Section tone="alt">
-          <h2 className="h2-system text-center">{t('serviceArea.title')}</h2>
-          <GridFrame className="mt-10">
-            <Region name="support" tabletSpan="half" desktopSpan="half">
-              <div className="space-y-4 text-body leading-relaxed">
-                <h3 className="text-lg font-semibold text-heading">{t('serviceArea.subtitle')}</h3>
-                <p>{t('serviceArea.intro')}</p>
-                <p>{t('serviceArea.introNote1')}</p>
-                <p>{t('serviceArea.introNote2')}</p>
-                <p className="font-medium text-heading">{t('serviceArea.bulletsTitle')}</p>
-                <ul className="list-none space-y-1">
-                  <li>– {t('serviceArea.bullet1')}</li>
-                  <li>– {t('serviceArea.bullet2')}</li>
-                  <li>– {t('serviceArea.bullet3')}</li>
-                  <li>– {t('serviceArea.bullet4')}</li>
-                </ul>
-                <p>{t('serviceArea.close')}</p>
+        <Section tone="authority" className="!py-16 md:!py-20">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.68fr)_minmax(16rem,0.32fr)] lg:items-end">
+            <div>
+              <p className="section-label text-authority-on-dark/70">{t('finalCta.eyebrow')}</p>
+              <h2 className="h2-system mt-3 text-authority-on-dark">{t('finalCta.title')}</h2>
+              <div className="mt-5 max-w-[62ch] space-y-3 text-authority-on-dark/86">
+                <p><PathwayCopy path="finalContext" /></p>
+                <p>{t('finalCta.p2')}</p>
               </div>
-            </Region>
-            <Region name="support" tabletSpan="half" desktopSpan="half">
-              <ServiceAreaMap labels={serviceAreaMapLabels} />
-            </Region>
-          </GridFrame>
-        </Section>
-
-        {/* 8. FINAL BINARY CLOSURE — 2 akapity domknięcia + CTA, bez powtórzeń */}
-        <Section tone="authority">
-          <div className="text-center max-w-[56ch] mx-auto">
-            <h2 className="h2-system text-authority-on-dark">{t('finalCta.title')}</h2>
-            <div className="mt-6 space-y-4 text-authority-on-dark/90 text-left">
-              <p><PathwayCopy path="finalContext" /></p>
-              <p>{t('finalCta.p2')}</p>
             </div>
-            <div className="mt-10">
+            <div className="flex flex-col gap-3 lg:items-stretch">
               <PathwayFinalCtaLink
                 locale={locale}
-                className="btn-primary !bg-surface-light !text-authority hover:!bg-surface-light-alt !border-surface-light inline-block"
+                className="btn-primary !border-surface-light !bg-surface-light !text-authority hover:!bg-surface-light-alt"
               >
                 {t('finalCta.cta')}
               </PathwayFinalCtaLink>
+              <Link
+                href={`/${locale}/services#package-fit`}
+                className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority"
+              >
+                {t('finalCta.secondaryCta')}
+              </Link>
             </div>
           </div>
         </Section>
