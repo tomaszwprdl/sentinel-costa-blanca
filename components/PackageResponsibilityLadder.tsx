@@ -14,7 +14,7 @@ export default function PackageResponsibilityLadder() {
 
   return (
     <div className="visual-card-strong overflow-hidden" id="package-fit">
-      <div className="border-b border-structural-light bg-surface-light-alt px-5 py-6 md:px-8">
+      <div className="module-header-band">
         <p className="section-label">{t('redesign.ladder.eyebrow')}</p>
         <div className="mt-3 grid gap-4 lg:grid-cols-[minmax(0,0.75fr)_minmax(18rem,0.35fr)] lg:items-end">
           <div>
@@ -33,7 +33,10 @@ export default function PackageResponsibilityLadder() {
           return (
             <article
               key={packageKey}
-              className="relative border-b border-structural-light p-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 md:p-7"
+              className={[
+                'relative border-b border-structural-light p-4 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 md:p-7',
+                ['module-card-tone-1', 'module-card-tone-2', 'module-card-tone-3'][index],
+              ].join(' ')}
             >
               <div className="mb-5 flex items-center justify-between gap-4">
                 <span className="process-node inline-flex h-11 w-11 items-center justify-center rounded-full bg-authority-bg text-sm font-black text-authority-on-dark">

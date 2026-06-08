@@ -12,7 +12,7 @@ interface OperationalModuleTileProps {
 
 function ModuleVisual({ visual }: { visual: NonNullable<OperationalModuleTileProps['visual']> }) {
   return (
-    <div className="aspect-[4/3] bg-surface-light-alt p-4" aria-hidden="true">
+    <div className="module-tile-visual aspect-[4/3] bg-surface-light-alt p-4" aria-hidden="true">
       <svg viewBox="0 0 360 270" className="h-full w-full">
         <rect width="360" height="270" rx="18" fill="var(--surface-card)" stroke="var(--structural-light)" />
         <ellipse cx="180" cy="146" rx="116" ry="72" fill="var(--support)" opacity="0.07" />
@@ -63,7 +63,7 @@ export default function OperationalModuleTile({
       {visual ? (
         <ModuleVisual visual={visual} />
       ) : image ? (
-        <div className="relative aspect-[4/3]">
+        <div className="module-tile-visual relative aspect-[4/3]">
           <Image
             src={image}
             alt=""
@@ -73,7 +73,7 @@ export default function OperationalModuleTile({
           />
         </div>
       ) : null}
-      <div className="p-5">
+      <div className="p-4 md:p-5">
         <p className="mb-2 text-[11px] font-black uppercase tracking-wide text-accent">{label}</p>
         <h3 className="mb-3 text-xl font-black text-heading">{title}</h3>
         <p className="text-sm leading-relaxed text-body">{body}</p>

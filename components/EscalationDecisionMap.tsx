@@ -11,17 +11,23 @@ export default function EscalationDecisionMap() {
 
   return (
     <div className="visual-card-strong overflow-hidden" id="decision-map">
-      <div className="border-b border-structural-light bg-surface-light-alt px-5 py-6 md:px-8">
+      <div className="module-header-band">
         <p className="section-label">{t('redesign.decision.eyebrow')}</p>
         <h2 className="h2-system mt-3">{t('redesign.decision.title')}</h2>
         <p className="mt-3 max-w-[62ch] text-body">{t('redesign.decision.intro')}</p>
       </div>
 
       <div className="grid gap-0 lg:grid-cols-[minmax(0,0.62fr)_minmax(18rem,0.38fr)]">
-        <div className="border-b border-structural-light p-5 md:p-8 lg:border-b-0 lg:border-r">
-          <div className="grid gap-3">
+        <div className="border-b border-structural-light p-4 md:p-8 lg:border-b-0 lg:border-r">
+          <div className="grid gap-2.5 md:gap-3">
             {DECISION_KEYS.map((key, index) => (
-              <div key={key} className="motion-step rounded-2xl border border-structural-light bg-surface-light-alt p-4">
+              <div
+                key={key}
+                className={[
+                  'motion-step rounded-2xl border border-structural-light bg-surface-light-alt p-3 md:p-4',
+                  ['module-card-tone-1', 'module-card-tone-2', 'module-card-tone-3'][index % 3],
+                ].join(' ')}
+              >
                 <p className="mb-1 text-[11px] font-black uppercase tracking-wide text-accent">
                   {String(index + 1).padStart(2, '0')}
                 </p>
@@ -32,7 +38,7 @@ export default function EscalationDecisionMap() {
           </div>
         </div>
 
-        <aside className="bg-surface-light-alt p-5 md:p-8">
+        <aside className="bg-surface-light-alt p-4 md:p-8">
           <h3 className="mb-4 text-xl font-black text-heading">{t('redesign.decision.limitsTitle')}</h3>
           <div className="space-y-3">
             {PACKAGE_KEYS.map((key) => (

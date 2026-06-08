@@ -9,7 +9,7 @@ export default function BeforeDuringAfterTimeline() {
 
   return (
     <div className="visual-card-strong overflow-hidden">
-      <div className="border-b border-structural-light bg-surface-light-alt px-5 py-6 md:px-8">
+      <div className="module-header-band">
         <p className="section-label">{t('redesign.timeline.eyebrow')}</p>
         <h2 className="h2-system mt-3">{t('redesign.timeline.title')}</h2>
       </div>
@@ -18,7 +18,10 @@ export default function BeforeDuringAfterTimeline() {
         {TIMELINE_KEYS.map((key, index) => (
           <article
             key={key}
-            className="timeline-card relative border-b border-structural-light p-5 last:border-b-0 md:border-b-0 md:p-6"
+            className={[
+              'timeline-card relative border-b border-structural-light p-4 last:border-b-0 md:border-b-0 md:p-6',
+              ['module-card-tone-1', 'module-card-tone-2', 'module-card-tone-3'][index % 3],
+            ].join(' ')}
           >
             <span className="process-node relative z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-authority-bg text-sm font-black text-authority-on-dark shadow-[0_0_0_8px_var(--surface-card)]">
               {String(index + 1).padStart(2, '0')}

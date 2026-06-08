@@ -13,7 +13,7 @@ const STORY_FRAMES = [
 
 function StoryboardMediaFrame({ kind }: { kind: (typeof STORY_FRAMES)[number]['kind'] }) {
   return (
-    <div className="aspect-[4/3] bg-surface-light-alt p-4" aria-hidden="true">
+    <div className="storyboard-media aspect-[4/3] bg-surface-light-alt p-4" aria-hidden="true">
       <svg viewBox="0 0 360 270" className="h-full w-full">
         <rect width="360" height="270" rx="18" fill="var(--surface-card)" stroke="var(--structural-light)" />
         <ellipse cx="180" cy="148" rx="118" ry="72" fill="var(--support)" opacity="0.07" />
@@ -74,17 +74,17 @@ export default function VisitStoryboard() {
 
   return (
     <div className="visual-card-strong overflow-hidden" id="visit-storyboard">
-      <div className="border-b border-structural-light bg-surface-light-alt px-5 py-6 md:px-8">
+      <div className="module-header-band">
         <p className="section-label">{t('redesign.storyboard.eyebrow')}</p>
         <h2 className="h2-system mt-3">{t('redesign.storyboard.title')}</h2>
         <p className="mt-3 max-w-[62ch] text-body">{t('redesign.storyboard.intro')}</p>
       </div>
 
-      <div className="grid gap-4 p-4 md:grid-cols-2 lg:grid-cols-3 lg:p-5">
+      <div className="grid gap-3 p-3 md:grid-cols-2 md:gap-4 md:p-4 lg:grid-cols-3 lg:p-5">
         {STORY_FRAMES.map((frame, index) => (
           <article key={frame.key} className="storyboard-card overflow-hidden rounded-2xl border border-structural-light bg-surface-card">
             <StoryboardMediaFrame kind={frame.kind} />
-            <div className="p-4">
+            <div className="p-3 md:p-4">
               <p className="mb-2 text-[11px] font-black uppercase tracking-wide text-accent">
                 {String(index + 1).padStart(2, '0')}
               </p>

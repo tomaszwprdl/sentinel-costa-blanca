@@ -48,13 +48,13 @@ export default function ScenarioFitGuide() {
   return (
     <div className="grid gap-5 lg:grid-cols-[minmax(0,0.8fr)_minmax(18rem,0.38fr)]" id="scenario-fit">
       <div className="visual-card-strong overflow-hidden">
-        <div className="border-b border-structural-light bg-surface-light-alt px-5 py-6 md:px-8">
+        <div className="module-header-band">
           <p className="section-label">{t('redesign.scenario.eyebrow')}</p>
           <h2 className="h2-system mt-3">{t('redesign.scenario.title')}</h2>
           <p className="mt-3 max-w-[62ch] text-body">{t('redesign.scenario.intro')}</p>
         </div>
 
-        <div className="grid gap-3 p-4 md:grid-cols-2 md:p-5">
+        <div className="grid gap-2.5 p-3 md:grid-cols-2 md:gap-3 md:p-5">
           {SCENARIOS.map((scenario) => {
             const isSelected = scenario.key === selected;
             return (
@@ -87,7 +87,7 @@ export default function ScenarioFitGuide() {
                     className="rounded-none border-0 shadow-none"
                   />
                 )}
-                <div className="p-4">
+                <div className="p-3 md:p-4">
                   <p className="mb-2 text-[11px] font-black uppercase tracking-wide text-accent">
                     {t(`redesign.scenario.cards.${scenario.key}.label`)}
                   </p>
@@ -107,7 +107,20 @@ export default function ScenarioFitGuide() {
         </div>
       </div>
 
-      <aside key={active.key} className="visual-card-strong motion-panel-reveal h-fit p-5 lg:sticky lg:top-28">
+      <div key={`${active.key}-mobile`} className="visual-card-strong motion-panel-reveal p-4 lg:hidden">
+        <p className="section-label">{t('redesign.scenario.selectedLabel')}</p>
+        <p className="mt-2 text-sm leading-relaxed text-body">{t(`redesign.scenario.cards.${active.key}.result`)}</p>
+        <div className="mt-3 flex flex-col gap-2 sm:flex-row">
+          <Link href="#package-details" className="btn-secondary">
+            {t('redesign.scenario.packageCta')}
+          </Link>
+          <Link href={`/${locale}/contact`} className="btn-primary">
+            {t('cta.primaryButton')}
+          </Link>
+        </div>
+      </div>
+
+      <aside key={active.key} className="visual-card-strong motion-panel-reveal hidden h-fit p-5 lg:sticky lg:top-28 lg:block">
         <p className="section-label">{t('redesign.scenario.selectedLabel')}</p>
         <h3 className="mt-3 text-2xl font-black text-heading">
           {t(`${active.packageKey}.title`)}

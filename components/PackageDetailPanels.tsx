@@ -40,7 +40,7 @@ export default function PackageDetailPanels() {
 
   return (
     <div className="visual-card-strong overflow-hidden" id="package-details">
-      <div className="border-b border-structural-light bg-surface-light-alt px-5 py-6 md:px-8">
+      <div className="module-header-band">
         <p className="section-label">{t('redesign.packageDetails.eyebrow')}</p>
         <h2 className="h2-system mt-3">{t('redesign.packageDetails.title')}</h2>
         <p className="mt-3 max-w-[62ch] text-body">{t('redesign.packageDetails.intro')}</p>

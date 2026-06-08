@@ -11,10 +11,10 @@ export default function AccessChainDiagram() {
   return (
     <div className="visual-card-strong overflow-hidden" id="access-chain">
       <div className="grid gap-0 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)]">
-        <div className="min-h-[340px] bg-surface-light-alt p-4 md:p-5">
-          <ServiceScopeDiagram variant="extended" className="motion-diagram h-full min-h-[300px]" />
+        <div className="min-h-[220px] bg-surface-light-alt p-3 md:min-h-[340px] md:p-5">
+          <ServiceScopeDiagram variant="extended" className="motion-diagram h-full min-h-[180px] md:min-h-[300px]" />
         </div>
-        <div className="p-5 md:p-8">
+        <div className="p-4 md:p-8">
           <p className="section-label">{t('redesign.access.eyebrow')}</p>
           <h2 className="h2-system mt-3">{t('redesign.access.title')}</h2>
           <p className="mt-3 text-body">{t('redesign.access.intro')}</p>

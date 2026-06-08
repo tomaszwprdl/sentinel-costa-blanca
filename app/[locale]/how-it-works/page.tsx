@@ -95,11 +95,11 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
 
         <JourneyNav items={journeyItems} ariaLabel={t('redesign.hero.headline')} />
 
-        <Section tone="light" id="process-rhythm">
+        <Section tone="light" id="process-rhythm" className="section-primitive--compact">
           <BeforeDuringAfterTimeline />
         </Section>
 
-        <Section tone="alt" id="one-minute-process">
+        <Section tone="alt" id="one-minute-process" className="section-primitive--compact">
           <OneMinuteSection
             eyebrow={t('redesign.oneMinute.eyebrow')}
             title={t('redesign.oneMinute.title')}
@@ -108,24 +108,24 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
           />
         </Section>
 
-        <Section tone="light">
+        <Section tone="light" className="section-primitive--compact">
           <VisitStoryboard />
         </Section>
 
-        <Section tone="alt">
+        <Section tone="alt" className="section-primitive--compact">
           <ReportWalkthrough t={t} />
         </Section>
 
-        <Section tone="light">
+        <Section tone="light" className="section-primitive--compact">
           <AccessChainDiagram />
         </Section>
 
-        <Section tone="alt">
+        <Section tone="alt" className="section-primitive--compact">
           <EscalationDecisionMap />
         </Section>
 
-        <Section tone="light">
-          <div className="mb-8 max-w-[760px]">
+        <Section tone="light" className="section-primitive--compact">
+          <div className="mb-6 max-w-[760px] md:mb-8">
             <p className="section-label">{t('redesign.details.eyebrow')}</p>
             <h2 className="h2-system mt-3">{t('redesign.details.title')}</h2>
             <p className="mt-3 text-body">{t('redesign.details.intro')}</p>
@@ -133,8 +133,8 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
           <ProcessDetailChapters t={t} />
         </Section>
 
-        <Section tone="alt">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.54fr)_minmax(0,0.46fr)] lg:items-start">
+        <Section tone="alt" className="section-primitive--compact">
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,0.54fr)_minmax(0,0.46fr)] lg:items-start lg:gap-8">
             <div>
               <p className="section-label">{t('redesign.rhythm.eyebrow')}</p>
               <h2 className="h2-system mt-3">{t('redesign.rhythm.title')}</h2>
@@ -185,14 +185,20 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
           </div>
         </Section>
 
-        <Section tone="light">
-          <div className="mb-8 max-w-[760px]">
+        <Section tone="alt" className="section-primitive--compact">
+          <div className="mb-6 max-w-[760px] md:mb-8">
             <p className="section-label">{t('redesign.faq.eyebrow')}</p>
             <h2 className="h2-system mt-3">{t('redesign.faq.title')}</h2>
           </div>
-          <div className="grid gap-4 md:grid-cols-2">
-            {FAQ_KEYS.map((key) => (
-              <article key={key} className="visual-card p-5">
+          <div className="grid gap-3 md:grid-cols-2 md:gap-4">
+            {FAQ_KEYS.map((key, index) => (
+              <article
+                key={key}
+                className={[
+                  'visual-card p-4 md:p-5',
+                  ['module-card-tone-1', 'module-card-tone-2', 'module-card-tone-3'][index % 3],
+                ].join(' ')}
+              >
                 <h3 className="mb-3 text-lg font-black text-heading">{t(`faq.questions.${key}.question`)}</h3>
                 <p className="mb-0 text-sm leading-relaxed text-body">{t(`faq.questions.${key}.answer`)}</p>
               </article>

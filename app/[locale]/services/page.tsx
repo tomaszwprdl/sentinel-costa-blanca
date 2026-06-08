@@ -153,36 +153,36 @@ export default async function ServicesPage({
           <PackageResponsibilityLadder />
         </Section>
 
-        <Section tone="alt" className="!py-14 md:!py-20">
+        <Section tone="alt" className="section-primitive--compact">
           <ScenarioFitGuide />
         </Section>
 
-        <Section tone="light" className="!py-14 md:!py-20">
+        <Section tone="light" className="section-primitive--compact">
           <WhatIfEventSimulator />
         </Section>
 
-        <Section tone="alt">
+        <Section tone="alt" className="section-primitive--compact">
           <PackageDetailPanels />
         </Section>
 
-        <Section tone="light" className="!py-14 md:!py-20">
+        <Section tone="light" className="section-primitive--compact">
           <ServiceBoundaryGrid />
         </Section>
 
-        <Section tone="alt">
-          <div className="mb-10 max-w-[760px]">
+        <Section tone="alt" className="section-primitive--compact">
+          <div className="mb-6 max-w-[760px] md:mb-8">
             <p className="section-label">{t('redesign.modules.eyebrow')}</p>
             <h2 className="h2-system mt-3">{t('redesign.modules.title')}</h2>
             <p className="mt-3 text-body">{t('redesign.modules.intro')}</p>
           </div>
-          <div className="grid gap-5 lg:grid-cols-3">
+          <div className="grid gap-4 lg:grid-cols-3 lg:gap-5">
             {operationalModules.map((module) => (
               <OperationalModuleTile key={module.title} {...module} />
             ))}
           </div>
         </Section>
 
-        <Section tone="light" className="!py-14 md:!py-20">
+        <Section tone="light" className="section-primitive--compact">
           <div className="grid gap-5 lg:grid-cols-[minmax(0,0.58fr)_minmax(0,0.42fr)]">
             <div className="visual-card-strong p-5 md:p-8">
               <p className="section-label">{t('executionOnly.microLabel')}</p>
@@ -220,8 +220,8 @@ export default async function ServicesPage({
           </div>
         </Section>
 
-        <Section tone="alt">
-          <div className="mb-8 max-w-[760px]">
+        <Section tone="alt" className="section-primitive--compact">
+          <div className="mb-6 max-w-[760px] md:mb-8">
             <p className="section-label">{t('redesign.estimatorBand.eyebrow')}</p>
             <h2 className="h2-system mt-3">{t('redesign.estimatorBand.title')}</h2>
             <p className="mt-3 text-body">{t('redesign.estimatorBand.intro')}</p>
@@ -231,8 +231,8 @@ export default async function ServicesPage({
           </div>
         </Section>
 
-        <Section tone="light">
-          <div className="grid gap-5 lg:grid-cols-2">
+        <Section tone="light" className="section-primitive--compact">
+          <div className="grid gap-4 lg:grid-cols-2 lg:gap-5">
             <DisclosureBlock label={t('redesign.details.frameworkLabel')} explainer={t('redesign.details.frameworkExplainer')}>
               <div className="space-y-6">
                 <div>

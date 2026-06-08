@@ -276,6 +276,22 @@ img {
   padding-bottom: var(--space-120);
 }
 
+.section-primitive--compact {
+  padding-block: 72px;
+}
+
+.module-header-band {
+  border-bottom: 1px solid var(--structural-light);
+  background: var(--surface-light-alt);
+  padding: 1rem 1.1rem;
+}
+
+@media (min-width: 768px) {
+  .module-header-band {
+    padding: 1.5rem 2rem;
+  }
+}
+
 @media (max-width: 640px) {
   .section-primitive {
     padding-block: 68px;
@@ -289,6 +305,34 @@ img {
     padding-top: 46px;
     padding-bottom: 72px;
   }
+
+  .section-primitive--compact {
+    padding-block: 44px;
+  }
+}
+
+.module-card-tone-1 {
+  border-left: 3px solid color-mix(in srgb, var(--accent) 42%, var(--line));
+}
+
+.module-card-tone-2 {
+  border-left: 3px solid color-mix(in srgb, var(--support) 48%, var(--line));
+}
+
+.module-card-tone-3 {
+  border-left: 3px solid color-mix(in srgb, var(--authority) 34%, var(--line));
+}
+
+.storyboard-card:nth-child(3n + 1) {
+  border-left: 3px solid color-mix(in srgb, var(--accent) 40%, var(--line));
+}
+
+.storyboard-card:nth-child(3n + 2) {
+  border-left: 3px solid color-mix(in srgb, var(--support) 46%, var(--line));
+}
+
+.storyboard-card:nth-child(3n) {
+  border-left: 3px solid color-mix(in srgb, var(--authority) 32%, var(--line));
 }
 
 .bg-surface-light,
@@ -1296,6 +1340,18 @@ textarea:focus {
   .diagnostic-panel,
   .diagnostic-result-shell {
     border-radius: 1rem;
+  }
+
+  .storyboard-card .storyboard-media {
+    display: none;
+  }
+
+  .module-tile-visual {
+    display: none;
+  }
+
+  .hero-fact {
+    padding: 0.65rem 0.75rem;
   }
 }
 
