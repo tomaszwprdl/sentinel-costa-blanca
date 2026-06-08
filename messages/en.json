@@ -422,6 +422,174 @@
       "lead2": "They differ in scope of responsibility, access coordination, and decision authority. If a service is not explicitly included in a package, it is not part of its scope.",
       "engagementTerms": "Minimum commitment: 3 months. Monthly billing in advance."
     },
+    "redesign": {
+      "hero": {
+        "eyebrow": "Oversight scope",
+        "headline": "Choose the level of local responsibility",
+        "lead": "The package defines how often Sentinel is on site, how access is handled, and where decisions stop without additional owner approval.",
+        "secondaryCta": "Find your fit",
+        "facts": [
+          { "label": "Area", "value": "Torrevieja + 50-70 km" },
+          { "label": "Proof", "value": "Report after visit" },
+          { "label": "Model", "value": "3 responsibility levels" }
+        ]
+      },
+      "ladder": {
+        "eyebrow": "One responsibility ladder",
+        "title": "Packages differ by operating depth, not by a random list of add-ons.",
+        "intro": "First you choose the level of oversight. Visit rhythm, access, readiness cleaning, or event support are then confirmed inside that level.",
+        "detailCta": "View full scope",
+        "responsibilityLabel": "Primary responsibility",
+        "basic": {
+          "responsibility": "Regular presence, property condition, and basic visit record.",
+          "fit": "For a property used mainly privately, where the owner needs scheduled checks but keeps most decisions."
+        },
+        "extended": {
+          "responsibility": "More active checks, third-party access, and event coordination.",
+          "fit": "For a property with technicians, cleaning, guests, or local work that requires controlled handling."
+        },
+        "full": {
+          "responsibility": "Operational priority and broader decisions inside the agreed limit.",
+          "fit": "For an owner who wants fewer remote decisions and a higher response priority."
+        }
+      },
+      "scenario": {
+        "eyebrow": "Situations before tables",
+        "title": "Which situation sounds most like your property?",
+        "intro": "This is not the homepage pathway gate and it does not change the URL. It only helps identify which package level to review first.",
+        "suggestedPrefix": "Closest starting point:",
+        "selectedLabel": "Initial fit",
+        "noteLabel": "Important",
+        "note": "This fit is educational. Final scope is confirmed after structured review of the property.",
+        "packageCta": "Compare scope",
+        "cards": {
+          "private": {
+            "label": "Empty property",
+            "title": "The apartment is empty between owner visits",
+            "body": "The main need is scheduled checks, key access, and a documented condition record.",
+            "result": "Basic is usually the starting point when there is no regular guest traffic or frequent third-party entry."
+          },
+          "guest": {
+            "label": "Activity and access",
+            "title": "Guests, cleaning, or technicians enter regularly",
+            "body": "The risk is not only property condition, but access coordination and event documentation.",
+            "result": "Extended is often required because condition checks alone do not cover regular access events."
+          },
+          "decisions": {
+            "label": "Local decisions",
+            "title": "You do not want to handle every small decision remotely",
+            "body": "The property needs a decision limit, faster response, and a clear owner approval boundary.",
+            "result": "Full is a closer fit when the central need is decision handling within a defined limit."
+          },
+          "mixed": {
+            "label": "Unclear model",
+            "title": "The future use pattern is not fixed yet",
+            "body": "The first step is classification, not choosing the heaviest scope too early.",
+            "result": "Extended can be a reference point for discussion, but mixed use starts with classification."
+          }
+        }
+      },
+      "events": {
+        "eyebrow": "What if",
+        "title": "See how the scope works in a concrete event.",
+        "intro": "These scenarios explain operating logic. They do not create new promises or authority outside the package.",
+        "packageCta": "View packages",
+        "detailLabels": {
+          "observes": "Sentinel checks",
+          "documents": "Sentinel documents",
+          "owner": "Owner decides",
+          "package": "Package difference"
+        },
+        "items": {
+          "leak": {
+            "label": "Moisture / valve",
+            "title": "Moisture is spotted during a visit",
+            "lead": "The first task is observation, documented evidence, and action inside agreed authority.",
+            "observes": "Visible valve condition, moisture traces, and risk of further damage.",
+            "documents": "Photos, location notes, visit time, and recommended next action.",
+            "owner": "Approval is required when action exceeds the limit or package scope.",
+            "package": "A higher package means faster handling and a higher decision limit, not a guarantee that the cause is resolved."
+          },
+          "technician": {
+            "label": "Technician entry",
+            "title": "A technician needs access to the property",
+            "lead": "Access follows agreed rules, not improvised key handover.",
+            "observes": "The purpose of entry, the access request, and whether it sits inside the agreed scope.",
+            "documents": "Entry time, person or role, presence scope, and condition after the visit.",
+            "owner": "The owner approves work, cost, or scope beyond prior agreement.",
+            "package": "Extended and Full handle recurring access events better than condition-only oversight."
+          },
+          "turnover": {
+            "label": "Readiness after cleaning",
+            "title": "The property needs to be ready after guest use",
+            "lead": "Sentinel does not become a cleaning company, but can handle readiness and documentation inside agreed scope.",
+            "observes": "Visible entry condition, basic readiness, and items requiring follow-up.",
+            "documents": "Reference photos, noted gaps, and whether further action is required.",
+            "owner": "Extra work, cost, or rhythm changes remain subject to approval.",
+            "package": "Regular guest activity usually points toward Extended or Full."
+          },
+          "weekend": {
+            "label": "Urgent signal",
+            "title": "An urgent issue appears outside the normal rhythm",
+            "lead": "SLA defines response and decision timing, not guaranteed third-party repair time.",
+            "observes": "Event priority, access availability, and whether securing action is required.",
+            "documents": "The notice, action taken within limit, and items awaiting owner decision.",
+            "owner": "The owner approves action beyond the limit, higher cost, or extra work.",
+            "package": "Full has the highest priority while still operating inside package limits and real contractor availability."
+          }
+        }
+      },
+      "packageDetails": {
+        "eyebrow": "Scope without the wall of text",
+        "title": "One panel, one level of responsibility.",
+        "intro": "Details remain one click away, while the essential differences stay visible immediately.",
+        "estimateCta": "Go to estimator",
+        "simulatorCta": "View events",
+        "fullScopeLabel": "Full scope and limits",
+        "fullScopeExplainer": "The expansion preserves important package substance without repeating it as three large articles.",
+        "includedLabel": "Inside scope",
+        "notIncludedLabel": "Outside scope"
+      },
+      "boundary": {
+        "eyebrow": "Service boundaries",
+        "title": "Sentinel acts locally, but only inside the agreed scope.",
+        "intro": "The main boundaries appear before the estimator. The full legal wording remains in the terms and package detail.",
+        "doesTitle": "Sentinel does",
+        "doesNotTitle": "Sentinel does not",
+        "does": {
+          "oversight": { "title": "Local oversight", "body": "Scheduled condition checks and a record of what is visible on site." },
+          "access": { "title": "Controlled access", "body": "Keyholding or access handling according to the agreement and package." },
+          "documentation": { "title": "Event documentation", "body": "Reports, photos, notes, and indication of required owner decision." },
+          "coordination": { "title": "Operational coordination", "body": "Contact with technician, cleaning, or contractor inside the agreed scope." }
+        },
+        "doesNot": {
+          "rentalAgency": { "title": "Rental agency", "body": "Sentinel does not handle bookings, pricing, licensing, or platform communication." },
+          "concierge": { "title": "Concierge", "body": "No lifestyle services, unlimited favors, or tasks without defined scope." },
+          "unlimitedEmergency": { "title": "Unlimited emergency contractor", "body": "Decisions and costs have limits; repairs depend on available contractors." },
+          "undefinedTasks": { "title": "Undefined tasks", "body": "Anything outside the package or agreement requires separate approval." }
+        }
+      },
+      "modules": {
+        "eyebrow": "Operational layer",
+        "title": "Modules help execute the scope. They do not create a fourth package.",
+        "intro": "Keys, cleaning, readiness, and technician entry are practical functions inside the agreed oversight system.",
+        "useWhen": "Use when"
+      },
+      "execution": {
+        "cta": "Ask about limited scope"
+      },
+      "estimatorBand": {
+        "eyebrow": "Indicative monthly range",
+        "title": "First identify the responsibility level, then calculate an indicative range.",
+        "intro": "The estimator does not collect personal data and does not change pricing logic. The result remains indicative until structured review."
+      },
+      "details": {
+        "frameworkLabel": "Service frame and minimum term",
+        "frameworkExplainer": "Visit scheduling, decision limits, communication, and billing stay available without dominating the page.",
+        "notIncludedLabel": "Full exclusion list",
+        "notIncludedExplainer": "Exclusions are part of the responsibility boundary, not a separate offer."
+      }
+    },
     "diagrams": {
       "sla": {
         "eyebrow": "Response discipline",
@@ -999,6 +1167,120 @@
       "headline": "How Sentinel Service Works",
       "description": "Sentinel follows a structured onboarding process to ensure clear understanding, proper documentation, and operational readiness before service activation. This page outlines each step from initial contact to active service. Service is not activated until onboarding is complete.",
       "processOverview": "The process consists of: Qualification → Package Selection → Property Documentation → Initial Inspection → Service Activation. Timeline depends on property availability and documentation completion."
+    },
+    "redesign": {
+      "hero": {
+        "eyebrow": "Process at a glance",
+        "headline": "From first contact to documented oversight",
+        "lead": "The process does not start with an open task list. Property, access, scope, and reporting are confirmed first.",
+        "primaryCta": "Start contact",
+        "secondaryCta": "View report example",
+        "facts": [
+          { "label": "Start", "value": "qualification and access" },
+          { "label": "Proof", "value": "report after visit" },
+          { "label": "Boundary", "value": "decisions within limit" }
+        ]
+      },
+      "timeline": {
+        "eyebrow": "Whole process",
+        "title": "Agreement first. Then presence, report, and decisions.",
+        "items": {
+          "before": { "title": "Before service", "body": "Sentinel qualifies the property, operating area, and how the property is used." },
+          "setup": { "title": "Access setup", "body": "Keys, data, package, scope, and communication rules are confirmed." },
+          "active": { "title": "Active oversight", "body": "Visits, entries, and events are handled according to the selected package." },
+          "followup": { "title": "Report and decision", "body": "The owner receives documentation and a clear indication of where approval is required." }
+        }
+      },
+      "oneMinute": {
+        "eyebrow": "One-minute explanation",
+        "title": "Four things must be clear before Sentinel starts acting.",
+        "intro": "This short version follows the order in which a remote owner usually understands the process.",
+        "items": {
+          "qualify": { "title": "Qualify the property", "body": "Address, property type, operating area, and use pattern must fit the Sentinel model." },
+          "scope": { "title": "Agree scope and access", "body": "Package, keys, contact people, and entry rules are confirmed before activation." },
+          "inspect": { "title": "Inspect and document", "body": "The first inspection creates the baseline condition and reporting structure." },
+          "escalate": { "title": "Report and escalate", "body": "Sentinel acts inside the limit. Above the limit, the owner decides." }
+        }
+      },
+      "storyboard": {
+        "eyebrow": "On-site visit",
+        "title": "What happens during a typical visit",
+        "intro": "A visit is not a general look around. It is a sequence of access, checks, documentation, and report.",
+        "frames": {
+          "arrive": { "title": "Arrive at the building", "body": "Sentinel arrives according to the rhythm or an agreed event." },
+          "access": { "title": "Controlled access", "body": "Keys and entry follow rules confirmed in advance." },
+          "check": { "title": "Risk points", "body": "Visible access, water, electrical, moisture, and interior condition points are checked." },
+          "document": { "title": "Photos and notes", "body": "Condition and events are recorded in a useful form for the owner." },
+          "report": { "title": "Remote report", "body": "The owner receives a summary, photos, and next-step information." },
+          "decision": { "title": "Decision boundary", "body": "If action exceeds limit or scope, owner approval is required." }
+        }
+      },
+      "report": {
+        "eyebrow": "Proof of work",
+        "title": "The report shows what was observed and what needs a decision.",
+        "intro": "The report appears before long process detail because it shows the mechanism: observation, documentation, status, and next action.",
+        "items": {
+          "summary": { "title": "Summary", "body": "Short visit status and whether an issue was identified." },
+          "checklist": { "title": "Checklist", "body": "Visible risk points are recorded in a consistent structure." },
+          "photos": { "title": "Reference photos", "body": "Images show elements relevant to condition, access, or event context." },
+          "notes": { "title": "Notes", "body": "The report separates observation from decision and recommendation." },
+          "nextAction": { "title": "Next action", "body": "The owner sees what is closed and what requires approval." }
+        },
+        "fullSampleLabel": "View full sample report",
+        "fullSampleExplainer": "The full table is available, but it is not the first way to learn the process."
+      },
+      "access": {
+        "eyebrow": "Access chain",
+        "title": "Every entry has a reason and a record.",
+        "intro": "Keys, technician entry, and operational access are handled as part of scope, not as a loose favor.",
+        "items": {
+          "agreement": { "title": "Owner agreement", "body": "Access scope and entry situations are defined before action." },
+          "keys": { "title": "Keys or access method", "body": "Access is handed over, recorded, and used inside the package boundary." },
+          "request": { "title": "Event or schedule", "body": "Entry follows a visit, request, technician appointment, or agreed module." },
+          "entry": { "title": "On-site entry", "body": "Sentinel performs or coordinates entry according to the agreement." },
+          "record": { "title": "Record after entry", "body": "After the event, a report, note, or confirmation remains." }
+        }
+      },
+      "decision": {
+        "eyebrow": "Decision map",
+        "title": "When Sentinel acts, and when the owner approves",
+        "intro": "The central process boundary is not speed. It is authority to act.",
+        "limitsTitle": "Package limits",
+        "note": "The limit applies to decisions inside the package. Work outside scope requires separate agreement.",
+        "steps": {
+          "observe": { "title": "Observe", "body": "Sentinel identifies a visible issue, access need, or event." },
+          "document": { "title": "Document", "body": "The record includes condition, photos, timing, and context." },
+          "notify": { "title": "Notify", "body": "The owner is informed when the event requires knowledge or decision." },
+          "withinLimit": { "title": "Act within limit", "body": "If the package and limit allow it, Sentinel may take the agreed action." },
+          "ownerApproval": { "title": "Owner approval", "body": "Above the limit, outside package, or for larger work, the decision returns to the owner." }
+        }
+      },
+      "details": {
+        "eyebrow": "Onboarding detail",
+        "title": "The full process is available, but it does not need to dominate the page.",
+        "intro": "The chapters below preserve the operational precision of the old steps in expandable form.",
+        "chapters": {
+          "qualification": "Property qualification",
+          "documentation": "Data, systems, and keys",
+          "package": "Package choice and confirmations",
+          "setup": "Schedule and access setup",
+          "activation": "Activation and ongoing rhythm"
+        }
+      },
+      "rhythm": {
+        "eyebrow": "After activation",
+        "title": "The ongoing rhythm is simple: visit, record, report, decision.",
+        "cards": {
+          "visits": { "title": "Visits", "body": "The schedule and additional entries operate inside the package." },
+          "reports": { "title": "Reports", "body": "Each relevant visit or event leaves a clear record." },
+          "access": { "title": "Access", "body": "Third-party entries are coordinated only inside the agreed scope." },
+          "changes": { "title": "Changes", "body": "Extensions, temporary needs, and termination require documented agreement." }
+        }
+      },
+      "faq": {
+        "eyebrow": "Common blockers",
+        "title": "Short answers before contact"
+      }
     },
     "diagrams": {
       "onboarding": {
