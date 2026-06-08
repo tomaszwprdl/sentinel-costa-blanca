@@ -2195,6 +2195,127 @@
           "expectations": "Client expectations are incompatible with defined scope"
         }
       }
+    },
+    "redesign": {
+      "hero": {
+        "eyebrow": "Sentinel Costa Blanca",
+        "headline": "Built for owners who are not on site",
+        "lead": "Sentinel is Structured Property Oversight for remote owners on the southern Costa Blanca. The model exists so local presence, access, documentation, and owner decisions are handled inside a defined operating scope.",
+        "primaryCta": "Request structured review",
+        "secondaryCta": "View service scope",
+        "facts": [
+          { "label": "Area", "value": "Torrevieja + 50-70 km" },
+          { "label": "Method", "value": "documented checks" },
+          { "label": "Boundary", "value": "defined scope" }
+        ]
+      },
+      "why": {
+        "eyebrow": "Why Sentinel exists",
+        "title": "Remote ownership creates an operational gap.",
+        "intro": "A property can be local, active, and vulnerable while the owner is far away. Informal help can solve a task, but it rarely defines responsibility.",
+        "cards": [
+          { "marker": "01", "title": "The owner is away", "body": "Distance makes access, inspection, and urgent judgment difficult to manage directly." },
+          { "marker": "02", "title": "The property remains local", "body": "Doors, keys, water, electricity, cleaners, technicians, and weather still require physical presence." },
+          { "marker": "03", "title": "Ad-hoc help has limits", "body": "One-off favors can leave unclear records, unclear authority, and unclear accountability." }
+        ],
+        "closing": "Sentinel exists to replace informal delegation with a local operating structure: scope first, access controlled, checks documented, decisions bounded."
+      },
+      "model": {
+        "eyebrow": "Operating model",
+        "title": "Credibility comes from how the work is controlled.",
+        "intro": "The model is deliberately structured. It defines when Sentinel is present, what can be checked, how access is handled, and when a decision returns to the owner.",
+        "items": [
+          { "marker": "01", "title": "Local presence", "body": "Work happens inside a realistic service area, not from a distant coordination desk." },
+          { "marker": "02", "title": "Controlled access", "body": "Keys, entry, and third-party access are used only inside the agreed scope." },
+          { "marker": "03", "title": "Documented checks", "body": "Visits and relevant events leave a report, note, photo set, or written confirmation." },
+          { "marker": "04", "title": "Owner decision boundary", "body": "Sentinel acts within agreed limits. Above the limit or outside scope, the owner approves." },
+          { "marker": "05", "title": "Package scope", "body": "Responsibility increases through Basic, Extended, and Full packages without creating open-ended service." }
+        ]
+      },
+      "boundary": {
+        "eyebrow": "Category clarity",
+        "title": "What Sentinel is, and what it is not.",
+        "intro": "The service is easier to trust when the category is clear. Sentinel is not positioned as flexible household help or rental operations.",
+        "isTitle": "Sentinel is",
+        "isNotTitle": "Sentinel is not",
+        "isItems": [
+          { "title": "Local oversight", "body": "Physical presence for agreed checks, access, and events." },
+          { "title": "Owner representation", "body": "A structured local layer acting inside the owner's confirmed scope." },
+          { "title": "Documentation", "body": "Reports, notes, photos, and confirmations after relevant activity." },
+          { "title": "Access coordination", "body": "Controlled entry for visits, technicians, cleaning, or agreed modules." },
+          { "title": "Structured escalation", "body": "Clear owner approval points when authority or scope is exceeded." }
+        ],
+        "isNotItems": [
+          { "title": "Concierge", "body": "No open-ended errands, lifestyle tasks, or undefined assistance." },
+          { "title": "Rental agency", "body": "No booking platform role or rental-business management." },
+          { "title": "General contractor", "body": "No construction execution or guarantee of third-party work quality." },
+          { "title": "Unlimited emergency service", "body": "Response and authority are defined by package and agreed limits." },
+          { "title": "Informal favor network", "body": "Work is scoped and recorded rather than improvised." }
+        ]
+      },
+      "local": {
+        "eyebrow": "Local operating area",
+        "title": "The 50-70 km boundary is an operating rule, not a marketing claim.",
+        "intro": "Sentinel serves Torrevieja and the surrounding southern Costa Blanca area because physical presence must stay realistic.",
+        "cards": [
+          { "title": "Travel discipline", "body": "Visit rhythm and event response depend on manageable distance." },
+          { "title": "Local relationships", "body": "Cleaners, technicians, and access coordination work better inside a known area." },
+          { "title": "Service refusal", "body": "Out-of-area properties are declined instead of being absorbed into weak coverage." }
+        ],
+        "note": "The boundary protects service quality for properties inside the operating area."
+      },
+      "capabilities": {
+        "eyebrow": "Capability without exaggeration",
+        "title": "Sentinel can act because practical functions sit inside the oversight system.",
+        "intro": "Keys, cleaning readiness, access, checks, reporting, and contractor coordination are operational capabilities. They do not turn Sentinel into a cleaning company, concierge, or rental agency.",
+        "items": [
+          { "marker": "Keyholding", "title": "Access basis", "body": "Keys or access methods are held and used according to the agreement." },
+          { "marker": "Readiness", "title": "Cleaning and arrival state", "body": "Cleaning or readiness support may be included or coordinated where the scope allows it." },
+          { "marker": "Access", "title": "Technician and service entry", "body": "Entry events can be coordinated, recorded, and reported when agreed." },
+          { "marker": "Checks", "title": "Visible condition review", "body": "Visits focus on observable risk points and package-defined checklist items." },
+          { "marker": "Reports", "title": "Owner record", "body": "The owner receives usable documentation after visits or relevant events." },
+          { "marker": "Coordination", "title": "External work where agreed", "body": "Sentinel may coordinate contractors inside defined authority, but does not guarantee their work." }
+        ],
+        "note": "The capability layer exists to make oversight executable. It is not an invitation to unlimited task handling."
+      },
+      "responsibility": {
+        "eyebrow": "Responsibility control",
+        "title": "Action follows agreement, scope, documentation, and approval.",
+        "intro": "This is the operating discipline behind the service. It is intentionally less flexible than informal help.",
+        "steps": [
+          { "marker": "01", "title": "Agreement before action", "body": "Property data, access method, package, and communication rules are confirmed first." },
+          { "marker": "02", "title": "Scope before execution", "body": "The task must fit the package or an agreed module before Sentinel acts." },
+          { "marker": "03", "title": "Documentation after action", "body": "Visits, access events, observations, and relevant decisions leave a record." },
+          { "marker": "04", "title": "Owner approval above limits", "body": "Financial or operational decisions outside authority return to the owner." }
+        ],
+        "note": "This is why Sentinel can be commercially useful without becoming an undefined property-management promise."
+      },
+      "details": {
+        "eyebrow": "Detailed boundaries",
+        "title": "The operating logic remains available without becoming the page.",
+        "intro": "The sections below preserve important detail for owners who need to verify fit before contact.",
+        "items": {
+          "model": {
+            "title": "Package-based model",
+            "explainer": "Why the service is structured instead of flexible.",
+            "body": "If a service is not explicitly listed in the package or agreed module, it is not included. This protects scope clarity, pricing clarity, and responsibility boundaries."
+          },
+          "area": {
+            "title": "Geographic boundary",
+            "explainer": "Why Torrevieja + 50-70 km is fixed.",
+            "body": "Properties outside the operating area cannot be served as exceptions. Response time, visit rhythm, and local coordination depend on manageable distance."
+          },
+          "accountability": {
+            "title": "Defined accountability",
+            "explainer": "What makes responsibility enforceable.",
+            "body": "Accountability is enforceable because scope is defined, procedures are documented, reports are produced, and decisions above authority limits require owner approval."
+          }
+        }
+      },
+      "cta": {
+        "title": "Use the About page as a fit check.",
+        "intro": "If the model fits your property, the next step is a structured review. If you need open-ended property management or concierge support, Sentinel is not the correct category."
+      }
     }
   },
   "terms": {
