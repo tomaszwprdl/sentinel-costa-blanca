@@ -14,6 +14,7 @@ import AccessChainDiagram from '@/components/AccessChainDiagram';
 import EscalationDecisionMap from '@/components/EscalationDecisionMap';
 import ProcessDetailChapters from '@/components/ProcessDetailChapters';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
+import JourneyNav from '@/components/JourneyNav';
 
 type Fact = {
   label: string;
@@ -29,6 +30,15 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
   const t = await getTranslations({ locale, namespace: 'howItWorks' });
   const tCommon = await getTranslations({ locale, namespace: 'common' });
   const facts = t.raw('redesign.hero.facts') as Fact[];
+  const journeyItems = [
+    { id: 'process-start', label: t('redesign.hero.eyebrow') },
+    { id: 'process-rhythm', label: t('redesign.timeline.eyebrow') },
+    { id: 'one-minute-process', label: t('redesign.oneMinute.eyebrow') },
+    { id: 'visit-storyboard', label: t('redesign.storyboard.eyebrow') },
+    { id: 'report-walkthrough', label: t('redesign.report.eyebrow') },
+    { id: 'access-chain', label: t('redesign.access.eyebrow') },
+    { id: 'decision-map', label: t('redesign.decision.eyebrow') },
+  ];
   const oneMinuteItems = ONE_MINUTE_KEYS.map((key, index) => ({
     marker: String(index + 1).padStart(2, '0'),
     title: t(`redesign.oneMinute.items.${key}.title`),
@@ -41,7 +51,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
       <main className="min-h-screen">
         <Section tone="authority" className="section-primitive--first" id="process-start">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(20rem,0.72fr)] lg:items-center">
-            <div>
+            <div className="motion-entrance">
               <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
               <h1 className="hero-display max-w-[17ch]">{t('redesign.hero.headline')}</h1>
               <p className="hero-lead max-w-[62ch]">{t('redesign.hero.lead')}</p>
@@ -63,7 +73,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
               </div>
             </div>
 
-            <figure className="visual-card-strong overflow-hidden border-authority-on-dark/25 bg-authority-on-dark/5">
+            <figure className="visual-card-strong motion-panel-reveal overflow-hidden border-authority-on-dark/25 bg-authority-on-dark/5">
               <div className="relative aspect-[4/3] bg-surface-light">
                 <Image
                   src="/visuals/sentinel-process-report-preview.svg"
@@ -83,11 +93,13 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
           </div>
         </Section>
 
-        <Section tone="light">
+        <JourneyNav items={journeyItems} ariaLabel={t('redesign.hero.headline')} />
+
+        <Section tone="light" id="process-rhythm">
           <BeforeDuringAfterTimeline />
         </Section>
 
-        <Section tone="alt">
+        <Section tone="alt" id="one-minute-process">
           <OneMinuteSection
             eyebrow={t('redesign.oneMinute.eyebrow')}
             title={t('redesign.oneMinute.title')}

@@ -14,13 +14,13 @@ export default function ReportWalkthrough({ t }: { t: Translator }) {
           <p className="section-label">{t('redesign.report.eyebrow')}</p>
           <h2 className="h2-system mt-3">{t('redesign.report.title')}</h2>
           <p className="mt-3 text-body">{t('redesign.report.intro')}</p>
-          <ReportEvidenceDiagram className="mt-6" />
+          <ReportEvidenceDiagram className="motion-diagram mt-6" />
         </div>
 
         <div className="p-5 md:p-8">
           <div className="grid gap-3">
             {WALKTHROUGH_KEYS.map((key, index) => (
-              <article key={key} className="rounded-2xl border border-structural-light bg-surface-light-alt p-4">
+              <article key={key} className="motion-step rounded-2xl border border-structural-light bg-surface-light-alt p-4">
                 <p className="mb-1 text-[11px] font-black uppercase tracking-wide text-accent">
                   {String(index + 1).padStart(2, '0')}
                 </p>

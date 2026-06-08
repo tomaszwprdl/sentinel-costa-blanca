@@ -62,8 +62,9 @@ export default function ScenarioFitGuide() {
                 key={scenario.key}
                 type="button"
                 aria-pressed={isSelected}
+                data-selected={isSelected}
                 onClick={() => setSelected(scenario.key)}
-                className="group overflow-hidden rounded-2xl border border-structural-light bg-surface-card text-left shadow-sm transition hover:-translate-y-0.5 hover:border-accent hover:shadow-lg aria-pressed:border-accent aria-pressed:bg-surface-light-alt"
+                className="selected-option group overflow-hidden rounded-2xl border border-structural-light bg-surface-card text-left shadow-sm transition hover:-translate-y-0.5 hover:border-accent hover:shadow-lg aria-pressed:border-accent aria-pressed:bg-surface-light-alt"
               >
                 {'image' in scenario ? (
                   <div className="relative aspect-[4/3] overflow-hidden">
@@ -106,7 +107,7 @@ export default function ScenarioFitGuide() {
         </div>
       </div>
 
-      <aside className="visual-card-strong h-fit p-5 lg:sticky lg:top-28">
+      <aside key={active.key} className="visual-card-strong motion-panel-reveal h-fit p-5 lg:sticky lg:top-28">
         <p className="section-label">{t('redesign.scenario.selectedLabel')}</p>
         <h3 className="mt-3 text-2xl font-black text-heading">
           {t(`${active.packageKey}.title`)}

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useId, ReactNode } from 'react';
+import { useState, useId, type ReactNode } from 'react';
 import { useTranslations } from 'next-intl';
 import ChevronIcon from '@/components/icons/ChevronIcon';
 
@@ -37,7 +37,7 @@ export default function DisclosureBlock({
   };
 
   return (
-    <div className={`visual-card overflow-hidden transition-[border-color,box-shadow] duration-200 ${isExpanded ? 'border-support/45 shadow-[0_16px_34px_rgba(16,38,63,0.12)]' : ''} ${className}`}>
+    <div className={`visual-card disclosure-shell overflow-hidden ${isExpanded ? 'border-support/45 shadow-[0_16px_34px_rgba(16,38,63,0.12)]' : ''} ${className}`}>
       <button
         id={buttonId}
         type="button"
@@ -45,7 +45,7 @@ export default function DisclosureBlock({
         onKeyDown={handleKeyDown}
         aria-expanded={isExpanded}
         aria-controls={contentId}
-        className="flex w-full items-center justify-between bg-surface-card px-5 py-5 text-left transition-[background,color] duration-200 hover:bg-surface-light-alt focus:outline-none focus:ring-2 focus:ring-support focus:ring-offset-2"
+        className="disclosure-trigger flex w-full items-center justify-between bg-surface-card px-5 py-5 text-left hover:bg-surface-light-alt focus:outline-none focus:ring-2 focus:ring-support focus:ring-offset-2"
       >
         <div className="flex-1 pr-4">
           <div className="text-base font-bold text-heading">{label}</div>
@@ -56,22 +56,25 @@ export default function DisclosureBlock({
         <div className="flex items-center gap-2 flex-shrink-0">
           <span className="hidden text-sm font-semibold text-support hover:underline sm:inline">{isExpanded ? t('hideDetails') : t('showDetails')}</span>
           <ChevronIcon
-            className={`h-5 w-5 rounded-full bg-surface-light-alt p-1 text-accent transition-transform duration-200 ${
+            className={`disclosure-icon h-5 w-5 rounded-full bg-surface-light-alt p-1 text-accent ${
               isExpanded ? 'transform rotate-180' : ''
             }`}
           />
         </div>
       </button>
-      {isExpanded && (
-        <div
-          id={contentId}
-          role="region"
-          aria-labelledby={buttonId}
-          className="disclosure-content border-t border-structural-light bg-surface-light-alt px-5 py-5"
-        >
-          {children}
+      <div className={`disclosure-grid ${isExpanded ? 'disclosure-grid--open' : ''}`}>
+        <div className="disclosure-grid__inner">
+          <div
+            id={contentId}
+            role="region"
+            aria-labelledby={buttonId}
+            aria-hidden={!isExpanded}
+            className="disclosure-content border-t border-structural-light bg-surface-light-alt px-5 py-5"
+          >
+            {children}
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }

@@ -74,6 +74,7 @@ export default function EventResponseDiagram({
         <path d="M278 186l28 24-28 24M488 186l28 24-28 24" fill="none" stroke="var(--authority)" strokeWidth="5" strokeLinecap="square" strokeLinejoin="miter" opacity="0.34" />
 
         <g
+          className="event-symbol"
           fill="none"
           stroke={variant === 'leak' ? 'var(--accent)' : 'var(--authority)'}
           strokeWidth="9"

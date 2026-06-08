@@ -13,6 +13,7 @@ import FAQGroupedAccordion, { type FAQGroup } from '@/components/FAQGroupedAccor
 import FAQQuickAnswerCards from '@/components/FAQQuickAnswerCards';
 import FAQWrongAssumptions from '@/components/FAQWrongAssumptions';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
+import JourneyNav from '@/components/JourneyNav';
 import FAQRoutingDiagram from '@/components/visuals/FAQRoutingDiagram';
 
 type HeroFact = {
@@ -49,6 +50,13 @@ export default function FAQPage() {
   const [searchQuery, setSearchQuery] = useState('');
 
   const facts = t.raw('redesign.hero.facts') as HeroFact[];
+  const journeyItems = [
+    { id: 'faq-start', label: t('redesign.hero.eyebrow') },
+    { id: 'faq-quick', label: t('redesign.quick.eyebrow') },
+    { id: 'faq-categories', label: t('redesign.categories.eyebrow') },
+    { id: 'faq-details', label: t('redesign.details.eyebrow') },
+    { id: 'faq-decision', label: t('redesign.decision.eyebrow') },
+  ];
   const quickAnswers = (t.raw('redesign.quick.items') as QuickAnswerSource[]).map((item) => ({
     ...item,
     linkLabel: t('redesign.quick.linkLabel'),
@@ -175,7 +183,7 @@ export default function FAQPage() {
       <main className="min-h-screen">
         <Section tone="authority" className="section-primitive--first" id="faq-start">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(20rem,0.72fr)] lg:items-center">
-            <div>
+            <div className="motion-entrance">
               <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
               <h1 className="hero-display max-w-[17ch]">{t('redesign.hero.headline')}</h1>
               <p className="hero-lead max-w-[62ch]">{t('redesign.hero.lead')}</p>
@@ -197,11 +205,15 @@ export default function FAQPage() {
               </div>
             </div>
 
-            <FAQRoutingDiagram />
+            <div className="motion-panel-reveal">
+              <FAQRoutingDiagram />
+            </div>
           </div>
         </Section>
 
-        <Section tone="light">
+        <JourneyNav items={journeyItems} ariaLabel={t('redesign.hero.headline')} />
+
+        <Section tone="light" id="faq-quick">
           <FAQQuickAnswerCards
             eyebrow={t('redesign.quick.eyebrow')}
             title={t('redesign.quick.title')}
@@ -210,7 +222,7 @@ export default function FAQPage() {
           />
         </Section>
 
-        <Section tone="alt">
+        <Section tone="alt" id="faq-categories">
           <FAQCategoryNav
             eyebrow={t('redesign.categories.eyebrow')}
             title={t('redesign.categories.title')}
@@ -227,14 +239,14 @@ export default function FAQPage() {
             sections={filteredSections}
             noResults={t('noResults')}
             searchControl={(
-              <div className="visual-card-strong p-3">
+              <div className="faq-search-shell visual-card-strong p-3">
                 <input
                   type="search"
                   aria-label={t('search.placeholder')}
                   placeholder={t('search.placeholder')}
                   value={searchQuery}
                   onChange={(event) => setSearchQuery(event.target.value)}
-                  className="form-control border-0 bg-surface-light-alt text-base"
+                  className="faq-search-input form-control border-0 bg-surface-light-alt text-base"
                 />
               </div>
             )}
@@ -259,7 +271,7 @@ export default function FAQPage() {
           />
         </Section>
 
-        <Section tone="alt">
+        <Section tone="alt" id="faq-decision">
           <FAQDecisionPanel
             eyebrow={t('redesign.decision.eyebrow')}
             title={t('redesign.decision.title')}

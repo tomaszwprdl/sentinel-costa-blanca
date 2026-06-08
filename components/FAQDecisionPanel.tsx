@@ -27,7 +27,7 @@ export default function FAQDecisionPanel({
         <h2 className="h2-system mt-3">{title}</h2>
         <p className="mt-3 max-w-[62ch] text-body">{intro}</p>
       </div>
-      <div className="grid gap-0 md:grid-cols-2 lg:grid-cols-4">
+      <div className="process-sequence grid gap-0 md:grid-cols-2 lg:grid-cols-4">
         {items.map((item) => (
           <article
             key={item.title}

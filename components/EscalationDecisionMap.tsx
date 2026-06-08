@@ -21,7 +21,7 @@ export default function EscalationDecisionMap() {
         <div className="border-b border-structural-light p-5 md:p-8 lg:border-b-0 lg:border-r">
           <div className="grid gap-3">
             {DECISION_KEYS.map((key, index) => (
-              <div key={key} className="rounded-2xl border border-structural-light bg-surface-light-alt p-4">
+              <div key={key} className="motion-step rounded-2xl border border-structural-light bg-surface-light-alt p-4">
                 <p className="mb-1 text-[11px] font-black uppercase tracking-wide text-accent">
                   {String(index + 1).padStart(2, '0')}
                 </p>

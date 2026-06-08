@@ -41,8 +41,9 @@ export default function WhatIfEventSimulator() {
                 key={event.key}
                 type="button"
                 aria-pressed={event.key === activeKey}
+                data-selected={event.key === activeKey}
                 onClick={() => setActiveKey(event.key)}
-                className="rounded-2xl border border-structural-light bg-surface-card px-4 py-3 text-left text-sm font-bold text-body transition hover:border-accent hover:bg-surface-light aria-pressed:border-accent aria-pressed:bg-authority-bg aria-pressed:text-authority-on-dark"
+                className="selected-option rounded-2xl border border-structural-light bg-surface-card px-4 py-3 text-left text-sm font-bold text-body transition hover:border-accent hover:bg-surface-light aria-pressed:border-accent aria-pressed:bg-authority-bg aria-pressed:text-authority-on-dark"
               >
                 {t(`redesign.events.items.${event.key}.title`)}
               </button>
@@ -51,11 +52,13 @@ export default function WhatIfEventSimulator() {
         </div>
 
         <div>
-          <EventResponseDiagram
-            variant={active.key as EventResponseVariant}
-            className="rounded-none border-0 shadow-none"
-          />
-          <div className="p-5 md:p-8">
+          <div key={active.key} className="motion-panel-reveal">
+            <EventResponseDiagram
+              variant={active.key as EventResponseVariant}
+              className="rounded-none border-0 shadow-none"
+            />
+          </div>
+          <div key={`${active.key}-detail`} className="motion-panel-reveal p-5 md:p-8">
             <p className="section-label">{t(`redesign.events.items.${active.key}.label`)}</p>
             <h3 className="mt-3 text-2xl font-black text-heading">
               {t(`redesign.events.items.${active.key}.title`)}

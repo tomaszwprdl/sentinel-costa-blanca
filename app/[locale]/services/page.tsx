@@ -15,6 +15,7 @@ import PackageDetailPanels from '@/components/PackageDetailPanels';
 import ServiceBoundaryGrid from '@/components/ServiceBoundaryGrid';
 import OperationalModuleTile from '@/components/OperationalModuleTile';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
+import JourneyNav from '@/components/JourneyNav';
 import ServiceScopeDiagram from '@/components/visuals/ServiceScopeDiagram';
 
 type Fact = {
@@ -52,6 +53,14 @@ export default async function ServicesPage({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'services' });
   const facts = t.raw('redesign.hero.facts') as Fact[];
+  const journeyItems = [
+    { id: 'qualification', label: t('redesign.hero.eyebrow') },
+    { id: 'package-fit', label: t('redesign.ladder.eyebrow') },
+    { id: 'scenario-fit', label: t('redesign.scenario.eyebrow') },
+    { id: 'event-simulator', label: t('redesign.events.eyebrow') },
+    { id: 'package-details', label: t('redesign.packageDetails.eyebrow') },
+    { id: 'estimator', label: t('redesign.estimatorBand.eyebrow') },
+  ];
 
   const operationalModules: OperationalModule[] = [
     {
@@ -96,7 +105,7 @@ export default async function ServicesPage({
         <Section tone="authority" className="section-primitive--first" id="qualification">
           <GridFrame className="items-center gap-10">
             <Region name="main" desktopSpan="half">
-              <div className="max-w-[680px]">
+              <div className="motion-entrance max-w-[680px]">
                 <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
                 <h1 className="hero-display max-w-[22ch] !text-[2.15rem] md:!text-[3.15rem] lg:!text-[3.35rem]">
                   {t('redesign.hero.headline')}
@@ -121,7 +130,7 @@ export default async function ServicesPage({
               </div>
             </Region>
             <Region name="support" tabletSpan="half" desktopSpan="half">
-              <figure className="visual-card-strong overflow-hidden border-authority-on-dark/25 bg-authority-on-dark/5">
+              <figure className="visual-card-strong motion-panel-reveal overflow-hidden border-authority-on-dark/25 bg-authority-on-dark/5">
                 <div className="relative aspect-[4/3] bg-surface-light">
                   <Image
                     src="/visuals/sentinel-service-scope-diagram.svg"
@@ -137,6 +146,8 @@ export default async function ServicesPage({
             </Region>
           </GridFrame>
         </Section>
+
+        <JourneyNav items={journeyItems} ariaLabel={t('redesign.hero.headline')} />
 
         <Section tone="light" className="!pb-8 md:!pb-10">
           <PackageResponsibilityLadder />

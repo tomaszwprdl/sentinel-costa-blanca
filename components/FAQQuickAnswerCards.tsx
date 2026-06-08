@@ -27,7 +27,7 @@ export default function FAQQuickAnswerCards({
         <h2 className="h2-system mt-3">{title}</h2>
         <p className="mt-3 text-body">{intro}</p>
       </div>
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="process-sequence grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {items.map((item, index) => (
           <article key={item.title} className="visual-card flex h-full flex-col p-5">
             <p className="mb-4 text-[11px] font-black uppercase tracking-wide text-accent">

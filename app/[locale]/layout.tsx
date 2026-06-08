@@ -4,6 +4,7 @@ import { Source_Serif_4, Inter } from 'next/font/google';
 import { locales, type Locale, getMessages } from '@/lib/i18n';
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
+import MotionObserver from '@/components/MotionObserver';
 
 const sourceSerif = Source_Serif_4({
   subsets: ['latin'],
@@ -82,6 +83,7 @@ export default async function LocaleLayout({
       </head>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
+          <MotionObserver />
           {children}
         </NextIntlClientProvider>
       </body>

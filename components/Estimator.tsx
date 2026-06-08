@@ -139,7 +139,7 @@ export default function Estimator() {
   );
 
   const resultPanel = result && hasCalculated && (
-    <div className="mt-5 space-y-3 rounded-2xl border-2 border-accent bg-surface-light-alt p-5 shadow-[0_18px_40px_rgba(184,102,74,0.16)]">
+    <div className="motion-result-panel mt-5 space-y-3 rounded-2xl border-2 border-accent bg-surface-light-alt p-5 shadow-[0_18px_40px_rgba(184,102,74,0.16)]">
       <h3 className="text-body text-[11px] font-medium uppercase tracking-wide text-muted">{t('resultTitle')}</h3>
       <p className="text-body font-semibold">
         {t('rangeTitle')}: {formatRange(result.min, result.max)} {t('rangeSuffix')}
@@ -180,7 +180,8 @@ export default function Estimator() {
                 {PACKAGE_KEYS.map((k) => (
                   <label
                     key={k}
-                    className={`flex cursor-pointer rounded-2xl border p-4 transition-[background,border-color,box-shadow,transform] hover:-translate-y-0.5 ${
+                    data-selected={packageKey === k}
+                    className={`selected-option flex cursor-pointer rounded-2xl border p-4 transition-[background,border-color,box-shadow,transform] hover:-translate-y-0.5 ${
                       packageKey === k ? 'border-accent bg-surface-light-alt shadow-[0_12px_28px_rgba(184,102,74,0.12)]' : 'border-structural-light bg-surface-card hover:border-accent'
                     }`}
                   >
@@ -231,14 +232,14 @@ export default function Estimator() {
                 </label>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
-                <div className={`rounded-2xl border p-4 text-sm ${modeKey === 'private_use' ? 'border-accent bg-surface-light-alt' : 'border-structural-muted/50 opacity-75'}`}>
+                <div data-selected={modeKey === 'private_use'} className={`selected-option rounded-2xl border p-4 text-sm ${modeKey === 'private_use' ? 'border-accent bg-surface-light-alt' : 'border-structural-muted/50 opacity-75'}`}>
                   <p className="font-medium text-body mb-1.5">{t('modePrivateUse')}</p>
                   <ul className="text-xs text-muted space-y-0.5 list-disc list-inside">
                     <li>{t('modeWhatPrivate1')}</li>
                     <li>{t('modeWhatPrivate2')}</li>
                   </ul>
                 </div>
-                <div className={`rounded-2xl border p-4 text-sm ${modeKey === 'active_guest' ? 'border-accent bg-surface-light-alt' : 'border-structural-muted/50 opacity-75'}`}>
+                <div data-selected={modeKey === 'active_guest'} className={`selected-option rounded-2xl border p-4 text-sm ${modeKey === 'active_guest' ? 'border-accent bg-surface-light-alt' : 'border-structural-muted/50 opacity-75'}`}>
                   <p className="font-medium text-body mb-1.5">{t('modeActiveGuest')}</p>
                   <ul className="text-xs text-muted space-y-0.5 list-disc list-inside">
                     <li>{t('modeWhatGuest1')}</li>
@@ -296,7 +297,7 @@ export default function Estimator() {
               <p className="text-xs text-muted mb-3">{t('groupScopeElementsAnchor')}</p>
               <div className="space-y-4">
                 {SCOPE_ELEMENT_KEYS.map((k) => (
-                  <div key={k} className="flex items-center justify-between gap-4 rounded-2xl border border-structural-light bg-surface-card p-4">
+                  <div key={k} data-selected={scopeElements.includes(k)} className="selected-option flex items-center justify-between gap-4 rounded-2xl border border-structural-light bg-surface-card p-4">
                     <div>
                       <p className="text-sm text-body font-medium">{t(`scopeElements.${k}`)}</p>
                       <p className="text-xs text-muted">{t('scopeElementBilledByUse')}</p>
@@ -305,6 +306,7 @@ export default function Estimator() {
                       type="button"
                       role="switch"
                       aria-checked={scopeElements.includes(k)}
+                      data-selected={scopeElements.includes(k)}
                       aria-label={t(`scopeElements.${k}`)}
                       onClick={() => handleScopeToggle(k)}
                       className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-colors ${
@@ -321,7 +323,7 @@ export default function Estimator() {
             </fieldset>
 
             <div className="pt-2">
-              <p className="text-sm text-muted mb-3" role="status">{gateMessage}</p>
+              <p className={`mb-3 text-sm ${showParamsChangedCue ? 'params-changed-cue' : 'text-muted'}`} role="status">{gateMessage}</p>
               <button
                 type="button"
                 onClick={handleCalculate}

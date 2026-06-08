@@ -55,7 +55,8 @@ export default function PackageDetailPanels() {
                 type="button"
                 onClick={() => setSelected(pkg.key)}
                 aria-pressed={pkg.key === selected}
-                className="rounded-2xl border border-structural-light bg-surface-card px-4 py-4 text-left transition hover:border-accent aria-pressed:border-accent aria-pressed:bg-authority-bg aria-pressed:text-authority-on-dark"
+                data-selected={pkg.key === selected}
+                className="selected-option rounded-2xl border border-structural-light bg-surface-card px-4 py-4 text-left transition hover:border-accent aria-pressed:border-accent aria-pressed:bg-authority-bg aria-pressed:text-authority-on-dark"
               >
                 <span className="block text-xs font-black uppercase tracking-wide opacity-75">{pkg.marker}</span>
                 <span className="mt-1 block text-lg font-black">{t(`${pkg.key}.title`)}</span>
@@ -66,7 +67,7 @@ export default function PackageDetailPanels() {
 
         <article>
           <div className="grid gap-0 md:grid-cols-[minmax(0,0.55fr)_minmax(0,0.45fr)]">
-            <div className="p-5 md:p-8">
+            <div key={active.key} className="motion-panel-reveal p-5 md:p-8">
               <p className="section-label">{active.marker}</p>
               <h3 className="mt-3 text-3xl font-black text-heading">{t(`${active.key}.title`)}</h3>
               <p className="text-lg leading-relaxed text-body">{t(`${active.key}.definition`)}</p>
@@ -91,9 +92,10 @@ export default function PackageDetailPanels() {
 
             <div className="border-t border-structural-light bg-surface-light-alt p-4 md:border-l md:border-t-0 md:p-5">
               <ServiceScopeDiagram
+                key={active.level}
                 variant={active.level}
                 compact
-                className="rounded-2xl"
+                className="motion-panel-reveal rounded-2xl"
               />
               <div className="mt-4 rounded-2xl bg-surface-card p-4">
                 <p className="mb-2 text-xs font-black uppercase tracking-wide text-muted">{t('summaryTitle')}</p>

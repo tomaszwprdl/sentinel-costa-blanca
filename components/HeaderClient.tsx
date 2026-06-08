@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
@@ -21,6 +21,8 @@ export default function HeaderClient() {
   const locale = useLocale();
   const t = useTranslations('common');
   const [navOpen, setNavOpen] = useState(false);
+  const [navMounted, setNavMounted] = useState(false);
+  const closeTimerRef = useRef<number | null>(null);
 
   const navLinks = [
     { href: `/${locale}/services`, label: t('nav.services') },
@@ -29,6 +31,52 @@ export default function HeaderClient() {
     { href: `/${locale}/about`, label: t('nav.about') },
     { href: `/${locale}/contact`, label: t('nav.contact') },
   ];
+
+  const clearCloseTimer = () => {
+    if (closeTimerRef.current !== null) {
+      window.clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+  };
+
+  const openNav = () => {
+    clearCloseTimer();
+    setNavMounted(true);
+    setNavOpen(true);
+  };
+
+  const closeNav = () => {
+    setNavOpen(false);
+    clearCloseTimer();
+    closeTimerRef.current = window.setTimeout(() => {
+      setNavMounted(false);
+      closeTimerRef.current = null;
+    }, 220);
+  };
+
+  const toggleNav = () => {
+    if (navOpen) {
+      closeNav();
+      return;
+    }
+
+    openNav();
+  };
+
+  useEffect(() => {
+    if (navOpen) {
+      document.documentElement.setAttribute('data-mobile-menu-open', 'true');
+    } else {
+      document.documentElement.removeAttribute('data-mobile-menu-open');
+    }
+  }, [navOpen]);
+
+  useEffect(() => {
+    return () => {
+      clearCloseTimer();
+      document.documentElement.removeAttribute('data-mobile-menu-open');
+    };
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-structural-light/80 bg-surface-card/90 shadow-[0_10px_30px_rgba(16,38,63,0.08)] backdrop-blur-xl">
@@ -55,7 +103,7 @@ export default function HeaderClient() {
               key={href}
               href={href}
               className="site-nav__link focus:outline-none focus-visible:ring-2 focus-visible:ring-support"
-              onClick={() => setNavOpen(false)}
+              onClick={closeNav}
             >
               {label}
             </Link>
@@ -70,7 +118,7 @@ export default function HeaderClient() {
           <button
             type="button"
             className="mobile-menu-button focus:outline-none focus-visible:ring-2 focus-visible:ring-support"
-            onClick={() => setNavOpen((o) => !o)}
+            onClick={toggleNav}
             aria-expanded={navOpen}
             aria-controls="header-nav-links"
             aria-label={navOpen ? t('menu.close') : t('menu.open')}
@@ -80,8 +128,12 @@ export default function HeaderClient() {
         </div>
       </div>
 
-      {navOpen && (
-        <div className="absolute left-0 right-0 top-full border-b border-structural-light bg-surface-card shadow-[0_22px_44px_rgba(16,38,63,0.14)] lg:hidden">
+      {navMounted && (
+        <div
+          id="header-nav-links"
+          className={`mobile-nav-panel absolute left-0 right-0 top-full border-b border-structural-light bg-surface-card shadow-[0_22px_44px_rgba(16,38,63,0.14)] lg:hidden ${navOpen ? 'mobile-nav-panel--open' : ''}`}
+          aria-hidden={!navOpen}
+        >
           <div className="container py-3">
             <div className="mb-3 flex items-center gap-4 border-b border-structural-light pb-3">
               <LanguageControl />
@@ -91,8 +143,9 @@ export default function HeaderClient() {
               <Link
                 key={href}
                 href={href}
-                className="block rounded-xl px-4 py-4 text-sm font-semibold text-body hover:bg-surface-light-alt focus:outline-none focus-visible:ring-2 focus-visible:ring-support"
-                onClick={() => setNavOpen(false)}
+                tabIndex={navOpen ? undefined : -1}
+                className="mobile-nav-link block rounded-xl px-4 py-4 text-sm font-semibold text-body hover:bg-surface-light-alt focus:outline-none focus-visible:ring-2 focus-visible:ring-support"
+                onClick={closeNav}
               >
                 {label}
               </Link>

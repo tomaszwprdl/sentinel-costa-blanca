@@ -27,7 +27,7 @@ export default function PackageResponsibilityLadder() {
         </div>
       </div>
 
-      <div className="grid gap-0 md:grid-cols-3">
+      <div className="process-sequence grid gap-0 md:grid-cols-3">
         {PACKAGE_KEYS.map((packageKey, index) => {
           const levelKey = LEVEL_KEYS[index];
           return (
@@ -36,7 +36,7 @@ export default function PackageResponsibilityLadder() {
               className="relative border-b border-structural-light p-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 md:p-7"
             >
               <div className="mb-5 flex items-center justify-between gap-4">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-authority-bg text-sm font-black text-authority-on-dark">
+                <span className="process-node inline-flex h-11 w-11 items-center justify-center rounded-full bg-authority-bg text-sm font-black text-authority-on-dark">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <span className="rounded-full bg-surface-light-alt px-3 py-1 text-xs font-bold text-support">

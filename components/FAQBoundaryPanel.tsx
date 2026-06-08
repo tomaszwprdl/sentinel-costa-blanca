@@ -23,7 +23,7 @@ export default function FAQBoundaryPanel({
         <h2 className="h2-system mt-3">{title}</h2>
         <p className="mt-3 max-w-[62ch] text-body">{intro}</p>
       </div>
-      <div className="grid gap-0 md:grid-cols-5">
+      <div className="process-sequence grid gap-0 md:grid-cols-5">
         {items.map((item, index) => (
           <article
             key={item.label}

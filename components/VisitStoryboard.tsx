@@ -82,7 +82,7 @@ export default function VisitStoryboard() {
 
       <div className="grid gap-4 p-4 md:grid-cols-2 lg:grid-cols-3 lg:p-5">
         {STORY_FRAMES.map((frame, index) => (
-          <article key={frame.key} className="overflow-hidden rounded-2xl border border-structural-light bg-surface-card">
+          <article key={frame.key} className="storyboard-card overflow-hidden rounded-2xl border border-structural-light bg-surface-card">
             <StoryboardMediaFrame kind={frame.kind} />
             <div className="p-4">
               <p className="mb-2 text-[11px] font-black uppercase tracking-wide text-accent">

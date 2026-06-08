@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
@@ -33,21 +33,43 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
 
   const selected = normalizePathwayParam(searchParams.get('pathway'));
   const [isChanging, setIsChanging] = useState(false);
+  const [pendingSelection, setPendingSelection] = useState<PathwayKey | null>(null);
+  const pendingTimerRef = useRef<number | null>(null);
 
   const selectPathway = useCallback(
     (key: PathwayKey) => {
+      if (pendingTimerRef.current !== null) {
+        window.clearTimeout(pendingTimerRef.current);
+      }
+
+      setPendingSelection(key);
       setIsChanging(false);
       const params = new URLSearchParams(searchParams.toString());
       params.set('pathway', key);
       const query = params.toString();
-      router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+      const nextHref = query ? `${pathname}?${query}` : pathname;
+
+      pendingTimerRef.current = window.setTimeout(() => {
+        router.replace(nextHref, { scroll: false });
+        setPendingSelection(null);
+        pendingTimerRef.current = null;
+      }, 160);
     },
     [pathname, router, searchParams]
   );
 
+  useEffect(() => {
+    return () => {
+      if (pendingTimerRef.current !== null) {
+        window.clearTimeout(pendingTimerRef.current);
+      }
+    };
+  }, []);
+
   const hasSelection = selected !== null;
   const showFullGate = !hasSelection;
   const showPicker = !hasSelection || isChanging;
+  const activeSelection = pendingSelection ?? selected;
 
   return (
     <>
@@ -55,7 +77,7 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
         <Section tone="authority" className="visual-hero-section">
           <DiagnosticGateIntro t={t} tp={tp}>
             <DiagnosticChoiceBlock
-              selected={selected}
+              selected={activeSelection}
               isChanging={isChanging}
               onSelect={selectPathway}
               t={tp}
@@ -71,7 +93,7 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
         <Section tone="alt" className="section-primitive--first !pb-12">
           <div className="mx-auto w-full max-w-5xl">
             {showPicker && (
-              <div className="diagnostic-result-shell mb-8">
+              <div className="diagnostic-result-shell motion-panel-reveal mb-8">
                 <div className="diagnostic-result-top">
                   <div>
                     <p className="section-label">{tp('selectorEyebrow')}</p>
@@ -81,7 +103,7 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
                 </div>
                 <div className="diagnostic-result-body">
                   <DiagnosticChoiceBlock
-                    selected={selected}
+                    selected={activeSelection}
                     isChanging={isChanging}
                     onSelect={selectPathway}
                     t={tp}
@@ -92,7 +114,7 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
 
             {hasSelection && !isChanging && selected && (
               <>
-                <div className="diagnostic-result-top r mb-5 border border-structural-light bg-surface-card">
+                <div className="diagnostic-result-top motion-panel-reveal r mb-5 border border-structural-light bg-surface-card">
                   <span className="text-sm text-body">
                     <span className="text-muted">{tp('selectedSituationLabel')}</span>{' '}
                     <span className="font-bold text-heading">{tp(`cards.${selected}.title`)}</span>
@@ -106,7 +128,7 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
                   </button>
                 </div>
 
-                <PathwayDetailPanel locale={locale} pathway={selected} t={tp} />
+                <PathwayDetailPanel key={selected} locale={locale} pathway={selected} t={tp} />
               </>
             )}
           </div>
@@ -168,8 +190,8 @@ function DiagnosticGateIntro({
         />
       </div>
 
-      <div className="visual-hero-content">
-        <div className="hero-copy-panel">
+      <div className="visual-hero-content motion-entrance">
+        <div className="hero-copy-panel motion-entrance">
           <p className="hero-kicker">{tp('companyEyebrow')}</p>
           <h1 className="hero-display">{tp('companyHeadline')}</h1>
           <p className="hero-lead mt-6">{tp('companyLine')}</p>
@@ -184,7 +206,7 @@ function DiagnosticGateIntro({
           </div>
         </div>
 
-        <div className="diagnostic-panel p-5 md:p-6">
+        <div className="diagnostic-panel motion-panel-reveal p-5 md:p-6">
           <p className="section-label">{tp('selectorEyebrow')}</p>
           <h2 className="mt-2 text-2xl leading-tight md:text-3xl">
             {tp('selectorTitle')}
@@ -223,7 +245,7 @@ function DiagnosticChoiceBlock({
   t: ReturnType<typeof useTranslations<'home.pathway'>>;
 }) {
   return (
-    <div className="diagnostic-choice-grid">
+    <div className="diagnostic-choice-grid motion-entrance">
       {PATHWAY_KEYS.map((key) => {
         const isSelected = selected === key && !isChanging;
         return (
@@ -274,7 +296,7 @@ function PathwayDetailPanel({
   const secondaryLabel = pathway === 'mixed-not-defined' ? t('servicesCta') : t('reviewCta');
 
   return (
-    <div className="diagnostic-result-shell">
+    <div className="diagnostic-result-shell motion-panel-reveal">
       <div className="grid gap-0 lg:grid-cols-[minmax(0,0.95fr)_minmax(18rem,0.45fr)]">
         <div className="p-6 md:p-8">
           <p className="section-label">{t('selectedLabel')}</p>
@@ -321,7 +343,7 @@ function PathwayDetailPanel({
         </div>
 
         <div className="border-t border-structural-light bg-surface-light-alt p-6 md:p-8 lg:border-l lg:border-t-0">
-          <PathwaySituationDiagram pathway={pathway} className="mb-5 shadow-none" />
+          <PathwaySituationDiagram pathway={pathway} className="motion-panel-reveal mb-5 shadow-none" />
           <p className="section-label">{t('changesLabel')}</p>
           <ul className="mt-4 space-y-3 text-sm leading-relaxed text-body">
             {Array.from({ length: PATHWAY_POINT_COUNTS[pathway] }, (_, i) => (

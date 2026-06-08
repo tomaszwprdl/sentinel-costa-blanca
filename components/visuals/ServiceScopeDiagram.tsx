@@ -67,7 +67,12 @@ export default function ServiceScopeDiagram({
           {[0, 1, 2].map((index) => {
             const isActive = activeIndex === -1 || activeIndex === index;
             return (
-              <g key={index} transform={`translate(${index * 202} ${activeIndex === index ? -12 : 0})`} opacity={isActive ? 1 : 0.44}>
+              <g
+                key={index}
+                className="scope-tier"
+                transform={`translate(${index * 202} ${activeIndex === index ? -12 : 0})`}
+                opacity={isActive ? 1 : 0.44}
+              >
                 <rect
                   width="170"
                   height="300"
