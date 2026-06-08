@@ -2118,14 +2118,14 @@
       "title": "Wybierz obszar niepewności.",
       "intro": "Poniższe kategorie prowadzą do zwartych grup odpowiedzi. Niektóre tematy się łączą, bo zakres, dostęp i uprawnienia działają razem.",
       "items": [
-        { "id": "service-model", "title": "Dopasowanie usługi", "body": "Czym jest Sentinel i czy model pasuje." },
-        { "id": "service-model", "title": "Pakiety i zakres", "body": "Co jest wliczone, wyłączone i uzgadniane osobno." },
-        { "id": "operations", "title": "Dostęp i klucze", "body": "Wejścia, osoby trzecie, terminy i zdarzenia dostępu." },
-        { "id": "practical", "title": "Raporty i kontrole", "body": "Wizyty, liczniki, zapisy i częstotliwość." },
-        { "id": "practical", "title": "Goście i sprzątanie", "body": "Aktywność gości, gotowość lokalu i wsparcie operacyjne." },
-        { "id": "emergencies", "title": "Awarie i limity", "body": "Definicja awarii, uprawnienia finansowe i zgoda właściciela." },
-        { "id": "communication", "title": "Cena i estymator", "body": "Osobne wyceny, warunki, zmiany i logika przeglądu." },
-        { "id": "communication", "title": "Kanały kontaktu", "body": "Nowe zapytania, aktywni klienci, odmowa i zasady." }
+        { "id": "cat-service-fit", "targetId": "service-model", "title": "Dopasowanie usługi", "body": "Czym jest Sentinel i czy model pasuje." },
+        { "id": "cat-packages-scope", "targetId": "service-model", "title": "Pakiety i zakres", "body": "Co jest wliczone, wyłączone i uzgadniane osobno." },
+        { "id": "cat-access-keys", "targetId": "operations", "title": "Dostęp i klucze", "body": "Wejścia, osoby trzecie, terminy i zdarzenia dostępu." },
+        { "id": "cat-reports-inspections", "targetId": "practical", "title": "Raporty i kontrole", "body": "Wizyty, liczniki, zapisy i częstotliwość." },
+        { "id": "cat-guests-cleaning", "targetId": "practical", "title": "Goście i sprzątanie", "body": "Aktywność gości, gotowość lokalu i wsparcie operacyjne." },
+        { "id": "cat-emergencies", "targetId": "emergencies", "title": "Awarie i limity", "body": "Definicja awarii, uprawnienia finansowe i zgoda właściciela." },
+        { "id": "cat-pricing-estimator", "targetId": "communication", "title": "Cena i estymator", "body": "Osobne wyceny, warunki, zmiany i logika przeglądu." },
+        { "id": "cat-contact-channels", "targetId": "communication", "title": "Kanały kontaktu", "body": "Nowe zapytania, aktywni klienci, odmowa i zasady." }
       ]
     },
     "boundary": {

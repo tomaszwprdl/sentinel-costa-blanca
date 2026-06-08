@@ -2118,14 +2118,14 @@
       "title": "Choose the area of uncertainty.",
       "intro": "The categories below route to compact answer groups. Several questions overlap because scope, access, and authority are connected.",
       "items": [
-        { "id": "service-model", "title": "Service fit", "body": "What Sentinel is and whether the model fits." },
-        { "id": "service-model", "title": "Packages and scope", "body": "Included, excluded, and separately agreed work." },
-        { "id": "operations", "title": "Access and keys", "body": "Entry, third parties, timing, and access events." },
-        { "id": "practical", "title": "Reports and inspections", "body": "Visits, meter checks, records, and frequency." },
-        { "id": "practical", "title": "Guest and cleaning modules", "body": "Guest activity, cleaning readiness, and operational support." },
-        { "id": "emergencies", "title": "Emergencies and limits", "body": "Emergency definition, financial authority, and owner approval." },
-        { "id": "communication", "title": "Pricing and estimator", "body": "Separate quotes, terms, changes, and review logic." },
-        { "id": "communication", "title": "Contact channels", "body": "Prospects, active clients, refusal, and policy rules." }
+        { "id": "cat-service-fit", "targetId": "service-model", "title": "Service fit", "body": "What Sentinel is and whether the model fits." },
+        { "id": "cat-packages-scope", "targetId": "service-model", "title": "Packages and scope", "body": "Included, excluded, and separately agreed work." },
+        { "id": "cat-access-keys", "targetId": "operations", "title": "Access and keys", "body": "Entry, third parties, timing, and access events." },
+        { "id": "cat-reports-inspections", "targetId": "practical", "title": "Reports and inspections", "body": "Visits, meter checks, records, and frequency." },
+        { "id": "cat-guests-cleaning", "targetId": "practical", "title": "Guest and cleaning modules", "body": "Guest activity, cleaning readiness, and operational support." },
+        { "id": "cat-emergencies", "targetId": "emergencies", "title": "Emergencies and limits", "body": "Emergency definition, financial authority, and owner approval." },
+        { "id": "cat-pricing-estimator", "targetId": "communication", "title": "Pricing and estimator", "body": "Separate quotes, terms, changes, and review logic." },
+        { "id": "cat-contact-channels", "targetId": "communication", "title": "Contact channels", "body": "Prospects, active clients, refusal, and policy rules." }
       ]
     },
     "boundary": {

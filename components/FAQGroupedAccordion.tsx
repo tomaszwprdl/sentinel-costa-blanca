@@ -50,7 +50,7 @@ export default function FAQGroupedAccordion({
       ) : (
         <div className="grid gap-5">
           {sections.map((section, sectionIndex) => (
-            <section key={section.id} id={section.id} className="scroll-mt-32">
+            <section key={section.id} id={section.id} className="journey-scroll-target">
               <DisclosureBlock
                 label={section.title}
                 explainer={section.intro}

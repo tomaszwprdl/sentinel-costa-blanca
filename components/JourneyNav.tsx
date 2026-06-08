@@ -48,29 +48,31 @@ export default function JourneyNav({
   }, [items]);
 
   return (
-    <nav className={`journey-nav ${className}`} aria-label={ariaLabel}>
-      <div className="container">
-        <div className="journey-nav__track">
-          {items.map((item, index) => {
-            const isActive = activeId === item.id;
+    <div className="journey-nav-shell">
+      <nav className={`journey-nav ${className}`} aria-label={ariaLabel}>
+        <div className="container">
+          <div className="journey-nav__track">
+            {items.map((item, index) => {
+              const isActive = activeId === item.id;
 
-            return (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                aria-current={isActive ? 'true' : undefined}
-                className="journey-nav__link"
-                onClick={() => setActiveId(item.id)}
-              >
-                <span className="journey-nav__marker" aria-hidden>
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <span>{item.label}</span>
-              </a>
-            );
-          })}
+              return (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  aria-current={isActive ? 'true' : undefined}
+                  className="journey-nav__link"
+                  onClick={() => setActiveId(item.id)}
+                >
+                  <span className="journey-nav__marker" aria-hidden>
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span>{item.label}</span>
+                </a>
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 }

@@ -29,6 +29,7 @@ type QuickAnswerSource = {
 
 type CategoryItem = {
   id: string;
+  targetId: string;
   title: string;
   body: string;
 };

@@ -57,6 +57,9 @@
   --motion-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --motion-ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
   --motion-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --header-offset: 76px;
+  --journey-nav-height: 3.5rem;
+  --scroll-anchor-offset: calc(var(--header-offset) + var(--journey-nav-height) + 0.75rem);
 }
 
 [data-theme="dark"] {
@@ -118,11 +121,13 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  scroll-padding-top: var(--scroll-anchor-offset);
+  overflow-x: clip;
 }
 
 body {
   min-height: 100vh;
+  max-width: 100%;
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--surface-light-alt) 72%, white) 0%, var(--surface-light) 34%, var(--surface-light-alt) 100%);
   color: var(--body);
@@ -131,7 +136,7 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 h1,
@@ -696,14 +701,41 @@ textarea:focus {
   }
 }
 
-.journey-nav {
+.journey-nav-shell {
   position: sticky;
-  top: 76px;
+  top: var(--header-offset);
   z-index: 35;
+}
+
+.journey-nav {
   border-block: 1px solid color-mix(in srgb, var(--line) 78%, transparent);
-  background: color-mix(in srgb, var(--surface-card) 88%, transparent);
+  background: color-mix(in srgb, var(--surface-card) 96%, var(--surface-light-alt));
   box-shadow: 0 12px 28px rgba(16, 38, 63, 0.08);
-  backdrop-filter: blur(16px);
+}
+
+.journey-scroll-target {
+  scroll-margin-top: var(--scroll-anchor-offset);
+}
+
+#qualification,
+#package-fit,
+#scenario-fit,
+#event-simulator,
+#package-details,
+#estimator,
+#process-start,
+#process-rhythm,
+#one-minute-process,
+#visit-storyboard,
+#report-walkthrough,
+#access-chain,
+#decision-map,
+#faq-start,
+#faq-quick,
+#faq-categories,
+#faq-details,
+#faq-decision {
+  scroll-margin-top: var(--scroll-anchor-offset);
 }
 
 .journey-nav__track {
