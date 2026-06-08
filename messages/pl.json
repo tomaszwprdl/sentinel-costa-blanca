@@ -1156,6 +1156,103 @@
       },
       "notAppropriate": "Jeśli Państwa potrzeby należą do tych kategorii, Sentinel nie jest odpowiednią usługą.",
       "proceedText": "W przypadku pakietowej opieki nad nieruchomością, kontroli, koordynacji dostępu i lokalnej reprezentacji w naszym obszarze obsługi, proszę przejść do formularza kontaktowego powyżej."
+    },
+    "redesign": {
+      "hero": {
+        "eyebrow": "Kwalifikacja zapytania",
+        "headline": "Zacznij od uporządkowanego przeglądu",
+        "lead": "Formularz kontaktowy jest pierwszym etapem kwalifikacji. Pozwala sprawdzić lokalizację, sposób używania nieruchomości, dopasowanie pakietu i to, czy zapytanie mieści się w modelu Sentinel.",
+        "primaryCta": "Przejdź do formularza",
+        "secondaryCta": "Przygotuj informacje",
+        "facts": [
+          { "label": "Obszar", "value": "Torrevieja + 50-70 km" },
+          { "label": "Odpowiedź na zapytanie", "value": "24-48h" },
+          { "label": "Model", "value": "usługa pakietowa" }
+        ]
+      },
+      "method": {
+        "eyebrow": "Metody kontaktu",
+        "title": "Te dane służą do pierwszego zapytania właściciela.",
+        "note": "Strona kontaktowa służy do wstępnych zapytań i przeglądu zakresu. Aktywne sprawy operacyjne są prowadzone kanałami przekazanymi podczas wdrożenia."
+      },
+      "prepare": {
+        "eyebrow": "Przed kontaktem",
+        "title": "Przygotuj informacje, które decydują o dopasowaniu.",
+        "intro": "Pełniejsze zapytanie łatwiej ocenić i rzadziej wymaga dodatkowego wyjaśniania.",
+        "items": [
+          { "marker": "01", "title": "Lokalizacja nieruchomości", "body": "Miasto, okolica albo adres, aby można było sprawdzić obszar obsługi." },
+          { "marker": "02", "title": "Typ nieruchomości", "body": "Apartament, dom, willa albo inny format, który może wpływać na dostęp." },
+          { "marker": "03", "title": "Sytuacja używania", "body": "Tylko użytek prywatny, regularne pobyty gości albo model mieszany / jeszcze nieustalony." },
+          { "marker": "04", "title": "Pakiet, jeśli znany", "body": "Podstawowy, Rozszerzony, Pełny albo brak pewności, jeśli najpierw potrzebna jest klasyfikacja." },
+          { "marker": "05", "title": "Dostęp i klucze", "body": "Czy w grę wchodzą klucze, kody, bramy wspólnoty albo wejścia techników." },
+          { "marker": "06", "title": "Potrzeby operacyjne", "body": "Przygotowanie lokalu, pobyty gości, kontrole techniczne albo dokumentacja." },
+          { "marker": "07", "title": "Pilność", "body": "Czy chodzi o zwykłe zapytanie, czy o sprawę wrażliwą czasowo." }
+        ]
+      },
+      "routes": {
+        "eyebrow": "Właściwy kanał",
+        "title": "Nowe zapytanie, aktywny klient i sytuacja awaryjna to różne ścieżki.",
+        "intro": "Publiczny formularz służy do kwalifikacji. Nie jest kanałem operacyjnym dla aktywnych zdarzeń klienta.",
+        "cards": [
+          { "marker": "Nowe zapytanie", "title": "Użyj formularza publicznego", "body": "Najlepsze dla kwalifikacji nieruchomości, sytuacji używania, dopasowania pakietu, kontekstu estymatora i rozmowy o wdrożeniu.", "note": "Ta ścieżka rozpoczyna uporządkowany przegląd." },
+          { "marker": "Aktywny klient", "title": "Użyj kanałów z wdrożenia", "body": "Istniejący klienci otrzymują dedykowane dane kontaktowe po wdrożeniu.", "note": "Nie używaj formularza publicznego do bieżących spraw operacyjnych." },
+          { "marker": "Sytuacja awaryjna", "title": "To nie jest publiczna linia awaryjna", "body": "Kanały awaryjne istnieją tylko dla uprawnionych aktywnych klientów zgodnie z warunkami pakietu.", "note": "Strona publiczna nie zapewnia otwartej reakcji awaryjnej." }
+        ]
+      },
+      "fit": {
+        "eyebrow": "Obszar i dopasowanie",
+        "title": "Pierwszym filtrem jest lokalizacja, potem zakres.",
+        "intro": "Sentinel obsługuje Torrevieja i około 50-70 km wokół miasta. Zapytania spoza promienia są odrzucane zamiast rozciągane na słabą obsługę.",
+        "cards": [
+          { "title": "W obszarze", "body": "Nieruchomość może zostać rozpatrzona w przeglądzie zakresu." },
+          { "title": "Poza obszarem", "body": "Nie ma wyjątku, dopłaty ani tymczasowej obsługi poza zasięgiem." },
+          { "title": "W zakresie", "body": "Zapytanie musi mieścić się w logice pakietu albo uzgodnionego modułu operacyjnego." }
+        ],
+        "note": "Dopasowanie lokalizacji nie oznacza automatycznej akceptacji. Zakres, dostęp i oczekiwania są oceniane osobno."
+      },
+      "unsuitable": {
+        "eyebrow": "Poza dopasowaniem",
+        "title": "Niektóre zapytania nie powinny trafiać do procesu kwalifikacji.",
+        "intro": "Jasna odmowa chroni właściciela i model działania.",
+        "items": [
+          { "title": "Nieruchomość poza obszarem", "body": "Nieruchomości poza Torrevieja + 50-70 km nie mogą być obsługiwane." },
+          { "title": "Doraźna pomoc bez zakresu", "body": "Jednorazowe zadania bez uzgodnionej odpowiedzialności nie są modelem Sentinel." },
+          { "title": "Nieograniczona pomoc concierge", "body": "Sprawy osobiste, zadania lifestyle i otwarta pomoc są poza zakresem." },
+          { "title": "Zastępstwo agencji wynajmu", "body": "Sentinel nie zastępuje zarządzania rezerwacjami ani operacji platform wynajmu." },
+          { "title": "Pełne zarządzanie remontem", "body": "Budowa i prowadzenie projektu jako generalny wykonawca są wyłączone." },
+          { "title": "Odpowiedzialność jak ubezpieczenie", "body": "Sentinel nie przejmuje nieubezpieczonych strat awaryjnych i nie gwarantuje zapobiegania zdarzeniom." }
+        ]
+      },
+      "form": {
+        "eyebrow": "Publiczny formularz kwalifikacyjny",
+        "title": "Przekaż informacje potrzebne do oceny.",
+        "intro": "Poniższe pola zachowują istniejący proces kontaktu. Grupowanie ułatwia zrozumienie logiki przeglądu.",
+        "ownerSection": "Dane właściciela",
+        "propertySection": "Dane nieruchomości",
+        "serviceSection": "Sposób używania i potrzeba usługi",
+        "consentSection": "Potwierdzenie zakresu",
+        "submitNote": "Wysłanie formularza nie oznacza automatycznej akceptacji ani reakcji awaryjnej."
+      },
+      "afterSubmit": {
+        "eyebrow": "Po wysłaniu",
+        "title": "Co dzieje się po wysłaniu zapytania",
+        "intro": "Następnym etapem jest przegląd, nie automatyczne wdrożenie.",
+        "steps": [
+          { "marker": "01", "title": "Sprawdzenie lokalizacji", "body": "Sentinel sprawdza, czy nieruchomość znajduje się w obszarze działania." },
+          { "marker": "02", "title": "Przegląd zakresu", "body": "Zapytanie jest porównywane z logiką pakietów i granicami operacyjnymi." },
+          { "marker": "03", "title": "Następny krok, jeśli pasuje", "body": "Sentinel może zaproponować przegląd zakresu, rozmowę o pakiecie albo ścieżkę wdrożenia." },
+          { "marker": "04", "title": "Odmowa, jeśli nie pasuje", "body": "Jeżeli zapytanie jest poza obszarem albo zakresem, Sentinel może odmówić." }
+        ]
+      },
+      "confirmation": {
+        "eyebrow": "Zapytanie przyjęte",
+        "headline": "Zapytanie trafiło do przeglądu.",
+        "body": "Sentinel sprawdzi lokalizację i dopasowanie usługi przed zaproponowaniem kolejnego kroku."
+      },
+      "finalCta": {
+        "title": "Sprawdź model usługi przed wysłaniem.",
+        "intro": "Jeżeli zapytanie nadal jest niepewne, strony Usługi i Jak to działa wyjaśniają pakiety, zasady dostępu, dokumentację i granice decyzji."
+      }
     }
   },
   "howItWorks": {

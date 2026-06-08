@@ -1156,6 +1156,103 @@
       },
       "notAppropriate": "If your needs fall into these categories, Sentinel is not the appropriate service.",
       "proceedText": "For package-based property oversight, inspection, access coordination, and local representation within our service area, please proceed with the contact form above."
+    },
+    "redesign": {
+      "hero": {
+        "eyebrow": "Qualified intake",
+        "headline": "Start with a structured review",
+        "lead": "The contact form is the first intake step. It gives Sentinel enough information to check location, usage situation, package fit, and whether the request belongs inside the service model.",
+        "primaryCta": "Go to form",
+        "secondaryCta": "Prepare information",
+        "facts": [
+          { "label": "Area", "value": "Torrevieja + 50-70 km" },
+          { "label": "Inquiry response", "value": "24-48h" },
+          { "label": "Model", "value": "package-based service" }
+        ]
+      },
+      "method": {
+        "eyebrow": "Direct methods",
+        "title": "Use these details for new-owner intake.",
+        "note": "The public contact page is for initial inquiries and structured review. Active operational requests use the channels provided during onboarding."
+      },
+      "prepare": {
+        "eyebrow": "Before contact",
+        "title": "Prepare the information that determines fit.",
+        "intro": "A complete inquiry is easier to review and less likely to require back-and-forth clarification.",
+        "items": [
+          { "marker": "01", "title": "Property location", "body": "Town, area, or address so the service radius can be checked." },
+          { "marker": "02", "title": "Property type", "body": "Apartment, house, villa, or another format that may affect access." },
+          { "marker": "03", "title": "Usage situation", "body": "Private Use Only, Regular Guest Stays, or Mixed / Not Yet Defined." },
+          { "marker": "04", "title": "Package if known", "body": "Basic, Extended, Full, or not sure if classification is needed first." },
+          { "marker": "05", "title": "Access and keys", "body": "Whether keys, access codes, community gates, or technician access are involved." },
+          { "marker": "06", "title": "Operational needs", "body": "Cleaning readiness, guest activity, technical checks, or documentation needs." },
+          { "marker": "07", "title": "Urgency", "body": "Whether the inquiry is ordinary intake or a time-sensitive issue." }
+        ]
+      },
+      "routes": {
+        "eyebrow": "Choose the right route",
+        "title": "New inquiries, active clients, and emergencies are not the same channel.",
+        "intro": "The public form exists for qualification. It is not the operational channel for active client events.",
+        "cards": [
+          { "marker": "New owner inquiry", "title": "Use the public form", "body": "Best for property qualification, usage classification, package fit, estimator context, and onboarding discussion.", "note": "This route starts a structured review." },
+          { "marker": "Active client", "title": "Use onboarding channels", "body": "Existing clients receive dedicated operational contact details after onboarding.", "note": "Do not use the public form for routine active-client requests." },
+          { "marker": "Emergency", "title": "Not a public hotline", "body": "Emergency channels exist only for eligible active clients under agreed package terms.", "note": "The public page does not provide open emergency response." }
+        ]
+      },
+      "fit": {
+        "eyebrow": "Service area and fit",
+        "title": "The first filter is location, then scope.",
+        "intro": "Sentinel serves Torrevieja and approximately 50-70 km around it. Requests outside the radius are declined rather than stretched into weak coverage.",
+        "cards": [
+          { "title": "Inside area", "body": "The property can be considered for structured review." },
+          { "title": "Outside area", "body": "No exception, premium override, or temporary coverage is offered." },
+          { "title": "Inside scope", "body": "The request must fit package logic or an agreed operational module." }
+        ],
+        "note": "Location fit does not guarantee acceptance. Scope, access, and expectations are reviewed separately."
+      },
+      "unsuitable": {
+        "eyebrow": "Not suitable",
+        "title": "Some requests should not enter the intake process.",
+        "intro": "Clear refusal protects the owner and the operating model.",
+        "items": [
+          { "title": "Out-of-area property", "body": "Properties outside Torrevieja + 50-70 km cannot be serviced." },
+          { "title": "Ad-hoc help without scope", "body": "One-off tasks without agreed responsibility are not the Sentinel model." },
+          { "title": "Unlimited concierge help", "body": "Lifestyle tasks, errands, and open-ended assistance are outside scope." },
+          { "title": "Rental agency replacement", "body": "Sentinel does not replace booking management or rental-platform operations." },
+          { "title": "Full renovation management", "body": "Construction and project management as a general contractor are excluded." },
+          { "title": "Insurance-level responsibility", "body": "Sentinel does not assume uninsured emergency losses or guarantee prevention." }
+        ]
+      },
+      "form": {
+        "eyebrow": "Public intake form",
+        "title": "Submit the information required for qualification.",
+        "intro": "The fields below preserve the existing contact process. They are grouped so the review logic is easier to follow.",
+        "ownerSection": "Owner details",
+        "propertySection": "Property details",
+        "serviceSection": "Expected usage and service need",
+        "consentSection": "Scope acknowledgment",
+        "submitNote": "Submitting the form does not imply automatic acceptance or emergency response."
+      },
+      "afterSubmit": {
+        "eyebrow": "After submitting",
+        "title": "What happens after the inquiry is sent",
+        "intro": "The next step is review, not automatic onboarding.",
+        "steps": [
+          { "marker": "01", "title": "Location check", "body": "Sentinel checks whether the property is inside the operating area." },
+          { "marker": "02", "title": "Scope review", "body": "The request is compared with package logic and operational boundaries." },
+          { "marker": "03", "title": "Next step if suitable", "body": "Sentinel may propose a structured review, package discussion, or onboarding path." },
+          { "marker": "04", "title": "Decline if unsuitable", "body": "If the request is outside area or scope, Sentinel may decline." }
+        ]
+      },
+      "confirmation": {
+        "eyebrow": "Inquiry received",
+        "headline": "Your inquiry has entered review.",
+        "body": "Sentinel will check location and service fit before proposing any next step."
+      },
+      "finalCta": {
+        "title": "Review the service model before submitting.",
+        "intro": "If the request is still uncertain, Services and How It Works explain the package levels, access rules, documentation, and decision boundaries."
+      }
     }
   },
   "howItWorks": {

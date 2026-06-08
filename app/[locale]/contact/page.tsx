@@ -1,21 +1,21 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
+import { Suspense, useEffect, useMemo, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useLocale, useTranslations } from 'next-intl';
-import { useSearchParams } from 'next/navigation';
-import { Suspense } from 'react';
-import Link from 'next/link';
 import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
-import ConfidenceBar from '@/components/ConfidenceBar';
-import DisclosureBlock from '@/components/DisclosureBlock';
 import Section from '@/components/layout/Section';
-import GridFrame from '@/components/layout/GridFrame';
-import Region from '@/components/layout/Region';
-import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
+import ContactMethodPanel from '@/components/ContactMethodPanel';
+import ContactPreparationChecklist from '@/components/ContactPreparationChecklist';
+import ContactRouteCards from '@/components/ContactRouteCards';
+import ContactUnsuitableGrid from '@/components/ContactUnsuitableGrid';
+import ContactAfterSubmitSteps from '@/components/ContactAfterSubmitSteps';
 
 import { normalizePathwayParam } from '@/lib/pathway';
 import {
@@ -38,6 +38,23 @@ const PACKAGE_KEYS: PackageKey[] = ['structured_presence', 'active_oversight', '
 const MODE_KEYS: ModeKey[] = ['private_use', 'active_guest'];
 const SIZE_KEYS: SizeKey[] = ['S', 'M', 'L'];
 const BEDROOMS_KEYS: BedroomsKey[] = ['B1', 'B2', 'B3', 'B4P'];
+
+type Fact = {
+  label: string;
+  value: string;
+};
+
+type MarkedItem = {
+  marker: string;
+  title: string;
+  body: string;
+  note?: string;
+};
+
+type InfoCard = {
+  title: string;
+  body: string;
+};
 
 function isPackageKey(value: string): value is PackageKey {
   return PACKAGE_KEYS.includes(value as PackageKey);
@@ -79,13 +96,13 @@ function ContactPageInner() {
   const tEst = useTranslations('services.estimator');
   const tCommon = useTranslations('common');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const serviceAreaMapLabels = {
-    title: tCommon('serviceAreaMap.title'),
-    center: tCommon('serviceAreaMap.center'),
-    radius: tCommon('serviceAreaMap.radius'),
-    boundary: tCommon('serviceAreaMap.boundary'),
-    caption: tCommon('serviceAreaMap.caption'),
-  };
+
+  const heroFacts = t.raw('redesign.hero.facts') as Fact[];
+  const preparationItems = t.raw('redesign.prepare.items') as MarkedItem[];
+  const routeCards = t.raw('redesign.routes.cards') as Required<MarkedItem>[];
+  const fitCards = t.raw('redesign.fit.cards') as InfoCard[];
+  const unsuitableItems = t.raw('redesign.unsuitable.items') as InfoCard[];
+  const afterSubmitSteps = t.raw('redesign.afterSubmit.steps') as MarkedItem[];
 
   const estimatorPrefill = useMemo(() => {
     const package_ = searchParams.get('est_package');
@@ -109,8 +126,8 @@ function ContactPageInner() {
       : [];
     const rangeDisplay =
       rangeParts.length === 2
-        ? `€${rangeParts[0]}–€${rangeParts[1]}`
-        : (range || '—');
+        ? `EUR ${rangeParts[0]}-${rangeParts[1]}`
+        : (range || '-');
 
     return {
       package: package_,
@@ -200,54 +217,43 @@ function ContactPageInner() {
       <>
         <HeaderClient />
         <main className="min-h-screen">
-          <Section tone="light" className="section-primitive--first">
-            <div>
-                <h1>{t('confirmation.title')}</h1>
-                <div className="bg-surface-card border-l-4 border-structural-a r p-6 mb-10">
-                  <p className="text-lg text-authority mb-5">
-                    {t('confirmation.thankYou')}
-                  </p>
-                  <p className="text-body mb-5">
-                    {t('confirmation.received')}
-                  </p>
-                </div>
+          <Section tone="authority" className="section-primitive--first">
+            <div className="max-w-[760px]">
+              <p className="hero-kicker">{t('redesign.confirmation.eyebrow')}</p>
+              <h1 className="hero-display max-w-[14ch]">{t('redesign.confirmation.headline')}</h1>
+              <p className="hero-lead">{t('redesign.confirmation.body')}</p>
+            </div>
+          </Section>
 
-                <div className="bg-surface-light-alt r p-6 mb-10">
-                  <h2 className="h2-system">{t('confirmation.nextStepsTitle')}</h2>
-                  <ol className="list-decimal list-inside space-y-2 text-body mb-5">
-                    <li>{t('confirmation.nextSteps.step1', { email: tCommon('contact.email') })}</li>
-                    <li>{t('confirmation.nextSteps.step2')}</li>
-                    <li>{t('confirmation.nextSteps.step3')}</li>
-                  </ol>
-                </div>
+          <Section tone="light">
+            <div className="grid gap-5 lg:grid-cols-[minmax(0,0.58fr)_minmax(0,0.42fr)]">
+              <div className="visual-card-strong p-5 md:p-8">
+                <h2 className="h2-system">{t('confirmation.nextStepsTitle')}</h2>
+                <ol className="mt-6 list-decimal space-y-3 pl-5 text-body">
+                  <li>{t('confirmation.nextSteps.step1', { email: tCommon('contact.email') })}</li>
+                  <li>{t('confirmation.nextSteps.step2')}</li>
+                  <li>{t('confirmation.nextSteps.step3')}</li>
+                </ol>
+              </div>
 
-                <div className="notice-panel r mb-10">
-                  <h3>{t('confirmation.outsideAreaTitle')}</h3>
-                  <p className="text-body mb-5">
-                    {t('confirmation.outsideAreaText')}
-                  </p>
-                </div>
-
-                <div className="bg-surface-light-alt r p-6 mb-10">
-                  <h3>{t('confirmation.noResponseTitle')}</h3>
-                  <p className="text-body mb-5">
-                    {t('confirmation.noResponseText', { email: tCommon('contact.email'), phone: tCommon('contact.phone') })}
-                  </p>
-                </div>
-
+              <aside className="visual-card p-5 md:p-6">
                 {referenceNumber && (
-                  <div className="bg-surface-light border border-structural-light r p-5 mb-10">
-                    <p className="text-sm text-muted mb-1">{t('confirmation.referenceNumber')}</p>
-                    <p className="text-lg font-semibold text-authority">{referenceNumber}</p>
+                  <div className="mb-6 rounded-2xl bg-surface-light-alt p-4">
+                    <p className="mb-1 text-xs font-black uppercase tracking-wide text-muted">
+                      {t('confirmation.referenceNumber')}
+                    </p>
+                    <p className="mb-0 text-lg font-black text-heading">{referenceNumber}</p>
                   </div>
                 )}
-
-                <div className="mt-10">
-                  <Link href={`/${locale}`} className="btn-primary">
-                    {t('confirmation.returnToHome')}
-                  </Link>
-                </div>
-              </div>
+                <h3 className="text-xl font-black text-heading">{t('confirmation.noResponseTitle')}</h3>
+                <p className="text-sm leading-relaxed text-body">
+                  {t('confirmation.noResponseText', { email: tCommon('contact.email'), phone: tCommon('contact.phone') })}
+                </p>
+                <Link href={`/${locale}`} className="btn-primary mt-5">
+                  {t('confirmation.returnToHome')}
+                </Link>
+              </aside>
+            </div>
           </Section>
         </main>
         <Footer />
@@ -259,184 +265,168 @@ function ContactPageInner() {
     <>
       <HeaderClient />
       <main className="min-h-screen">
-        {/* SECTION 1: PAGE INTRODUCTION */}
-        <Section tone="light" className="section-primitive--first">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(18rem,0.55fr)] lg:items-start">
+        <Section tone="authority" className="section-primitive--first" id="contact-start">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.62fr)_minmax(20rem,0.38fr)] lg:items-center">
             <div>
-                <p className="section-label">{t('directContact.title')}</p>
-                <h1>{t('intro.headline')}</h1>
-                <p className="text-lg text-body mb-5 leading-relaxed">
-                  {t('intro.description')}
-                </p>
-                <p className="text-base text-muted leading-relaxed mb-10">
-                  {t('intro.responseCommitment')}
-                </p>
+              <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
+              <h1 className="hero-display max-w-[15ch]">{t('redesign.hero.headline')}</h1>
+              <p className="hero-lead max-w-[64ch]">{t('redesign.hero.lead')}</p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link href="#intake-form" className="btn-primary">
+                  {t('redesign.hero.primaryCta')}
+                </Link>
+                <Link href="#prepare" className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
+                  {t('redesign.hero.secondaryCta')}
+                </Link>
+              </div>
+              <div className="hero-fact-grid">
+                {heroFacts.map((fact) => (
+                  <div key={fact.label} className="hero-fact">
+                    <span>{fact.label}</span>
+                    <strong>{fact.value}</strong>
+                  </div>
+                ))}
+              </div>
             </div>
-            <aside className="visual-card-strong p-6">
-              <p className="section-label">{t('directContact.subtitle')}</p>
-              <ul className="mt-5 space-y-3 text-body">
-                <li><strong>{t('directContact.email')}:</strong> {tCommon('contact.email')}</li>
-                <li><strong>{t('directContact.phone')}:</strong> {tCommon('contact.phone')}</li>
-              </ul>
-              <p className="mt-5 text-sm text-muted">
-                <strong>{t('directContact.hoursTitle')}</strong> {tCommon('contact.hours')}
+
+            <figure className="visual-card-strong overflow-hidden border-authority-on-dark/25 bg-authority-on-dark/5">
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src="/photos/sentinel-contact-intake-placeholder.png"
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 38vw, 100vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </figure>
+          </div>
+        </Section>
+
+        <Section tone="light">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.58fr)_minmax(18rem,0.42fr)] lg:items-start">
+            <div>
+              <p className="section-label">{t('redesign.method.eyebrow')}</p>
+              <h2 className="h2-system mt-3">{t('redesign.method.title')}</h2>
+              <p className="mt-3 text-body">{t('intro.responseCommitment')}</p>
+            </div>
+            <ContactMethodPanel
+              eyebrow={t('directContact.subtitle')}
+              title={t('directContact.title')}
+              emailLabel={t('directContact.email')}
+              email={tCommon('contact.email')}
+              phoneLabel={t('directContact.phone')}
+              phone={tCommon('contact.phone')}
+              hoursLabel={t('directContact.hoursTitle')}
+              hours={tCommon('contact.hours')}
+              note={t('redesign.method.note')}
+            />
+          </div>
+        </Section>
+
+        <Section tone="alt" id="prepare">
+          <ContactPreparationChecklist
+            eyebrow={t('redesign.prepare.eyebrow')}
+            title={t('redesign.prepare.title')}
+            intro={t('redesign.prepare.intro')}
+            items={preparationItems}
+          />
+        </Section>
+
+        <Section tone="light">
+          <ContactRouteCards
+            eyebrow={t('redesign.routes.eyebrow')}
+            title={t('redesign.routes.title')}
+            intro={t('redesign.routes.intro')}
+            cards={routeCards}
+          />
+        </Section>
+
+        <Section tone="alt">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.48fr)_minmax(0,0.52fr)] lg:items-center">
+            <div>
+              <p className="section-label">{t('redesign.fit.eyebrow')}</p>
+              <h2 className="h2-system mt-3">{t('redesign.fit.title')}</h2>
+              <p className="mt-3 text-body">{t('redesign.fit.intro')}</p>
+              <div className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+                {fitCards.map((card) => (
+                  <article key={card.title} className="rounded-2xl border border-structural-light bg-surface-card p-4">
+                    <h3 className="mb-2 text-base font-black text-heading">{card.title}</h3>
+                    <p className="mb-0 text-sm leading-relaxed text-body">{card.body}</p>
+                  </article>
+                ))}
+              </div>
+              <p className="mt-5 mb-0 text-sm leading-relaxed text-muted">{t('redesign.fit.note')}</p>
+            </div>
+
+            <figure className="visual-card-strong overflow-hidden">
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src="/photos/sentinel-service-radius-placeholder.png"
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 48vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            </figure>
+          </div>
+        </Section>
+
+        <Section tone="light">
+          <ContactUnsuitableGrid
+            eyebrow={t('redesign.unsuitable.eyebrow')}
+            title={t('redesign.unsuitable.title')}
+            intro={t('redesign.unsuitable.intro')}
+            items={unsuitableItems}
+          />
+        </Section>
+
+        <Section tone="alt" id="intake-form">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.34fr)_minmax(0,0.66fr)] lg:items-start">
+            <aside className="lg:sticky lg:top-28">
+              <p className="section-label">{t('redesign.form.eyebrow')}</p>
+              <h2 className="h2-system mt-3">{t('redesign.form.title')}</h2>
+              <p className="mt-3 text-body">{t('redesign.form.intro')}</p>
+              <p className="notice-panel mt-6 text-sm leading-relaxed text-body">
+                {t('redesign.form.submitNote')}
               </p>
             </aside>
-          </div>
-          <div className="mt-10">
-            <ConfidenceBar />
-          </div>
-        </Section>
 
-        {/* SECTION 2: DIRECT CONTACT INFORMATION */}
-        <Section tone="alt">
-          <div>
-              <h2 className="h2-system">{t('directContact.title')}</h2>
-              <div className="visual-card-strong p-6 mb-10">
-                <h3>{t('directContact.subtitle')}</h3>
-                <ul className="space-y-2 text-body mb-5">
-                  <li><strong>{t('directContact.email')}:</strong> {tCommon('contact.email')}</li>
-                  <li><strong>{t('directContact.phone')}:</strong> {tCommon('contact.phone')}</li>
-                </ul>
-                <p className="text-sm text-muted mb-5">
-                  <strong>{t('directContact.hoursTitle')}</strong> {tCommon('contact.hours')}
-                </p>
-                <p className="text-sm text-muted">
-                  {t('directContact.sundayHolidays')}
-                </p>
-              </div>
-
-              <DisclosureBlock
-                label={t('directContact.prepareTitle')}
-              >
-                <ul className="list-disc list-inside space-y-2 text-body">
-                  <li>{t('directContact.prepareItems.location')}</li>
-                  <li>{t('directContact.prepareItems.propertyType')}</li>
-                  <li>{t('directContact.prepareItems.expectedPackage')}</li>
-                  <li>{t('directContact.prepareItems.serviceNeeds')}</li>
-                </ul>
-              </DisclosureBlock>
-
-              <div className="notice-panel r">
-                <h3>{t('directContact.emergencyTitle')}</h3>
-                <p className="text-body">
-                  {t('directContact.emergencyText')}
-                </p>
-              </div>
-          </div>
-        </Section>
-
-        {/* SECTION 3: ACTIVE CLIENTS */}
-        <Section tone="alt">
-          <div>
-              <h2 className="h2-system">{t('activeClients.title')}</h2>
-              <div className="visual-card p-6">
-                <p className="text-body mb-5">
-                  {t('activeClients.intro')}
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-body mb-5">
-                  <li><strong>{t('activeClients.channels.operational')}</strong></li>
-                  <li><strong>{t('activeClients.channels.formal', { email: tCommon('contact.email') })}</strong></li>
-                  <li><strong>{t('activeClients.channels.emergency')}</strong></li>
-                </ul>
-                <p className="text-body font-semibold mb-2">{t('activeClients.doNotUseTitle')}</p>
-                <ul className="list-disc list-inside space-y-1 text-body">
-                  <li>{t('activeClients.doNotUseItems.accessRequests')}</li>
-                  <li>{t('activeClients.doNotUseItems.emergencies')}</li>
-                  <li>{t('activeClients.doNotUseItems.routineQuestions')}</li>
-                </ul>
-                <p className="text-body mt-5">
-                  {t('activeClients.fasterResponse')}
-                </p>
-              </div>
-          </div>
-        </Section>
-
-        {/* SECTION 4: SERVICE AREA */}
-        <Section tone="light">
-          <div>
-              <h2 className="h2-system">{t('serviceArea.title')}</h2>
-              <p className="text-body mb-5">
-                {t('serviceArea.description')}
-              </p>
-              <div className="mb-10">
-                <ServiceAreaMap labels={serviceAreaMapLabels} />
-              </div>
-              <DisclosureBlock
-                label={t('serviceArea.examplesTitle')}
-              >
-                <p className="text-body">{t('serviceArea.examplesText')}</p>
-              </DisclosureBlock>
-              <p className="text-body">
-                <strong>{t('serviceArea.notCoveredTitle')}</strong> {t('serviceArea.notCoveredText')}
-              </p>
-          </div>
-        </Section>
-
-        {/* SECTION 5: CANNOT HELP */}
-        <Section tone="alt">
-          <div>
-              <h2 className="h2-system">{t('cannotHelp.title')}</h2>
-              <div className="visual-card p-6">
-                <p className="text-body mb-5">
-                  {t('cannotHelp.intro')}
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-body mb-5">
-                  <li>{t('cannotHelp.items.outsideArea')}</li>
-                  <li>{t('cannotHelp.items.oneTime')}</li>
-                  <li>{t('cannotHelp.items.fullPM')}</li>
-                  <li>{t('cannotHelp.items.concierge')}</li>
-                  <li>{t('cannotHelp.items.construction')}</li>
-                </ul>
-                <p className="text-body">
-                  {t('cannotHelp.notAppropriate')}
-                </p>
-                <p className="text-body mt-5">
-                  {t('cannotHelp.proceedText')}
-                </p>
-              </div>
-          </div>
-        </Section>
-
-        {/* SECTION 6: CONTACT FORM */}
-        <Section tone="light">
-          <div>
-              <h2 className="h2-system">{t('form.title')}</h2>
-
+            <div>
               {pathwayKey && (
-                <div className="bg-surface-light-alt border border-structural-light p-6 mb-10 r">
-                  <h3 className="text-body font-medium mb-2">{t('pathwayContext.title')}</h3>
-                  <p className="text-sm text-body">{t(`pathwayContext.${pathwayKey}`)}</p>
+                <div className="visual-card p-5 mb-5">
+                  <h3 className="text-base font-black text-heading">{t('pathwayContext.title')}</h3>
+                  <p className="mb-0 text-sm leading-relaxed text-body">{t(`pathwayContext.${pathwayKey}`)}</p>
                 </div>
               )}
 
               {estimatorPrefill && (
-                <div className="bg-surface-light-alt border border-structural-light p-6 mb-10 r">
-                  <h3 className="text-body font-medium mb-5">{t('estimatorContext.title')}</h3>
-                  <ul className="space-y-2 text-sm text-body">
+                <div className="visual-card p-5 mb-5">
+                  <h3 className="text-base font-black text-heading">{t('estimatorContext.title')}</h3>
+                  <ul className="mt-3 space-y-2 text-sm text-body">
                     <li><strong>{t('estimatorContext.package')}:</strong> {tEst(`packages.${estimatorPrefill.package}`)}</li>
                     <li><strong>{t('estimatorContext.mode')}:</strong> {estimatorPrefill.mode === 'private_use' ? tEst('modePrivateUse') : tEst('modeActiveGuest')}</li>
-                    <li><strong>{t('estimatorContext.size')}:</strong> {estimatorPrefill.sqm != null ? `${estimatorPrefill.sqm} m²` : '—'}</li>
+                    <li><strong>{t('estimatorContext.size')}:</strong> {estimatorPrefill.sqm != null ? `${estimatorPrefill.sqm} m2` : '-'}</li>
                     <li><strong>{t('estimatorContext.bedrooms')}:</strong> {estimatorPrefill.bedrooms === 'B4P' ? '4+' : estimatorPrefill.bedrooms.slice(1)}</li>
-                    <li><strong>{t('estimatorContext.scopeElements')}:</strong> {estimatorPrefill.scopeElements.length ? estimatorPrefill.scopeElements.map((k) => tEst(`scopeElements.${k}`)).join(', ') : '—'}</li>
+                    <li><strong>{t('estimatorContext.scopeElements')}:</strong> {estimatorPrefill.scopeElements.length ? estimatorPrefill.scopeElements.map((k) => tEst(`scopeElements.${k}`)).join(', ') : '-'}</li>
                     <li><strong>{t('estimatorContext.range')}:</strong> {estimatorPrefill.rangeDisplay}</li>
                   </ul>
                 </div>
               )}
-              
+
               {submitError && (
-                <div className="bg-surface-card border-l-4 border-structural-a p-5 mb-10">
-                  <p className="text-authority font-medium">{submitError}</p>
+                <div className="notice-panel mb-5">
+                  <p className="mb-0 text-authority font-medium">{submitError}</p>
                 </div>
               )}
 
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
-                {/* Your Details */}
-                <div className="form-section">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+                <fieldset className="form-section">
                   <span className="form-section__label">01</span>
-                  <h3>{t('form.yourDetails')}</h3>
-                  <GridFrame>
-                    <Region name="support" tabletSpan="half" desktopSpan="half">
+                  <legend className="mb-5 text-xl font-black text-heading">{t('redesign.form.ownerSection')}</legend>
+                  <div className="grid gap-5 md:grid-cols-2">
                     <div>
                       <label htmlFor="fullName" className="block text-sm font-medium text-body mb-2">
                         {t('form.fullName')} *
@@ -451,8 +441,7 @@ function ContactPageInner() {
                         <p className="mt-1 text-sm text-neutral">{errors.fullName.message}</p>
                       )}
                     </div>
-                    </Region>
-                    <Region name="support" tabletSpan="half" desktopSpan="half">
+
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-body mb-2">
                         {t('form.emailAddress')} *
@@ -467,8 +456,7 @@ function ContactPageInner() {
                         <p className="mt-1 text-sm text-neutral">{errors.email.message}</p>
                       )}
                     </div>
-                    </Region>
-                    <Region name="support" tabletSpan="half" desktopSpan="half">
+
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-body mb-2">
                         {t('form.phoneNumber')} *
@@ -484,8 +472,7 @@ function ContactPageInner() {
                         <p className="mt-1 text-sm text-neutral">{errors.phone.message}</p>
                       )}
                     </div>
-                    </Region>
-                    <Region name="support" tabletSpan="half" desktopSpan="half">
+
                     <div>
                       <label htmlFor="preferredContactMethod" className="block text-sm font-medium text-body mb-2">
                         {t('form.preferredContact')} *
@@ -504,8 +491,7 @@ function ContactPageInner() {
                         <p className="mt-1 text-sm text-neutral">{errors.preferredContactMethod.message}</p>
                       )}
                     </div>
-                    </Region>
-                    <Region name="support" tabletSpan="half" desktopSpan="half">
+
                     <div>
                       <label htmlFor="preferredLanguage" className="block text-sm font-medium text-body mb-2">
                         {t('form.preferredLanguage')} *
@@ -523,14 +509,12 @@ function ContactPageInner() {
                         <p className="mt-1 text-sm text-neutral">{errors.preferredLanguage.message}</p>
                       )}
                     </div>
-                    </Region>
-                  </GridFrame>
-                </div>
+                  </div>
+                </fieldset>
 
-                {/* Property Information */}
-                <div className="form-section">
+                <fieldset className="form-section">
                   <span className="form-section__label">02</span>
-                  <h3>{t('form.propertyInfo')}</h3>
+                  <legend className="mb-5 text-xl font-black text-heading">{t('redesign.form.propertySection')}</legend>
                   <div className="space-y-5">
                     <div>
                       <label htmlFor="propertyLocation" className="block text-sm font-medium text-body mb-2">
@@ -551,8 +535,7 @@ function ContactPageInner() {
                       )}
                     </div>
 
-                    <GridFrame>
-                      <Region name="support" tabletSpan="half" desktopSpan="half">
+                    <div className="grid gap-5 md:grid-cols-2">
                       <div>
                         <label htmlFor="propertyType" className="block text-sm font-medium text-body mb-2">
                           {t('form.propertyType')} *
@@ -572,8 +555,7 @@ function ContactPageInner() {
                           <p className="mt-1 text-sm text-neutral">{errors.propertyType.message}</p>
                         )}
                       </div>
-                      </Region>
-                      <Region name="support" tabletSpan="half" desktopSpan="half">
+
                       <div>
                         <label htmlFor="currentStatus" className="block text-sm font-medium text-body mb-2">
                           {t('form.propertyStatus')} *
@@ -594,15 +576,13 @@ function ContactPageInner() {
                           <p className="mt-1 text-sm text-neutral">{errors.currentStatus.message}</p>
                         )}
                       </div>
-                      </Region>
-                    </GridFrame>
+                    </div>
                   </div>
-                </div>
+                </fieldset>
 
-                {/* Service Requirements */}
-                <div className="form-section">
+                <fieldset className="form-section">
                   <span className="form-section__label">03</span>
-                  <h3>{t('form.serviceRequirements')}</h3>
+                  <legend className="mb-5 text-xl font-black text-heading">{t('redesign.form.serviceSection')}</legend>
                   <div className="space-y-5">
                     <div>
                       <label htmlFor="expectedPackage" className="block text-sm font-medium text-body mb-2">
@@ -627,7 +607,7 @@ function ContactPageInner() {
                     {(expectedPackage === 'Extended' || expectedPackage === 'Full') && (
                       <div>
                         <label htmlFor="expectedAccessFrequency" className="block text-sm font-medium text-body mb-2">
-                          {t('form.accessFrequency')} *
+                          {t('form.accessFrequency')}
                         </label>
                         <select
                           id="expectedAccessFrequency"
@@ -654,7 +634,7 @@ function ContactPageInner() {
                         id="primaryServiceNeeds"
                         {...register('primaryServiceNeeds')}
                         placeholder={t('form.primaryNeedsPlaceholder')}
-                        rows={4}
+                        rows={5}
                         maxLength={500}
                         className="form-control"
                       />
@@ -664,10 +644,11 @@ function ContactPageInner() {
                       )}
                     </div>
                   </div>
-                </div>
+                </fieldset>
 
-                {/* Acknowledgment */}
-                <div className="notice-panel r">
+                <fieldset className="notice-panel">
+                  <span className="form-section__label">04</span>
+                  <legend className="mb-4 text-xl font-black text-heading">{t('redesign.form.consentSection')}</legend>
                   <div className="flex items-start">
                     <input
                       type="checkbox"
@@ -675,25 +656,55 @@ function ContactPageInner() {
                       {...register('acknowledgment')}
                       className="mt-1 mr-3 h-4 w-4 r"
                     />
-                    <label htmlFor="acknowledgment" className="text-sm text-body">
+                    <label htmlFor="acknowledgment" className="text-sm leading-relaxed text-body">
                       {t('form.acknowledgment')} *
                     </label>
                   </div>
                   {errors.acknowledgment && (
                     <p className="mt-2 text-sm text-neutral">{errors.acknowledgment.message}</p>
                   )}
-                </div>
+                </fieldset>
 
                 <div className="flex justify-end">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn-primary w-full disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
                   >
                     {isSubmitting ? tCommon('loading') : t('form.submitButton')}
                   </button>
                 </div>
               </form>
+            </div>
+          </div>
+        </Section>
+
+        <Section tone="light">
+          <ContactAfterSubmitSteps
+            eyebrow={t('redesign.afterSubmit.eyebrow')}
+            title={t('redesign.afterSubmit.title')}
+            intro={t('redesign.afterSubmit.intro')}
+            steps={afterSubmitSteps}
+          />
+        </Section>
+
+        <Section tone="authority">
+          <div className="max-w-[760px]">
+            <h2 className="h2-system text-authority-on-dark">{t('redesign.finalCta.title')}</h2>
+            <p className="text-lg text-authority-on-dark/80 mb-10 leading-relaxed">
+              {t('redesign.finalCta.intro')}
+            </p>
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <Link href="#intake-form" className="btn-primary !bg-surface-light !text-authority hover:!bg-surface-light-alt !border-surface-light">
+                {t('form.submitButton')}
+              </Link>
+              <Link href={`/${locale}/services`} className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
+                {tCommon('nav.services')}
+              </Link>
+              <Link href={`/${locale}/how-it-works`} className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
+                {tCommon('nav.howItWorks')}
+              </Link>
+            </div>
           </div>
         </Section>
       </main>
