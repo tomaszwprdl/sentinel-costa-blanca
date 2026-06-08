@@ -10,6 +10,112 @@ import { type PathwayKey, normalizePathwayParam } from '@/lib/pathway';
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 const SENTINEL_EMAIL = process.env.SENTINEL_EMAIL || 'sentinelcostablanca@gmail.com';
 const SENTINEL_PHONE = process.env.SENTINEL_PHONE || '+34 694 22 90 35';
+const SENTINEL_NOTIFICATION_FROM =
+  process.env.SENTINEL_NOTIFICATION_FROM || 'Sentinel <notifications@sentinelcostablanca.com>';
+
+export class EmailDeliveryError extends Error {
+  readonly statusCode: 500 | 503;
+
+  constructor(message: string, statusCode: 500 | 503 = 503) {
+    super(message);
+    this.name = 'EmailDeliveryError';
+    this.statusCode = statusCode;
+  }
+}
+
+type SafeEmailLog = {
+  hasResendKey: boolean;
+  from: string;
+  recipient: string;
+  referenceNumber?: string;
+  providerStatus?: string;
+  providerMessage?: string;
+};
+
+function logEmailAttempt(log: SafeEmailLog) {
+  console.info('Contact email delivery', log);
+}
+
+function getResendClient(): Resend {
+  if (!resend) {
+    logEmailAttempt({
+      hasResendKey: false,
+      from: SENTINEL_NOTIFICATION_FROM,
+      recipient: SENTINEL_EMAIL,
+      providerStatus: 'skipped',
+      providerMessage: 'RESEND_API_KEY not configured',
+    });
+    throw new EmailDeliveryError('Email delivery is not configured', 503);
+  }
+  return resend;
+}
+
+async function sendWithResend(
+  payload: {
+    from: string;
+    to: string[];
+    subject: string;
+    html: string;
+    replyTo?: string;
+  },
+  logContext: Omit<SafeEmailLog, 'hasResendKey' | 'from' | 'recipient' | 'providerStatus' | 'providerMessage'>
+) {
+  const client = getResendClient();
+  const recipient = payload.to.join(', ');
+
+  logEmailAttempt({
+    hasResendKey: true,
+    from: payload.from,
+    recipient,
+    ...logContext,
+  });
+
+  try {
+    const { data, error } = await client.emails.send({
+      from: payload.from,
+      to: payload.to,
+      subject: payload.subject,
+      html: payload.html,
+      replyTo: payload.replyTo,
+    });
+
+    if (error) {
+      logEmailAttempt({
+        hasResendKey: true,
+        from: payload.from,
+        recipient,
+        ...logContext,
+        providerStatus: 'rejected',
+        providerMessage: error.message,
+      });
+      throw new EmailDeliveryError(`Email provider rejected delivery: ${error.message}`, 503);
+    }
+
+    logEmailAttempt({
+      hasResendKey: true,
+      from: payload.from,
+      recipient,
+      ...logContext,
+      providerStatus: 'accepted',
+      providerMessage: data?.id ? `message-id:${data.id}` : 'accepted',
+    });
+  } catch (error) {
+    if (error instanceof EmailDeliveryError) {
+      throw error;
+    }
+
+    const message = error instanceof Error ? error.message : 'Unknown email delivery error';
+    logEmailAttempt({
+      hasResendKey: true,
+      from: payload.from,
+      recipient,
+      ...logContext,
+      providerStatus: 'failed',
+      providerMessage: message,
+    });
+    throw new EmailDeliveryError(`Email delivery failed: ${message}`, 500);
+  }
+}
 
 export function escapeHtml(value: string): string {
   return value
@@ -188,11 +294,6 @@ export async function sendAutoResponseEmail(
   preferredContactMethod: string,
   preferredLanguage: string
 ) {
-  if (!resend) {
-    console.warn('RESEND_API_KEY not configured. Email not sent.');
-    return;
-  }
-
   const safeName = escapeHtml(name);
   const safeLocation = escapeHtml(propertyLocation);
   const safePackage = escapeHtml(expectedPackage);
@@ -200,10 +301,11 @@ export async function sendAutoResponseEmail(
   const safeLanguage = escapeHtml(preferredLanguage);
   const safeReference = escapeHtml(referenceNumber);
 
-  try {
-    await resend.emails.send({
-      from: 'Sentinel <sentinelcostablanca@gmail.com>',
+  await sendWithResend(
+    {
+      from: SENTINEL_NOTIFICATION_FROM,
       to: [to],
+      replyTo: SENTINEL_EMAIL,
       subject: `Sentinel - Inquiry Received [Reference: ${referenceNumber}]`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -258,28 +360,22 @@ export async function sendAutoResponseEmail(
           </p>
         </div>
       `,
-    });
-  } catch (error) {
-    console.error('Failed to send auto-response email:', error);
-    throw error;
-  }
+    },
+    { referenceNumber }
+  );
 }
 
 export async function sendNotificationEmail(referenceNumber: string, formData: ContactSubmission) {
-  if (!resend) {
-    console.warn('RESEND_API_KEY not configured. Email not sent.');
-    return;
-  }
-
   const safeReference = escapeHtml(referenceNumber);
   const safeLocation = escapeHtml(formData.propertyLocation);
   const usageLabel = escapeHtml(formatUsageSituationLabel(formData.currentStatus));
   const contextBlock = buildContextEmailBlock(formData);
 
-  try {
-    await resend.emails.send({
-      from: 'Sentinel Contact Form <sentinelcostablanca@gmail.com>',
+  await sendWithResend(
+    {
+      from: SENTINEL_NOTIFICATION_FROM,
       to: [SENTINEL_EMAIL],
+      replyTo: formData.email,
       subject: `New Inquiry - ${referenceNumber} - ${formData.propertyLocation}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -323,9 +419,7 @@ export async function sendNotificationEmail(referenceNumber: string, formData: C
           </div>
         </div>
       `,
-    });
-  } catch (error) {
-    console.error('Failed to send notification email:', error);
-    throw error;
-  }
+    },
+    { referenceNumber }
+  );
 }

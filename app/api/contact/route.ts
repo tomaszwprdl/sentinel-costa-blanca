@@ -3,6 +3,7 @@ import { z } from 'zod';
 import { parseScopeElementParam } from '@/lib/estimatorMatrix';
 import { normalizePathwayParam } from '@/lib/pathway';
 import {
+  EmailDeliveryError,
   generateReferenceNumber,
   sendAutoResponseEmail,
   sendNotificationEmail,
@@ -90,8 +91,10 @@ export async function POST(request: NextRequest) {
 
     const referenceNumber = generateReferenceNumber();
 
-    await Promise.all([
-      sendAutoResponseEmail(
+    await sendNotificationEmail(referenceNumber, validatedData);
+
+    try {
+      await sendAutoResponseEmail(
         validatedData.email,
         validatedData.fullName,
         referenceNumber,
@@ -99,9 +102,14 @@ export async function POST(request: NextRequest) {
         validatedData.expectedPackage,
         validatedData.preferredContactMethod,
         validatedData.preferredLanguage
-      ),
-      sendNotificationEmail(referenceNumber, validatedData),
-    ]);
+      );
+    } catch (autoResponseError) {
+      console.error('Contact auto-response failed after owner notification was accepted', {
+        referenceNumber,
+        recipient: validatedData.email,
+        message: autoResponseError instanceof Error ? autoResponseError.message : 'Unknown error',
+      });
+    }
 
     return NextResponse.json(
       {
@@ -120,6 +128,20 @@ export async function POST(request: NextRequest) {
           details: error.issues,
         },
         { status: 400 }
+      );
+    }
+
+    if (error instanceof EmailDeliveryError) {
+      console.error('Contact owner notification delivery failed', {
+        message: error.message,
+        statusCode: error.statusCode,
+      });
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Failed to submit inquiry. Please try again or contact us directly.',
+        },
+        { status: error.statusCode }
       );
     }
 
