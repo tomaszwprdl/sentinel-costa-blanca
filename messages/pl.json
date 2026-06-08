@@ -2018,13 +2018,112 @@
         }
       }
     },
-    "notAnswered": {
-      "title": "Pytanie bez Odpowiedzi?",
-      "intro": "Jeśli na Państwa pytanie nie ma odpowiedzi powyżej, proszę skontaktować się bezpośrednio z Sentinel.",
-      "important": "Ważne: Usługi nie udokumentowane w pakietach ani w tym FAQ nie są automatycznie dostępne. Wszystkie żądania poza udokumentowanym zakresem wymagają indywidualnej oceny i osobnego uzgodnienia.",
-      "footer": "Sentinel działa w określonym zakresie i udokumentowanych procedurach. Jeśli Państwa potrzeby wymagają znacznej personalizacji lub wykraczają poza model pakietowy, Sentinel może nie być odpowiednim dostawcą usług."
-    }
+  "notAnswered": {
+    "title": "Pytanie bez Odpowiedzi?",
+    "intro": "Jeśli na Państwa pytanie nie ma odpowiedzi powyżej, proszę skontaktować się bezpośrednio z Sentinel.",
+    "important": "Ważne: Usługi nie udokumentowane w pakietach ani w tym FAQ nie są automatycznie dostępne. Wszystkie żądania poza udokumentowanym zakresem wymagają indywidualnej oceny i osobnego uzgodnienia.",
+    "footer": "Sentinel działa w określonym zakresie i udokumentowanych procedurach. Jeśli Państwa potrzeby wymagają znacznej personalizacji lub wykraczają poza model pakietowy, Sentinel może nie być odpowiednim dostawcą usług."
   },
+  "redesign": {
+    "hero": {
+      "eyebrow": "Prowadzące odpowiedzi",
+      "headline": "Znajdź odpowiedź przed kontaktem z Sentinel",
+      "lead": "FAQ dotyczy dopasowania usługi, zakresu, dostępu, raportów, limitów awaryjnych, kontekstu ceny i kanałów kontaktu. Ma wyjaśnić typowe wątpliwości bez zmiany modelu pakietowego.",
+      "primaryCta": "Skontaktuj się z Sentinel",
+      "secondaryCta": "Zobacz usługi",
+      "facts": [
+        { "label": "Zakres", "value": "pakiety i granice" },
+        { "label": "Operacje", "value": "dostęp i raporty" },
+        { "label": "Limity", "value": "awarie i uprawnienia" }
+      ]
+    },
+    "quick": {
+      "eyebrow": "Zacznij tutaj",
+      "title": "Zacznij od pytania, które prawdopodobnie masz.",
+      "intro": "Te karty obejmują pytania, które najczęściej decydują o dopasowaniu modelu.",
+      "linkLabel": "Przejdź do szczegółów",
+      "items": [
+        { "title": "Czy Sentinel pomoże, jeśli nieruchomość jest poza obszarem?", "answer": "Nie. Nieruchomości poza Torrevieja + 50-70 km są odrzucane zamiast włączane w słabą obsługę.", "href": "#communication" },
+        { "title": "Czy mogę poprosić o jednorazową pomoc?", "answer": "Nie. Sentinel działa w miesięcznej strukturze pakietowej, a nie przez nieformalne jednorazowe zadania.", "href": "#service-model" },
+        { "title": "Czy to jest zarządzanie nieruchomością?", "answer": "Nie. Sentinel zapewnia lokalny nadzór i reprezentację właściciela, nie operacje agencji wynajmu.", "href": "#service-model" },
+        { "title": "Co dzieje się w sytuacji awaryjnej?", "answer": "Działanie awaryjne wynika z zasad pakietu, limitów decyzji, kontaktu z właścicielem i dokumentacji.", "href": "#emergencies" },
+        { "title": "Czy Sentinel może zarządzać gośćmi albo sprzątaniem?", "answer": "Sprzątanie, dostęp i wsparcie związane z gośćmi mogą istnieć tylko w uzgodnionym zakresie nadzoru albo module.", "href": "#practical" },
+        { "title": "Co otrzymuję po wizycie?", "answer": "Użyteczny zapis: raport, notatki, zdjęcia albo potwierdzenie zgodnie z pakietem i zdarzeniem.", "href": "#operations" }
+      ]
+    },
+    "categories": {
+      "eyebrow": "Ścieżki odpowiedzi",
+      "title": "Wybierz obszar niepewności.",
+      "intro": "Poniższe kategorie prowadzą do zwartych grup odpowiedzi. Niektóre tematy się łączą, bo zakres, dostęp i uprawnienia działają razem.",
+      "items": [
+        { "id": "service-model", "title": "Dopasowanie usługi", "body": "Czym jest Sentinel i czy model pasuje." },
+        { "id": "service-model", "title": "Pakiety i zakres", "body": "Co jest wliczone, wyłączone i uzgadniane osobno." },
+        { "id": "operations", "title": "Dostęp i klucze", "body": "Wejścia, osoby trzecie, terminy i zdarzenia dostępu." },
+        { "id": "practical", "title": "Raporty i kontrole", "body": "Wizyty, liczniki, zapisy i częstotliwość." },
+        { "id": "practical", "title": "Goście i sprzątanie", "body": "Aktywność gości, gotowość lokalu i wsparcie operacyjne." },
+        { "id": "emergencies", "title": "Awarie i limity", "body": "Definicja awarii, uprawnienia finansowe i zgoda właściciela." },
+        { "id": "communication", "title": "Cena i estymator", "body": "Osobne wyceny, warunki, zmiany i logika przeglądu." },
+        { "id": "communication", "title": "Kanały kontaktu", "body": "Nowe zapytania, aktywni klienci, odmowa i zasady." }
+      ]
+    },
+    "boundary": {
+      "eyebrow": "Granice działania",
+      "title": "Pięć granic odpowiada na wiele pytań.",
+      "intro": "Większość wątpliwości FAQ wynika z jednej z tych zasad działania.",
+      "items": [
+        { "label": "Obszar", "value": "Torrevieja + 50-70 km. Bez wyjątku poza promieniem." },
+        { "label": "Pakiety", "value": "Usługi działają przez zakres pakietu, a nie otwarte listy zadań." },
+        { "label": "SLA", "value": "SLA określa reakcję i decyzję, nie gwarantowane rozwiązanie." },
+        { "label": "Poza zakresem", "value": "Wszystko poza pakietem wymaga osobnego uzgodnienia i zgody." },
+        { "label": "Kontakt publiczny", "value": "Formularz publiczny nie jest linią awaryjną." }
+      ]
+    },
+    "details": {
+      "eyebrow": "Szczegółowe odpowiedzi",
+      "title": "FAQ pogrupowane według obszarów działania.",
+      "intro": "Szczegółowe odpowiedzi są pogrupowane według dopasowania usługi, dostępu, awarii, operacji, komunikacji i granic zasad."
+    },
+    "assumptions": {
+      "eyebrow": "Częste błędne założenia",
+      "title": "Korekta jest ważniejsza niż hasło.",
+      "intro": "Te założenia najczęściej przesuwają usługę w złą kategorię.",
+      "items": [
+        { "assumption": "Same klucze oznaczają pełny nadzór", "boundary": "Przechowywanie kluczy to tylko zdolność dostępu. Nadzór wymaga zakresu pakietu i raportowania." },
+        { "assumption": "SLA oznacza rozwiązanie w podanym czasie", "boundary": "SLA to dyscyplina reakcji i decyzji. Części, wykonawcy i dostępność zewnętrzna mogą wpływać na rozwiązanie." },
+        { "assumption": "Koordynacja sprzątania oznacza zarządzanie wynajmem", "boundary": "Sprzątanie albo gotowość lokalu mogą być w zakresie. Rezerwacje i zarządzanie biznesem wynajmu nie są w zakresie." },
+        { "assumption": "Wsparcie awaryjne jest publiczne i na żądanie", "boundary": "Kanały awaryjne istnieją dla uprawnionych aktywnych klientów zgodnie z warunkami pakietu." },
+        { "assumption": "Poza obszarem można dopłacić", "boundary": "Granica obszaru jest operacyjna, a nie negocjowana ceną." }
+      ]
+    },
+    "decision": {
+      "eyebrow": "Nadal niepewne",
+      "title": "Wybierz następną stronę według wątpliwości.",
+      "intro": "Nie trzeba czytać każdej odpowiedzi, żeby przejść dalej.",
+      "items": {
+        "services": {
+          "title": "Potrzebne porównanie pakietów?",
+          "body": "Strona Usługi porównuje zakres Podstawowy, Rozszerzony i Pełny."
+        },
+        "how": {
+          "title": "Potrzebne szczegóły procesu?",
+          "body": "Strona Jak to działa pokazuje wizyty, dostęp, raporty i decyzje."
+        },
+        "contact": {
+          "title": "Nieruchomość wydaje się pasować?",
+          "body": "Strona Kontakt rozpoczyna uporządkowaną kwalifikację."
+        },
+        "decline": {
+          "title": "Poza zakresem?",
+          "body": "Sentinel może odmówić, gdy obszar, oczekiwania albo typ zapytania nie pasują."
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Traktuj FAQ jako sprawdzenie dopasowania, nie zmianę umowy.",
+      "intro": "Jeżeli odpowiedzi pasują do sytuacji, przejdź do kwalifikacji. Jeżeli zapytanie wymaga otwartej obsługi, Sentinel prawdopodobnie nie jest właściwą kategorią."
+    }
+  }
+},
   "about": {
     "meta": {
       "title": "O nas - Sentinel",

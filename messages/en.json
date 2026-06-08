@@ -2018,13 +2018,112 @@
         }
       }
     },
-    "notAnswered": {
-      "title": "Question Not Answered?",
-      "intro": "If your question is not addressed above, contact Sentinel directly.",
-      "important": "Important: Services not documented in packages or this FAQ are not automatically available. All requests outside documented scope require individual evaluation and separate arrangement.",
-      "footer": "Sentinel operates on defined scope and documented procedures. If your needs require significant customization or fall outside the package-based model, Sentinel may not be the appropriate service provider."
-    }
+  "notAnswered": {
+    "title": "Question Not Answered?",
+    "intro": "If your question is not addressed above, contact Sentinel directly.",
+    "important": "Important: Services not documented in packages or this FAQ are not automatically available. All requests outside documented scope require individual evaluation and separate arrangement.",
+    "footer": "Sentinel operates on defined scope and documented procedures. If your needs require significant customization or fall outside the package-based model, Sentinel may not be the appropriate service provider."
   },
+  "redesign": {
+    "hero": {
+      "eyebrow": "Guided answers",
+      "headline": "Find the answer before you contact Sentinel",
+      "lead": "This FAQ is for service fit, scope, access, reports, emergency limits, pricing context, and contact routes. It resolves common hesitation without changing the package model.",
+      "primaryCta": "Contact Sentinel",
+      "secondaryCta": "View services",
+      "facts": [
+        { "label": "Scope", "value": "packages and boundaries" },
+        { "label": "Operation", "value": "access and reporting" },
+        { "label": "Limits", "value": "emergencies and authority" }
+      ]
+    },
+    "quick": {
+      "eyebrow": "Start here",
+      "title": "Start with the question you probably have.",
+      "intro": "These cards cover the questions that usually determine whether the model fits.",
+      "linkLabel": "Read detailed answer",
+      "items": [
+        { "title": "Can Sentinel help if my property is outside the area?", "answer": "No. Properties outside Torrevieja + 50-70 km are declined rather than accepted as weak coverage.", "href": "#communication" },
+        { "title": "Can I ask for one-off help?", "answer": "No. Sentinel works through monthly package structure, not informal one-time tasks.", "href": "#service-model" },
+        { "title": "Is this property management?", "answer": "No. Sentinel provides structured local oversight and owner representation, not rental agency operations.", "href": "#service-model" },
+        { "title": "What happens if there is an emergency?", "answer": "Emergency action follows package rules, decision limits, owner contact, and documentation.", "href": "#emergencies" },
+        { "title": "Can Sentinel manage guests or cleaners?", "answer": "Cleaning, access, and guest-related support may exist only inside the agreed oversight scope or module.", "href": "#practical" },
+        { "title": "What do I receive after a visit?", "answer": "A useful record: report, notes, photos, or confirmation according to the package and event.", "href": "#operations" }
+      ]
+    },
+    "categories": {
+      "eyebrow": "Answer routes",
+      "title": "Choose the area of uncertainty.",
+      "intro": "The categories below route to compact answer groups. Several questions overlap because scope, access, and authority are connected.",
+      "items": [
+        { "id": "service-model", "title": "Service fit", "body": "What Sentinel is and whether the model fits." },
+        { "id": "service-model", "title": "Packages and scope", "body": "Included, excluded, and separately agreed work." },
+        { "id": "operations", "title": "Access and keys", "body": "Entry, third parties, timing, and access events." },
+        { "id": "practical", "title": "Reports and inspections", "body": "Visits, meter checks, records, and frequency." },
+        { "id": "practical", "title": "Guest and cleaning modules", "body": "Guest activity, cleaning readiness, and operational support." },
+        { "id": "emergencies", "title": "Emergencies and limits", "body": "Emergency definition, financial authority, and owner approval." },
+        { "id": "communication", "title": "Pricing and estimator", "body": "Separate quotes, terms, changes, and review logic." },
+        { "id": "communication", "title": "Contact channels", "body": "Prospects, active clients, refusal, and policy rules." }
+      ]
+    },
+    "boundary": {
+      "eyebrow": "Operating boundaries",
+      "title": "Five boundaries answer many questions.",
+      "intro": "Most FAQ issues come from one of these operating rules.",
+      "items": [
+        { "label": "Area", "value": "Torrevieja + 50-70 km. No out-of-radius exception." },
+        { "label": "Packages", "value": "Services operate through package scope, not open task lists." },
+        { "label": "SLA", "value": "SLA defines response and decision time, not guaranteed resolution." },
+        { "label": "Outside scope", "value": "Anything outside package requires separate agreement and approval." },
+        { "label": "Public contact", "value": "The public form is not an emergency hotline." }
+      ]
+    },
+    "details": {
+      "eyebrow": "Detailed answers",
+      "title": "Detailed FAQ, grouped by operating area.",
+      "intro": "Detailed answers remain grouped by service fit, access, emergencies, operations, communication, and policy boundaries."
+    },
+    "assumptions": {
+      "eyebrow": "Common wrong assumptions",
+      "title": "The correction matters more than the slogan.",
+      "intro": "These assumptions create most category drift.",
+      "items": [
+        { "assumption": "Keyholding alone means full oversight", "boundary": "Keyholding is only an access capability. Oversight requires package scope and reporting." },
+        { "assumption": "SLA means resolution within the stated time", "boundary": "SLA is response and decision discipline. Parts, contractors, and external availability can affect resolution." },
+        { "assumption": "Cleaner coordination means rental management", "boundary": "Cleaning or readiness can sit inside scope. Booking and rental business management do not." },
+        { "assumption": "Emergency support is public and on demand", "boundary": "Emergency channels exist for eligible active clients under agreed package terms." },
+        { "assumption": "Out-of-area can be accepted for higher price", "boundary": "The service boundary is operational, not a price negotiation." }
+      ]
+    },
+    "decision": {
+      "eyebrow": "Still unsure",
+      "title": "Choose the next page by the uncertainty.",
+      "intro": "You do not need to read every answer before taking the next step.",
+      "items": {
+        "services": {
+          "title": "Need package comparison?",
+          "body": "Use Services to compare Basic, Extended, and Full scope."
+        },
+        "how": {
+          "title": "Need process details?",
+          "body": "Use How It Works to see visits, access, reports, and decisions."
+        },
+        "contact": {
+          "title": "Think the property fits?",
+          "body": "Use Contact to start structured intake."
+        },
+        "decline": {
+          "title": "Outside scope?",
+          "body": "Sentinel may decline when area, expectations, or request type do not fit."
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Use FAQ as a fit check, not a contract rewrite.",
+      "intro": "If the answers match your situation, continue to structured intake. If the request needs open-ended service, Sentinel is probably not the correct category."
+    }
+  }
+},
   "about": {
     "meta": {
       "title": "About - Sentinel",

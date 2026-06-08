@@ -1,19 +1,45 @@
 'use client';
 
-import { useState, useMemo } from 'react';
-import { useLocale, useTranslations } from 'next-intl';
+import Image from 'next/image';
 import Link from 'next/link';
+import { useMemo, useState } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
 import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
-import ConfidenceBar from '@/components/ConfidenceBar';
-import DisclosureBlock from '@/components/DisclosureBlock';
 import Section from '@/components/layout/Section';
+import FAQBoundaryPanel from '@/components/FAQBoundaryPanel';
+import FAQCategoryNav from '@/components/FAQCategoryNav';
+import FAQDecisionPanel from '@/components/FAQDecisionPanel';
+import FAQGroupedAccordion, { type FAQGroup } from '@/components/FAQGroupedAccordion';
+import FAQQuickAnswerCards from '@/components/FAQQuickAnswerCards';
+import FAQWrongAssumptions from '@/components/FAQWrongAssumptions';
 
-interface FAQ {
-  id: string;
-  question: string;
+type HeroFact = {
+  label: string;
+  value: string;
+};
+
+type QuickAnswerSource = {
+  title: string;
   answer: string;
-}
+  href: string;
+};
+
+type CategoryItem = {
+  id: string;
+  title: string;
+  body: string;
+};
+
+type BoundaryItem = {
+  label: string;
+  value: string;
+};
+
+type AssumptionItem = {
+  assumption: string;
+  boundary: string;
+};
 
 export default function FAQPage() {
   const locale = useLocale();
@@ -21,224 +47,251 @@ export default function FAQPage() {
   const tCommon = useTranslations('common');
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Build FAQ sections from translations
-  const faqSections = useMemo(() => [
-  {
-    id: 'service-model',
-    title: t('sections.serviceModel.title'),
-    intro: t('sections.serviceModel.description'),
-    faqs: [
-      { id: 'q1', question: t('sections.serviceModel.questions.q1.question'), answer: t('sections.serviceModel.questions.q1.answer') },
-      { id: 'q2', question: t('sections.serviceModel.questions.q2.question'), answer: t('sections.serviceModel.questions.q2.answer') },
-      { id: 'q3', question: t('sections.serviceModel.questions.q3.question'), answer: t('sections.serviceModel.questions.q3.answer') },
-      { id: 'q4', question: t('sections.serviceModel.questions.q4.question'), answer: t('sections.serviceModel.questions.q4.answer') },
-      { id: 'q5', question: t('sections.serviceModel.questions.q5.question'), answer: t('sections.serviceModel.questions.q5.answer') },
-      { id: 'q6', question: t('sections.serviceModel.questions.q6.question'), answer: t('sections.serviceModel.questions.q6.answer') },
-    ],
-  },
-  {
-    id: 'operations',
-    title: t('sections.operations.title'),
-    intro: t('sections.operations.description'),
-    faqs: [
-      { id: 'q7', question: t('sections.operations.questions.q7.question'), answer: t('sections.operations.questions.q7.answer') },
-      { id: 'q8', question: t('sections.operations.questions.q8.question'), answer: t('sections.operations.questions.q8.answer') },
-    ],
-  },
-  {
-    id: 'emergencies',
-    title: t('sections.emergencies.title'),
-    intro: t('sections.emergencies.description'),
-    faqs: [
-      { id: 'q9', question: t('sections.emergencies.questions.q9.question'), answer: t('sections.emergencies.questions.q9.answer') },
-      { id: 'q10', question: t('sections.emergencies.questions.q10.question'), answer: t('sections.emergencies.questions.q10.answer') },
-      { id: 'q11', question: t('sections.emergencies.questions.q11.question'), answer: t('sections.emergencies.questions.q11.answer') },
-      { id: 'q12', question: t('sections.emergencies.questions.q12.question'), answer: t('sections.emergencies.questions.q12.answer') },
-    ],
-  },
-  {
-    id: 'practical',
-    title: t('sections.practical.title'),
-    intro: t('sections.practical.description'),
-    faqs: [
-      { id: 'q13', question: t('sections.practical.questions.q13.question'), answer: t('sections.practical.questions.q13.answer') },
-      { id: 'q14', question: t('sections.practical.questions.q14.question'), answer: t('sections.practical.questions.q14.answer') },
-      { id: 'q15', question: t('sections.practical.questions.q15.question'), answer: t('sections.practical.questions.q15.answer') },
-      { id: 'q16', question: t('sections.practical.questions.q16.question'), answer: t('sections.practical.questions.q16.answer') },
-      { id: 'q17', question: t('sections.practical.questions.q17.question'), answer: t('sections.practical.questions.q17.answer') },
-      { id: 'q18', question: t('sections.practical.questions.q18.question'), answer: t('sections.practical.questions.q18.answer') },
-    ],
-  },
-  {
-    id: 'communication',
-    title: t('sections.communication.title'),
-    intro: t('sections.communication.description'),
-    faqs: [
-      { id: 'q19', question: t('sections.communication.questions.q19.question'), answer: t('sections.communication.questions.q19.answer') },
-      { id: 'q20', question: t('sections.communication.questions.q20.question'), answer: t('sections.communication.questions.q20.answer') },
-      { id: 'q21', question: t('sections.communication.questions.q21.question'), answer: t('sections.communication.questions.q21.answer') },
-      { id: 'q22', question: t('sections.communication.questions.q22.question'), answer: t('sections.communication.questions.q22.answer') },
-      { id: 'q23', question: t('sections.communication.questions.q23.question'), answer: t('sections.communication.questions.q23.answer') },
-    ],
-  },
-  {
-    id: 'meta',
-    title: t('sections.meta.title'),
-    intro: t('sections.meta.description'),
-    faqs: [
-      { id: 'q24', question: t('sections.meta.questions.q24.question'), answer: t('sections.meta.questions.q24.answer') },
-      { id: 'q25', question: t('sections.meta.questions.q25.question'), answer: t('sections.meta.questions.q25.answer') },
-    ],
-  },
-], [t]);
+  const facts = t.raw('redesign.hero.facts') as HeroFact[];
+  const quickAnswers = (t.raw('redesign.quick.items') as QuickAnswerSource[]).map((item) => ({
+    ...item,
+    linkLabel: t('redesign.quick.linkLabel'),
+  }));
+  const categories = t.raw('redesign.categories.items') as CategoryItem[];
+  const boundaryItems = t.raw('redesign.boundary.items') as BoundaryItem[];
+  const assumptionItems = t.raw('redesign.assumptions.items') as AssumptionItem[];
 
+  const decisionItems = [
+    {
+      title: t('redesign.decision.items.services.title'),
+      body: t('redesign.decision.items.services.body'),
+      href: `/${locale}/services`,
+      label: tCommon('nav.services'),
+    },
+    {
+      title: t('redesign.decision.items.how.title'),
+      body: t('redesign.decision.items.how.body'),
+      href: `/${locale}/how-it-works`,
+      label: tCommon('nav.howItWorks'),
+    },
+    {
+      title: t('redesign.decision.items.contact.title'),
+      body: t('redesign.decision.items.contact.body'),
+      href: `/${locale}/contact`,
+      label: tCommon('nav.contact'),
+    },
+    {
+      title: t('redesign.decision.items.decline.title'),
+      body: t('redesign.decision.items.decline.body'),
+    },
+  ];
+
+  const faqSections = useMemo<FAQGroup[]>(() => [
+    {
+      id: 'service-model',
+      title: t('sections.serviceModel.title'),
+      intro: t('sections.serviceModel.description'),
+      faqs: [
+        { id: 'q1', question: t('sections.serviceModel.questions.q1.question'), answer: t('sections.serviceModel.questions.q1.answer') },
+        { id: 'q2', question: t('sections.serviceModel.questions.q2.question'), answer: t('sections.serviceModel.questions.q2.answer') },
+        { id: 'q3', question: t('sections.serviceModel.questions.q3.question'), answer: t('sections.serviceModel.questions.q3.answer') },
+        { id: 'q4', question: t('sections.serviceModel.questions.q4.question'), answer: t('sections.serviceModel.questions.q4.answer') },
+        { id: 'q5', question: t('sections.serviceModel.questions.q5.question'), answer: t('sections.serviceModel.questions.q5.answer') },
+        { id: 'q6', question: t('sections.serviceModel.questions.q6.question'), answer: t('sections.serviceModel.questions.q6.answer') },
+      ],
+    },
+    {
+      id: 'operations',
+      title: t('sections.operations.title'),
+      intro: t('sections.operations.description'),
+      faqs: [
+        { id: 'q7', question: t('sections.operations.questions.q7.question'), answer: t('sections.operations.questions.q7.answer') },
+        { id: 'q8', question: t('sections.operations.questions.q8.question'), answer: t('sections.operations.questions.q8.answer') },
+      ],
+    },
+    {
+      id: 'emergencies',
+      title: t('sections.emergencies.title'),
+      intro: t('sections.emergencies.description'),
+      faqs: [
+        { id: 'q9', question: t('sections.emergencies.questions.q9.question'), answer: t('sections.emergencies.questions.q9.answer') },
+        { id: 'q10', question: t('sections.emergencies.questions.q10.question'), answer: t('sections.emergencies.questions.q10.answer') },
+        { id: 'q11', question: t('sections.emergencies.questions.q11.question'), answer: t('sections.emergencies.questions.q11.answer') },
+        { id: 'q12', question: t('sections.emergencies.questions.q12.question'), answer: t('sections.emergencies.questions.q12.answer') },
+      ],
+    },
+    {
+      id: 'practical',
+      title: t('sections.practical.title'),
+      intro: t('sections.practical.description'),
+      faqs: [
+        { id: 'q13', question: t('sections.practical.questions.q13.question'), answer: t('sections.practical.questions.q13.answer') },
+        { id: 'q14', question: t('sections.practical.questions.q14.question'), answer: t('sections.practical.questions.q14.answer') },
+        { id: 'q15', question: t('sections.practical.questions.q15.question'), answer: t('sections.practical.questions.q15.answer') },
+        { id: 'q16', question: t('sections.practical.questions.q16.question'), answer: t('sections.practical.questions.q16.answer') },
+        { id: 'q17', question: t('sections.practical.questions.q17.question'), answer: t('sections.practical.questions.q17.answer') },
+        { id: 'q18', question: t('sections.practical.questions.q18.question'), answer: t('sections.practical.questions.q18.answer') },
+      ],
+    },
+    {
+      id: 'communication',
+      title: t('sections.communication.title'),
+      intro: t('sections.communication.description'),
+      faqs: [
+        { id: 'q19', question: t('sections.communication.questions.q19.question'), answer: t('sections.communication.questions.q19.answer') },
+        { id: 'q20', question: t('sections.communication.questions.q20.question'), answer: t('sections.communication.questions.q20.answer') },
+        { id: 'q21', question: t('sections.communication.questions.q21.question'), answer: t('sections.communication.questions.q21.answer') },
+        { id: 'q22', question: t('sections.communication.questions.q22.question'), answer: t('sections.communication.questions.q22.answer') },
+        { id: 'q23', question: t('sections.communication.questions.q23.question'), answer: t('sections.communication.questions.q23.answer') },
+      ],
+    },
+    {
+      id: 'meta',
+      title: t('sections.meta.title'),
+      intro: t('sections.meta.description'),
+      faqs: [
+        { id: 'q24', question: t('sections.meta.questions.q24.question'), answer: t('sections.meta.questions.q24.answer') },
+        { id: 'q25', question: t('sections.meta.questions.q25.question'), answer: t('sections.meta.questions.q25.answer') },
+      ],
+    },
+  ], [t]);
 
   const filteredSections = useMemo(() => {
-    if (!searchQuery.trim()) {
+    const query = searchQuery.trim().toLowerCase();
+
+    if (!query) {
       return faqSections;
     }
 
-    const query = searchQuery.toLowerCase();
-    return faqSections.map(section => {
-      const filteredFAQs = section.faqs.filter(faq => {
-        const searchText = `${faq.question} ${faq.answer}`.toLowerCase();
-        return searchText.includes(query);
-      });
-      return { ...section, faqs: filteredFAQs };
-    }).filter(section => section.faqs.length > 0);
-  }, [searchQuery, faqSections]);
+    return faqSections.map((section) => {
+      const sectionMatches = `${section.title} ${section.intro}`.toLowerCase().includes(query);
+      const faqs = sectionMatches
+        ? section.faqs
+        : section.faqs.filter((faq) => `${faq.question} ${faq.answer}`.toLowerCase().includes(query));
 
-  /** Chunk FAQs into groups of 2 so we never have more than 2 consecutive DisclosureBlocks (doctrine §11.3b). */
-  const chunkFaqs = (faqs: FAQ[]) => {
-    const chunks: FAQ[][] = [];
-    for (let i = 0; i < faqs.length; i += 2) {
-      chunks.push(faqs.slice(i, i + 2));
-    }
-    return chunks;
-  };
+      return { ...section, faqs };
+    }).filter((section) => section.faqs.length > 0);
+  }, [faqSections, searchQuery]);
 
   return (
     <>
       <HeaderClient />
       <main className="min-h-screen">
-        <Section tone="light" className="section-primitive--first">
-          <div>
-            <div className="section-intro">
-              <p className="section-label">FAQ</p>
-              <h1>{t('pageTitle')}</h1>
-            </div>
-
-            {/* POLICY NOTICE BANNER */}
-            <div className="notice-panel mb-10">
-              <div className="flex items-start">
-                <span className="notice-panel__marker" aria-hidden />
-                <div>
-                  <h2 className="h2-system">{t('policyNotice.title')}</h2>
-                  <p className="text-body mb-2">
-                    {t('policyNotice.intro')}
-                  </p>
-                  <ul className="list-disc list-inside space-y-1 text-body ml-4">
-                    <li>{t('policyNotice.rules.rule1')}</li>
-                    <li>{t('policyNotice.rules.rule2')}</li>
-                    <li>{t('policyNotice.rules.rule3')}</li>
-                  </ul>
-                  <p className="text-body mt-2">
-                    {t('policyNotice.footer')}
-                  </p>
-                </div>
+        <Section tone="authority" className="section-primitive--first" id="faq-start">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(20rem,0.72fr)] lg:items-center">
+            <div>
+              <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
+              <h1 className="hero-display max-w-[13ch]">{t('redesign.hero.headline')}</h1>
+              <p className="hero-lead max-w-[62ch]">{t('redesign.hero.lead')}</p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link href={`/${locale}/contact`} className="btn-primary">
+                  {t('redesign.hero.primaryCta')}
+                </Link>
+                <Link href={`/${locale}/services`} className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
+                  {t('redesign.hero.secondaryCta')}
+                </Link>
               </div>
-            </div>
-
-            {/* CONFIDENCE BAR */}
-            <div className="mb-10">
-              <ConfidenceBar />
-            </div>
-
-            {/* SEARCH FIELD */}
-            <div className="mb-10 visual-card-strong p-3">
-              <input
-                type="text"
-                placeholder={t('search.placeholder')}
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="form-control border-0 bg-surface-light-alt text-lg"
-              />
-            </div>
-
-            <div className="grid grid-cols-1 gap-10 lg:grid-cols-[15rem_minmax(0,1fr)] lg:items-start">
-              {/* ANCHOR NAVIGATION — stacked per Task 5D-1C (no tablet 3+ col) */}
-              <div className="hidden md:block">
-                <div className="visual-card p-5 lg:sticky lg:top-28">
-                  <h3 className="section-label">{t('sectionsLabel')}</h3>
-                  <nav className="space-y-2">
-                    {faqSections.map((section) => (
-                      <a
-                        key={section.id}
-                        href={`#${section.id}`}
-                        className="block text-sm link-system py-1"
-                      >
-                        {section.title}
-                      </a>
-                    ))}
-                  </nav>
-                </div>
-              </div>
-
-              {/* FAQ CONTENT */}
-              <div>
-                {filteredSections.length === 0 ? (
-                <div className="visual-card p-10 text-center">
-                  <p className="text-body">{t('noResults')}</p>
-                </div>
-                ) : (
-                  <div className="space-y-10">
-                    {filteredSections.map((section) => (
-                      <div key={section.id} id={section.id} className="scroll-mt-40">
-                        <DisclosureBlock
-                          label={section.title}
-                          explainer={section.intro}
-                          defaultExpanded={section.id === 'service-model'}
-                        >
-                          <div className="space-y-3">
-                            {chunkFaqs(section.faqs).map((group, groupIndex) => (
-                              <div key={groupIndex}>
-                                {groupIndex > 0 && (
-                                  <div className="structural-break" style={{ paddingBlock: 'var(--space-40)' }} aria-hidden />
-                                )}
-                                {group.map((faq) => (
-                                  <DisclosureBlock
-                                    key={faq.id}
-                                    label={faq.question}
-                                    className="border-0 border-t border-structural-muted first:border-t-0"
-                                  >
-                                    <p className="text-body leading-relaxed">{faq.answer}</p>
-                                  </DisclosureBlock>
-                                ))}
-                              </div>
-                            ))}
-                          </div>
-                        </DisclosureBlock>
-                      </div>
-                    ))}
+              <div className="hero-fact-grid">
+                {facts.map((fact) => (
+                  <div key={fact.label} className="hero-fact">
+                    <span>{fact.label}</span>
+                    <strong>{fact.value}</strong>
                   </div>
-                )}
+                ))}
               </div>
             </div>
 
-            {/* BOTTOM SECTION */}
-            <div className="visual-card-strong mt-12 p-8 md:p-10">
-              <h2 className="h2-system">{t('notAnswered.title')}</h2>
-              <p className="text-body mb-5 leading-relaxed">
-                {t('notAnswered.intro')}
-              </p>
-              <p className="text-body mb-5 leading-relaxed">
-                {t('notAnswered.important')}
-              </p>
-              <p className="text-body mb-10 leading-relaxed">
-                {t('notAnswered.footer')}
-              </p>
-              <Link href={`/${locale}/contact`} className="btn-primary">
+            <figure className="visual-card-strong overflow-hidden border-authority-on-dark/25 bg-authority-on-dark/5">
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src="/photos/sentinel-faq-answer-system-placeholder.png"
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </figure>
+          </div>
+        </Section>
+
+        <Section tone="light">
+          <FAQQuickAnswerCards
+            eyebrow={t('redesign.quick.eyebrow')}
+            title={t('redesign.quick.title')}
+            intro={t('redesign.quick.intro')}
+            items={quickAnswers}
+          />
+        </Section>
+
+        <Section tone="alt">
+          <FAQCategoryNav
+            eyebrow={t('redesign.categories.eyebrow')}
+            title={t('redesign.categories.title')}
+            intro={t('redesign.categories.intro')}
+            categories={categories}
+          />
+        </Section>
+
+        <Section tone="light">
+          <FAQBoundaryPanel
+            eyebrow={t('redesign.boundary.eyebrow')}
+            title={t('redesign.boundary.title')}
+            intro={t('redesign.boundary.intro')}
+            items={boundaryItems}
+          />
+        </Section>
+
+        <Section tone="alt">
+          <FAQGroupedAccordion
+            eyebrow={t('redesign.details.eyebrow')}
+            title={t('redesign.details.title')}
+            intro={t('redesign.details.intro')}
+            sections={filteredSections}
+            noResults={t('noResults')}
+            searchControl={(
+              <div className="visual-card-strong p-3">
+                <input
+                  type="search"
+                  aria-label={t('search.placeholder')}
+                  placeholder={t('search.placeholder')}
+                  value={searchQuery}
+                  onChange={(event) => setSearchQuery(event.target.value)}
+                  className="form-control border-0 bg-surface-light-alt text-base"
+                />
+              </div>
+            )}
+          />
+        </Section>
+
+        <Section tone="light">
+          <FAQWrongAssumptions
+            eyebrow={t('redesign.assumptions.eyebrow')}
+            title={t('redesign.assumptions.title')}
+            intro={t('redesign.assumptions.intro')}
+            items={assumptionItems}
+          />
+        </Section>
+
+        <Section tone="alt">
+          <FAQDecisionPanel
+            eyebrow={t('redesign.decision.eyebrow')}
+            title={t('redesign.decision.title')}
+            intro={t('redesign.decision.intro')}
+            items={decisionItems}
+          />
+        </Section>
+
+        <Section tone="authority">
+          <div className="max-w-[760px]">
+            <p className="hero-kicker">FAQ</p>
+            <h2 className="hero-display max-w-[14ch]">{t('redesign.finalCta.title')}</h2>
+            <p className="hero-lead max-w-[62ch]">{t('redesign.finalCta.intro')}</p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link href={`/${locale}/contact`} className="btn-primary !bg-surface-light !text-authority hover:!bg-surface-light-alt !border-surface-light">
                 {tCommon('nav.contact')}
+              </Link>
+              <Link href={`/${locale}/services`} className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
+                {tCommon('nav.services')}
+              </Link>
+              <Link href={`/${locale}/how-it-works`} className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
+                {tCommon('nav.howItWorks')}
               </Link>
             </div>
           </div>
