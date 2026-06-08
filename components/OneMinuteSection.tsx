@@ -24,14 +24,33 @@ export default function OneMinuteSection({
         <h2 className="h2-system mt-3">{title}</h2>
         <p className="mt-3 max-w-[62ch] text-body">{intro}</p>
       </div>
-      <div className="grid gap-0 md:grid-cols-2">
+      <div className="grid gap-0 lg:grid-cols-[18rem_minmax(0,1fr)]">
+        <div className="border-b border-structural-light bg-surface-light-alt p-5 md:p-7 lg:border-b-0 lg:border-r">
+          <div className="rounded-2xl border border-structural-light bg-surface-card p-4">
+            <div className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-3">
+              {items.map((item, index) => (
+                <div key={item.marker} className="contents">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-authority-bg text-xs font-black text-authority-on-dark">
+                    {item.marker}
+                  </span>
+                  <div className="border-b border-structural-light pb-3 last:border-b-0">
+                    <p className="mb-0 text-sm font-black leading-snug text-heading">{item.title}</p>
+                    {index < items.length - 1 && <span className="mt-3 block h-5 w-px bg-structural-light" aria-hidden />}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="grid gap-0 md:grid-cols-2">
         {items.map((item) => (
           <article key={item.marker} className="border-b border-structural-light p-5 last:border-b-0 md:p-7 [&:nth-child(odd)]:md:border-r">
-            <p className="mb-3 text-4xl font-black text-accent">{item.marker}</p>
+            <p className="mb-3 text-[11px] font-black uppercase tracking-wide text-accent">{item.marker}</p>
             <h3 className="mb-3 text-xl font-black text-heading">{item.title}</h3>
             <p className="mb-0 text-sm leading-relaxed text-body">{item.body}</p>
           </article>
         ))}
+        </div>
       </div>
     </div>
   );

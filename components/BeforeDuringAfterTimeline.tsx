@@ -13,13 +13,14 @@ export default function BeforeDuringAfterTimeline() {
         <p className="section-label">{t('redesign.timeline.eyebrow')}</p>
         <h2 className="h2-system mt-3">{t('redesign.timeline.title')}</h2>
       </div>
-      <div className="grid gap-0 md:grid-cols-4">
+      <div className="relative grid gap-0 md:grid-cols-4">
+        <div className="pointer-events-none absolute left-8 right-8 top-[4.25rem] hidden h-px bg-structural-light md:block" aria-hidden />
         {TIMELINE_KEYS.map((key, index) => (
           <article
             key={key}
-            className="border-b border-structural-light p-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 md:p-6"
+            className="relative border-b border-structural-light p-5 last:border-b-0 md:border-b-0 md:p-6"
           >
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-authority-bg text-sm font-black text-authority-on-dark">
+            <span className="relative z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-authority-bg text-sm font-black text-authority-on-dark shadow-[0_0_0_8px_var(--surface-card)]">
               {String(index + 1).padStart(2, '0')}
             </span>
             <h3 className="mt-4 text-xl font-black text-heading">{t(`redesign.timeline.items.${key}.title`)}</h3>

@@ -219,16 +219,7 @@ export default function FAQPage() {
           />
         </Section>
 
-        <Section tone="light">
-          <FAQBoundaryPanel
-            eyebrow={t('redesign.boundary.eyebrow')}
-            title={t('redesign.boundary.title')}
-            intro={t('redesign.boundary.intro')}
-            items={boundaryItems}
-          />
-        </Section>
-
-        <Section tone="alt" id="faq-details">
+        <Section tone="light" id="faq-details">
           <FAQGroupedAccordion
             eyebrow={t('redesign.details.eyebrow')}
             title={t('redesign.details.title')}
@@ -250,6 +241,15 @@ export default function FAQPage() {
           />
         </Section>
 
+        <Section tone="alt">
+          <FAQBoundaryPanel
+            eyebrow={t('redesign.boundary.eyebrow')}
+            title={t('redesign.boundary.title')}
+            intro={t('redesign.boundary.intro')}
+            items={boundaryItems}
+          />
+        </Section>
+
         <Section tone="light">
           <FAQWrongAssumptions
             eyebrow={t('redesign.assumptions.eyebrow')}
@@ -268,18 +268,24 @@ export default function FAQPage() {
           />
         </Section>
 
-        <Section tone="authority">
-          <div className="max-w-[760px]">
-            <p className="hero-kicker">FAQ</p>
-            <h2 className="h2-system text-authority-on-dark">{t('redesign.finalCta.title')}</h2>
-            <p className="hero-lead max-w-[62ch]">{t('redesign.finalCta.intro')}</p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href={`/${locale}/contact`} className="btn-primary !bg-surface-light !text-authority hover:!bg-surface-light-alt !border-surface-light">
-                {tCommon('nav.contact')}
-              </Link>
-              <Link href={`/${locale}/services`} className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
-                {tCommon('nav.services')}
-              </Link>
+        <Section tone="light" className="!pt-10">
+          <div className="visual-card-strong overflow-hidden">
+            <div className="grid gap-0 lg:grid-cols-[minmax(0,0.68fr)_minmax(18rem,0.32fr)]">
+              <div className="p-5 md:p-8">
+                <p className="section-label">FAQ</p>
+                <h2 className="h2-system mt-3">{t('redesign.finalCta.title')}</h2>
+                <p className="mt-4 max-w-[62ch] text-lg leading-relaxed text-body">{t('redesign.finalCta.intro')}</p>
+              </div>
+              <div className="border-t border-structural-light bg-surface-light-alt p-5 md:p-8 lg:border-l lg:border-t-0">
+                <div className="flex flex-col gap-3">
+                  <Link href={`/${locale}/contact`} className="btn-primary">
+                    {tCommon('nav.contact')}
+                  </Link>
+                  <Link href={`/${locale}/services`} className="btn-secondary">
+                    {tCommon('nav.services')}
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </Section>

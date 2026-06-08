@@ -119,7 +119,6 @@ export default async function AboutPage({
             eyebrow={t('redesign.model.eyebrow')}
             title={t('redesign.model.title')}
             intro={t('redesign.model.intro')}
-            image="/photos/sentinel-about-operating-model-placeholder.png"
             items={modelItems}
           />
         </Section>

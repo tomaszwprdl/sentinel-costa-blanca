@@ -1,31 +1,28 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import DisclosureBlock from '@/components/DisclosureBlock';
+import ServiceScopeDiagram from '@/components/visuals/ServiceScopeDiagram';
 
 const PACKAGES = [
   {
     key: 'green',
     level: 'basic',
     marker: '01',
-    image: '/photos/sentinel-technical-check-placeholder.png',
     highlights: ['visitScopeIntro', 'keyStorageTitle', 'emergencyTitle'],
   },
   {
     key: 'orange',
     level: 'extended',
     marker: '02',
-    image: '/photos/sentinel-technician-access-placeholder.png',
     highlights: ['fromBasic', 'accessTitle', 'emergencyTitle'],
   },
   {
     key: 'red',
     level: 'full',
     marker: '03',
-    image: '/photos/sentinel-owner-remote-report-placeholder.png',
     highlights: ['fromExtended', 'decisionTitle', 'coordinationTitle'],
   },
 ] as const;
@@ -93,15 +90,11 @@ export default function PackageDetailPanels() {
             </div>
 
             <div className="border-t border-structural-light bg-surface-light-alt p-4 md:border-l md:border-t-0 md:p-5">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-                <Image
-                  src={active.image}
-                  alt=""
-                  fill
-                  sizes="(min-width: 1024px) 34vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
+              <ServiceScopeDiagram
+                variant={active.level}
+                compact
+                className="rounded-2xl"
+              />
               <div className="mt-4 rounded-2xl bg-surface-card p-4">
                 <p className="mb-2 text-xs font-black uppercase tracking-wide text-muted">{t('summaryTitle')}</p>
                 <p className="mb-1 text-sm text-body"><strong>{t(`${active.key}.summary.visitsValue`)}</strong> {t(`${active.key}.summary.visitsLabel`)}</p>

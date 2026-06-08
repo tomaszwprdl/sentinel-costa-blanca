@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Section from '@/components/layout/Section';
+import PathwaySituationDiagram from '@/components/visuals/PathwaySituationDiagram';
 import {
   PATHWAY_KEYS,
   normalizePathwayParam,
@@ -320,6 +321,7 @@ function PathwayDetailPanel({
         </div>
 
         <div className="border-t border-structural-light bg-surface-light-alt p-6 md:p-8 lg:border-l lg:border-t-0">
+          <PathwaySituationDiagram pathway={pathway} className="mb-5 shadow-none" />
           <p className="section-label">{t('changesLabel')}</p>
           <ul className="mt-4 space-y-3 text-sm leading-relaxed text-body">
             {Array.from({ length: PATHWAY_POINT_COUNTS[pathway] }, (_, i) => (

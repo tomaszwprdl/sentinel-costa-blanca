@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ResponsibilityStructureDiagram from '@/components/visuals/ResponsibilityStructureDiagram';
 
 interface AboutModelItem {
   marker: string;
@@ -10,7 +10,6 @@ interface AboutOperatingModelProps {
   eyebrow: string;
   title: string;
   intro: string;
-  image: string;
   items: AboutModelItem[];
 }
 
@@ -18,20 +17,13 @@ export default function AboutOperatingModel({
   eyebrow,
   title,
   intro,
-  image,
   items,
 }: AboutOperatingModelProps) {
   return (
     <div className="visual-card-strong overflow-hidden">
       <div className="grid gap-0 lg:grid-cols-[minmax(0,0.44fr)_minmax(0,0.56fr)]">
-        <div className="relative min-h-[340px] overflow-hidden">
-          <Image
-            src={image}
-            alt=""
-            fill
-            sizes="(min-width: 1024px) 44vw, 100vw"
-            className="object-cover"
-          />
+        <div className="min-h-[340px] bg-surface-light-alt p-4 md:p-5">
+          <ResponsibilityStructureDiagram className="h-full min-h-[300px]" />
         </div>
         <div className="p-5 md:p-8">
           <p className="section-label">{eyebrow}</p>

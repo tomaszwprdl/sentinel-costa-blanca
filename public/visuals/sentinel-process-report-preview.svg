@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Sentinel process report preview</title>
+  <desc id="desc">A schematic process path leading into a structured inspection report.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2eee6"/>
+      <stop offset="1" stop-color="#fffaf2"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#10263f" flood-opacity=".14"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <path d="M0 0h1200v206c-110 42-214 46-313 12-106-37-208-29-306 24-107 59-221 63-342 12C154 219 74 209 0 224Z" fill="#10263f" opacity=".08"/>
+  <g filter="url(#shadow)">
+    <rect x="108" y="112" width="312" height="676" rx="34" fill="#10263f"/>
+    <rect x="164" y="178" width="104" height="14" rx="7" fill="#fffaf2" opacity=".72"/>
+    <path d="M224 254v390" stroke="#fffaf2" stroke-width="5" opacity=".28"/>
+    <g fill="#fffaf2">
+      <circle cx="224" cy="276" r="26"/>
+      <circle cx="224" cy="390" r="26" opacity=".86"/>
+      <circle cx="224" cy="504" r="26" opacity=".72"/>
+      <circle cx="224" cy="618" r="26" opacity=".58"/>
+    </g>
+    <g stroke="#fffaf2" stroke-width="10" stroke-linecap="square" opacity=".72">
+      <path d="M286 268h84"/>
+      <path d="M286 296h54"/>
+      <path d="M286 382h68"/>
+      <path d="M286 410h96"/>
+      <path d="M286 496h82"/>
+      <path d="M286 524h52"/>
+      <path d="M286 610h94"/>
+      <path d="M286 638h62"/>
+    </g>
+
+    <rect x="484" y="112" width="568" height="676" rx="34" fill="#fffaf2" stroke="#d8cdbc" stroke-width="2"/>
+    <rect x="544" y="174" width="204" height="18" rx="9" fill="#10263f" opacity=".78"/>
+    <rect x="544" y="224" width="396" height="12" rx="6" fill="#10263f" opacity=".2"/>
+    <rect x="544" y="256" width="286" height="12" rx="6" fill="#10263f" opacity=".16"/>
+
+    <rect x="544" y="322" width="266" height="284" rx="16" fill="#e9f1ee" stroke="#d8cdbc"/>
+    <path d="M580 378h170M580 426h170M580 474h170M580 522h118" stroke="#10263f" stroke-width="10" stroke-linecap="square" opacity=".34"/>
+    <g fill="none" stroke="#2f6f73" stroke-width="6">
+      <circle cx="772" cy="376" r="18"/>
+      <circle cx="772" cy="424" r="18"/>
+      <circle cx="772" cy="472" r="18"/>
+    </g>
+    <path d="m760 376 10 10 20-24m-30 62 10 10 20-24m-30 62 10 10 20-24" fill="none" stroke="#2f6f73" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/>
+
+    <rect x="848" y="322" width="112" height="112" rx="14" fill="#f2eee6" stroke="#d8cdbc"/>
+    <rect x="848" y="462" width="112" height="112" rx="14" fill="#f2eee6" stroke="#d8cdbc"/>
+    <rect x="848" y="602" width="112" height="112" rx="14" fill="#f2eee6" stroke="#d8cdbc"/>
+    <path d="M870 388h68M870 528h68M870 668h68" stroke="#b8664a" stroke-width="8" stroke-linecap="square" opacity=".58"/>
+
+    <rect x="544" y="654" width="266" height="18" rx="9" fill="#10263f" opacity=".22"/>
+    <rect x="544" y="704" width="202" height="14" rx="7" fill="#10263f" opacity=".16"/>
+  </g>
+</svg>

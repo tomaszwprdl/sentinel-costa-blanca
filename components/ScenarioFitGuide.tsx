@@ -5,11 +5,13 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
+import EventResponseDiagram from '@/components/visuals/EventResponseDiagram';
+import ServiceScopeDiagram from '@/components/visuals/ServiceScopeDiagram';
 
 const SCENARIOS = [
   {
     key: 'private',
-    image: '/photos/sentinel-corridor-exterior-placeholder.png',
+    diagram: 'basic',
     packageKey: 'green',
   },
   {
@@ -19,7 +21,7 @@ const SCENARIOS = [
   },
   {
     key: 'decisions',
-    image: '/photos/sentinel-escalation-leak-placeholder.png',
+    diagram: 'event',
     packageKey: 'red',
   },
   {
@@ -73,6 +75,10 @@ export default function ScenarioFitGuide() {
                       className="object-cover transition duration-300 group-hover:scale-[1.03]"
                     />
                   </div>
+                ) : scenario.diagram === 'basic' ? (
+                  <ServiceScopeDiagram variant="basic" compact className="rounded-none border-0 shadow-none" />
+                ) : scenario.diagram === 'event' ? (
+                  <EventResponseDiagram variant="weekend" className="rounded-none border-0 shadow-none" />
                 ) : (
                   <ServiceAreaMap
                     labels={serviceAreaMapLabels}

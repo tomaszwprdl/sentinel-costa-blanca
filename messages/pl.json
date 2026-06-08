@@ -487,7 +487,7 @@
     "redesign": {
       "hero": {
         "eyebrow": "Zakres nadzoru",
-        "headline": "Wybierz poziom lokalnej odpowiedzialności",
+        "headline": "Wybierz poziom nadzoru",
         "lead": "Pakiet określa, jak często Sentinel jest na miejscu, jak prowadzi dostęp i gdzie kończą się decyzje bez dodatkowej zgody właściciela.",
         "secondaryCta": "Sprawdź dopasowanie",
         "facts": [

@@ -64,14 +64,15 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
             </div>
 
             <figure className="visual-card-strong overflow-hidden border-authority-on-dark/25 bg-authority-on-dark/5">
-              <div className="relative aspect-[4/3]">
+              <div className="relative aspect-[4/3] bg-surface-light">
                 <Image
-                  src="/photos/sentinel-report-placeholder.png"
+                  src="/visuals/sentinel-process-report-preview.svg"
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 42vw, 100vw"
                   className="object-cover"
                   priority
+                  unoptimized
                 />
               </div>
             </figure>
@@ -187,19 +188,26 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
           </div>
         </Section>
 
-        <Section tone="authority">
-          <div className="max-w-[65ch]">
-            <h2 className="h2-system text-authority-on-dark">{t('cta.title')}</h2>
-            <p className="text-lg text-authority-on-dark/80 mb-10 leading-relaxed">
-              {t('cta.nextIntro')}
-            </p>
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Link href={`/${locale}/contact`} className="btn-primary !bg-surface-light !text-authority hover:!bg-surface-light-alt !border-surface-light">
-                {tCommon('nav.contact')}
-              </Link>
-              <Link href={`/${locale}/services#package-fit`} className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
-                {tCommon('nav.services')}
-              </Link>
+        <Section tone="light" className="!pt-10">
+          <div className="visual-card-strong overflow-hidden">
+            <div className="grid gap-0 lg:grid-cols-[minmax(0,0.68fr)_minmax(18rem,0.32fr)]">
+              <div className="p-5 md:p-8">
+                <p className="section-label">{t('redesign.details.eyebrow')}</p>
+                <h2 className="h2-system mt-3">{t('cta.title')}</h2>
+                <p className="mt-4 max-w-[62ch] text-lg leading-relaxed text-body">
+                  {t('cta.nextIntro')}
+                </p>
+              </div>
+              <div className="border-t border-structural-light bg-surface-light-alt p-5 md:p-8 lg:border-l lg:border-t-0">
+                <div className="flex flex-col gap-4">
+                  <Link href={`/${locale}/contact`} className="btn-primary">
+                    {tCommon('nav.contact')}
+                  </Link>
+                  <Link href={`/${locale}/services#package-fit`} className="btn-secondary">
+                    {tCommon('nav.services')}
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </Section>

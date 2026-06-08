@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Sentinel intake path diagram</title>
+  <desc id="desc">A schematic intake path showing owner details, property classification, and structured review.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaf2"/>
+      <stop offset="1" stop-color="#e9f1ee"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="26" flood-color="#10263f" flood-opacity=".14"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <path d="M83 185c186-83 347-68 483 44 105 87 234 103 388 49 64-22 124-28 180-17v639H0V227c25-6 53-15 83-42Z" fill="#2f6f73" opacity=".08"/>
+  <g filter="url(#shadow)">
+    <rect x="120" y="176" width="288" height="552" rx="34" fill="#10263f"/>
+    <rect x="172" y="240" width="110" height="14" rx="7" fill="#fffaf2" opacity=".68"/>
+    <rect x="172" y="290" width="164" height="54" rx="18" fill="#fffaf2" opacity=".12"/>
+    <rect x="172" y="374" width="164" height="54" rx="18" fill="#fffaf2" opacity=".12"/>
+    <rect x="172" y="458" width="164" height="54" rx="18" fill="#fffaf2" opacity=".12"/>
+    <path d="M190 317h86M190 401h126M190 485h102" stroke="#fffaf2" stroke-width="9" stroke-linecap="square" opacity=".7"/>
+    <circle cx="214" cy="612" r="42" fill="#b8664a"/>
+    <path d="M202 614l18 18 42-54" fill="none" stroke="#fffaf2" stroke-width="8" stroke-linecap="square" stroke-linejoin="miter"/>
+
+    <rect x="486" y="126" width="392" height="654" rx="36" fill="#fffaf2" stroke="#d8cdbc" stroke-width="2"/>
+    <rect x="544" y="194" width="154" height="18" rx="9" fill="#10263f" opacity=".72"/>
+    <rect x="544" y="254" width="268" height="58" rx="18" fill="#f2eee6" stroke="#d8cdbc"/>
+    <rect x="544" y="348" width="268" height="58" rx="18" fill="#f2eee6" stroke="#d8cdbc"/>
+    <rect x="544" y="442" width="268" height="58" rx="18" fill="#f2eee6" stroke="#d8cdbc"/>
+    <rect x="544" y="536" width="268" height="120" rx="18" fill="#e9f1ee" stroke="#d8cdbc"/>
+    <path d="M582 284h154M582 378h112M582 472h164M582 574h206M582 614h142" stroke="#10263f" stroke-width="9" stroke-linecap="square" opacity=".32"/>
+    <circle cx="792" cy="284" r="11" fill="#2f6f73"/>
+    <circle cx="792" cy="378" r="11" fill="#b8664a"/>
+    <circle cx="792" cy="472" r="11" fill="#2f6f73"/>
+
+    <rect x="946" y="236" width="214" height="394" rx="34" fill="#fffaf2" stroke="#d8cdbc" stroke-width="2"/>
+    <circle cx="1053" cy="318" r="54" fill="#2f6f73" opacity=".16"/>
+    <circle cx="1053" cy="318" r="24" fill="#2f6f73"/>
+    <path d="M1002 430h102M1002 468h126M1002 506h82" stroke="#10263f" stroke-width="10" stroke-linecap="square" opacity=".36"/>
+    <rect x="998" y="564" width="110" height="34" rx="17" fill="#b8664a" opacity=".82"/>
+
+    <path d="M408 452h78M878 452h68" stroke="#10263f" stroke-width="7" stroke-linecap="square" opacity=".45"/>
+    <path d="M468 426l30 26-30 26M928 426l30 26-30 26" fill="none" stroke="#10263f" stroke-width="7" stroke-linecap="square" stroke-linejoin="miter" opacity=".45"/>
+  </g>
+</svg>

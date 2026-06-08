@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import ServiceScopeDiagram from '@/components/visuals/ServiceScopeDiagram';
 
 const CHAIN_KEYS = ['agreement', 'keys', 'request', 'entry', 'record'] as const;
 
@@ -11,14 +11,8 @@ export default function AccessChainDiagram() {
   return (
     <div className="visual-card-strong overflow-hidden" id="access-chain">
       <div className="grid gap-0 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)]">
-        <div className="relative min-h-[340px] overflow-hidden">
-          <Image
-            src="/photos/sentinel-access-handover-placeholder.png"
-            alt=""
-            fill
-            sizes="(min-width: 1024px) 42vw, 100vw"
-            className="object-cover"
-          />
+        <div className="min-h-[340px] bg-surface-light-alt p-4 md:p-5">
+          <ServiceScopeDiagram variant="extended" className="h-full min-h-[300px]" />
         </div>
         <div className="p-5 md:p-8">
           <p className="section-label">{t('redesign.access.eyebrow')}</p>

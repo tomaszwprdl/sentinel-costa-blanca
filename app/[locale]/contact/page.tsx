@@ -18,6 +18,7 @@ import ContactUnsuitableGrid from '@/components/ContactUnsuitableGrid';
 import ContactAfterSubmitSteps from '@/components/ContactAfterSubmitSteps';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
+import IntakePathDiagram from '@/components/visuals/IntakePathDiagram';
 
 import { normalizePathwayParam } from '@/lib/pathway';
 import {
@@ -299,14 +300,15 @@ function ContactPageInner() {
             </div>
 
             <figure className="visual-card-strong overflow-hidden border-authority-on-dark/25 bg-authority-on-dark/5">
-              <div className="relative aspect-[4/3]">
+              <div className="relative aspect-[4/3] bg-surface-light">
                 <Image
-                  src="/photos/sentinel-contact-intake-placeholder.png"
+                  src="/visuals/sentinel-contact-intake-path.svg"
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 38vw, 100vw"
                   className="object-cover"
                   priority
+                  unoptimized
                 />
               </div>
             </figure>
@@ -334,60 +336,13 @@ function ContactPageInner() {
           </div>
         </Section>
 
-        <Section tone="alt" id="prepare">
-          <ContactPreparationChecklist
-            eyebrow={t('redesign.prepare.eyebrow')}
-            title={t('redesign.prepare.title')}
-            intro={t('redesign.prepare.intro')}
-            items={preparationItems}
-          />
-        </Section>
-
-        <Section tone="light">
-          <ContactRouteCards
-            eyebrow={t('redesign.routes.eyebrow')}
-            title={t('redesign.routes.title')}
-            intro={t('redesign.routes.intro')}
-            cards={routeCards}
-          />
-        </Section>
-
-        <Section tone="alt">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.48fr)_minmax(0,0.52fr)] lg:items-center">
-            <div>
-              <p className="section-label">{t('redesign.fit.eyebrow')}</p>
-              <h2 className="h2-system mt-3">{t('redesign.fit.title')}</h2>
-              <p className="mt-3 text-body">{t('redesign.fit.intro')}</p>
-              <div className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-                {fitCards.map((card) => (
-                  <article key={card.title} className="rounded-2xl border border-structural-light bg-surface-card p-4">
-                    <h3 className="mb-2 text-base font-black text-heading">{card.title}</h3>
-                    <p className="mb-0 text-sm leading-relaxed text-body">{card.body}</p>
-                  </article>
-                ))}
-              </div>
-              <p className="mt-5 mb-0 text-sm leading-relaxed text-muted">{t('redesign.fit.note')}</p>
-            </div>
-
-            <ServiceAreaMap labels={serviceAreaMapLabels} />
-          </div>
-        </Section>
-
-        <Section tone="light">
-          <ContactUnsuitableGrid
-            eyebrow={t('redesign.unsuitable.eyebrow')}
-            title={t('redesign.unsuitable.title')}
-            intro={t('redesign.unsuitable.intro')}
-            items={unsuitableItems}
-          />
-        </Section>
-
         <Section tone="alt" id="intake-form">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.34fr)_minmax(0,0.66fr)] lg:items-start">
             <aside className="lg:sticky lg:top-28">
               <p className="section-label">{t('redesign.form.eyebrow')}</p>
               <h2 className="h2-system mt-3">{t('redesign.form.title')}</h2>
               <p className="mt-3 text-body">{t('redesign.form.intro')}</p>
+              <IntakePathDiagram className="mt-6 hidden lg:block" />
               <p className="notice-panel mt-6 text-sm leading-relaxed text-body">
                 {t('redesign.form.submitNote')}
               </p>
@@ -678,6 +633,57 @@ function ContactPageInner() {
           </div>
         </Section>
 
+        <Section tone="light" id="prepare">
+          <ContactPreparationChecklist
+            eyebrow={t('redesign.prepare.eyebrow')}
+            title={t('redesign.prepare.title')}
+            intro={t('redesign.prepare.intro')}
+            items={preparationItems}
+          />
+        </Section>
+
+        <Section tone="alt">
+          <ContactRouteCards
+            eyebrow={t('redesign.routes.eyebrow')}
+            title={t('redesign.routes.title')}
+            intro={t('redesign.routes.intro')}
+            cards={routeCards}
+          />
+        </Section>
+
+        <Section tone="light">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.52fr)_minmax(0,0.48fr)] lg:items-center">
+            <div>
+              <p className="section-label">{t('redesign.fit.eyebrow')}</p>
+              <h2 className="h2-system mt-3">{t('redesign.fit.title')}</h2>
+              <p className="mt-3 text-body">{t('redesign.fit.intro')}</p>
+              <div className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+                {fitCards.map((card) => (
+                  <article key={card.title} className="rounded-2xl border border-structural-light bg-surface-card p-4">
+                    <h3 className="mb-2 text-base font-black text-heading">{card.title}</h3>
+                    <p className="mb-0 text-sm leading-relaxed text-body">{card.body}</p>
+                  </article>
+                ))}
+              </div>
+              <p className="mt-5 mb-0 text-sm leading-relaxed text-muted">{t('redesign.fit.note')}</p>
+            </div>
+
+            <div className="grid gap-4">
+              <IntakePathDiagram />
+              <ServiceAreaMap labels={serviceAreaMapLabels} compact />
+            </div>
+          </div>
+        </Section>
+
+        <Section tone="alt">
+          <ContactUnsuitableGrid
+            eyebrow={t('redesign.unsuitable.eyebrow')}
+            title={t('redesign.unsuitable.title')}
+            intro={t('redesign.unsuitable.intro')}
+            items={unsuitableItems}
+          />
+        </Section>
+
         <Section tone="light">
           <ContactAfterSubmitSteps
             eyebrow={t('redesign.afterSubmit.eyebrow')}
@@ -687,19 +693,26 @@ function ContactPageInner() {
           />
         </Section>
 
-        <Section tone="authority">
-          <div className="max-w-[760px]">
-            <h2 className="h2-system text-authority-on-dark">{t('redesign.finalCta.title')}</h2>
-            <p className="text-lg text-authority-on-dark/80 mb-10 leading-relaxed">
-              {t('redesign.finalCta.intro')}
-            </p>
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Link href="#intake-form" className="btn-primary !bg-surface-light !text-authority hover:!bg-surface-light-alt !border-surface-light">
-                {t('form.submitButton')}
-              </Link>
-              <Link href={`/${locale}/services`} className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
-                {tCommon('nav.services')}
-              </Link>
+        <Section tone="light" className="!pt-10">
+          <div className="visual-card-strong overflow-hidden">
+            <div className="grid gap-0 lg:grid-cols-[minmax(0,0.68fr)_minmax(18rem,0.32fr)]">
+              <div className="p-5 md:p-8">
+                <p className="section-label">{t('redesign.form.eyebrow')}</p>
+                <h2 className="h2-system mt-3">{t('redesign.finalCta.title')}</h2>
+                <p className="mt-4 max-w-[62ch] text-lg leading-relaxed text-body">
+                  {t('redesign.finalCta.intro')}
+                </p>
+              </div>
+              <div className="border-t border-structural-light bg-surface-light-alt p-5 md:p-8 lg:border-l lg:border-t-0">
+                <div className="flex flex-col gap-4">
+                  <Link href="#intake-form" className="btn-primary">
+                    {t('form.submitButton')}
+                  </Link>
+                  <Link href={`/${locale}/services`} className="btn-secondary">
+                    {tCommon('nav.services')}
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </Section>

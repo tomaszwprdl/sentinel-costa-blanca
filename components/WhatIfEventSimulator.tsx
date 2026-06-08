@@ -1,26 +1,22 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import EventResponseDiagram, { type EventResponseVariant } from '@/components/visuals/EventResponseDiagram';
 
 const EVENTS = [
   {
     key: 'leak',
-    image: '/photos/sentinel-escalation-leak-placeholder.png',
   },
   {
     key: 'technician',
-    image: '/photos/sentinel-technician-access-placeholder.png',
   },
   {
     key: 'turnover',
-    image: '/photos/sentinel-cleaning-readiness-placeholder.png',
   },
   {
     key: 'weekend',
-    image: '/photos/sentinel-owner-remote-report-placeholder.png',
   },
 ] as const;
 
@@ -55,15 +51,10 @@ export default function WhatIfEventSimulator() {
         </div>
 
         <div>
-          <div className="relative aspect-[16/9] overflow-hidden">
-            <Image
-              src={active.image}
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 54vw, 100vw"
-              className="object-cover"
-            />
-          </div>
+          <EventResponseDiagram
+            variant={active.key as EventResponseVariant}
+            className="rounded-none border-0 shadow-none"
+          />
           <div className="p-5 md:p-8">
             <p className="section-label">{t(`redesign.events.items.${active.key}.label`)}</p>
             <h3 className="mt-3 text-2xl font-black text-heading">

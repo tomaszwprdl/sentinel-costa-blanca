@@ -26,13 +26,16 @@ export default function AboutResponsibilityFlow({
         <h2 className="h2-system mt-3">{title}</h2>
         <p className="mt-3 max-w-[62ch] text-body">{intro}</p>
       </div>
-      <div className="grid gap-0 md:grid-cols-4">
+      <div className="relative grid gap-0 md:grid-cols-4">
+        <div className="pointer-events-none absolute left-8 right-8 top-[4.35rem] hidden h-px bg-structural-light md:block" aria-hidden />
         {steps.map((step) => (
           <article
             key={step.marker}
-            className="border-b border-structural-light p-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 md:p-6"
+            className="relative border-b border-structural-light p-5 last:border-b-0 md:border-b-0 md:p-6"
           >
-            <p className="mb-4 text-4xl font-black text-accent">{step.marker}</p>
+            <p className="relative z-10 mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-authority-bg text-xs font-black text-authority-on-dark shadow-[0_0_0_8px_var(--surface-card)]">
+              {step.marker}
+            </p>
             <h3 className="mb-3 text-lg font-black text-heading">{step.title}</h3>
             <p className="mb-0 text-sm leading-relaxed text-body">{step.body}</p>
           </article>

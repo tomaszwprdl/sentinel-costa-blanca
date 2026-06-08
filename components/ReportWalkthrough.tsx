@@ -1,6 +1,6 @@
-import Image from 'next/image';
 import DisclosureBlock from '@/components/DisclosureBlock';
 import SampleInspectionReport from '@/components/SampleInspectionReport';
+import ReportEvidenceDiagram from '@/components/visuals/ReportEvidenceDiagram';
 
 type Translator = (key: string, values?: Record<string, string | number | Date>) => string;
 
@@ -14,15 +14,7 @@ export default function ReportWalkthrough({ t }: { t: Translator }) {
           <p className="section-label">{t('redesign.report.eyebrow')}</p>
           <h2 className="h2-system mt-3">{t('redesign.report.title')}</h2>
           <p className="mt-3 text-body">{t('redesign.report.intro')}</p>
-          <div className="relative mt-6 aspect-[4/3] overflow-hidden rounded-2xl">
-            <Image
-              src="/photos/sentinel-report-tablet-placeholder.png"
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              className="object-cover"
-            />
-          </div>
+          <ReportEvidenceDiagram className="mt-6" />
         </div>
 
         <div className="p-5 md:p-8">
