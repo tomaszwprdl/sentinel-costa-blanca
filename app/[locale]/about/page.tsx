@@ -8,6 +8,7 @@ import Section from '@/components/layout/Section';
 import AboutOperatingModel from '@/components/AboutOperatingModel';
 import AboutBoundaryGrid from '@/components/AboutBoundaryGrid';
 import AboutResponsibilityFlow from '@/components/AboutResponsibilityFlow';
+import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
 
 type Fact = {
   label: string;
@@ -42,6 +43,13 @@ export default async function AboutPage({
   const localCards = t.raw('redesign.local.cards') as InfoCard[];
   const capabilityItems = t.raw('redesign.capabilities.items') as MarkedItem[];
   const responsibilitySteps = t.raw('redesign.responsibility.steps') as MarkedItem[];
+  const serviceAreaMapLabels = {
+    title: tCommon('serviceAreaMap.title'),
+    center: tCommon('serviceAreaMap.center'),
+    radius: tCommon('serviceAreaMap.radius'),
+    boundary: tCommon('serviceAreaMap.boundary'),
+    caption: tCommon('serviceAreaMap.caption'),
+  };
 
   return (
     <>
@@ -51,7 +59,7 @@ export default async function AboutPage({
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.62fr)_minmax(20rem,0.38fr)] lg:items-center">
             <div>
               <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
-              <h1 className="hero-display max-w-[16ch]">{t('redesign.hero.headline')}</h1>
+              <h1 className="hero-display max-w-[18ch]">{t('redesign.hero.headline')}</h1>
               <p className="hero-lead max-w-[64ch]">{t('redesign.hero.lead')}</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link href={`/${locale}/contact`} className="btn-primary">
@@ -145,17 +153,7 @@ export default async function AboutPage({
               <p className="mt-5 mb-0 text-sm leading-relaxed text-muted">{t('redesign.local.note')}</p>
             </div>
 
-            <figure className="visual-card-strong overflow-hidden">
-              <div className="relative aspect-[4/3]">
-                <Image
-                  src="/photos/sentinel-service-radius-placeholder.png"
-                  alt=""
-                  fill
-                  sizes="(min-width: 1024px) 48vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            </figure>
+            <ServiceAreaMap labels={serviceAreaMapLabels} />
           </div>
         </Section>
 
@@ -222,9 +220,6 @@ export default async function AboutPage({
               </Link>
               <Link href={`/${locale}/services`} className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
                 {tCommon('nav.services')}
-              </Link>
-              <Link href={`/${locale}/how-it-works`} className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
-                {tCommon('nav.howItWorks')}
               </Link>
             </div>
           </div>

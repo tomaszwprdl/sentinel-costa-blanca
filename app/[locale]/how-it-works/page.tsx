@@ -43,7 +43,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(20rem,0.72fr)] lg:items-center">
             <div>
               <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
-              <h1 className="hero-display max-w-[13ch]">{t('redesign.hero.headline')}</h1>
+              <h1 className="hero-display max-w-[17ch]">{t('redesign.hero.headline')}</h1>
               <p className="hero-lead max-w-[62ch]">{t('redesign.hero.lead')}</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link href={`/${locale}/contact`} className="btn-primary">
@@ -66,7 +66,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
             <figure className="visual-card-strong overflow-hidden border-authority-on-dark/25 bg-authority-on-dark/5">
               <div className="relative aspect-[4/3]">
                 <Image
-                  src="/photos/sentinel-access-handover-placeholder.png"
+                  src="/photos/sentinel-report-placeholder.png"
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 42vw, 100vw"

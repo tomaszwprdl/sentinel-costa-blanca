@@ -11,7 +11,7 @@ const PACKAGES = [
     key: 'green',
     level: 'basic',
     marker: '01',
-    image: '/photos/sentinel-apartment-entry-placeholder.png',
+    image: '/photos/sentinel-technical-check-placeholder.png',
     highlights: ['visitScopeIntro', 'keyStorageTitle', 'emergencyTitle'],
   },
   {

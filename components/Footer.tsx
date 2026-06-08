@@ -19,9 +19,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="mt-[var(--space-120)] bg-authority-bg text-authority-on-dark">
-      <div className="container py-14">
-        <div className="grid gap-10 border-b border-authority-on-dark/15 pb-10 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.42fr)] lg:items-end">
+    <footer className="mt-[var(--space-40)] bg-authority-bg text-authority-on-dark">
+      <div className="container py-10 md:py-14">
+        <div className="grid gap-7 border-b border-authority-on-dark/15 pb-8 md:gap-10 md:pb-10 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.42fr)] lg:items-end">
           <div>
             <Link href={`/${locale}`} className="inline-block" aria-label={t('nav.home')}>
               <Image
@@ -37,7 +37,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-authority-on-dark/15 bg-authority-on-dark/8 p-5">
+          <div className="rounded-2xl border border-authority-on-dark/15 bg-authority-on-dark/8 p-4 md:p-5">
             <p className="section-label text-authority-on-dark/80">{t('footer.contact')}</p>
             <ul className="mt-4 space-y-2 text-sm text-authority-on-dark/82">
               <li>{t('contact.phone')}</li>
@@ -51,7 +51,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <GridFrame className="gap-10 py-10">
+        <GridFrame className="gap-8 py-8 md:gap-10 md:py-10">
           <Region name="authority" desktopSpan="quarter">
             <div>
               <h3 className="section-label text-authority-on-dark/80">
@@ -123,7 +123,7 @@ export default function Footer() {
           </Region>
         </GridFrame>
 
-        <div className="border-t border-authority-on-dark/15 pt-8 text-center text-sm text-authority-on-dark/58">
+        <div className="border-t border-authority-on-dark/15 pt-6 text-center text-sm text-authority-on-dark/58 md:pt-8">
           <p>
             &copy; {new Date().getFullYear()} {t('siteName')}. {t('footer.copyright')}
           </p>

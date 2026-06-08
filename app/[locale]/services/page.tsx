@@ -56,7 +56,7 @@ export default async function ServicesPage({
       note: t('addons.rental.notPM'),
     },
     {
-      image: '/photos/sentinel-apartment-entry-placeholder.png',
+      image: '/photos/sentinel-corridor-exterior-placeholder.png',
       label: t('redesign.modules.useWhen'),
       title: t('addons.seasonal.title'),
       body: t('executionOnly.intro'),
@@ -87,7 +87,7 @@ export default async function ServicesPage({
             <Region name="main" desktopSpan="half">
               <div className="max-w-[680px]">
                 <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
-                <h1 className="hero-display max-w-[12ch]">{t('redesign.hero.headline')}</h1>
+                <h1 className="hero-display max-w-[16ch]">{t('redesign.hero.headline')}</h1>
                 <p className="hero-lead">{t('redesign.hero.lead')}</p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Link href={`/${locale}/contact`} className="btn-primary">
@@ -187,7 +187,7 @@ export default async function ServicesPage({
             <div className="visual-card-strong overflow-hidden">
               <div className="relative aspect-[4/3]">
                 <Image
-                  src="/photos/sentinel-access-handover-placeholder.png"
+                  src="/photos/sentinel-technical-check-placeholder.png"
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 40vw, 100vw"
@@ -270,6 +270,7 @@ export default async function ServicesPage({
         primaryLabel={t('cta.primaryButton')}
         secondaryHref="#scenario-fit"
         secondaryLabel={t('redesign.hero.secondaryCta')}
+        suppressWhenVisible="#estimator"
       />
       <Footer />
     </>

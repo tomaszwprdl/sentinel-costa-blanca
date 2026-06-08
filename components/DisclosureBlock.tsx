@@ -37,7 +37,7 @@ export default function DisclosureBlock({
   };
 
   return (
-    <div className={`visual-card overflow-hidden ${className}`}>
+    <div className={`visual-card overflow-hidden transition-[border-color,box-shadow] duration-200 ${isExpanded ? 'border-support/45 shadow-[0_16px_34px_rgba(16,38,63,0.12)]' : ''} ${className}`}>
       <button
         id={buttonId}
         type="button"
@@ -45,7 +45,7 @@ export default function DisclosureBlock({
         onKeyDown={handleKeyDown}
         aria-expanded={isExpanded}
         aria-controls={contentId}
-        className="flex w-full items-center justify-between bg-surface-card px-5 py-5 text-left transition-colors hover:bg-surface-light-alt focus:outline-none focus:ring-2 focus:ring-support focus:ring-offset-2"
+        className="flex w-full items-center justify-between bg-surface-card px-5 py-5 text-left transition-[background,color] duration-200 hover:bg-surface-light-alt focus:outline-none focus:ring-2 focus:ring-support focus:ring-offset-2"
       >
         <div className="flex-1 pr-4">
           <div className="text-base font-bold text-heading">{label}</div>
@@ -67,7 +67,7 @@ export default function DisclosureBlock({
           id={contentId}
           role="region"
           aria-labelledby={buttonId}
-          className="border-t border-structural-light bg-surface-light-alt px-5 py-5"
+          className="disclosure-content border-t border-structural-light bg-surface-light-alt px-5 py-5"
         >
           {children}
         </div>

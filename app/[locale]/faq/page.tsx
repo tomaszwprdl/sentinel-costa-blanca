@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
@@ -13,6 +12,8 @@ import FAQDecisionPanel from '@/components/FAQDecisionPanel';
 import FAQGroupedAccordion, { type FAQGroup } from '@/components/FAQGroupedAccordion';
 import FAQQuickAnswerCards from '@/components/FAQQuickAnswerCards';
 import FAQWrongAssumptions from '@/components/FAQWrongAssumptions';
+import MobileStickyCTA from '@/components/MobileStickyCTA';
+import FAQRoutingDiagram from '@/components/visuals/FAQRoutingDiagram';
 
 type HeroFact = {
   label: string;
@@ -176,7 +177,7 @@ export default function FAQPage() {
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(20rem,0.72fr)] lg:items-center">
             <div>
               <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
-              <h1 className="hero-display max-w-[13ch]">{t('redesign.hero.headline')}</h1>
+              <h1 className="hero-display max-w-[17ch]">{t('redesign.hero.headline')}</h1>
               <p className="hero-lead max-w-[62ch]">{t('redesign.hero.lead')}</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link href={`/${locale}/contact`} className="btn-primary">
@@ -196,18 +197,7 @@ export default function FAQPage() {
               </div>
             </div>
 
-            <figure className="visual-card-strong overflow-hidden border-authority-on-dark/25 bg-authority-on-dark/5">
-              <div className="relative aspect-[4/3]">
-                <Image
-                  src="/photos/sentinel-faq-answer-system-placeholder.png"
-                  alt=""
-                  fill
-                  sizes="(min-width: 1024px) 42vw, 100vw"
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </figure>
+            <FAQRoutingDiagram />
           </div>
         </Section>
 
@@ -238,7 +228,7 @@ export default function FAQPage() {
           />
         </Section>
 
-        <Section tone="alt">
+        <Section tone="alt" id="faq-details">
           <FAQGroupedAccordion
             eyebrow={t('redesign.details.eyebrow')}
             title={t('redesign.details.title')}
@@ -281,7 +271,7 @@ export default function FAQPage() {
         <Section tone="authority">
           <div className="max-w-[760px]">
             <p className="hero-kicker">FAQ</p>
-            <h2 className="hero-display max-w-[14ch]">{t('redesign.finalCta.title')}</h2>
+            <h2 className="h2-system text-authority-on-dark">{t('redesign.finalCta.title')}</h2>
             <p className="hero-lead max-w-[62ch]">{t('redesign.finalCta.intro')}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href={`/${locale}/contact`} className="btn-primary !bg-surface-light !text-authority hover:!bg-surface-light-alt !border-surface-light">
@@ -290,13 +280,16 @@ export default function FAQPage() {
               <Link href={`/${locale}/services`} className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
                 {tCommon('nav.services')}
               </Link>
-              <Link href={`/${locale}/how-it-works`} className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
-                {tCommon('nav.howItWorks')}
-              </Link>
             </div>
           </div>
         </Section>
       </main>
+      <MobileStickyCTA
+        primaryHref={`/${locale}/contact`}
+        primaryLabel={tCommon('nav.contact')}
+        secondaryHref="#faq-details"
+        secondaryLabel={t('redesign.details.eyebrow')}
+      />
       <Footer />
     </>
   );

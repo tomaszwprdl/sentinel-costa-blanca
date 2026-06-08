@@ -6,8 +6,10 @@ import { useEffect, useState } from 'react';
 interface MobileStickyCTAProps {
   primaryHref: string;
   primaryLabel: string;
-  secondaryHref: string;
-  secondaryLabel: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+  showAfter?: number;
+  suppressWhenVisible?: string;
 }
 
 export default function MobileStickyCTA({
@@ -15,12 +17,22 @@ export default function MobileStickyCTA({
   primaryLabel,
   secondaryHref,
   secondaryLabel,
+  showAfter = 560,
+  suppressWhenVisible,
 }: MobileStickyCTAProps) {
   const [visible, setVisible] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
+  const [suppressionState, setSuppressionState] = useState<{ selector?: string; active: boolean }>({
+    active: false,
+  });
+  const secondaryAction = secondaryHref && secondaryLabel ? { href: secondaryHref, label: secondaryLabel } : null;
+  const suppressed =
+    Boolean(suppressWhenVisible) &&
+    suppressionState.selector === suppressWhenVisible &&
+    suppressionState.active;
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 420);
+    const onScroll = () => setVisible(window.scrollY > showAfter);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
 
@@ -38,9 +50,39 @@ export default function MobileStickyCTA({
       window.removeEventListener('scroll', onScroll);
       observer?.disconnect();
     };
-  }, []);
+  }, [showAfter]);
 
-  if (!visible || footerVisible) {
+  useEffect(() => {
+    if (!suppressWhenVisible) {
+      return;
+    }
+
+    const nodes = Array.from(document.querySelectorAll(suppressWhenVisible));
+    if (nodes.length === 0) {
+      return;
+    }
+
+    const visibleNodes = new Set<Element>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            visibleNodes.add(entry.target);
+          } else {
+            visibleNodes.delete(entry.target);
+          }
+        });
+        setSuppressionState({ selector: suppressWhenVisible, active: visibleNodes.size > 0 });
+      },
+      { rootMargin: '-16% 0px -24% 0px', threshold: 0.01 },
+    );
+
+    nodes.forEach((node) => observer.observe(node));
+
+    return () => observer.disconnect();
+  }, [suppressWhenVisible]);
+
+  if (!visible || footerVisible || suppressed) {
     return null;
   }
 
@@ -50,9 +92,11 @@ export default function MobileStickyCTA({
         <Link href={primaryHref} className="btn-primary flex-1 px-4 py-3 text-sm">
           {primaryLabel}
         </Link>
-        <Link href={secondaryHref} className="btn-secondary flex-1 px-4 py-3 text-sm">
-          {secondaryLabel}
-        </Link>
+        {secondaryAction && (
+          <Link href={secondaryAction.href} className="btn-secondary flex-1 px-4 py-3 text-sm">
+            {secondaryAction.label}
+          </Link>
+        )}
       </div>
     </div>
   );

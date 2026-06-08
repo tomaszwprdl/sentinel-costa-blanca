@@ -16,6 +16,8 @@ import ContactPreparationChecklist from '@/components/ContactPreparationChecklis
 import ContactRouteCards from '@/components/ContactRouteCards';
 import ContactUnsuitableGrid from '@/components/ContactUnsuitableGrid';
 import ContactAfterSubmitSteps from '@/components/ContactAfterSubmitSteps';
+import MobileStickyCTA from '@/components/MobileStickyCTA';
+import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
 
 import { normalizePathwayParam } from '@/lib/pathway';
 import {
@@ -103,6 +105,13 @@ function ContactPageInner() {
   const fitCards = t.raw('redesign.fit.cards') as InfoCard[];
   const unsuitableItems = t.raw('redesign.unsuitable.items') as InfoCard[];
   const afterSubmitSteps = t.raw('redesign.afterSubmit.steps') as MarkedItem[];
+  const serviceAreaMapLabels = {
+    title: tCommon('serviceAreaMap.title'),
+    center: tCommon('serviceAreaMap.center'),
+    radius: tCommon('serviceAreaMap.radius'),
+    boundary: tCommon('serviceAreaMap.boundary'),
+    caption: tCommon('serviceAreaMap.caption'),
+  };
 
   const estimatorPrefill = useMemo(() => {
     const package_ = searchParams.get('est_package');
@@ -220,7 +229,7 @@ function ContactPageInner() {
           <Section tone="authority" className="section-primitive--first">
             <div className="max-w-[760px]">
               <p className="hero-kicker">{t('redesign.confirmation.eyebrow')}</p>
-              <h1 className="hero-display max-w-[14ch]">{t('redesign.confirmation.headline')}</h1>
+              <h1 className="hero-display max-w-[16ch]">{t('redesign.confirmation.headline')}</h1>
               <p className="hero-lead">{t('redesign.confirmation.body')}</p>
             </div>
           </Section>
@@ -269,7 +278,7 @@ function ContactPageInner() {
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.62fr)_minmax(20rem,0.38fr)] lg:items-center">
             <div>
               <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
-              <h1 className="hero-display max-w-[15ch]">{t('redesign.hero.headline')}</h1>
+              <h1 className="hero-display max-w-[17ch]">{t('redesign.hero.headline')}</h1>
               <p className="hero-lead max-w-[64ch]">{t('redesign.hero.lead')}</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link href="#intake-form" className="btn-primary">
@@ -360,17 +369,7 @@ function ContactPageInner() {
               <p className="mt-5 mb-0 text-sm leading-relaxed text-muted">{t('redesign.fit.note')}</p>
             </div>
 
-            <figure className="visual-card-strong overflow-hidden">
-              <div className="relative aspect-[4/3]">
-                <Image
-                  src="/photos/sentinel-service-radius-placeholder.png"
-                  alt=""
-                  fill
-                  sizes="(min-width: 1024px) 48vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            </figure>
+            <ServiceAreaMap labels={serviceAreaMapLabels} />
           </div>
         </Section>
 
@@ -701,13 +700,15 @@ function ContactPageInner() {
               <Link href={`/${locale}/services`} className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
                 {tCommon('nav.services')}
               </Link>
-              <Link href={`/${locale}/how-it-works`} className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
-                {tCommon('nav.howItWorks')}
-              </Link>
             </div>
           </div>
         </Section>
       </main>
+      <MobileStickyCTA
+        primaryHref="#intake-form"
+        primaryLabel={t('redesign.hero.primaryCta')}
+        suppressWhenVisible="#intake-form"
+      />
       <Footer />
     </>
   );

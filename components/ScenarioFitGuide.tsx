@@ -4,11 +4,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
 
 const SCENARIOS = [
   {
     key: 'private',
-    image: '/photos/sentinel-apartment-entry-placeholder.png',
+    image: '/photos/sentinel-corridor-exterior-placeholder.png',
     packageKey: 'green',
   },
   {
@@ -23,16 +24,24 @@ const SCENARIOS = [
   },
   {
     key: 'mixed',
-    image: '/photos/sentinel-service-radius-placeholder.png',
+    diagram: 'area',
     packageKey: 'orange',
   },
 ] as const;
 
 export default function ScenarioFitGuide() {
   const t = useTranslations('services');
+  const tCommon = useTranslations('common');
   const locale = useLocale();
   const [selected, setSelected] = useState<(typeof SCENARIOS)[number]['key']>('private');
   const active = SCENARIOS.find((scenario) => scenario.key === selected) ?? SCENARIOS[0];
+  const serviceAreaMapLabels = {
+    title: tCommon('serviceAreaMap.title'),
+    center: tCommon('serviceAreaMap.center'),
+    radius: tCommon('serviceAreaMap.radius'),
+    boundary: tCommon('serviceAreaMap.boundary'),
+    caption: tCommon('serviceAreaMap.caption'),
+  };
 
   return (
     <div className="grid gap-5 lg:grid-cols-[minmax(0,0.8fr)_minmax(18rem,0.38fr)]" id="scenario-fit">
@@ -54,15 +63,23 @@ export default function ScenarioFitGuide() {
                 onClick={() => setSelected(scenario.key)}
                 className="group overflow-hidden rounded-2xl border border-structural-light bg-surface-card text-left shadow-sm transition hover:-translate-y-0.5 hover:border-accent hover:shadow-lg aria-pressed:border-accent aria-pressed:bg-surface-light-alt"
               >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={scenario.image}
-                    alt=""
-                    fill
-                    sizes="(min-width: 1024px) 30vw, 100vw"
-                    className="object-cover transition duration-300 group-hover:scale-[1.03]"
+                {'image' in scenario ? (
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={scenario.image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 30vw, 100vw"
+                      className="object-cover transition duration-300 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                ) : (
+                  <ServiceAreaMap
+                    labels={serviceAreaMapLabels}
+                    compact
+                    className="rounded-none border-0 shadow-none"
                   />
-                </div>
+                )}
                 <div className="p-4">
                   <p className="mb-2 text-[11px] font-black uppercase tracking-wide text-accent">
                     {t(`redesign.scenario.cards.${scenario.key}.label`)}
