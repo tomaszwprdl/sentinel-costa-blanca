@@ -493,7 +493,11 @@
       "hero": {
         "eyebrow": "Model nadzoru",
         "decisionQuestion": "Co ustala model usługi?",
-        "headline": "Najpierw użycie. Potem odpowiedzialność.",
+        "headline": "Najpierw użycie, potem odpowiedzialność",
+        "headlineParts": [
+          "Najpierw użycie,",
+          "potem odpowiedzialność"
+        ],
         "lead": "Moduły operacyjne i orientacyjny zakres doprecyzowują model — nie tworzą osobnej oferty.",
         "secondaryCta": "Zacznij od sytuacji",
         "proofBadges": [

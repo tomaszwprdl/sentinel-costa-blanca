@@ -494,6 +494,10 @@
         "eyebrow": "Oversight model",
         "decisionQuestion": "What decides the service model?",
         "headline": "Usage situation first, then responsibility level",
+        "headlineParts": [
+          "Usage situation first,",
+          "then responsibility level"
+        ],
         "lead": "Operational modules and an indicative range refine the model — they do not create a separate offer.",
         "secondaryCta": "Start with situation",
         "proofBadges": [

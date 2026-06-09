@@ -48,6 +48,7 @@ export default async function ServicesPage({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'services' });
   const proofBadges = t.raw('redesign.hero.proofBadges') as string[];
+  const headlineParts = t.raw('redesign.hero.headlineParts') as string[];
   const journeyItems = [
     { id: 'situation', label: t('redesign.journey.situation') },
     { id: 'responsibility', label: t('redesign.journey.responsibility') },
@@ -108,9 +109,12 @@ export default async function ServicesPage({
             <Region name="main" desktopSpan="half">
               <div className="motion-entrance services-hero-copy max-w-[680px]">
                 <p className="services-hero-question">{t('redesign.hero.decisionQuestion')}</p>
-                <p className="hero-kicker services-hero-kicker">{t('redesign.hero.eyebrow')}</p>
-                <h1 className="hero-display services-hero-display !text-[2rem] md:!text-[3rem] lg:!text-[3.2rem]">
-                  {t('redesign.hero.headline')}
+                <h1 className="hero-display services-hero-display services-hero-headline !text-[2rem] md:!text-[3rem] lg:!text-[3.2rem]">
+                  {headlineParts.map((part) => (
+                    <span key={part} className="services-hero-headline__part">
+                      {part}
+                    </span>
+                  ))}
                 </h1>
                 <p className="hero-lead services-hero-lead">{t('redesign.hero.lead')}</p>
                 <div className="services-hero-actions mt-7 flex flex-col gap-3 sm:mt-7 sm:flex-row">
@@ -121,9 +125,9 @@ export default async function ServicesPage({
                     {t('redesign.hero.secondaryCta')}
                   </Link>
                 </div>
-                <div className="services-hero-proof" aria-label={t('redesign.hero.eyebrow')}>
+                <div className="services-hero-proof" aria-label={t('redesign.hero.decisionQuestion')}>
                   {proofBadges.map((badge) => (
-                    <span key={badge} className="services-hero-proof__badge">
+                    <span key={badge} className="services-hero-proof__badge" tabIndex={0}>
                       {badge}
                     </span>
                   ))}
