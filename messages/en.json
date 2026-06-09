@@ -994,6 +994,13 @@
     "estimator": {
       "heading": "Indicative monthly range",
       "orientationIntro": "Establish usage situation and responsibility depth before calculating an indicative range.",
+      "wizard": {
+        "outputTitle": "Result panel",
+        "pendingRange": "Pending",
+        "previous": "Back",
+        "next": "Next step",
+        "scopeNone": "No additional elements"
+      },
       "stepJurisdiction": "1. Responsibility level",
       "stepMode": "2. Usage intensity",
       "stepParameters": "3. Property parameters",

@@ -99,9 +99,9 @@ export default async function ServicesPage({
   return (
     <>
       <HeaderClient />
-      <main className="min-h-screen">
-        <Section tone="authority" className="section-primitive--first" id="qualification">
-          <GridFrame className="items-center gap-10">
+      <main className="services-page min-h-screen">
+        <Section tone="authority" className="section-primitive--first services-command-hero" id="qualification">
+          <GridFrame className="services-command-hero__grid items-center gap-10">
             <Region name="main" desktopSpan="half">
               <div className="motion-entrance max-w-[680px]">
                 <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
@@ -128,53 +128,73 @@ export default async function ServicesPage({
               </div>
             </Region>
             <Region name="support" tabletSpan="half" desktopSpan="half">
-              <figure className="visual-card-strong motion-panel-reveal overflow-hidden border-authority-on-dark/25 bg-authority-on-dark/5">
-                <div className="relative aspect-[4/3] bg-surface-light">
+              <figure className="services-command-card motion-panel-reveal">
+                <div className="services-command-card__photo relative aspect-[4/3]">
+                  <Image
+                    src="/photos/sentinel-apartment-entry-placeholder.png"
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 42vw, 100vw"
+                    className="object-cover"
+                    priority
+                  />
+                  <span className="services-command-card__shade" aria-hidden="true" />
+                </div>
+                <div className="services-command-card__panel" aria-hidden="true">
+                  <div className="services-command-card__header">
+                    <span />
+                    <span />
+                    <span />
+                  </div>
                   <Image
                     src="/visuals/sentinel-service-scope-diagram.svg"
                     alt=""
                     fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    sizes="(min-width: 1024px) 26vw, 82vw"
                     className="object-cover"
-                    priority
                     unoptimized
                   />
+                  <div className="services-command-card__trace">
+                    <span />
+                    <span />
+                    <span />
+                  </div>
                 </div>
               </figure>
             </Region>
           </GridFrame>
         </Section>
 
-        <JourneyNav items={journeyItems} ariaLabel={t('redesign.hero.headline')} />
+        <JourneyNav items={journeyItems} ariaLabel={t('redesign.hero.headline')} className="services-journey-nav" />
 
-        <Section tone="light" className="section-primitive--compact services-bridge-entry">
+        <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--bridge services-bridge-entry">
           <UsageResponsibilityBridge />
         </Section>
 
-        <Section tone="light" className="section-primitive--compact">
+        <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--responsibility">
           <PackageResponsibilityLadder />
         </Section>
 
-        <Section tone="alt" className="section-primitive--compact">
+        <Section tone="alt" className="section-primitive--compact services-interface-section services-interface-section--event">
           <WhatIfEventSimulator />
         </Section>
 
-        <Section tone="light" className="section-primitive--compact">
+        <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--scope">
           <PackageDetailPanels />
         </Section>
 
-        <Section tone="alt" className="section-primitive--compact">
+        <Section tone="alt" className="section-primitive--compact services-interface-section services-interface-section--boundary">
           <ServiceBoundaryGrid />
         </Section>
 
-        <Section tone="light" className="section-primitive--compact" id="operational-modules">
+        <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--modules" id="operational-modules">
           <div className="services-modules-band">
             <div className="mb-6 max-w-[760px]">
               <p className="section-label">{t('redesign.modules.eyebrow')}</p>
               <h2 className="h2-system mt-3">{t('redesign.modules.title')}</h2>
               <p className="mt-3 text-body">{t('redesign.modules.intro')}</p>
             </div>
-            <div className="grid gap-4 lg:grid-cols-3 lg:gap-5">
+            <div className="services-module-grid">
               {operationalModules.map((module) => (
                 <OperationalModuleTile key={module.title} {...module} />
               ))}
@@ -182,7 +202,7 @@ export default async function ServicesPage({
           </div>
         </Section>
 
-        <Section tone="alt" className="section-primitive--compact" id="execution-only">
+        <Section tone="alt" className="section-primitive--compact services-interface-section services-interface-section--execution" id="execution-only">
           <div className="services-execution-strip">
             <div className="max-w-[760px]">
               <p className="section-label">{t('executionOnly.microLabel')}</p>
@@ -216,7 +236,7 @@ export default async function ServicesPage({
           </div>
         </Section>
 
-        <Section tone="light" className="section-primitive--compact">
+        <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--estimator">
           <div className="services-estimator-band">
             <div className="mb-6 max-w-[760px]">
               <p className="section-label">{t('redesign.estimatorBand.eyebrow')}</p>
@@ -295,7 +315,7 @@ export default async function ServicesPage({
         primaryLabel={t('cta.primaryButton')}
         secondaryHref="#situation"
         secondaryLabel={t('redesign.hero.secondaryCta')}
-        suppressWhenVisible="#operational-modules, #execution-only, #estimator"
+        suppressWhenVisible="#situation, #responsibility, #event-simulator, #package-details, #scope, #operational-modules, #execution-only, #estimator"
       />
       <Footer />
     </>

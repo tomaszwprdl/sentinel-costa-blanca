@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, type ReactNode } from 'react';
+import { useState, useCallback } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import {
@@ -19,6 +19,9 @@ import Section from '@/components/layout/Section';
 
 const PACKAGE_KEYS: PackageKey[] = ['structured_presence', 'active_oversight', 'extended_jurisdiction'];
 const BEDROOMS_KEYS: BedroomsKey[] = ['B1', 'B2', 'B3', 'B4P'];
+const ESTIMATOR_STEP_KEYS = ['jurisdiction', 'mode', 'parameters', 'scope'] as const;
+
+type EstimatorStepKey = (typeof ESTIMATOR_STEP_KEYS)[number];
 
 function formatRange(min: number, max: number): string {
   return `€${min}–€${max}`;
@@ -32,28 +35,10 @@ type EstimatorProps = {
   embedded?: boolean;
 };
 
-function EstimatorStep({
-  title,
-  children,
-  defaultOpen = true,
-}: {
-  title: string;
-  children: ReactNode;
-  defaultOpen?: boolean;
-}) {
-  return (
-    <details className="estimator-step group" open={defaultOpen}>
-      <summary className="estimator-step__summary">
-        <span>{title}</span>
-      </summary>
-      <div className="estimator-step__body">{children}</div>
-    </details>
-  );
-}
-
 export default function Estimator({ embedded = false }: EstimatorProps) {
   const locale = useLocale();
   const t = useTranslations('services.estimator');
+  const [activeStep, setActiveStep] = useState<EstimatorStepKey>('jurisdiction');
   const [packageKey, setPackageKey] = useState<PackageKey>('structured_presence');
   const [modeKey, setModeKey] = useState<ModeKey>('private_use');
   const [sqm, setSqm] = useState<number>(80);
@@ -68,6 +53,7 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
   const showCompatibilityNote = packageKey === 'structured_presence' && modeKey === 'active_guest';
   const showSqmMinValidation = sqm < SQM_INPUT_MIN && Number.isFinite(sqm);
   const showSqmMaxValidation = sqm > SQM_INPUT_MAX;
+  const activeStepIndex = ESTIMATOR_STEP_KEYS.indexOf(activeStep);
 
   const collapseResult = useCallback(() => {
     if (hasCalculated) {
@@ -119,269 +105,304 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
     : null;
 
   const showParamsChangedCue = hasCalculatedOnce && !result;
-
   const gateMessage = showParamsChangedCue ? t('paramsChangedCue') : hasCalculated && result ? t('gateAfter') : t('gateBefore');
 
+  const stepTitles: Record<EstimatorStepKey, string> = {
+    jurisdiction: t('stepJurisdiction'),
+    mode: t('stepMode'),
+    parameters: t('stepParameters'),
+    scope: t('stepScope'),
+  };
+
   const liveStructureSummary = (
-    <dl className="grid gap-1.5 text-sm">
-      <div className="flex gap-2">
-        <dt className="text-muted shrink-0">{t('resultJurisdiction')}:</dt>
-        <dd className="text-body">{t(`packages.${packageKey}`)}</dd>
+    <dl className="estimator-live-summary">
+      <div>
+        <dt>{t('resultJurisdiction')}</dt>
+        <dd>{t(`packages.${packageKey}`)}</dd>
       </div>
-      <div className="flex gap-2">
-        <dt className="text-muted shrink-0">{t('resultMode')}:</dt>
-        <dd className="text-body">{modeKey === 'private_use' ? t('modePrivateUse') : t('modeActiveGuest')}</dd>
+      <div>
+        <dt>{t('resultMode')}</dt>
+        <dd>{modeKey === 'private_use' ? t('modePrivateUse') : t('modeActiveGuest')}</dd>
       </div>
-      <div className="flex gap-2">
-        <dt className="text-muted shrink-0">{t('resultArea')}:</dt>
-        <dd className="text-body">{clampedSqm} m²</dd>
+      <div>
+        <dt>{t('resultArea')}</dt>
+        <dd>{clampedSqm} m²</dd>
       </div>
-      <div className="flex gap-2">
-        <dt className="text-muted shrink-0">{t('resultBedrooms')}:</dt>
-        <dd className="text-body">{bedroomsKey === 'B4P' ? '4+' : bedroomsKey.slice(1)}</dd>
+      <div>
+        <dt>{t('resultBedrooms')}</dt>
+        <dd>{bedroomsKey === 'B4P' ? '4+' : bedroomsKey.slice(1)}</dd>
       </div>
-      {scopeElements.length > 0 && (
-        <div className="flex gap-2">
-          <dt className="text-muted shrink-0">{t('resultScopeElements')}:</dt>
-          <dd className="text-body">{sortScopeElements(scopeElements).map((k) => t(`scopeElements.${k}`)).join(', ')}</dd>
-        </div>
-      )}
+      <div>
+        <dt>{t('resultScopeElements')}</dt>
+        <dd>
+          {scopeElements.length > 0
+            ? sortScopeElements(scopeElements).map((k) => t(`scopeElements.${k}`)).join(', ')
+            : t('wizard.scopeNone')}
+        </dd>
+      </div>
     </dl>
   );
 
-  const reasonPanel = (
-    <div className="visual-card h-fit space-y-4 p-5">
-      <p className="text-sm text-body">{t('reasonWhatModeling')}</p>
-      <p className="text-xs text-muted">{t('reasonGuestModeChange')}</p>
-      <div>
-        <p className="text-xs font-medium text-muted uppercase tracking-wide mb-2">{t('reasonSelectedStructure')}</p>
-        {liveStructureSummary}
-      </div>
-      <p className="text-xs text-muted border-t border-structural-muted/50 pt-3">{t('reasonPriceAfterCalculate')}</p>
-    </div>
-  );
+  const goToStep = (step: EstimatorStepKey) => setActiveStep(step);
+  const goToNext = () => {
+    const next = ESTIMATOR_STEP_KEYS[Math.min(activeStepIndex + 1, ESTIMATOR_STEP_KEYS.length - 1)];
+    setActiveStep(next);
+  };
+  const goToPrevious = () => {
+    const previous = ESTIMATOR_STEP_KEYS[Math.max(activeStepIndex - 1, 0)];
+    setActiveStep(previous);
+  };
 
-  const resultPanel = result && hasCalculated && (
-    <div className="motion-result-panel mt-5 space-y-3 rounded-2xl border-2 border-accent bg-surface-light-alt p-5 shadow-[0_18px_40px_rgba(184,102,74,0.16)]">
-      <h3 className="text-body text-[11px] font-medium uppercase tracking-wide text-muted">{t('resultTitle')}</h3>
-      <p className="text-body font-semibold">
-        {t('rangeTitle')}: {formatRange(result.min, result.max)} {t('rangeSuffix')}
-      </p>
-      <p className="text-[11px] text-muted font-medium uppercase tracking-wide">{t('rangeWordingHeading')}</p>
-      <ul className="text-xs text-muted list-disc list-inside space-y-0.5">
-        <li>{t('driverBullet1')}</li>
-        <li>{t('driverBullet2')}</li>
-        <li>{t('driverBullet3')}</li>
-        <li>{t('driverBullet4')}</li>
-        {modeKey === 'active_guest' && <li>{t('driverBulletGuest')}</li>}
-      </ul>
-      <p className="text-xs text-muted">{t('disclaimer')}</p>
-      {contactPayload && (
-        <div className="flex justify-end pt-2">
-          <Link href={`/${locale}/contact?${contactPayload.toString()}`} className="btn-secondary text-sm">
-            {t('ctaProceed')}
-          </Link>
+  const activeControl = (() => {
+    if (activeStep === 'jurisdiction') {
+      return (
+        <div className="estimator-control-scene">
+          <div className="estimator-control-scene__header">
+            <p>{t('groupJurisdiction')}</p>
+            <h3>{stepTitles.jurisdiction}</h3>
+            <span>{t('groupJurisdictionAnchor')}</span>
+          </div>
+          <div className="estimator-option-grid estimator-option-grid--packages" role="radiogroup" aria-label={t('packageLabel')}>
+            {PACKAGE_KEYS.map((k, index) => (
+              <button
+                key={k}
+                type="button"
+                aria-pressed={packageKey === k}
+                data-selected={packageKey === k}
+                onClick={() => handlePackageChange(k)}
+                className="estimator-choice-card"
+              >
+                <span className="estimator-choice-card__marker">{String(index + 1).padStart(2, '0')}</span>
+                <span className="estimator-choice-card__body">
+                  <strong>{t(`packages.${k}`)}</strong>
+                  <span>{t(`packageDescriptor.${k}`)}</span>
+                </span>
+              </button>
+            ))}
+          </div>
+          {showCompatibilityNote && <p className="estimator-compatibility-note" role="note">{t('compatibilityNote')}</p>}
+        </div>
+      );
+    }
+
+    if (activeStep === 'mode') {
+      return (
+        <div className="estimator-control-scene">
+          <div className="estimator-control-scene__header">
+            <p>{t('groupMode')}</p>
+            <h3>{stepTitles.mode}</h3>
+            <span>{t('groupModeAnchor')}</span>
+          </div>
+          <div className="estimator-option-grid estimator-option-grid--mode" role="radiogroup" aria-label={t('modeLabel')}>
+            <button
+              type="button"
+              aria-pressed={modeKey === 'private_use'}
+              data-selected={modeKey === 'private_use'}
+              onClick={() => handleModeChange('private_use')}
+              className="estimator-mode-card"
+            >
+              <strong>{t('modePrivateUse')}</strong>
+              <span>{t('modeWhatPrivate1')}</span>
+              <span>{t('modeWhatPrivate2')}</span>
+            </button>
+            <button
+              type="button"
+              aria-pressed={modeKey === 'active_guest'}
+              data-selected={modeKey === 'active_guest'}
+              onClick={() => handleModeChange('active_guest')}
+              className="estimator-mode-card"
+            >
+              <strong>{t('modeActiveGuest')}</strong>
+              <span>{t('modeWhatGuest1')}</span>
+              <span>{t('modeWhatGuest2')}</span>
+              <span>{t('modeWhatGuest3')}</span>
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    if (activeStep === 'parameters') {
+      return (
+        <div className="estimator-control-scene">
+          <div className="estimator-control-scene__header">
+            <p>{t('groupParameters')}</p>
+            <h3>{stepTitles.parameters}</h3>
+            <span>{t('groupParametersAnchor')}</span>
+          </div>
+          <div className="estimator-parameter-grid">
+            <div className="estimator-quantity-card">
+              <label htmlFor="estimator-sqm">{t('sizeLabel')}</label>
+              <div className="estimator-quantity-control">
+                <button type="button" onClick={() => handleSqmChange(clampedSqm - 10)} aria-label="-10 m²">-</button>
+                <input
+                  id="estimator-sqm"
+                  type="number"
+                  min={SQM_INPUT_MIN}
+                  max={SQM_INPUT_MAX}
+                  value={sqm}
+                  onChange={(e) => {
+                    const raw = e.target.value;
+                    if (raw === '') handleSqmChange(SQM_INPUT_MIN);
+                    else handleSqmChange(Number(raw));
+                  }}
+                  className="estimator-quantity-input"
+                  required
+                  aria-required="true"
+                />
+                <button type="button" onClick={() => handleSqmChange(clampedSqm + 10)} aria-label="+10 m²">+</button>
+              </div>
+              <p>{t('sizeHelper')}</p>
+              {showSqmMinValidation && <p role="alert">{t('sqmValidationMin')}</p>}
+              {showSqmMaxValidation && <p role="alert">{t('sqmValidationMax')}</p>}
+            </div>
+
+            <div className="estimator-bedroom-card">
+              <p>{t('bedroomsLabel')}</p>
+              <div className="estimator-bedroom-options" role="radiogroup" aria-label={t('bedroomsLabel')}>
+                {BEDROOMS_KEYS.map((k) => (
+                  <button
+                    key={k}
+                    type="button"
+                    aria-pressed={bedroomsKey === k}
+                    data-selected={bedroomsKey === k}
+                    onClick={() => handleBedroomsChange(k)}
+                  >
+                    {k === 'B4P' ? t('bedrooms.4p') : t(`bedrooms.${k.slice(1)}`)}
+                  </button>
+                ))}
+              </div>
+              <span>{t('bedroomsHelper')}</span>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div className="estimator-control-scene">
+        <div className="estimator-control-scene__header">
+          <p>{t('groupScopeElements')}</p>
+          <h3>{stepTitles.scope}</h3>
+          <span>{t('groupScopeElementsAnchor')}</span>
+        </div>
+        <div className="estimator-scope-grid">
+          {SCOPE_ELEMENT_KEYS.map((k) => (
+            <button
+              key={k}
+              type="button"
+              role="switch"
+              aria-checked={scopeElements.includes(k)}
+              data-selected={scopeElements.includes(k)}
+              onClick={() => handleScopeToggle(k)}
+              className="estimator-scope-pill"
+            >
+              <span aria-hidden="true" />
+              <strong>{t(`scopeElements.${k}`)}</strong>
+              <em>{t('scopeElementBilledByUse')}</em>
+            </button>
+          ))}
+        </div>
+      </div>
+    );
+  })();
+
+  const outputPanel = (
+    <div className="estimator-live-panel">
+      <div className="estimator-live-panel__top">
+        <p>{t('wizard.outputTitle')}</p>
+        <strong>{result && hasCalculated ? formatRange(result.min, result.max) : t('wizard.pendingRange')}</strong>
+      </div>
+      <p className={showParamsChangedCue ? 'params-changed-cue' : ''} role="status">{gateMessage}</p>
+      {liveStructureSummary}
+      {result && hasCalculated ? (
+        <div className="estimator-result-output">
+          <p>{t('rangeWordingHeading')}</p>
+          <ul>
+            <li>{t('driverBullet1')}</li>
+            <li>{t('driverBullet2')}</li>
+            <li>{t('driverBullet3')}</li>
+            <li>{t('driverBullet4')}</li>
+            {modeKey === 'active_guest' && <li>{t('driverBulletGuest')}</li>}
+          </ul>
+          <span>{t('disclaimer')}</span>
+          {contactPayload && (
+            <Link href={`/${locale}/contact?${contactPayload.toString()}`} className="btn-secondary">
+              {t('ctaProceed')}
+            </Link>
+          )}
+        </div>
+      ) : (
+        <div className="estimator-live-panel__pending">
+          <span>{t('reasonWhatModeling')}</span>
+          <span>{t('reasonPriceAfterCalculate')}</span>
         </div>
       )}
+      <button
+        type="button"
+        onClick={handleCalculate}
+        className="btn-primary estimator-generate-button"
+        aria-label={hasCalculated ? t('recalculate') : t('calculate')}
+      >
+        {hasCalculated ? t('recalculate') : t('calculate')}
+      </button>
     </div>
   );
 
   const shell = (
-    <div className={embedded ? 'estimator-embedded-shell' : 'visual-card-strong mx-auto max-w-[65ch] p-5 md:p-8 lg:max-w-none'}>
-        {!embedded && (
-          <div className="mb-8 max-w-3xl">
-            <p className="section-label">{t('groupJurisdiction')}</p>
-            <h2 className="h2-system mt-2">{t('heading')}</h2>
-          </div>
-        )}
+    <div className={embedded ? 'estimator-embedded-shell estimator-configurator' : 'visual-card-strong mx-auto max-w-[65ch] p-5 md:p-8 lg:max-w-none'}>
+      {!embedded && (
+        <div className="mb-8 max-w-3xl">
+          <p className="section-label">{t('groupJurisdiction')}</p>
+          <h2 className="h2-system mt-2">{t('heading')}</h2>
+        </div>
+      )}
 
-        {embedded && (
-          <p className="mb-6 max-w-3xl text-sm text-body">{t('orientationIntro')}</p>
-        )}
+      {embedded && (
+        <p className="estimator-configurator__intro mb-6 max-w-3xl text-sm text-body">{t('orientationIntro')}</p>
+      )}
 
-        <div className="lg:grid lg:grid-cols-[1fr_320px] lg:gap-10 lg:items-start">
-          <div className="space-y-4 md:space-y-6">
-            <EstimatorStep title={embedded ? t('stepJurisdiction') : t('groupJurisdiction')}>
-            <fieldset className="space-y-0 border-0 p-0 m-0">
-              {!embedded && <legend className="text-body font-bold mb-2 block">{t('groupJurisdiction')}</legend>}
-              <p className="text-xs text-muted mb-4">{t('groupJurisdictionAnchor')}</p>
-              <div className="space-y-2" role="radiogroup" aria-label={t('packageLabel')}>
-                {PACKAGE_KEYS.map((k) => (
-                  <label
-                    key={k}
-                    data-selected={packageKey === k}
-                    className={`selected-option flex cursor-pointer rounded-2xl border p-4 transition-[background,border-color,box-shadow,transform] hover:-translate-y-0.5 ${
-                      packageKey === k ? 'border-accent bg-surface-light-alt shadow-[0_12px_28px_rgba(184,102,74,0.12)]' : 'border-structural-light bg-surface-card hover:border-accent'
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      name="estimator-package"
-                      value={k}
-                      checked={packageKey === k}
-                      onChange={() => handlePackageChange(k)}
-                      className="sr-only"
-                    />
-                    <span className="mr-4 mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-structural-muted bg-surface-card">
-                      {packageKey === k && <span className="h-2.5 w-2.5 rounded-full bg-accent" aria-hidden />}
-                    </span>
-                    <div className="min-w-0">
-                      <span className="text-body font-medium block">{t(`packages.${k}`)}</span>
-                      <span className="text-sm text-muted block mt-0.5">{t(`packageDescriptor.${k}`)}</span>
-                    </div>
-                  </label>
-                ))}
-              </div>
-              {showCompatibilityNote && (
-                <div className="mt-3 p-3 border border-structural-muted/50 bg-surface-light-alt r" role="note">
-                  <p className="text-xs text-muted">{t('compatibilityNote')}</p>
-                </div>
-              )}
-            </fieldset>
-            </EstimatorStep>
+      <div className="estimator-configurator__grid">
+        <nav className="estimator-stepper" aria-label={t('heading')}>
+          {ESTIMATOR_STEP_KEYS.map((step, index) => (
+            <button
+              key={step}
+              type="button"
+              aria-current={step === activeStep ? 'step' : undefined}
+              data-active={step === activeStep}
+              onClick={() => goToStep(step)}
+              className="estimator-stepper__item"
+            >
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <strong>{stepTitles[step]}</strong>
+            </button>
+          ))}
+        </nav>
 
-            <EstimatorStep title={embedded ? t('stepMode') : t('groupMode')}>
-            <fieldset className="space-y-0 border-0 p-0 m-0">
-              {!embedded && <legend className="text-body text-sm font-medium text-muted mb-2 block">{t('groupMode')}</legend>}
-              <p className="text-xs text-muted mb-3">{t('groupModeAnchor')}</p>
-              <div className="inline-flex overflow-hidden rounded-full border border-structural-light bg-surface-card p-1" role="radiogroup" aria-label={t('modeLabel')}>
-                <label
-                  className={`cursor-pointer rounded-full px-5 py-3 text-sm font-bold ${
-                    modeKey === 'private_use' ? 'bg-authority text-authority-on-dark' : 'text-body hover:bg-surface-light-alt'
-                  }`}
-                >
-                  <input type="radio" name="estimator-mode" value="private_use" checked={modeKey === 'private_use'} onChange={() => handleModeChange('private_use')} className="sr-only" />
-                  {t('modePrivateUse')}
-                </label>
-                <label
-                  className={`cursor-pointer rounded-full px-5 py-3 text-sm font-bold ${
-                    modeKey === 'active_guest' ? 'bg-authority text-authority-on-dark' : 'text-body hover:bg-surface-light-alt'
-                  }`}
-                >
-                  <input type="radio" name="estimator-mode" value="active_guest" checked={modeKey === 'active_guest'} onChange={() => handleModeChange('active_guest')} className="sr-only" />
-                  {t('modeActiveGuest')}
-                </label>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
-                <div data-selected={modeKey === 'private_use'} className={`selected-option rounded-2xl border p-4 text-sm ${modeKey === 'private_use' ? 'border-accent bg-surface-light-alt' : 'border-structural-muted/50 opacity-75'}`}>
-                  <p className="font-medium text-body mb-1.5">{t('modePrivateUse')}</p>
-                  <ul className="text-xs text-muted space-y-0.5 list-disc list-inside">
-                    <li>{t('modeWhatPrivate1')}</li>
-                    <li>{t('modeWhatPrivate2')}</li>
-                  </ul>
-                </div>
-                <div data-selected={modeKey === 'active_guest'} className={`selected-option rounded-2xl border p-4 text-sm ${modeKey === 'active_guest' ? 'border-accent bg-surface-light-alt' : 'border-structural-muted/50 opacity-75'}`}>
-                  <p className="font-medium text-body mb-1.5">{t('modeActiveGuest')}</p>
-                  <ul className="text-xs text-muted space-y-0.5 list-disc list-inside">
-                    <li>{t('modeWhatGuest1')}</li>
-                    <li>{t('modeWhatGuest2')}</li>
-                    <li>{t('modeWhatGuest3')}</li>
-                  </ul>
-                </div>
-              </div>
-            </fieldset>
-            </EstimatorStep>
+        <section className="estimator-configurator__control" aria-live="polite">
+          {activeControl}
 
-            <EstimatorStep title={embedded ? t('stepParameters') : t('groupParameters')}>
-            <fieldset className="space-y-0 border-0 p-0 m-0">
-              {!embedded && <legend className="text-body text-sm font-medium text-muted mb-2 block">{t('groupParameters')}</legend>}
-              <p className="text-xs text-muted mb-3">{t('groupParametersAnchor')}</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label htmlFor="estimator-sqm" className="block text-sm text-body mb-2">{t('sizeLabel')}</label>
-                  <input
-                    id="estimator-sqm"
-                    type="number"
-                    min={SQM_INPUT_MIN}
-                    max={SQM_INPUT_MAX}
-                    value={sqm}
-                    onChange={(e) => {
-                      const raw = e.target.value;
-                      if (raw === '') handleSqmChange(SQM_INPUT_MIN);
-                      else handleSqmChange(Number(raw));
-                    }}
-                    className="form-control text-sm [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-                    required
-                    aria-required="true"
-                  />
-                  <p className="text-xs text-muted mt-1">{t('sizeHelper')}</p>
-                  {showSqmMinValidation && <p className="text-xs text-muted mt-1" role="alert">{t('sqmValidationMin')}</p>}
-                  {showSqmMaxValidation && <p className="text-xs text-muted mt-1" role="alert">{t('sqmValidationMax')}</p>}
-                </div>
-                <div>
-                  <label htmlFor="estimator-bedrooms" className="block text-sm text-body mb-2">{t('bedroomsLabel')}</label>
-                  <select
-                    id="estimator-bedrooms"
-                    value={bedroomsKey}
-                    onChange={(e) => handleBedroomsChange(e.target.value as BedroomsKey)}
-                    className="form-control text-sm"
-                  >
-                    {BEDROOMS_KEYS.map((k) => (
-                      <option key={k} value={k}>{k === 'B4P' ? t('bedrooms.4p') : t(`bedrooms.${k.slice(1)}`)}</option>
-                    ))}
-                  </select>
-                  <p className="text-xs text-muted mt-1">{t('bedroomsHelper')}</p>
-                </div>
-              </div>
-            </fieldset>
-            </EstimatorStep>
-
-            <EstimatorStep title={embedded ? t('stepScope') : t('groupScopeElements')} defaultOpen={false}>
-            <fieldset className="space-y-0 border-0 p-0 m-0">
-              {!embedded && <legend className="text-body text-sm text-muted mb-2 block">{t('groupScopeElements')}</legend>}
-              <p className="text-xs text-muted mb-3">{t('groupScopeElementsAnchor')}</p>
-              <div className="space-y-4">
-                {SCOPE_ELEMENT_KEYS.map((k) => (
-                  <div key={k} data-selected={scopeElements.includes(k)} className="selected-option flex items-center justify-between gap-4 rounded-2xl border border-structural-light bg-surface-card p-4">
-                    <div>
-                      <p className="text-sm text-body font-medium">{t(`scopeElements.${k}`)}</p>
-                      <p className="text-xs text-muted">{t('scopeElementBilledByUse')}</p>
-                    </div>
-                    <button
-                      type="button"
-                      role="switch"
-                      aria-checked={scopeElements.includes(k)}
-                      data-selected={scopeElements.includes(k)}
-                      aria-label={t(`scopeElements.${k}`)}
-                      onClick={() => handleScopeToggle(k)}
-                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-colors ${
-                        scopeElements.includes(k)
-                          ? 'border-accent bg-accent'
-                          : 'border-structural-muted bg-surface-card'
-                      }`}
-                    >
-                      <span className={`block h-3 w-3 rounded-full bg-white transition-opacity ${scopeElements.includes(k) ? 'opacity-100' : 'opacity-0'}`} aria-hidden />
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </fieldset>
-            </EstimatorStep>
-
-            <div className="pt-2">
-              <p className={`mb-3 text-sm ${showParamsChangedCue ? 'params-changed-cue' : 'text-muted'}`} role="status">{gateMessage}</p>
-              <button
-                type="button"
-                onClick={handleCalculate}
-                className="btn-primary"
-                aria-label={hasCalculated ? t('recalculate') : t('calculate')}
-              >
+          <div className="estimator-configurator__footer">
+            <button type="button" onClick={goToPrevious} className="btn-secondary" disabled={activeStepIndex === 0}>
+              {t('wizard.previous')}
+            </button>
+            {activeStepIndex < ESTIMATOR_STEP_KEYS.length - 1 ? (
+              <button type="button" onClick={goToNext} className="btn-primary">
+                {t('wizard.next')}
+              </button>
+            ) : (
+              <button type="button" onClick={handleCalculate} className="btn-primary">
                 {hasCalculated ? t('recalculate') : t('calculate')}
               </button>
-            </div>
-
-            <div className="lg:hidden space-y-4">
-              {reasonPanel}
-              {resultPanel}
-            </div>
+            )}
           </div>
+        </section>
 
-          <div className="hidden lg:block lg:sticky lg:top-24">
-            {reasonPanel}
-            {resultPanel}
-          </div>
-        </div>
+        <aside className="estimator-configurator__output">
+          {outputPanel}
+        </aside>
       </div>
+    </div>
   );
 
   if (embedded) {

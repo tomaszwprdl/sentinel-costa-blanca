@@ -12,7 +12,7 @@ interface OperationalModuleTileProps {
 
 function ModuleVisual({ visual }: { visual: NonNullable<OperationalModuleTileProps['visual']> }) {
   return (
-    <div className="module-tile-visual aspect-[4/3] bg-surface-light-alt p-4" aria-hidden="true">
+    <div className="module-tile-visual module-tile-visual--diagram aspect-[4/3] bg-surface-light-alt p-4" aria-hidden="true">
       <svg viewBox="0 0 360 270" className="h-full w-full">
         <rect width="360" height="270" rx="18" fill="var(--surface-card)" stroke="var(--structural-light)" />
         <ellipse cx="180" cy="146" rx="116" ry="72" fill="var(--support)" opacity="0.07" />
@@ -61,11 +61,11 @@ export default function OperationalModuleTile({
   const showBody = body.trim().length > 0 && !items.includes(body);
 
   return (
-    <article className="operational-module-tile visual-card overflow-hidden">
+    <article className={`operational-module-tile visual-card overflow-hidden ${image ? 'operational-module-tile--photo' : 'operational-module-tile--diagram'}`}>
       {visual ? (
         <ModuleVisual visual={visual} />
       ) : image ? (
-        <div className="module-tile-visual relative aspect-[4/3]">
+        <div className="module-tile-visual module-tile-visual--photo relative aspect-[4/3]">
           <Image
             src={image}
             alt=""
@@ -73,6 +73,7 @@ export default function OperationalModuleTile({
             sizes="(min-width: 1024px) 33vw, 100vw"
             className="object-cover"
           />
+          <span className="module-tile-visual__frame" aria-hidden="true" />
         </div>
       ) : null}
       <div className="operational-module-tile__content p-4 md:p-5">
@@ -81,9 +82,12 @@ export default function OperationalModuleTile({
         </p>
         <h3 className="mb-3 text-lg font-black leading-snug text-heading md:text-xl">{title}</h3>
         {showBody && <p className="mb-0 text-sm leading-relaxed text-body">{body}</p>}
-        <ul className={`ml-4 list-disc space-y-2 text-sm leading-relaxed text-body ${showBody ? 'mt-3' : 'mt-1'}`}>
+        <ul className={`operational-module-tile__list space-y-2 text-sm leading-relaxed text-body ${showBody ? 'mt-3' : 'mt-1'}`}>
           {items.map((item) => (
-            <li key={item}>{item}</li>
+            <li key={item}>
+              <span aria-hidden="true" />
+              <span>{item}</span>
+            </li>
           ))}
         </ul>
         {note && note !== body && (

@@ -1,16 +1,23 @@
 'use client';
 
 import Link from 'next/link';
+import { useState, type CSSProperties } from 'react';
 import { useTranslations } from 'next-intl';
 
-const PACKAGE_KEYS = ['green', 'orange', 'red'] as const;
-const LEVEL_KEYS = ['basic', 'extended', 'full'] as const;
-const AXIS_KEYS = ['axis1', 'axis2', 'axis3'] as const;
-const SLA_VALUES = ['48h', '24h', 'sameDay'] as const;
+const PACKAGES = [
+  { packageKey: 'green', levelKey: 'basic', marker: '01', axisKey: 'axis1', slaKey: '48h', depth: '34%' },
+  { packageKey: 'orange', levelKey: 'extended', marker: '02', axisKey: 'axis2', slaKey: '24h', depth: '67%' },
+  { packageKey: 'red', levelKey: 'full', marker: '03', axisKey: 'axis3', slaKey: 'sameDay', depth: '100%' },
+] as const;
+
+type PackageLevel = (typeof PACKAGES)[number]['levelKey'];
 
 export default function PackageResponsibilityLadder() {
   const t = useTranslations('services');
   const tHomeLevels = useTranslations('home.levels');
+  const [activeLevel, setActiveLevel] = useState<PackageLevel>('extended');
+  const active = PACKAGES.find((pkg) => pkg.levelKey === activeLevel) ?? PACKAGES[1];
+  const activeSla = active.slaKey === 'sameDay' ? t('diagrams.sla.sameDay') : active.slaKey;
 
   return (
     <div className="services-ladder-band" id="responsibility">
@@ -19,64 +26,85 @@ export default function PackageResponsibilityLadder() {
         <p className="mt-2 text-sm font-semibold text-support">{t('redesign.ladder.bridgeLine')}</p>
         <h2 className="h2-system mt-3">{t('redesign.ladder.title')}</h2>
         <p className="mt-3 text-body">{t('redesign.ladder.intro')}</p>
-        <Link href="#scope" className="btn-secondary mt-5 inline-flex">
-          {t('redesign.ladder.detailCta')}
-        </Link>
       </div>
 
-      <div className="services-ladder-sequence">
-        {PACKAGE_KEYS.map((packageKey, index) => {
-          const levelKey = LEVEL_KEYS[index];
-          return (
-            <article
-              key={packageKey}
-              className={[
-                'services-ladder-step',
-                ['module-card-tone-1', 'module-card-tone-2', 'module-card-tone-3'][index],
-              ].join(' ')}
+      <div className="services-authority-scale services-responsibility-console">
+        <div className="services-responsibility-console__scale" role="tablist" aria-label={t('redesign.ladder.title')}>
+          {PACKAGES.map((pkg) => (
+            <button
+              key={pkg.levelKey}
+              type="button"
+              role="tab"
+              aria-selected={pkg.levelKey === activeLevel}
+              data-active={pkg.levelKey === activeLevel}
+              onClick={() => setActiveLevel(pkg.levelKey)}
+              className={`services-responsibility-node services-responsibility-node--${pkg.levelKey}`}
             >
-              <div className="mb-5 flex items-center justify-between gap-4">
-                <span className="process-node inline-flex h-11 w-11 items-center justify-center rounded-full bg-authority-bg text-sm font-black text-authority-on-dark">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <span className="rounded-full bg-surface-light-alt px-3 py-1 text-xs font-bold text-support">
-                  {SLA_VALUES[index] === 'sameDay' ? t('diagrams.sla.sameDay') : SLA_VALUES[index]}
-                </span>
-              </div>
+              <span className="services-responsibility-node__marker">{pkg.marker}</span>
+              <span className="services-responsibility-node__body">
+                <span>{tHomeLevels(pkg.axisKey)}</span>
+                <strong>{t(`${pkg.packageKey}.title`)}</strong>
+              </span>
+              <span className="services-responsibility-node__sla">
+                {pkg.slaKey === 'sameDay' ? t('diagrams.sla.sameDay') : pkg.slaKey}
+              </span>
+            </button>
+          ))}
+        </div>
 
-              <p className="mb-2 text-xs font-bold uppercase tracking-wide text-muted">
-                {tHomeLevels(AXIS_KEYS[index])}
-              </p>
-              <h3 className="mb-3 text-2xl font-black text-heading">{t(`${packageKey}.title`)}</h3>
-              <p className="text-sm leading-relaxed text-body">{t(`redesign.ladder.${levelKey}.fit`)}</p>
+        <article
+          key={active.levelKey}
+          className={`services-responsibility-reveal services-responsibility-reveal--${active.levelKey} motion-panel-reveal`}
+          role="tabpanel"
+        >
+          <div className="services-responsibility-reveal__header">
+            <div>
+              <p>{tHomeLevels(active.axisKey)}</p>
+              <h3>{t(`${active.packageKey}.title`)}</h3>
+            </div>
+            <span>{activeSla}</span>
+          </div>
 
-              <div className="mt-6 space-y-3">
-                <div className="rounded-2xl border border-structural-light bg-surface-card p-4">
-                  <p className="mb-1 text-[11px] font-bold uppercase tracking-wide text-muted">
-                    {t('redesign.ladder.responsibilityLabel')}
-                  </p>
-                  <p className="mb-0 text-sm font-semibold text-heading">
-                    {t(`redesign.ladder.${levelKey}.responsibility`)}
-                  </p>
-                </div>
-                <div className="grid grid-cols-1 gap-2 text-sm">
-                  <p className="mb-0 flex justify-between gap-3 border-b border-structural-light pb-2">
-                    <span className="text-muted">{t(`${packageKey}.summary.visitsLabel`)}</span>
-                    <strong className="text-right text-body">{t(`${packageKey}.summary.visitsValue`)}</strong>
-                  </p>
-                  <p className="mb-0 flex justify-between gap-3 border-b border-structural-light pb-2">
-                    <span className="text-muted">{t(`${packageKey}.summary.accessLabel`)}</span>
-                    <strong className="text-right text-body">{t(`${packageKey}.summary.accessValue`)}</strong>
-                  </p>
-                  <p className="mb-0 flex justify-between gap-3">
-                    <span className="text-muted">{t(`${packageKey}.summary.decisionsLabel`)}</span>
-                    <strong className="text-right text-body">{t(`${packageKey}.summary.decisionsValue`)}</strong>
-                  </p>
-                </div>
-              </div>
-            </article>
-          );
-        })}
+          <div
+            className="services-responsibility-meter"
+            style={{ '--responsibility-depth': active.depth } as CSSProperties}
+            aria-hidden="true"
+          >
+            <span />
+          </div>
+
+          <div className="services-responsibility-reveal__body">
+            <p>{t(`redesign.ladder.${active.levelKey}.fit`)}</p>
+            <div>
+              <span>{t('redesign.ladder.responsibilityLabel')}</span>
+              <strong>{t(`redesign.ladder.${active.levelKey}.responsibility`)}</strong>
+            </div>
+          </div>
+
+          <dl className="services-responsibility-metrics">
+            <div>
+              <dt>{t(`${active.packageKey}.summary.visitsLabel`)}</dt>
+              <dd>{t(`${active.packageKey}.summary.visitsValue`)}</dd>
+            </div>
+            <div>
+              <dt>{t(`${active.packageKey}.summary.accessLabel`)}</dt>
+              <dd>{t(`${active.packageKey}.summary.accessValue`)}</dd>
+            </div>
+            <div>
+              <dt>{t(`${active.packageKey}.summary.decisionsLabel`)}</dt>
+              <dd>{t(`${active.packageKey}.summary.decisionsValue`)}</dd>
+            </div>
+          </dl>
+
+          <div className="services-responsibility-reveal__actions">
+            <Link href="#package-details" className="btn-primary">
+              {t('redesign.ladder.detailCta')}
+            </Link>
+            <Link href="#event-simulator" className="btn-secondary btn-secondary-on-dark">
+              {t('redesign.packageDetails.simulatorCta')}
+            </Link>
+          </div>
+        </article>
       </div>
     </div>
   );

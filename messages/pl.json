@@ -994,6 +994,13 @@
     "estimator": {
       "heading": "Orientacyjny zakres miesięczny",
       "orientationIntro": "Ustal sytuację użycia i poziom odpowiedzialności, zanim policzysz orientacyjny zakres.",
+      "wizard": {
+        "outputTitle": "Panel wyniku",
+        "pendingRange": "Do ustalenia",
+        "previous": "Wstecz",
+        "next": "Następny krok",
+        "scopeNone": "Brak dodatkowych elementów"
+      },
       "stepJurisdiction": "1. Poziom odpowiedzialności",
       "stepMode": "2. Intensywność użytkowania",
       "stepParameters": "3. Parametry nieruchomości",

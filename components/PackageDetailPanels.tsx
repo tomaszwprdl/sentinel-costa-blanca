@@ -37,8 +37,8 @@ type PackageKey = (typeof PACKAGES)[number]['key'];
 
 export default function PackageDetailPanels() {
   const t = useTranslations('services');
-  const [selected, setSelected] = useState<PackageKey | null>(null);
-  const active = selected ? PACKAGES.find((pkg) => pkg.key === selected) ?? null : null;
+  const [selected, setSelected] = useState<PackageKey>('orange');
+  const active = PACKAGES.find((pkg) => pkg.key === selected) ?? PACKAGES[1];
 
   return (
     <div className="services-scope-band" id="scope">
@@ -48,7 +48,7 @@ export default function PackageDetailPanels() {
         <p className="mt-3 text-body">{t('redesign.packageDetails.intro')}</p>
       </div>
 
-      <div className="overflow-hidden rounded-2xl border border-structural-light bg-surface-card">
+      <div className="services-package-panel overflow-hidden rounded-2xl border border-structural-light bg-surface-card" id="package-details">
         <div className="grid gap-0 lg:grid-cols-[16rem_minmax(0,1fr)]">
           <div className="border-b border-structural-light bg-surface-light-alt p-4 lg:border-b-0 lg:border-r">
             <div className="grid gap-2">
@@ -69,12 +69,7 @@ export default function PackageDetailPanels() {
           </div>
 
           <article>
-            {!active ? (
-              <div className="flex min-h-[18rem] flex-col justify-center p-6 md:p-10">
-                <p className="mb-0 max-w-[42ch] text-body">{t('redesign.packageDetails.selectPrompt')}</p>
-              </div>
-            ) : (
-              <>
+            <>
                 <div className="grid gap-0 md:grid-cols-[minmax(0,0.55fr)_minmax(0,0.45fr)]">
                   <div key={active.key} className="motion-panel-reveal p-5 md:p-8">
                     <p className="section-label">{active.marker}</p>
@@ -175,7 +170,6 @@ export default function PackageDetailPanels() {
                   </DisclosureBlock>
                 </div>
               </>
-            )}
           </article>
         </div>
       </div>

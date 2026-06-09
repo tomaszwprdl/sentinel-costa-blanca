@@ -1,6 +1,8 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import { useState } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
 import { PATHWAY_KEYS, type PathwayKey } from '@/lib/pathway';
 import ServiceScopeDiagram from '@/components/visuals/ServiceScopeDiagram';
 import EventResponseDiagram from '@/components/visuals/EventResponseDiagram';
@@ -29,6 +31,9 @@ function PathwayVisual({ pathway }: { pathway: PathwayKey }) {
 export default function UsageResponsibilityBridge() {
   const t = useTranslations('services');
   const tPathway = useTranslations('home.pathway.cards');
+  const locale = useLocale();
+  const [activeKey, setActiveKey] = useState<PathwayKey>('private-use-only');
+  const activeIndex = PATHWAY_KEYS.indexOf(activeKey);
 
   return (
     <div className="services-bridge-band" id="situation">
@@ -38,33 +43,64 @@ export default function UsageResponsibilityBridge() {
         <p className="mt-3 text-body">{t('redesign.bridge.intro')}</p>
       </div>
 
-      <div className="services-bridge-grid">
-        <div className="services-bridge-grid__head">
-          <span>{t('redesign.bridge.situationColumn')}</span>
-          <span>{t('redesign.bridge.depthColumn')}</span>
+      <div className="services-router-board">
+        <div className="services-router-board__choices" role="tablist" aria-label={t('redesign.scenario.promptLabel')}>
+          {PATHWAY_KEYS.map((key: PathwayKey, index) => (
+            <button
+              key={key}
+              type="button"
+              role="tab"
+              aria-selected={key === activeKey}
+              data-active={key === activeKey}
+              onClick={() => setActiveKey(key)}
+              className="services-router-choice"
+            >
+              <span className="services-router-choice__index">{String(index + 1).padStart(2, '0')}</span>
+              <span className="services-router-choice__copy">
+                <span className="services-router-choice__label">{tPathway(`${key}.emphasis`)}</span>
+                <strong>{tPathway(`${key}.title`)}</strong>
+              </span>
+            </button>
+          ))}
         </div>
-        {PATHWAY_KEYS.map((key: PathwayKey) => (
-          <div key={key} className="services-bridge-grid__row">
-            <div className="services-bridge-grid__situation">
-              <div className="services-bridge-grid__visual" aria-hidden="true">
-                <PathwayVisual pathway={key} />
+
+        <article key={activeKey} className="services-router-panel motion-panel-reveal" role="tabpanel">
+          <div className="services-router-panel__visual" aria-hidden="true">
+            <PathwayVisual pathway={activeKey} />
+          </div>
+
+          <div className="services-router-panel__content">
+            <div className="services-router-panel__header">
+              <span>{String(activeIndex + 1).padStart(2, '0')}</span>
+              <p>{t('redesign.scenario.selectedLabel')}</p>
+            </div>
+            <h3>{tPathway(`${activeKey}.title`)}</h3>
+            <p>{tPathway(`${activeKey}.description`)}</p>
+
+            <div className="services-router-panel__outcomes">
+              <div>
+                <p>{t('redesign.scenario.depthLabel')}</p>
+                <strong>{t(`redesign.bridge.pathways.${activeKey}.depth`)}</strong>
               </div>
               <div>
-                <p className="mb-1 text-[11px] font-black uppercase tracking-wide text-accent">
-                  {tPathway(`${key}.emphasis`)}
-                </p>
-                <h3 className="mb-0 text-base font-black text-heading">{tPathway(`${key}.title`)}</h3>
-                <p className="mt-2 mb-0 text-sm leading-relaxed text-body">{tPathway(`${key}.description`)}</p>
+                <p>{t('redesign.scenario.noteLabel')}</p>
+                <span>{t('redesign.scenario.note')}</span>
               </div>
             </div>
-            <p className="mb-0 text-sm font-semibold leading-relaxed text-body">
-              {t(`redesign.bridge.pathways.${key}.depth`)}
-            </p>
+
+            <div className="services-router-panel__actions">
+              <Link href="#responsibility" className="btn-primary">
+                {t('redesign.scenario.responsibilityCta')}
+              </Link>
+              <Link href={`/${locale}/contact`} className="btn-secondary">
+                {t('cta.primaryButton')}
+              </Link>
+            </div>
           </div>
-        ))}
+        </article>
       </div>
 
-      <p className="mt-5 mb-0 text-sm text-muted">{t('redesign.bridge.note')}</p>
+      <p className="services-bridge-map-note mt-5 mb-0 text-sm text-muted">{t('redesign.bridge.note')}</p>
     </div>
   );
 }
