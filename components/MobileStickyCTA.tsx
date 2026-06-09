@@ -41,11 +41,14 @@ export default function MobileStickyCTA({
       setVisible(window.scrollY > showAfter);
 
       const footerBlocked = intersectsViewport(document.querySelector('footer'), 0, 1);
-      const targetBlocked = suppressWhenVisible
-        ? Array.from(document.querySelectorAll(suppressWhenVisible)).some((node) =>
-            intersectsViewport(node, 0.08, 0.92),
-          )
-        : false;
+      const suppressSelectors = suppressWhenVisible
+        ? suppressWhenVisible.split(',').map((selector) => selector.trim()).filter(Boolean)
+        : [];
+      const targetBlocked = suppressSelectors.some((selector) =>
+        Array.from(document.querySelectorAll(selector)).some((node) =>
+          intersectsViewport(node, 0.06, 0.94),
+        ),
+      );
 
       setBlocked(footerBlocked || targetBlocked);
     };

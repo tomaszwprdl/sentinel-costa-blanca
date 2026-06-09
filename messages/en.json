@@ -546,7 +546,7 @@
         "title": "How is the property used while you are away?",
         "intro": "This is the same model as the homepage, without the diagnostic gate. Choose a situation to see the typical responsibility direction.",
         "promptLabel": "Choose a usage situation",
-        "promptBody": "Only after this step does comparing package depth make sense.",
+        "promptBody": "Only after this step does comparing responsibility levels make sense.",
         "selectedLabel": "Selected situation",
         "depthLabel": "Typical responsibility direction",
         "noteLabel": "Important",
@@ -650,7 +650,12 @@
         "eyebrow": "Operational layer",
         "title": "Modules help execute the scope. They do not create a fourth package.",
         "intro": "Keys, cleaning, readiness, and technician entry are practical functions inside the agreed oversight system.",
-        "useWhen": "Use when"
+        "useWhen": "Use when",
+        "moduleBodies": {
+          "rental": "Coordination of readiness, cleaning, and guest entry inside the agreed oversight scope.",
+          "access": "Keyholding and one-time entry as operational functions inside the oversight system.",
+          "seasonal": "Seasonal property preparation and additional control visits inside agreed scope."
+        }
       },
       "execution": {
         "cta": "Ask about limited scope"

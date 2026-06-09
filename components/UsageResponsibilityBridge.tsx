@@ -9,7 +9,7 @@ export default function UsageResponsibilityBridge() {
 
   return (
     <div className="services-bridge-band" id="responsibility-bridge">
-      <div className="mb-6 max-w-[760px]">
+      <div className="mb-4 max-w-[760px]">
         <p className="section-label">{t('redesign.bridge.eyebrow')}</p>
         <h2 className="h2-system mt-3">{t('redesign.bridge.title')}</h2>
         <p className="mt-3 text-body">{t('redesign.bridge.intro')}</p>

@@ -492,7 +492,7 @@
       },
       "hero": {
         "eyebrow": "Model nadzoru",
-        "headline": "Od sytuacji użycia do głębokości odpowiedzialności",
+        "headline": "Od sposobu używania do poziomu odpowiedzialności",
         "lead": "Najpierw sposób używania nieruchomości. Potem poziom lokalnej odpowiedzialności Sentinel. Moduły operacyjne i orientacyjny zakres doprecyzowują model — nie tworzą osobnej oferty.",
         "secondaryCta": "Zacznij od sytuacji",
         "facts": [
@@ -502,13 +502,13 @@
         ]
       },
       "ladder": {
-        "eyebrow": "Głębokość odpowiedzialności",
-        "title": "Pakiet nie opisuje typu klienta. Określa głębokość odpowiedzialności Sentinel na miejscu.",
+        "eyebrow": "Poziom odpowiedzialności",
+        "title": "Pakiet nie opisuje typu klienta. Określa poziom odpowiedzialności Sentinel na miejscu.",
         "intro": "Po ustaleniu sytuacji użycia wybiera się poziom nadzoru: kontrola, dostęp i decyzje w uzgodnionych granicach.",
         "bridgeLine": "Najpierw sytuacja użycia. Potem poziom odpowiedzialności.",
         "detailCta": "Zobacz pełny zakres",
         "responsibilityLabel": "Główna odpowiedzialność",
-        "depthLabel": "Głębokość działania",
+        "depthLabel": "Zakres działania",
         "basic": {
           "responsibility": "Kontrola i sprawdzenia. Udokumentowane wizyty. Właściciel zatrzymuje większość decyzji.",
           "fit": "Gdy głównym zadaniem jest stała obecność na miejscu i zapis stanu bez regularnej koordynacji dostępu."
@@ -524,7 +524,7 @@
       },
       "bridge": {
         "eyebrow": "Most między sytuacją a pakietem",
-        "title": "Sytuacja użycia wskazuje punkt startu. Pakiet określa głębokość odpowiedzialności.",
+        "title": "Sytuacja użycia wskazuje punkt startu. Pakiet określa poziom odpowiedzialności.",
         "intro": "To nie jest twarda rekomendacja. Pokazuje typowy kierunek rozmowy po klasyfikacji sposobu używania nieruchomości.",
         "situationColumn": "Sytuacja użycia",
         "depthColumn": "Typowy punkt startu",
@@ -546,7 +546,7 @@
         "title": "Jak nieruchomość jest używana, gdy nie ma Cię na miejscu?",
         "intro": "To ten sam model co na stronie głównej, bez bramki diagnostycznej. Wybierz sytuację, żeby zobaczyć typowy kierunek odpowiedzialności.",
         "promptLabel": "Wybierz sytuację użycia",
-        "promptBody": "Dopiero po tym kroku ma sens porównanie głębokości pakietów.",
+        "promptBody": "Dopiero po tym kroku ma sens porównanie poziomów pakietów.",
         "selectedLabel": "Wybrana sytuacja",
         "depthLabel": "Typowy kierunek odpowiedzialności",
         "noteLabel": "Ważne",
@@ -650,7 +650,12 @@
         "eyebrow": "Warstwa operacyjna",
         "title": "Moduły pomagają wykonać zakres. Nie tworzą czwartego pakietu.",
         "intro": "Klucze, sprzątanie, gotowość i wejścia techników działają jako praktyczne funkcje w ustalonym systemie nadzoru.",
-        "useWhen": "Użyj, gdy"
+        "useWhen": "Użyj, gdy",
+        "moduleBodies": {
+          "rental": "Koordynacja gotowości, sprzątania i wejść gości w ramach uzgodnionego zakresu nadzoru.",
+          "access": "Przechowywanie kluczy i jednorazowe wejścia jako funkcje operacyjne w systemie nadzoru.",
+          "seasonal": "Przygotowanie lokalu przed i po sezonie oraz dodatkowe wizyty kontrolne w uzgodnionym zakresie."
+        }
       },
       "execution": {
         "cta": "Zapytaj o ograniczony zakres"
@@ -659,7 +664,7 @@
         "eyebrow": "Orientacyjny zakres miesięczny",
         "title": "Gdy sytuacja i odpowiedzialność są zrozumiałe — określ orientacyjny zakres.",
         "intro": "To narzędzie orientacyjne, nie formularz wyceny. Nie zbiera danych osobowych i nie zmienia logiki cenowej.",
-        "transition": "Sytuacja użycia i głębokość odpowiedzialności są ustalone. Teraz można oszacować orientacyjny miesięczny zakres."
+        "transition": "Sytuacja użycia i poziom odpowiedzialności są ustalone. Teraz można oszacować orientacyjny miesięczny zakres."
       },
       "executionStrip": {
         "title": "Realizacja pojedynczych czynności — tylko po uzgodnieniu",
@@ -988,7 +993,7 @@
     },
     "estimator": {
       "heading": "Orientacyjny zakres miesięczny",
-      "orientationIntro": "Ustal sytuację użycia i głębokość odpowiedzialności, zanim policzysz orientacyjny zakres.",
+      "orientationIntro": "Ustal sytuację użycia i poziom odpowiedzialności, zanim policzysz orientacyjny zakres.",
       "stepJurisdiction": "1. Poziom odpowiedzialności",
       "stepMode": "2. Intensywność użytkowania",
       "stepParameters": "3. Parametry nieruchomości",

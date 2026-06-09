@@ -66,7 +66,7 @@ export default async function ServicesPage({
       image: '/photos/sentinel-cleaning-readiness-placeholder.png',
       label: t('redesign.modules.useWhen'),
       title: t('addons.rental.title'),
-      body: t('addons.rental.notPM'),
+      body: t('redesign.modules.moduleBodies.rental'),
       items: [
         t('addons.rental.items.preparation'),
         t('addons.rental.items.cleaning'),
@@ -78,7 +78,7 @@ export default async function ServicesPage({
       visual: 'access',
       label: t('redesign.modules.useWhen'),
       title: t('addons.transfers.title'),
-      body: t('addons.transfers.provider'),
+      body: t('redesign.modules.moduleBodies.access'),
       items: [
         t('executionOnly.availableItems.keyHolding'),
         t('executionOnly.availableItems.oneTimeAccess'),
@@ -88,7 +88,7 @@ export default async function ServicesPage({
       visual: 'seasonal',
       label: t('redesign.modules.useWhen'),
       title: t('addons.seasonal.title'),
-      body: t('addons.seasonal.items.openingClosing'),
+      body: t('redesign.modules.moduleBodies.seasonal'),
       items: [
         t('addons.seasonal.items.openingClosing'),
         t('addons.seasonal.items.preparation'),
@@ -106,7 +106,7 @@ export default async function ServicesPage({
             <Region name="main" desktopSpan="half">
               <div className="motion-entrance max-w-[680px]">
                 <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
-                <h1 className="hero-display max-w-[22ch] !text-[2.15rem] md:!text-[3.15rem] lg:!text-[3.35rem]">
+                <h1 className="hero-display services-hero-display !text-[2rem] md:!text-[3rem] lg:!text-[3.2rem]">
                   {t('redesign.hero.headline')}
                 </h1>
                 <p className="hero-lead">{t('redesign.hero.lead')}</p>
@@ -114,7 +114,7 @@ export default async function ServicesPage({
                   <Link href={`/${locale}/contact`} className="btn-primary">
                     {t('cta.primaryButton')}
                   </Link>
-                  <Link href="#situation" className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
+                  <Link href="#situation" className="btn-secondary btn-secondary-on-dark">
                     {t('redesign.hero.secondaryCta')}
                   </Link>
                 </div>
@@ -187,7 +187,7 @@ export default async function ServicesPage({
           </div>
         </Section>
 
-        <Section tone="alt" className="section-primitive--compact">
+        <Section tone="alt" className="section-primitive--compact" id="execution-only">
           <div className="services-execution-strip">
             <div className="max-w-[760px]">
               <p className="section-label">{t('executionOnly.microLabel')}</p>
@@ -300,7 +300,7 @@ export default async function ServicesPage({
         primaryLabel={t('cta.primaryButton')}
         secondaryHref="#situation"
         secondaryLabel={t('redesign.hero.secondaryCta')}
-        suppressWhenVisible="#estimator"
+        suppressWhenVisible="#operational-modules, #execution-only, #estimator"
       />
       <Footer />
     </>

@@ -58,8 +58,10 @@ export default function OperationalModuleTile({
   items,
   note,
 }: OperationalModuleTileProps) {
+  const showBody = body.trim().length > 0 && !items.includes(body);
+
   return (
-    <article className="visual-card overflow-hidden">
+    <article className="operational-module-tile visual-card overflow-hidden">
       {visual ? (
         <ModuleVisual visual={visual} />
       ) : image ? (
@@ -73,16 +75,20 @@ export default function OperationalModuleTile({
           />
         </div>
       ) : null}
-      <div className="p-4 md:p-5">
-        <p className="mb-2 text-[11px] font-black uppercase tracking-wide text-accent">{label}</p>
-        <h3 className="mb-3 text-xl font-black text-heading">{title}</h3>
-        <p className="text-sm leading-relaxed text-body">{body}</p>
-        <ul className="ml-4 list-disc space-y-1.5 text-sm text-body">
+      <div className="operational-module-tile__content p-4 md:p-5">
+        <p className="operational-module-tile__label mb-2 text-[10px] font-black uppercase text-accent">
+          {label}
+        </p>
+        <h3 className="mb-3 text-lg font-black leading-snug text-heading md:text-xl">{title}</h3>
+        {showBody && <p className="mb-0 text-sm leading-relaxed text-body">{body}</p>}
+        <ul className={`ml-4 list-disc space-y-2 text-sm leading-relaxed text-body ${showBody ? 'mt-3' : 'mt-1'}`}>
           {items.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
-        {note && <p className="mt-4 mb-0 text-xs leading-relaxed text-muted">{note}</p>}
+        {note && note !== body && (
+          <p className="operational-module-tile__note mt-4 mb-0 text-xs leading-relaxed text-muted">{note}</p>
+        )}
       </div>
     </article>
   );
