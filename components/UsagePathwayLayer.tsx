@@ -206,7 +206,7 @@ function DiagnosticGateIntro({
           </a>
         </div>
 
-        <div id="usage-situation-gate" className="diagnostic-panel motion-panel-reveal scroll-mt-28 p-5 md:p-6">
+        <div id="usage-situation-gate" className="diagnostic-panel diagnostic-panel--gate motion-panel-reveal scroll-mt-28">
           <h2 className="text-2xl leading-tight md:text-3xl">
             {tp('selectorTitle')}
           </h2>

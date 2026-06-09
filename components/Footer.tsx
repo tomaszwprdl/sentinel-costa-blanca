@@ -11,8 +11,8 @@ export default function Footer() {
 
   return (
     <footer id="site-footer" className="mt-[var(--space-40)] bg-authority-bg text-authority-on-dark">
-      <div className="container py-10 md:py-14">
-        <div className="border-b border-authority-on-dark/15 pb-8 md:pb-10">
+      <div className="container py-9 md:py-10">
+        <div className="border-b border-authority-on-dark/15 pb-7 md:pb-8">
           <Link href={`/${locale}`} className="inline-block" aria-label={t('nav.home')}>
             <Image
               src="/images/sentinel-logo-inverse.svg"
@@ -27,7 +27,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="grid-frame gap-8 py-8 md:gap-10 md:py-10">
+        <div className="grid-frame gap-7 py-7 md:gap-8 md:py-8">
           <Region name="authority" desktopSpan="quarter">
             <div>
               <h3 className="section-label text-authority-on-dark/80">
@@ -81,19 +81,19 @@ export default function Footer() {
               </ul>
             </div>
           </Region>
-          <Region name="authority" desktopSpan="half">
+          <Region name="authority" desktopSpan="half" className="footer-contact-region">
             <div className="footer-contact-panel">
               <p className="section-label text-authority-on-dark/80">{t('footer.contact')}</p>
-              <div className="mt-5 grid gap-3 text-sm text-authority-on-dark/84">
-                <p className="mb-0 text-lg font-semibold leading-tight text-authority-on-dark">
+              <div className="footer-contact-panel__items">
+                <p className="footer-contact-panel__phone">
                   {t('contact.phone')}
                 </p>
-                <p className="mb-0 leading-tight">
+                <p>
                   <a href={`mailto:${t('contact.email')}`} className="hover:text-authority-on-dark">
                     {t('contact.email')}
                   </a>
                 </p>
-                <p className="mb-0 leading-tight">
+                <p>
                   {t('footer.operatingHours')}: {t('contact.hours')}
                 </p>
               </div>

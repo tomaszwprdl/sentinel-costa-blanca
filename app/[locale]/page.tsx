@@ -306,7 +306,7 @@ function UsagePathwayFallback({
               </div>
             </div>
 
-            <div className="diagnostic-panel p-5 md:p-6">
+            <div className="diagnostic-panel diagnostic-panel--gate">
               <h2 className="text-2xl leading-tight md:text-3xl">
                 {t('pathway.selectorTitle')}
               </h2>

@@ -85,16 +85,16 @@
       "companyProofLine": "Działamy lokalnie w ustalonym promieniu Costa Blanca, z dokumentacją stanu i kontrolowanym prowadzeniem kluczy oraz dostępu.",
       "companyFacts": {
         "area": {
-          "label": "Obszar działania",
-          "value": "Torrevieja + 50-70 km"
+          "label": "OBSZAR DZIAŁANIA",
+          "value": "Ustalony promień"
         },
         "documentation": {
-          "label": "Dokumentacja",
-          "value": "Dokumentowane kontrole"
+          "label": "DOKUMENTACJA",
+          "value": "Raport po wizycie"
         },
         "access": {
-          "label": "Dostęp",
-          "value": "Kontrolowany dostęp"
+          "label": "DOSTĘP",
+          "value": "Klucze i wejścia"
         }
       },
       "proof": {

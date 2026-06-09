@@ -866,7 +866,8 @@ textarea:focus {
   padding-top: 32px;
   padding-bottom: 48px;
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--authority-bg) 94%, black) 0%, color-mix(in srgb, var(--navy) 88%, var(--support)) 100%);
+    linear-gradient(180deg, rgba(255, 250, 242, 0.055) 0%, rgba(255, 250, 242, 0) 44%),
+    linear-gradient(118deg, color-mix(in srgb, var(--authority-bg) 96%, black) 0%, color-mix(in srgb, var(--authority-bg) 88%, var(--navy)) 48%, color-mix(in srgb, var(--navy) 86%, var(--support)) 100%);
   color: var(--authority-on-dark);
 }
 
@@ -877,7 +878,9 @@ textarea:focus {
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 1.6rem;
-  background: var(--authority-bg);
+  background:
+    linear-gradient(132deg, rgba(255, 250, 242, 0.045) 0%, transparent 46%),
+    var(--authority-bg);
   box-shadow: 0 32px 90px rgba(0, 0, 0, 0.24);
   isolation: isolate;
   min-width: 0;
@@ -1194,6 +1197,16 @@ textarea:focus {
   min-width: 0;
 }
 
+.diagnostic-panel--gate {
+  padding: 1.35rem 1.35rem 1.15rem;
+}
+
+@media (min-width: 768px) {
+  .diagnostic-panel--gate {
+    padding: 1.75rem 1.85rem 1.45rem;
+  }
+}
+
 [data-theme="dark"] .diagnostic-panel {
   background: rgba(25, 40, 56, 0.96);
 }
@@ -1219,19 +1232,22 @@ textarea:focus {
   cursor: pointer;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--line) 76%, var(--support));
+  border: 1px solid color-mix(in srgb, var(--line) 58%, var(--accent));
   border-radius: 1rem;
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--surface-card) 96%, white) 0%, var(--surface-card) 58%, color-mix(in srgb, var(--stone) 34%, var(--surface-card)) 100%);
+    linear-gradient(135deg, color-mix(in srgb, var(--surface-card) 98%, white) 0%, var(--surface-card) 56%, color-mix(in srgb, var(--stone) 36%, var(--surface-card)) 100%);
   padding: 1.05rem;
   text-align: left;
-  box-shadow: 0 8px 20px rgba(16, 38, 63, 0.06);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.62),
+    0 10px 24px rgba(16, 38, 63, 0.07);
   transition:
-    transform 240ms var(--motion-ease-out),
-    border-color 240ms var(--motion-ease-out),
-    background 240ms var(--motion-ease-out),
-    box-shadow 240ms var(--motion-ease-out),
-    opacity 240ms var(--motion-ease-out);
+    transform 260ms var(--motion-ease-out),
+    border-color 260ms var(--motion-ease-out),
+    background 260ms var(--motion-ease-out),
+    box-shadow 260ms var(--motion-ease-out),
+    opacity 260ms var(--motion-ease-out);
+  will-change: transform;
 }
 
 .diagnostic-choice-card::before {
@@ -1242,8 +1258,8 @@ textarea:focus {
   border-radius: 999px;
   background: var(--accent);
   content: "";
-  opacity: 0;
-  transform: scaleY(0.62);
+  opacity: 0.14;
+  transform: scaleY(0.54);
   transition:
     opacity var(--motion-standard) var(--motion-ease-out),
     transform var(--motion-standard) var(--motion-ease-out);
@@ -1254,11 +1270,11 @@ textarea:focus {
   inset: 0;
   z-index: 0;
   background:
-    linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.38) 42%, transparent 66%),
-    linear-gradient(135deg, transparent 0%, color-mix(in srgb, var(--support) 8%, transparent) 100%);
+    linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.5) 42%, transparent 66%),
+    linear-gradient(135deg, transparent 0%, color-mix(in srgb, var(--accent) 9%, transparent) 100%);
   content: "";
   opacity: 0;
-  transform: translateX(-18%);
+  transform: translateX(-30%);
   transition:
     opacity 240ms var(--motion-ease-out),
     transform 300ms var(--motion-ease-out);
@@ -1271,29 +1287,44 @@ textarea:focus {
 
 .diagnostic-choice-card:hover,
 .diagnostic-choice-card:focus-visible {
-  transform: translateY(-3px);
-  border-color: color-mix(in srgb, var(--accent) 72%, var(--support));
+  transform: translateY(-5px);
+  border-color: color-mix(in srgb, var(--accent) 88%, var(--copper));
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--surface-card) 92%, white) 0%, color-mix(in srgb, var(--surface-card) 86%, var(--stone)) 100%);
+    linear-gradient(135deg, color-mix(in srgb, var(--surface-card) 94%, white) 0%, color-mix(in srgb, var(--surface-card) 82%, var(--stone)) 100%);
   box-shadow:
-    0 18px 38px rgba(16, 38, 63, 0.12),
-    0 0 0 1px color-mix(in srgb, var(--accent) 16%, transparent);
+    inset 0 1px 0 rgba(255, 255, 255, 0.72),
+    0 22px 44px rgba(16, 38, 63, 0.16),
+    0 0 0 1px color-mix(in srgb, var(--accent) 26%, transparent),
+    0 0 32px color-mix(in srgb, var(--accent) 13%, transparent);
+}
+
+.diagnostic-choice-card:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 62%, transparent);
+  outline-offset: 3px;
+}
+
+.diagnostic-choice-card:hover::before,
+.diagnostic-choice-card:focus-visible::before {
+  opacity: 0.82;
+  transform: scaleY(0.9);
 }
 
 .diagnostic-choice-card:hover::after,
 .diagnostic-choice-card:focus-visible::after {
-  opacity: 1;
+  opacity: 0.86;
   transform: translateX(0);
 }
 
 .diagnostic-choice-card[aria-pressed="true"] {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   border-color: var(--accent);
   background:
     linear-gradient(135deg, color-mix(in srgb, var(--surface-card) 78%, var(--stone)) 0%, color-mix(in srgb, var(--stone) 66%, var(--surface-card)) 100%);
   box-shadow:
-    0 22px 46px rgba(184, 102, 74, 0.2),
-    0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent);
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 26px 52px rgba(184, 102, 74, 0.24),
+    0 0 0 1px color-mix(in srgb, var(--accent) 38%, transparent),
+    0 0 36px color-mix(in srgb, var(--accent) 18%, transparent);
 }
 
 .diagnostic-choice-card[aria-pressed="true"]::after {
@@ -1309,6 +1340,63 @@ textarea:focus {
 .diagnostic-choice-card[aria-pressed="true"]::before {
   opacity: 1;
   transform: scaleY(1);
+}
+
+.diagnostic-choice-grid.motion-entrance > .diagnostic-choice-card::before {
+  animation: diagnostic-card-edge-pulse 920ms var(--motion-ease-out);
+}
+
+.diagnostic-choice-grid.motion-entrance > .diagnostic-choice-card::after {
+  animation: diagnostic-card-soft-wave 920ms var(--motion-ease-out);
+}
+
+.diagnostic-choice-grid.motion-entrance > .diagnostic-choice-card:nth-child(1)::before,
+.diagnostic-choice-grid.motion-entrance > .diagnostic-choice-card:nth-child(1)::after {
+  animation-delay: 520ms;
+}
+
+.diagnostic-choice-grid.motion-entrance > .diagnostic-choice-card:nth-child(2)::before,
+.diagnostic-choice-grid.motion-entrance > .diagnostic-choice-card:nth-child(2)::after {
+  animation-delay: 700ms;
+}
+
+.diagnostic-choice-grid.motion-entrance > .diagnostic-choice-card:nth-child(3)::before,
+.diagnostic-choice-grid.motion-entrance > .diagnostic-choice-card:nth-child(3)::after {
+  animation-delay: 880ms;
+}
+
+@keyframes diagnostic-card-edge-pulse {
+  0%,
+  100% {
+    opacity: 0.14;
+    transform: scaleY(0.54);
+  }
+
+  46% {
+    opacity: 0.58;
+    transform: scaleY(0.82);
+  }
+}
+
+@keyframes diagnostic-card-soft-wave {
+  0% {
+    opacity: 0;
+    transform: translateX(-32%);
+  }
+
+  42% {
+    opacity: 0.58;
+  }
+
+  78% {
+    opacity: 0.14;
+    transform: translateX(18%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(24%);
+  }
 }
 
 .diagnostic-choice-card__title {
@@ -1349,23 +1437,33 @@ textarea:focus {
   background: color-mix(in srgb, var(--accent) 12%, var(--surface-light-alt));
   color: var(--accent);
   font-weight: 900;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.62);
   transition:
     transform var(--motion-quick) var(--motion-ease-out),
+    border-color var(--motion-quick) var(--motion-ease-out),
     background var(--motion-quick) var(--motion-ease-out),
+    box-shadow var(--motion-quick) var(--motion-ease-out),
     color var(--motion-quick) var(--motion-ease-out);
 }
 
-.diagnostic-choice-card:hover .choice-arrow {
-  transform: translateX(4px);
-  border-color: color-mix(in srgb, var(--accent) 42%, transparent);
-  background: color-mix(in srgb, var(--accent) 88%, white);
+.diagnostic-choice-card:hover .choice-arrow,
+.diagnostic-choice-card:focus-visible .choice-arrow {
+  transform: translateX(6px) scale(1.06);
+  border-color: color-mix(in srgb, var(--accent) 72%, var(--copper));
+  background: color-mix(in srgb, var(--accent) 92%, white);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 10px 18px color-mix(in srgb, var(--accent) 22%, transparent);
   color: #ffffff;
 }
 
 .diagnostic-choice-card[aria-pressed="true"] .choice-arrow {
-  transform: translateX(5px);
+  transform: translateX(7px) scale(1.07);
   border-color: var(--accent);
   background: var(--accent);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 12px 20px color-mix(in srgb, var(--accent) 26%, transparent);
   color: #ffffff;
 }
 
@@ -1505,9 +1603,8 @@ textarea:focus {
     font-size: 0.72rem;
   }
 
-  .diagnostic-panel {
-    padding-top: 0.9rem !important;
-    padding-bottom: 0.9rem !important;
+  .diagnostic-panel--gate {
+    padding: 1.1rem 1rem 0.95rem !important;
   }
 
   .diagnostic-panel .section-label {
@@ -1557,15 +1654,43 @@ textarea:focus {
   margin-top: 0;
 }
 
+.footer-contact-region {
+  display: flex;
+  align-items: flex-start;
+}
+
 .footer-contact-panel {
+  width: 100%;
+  height: auto;
+  align-self: flex-start;
   border: 1px solid rgba(255, 250, 242, 0.2);
   border-radius: var(--radius);
   background:
     linear-gradient(135deg, rgba(255, 250, 242, 0.12) 0%, rgba(255, 250, 242, 0.055) 100%);
   box-shadow:
     inset 0 1px 0 rgba(255, 250, 242, 0.14),
-    0 18px 44px rgba(0, 0, 0, 0.1);
-  padding: 1.25rem;
+    0 14px 34px rgba(0, 0, 0, 0.09);
+  padding: 1rem;
+}
+
+.footer-contact-panel__items {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.85rem;
+  color: rgba(255, 250, 242, 0.84);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.footer-contact-panel__items p {
+  margin: 0;
+}
+
+.footer-contact-panel__phone {
+  color: var(--authority-on-dark);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.2;
 }
 
 .footer-contact-panel a {
@@ -1574,7 +1699,21 @@ textarea:focus {
 
 @media (min-width: 768px) {
   .footer-contact-panel {
-    padding: 1.5rem;
+    padding: 1.15rem 1.25rem;
+  }
+
+  .footer-contact-panel__phone {
+    font-size: 1.08rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .footer-contact-region {
+    justify-content: flex-end;
+  }
+
+  .footer-contact-panel {
+    max-width: 25rem;
   }
 }
 
@@ -1765,6 +1904,11 @@ textarea:focus {
   .timeline-card {
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .diagnostic-choice-grid.motion-entrance > .diagnostic-choice-card::before,
+  .diagnostic-choice-grid.motion-entrance > .diagnostic-choice-card::after {
+    animation: none !important;
   }
 
   .disclosure-grid {

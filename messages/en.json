@@ -85,16 +85,16 @@
       "companyProofLine": "Operating within a defined Costa Blanca radius, with documented condition checks and controlled key/access handling.",
       "companyFacts": {
         "area": {
-          "label": "Operating area",
-          "value": "Torrevieja + 50-70 km"
+          "label": "OPERATING AREA",
+          "value": "Defined radius"
         },
         "documentation": {
-          "label": "Documentation",
-          "value": "Documented checks"
+          "label": "DOCUMENTATION",
+          "value": "Visit record"
         },
         "access": {
-          "label": "Access",
-          "value": "Controlled access"
+          "label": "ACCESS",
+          "value": "Keys and entry"
         }
       },
       "proof": {
