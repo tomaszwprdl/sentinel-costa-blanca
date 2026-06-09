@@ -14,11 +14,12 @@
       "contact": "Kontakt"
     },
     "footer": {
+      "brandLine": "Sentinel — reprezentacja właściciela na miejscu dla właścicieli przebywających z dala od obiektu.",
       "navigation": "Nawigacja",
       "legal": "Prawne",
       "contact": "Kontakt",
       "serviceArea": "Obszar Obsługi",
-      "serviceAreaText": "Lokalny obszar działania na południowej Costa Blanca — mapa ustalonego promienia operacyjnego.",
+      "serviceAreaText": "Południowa Costa Blanca — obszar operacyjny wokół Torrevieja, promień 50–70 km.",
       "operatingHours": "Godziny pracy",
       "copyright": "Wszelkie prawa zastrzeżone.",
       "termsConditions": "Regulamin",

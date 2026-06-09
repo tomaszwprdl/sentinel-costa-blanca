@@ -42,15 +42,16 @@ export default function ServiceAreaMap({
 
   const color = {
     paper: inverse ? 'rgba(255, 250, 242, 0.055)' : 'var(--surface-light-alt)',
-    sea: inverse ? 'rgba(75, 121, 173, 0.16)' : 'color-mix(in srgb, var(--support) 10%, var(--surface-card))',
-    seaLine: inverse ? 'rgba(255, 250, 242, 0.22)' : 'color-mix(in srgb, var(--support) 36%, var(--line))',
-    land: inverse ? 'rgba(255, 250, 242, 0.105)' : 'color-mix(in srgb, var(--stone) 70%, var(--surface-card))',
-    landAlt: inverse ? 'rgba(255, 250, 242, 0.075)' : 'color-mix(in srgb, var(--sage) 18%, var(--surface-card))',
+    sea: inverse ? 'rgba(75, 121, 173, 0.2)' : 'color-mix(in srgb, var(--support) 14%, var(--surface-card))',
+    seaDeep: inverse ? 'rgba(75, 121, 173, 0.1)' : 'color-mix(in srgb, var(--support) 8%, var(--surface-card))',
+    coast: inverse ? 'rgba(255, 250, 242, 0.42)' : 'color-mix(in srgb, var(--authority-bg) 72%, var(--support))',
+    land: inverse ? 'rgba(255, 250, 242, 0.1)' : 'color-mix(in srgb, var(--stone) 62%, var(--surface-card))',
+    landInner: inverse ? 'rgba(255, 250, 242, 0.06)' : 'color-mix(in srgb, var(--sage) 14%, var(--surface-card))',
     authority: inverse ? 'var(--authority-on-dark)' : 'var(--authority-bg)',
     support: inverse ? '#4B79AD' : 'var(--support)',
-    structural: inverse ? 'rgba(255, 250, 242, 0.38)' : 'var(--structural-a)',
-    muted: inverse ? 'rgba(255, 250, 242, 0.66)' : 'var(--muted)',
-    line: inverse ? 'rgba(255, 250, 242, 0.24)' : 'var(--structural-light)',
+    structural: inverse ? 'rgba(255, 250, 242, 0.34)' : 'var(--structural-a)',
+    muted: inverse ? 'rgba(255, 250, 242, 0.62)' : 'var(--muted)',
+    line: inverse ? 'rgba(255, 250, 242, 0.2)' : 'var(--structural-light)',
     accent: inverse ? 'color-mix(in srgb, var(--accent) 78%, var(--authority-on-dark))' : 'var(--accent)',
   };
 
@@ -60,22 +61,21 @@ export default function ServiceAreaMap({
     className,
   ].join(' ');
 
+  const coastPath =
+    'M 118 58 C 168 42 228 48 286 72 C 334 92 362 118 378 154 C 392 186 388 218 372 248 C 356 280 358 312 378 344 C 398 376 432 398 472 412';
+  const landPath = `${coastPath} L 472 420 L 0 420 L 0 0 L 118 58 Z`;
+  const seaPath = `${coastPath} L 680 412 L 680 0 L 118 58 Z`;
+
   return (
     <figure className={shellClassName} aria-label={labels.title}>
       {!compact && (
         <div className={tone.header}>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
-              <p className={tone.eyebrow}>
-                {labels.title}
-              </p>
-              <p className={tone.title}>
-                {labels.center}
-              </p>
+              <p className={tone.eyebrow}>{labels.title}</p>
+              <p className={tone.title}>{labels.center}</p>
             </div>
-            <span className={tone.radiusBadge}>
-              {labels.radius}
-            </span>
+            <span className={tone.radiusBadge}>{labels.radius}</span>
           </div>
         </div>
       )}
@@ -87,149 +87,194 @@ export default function ServiceAreaMap({
           className={compact ? 'block h-auto max-h-[11.5rem] w-full max-w-full' : 'block h-auto w-full max-w-full'}
         >
           <rect x="0" y="0" width="680" height="420" fill={color.paper} />
+
+          <path d={seaPath} fill={color.sea} />
+          <path d="M 472 412 L 680 420 L 680 0 L 378 154 Z" fill={color.seaDeep} opacity="0.55" />
+
+          <path d={landPath} fill={color.land} />
           <path
-            d="M424 0 L680 0 L680 420 L446 420 C482 374 491 332 469 292 C444 248 454 215 497 184 C529 161 532 124 503 82 C480 49 448 23 424 0 Z"
-            fill={color.sea}
+            d="M 0 0 L 118 58 L 286 72 L 372 248 L 378 344 L 0 420 Z"
+            fill={color.landInner}
+            opacity="0.72"
           />
+
           <path
-            d="M0 0 H438 C470 24 498 54 514 88 C534 131 523 164 488 190 C449 219 440 251 463 294 C484 334 472 379 431 420 H0 Z"
-            fill={color.land}
-          />
-          <path
-            d="M427 0 C461 29 489 62 506 98 C526 141 513 164 482 188 C444 218 431 250 455 296 C476 336 460 381 420 420"
+            d={coastPath}
             fill="none"
-            stroke={color.seaLine}
-            strokeWidth="5"
+            stroke={color.coast}
+            strokeWidth="4.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d={coastPath}
+            fill="none"
+            stroke={color.authority}
+            strokeWidth="1.4"
+            strokeOpacity="0.35"
             strokeLinecap="round"
           />
-          <path
-            d="M84 68 C132 92 157 128 148 171 C139 215 160 254 204 290 C254 331 316 365 382 388"
-            fill="none"
-            stroke={color.line}
-            strokeWidth="2"
-            strokeDasharray="6 9"
-          />
-          <path
-            d="M72 330 C148 303 215 272 278 220 C333 174 395 139 506 116"
-            fill="none"
-            stroke={color.line}
-            strokeWidth="1.5"
-            strokeDasharray="11 13"
-          />
-          <path
-            d="M64 220 C146 184 227 164 329 156 C423 148 503 155 612 178"
-            fill="none"
-            stroke={color.line}
-            strokeWidth="1.5"
-            strokeDasharray="2 10"
-          />
 
-          <g opacity="0.72">
-            <path d="M122 118 L189 142 L171 206 L98 179 Z" fill={color.landAlt} />
-            <path d="M202 253 L282 277 L264 343 L182 316 Z" fill={color.landAlt} />
-            <path d="M342 92 L425 118 L399 174 L318 145 Z" fill={color.landAlt} />
+          <g opacity="0.55">
+            <path
+              d="M 198 118 L 248 132 L 236 176 L 184 160 Z"
+              fill="none"
+              stroke={color.line}
+              strokeWidth="1.2"
+            />
+            <path
+              d="M 248 228 L 302 242 L 288 292 L 232 276 Z"
+              fill="none"
+              stroke={color.line}
+              strokeWidth="1.2"
+            />
           </g>
 
-          <g transform="translate(382 229) rotate(-10)">
-            <ellipse
+          <g transform="translate(318 248)">
+            <circle
               cx="0"
               cy="0"
-              rx="236"
-              ry="136"
+              r="128"
               fill={color.support}
-              fillOpacity={inverse ? '0.12' : '0.075'}
+              fillOpacity={inverse ? '0.1' : '0.07'}
               stroke={color.authority}
-              strokeWidth="3"
-              strokeOpacity={inverse ? '0.72' : '0.62'}
+              strokeWidth="2.6"
+              strokeOpacity={inverse ? '0.68' : '0.58'}
             />
-            <ellipse
+            <circle
               cx="0"
               cy="0"
-              rx="181"
-              ry="103"
+              r="98"
               fill="none"
               stroke={color.structural}
-              strokeWidth="1.7"
-              strokeDasharray="7 9"
+              strokeWidth="1.6"
+              strokeDasharray="6 8"
+              strokeOpacity="0.82"
             />
-            <ellipse
+            <circle
               cx="0"
               cy="0"
-              rx="98"
-              ry="56"
+              r="68"
               fill="none"
               stroke={color.structural}
-              strokeWidth="1.3"
-              strokeDasharray="3 8"
-              opacity="0.78"
+              strokeWidth="1.2"
+              strokeDasharray="3 7"
+              strokeOpacity="0.62"
             />
           </g>
 
-          <line x1="382" y1="229" x2="602" y2="190" stroke={color.authority} strokeWidth="1.4" strokeOpacity="0.44" />
-          <line x1="382" y1="229" x2="382" y2="92" stroke={color.structural} strokeWidth="1.2" strokeOpacity="0.52" />
-          <line x1="382" y1="229" x2="178" y2="284" stroke={color.structural} strokeWidth="1.2" strokeOpacity="0.42" />
+          <line
+            x1="318"
+            y1="248"
+            x2="446"
+            y2="248"
+            stroke={color.authority}
+            strokeWidth="1.3"
+            strokeOpacity="0.38"
+          />
+          <line
+            x1="318"
+            y1="248"
+            x2="318"
+            y2="120"
+            stroke={color.structural}
+            strokeWidth="1.1"
+            strokeOpacity="0.45"
+          />
+          <line
+            x1="318"
+            y1="248"
+            x2="188"
+            y2="268"
+            stroke={color.structural}
+            strokeWidth="1.1"
+            strokeOpacity="0.38"
+          />
 
           <g fill={color.authority}>
-            <circle cx="382" cy="229" r="9" />
-            <circle cx="382" cy="229" r="20" fill="none" stroke={color.authority} strokeWidth="2.4" strokeOpacity="0.58" />
+            <circle cx="318" cy="248" r="8.5" />
+            <circle
+              cx="318"
+              cy="248"
+              r="18"
+              fill="none"
+              stroke={color.authority}
+              strokeWidth="2.2"
+              strokeOpacity="0.55"
+            />
           </g>
 
-          <g fill={color.support} stroke={color.paper} strokeWidth="2.2">
-            <circle cx="338" cy="150" r="5.5" />
-            <circle cx="474" cy="142" r="5.5" />
-            <circle cx="482" cy="284" r="5.5" />
-            <circle cx="283" cy="292" r="5.5" />
-            <circle cx="520" cy="226" r="5.5" />
+          <g fill={color.support} stroke={color.paper} strokeWidth="2">
+            <circle cx="352" cy="178" r="4.5" />
+            <circle cx="300" cy="118" r="4.5" />
+            <circle cx="388" cy="318" r="4.5" />
+            <circle cx="248" cy="268" r="4.5" />
           </g>
 
-          <g
-            fontFamily="var(--font-sans), Arial, sans-serif"
-            letterSpacing="0"
-            fill={color.authority}
-          >
-            <text x="402" y="224" fontSize="19" fontWeight="800">
-              {labels.center}
-            </text>
-            <text x="402" y="247" fontSize="13" fill={color.muted}>
-              {labels.boundary}
-            </text>
-            <text x="525" y="181" fontSize="14" fontWeight="800" fill={color.authority}>
-              {labels.radius}
-            </text>
-          </g>
+          {!compact && (
+            <g
+              fontFamily="var(--font-sans), Arial, sans-serif"
+              letterSpacing="0"
+              fill={color.authority}
+            >
+              <text x="334" y="243" fontSize="18" fontWeight="800">
+                {labels.center}
+              </text>
+              <text x="334" y="264" fontSize="12" fill={color.muted}>
+                {labels.boundary}
+              </text>
+              <text x="452" y="236" fontSize="13" fontWeight="800" fill={color.authority}>
+                {labels.radius}
+              </text>
+            </g>
+          )}
 
           <g
             fontFamily="var(--font-sans), Arial, sans-serif"
             fill={color.muted}
-            fontSize="11"
+            fontSize={compact ? '9.5' : '10.5'}
             fontWeight="800"
-            letterSpacing="0.08em"
+            letterSpacing="0.07em"
           >
-            <text x="95" y="74">ALICANTE</text>
-            <text x="278" y="135">GUARDAMAR</text>
-            <text x="454" y="132">SANTA POLA</text>
-            <text x="222" y="314">ORIHUELA COSTA</text>
-            <text x="492" y="307">SAN JAVIER</text>
+            <text x="358" y="172">LA MATA</text>
+            <text x="268" y="112">GUARDAMAR</text>
+            <text x="398" y="312">ORIHUELA COSTA</text>
+            <text x="214" y="262">SAN MIGUEL</text>
           </g>
 
-          <g stroke={color.line} strokeWidth="1">
-            <path d="M38 38 H94" />
-            <path d="M38 38 V94" />
-            <path d="M624 364 H568" />
-            <path d="M624 364 V308" />
+          <g transform="translate(36 36)">
+            <text
+              x="0"
+              y="0"
+              fontFamily="var(--font-sans), Arial, sans-serif"
+              fontSize="10"
+              fontWeight="800"
+              letterSpacing="0.1em"
+              fill={color.muted}
+            >
+              N
+            </text>
+            <path d="M 6 8 V 28" stroke={color.line} strokeWidth="1.2" />
+            <path d="M 6 8 L 2 14 M 6 8 L 10 14" stroke={color.line} strokeWidth="1.2" />
           </g>
 
           <g transform="translate(40 360)">
-            <rect width="135" height="24" fill={inverse ? 'rgba(255, 250, 242, 0.07)' : 'rgba(255,255,255,0.58)'} stroke={color.line} />
-            <path d="M15 13 H74" stroke={color.authority} strokeWidth="2" />
-            <path d="M74 13 H118" stroke={color.structural} strokeWidth="2" strokeDasharray="5 6" />
+            <rect
+              width="148"
+              height="26"
+              fill={inverse ? 'rgba(255, 250, 242, 0.07)' : 'rgba(255,255,255,0.58)'}
+              stroke={color.line}
+            />
+            <circle cx="18" cy="13" r="5" fill={color.authority} />
+            <text x="30" y="17" fontSize="10" fontWeight="700" fill={color.muted}>
+              {labels.center}
+            </text>
+            <path d="M 92 13 H 132" stroke={color.structural} strokeWidth="1.8" strokeDasharray="4 5" />
           </g>
         </svg>
       </div>
       {!compact && (
-        <figcaption className={tone.caption}>
-          {labels.caption}
-        </figcaption>
+        <figcaption className={tone.caption}>{labels.caption}</figcaption>
       )}
     </figure>
   );

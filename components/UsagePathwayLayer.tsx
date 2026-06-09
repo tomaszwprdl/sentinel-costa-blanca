@@ -195,7 +195,7 @@ function DiagnosticGateIntro({
           <p className="hero-kicker">{tp('companyEyebrow')}</p>
           <h1 className="hero-display">{tp('companyHeadline')}</h1>
           <p className="hero-lead mt-6">{tp('companyLine')}</p>
-          <p className="mt-4 max-w-xl text-sm leading-relaxed text-authority-on-dark/70">
+          <p className="mt-4 hidden max-w-xl text-sm leading-relaxed text-authority-on-dark/70 sm:block">
             {tp('companyProofLine')}
           </p>
 

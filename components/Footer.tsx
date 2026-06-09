@@ -33,7 +33,7 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-authority-on-dark/78">
-              {t('meta.defaultDescription')}
+              {t('footer.brandLine')}
             </p>
           </div>
 

@@ -111,7 +111,7 @@ export default function HeaderClient() {
         </nav>
 
         <div className="header-controls flex shrink-0 items-center gap-2 lg:gap-3">
-          <div className="locale-switch locale-switch--header-mobile lg:hidden">
+          <div className="header-locale-mobile lg:hidden">
             <LanguageControl />
           </div>
           <div className="hidden items-center gap-4 border-l border-structural-light pl-4 lg:flex">

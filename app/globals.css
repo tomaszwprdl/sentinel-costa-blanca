@@ -1162,12 +1162,12 @@ textarea:focus {
   color: var(--authority-on-dark);
 }
 
-.locale-switch--header-mobile {
+.header-locale-mobile .locale-switch {
   height: 2rem;
   padding: 0.15rem;
 }
 
-.locale-switch--header-mobile .locale-switch__link {
+.header-locale-mobile .locale-switch__link {
   height: 1.65rem;
   min-width: 1.95rem;
   font-size: 0.72rem;
@@ -1362,6 +1362,40 @@ textarea:focus {
   transform: translateY(0);
 }
 
+@media (max-width: 899px) {
+  .visual-hero-section {
+    min-height: auto;
+    padding-top: 0.85rem;
+    padding-bottom: 1rem;
+  }
+
+  .visual-hero-shell {
+    display: flex;
+    min-height: calc(100dvh - 5.75rem);
+    flex-direction: column;
+  }
+
+  .visual-hero-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.85rem;
+  }
+
+  .hero-copy-panel {
+    flex: 0 1 auto;
+    padding: 0.85rem 0.85rem 0.2rem;
+  }
+
+  .diagnostic-panel {
+    flex-shrink: 0;
+    margin-top: 0;
+    scroll-margin-top: 6.5rem;
+  }
+}
+
 @media (max-width: 640px) {
   .visual-card,
   .visual-card-strong,
@@ -1379,40 +1413,59 @@ textarea:focus {
   }
 
   .hero-fact {
-    padding: 0.65rem 0.75rem;
-  }
-
-  .visual-hero-section {
-    min-height: auto;
-    padding-top: 1rem;
-    padding-bottom: 1.25rem;
-  }
-
-  .visual-hero-shell {
-    min-height: 0;
+    padding: 0.55rem 0.65rem;
   }
 
   .visual-hero-content {
-    gap: 0.85rem;
-    padding: 0.85rem;
+    gap: 0.65rem;
+    padding: 0.75rem;
   }
 
   .hero-copy-panel {
-    padding: 1rem 1rem 0.35rem;
+    padding: 0.75rem 0.75rem 0.15rem;
   }
 
   .hero-lead {
-    margin-top: 1rem !important;
+    margin-top: 0.85rem !important;
+    font-size: 0.98rem;
   }
 
   .hero-fact-grid {
-    margin-top: 1rem;
-    gap: 0.45rem;
+    margin-top: 0.85rem;
+    gap: 0.4rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero-fact strong {
+    font-size: 0.72rem;
+  }
+
+  .hero-fact span {
+    font-size: 0.62rem;
+  }
+
+  .gate-scroll-cue {
+    margin-top: 0.65rem !important;
+    font-size: 0.72rem;
   }
 
   .diagnostic-panel {
-    margin-top: -0.35rem;
-    scroll-margin-top: 6.5rem;
+    padding-top: 0.9rem !important;
+    padding-bottom: 0.9rem !important;
+  }
+
+  .diagnostic-panel .section-label {
+    font-size: 0.68rem;
+  }
+
+  .diagnostic-panel h2 {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .visual-hero-content {
+    padding: 0.65rem;
   }
 }
 
