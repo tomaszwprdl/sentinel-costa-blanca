@@ -496,15 +496,10 @@
         "headline": "Usage situation first, then responsibility level",
         "lead": "Operational modules and an indicative range refine the model — they do not create a separate offer.",
         "secondaryCta": "Start with situation",
-        "flowSteps": [
-          { "index": "01", "label": "Situation" },
-          { "index": "02", "label": "Responsibility" },
-          { "index": "03", "label": "Scope" }
-        ],
-        "facts": [
-          { "label": "Area", "value": "Torrevieja + 50-70 km" },
-          { "label": "Proof", "value": "Report after visit" },
-          { "label": "Model", "value": "3 responsibility levels" }
+        "proofBadges": [
+          "Report after visit",
+          "Scope after review",
+          "3 levels"
         ]
       },
       "ladder": {

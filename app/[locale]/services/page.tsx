@@ -16,16 +16,6 @@ import OperationalModuleTile from '@/components/OperationalModuleTile';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import JourneyNav from '@/components/JourneyNav';
 
-type Fact = {
-  label: string;
-  value: string;
-};
-
-type HeroFlowStep = {
-  index: string;
-  label: string;
-};
-
 type OperationalModule = {
   image?: string;
   visual?: 'readiness' | 'seasonal' | 'access';
@@ -57,8 +47,7 @@ export default async function ServicesPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'services' });
-  const facts = t.raw('redesign.hero.facts') as Fact[];
-  const flowSteps = t.raw('redesign.hero.flowSteps') as HeroFlowStep[];
+  const proofBadges = t.raw('redesign.hero.proofBadges') as string[];
   const journeyItems = [
     { id: 'situation', label: t('redesign.journey.situation') },
     { id: 'responsibility', label: t('redesign.journey.responsibility') },
@@ -115,7 +104,7 @@ export default async function ServicesPage({
       <HeaderClient />
       <main className="services-page min-h-screen">
         <Section tone="authority" className="section-primitive--first services-command-hero" id="qualification">
-          <GridFrame className="services-command-hero__grid items-center gap-10">
+          <GridFrame className="services-command-hero__grid items-center">
             <Region name="main" desktopSpan="half">
               <div className="motion-entrance services-hero-copy max-w-[680px]">
                 <p className="services-hero-question">{t('redesign.hero.decisionQuestion')}</p>
@@ -124,67 +113,42 @@ export default async function ServicesPage({
                   {t('redesign.hero.headline')}
                 </h1>
                 <p className="hero-lead services-hero-lead">{t('redesign.hero.lead')}</p>
-                <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row">
-                  <Link href={`/${locale}/contact`} className="btn-primary">
+                <div className="services-hero-actions mt-7 flex flex-col gap-3 sm:mt-7 sm:flex-row">
+                  <Link href={`/${locale}/contact`} className="btn-primary services-hero-cta services-hero-cta--primary">
                     {t('cta.primaryButton')}
                   </Link>
-                  <Link href="#situation" className="btn-secondary btn-secondary-on-dark">
+                  <Link href="#situation" className="btn-secondary btn-secondary-on-dark services-hero-cta services-hero-cta--secondary">
                     {t('redesign.hero.secondaryCta')}
                   </Link>
                 </div>
                 <div className="services-hero-proof" aria-label={t('redesign.hero.eyebrow')}>
-                  {facts.map((fact) => (
-                    <div key={fact.label} className="services-hero-proof__badge">
-                      <span className="services-hero-proof__label">{fact.label}</span>
-                      <strong className="services-hero-proof__value">{fact.value}</strong>
-                    </div>
+                  {proofBadges.map((badge) => (
+                    <span key={badge} className="services-hero-proof__badge">
+                      {badge}
+                    </span>
                   ))}
                 </div>
               </div>
             </Region>
             <Region name="support" tabletSpan="half" desktopSpan="half">
-              <figure className="services-command-card motion-panel-reveal">
-                <div className="services-command-card__photo relative aspect-[4/3]">
-                  <Image
-                    src="/photos/sentinel-apartment-entry-placeholder.png"
-                    alt=""
-                    fill
-                    sizes="(min-width: 1024px) 42vw, 100vw"
-                    className="object-cover"
-                    priority
-                  />
-                  <span className="services-command-card__shade" aria-hidden="true" />
-                </div>
-                <div className="services-command-card__panel" aria-hidden="true">
-                  <div className="services-command-card__header">
+              <figure className="services-hero-visual motion-panel-reveal" aria-hidden="true">
+                <div className="services-hero-visual__frame">
+                  <div className="services-hero-visual__chrome">
                     <span />
                     <span />
                     <span />
                   </div>
-                  <Image
-                    src="/visuals/sentinel-service-scope-diagram.svg"
-                    alt=""
-                    fill
-                    sizes="(min-width: 1024px) 26vw, 82vw"
-                    className="object-cover"
-                    unoptimized
-                  />
-                </div>
-                <div className="services-hero-flow" aria-hidden="true">
-                  <span className="services-hero-flow__scan" />
-                  <div className="services-hero-flow__track">
-                    {flowSteps.map((step, index) => (
-                      <div key={step.index} className="services-hero-flow__item">
-                        <div className="services-hero-flow__step" data-flow-index={index}>
-                          <span className="services-hero-flow__index">{step.index}</span>
-                          <span className="services-hero-flow__label">{step.label}</span>
-                          <span className="services-hero-flow__pulse" />
-                        </div>
-                        {index < flowSteps.length - 1 && (
-                          <span className="services-hero-flow__connector">→</span>
-                        )}
-                      </div>
-                    ))}
+                  <div className="services-hero-visual__diagram relative aspect-[4/3]">
+                    <Image
+                      src="/visuals/sentinel-service-scope-diagram.svg"
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 44vw, 100vw"
+                      className="object-contain p-3 md:p-4"
+                      priority
+                      unoptimized
+                    />
+                    <span className="services-hero-visual__scan" />
                   </div>
                 </div>
               </figure>
