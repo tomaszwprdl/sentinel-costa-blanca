@@ -18,7 +18,7 @@
       "legal": "Prawne",
       "contact": "Kontakt",
       "serviceArea": "Obszar Obsługi",
-      "serviceAreaText": "Torrevieja + promień 50-70km",
+      "serviceAreaText": "Lokalny obszar działania na południowej Costa Blanca — mapa ustalonego promienia operacyjnego.",
       "operatingHours": "Godziny pracy",
       "copyright": "Wszelkie prawa zastrzeżone.",
       "termsConditions": "Regulamin",
@@ -84,7 +84,7 @@
       "companyEyebrow": "Lokalna reprezentacja właściciela",
       "companyHeadline": "Lokalny nadzór, gdy nie ma Cię na miejscu.",
       "companyLine": "Sentinel działa lokalnie w imieniu właściciela: sprawdza stan, kontroluje dostęp i dokumentuje to, co dzieje się na miejscu.",
-      "companyProofLine": "Działamy z Torrevieja w określonym promieniu Costa Blanca, z dokumentacją stanu i kontrolowanym prowadzeniem kluczy oraz dostępu.",
+      "companyProofLine": "Działamy lokalnie w ustalonym promieniu Costa Blanca, z dokumentacją stanu i kontrolowanym prowadzeniem kluczy oraz dostępu.",
       "companyFacts": {
         "area": {
           "label": "Obszar działania",
@@ -145,6 +145,7 @@
       "selectorTitle": "Wybierz sposób używania nieruchomości",
       "selectorInstruction": "Od tego zależy zakres lokalnego nadzoru.",
       "gateInstruction": "Wybierz sytuację, żeby zobaczyć właściwy zakres nadzoru.",
+      "gateScrollCue": "Przejdź do wyboru sytuacji używania",
       "chooseModel": "Wybierz ten model",
       "selectedSituationLabel": "Wybrana sytuacja:",
       "changeSituation": "Zmień sytuację",

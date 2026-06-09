@@ -18,7 +18,7 @@
       "legal": "Legal",
       "contact": "Contact",
       "serviceArea": "Service Area",
-      "serviceAreaText": "Torrevieja + 50-70km radius",
+      "serviceAreaText": "Defined service area on the southern Costa Blanca — map of the local operating radius.",
       "operatingHours": "Operating hours",
       "copyright": "All rights reserved.",
       "termsConditions": "Terms & Conditions",
@@ -84,7 +84,7 @@
       "companyEyebrow": "Local owner representation",
       "companyHeadline": "Local oversight while you are away.",
       "companyLine": "Sentinel acts locally on behalf of the owner: checking condition, controlling access and documenting what happens on site.",
-      "companyProofLine": "Operating from Torrevieja within a defined Costa Blanca radius, with documented condition checks and controlled key/access handling.",
+      "companyProofLine": "Operating within a defined Costa Blanca radius, with documented condition checks and controlled key/access handling.",
       "companyFacts": {
         "area": {
           "label": "Operating area",
@@ -145,6 +145,7 @@
       "selectorTitle": "Choose how the property is used",
       "selectorInstruction": "This defines the local oversight structure.",
       "gateInstruction": "Choose the situation to see the relevant oversight structure.",
+      "gateScrollCue": "Continue to usage situation selection",
       "chooseModel": "Choose this model",
       "selectedSituationLabel": "Selected situation:",
       "changeSituation": "Change situation",

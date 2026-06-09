@@ -204,9 +204,13 @@ function DiagnosticGateIntro({
             <HeroFactChip label={tp('companyFacts.documentation.label')} value={tp('companyFacts.documentation.value')} />
             <HeroFactChip label={tp('companyFacts.access.label')} value={tp('companyFacts.access.value')} />
           </div>
+
+          <a href="#usage-situation-gate" className="gate-scroll-cue mt-5 inline-flex lg:hidden">
+            <span>{tp('gateScrollCue')}</span>
+          </a>
         </div>
 
-        <div className="diagnostic-panel motion-panel-reveal p-5 md:p-6">
+        <div id="usage-situation-gate" className="diagnostic-panel motion-panel-reveal scroll-mt-28 p-5 md:p-6">
           <p className="section-label">{tp('selectorEyebrow')}</p>
           <h2 className="mt-2 text-2xl leading-tight md:text-3xl">
             {tp('selectorTitle')}
@@ -298,16 +302,16 @@ function PathwayDetailPanel({
   return (
     <div className="diagnostic-result-shell motion-panel-reveal">
       <div className="grid gap-0 lg:grid-cols-[minmax(0,0.95fr)_minmax(18rem,0.45fr)]">
-        <div className="p-6 md:p-8">
-          <p className="section-label">{t('selectedLabel')}</p>
-          <h2 className="mt-2 max-w-[18ch] text-3xl font-black leading-tight text-heading md:text-4xl">
+        <div className="pathway-result-main p-6 pt-7 md:p-8 md:pt-8">
+          <p className="section-label hidden md:block">{t('selectedLabel')}</p>
+          <h2 className="mt-0 max-w-[18ch] text-3xl font-black leading-tight text-heading md:mt-2 md:text-4xl">
             {t(`cards.${pathway}.title`)}
           </h2>
           <p className="mt-5 text-base leading-relaxed text-body">
             {t(`detail.${pathway}.priority`)}
           </p>
 
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          <div className="mt-6 grid gap-3 lg:grid-cols-2">
             <div className="rounded-2xl border border-structural-light bg-surface-light-alt p-4">
               <p className="mb-2 text-[11px] font-black uppercase tracking-wide text-muted">
                 {t('meaningLabel')}
@@ -326,7 +330,7 @@ function PathwayDetailPanel({
             </div>
           </div>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-7 flex flex-col gap-3 lg:flex-row">
             <Link
               href={primaryHref}
               className="btn-primary inline-flex w-fit text-sm"

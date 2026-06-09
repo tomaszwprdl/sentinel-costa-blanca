@@ -21,7 +21,7 @@ export default function Footer() {
   return (
     <footer className="mt-[var(--space-40)] bg-authority-bg text-authority-on-dark">
       <div className="container py-10 md:py-14">
-        <div className="grid gap-7 border-b border-authority-on-dark/15 pb-8 md:gap-10 md:pb-10 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.42fr)] lg:items-end">
+        <div className="grid gap-7 border-b border-authority-on-dark/15 pb-8 md:gap-10 md:pb-10 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,0.34fr)] lg:items-start">
           <div>
             <Link href={`/${locale}`} className="inline-block" aria-label={t('nav.home')}>
               <Image
@@ -37,18 +37,35 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-authority-on-dark/15 bg-authority-on-dark/8 p-4 md:p-5">
-            <p className="section-label text-authority-on-dark/80">{t('footer.contact')}</p>
-            <ul className="mt-4 space-y-2 text-sm text-authority-on-dark/82">
+          <div className="footer-contact-card hidden rounded-2xl border border-authority-on-dark/15 bg-authority-on-dark/8 p-5 lg:block">
+            <p className="section-label pt-0.5 text-authority-on-dark/80">{t('footer.contact')}</p>
+            <ul className="mt-4 space-y-2.5 text-sm text-authority-on-dark/82">
               <li>{t('contact.phone')}</li>
               <li>
                 <a href={`mailto:${t('contact.email')}`} className="hover:text-authority-on-dark">
                   {t('contact.email')}
                 </a>
               </li>
-              <li>{t('footer.operatingHours')}: {t('contact.hours')}</li>
+              <li>
+                {t('footer.operatingHours')}: {t('contact.hours')}
+              </li>
             </ul>
           </div>
+        </div>
+
+        <div className="footer-contact-strip mt-8 rounded-2xl border border-authority-on-dark/15 bg-authority-on-dark/8 p-4 md:p-5 lg:hidden">
+          <p className="section-label text-authority-on-dark/80">{t('footer.contact')}</p>
+          <ul className="mt-3 space-y-2 text-sm text-authority-on-dark/82">
+            <li>{t('contact.phone')}</li>
+            <li>
+              <a href={`mailto:${t('contact.email')}`} className="hover:text-authority-on-dark">
+                {t('contact.email')}
+              </a>
+            </li>
+            <li>
+              {t('footer.operatingHours')}: {t('contact.hours')}
+            </li>
+          </ul>
         </div>
 
         <GridFrame className="gap-8 py-8 md:gap-10 md:py-10">
@@ -106,18 +123,18 @@ export default function Footer() {
             </div>
           </Region>
           <Region name="authority" desktopSpan="half">
-            <div>
+            <div className="footer-service-area">
               <h3 className="section-label text-authority-on-dark/80">
                 {t('footer.serviceArea')}
               </h3>
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-authority-on-dark/78">
+              <p className="mt-3 max-w-md text-sm leading-relaxed text-authority-on-dark/78">
                 {t('footer.serviceAreaText')}
               </p>
               <ServiceAreaMap
                 labels={serviceAreaMapLabels}
                 compact
                 inverse
-                className="mt-5 max-w-sm"
+                className="footer-service-area-map mt-4 w-full"
               />
             </div>
           </Region>
