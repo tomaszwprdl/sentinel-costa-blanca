@@ -51,3 +51,9 @@ node_modules/
 .env.production
 node_modules/
 .next/
+
+# claude code local settings
+.claude/settings.local.json
+
+# QA screenshot folders
+screenshots-*/
