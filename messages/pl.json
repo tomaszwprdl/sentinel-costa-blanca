@@ -14,12 +14,10 @@
       "contact": "Kontakt"
     },
     "footer": {
-      "brandLine": "Sentinel — reprezentacja właściciela na miejscu dla właścicieli przebywających z dala od obiektu.",
+      "brandLine": "Sentinel — Reprezentacja właściciela na miejscu.",
       "navigation": "Nawigacja",
       "legal": "Prawne",
       "contact": "Kontakt",
-      "serviceArea": "Obszar Obsługi",
-      "serviceAreaText": "Południowa Costa Blanca — obszar operacyjny wokół Torrevieja, promień 50–70 km.",
       "operatingHours": "Godziny pracy",
       "copyright": "Wszelkie prawa zastrzeżone.",
       "termsConditions": "Regulamin",
@@ -77,7 +75,6 @@
       "descriptor": "Reprezentacja właściciela na miejscu",
       "line3": "Zajmujemy się nieruchomością pod Twoją nieobecność.",
       "line4": "Zakres zależy od tego, jak nieruchomość jest używana, gdy Cię nie ma.",
-      "line5": "Każde działanie jest dokumentowane.",
       "area": "Obszar działania: południowa Costa Blanca.",
       "ctaPrimary": "Zobacz, to działa"
     },
@@ -142,7 +139,6 @@
           }
         }
       },
-      "selectorEyebrow": "Sytuacja używania",
       "selectorTitle": "Wybierz sposób używania nieruchomości",
       "selectorInstruction": "Od tego zależy zakres lokalnego nadzoru.",
       "gateInstruction": "Wybierz sytuację, żeby zobaczyć właściwy zakres nadzoru.",

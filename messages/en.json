@@ -14,12 +14,10 @@
       "contact": "Contact"
     },
     "footer": {
-      "brandLine": "Structured property oversight for owners operating away from the property.",
+      "brandLine": "Sentinel — Structured Property Oversight.",
       "navigation": "Navigation",
       "legal": "Legal",
       "contact": "Contact",
-      "serviceArea": "Service Area",
-      "serviceAreaText": "Southern Costa Blanca — operating area centred on Torrevieja, 50–70 km radius.",
       "operatingHours": "Operating hours",
       "copyright": "All rights reserved.",
       "termsConditions": "Terms & Conditions",
@@ -77,7 +75,6 @@
       "descriptor": "Structured Property Oversight",
       "line3": "We provide structured local oversight of your property in your absence.",
       "line4": "The right scope depends on how the property is used while you are away.",
-      "line5": "Every action is documented.",
       "area": "Area of operation: southern Costa Blanca.",
       "ctaPrimary": "See how it works"
     },
@@ -142,7 +139,6 @@
           }
         }
       },
-      "selectorEyebrow": "Usage situation",
       "selectorTitle": "Choose how the property is used",
       "selectorInstruction": "This defines the local oversight structure.",
       "gateInstruction": "Choose the situation to see the relevant oversight structure.",

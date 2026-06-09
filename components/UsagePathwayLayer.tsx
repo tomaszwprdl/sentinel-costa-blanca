@@ -25,7 +25,6 @@ type UsagePathwayLayerProps = {
 
 export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) {
   const locale = useLocale();
-  const t = useTranslations('home');
   const tp = useTranslations('home.pathway');
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -75,7 +74,7 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
     <>
       {showFullGate && (
         <Section tone="authority" className="visual-hero-section">
-          <DiagnosticGateIntro t={t} tp={tp}>
+          <DiagnosticGateIntro tp={tp}>
             <DiagnosticChoiceBlock
               selected={activeSelection}
               isChanging={isChanging}
@@ -96,8 +95,7 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
               <div className="diagnostic-result-shell motion-panel-reveal mb-8">
                 <div className="diagnostic-result-top">
                   <div>
-                    <p className="section-label">{tp('selectorEyebrow')}</p>
-                    <h2 className="mt-2 text-2xl md:text-3xl">{tp('selectorTitle')}</h2>
+                    <h2 className="text-2xl md:text-3xl">{tp('selectorTitle')}</h2>
                     <p className="mt-2 max-w-2xl text-sm text-body">{tp('selectorInstruction')}</p>
                   </div>
                 </div>
@@ -169,11 +167,9 @@ export function PathwayFinalCtaLink({
 }
 
 function DiagnosticGateIntro({
-  t,
   tp,
   children,
 }: {
-  t: ReturnType<typeof useTranslations<'home'>>;
   tp: ReturnType<typeof useTranslations<'home.pathway'>>;
   children: ReactNode;
 }) {
@@ -211,17 +207,13 @@ function DiagnosticGateIntro({
         </div>
 
         <div id="usage-situation-gate" className="diagnostic-panel motion-panel-reveal scroll-mt-28 p-5 md:p-6">
-          <p className="section-label">{tp('selectorEyebrow')}</p>
-          <h2 className="mt-2 text-2xl leading-tight md:text-3xl">
+          <h2 className="text-2xl leading-tight md:text-3xl">
             {tp('selectorTitle')}
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-body">
             {tp('selectorInstruction')}
           </p>
           <div className="mt-5">{children}</div>
-          <p className="mt-5 border-t border-structural-light pt-4 text-xs leading-relaxed text-muted">
-            {t('hero.line5')}
-          </p>
         </div>
       </div>
     </div>

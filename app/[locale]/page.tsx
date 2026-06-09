@@ -307,8 +307,7 @@ function UsagePathwayFallback({
             </div>
 
             <div className="diagnostic-panel p-5 md:p-6">
-              <p className="section-label">{t('pathway.selectorEyebrow')}</p>
-              <h2 className="mt-2 text-2xl leading-tight md:text-3xl">
+              <h2 className="text-2xl leading-tight md:text-3xl">
                 {t('pathway.selectorTitle')}
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-body">{t('pathway.selectorInstruction')}</p>
@@ -316,9 +315,6 @@ function UsagePathwayFallback({
                 <FallbackDiagnosticChoiceBlock locale={locale} selected={selected} t={t} />
               </div>
               <p className="mt-4 text-sm text-muted leading-relaxed">{t('pathway.gateInstruction')}</p>
-              <p className="mt-5 border-t border-structural-light pt-4 text-xs leading-relaxed text-muted">
-                {t('hero.line5')}
-              </p>
             </div>
           </div>
         </div>
