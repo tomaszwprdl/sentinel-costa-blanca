@@ -10,13 +10,13 @@ import Region from '@/components/layout/Region';
 import Estimator from '@/components/Estimator';
 import PackageResponsibilityLadder from '@/components/PackageResponsibilityLadder';
 import ScenarioFitGuide from '@/components/ScenarioFitGuide';
+import UsageResponsibilityBridge from '@/components/UsageResponsibilityBridge';
 import WhatIfEventSimulator from '@/components/WhatIfEventSimulator';
 import PackageDetailPanels from '@/components/PackageDetailPanels';
 import ServiceBoundaryGrid from '@/components/ServiceBoundaryGrid';
 import OperationalModuleTile from '@/components/OperationalModuleTile';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import JourneyNav from '@/components/JourneyNav';
-import ServiceScopeDiagram from '@/components/visuals/ServiceScopeDiagram';
 
 type Fact = {
   label: string;
@@ -54,12 +54,11 @@ export default async function ServicesPage({
   const t = await getTranslations({ locale, namespace: 'services' });
   const facts = t.raw('redesign.hero.facts') as Fact[];
   const journeyItems = [
-    { id: 'qualification', label: t('redesign.hero.eyebrow') },
-    { id: 'package-fit', label: t('redesign.ladder.eyebrow') },
-    { id: 'scenario-fit', label: t('redesign.scenario.eyebrow') },
-    { id: 'event-simulator', label: t('redesign.events.eyebrow') },
-    { id: 'package-details', label: t('redesign.packageDetails.eyebrow') },
-    { id: 'estimator', label: t('redesign.estimatorBand.eyebrow') },
+    { id: 'situation', label: t('redesign.journey.situation') },
+    { id: 'responsibility', label: t('redesign.journey.responsibility') },
+    { id: 'scope', label: t('redesign.journey.scope') },
+    { id: 'operational-modules', label: t('redesign.journey.modules') },
+    { id: 'estimator', label: t('redesign.journey.estimator') },
   ];
 
   const operationalModules: OperationalModule[] = [
@@ -67,24 +66,13 @@ export default async function ServicesPage({
       image: '/photos/sentinel-cleaning-readiness-placeholder.png',
       label: t('redesign.modules.useWhen'),
       title: t('addons.rental.title'),
-      body: t('addons.intro'),
+      body: t('addons.rental.notPM'),
       items: [
         t('addons.rental.items.preparation'),
         t('addons.rental.items.cleaning'),
         t('addons.rental.items.guests'),
       ],
       note: t('addons.rental.notPM'),
-    },
-    {
-      visual: 'seasonal',
-      label: t('redesign.modules.useWhen'),
-      title: t('addons.seasonal.title'),
-      body: t('executionOnly.intro'),
-      items: [
-        t('addons.seasonal.items.openingClosing'),
-        t('addons.seasonal.items.preparation'),
-        t('addons.seasonal.items.extraVisit'),
-      ],
     },
     {
       visual: 'access',
@@ -94,6 +82,17 @@ export default async function ServicesPage({
       items: [
         t('executionOnly.availableItems.keyHolding'),
         t('executionOnly.availableItems.oneTimeAccess'),
+      ],
+    },
+    {
+      visual: 'seasonal',
+      label: t('redesign.modules.useWhen'),
+      title: t('addons.seasonal.title'),
+      body: t('addons.seasonal.items.openingClosing'),
+      items: [
+        t('addons.seasonal.items.openingClosing'),
+        t('addons.seasonal.items.preparation'),
+        t('addons.seasonal.items.extraVisit'),
       ],
     },
   ];
@@ -115,7 +114,7 @@ export default async function ServicesPage({
                   <Link href={`/${locale}/contact`} className="btn-primary">
                     {t('cta.primaryButton')}
                   </Link>
-                  <Link href="#scenario-fit" className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
+                  <Link href="#situation" className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
                     {t('redesign.hero.secondaryCta')}
                   </Link>
                 </div>
@@ -149,89 +148,96 @@ export default async function ServicesPage({
 
         <JourneyNav items={journeyItems} ariaLabel={t('redesign.hero.headline')} />
 
-        <Section tone="light" className="!pb-8 md:!pb-10">
+        <Section tone="light" className="section-primitive--compact">
+          <ScenarioFitGuide />
+        </Section>
+
+        <Section tone="alt" className="section-primitive--compact !pt-10">
+          <UsageResponsibilityBridge />
+        </Section>
+
+        <Section tone="light" className="section-primitive--compact">
           <PackageResponsibilityLadder />
         </Section>
 
         <Section tone="alt" className="section-primitive--compact">
-          <ScenarioFitGuide />
-        </Section>
-
-        <Section tone="light" className="section-primitive--compact">
           <WhatIfEventSimulator />
         </Section>
 
-        <Section tone="alt" className="section-primitive--compact">
+        <Section tone="light" className="section-primitive--compact">
           <PackageDetailPanels />
         </Section>
 
-        <Section tone="light" className="section-primitive--compact">
+        <Section tone="alt" className="section-primitive--compact">
           <ServiceBoundaryGrid />
         </Section>
 
-        <Section tone="alt" className="section-primitive--compact">
-          <div className="mb-6 max-w-[760px] md:mb-8">
-            <p className="section-label">{t('redesign.modules.eyebrow')}</p>
-            <h2 className="h2-system mt-3">{t('redesign.modules.title')}</h2>
-            <p className="mt-3 text-body">{t('redesign.modules.intro')}</p>
-          </div>
-          <div className="grid gap-4 lg:grid-cols-3 lg:gap-5">
-            {operationalModules.map((module) => (
-              <OperationalModuleTile key={module.title} {...module} />
-            ))}
+        <Section tone="light" className="section-primitive--compact" id="operational-modules">
+          <div className="services-modules-band">
+            <div className="mb-6 max-w-[760px]">
+              <p className="section-label">{t('redesign.modules.eyebrow')}</p>
+              <h2 className="h2-system mt-3">{t('redesign.modules.title')}</h2>
+              <p className="mt-3 text-body">{t('redesign.modules.intro')}</p>
+            </div>
+            <div className="grid gap-4 lg:grid-cols-3 lg:gap-5">
+              {operationalModules.map((module) => (
+                <OperationalModuleTile key={module.title} {...module} />
+              ))}
+            </div>
           </div>
         </Section>
 
-        <Section tone="light" className="section-primitive--compact">
-          <div className="grid gap-5 lg:grid-cols-[minmax(0,0.58fr)_minmax(0,0.42fr)]">
-            <div className="visual-card-strong p-5 md:p-8">
+        <Section tone="alt" className="section-primitive--compact">
+          <div className="services-execution-strip">
+            <div className="max-w-[760px]">
               <p className="section-label">{t('executionOnly.microLabel')}</p>
-              <h2 className="h2-system mt-3">{t('executionOnly.title')}</h2>
-              <p className="text-body">{t('executionOnly.intro')}</p>
-              <div className="mt-6 grid gap-4 md:grid-cols-2">
-                <div className="rounded-2xl bg-surface-light-alt p-4">
-                  <h3 className="mb-3 text-base font-black text-heading">{t('executionOnly.availableTitle')}</h3>
-                  <ul className="ml-4 list-disc space-y-2 text-sm text-body">
-                    {EXECUTION_ONLY_AVAILABLE_KEYS.map((key) => (
-                      <li key={key}>{t(`executionOnly.availableItems.${key}`)}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="rounded-2xl bg-surface-light-alt p-4">
-                  <h3 className="mb-3 text-base font-black text-heading">{t('executionOnly.limitationsTitle')}</h3>
-                  <ul className="ml-4 list-disc space-y-2 text-sm text-body">
-                    {EXECUTION_ONLY_LIMITATION_KEYS.map((key) => (
-                      <li key={key}>{t(`executionOnly.limitationsItems.${key}`)}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <p className="mt-5 mb-0 text-sm leading-relaxed text-muted">{t('executionOnly.closing')}</p>
+              <h2 className="h2-system mt-3">{t('redesign.executionStrip.title')}</h2>
+              <p className="mt-3 text-body">{t('redesign.executionStrip.body')}</p>
             </div>
-
-            <div className="visual-card-strong overflow-hidden bg-surface-light-alt">
-              <ServiceScopeDiagram variant="extended" compact className="m-4" />
-              <div className="p-5">
-                <Link href={`/${locale}/contact`} className="btn-secondary w-full">
-                  {t('redesign.execution.cta')}
-                </Link>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              <div className="rounded-2xl border border-structural-light bg-surface-card p-4">
+                <h3 className="mb-3 text-sm font-black text-heading">{t('redesign.executionStrip.availableLabel')}</h3>
+                <ul className="ml-4 list-disc space-y-1.5 text-sm text-body">
+                  {EXECUTION_ONLY_AVAILABLE_KEYS.map((key) => (
+                    <li key={key}>{t(`executionOnly.availableItems.${key}`)}</li>
+                  ))}
+                </ul>
               </div>
+              <div className="rounded-2xl border border-structural-light bg-surface-light-alt p-4">
+                <h3 className="mb-3 text-sm font-black text-heading">{t('redesign.executionStrip.limitsLabel')}</h3>
+                <ul className="ml-4 list-disc space-y-1.5 text-sm text-body">
+                  {EXECUTION_ONLY_LIMITATION_KEYS.map((key) => (
+                    <li key={key}>{t(`executionOnly.limitationsItems.${key}`)}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <p className="mb-0 flex-1 text-sm text-muted">{t('executionOnly.closing')}</p>
+              <Link href={`/${locale}/contact`} className="btn-secondary shrink-0">
+                {t('redesign.executionStrip.cta')}
+              </Link>
+            </div>
+          </div>
+        </Section>
+
+        <Section tone="light" className="section-primitive--compact">
+          <div className="services-estimator-band">
+            <div className="mb-6 max-w-[760px]">
+              <p className="section-label">{t('redesign.estimatorBand.eyebrow')}</p>
+              <h2 className="h2-system mt-3">{t('redesign.estimatorBand.title')}</h2>
+              <p className="mt-3 text-body">{t('redesign.estimatorBand.intro')}</p>
+              <p className="mt-4 rounded-2xl border border-structural-light bg-surface-light-alt px-4 py-3 text-sm text-body">
+                {t('redesign.estimatorBand.transition')}
+              </p>
+            </div>
+            <div id="estimator">
+              <Estimator embedded />
             </div>
           </div>
         </Section>
 
         <Section tone="alt" className="section-primitive--compact">
-          <div className="mb-6 max-w-[760px] md:mb-8">
-            <p className="section-label">{t('redesign.estimatorBand.eyebrow')}</p>
-            <h2 className="h2-system mt-3">{t('redesign.estimatorBand.title')}</h2>
-            <p className="mt-3 text-body">{t('redesign.estimatorBand.intro')}</p>
-          </div>
-          <div id="estimator">
-            <Estimator />
-          </div>
-        </Section>
-
-        <Section tone="light" className="section-primitive--compact">
           <div className="grid gap-4 lg:grid-cols-2 lg:gap-5">
             <DisclosureBlock label={t('redesign.details.frameworkLabel')} explainer={t('redesign.details.frameworkExplainer')}>
               <div className="space-y-6">
@@ -292,7 +298,7 @@ export default async function ServicesPage({
       <MobileStickyCTA
         primaryHref={`/${locale}/contact`}
         primaryLabel={t('cta.primaryButton')}
-        secondaryHref="#scenario-fit"
+        secondaryHref="#situation"
         secondaryLabel={t('redesign.hero.secondaryCta')}
         suppressWhenVisible="#estimator"
       />

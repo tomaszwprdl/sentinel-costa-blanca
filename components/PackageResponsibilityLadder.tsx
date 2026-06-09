@@ -13,28 +13,25 @@ export default function PackageResponsibilityLadder() {
   const tHomeLevels = useTranslations('home.levels');
 
   return (
-    <div className="visual-card-strong overflow-hidden" id="package-fit">
-      <div className="module-header-band">
+    <div className="services-ladder-band" id="responsibility">
+      <div className="mb-8 max-w-[760px]">
         <p className="section-label">{t('redesign.ladder.eyebrow')}</p>
-        <div className="mt-3 grid gap-4 lg:grid-cols-[minmax(0,0.75fr)_minmax(18rem,0.35fr)] lg:items-end">
-          <div>
-            <h2 className="h2-system">{t('redesign.ladder.title')}</h2>
-            <p className="mt-3 max-w-[62ch] text-body">{t('redesign.ladder.intro')}</p>
-          </div>
-          <Link href="#package-details" className="btn-secondary justify-self-start lg:justify-self-end">
-            {t('redesign.ladder.detailCta')}
-          </Link>
-        </div>
+        <p className="mt-2 text-sm font-semibold text-support">{t('redesign.ladder.bridgeLine')}</p>
+        <h2 className="h2-system mt-3">{t('redesign.ladder.title')}</h2>
+        <p className="mt-3 text-body">{t('redesign.ladder.intro')}</p>
+        <Link href="#scope" className="btn-secondary mt-5 inline-flex">
+          {t('redesign.ladder.detailCta')}
+        </Link>
       </div>
 
-      <div className="process-sequence grid gap-0 md:grid-cols-3">
+      <div className="services-ladder-sequence">
         {PACKAGE_KEYS.map((packageKey, index) => {
           const levelKey = LEVEL_KEYS[index];
           return (
             <article
               key={packageKey}
               className={[
-                'relative border-b border-structural-light p-4 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 md:p-7',
+                'services-ladder-step',
                 ['module-card-tone-1', 'module-card-tone-2', 'module-card-tone-3'][index],
               ].join(' ')}
             >
@@ -54,9 +51,13 @@ export default function PackageResponsibilityLadder() {
               <p className="text-sm leading-relaxed text-body">{t(`redesign.ladder.${levelKey}.fit`)}</p>
 
               <div className="mt-6 space-y-3">
-                <div className="rounded-2xl bg-surface-light-alt p-4">
-                  <p className="mb-1 text-[11px] font-bold uppercase tracking-wide text-muted">{t('redesign.ladder.responsibilityLabel')}</p>
-                  <p className="mb-0 text-sm font-semibold text-heading">{t(`redesign.ladder.${levelKey}.responsibility`)}</p>
+                <div className="rounded-2xl border border-structural-light bg-surface-card p-4">
+                  <p className="mb-1 text-[11px] font-bold uppercase tracking-wide text-muted">
+                    {t('redesign.ladder.responsibilityLabel')}
+                  </p>
+                  <p className="mb-0 text-sm font-semibold text-heading">
+                    {t(`redesign.ladder.${levelKey}.responsibility`)}
+                  </p>
                 </div>
                 <div className="grid grid-cols-1 gap-2 text-sm">
                   <p className="mb-0 flex justify-between gap-3 border-b border-structural-light pb-2">

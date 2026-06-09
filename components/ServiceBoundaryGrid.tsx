@@ -9,7 +9,7 @@ export default function ServiceBoundaryGrid() {
   const t = useTranslations('services');
 
   return (
-    <div className="visual-card-strong overflow-hidden">
+    <div className="services-scope-subband overflow-hidden rounded-2xl border border-structural-light bg-surface-card">
       <div className="module-header-band">
         <p className="section-label">{t('redesign.boundary.eyebrow')}</p>
         <h2 className="h2-system mt-3">{t('redesign.boundary.title')}</h2>

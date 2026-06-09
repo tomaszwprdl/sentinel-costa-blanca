@@ -28,7 +28,7 @@ export default function WhatIfEventSimulator() {
   const detailKeys = ['observes', 'documents', 'owner', 'package'] as const;
 
   return (
-    <div className="visual-card-strong overflow-hidden" id="event-simulator">
+    <div className="services-scope-subband overflow-hidden rounded-2xl border border-structural-light bg-surface-card" id="event-simulator">
       <div className="grid gap-0 lg:grid-cols-[minmax(0,0.44fr)_minmax(0,0.56fr)]">
         <div className="border-b border-structural-light bg-surface-light-alt lg:border-b-0 lg:border-r">
           <div className="module-header-band">

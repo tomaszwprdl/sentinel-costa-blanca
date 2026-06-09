@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, type ReactNode } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import {
@@ -28,7 +28,30 @@ function sortScopeElements(keys: ScopeElementKey[]): ScopeElementKey[] {
   return [...keys].sort((a, b) => SCOPE_ELEMENT_KEYS.indexOf(a) - SCOPE_ELEMENT_KEYS.indexOf(b));
 }
 
-export default function Estimator() {
+type EstimatorProps = {
+  embedded?: boolean;
+};
+
+function EstimatorStep({
+  title,
+  children,
+  defaultOpen = true,
+}: {
+  title: string;
+  children: ReactNode;
+  defaultOpen?: boolean;
+}) {
+  return (
+    <details className="estimator-step group" open={defaultOpen}>
+      <summary className="estimator-step__summary">
+        <span>{title}</span>
+      </summary>
+      <div className="estimator-step__body">{children}</div>
+    </details>
+  );
+}
+
+export default function Estimator({ embedded = false }: EstimatorProps) {
   const locale = useLocale();
   const t = useTranslations('services.estimator');
   const [packageKey, setPackageKey] = useState<PackageKey>('structured_presence');
@@ -163,18 +186,24 @@ export default function Estimator() {
     </div>
   );
 
-  return (
-    <Section tone="alt">
-      <div className="visual-card-strong mx-auto max-w-[65ch] p-5 md:p-8 lg:max-w-none">
-        <div className="mb-8 max-w-3xl">
-          <p className="section-label">{t('groupJurisdiction')}</p>
-          <h2 className="h2-system mt-2">{t('heading')}</h2>
-        </div>
+  const shell = (
+    <div className={embedded ? 'estimator-embedded-shell' : 'visual-card-strong mx-auto max-w-[65ch] p-5 md:p-8 lg:max-w-none'}>
+        {!embedded && (
+          <div className="mb-8 max-w-3xl">
+            <p className="section-label">{t('groupJurisdiction')}</p>
+            <h2 className="h2-system mt-2">{t('heading')}</h2>
+          </div>
+        )}
+
+        {embedded && (
+          <p className="mb-6 max-w-3xl text-sm text-body">{t('orientationIntro')}</p>
+        )}
 
         <div className="lg:grid lg:grid-cols-[1fr_320px] lg:gap-10 lg:items-start">
-          <div className="space-y-8">
+          <div className="space-y-4 md:space-y-6">
+            <EstimatorStep title={embedded ? t('stepJurisdiction') : t('groupJurisdiction')}>
             <fieldset className="space-y-0 border-0 p-0 m-0">
-              <legend className="text-body font-bold mb-2 block">{t('groupJurisdiction')}</legend>
+              {!embedded && <legend className="text-body font-bold mb-2 block">{t('groupJurisdiction')}</legend>}
               <p className="text-xs text-muted mb-4">{t('groupJurisdictionAnchor')}</p>
               <div className="space-y-2" role="radiogroup" aria-label={t('packageLabel')}>
                 {PACKAGE_KEYS.map((k) => (
@@ -209,9 +238,11 @@ export default function Estimator() {
                 </div>
               )}
             </fieldset>
+            </EstimatorStep>
 
+            <EstimatorStep title={embedded ? t('stepMode') : t('groupMode')}>
             <fieldset className="space-y-0 border-0 p-0 m-0">
-              <legend className="text-body text-sm font-medium text-muted mb-2 block">{t('groupMode')}</legend>
+              {!embedded && <legend className="text-body text-sm font-medium text-muted mb-2 block">{t('groupMode')}</legend>}
               <p className="text-xs text-muted mb-3">{t('groupModeAnchor')}</p>
               <div className="inline-flex overflow-hidden rounded-full border border-structural-light bg-surface-card p-1" role="radiogroup" aria-label={t('modeLabel')}>
                 <label
@@ -249,9 +280,11 @@ export default function Estimator() {
                 </div>
               </div>
             </fieldset>
+            </EstimatorStep>
 
+            <EstimatorStep title={embedded ? t('stepParameters') : t('groupParameters')}>
             <fieldset className="space-y-0 border-0 p-0 m-0">
-              <legend className="text-body text-sm font-medium text-muted mb-2 block">{t('groupParameters')}</legend>
+              {!embedded && <legend className="text-body text-sm font-medium text-muted mb-2 block">{t('groupParameters')}</legend>}
               <p className="text-xs text-muted mb-3">{t('groupParametersAnchor')}</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
@@ -291,9 +324,11 @@ export default function Estimator() {
                 </div>
               </div>
             </fieldset>
+            </EstimatorStep>
 
+            <EstimatorStep title={embedded ? t('stepScope') : t('groupScopeElements')} defaultOpen={false}>
             <fieldset className="space-y-0 border-0 p-0 m-0">
-              <legend className="text-body text-sm text-muted mb-2 block">{t('groupScopeElements')}</legend>
+              {!embedded && <legend className="text-body text-sm text-muted mb-2 block">{t('groupScopeElements')}</legend>}
               <p className="text-xs text-muted mb-3">{t('groupScopeElementsAnchor')}</p>
               <div className="space-y-4">
                 {SCOPE_ELEMENT_KEYS.map((k) => (
@@ -321,6 +356,7 @@ export default function Estimator() {
                 ))}
               </div>
             </fieldset>
+            </EstimatorStep>
 
             <div className="pt-2">
               <p className={`mb-3 text-sm ${showParamsChangedCue ? 'params-changed-cue' : 'text-muted'}`} role="status">{gateMessage}</p>
@@ -346,6 +382,11 @@ export default function Estimator() {
           </div>
         </div>
       </div>
-    </Section>
   );
+
+  if (embedded) {
+    return shell;
+  }
+
+  return <Section tone="alt">{shell}</Section>;
 }

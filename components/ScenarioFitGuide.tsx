@@ -1,146 +1,102 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { useLocale, useTranslations } from 'next-intl';
-import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
-import EventResponseDiagram from '@/components/visuals/EventResponseDiagram';
+import { useTranslations } from 'next-intl';
+import { PATHWAY_KEYS, type PathwayKey } from '@/lib/pathway';
 import ServiceScopeDiagram from '@/components/visuals/ServiceScopeDiagram';
+import EventResponseDiagram from '@/components/visuals/EventResponseDiagram';
+import PathwaySituationDiagram from '@/components/visuals/PathwaySituationDiagram';
 
-const SCENARIOS = [
-  {
-    key: 'private',
-    diagram: 'basic',
-    packageKey: 'green',
-  },
-  {
-    key: 'guest',
-    image: '/photos/sentinel-cleaning-readiness-placeholder.png',
-    packageKey: 'orange',
-  },
-  {
-    key: 'decisions',
-    diagram: 'event',
-    packageKey: 'red',
-  },
-  {
-    key: 'mixed',
-    diagram: 'area',
-    packageKey: 'orange',
-  },
-] as const;
+const PATHWAY_VISUALS: Record<PathwayKey, 'private' | 'guest' | 'mixed'> = {
+  'private-use-only': 'private',
+  'regular-guest-stays': 'guest',
+  'mixed-not-defined': 'mixed',
+};
 
 export default function ScenarioFitGuide() {
   const t = useTranslations('services');
-  const tCommon = useTranslations('common');
-  const locale = useLocale();
-  const [selected, setSelected] = useState<(typeof SCENARIOS)[number]['key']>('private');
-  const active = SCENARIOS.find((scenario) => scenario.key === selected) ?? SCENARIOS[0];
-  const serviceAreaMapLabels = {
-    title: tCommon('serviceAreaMap.title'),
-    center: tCommon('serviceAreaMap.center'),
-    radius: tCommon('serviceAreaMap.radius'),
-    boundary: tCommon('serviceAreaMap.boundary'),
-    caption: tCommon('serviceAreaMap.caption'),
-  };
+  const tPathway = useTranslations('home.pathway.cards');
+  const [selected, setSelected] = useState<PathwayKey | null>(null);
+  const active = selected;
 
   return (
-    <div className="grid gap-5 lg:grid-cols-[minmax(0,0.8fr)_minmax(18rem,0.38fr)]" id="scenario-fit">
-      <div className="visual-card-strong overflow-hidden">
-        <div className="module-header-band">
-          <p className="section-label">{t('redesign.scenario.eyebrow')}</p>
-          <h2 className="h2-system mt-3">{t('redesign.scenario.title')}</h2>
-          <p className="mt-3 max-w-[62ch] text-body">{t('redesign.scenario.intro')}</p>
-        </div>
+    <div className="services-flow-band" id="situation">
+      <div className="mb-6 max-w-[760px]">
+        <p className="section-label">{t('redesign.scenario.eyebrow')}</p>
+        <h2 className="h2-system mt-3">{t('redesign.scenario.title')}</h2>
+        <p className="mt-3 text-body">{t('redesign.scenario.intro')}</p>
+      </div>
 
-        <div className="grid gap-2.5 p-3 md:grid-cols-2 md:gap-3 md:p-5">
-          {SCENARIOS.map((scenario) => {
-            const isSelected = scenario.key === selected;
+      <div className="grid gap-4 lg:grid-cols-[minmax(0,0.78fr)_minmax(18rem,0.34fr)] lg:gap-5">
+        <div className="grid gap-2.5 md:grid-cols-1">
+          {PATHWAY_KEYS.map((key) => {
+            const isSelected = active === key;
+            const visual = PATHWAY_VISUALS[key];
             return (
               <button
-                key={scenario.key}
+                key={key}
                 type="button"
                 aria-pressed={isSelected}
                 data-selected={isSelected}
-                onClick={() => setSelected(scenario.key)}
-                className="selected-option group overflow-hidden rounded-2xl border border-structural-light bg-surface-card text-left shadow-sm transition hover:-translate-y-0.5 hover:border-accent hover:shadow-lg aria-pressed:border-accent aria-pressed:bg-surface-light-alt"
+                onClick={() => setSelected(key)}
+                className="selected-option group overflow-hidden rounded-2xl border border-structural-light bg-surface-card text-left shadow-sm transition hover:-translate-y-0.5 hover:border-accent hover:shadow-md aria-pressed:border-accent aria-pressed:bg-surface-light-alt"
               >
-                {'image' in scenario ? (
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={scenario.image}
-                      alt=""
-                      fill
-                      sizes="(min-width: 1024px) 30vw, 100vw"
-                      className="object-cover transition duration-300 group-hover:scale-[1.03]"
-                    />
+                <div className="grid gap-0 md:grid-cols-[minmax(10rem,0.34fr)_minmax(0,1fr)]">
+                  <div className="border-b border-structural-light bg-surface-light-alt md:border-b-0 md:border-r">
+                    {visual === 'private' ? (
+                      <ServiceScopeDiagram variant="basic" compact className="rounded-none border-0 shadow-none" />
+                    ) : visual === 'guest' ? (
+                      <EventResponseDiagram variant="turnover" className="rounded-none border-0 shadow-none" />
+                    ) : (
+                      <PathwaySituationDiagram pathway={key} className="rounded-none border-0 shadow-none" />
+                    )}
                   </div>
-                ) : scenario.diagram === 'basic' ? (
-                  <ServiceScopeDiagram variant="basic" compact className="rounded-none border-0 shadow-none" />
-                ) : scenario.diagram === 'event' ? (
-                  <EventResponseDiagram variant="weekend" className="rounded-none border-0 shadow-none" />
-                ) : (
-                  <ServiceAreaMap
-                    labels={serviceAreaMapLabels}
-                    compact
-                    className="rounded-none border-0 shadow-none"
-                  />
-                )}
-                <div className="p-3 md:p-4">
-                  <p className="mb-2 text-[11px] font-black uppercase tracking-wide text-accent">
-                    {t(`redesign.scenario.cards.${scenario.key}.label`)}
-                  </p>
-                  <h3 className="mb-2 text-lg font-black text-heading">
-                    {t(`redesign.scenario.cards.${scenario.key}.title`)}
-                  </h3>
-                  <p className="mb-4 text-sm leading-relaxed text-body">
-                    {t(`redesign.scenario.cards.${scenario.key}.body`)}
-                  </p>
-                  <p className="mb-0 text-sm font-bold text-support">
-                    {t('redesign.scenario.suggestedPrefix')} {t(`${scenario.packageKey}.title`)}
-                  </p>
+                  <div className="p-4 md:p-5">
+                    <p className="mb-2 text-[11px] font-black uppercase tracking-wide text-accent">
+                      {tPathway(`${key}.emphasis`)}
+                    </p>
+                    <h3 className="mb-2 text-lg font-black text-heading">{tPathway(`${key}.title`)}</h3>
+                    <p className="mb-0 text-sm leading-relaxed text-body">{tPathway(`${key}.description`)}</p>
+                  </div>
                 </div>
               </button>
             );
           })}
         </div>
-      </div>
 
-      <div key={`${active.key}-mobile`} className="visual-card-strong motion-panel-reveal p-4 lg:hidden">
-        <p className="section-label">{t('redesign.scenario.selectedLabel')}</p>
-        <p className="mt-2 text-sm leading-relaxed text-body">{t(`redesign.scenario.cards.${active.key}.result`)}</p>
-        <div className="mt-3 flex flex-col gap-2 sm:flex-row">
-          <Link href="#package-details" className="btn-secondary">
-            {t('redesign.scenario.packageCta')}
-          </Link>
-          <Link href={`/${locale}/contact`} className="btn-primary">
-            {t('cta.primaryButton')}
-          </Link>
-        </div>
+        <aside className="services-side-panel motion-panel-reveal h-fit p-5 lg:sticky lg:top-28">
+          {!active ? (
+            <>
+              <p className="section-label">{t('redesign.scenario.promptLabel')}</p>
+              <p className="mt-3 mb-0 text-sm leading-relaxed text-body">{t('redesign.scenario.promptBody')}</p>
+            </>
+          ) : (
+            <>
+              <p className="section-label">{t('redesign.scenario.selectedLabel')}</p>
+              <h3 className="mt-3 text-xl font-black text-heading">{tPathway(`${active}.title`)}</h3>
+              <p className="mb-0 mt-3 text-sm font-bold uppercase tracking-wide text-muted">
+                {t('redesign.scenario.depthLabel')}
+              </p>
+              <p className="text-body">{t(`redesign.scenario.cards.${active}.result`)}</p>
+              <div className="mt-5 rounded-2xl bg-surface-light-alt p-4">
+                <p className="mb-1 text-xs font-bold uppercase tracking-wide text-muted">
+                  {t('redesign.scenario.noteLabel')}
+                </p>
+                <p className="mb-0 text-sm text-body">{t('redesign.scenario.note')}</p>
+              </div>
+              <div className="mt-5 flex flex-col gap-3">
+                <Link href="#responsibility" className="btn-primary">
+                  {t('redesign.scenario.responsibilityCta')}
+                </Link>
+                <Link href="#scope" className="btn-secondary">
+                  {t('redesign.scenario.packageCta')}
+                </Link>
+              </div>
+            </>
+          )}
+        </aside>
       </div>
-
-      <aside key={active.key} className="visual-card-strong motion-panel-reveal hidden h-fit p-5 lg:sticky lg:top-28 lg:block">
-        <p className="section-label">{t('redesign.scenario.selectedLabel')}</p>
-        <h3 className="mt-3 text-2xl font-black text-heading">
-          {t(`${active.packageKey}.title`)}
-        </h3>
-        <p className="text-body">{t(`redesign.scenario.cards.${active.key}.result`)}</p>
-        <div className="mt-5 rounded-2xl bg-surface-light-alt p-4">
-          <p className="mb-1 text-xs font-bold uppercase tracking-wide text-muted">
-            {t('redesign.scenario.noteLabel')}
-          </p>
-          <p className="mb-0 text-sm text-body">{t('redesign.scenario.note')}</p>
-        </div>
-        <div className="mt-5 flex flex-col gap-3">
-          <Link href="#package-details" className="btn-secondary">
-            {t('redesign.scenario.packageCta')}
-          </Link>
-          <Link href={`/${locale}/contact`} className="btn-primary">
-            {t('cta.primaryButton')}
-          </Link>
-        </div>
-      </aside>
     </div>
   );
 }

@@ -483,11 +483,18 @@
       "engagementTerms": "Minimalny okres współpracy: 3 miesiące. Rozliczenie miesięczne z góry."
     },
     "redesign": {
+      "journey": {
+        "situation": "Sytuacja",
+        "responsibility": "Odpowiedzialność",
+        "scope": "Zakres",
+        "modules": "Moduły",
+        "estimator": "Estymator"
+      },
       "hero": {
-        "eyebrow": "Zakres nadzoru",
-        "headline": "Wybierz poziom nadzoru",
-        "lead": "Pakiet określa, jak często Sentinel jest na miejscu, jak prowadzi dostęp i gdzie kończą się decyzje bez dodatkowej zgody właściciela.",
-        "secondaryCta": "Sprawdź dopasowanie",
+        "eyebrow": "Model nadzoru",
+        "headline": "Od sytuacji użycia do głębokości odpowiedzialności",
+        "lead": "Najpierw sposób używania nieruchomości. Potem poziom lokalnej odpowiedzialności Sentinel. Moduły operacyjne i orientacyjny zakres doprecyzowują model — nie tworzą osobnej oferty.",
+        "secondaryCta": "Zacznij od sytuacji",
         "facts": [
           { "label": "Obszar", "value": "Torrevieja + 50-70 km" },
           { "label": "Dowód", "value": "Raport po wizycie" },
@@ -495,57 +502,66 @@
         ]
       },
       "ladder": {
-        "eyebrow": "Jedna drabina odpowiedzialności",
-        "title": "Pakiety różnią się głębokością działania, nie listą przypadkowych dodatków.",
-        "intro": "Najpierw wybierasz poziom nadzoru. Dopiero potem doprecyzowuje się rytm wizyt, dostęp, sprzątanie gotowościowe lub obsługę zdarzeń.",
+        "eyebrow": "Głębokość odpowiedzialności",
+        "title": "Pakiet nie opisuje typu klienta. Określa głębokość odpowiedzialności Sentinel na miejscu.",
+        "intro": "Po ustaleniu sytuacji użycia wybiera się poziom nadzoru: kontrola, dostęp i decyzje w uzgodnionych granicach.",
+        "bridgeLine": "Najpierw sytuacja użycia. Potem poziom odpowiedzialności.",
         "detailCta": "Zobacz pełny zakres",
         "responsibilityLabel": "Główna odpowiedzialność",
+        "depthLabel": "Głębokość działania",
         "basic": {
-          "responsibility": "Regularna obecność, stan lokalu i podstawowy zapis kontroli.",
-          "fit": "Dla lokalu używanego głównie prywatnie, gdy właściciel potrzebuje stałej kontroli, ale sam prowadzi większość decyzji."
+          "responsibility": "Kontrola i sprawdzenia. Udokumentowane wizyty. Właściciel zatrzymuje większość decyzji.",
+          "fit": "Gdy głównym zadaniem jest stała obecność na miejscu i zapis stanu bez regularnej koordynacji dostępu."
         },
         "extended": {
-          "responsibility": "Częstsza kontrola, dostęp osób trzecich i koordynacja zdarzeń.",
-          "fit": "Dla nieruchomości, w której pojawiają się technicy, sprzątanie, goście lub prace wymagające lokalnego prowadzenia."
+          "responsibility": "Kontrola + dostęp. Koordynacja techników, sprzątania i wejść. Aktywniejsze prowadzenie operacji.",
+          "fit": "Gdy do kontroli dochodzą regularne wejścia osób trzecich i potrzeba lokalnego prowadzenia zdarzeń."
         },
         "full": {
-          "responsibility": "Priorytet operacyjny i szersze decyzje w ustalonym limicie.",
-          "fit": "Dla właściciela, który chce ograniczyć liczbę decyzji prowadzonych zdalnie i wymaga szybszej reakcji."
+          "responsibility": "Kontrola + dostęp + decyzje. Szybsza reakcja i uprawnienia awaryjne w uzgodnionym limicie.",
+          "fit": "Gdy właściciel chce ograniczyć decyzje zdalne i potrzebuje wyższego priorytetu operacyjnego."
+        }
+      },
+      "bridge": {
+        "eyebrow": "Most między sytuacją a pakietem",
+        "title": "Sytuacja użycia wskazuje punkt startu. Pakiet określa głębokość odpowiedzialności.",
+        "intro": "To nie jest twarda rekomendacja. Pokazuje typowy kierunek rozmowy po klasyfikacji sposobu używania nieruchomości.",
+        "situationColumn": "Sytuacja użycia",
+        "depthColumn": "Typowy punkt startu",
+        "note": "Ostateczny zakres zawsze wymaga strukturalnego przeglądu nieruchomości.",
+        "pathways": {
+          "private-use-only": {
+            "depth": "Zwykle Podstawowy lub Rozszerzony — zależnie od dostępu i gotowości przed przyjazdem."
+          },
+          "regular-guest-stays": {
+            "depth": "Zwykle Rozszerzony lub Pełny — bo dochodzą dostęp, porządek między pobytami, dokumentacja i reakcje."
+          },
+          "mixed-not-defined": {
+            "depth": "Najpierw klasyfikacja, potem pakiet. Zakresu nie zgaduje się z góry."
+          }
         }
       },
       "scenario": {
-        "eyebrow": "Sytuacje zamiast tabeli",
-        "title": "Która sytuacja najbardziej przypomina Twoją nieruchomość?",
-        "intro": "To nie jest bramka z homepage i nie zmienia adresu strony. Pomaga tylko zrozumieć, od którego pakietu zacząć rozmowę.",
-        "suggestedPrefix": "Najbliższy punkt startu:",
-        "selectedLabel": "Wstępne dopasowanie",
+        "eyebrow": "Sytuacja użycia",
+        "title": "Jak nieruchomość jest używana, gdy nie ma Cię na miejscu?",
+        "intro": "To ten sam model co na stronie głównej, bez bramki diagnostycznej. Wybierz sytuację, żeby zobaczyć typowy kierunek odpowiedzialności.",
+        "promptLabel": "Wybierz sytuację użycia",
+        "promptBody": "Dopiero po tym kroku ma sens porównanie głębokości pakietów.",
+        "selectedLabel": "Wybrana sytuacja",
+        "depthLabel": "Typowy kierunek odpowiedzialności",
         "noteLabel": "Ważne",
-        "note": "Dopasowanie jest edukacyjne. Ostateczny zakres potwierdza się po strukturalnym przeglądzie nieruchomości.",
-        "packageCta": "Porównaj zakres",
+        "note": "To dopasowanie edukacyjne, nie obietnica zakresu. Ostateczny model potwierdza się po przeglądzie nieruchomości.",
+        "responsibilityCta": "Zobacz poziomy odpowiedzialności",
+        "packageCta": "Porównaj pełny zakres",
         "cards": {
-          "private": {
-            "label": "Pusty lokal",
-            "title": "Mieszkanie stoi puste między pobytami",
-            "body": "Najważniejsze są regularne kontrole, klucze i raport stanu.",
-            "result": "Zwykle zaczyna się od poziomu Podstawowego, jeśli nie ma stałego ruchu gości ani częstych wejść osób trzecich."
+          "private-use-only": {
+            "result": "Zwykle zaczyna się od Podstawowego lub Rozszerzonego — zależnie od tego, czy potrzebny jest tylko nadzór stanu, czy też regularny dostęp i gotowość."
           },
-          "guest": {
-            "label": "Ruch i dostęp",
-            "title": "Regularnie pojawiają się goście, sprzątanie lub technicy",
-            "body": "Ryzyko dotyczy nie tylko stanu, ale też koordynacji wejść i zapisu zdarzeń.",
-            "result": "Najczęściej wymaga to poziomu Rozszerzonego, bo sama kontrola stanu nie wystarcza przy regularnym dostępie."
+          "regular-guest-stays": {
+            "result": "Zwykle wskazuje na Rozszerzony lub Pełny — bo sama kontrola stanu nie wystarcza przy regularnym ruchu gości, sprzątania i wejść techników."
           },
-          "decisions": {
-            "label": "Decyzje lokalne",
-            "title": "Nie chcesz prowadzić każdej drobnej decyzji zdalnie",
-            "body": "Potrzebny jest limit działania, szybsza reakcja i jasna granica zgody właściciela.",
-            "result": "Pakiet Pełny lepiej pasuje, gdy głównym problemem jest prowadzenie decyzji w granicach ustalonego limitu."
-          },
-          "mixed": {
-            "label": "Nieustalony model",
-            "title": "Jeszcze nie wiadomo, jak lokal będzie używany",
-            "body": "Najpierw trzeba sklasyfikować sposób używania, zamiast wybierać zbyt ciężki zakres.",
-            "result": "Rozszerzony bywa punktem odniesienia do rozmowy, ale przy modelu mieszanym najpierw potrzebna jest klasyfikacja."
+          "mixed-not-defined": {
+            "result": "Najpierw klasyfikacja sposobu używania. Pakiet wybiera się dopiero po ustaleniu modelu — nie z góry."
           }
         }
       },
@@ -600,9 +616,10 @@
         }
       },
       "packageDetails": {
-        "eyebrow": "Zakres bez ściany tekstu",
+        "eyebrow": "Pełny zakres",
         "title": "Jeden panel, jeden poziom odpowiedzialności.",
         "intro": "Szczegóły są dostępne jednym kliknięciem, ale podstawowe różnice pozostają widoczne od razu.",
+        "selectPrompt": "Wybierz poziom odpowiedzialności, żeby zobaczyć pełny zakres i ograniczenia.",
         "estimateCta": "Przejdź do estymatora",
         "simulatorCta": "Zobacz zdarzenia",
         "fullScopeLabel": "Pełny zakres i ograniczenia",
@@ -640,8 +657,16 @@
       },
       "estimatorBand": {
         "eyebrow": "Orientacyjny zakres miesięczny",
-        "title": "Najpierw dopasuj poziom odpowiedzialności, potem policz orientacyjny zakres.",
-        "intro": "Estymator nie zbiera danych osobowych i nie zmienia logiki cenowej. Wynik pozostaje orientacyjny do czasu strukturalnego przeglądu."
+        "title": "Gdy sytuacja i odpowiedzialność są zrozumiałe — określ orientacyjny zakres.",
+        "intro": "To narzędzie orientacyjne, nie formularz wyceny. Nie zbiera danych osobowych i nie zmienia logiki cenowej.",
+        "transition": "Sytuacja użycia i głębokość odpowiedzialności są ustalone. Teraz można oszacować orientacyjny miesięczny zakres."
+      },
+      "executionStrip": {
+        "title": "Realizacja pojedynczych czynności — tylko po uzgodnieniu",
+        "body": "Osobne zadania operacyjne mogą być wykonane poza pakietem nadzoru, ale bez regularnych kontroli, raportowania, SLA ani uprawnień decyzyjnych.",
+        "availableLabel": "Możliwe po uzgodnieniu",
+        "limitsLabel": "Czego nie obejmuje",
+        "cta": "Zapytaj o ograniczony zakres"
       },
       "details": {
         "frameworkLabel": "Ramy usługi i minimalny okres",
@@ -962,7 +987,12 @@
       }
     },
     "estimator": {
-      "heading": "Określ swój zakres nadzoru",
+      "heading": "Orientacyjny zakres miesięczny",
+      "orientationIntro": "Ustal sytuację użycia i głębokość odpowiedzialności, zanim policzysz orientacyjny zakres.",
+      "stepJurisdiction": "1. Poziom odpowiedzialności",
+      "stepMode": "2. Intensywność użytkowania",
+      "stepParameters": "3. Parametry nieruchomości",
+      "stepScope": "4. Elementy operacyjne",
       "groupJurisdiction": "Jurysdykcja (Pakiet)",
       "groupJurisdictionAnchor": "Jurysdykcja określa zakres reprezentacji i poziom decyzyjności.",
       "packageLabel": "Pakiet",
