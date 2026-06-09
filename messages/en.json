@@ -507,6 +507,7 @@
         "intro": "After the usage situation is clear, you choose the oversight level: control, access, and decisions inside agreed limits.",
         "bridgeLine": "First the usage situation. Then the responsibility level.",
         "detailCta": "View full scope",
+        "simulatorCta": "View events",
         "responsibilityLabel": "Primary responsibility",
         "depthLabel": "Operating depth",
         "basic": {
@@ -615,24 +616,12 @@
           }
         }
       },
-      "packageDetails": {
-        "eyebrow": "Full scope",
-        "title": "One panel, one level of responsibility.",
-        "intro": "Details remain one click away, while the essential differences stay visible immediately.",
-        "selectPrompt": "Select a responsibility level to view full scope and limits.",
-        "estimateCta": "Go to estimator",
-        "simulatorCta": "View events",
-        "fullScopeLabel": "Full scope and limits",
-        "fullScopeExplainer": "The expansion preserves important package substance without repeating it as three large articles.",
-        "includedLabel": "Inside scope",
-        "notIncludedLabel": "Outside scope"
-      },
       "boundary": {
         "eyebrow": "Service boundaries",
         "title": "Sentinel acts locally, but only inside the agreed scope.",
         "intro": "The main boundaries appear before the estimator. The full legal wording remains in the terms and package detail.",
-        "doesTitle": "Sentinel does",
-        "doesNotTitle": "Sentinel does not",
+        "doesTitle": "Inside agreed scope",
+        "doesNotTitle": "Outside agreed scope",
         "does": {
           "oversight": { "title": "Local oversight", "body": "Scheduled condition checks and a record of what is visible on site." },
           "access": { "title": "Controlled access", "body": "Keyholding or access handling according to the agreement and package." },
@@ -648,13 +637,17 @@
       },
       "modules": {
         "eyebrow": "Operational layer",
-        "title": "Modules help execute the scope. They do not create a fourth package.",
-        "intro": "Keys, cleaning, readiness, and technician entry are practical functions inside the agreed oversight system.",
-        "useWhen": "Use when",
+        "title": "The operational layer executes the agreed scope. It does not create a fourth package.",
+        "intro": "Keys, cleaning, readiness, guest entry, technician access, transfer or vehicle support, and seasonal checks remain practical functions under the selected responsibility level.",
+        "useWhen": "Scope function",
+        "stackLabel": "Controlled capabilities",
+        "stackTitle": "Access, movement, and seasonal readiness stay subordinate to the package.",
+        "guardrailLabel": "Boundary",
+        "guardrailBody": "A module can add execution capacity, but package responsibility, SLA, decision authority, and exclusions remain unchanged.",
         "moduleBodies": {
-          "rental": "Coordination of readiness, cleaning, and guest entry inside the agreed oversight scope.",
-          "access": "Keyholding and one-time entry as operational functions inside the oversight system.",
-          "seasonal": "Seasonal property preparation and additional control visits inside agreed scope."
+          "rental": "Readiness, cleaning coordination, and guest entry handled as documented execution inside the agreed oversight scope.",
+          "access": "Keys, one-off entries, and transfer or vehicle support remain controlled functions inside the oversight system.",
+          "seasonal": "Opening, closing, property preparation, and additional checks are handled only where the scope allows it."
         }
       },
       "execution": {

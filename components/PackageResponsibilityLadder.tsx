@@ -97,11 +97,11 @@ export default function PackageResponsibilityLadder() {
           </dl>
 
           <div className="services-responsibility-reveal__actions">
-            <Link href="#package-details" className="btn-primary">
+            <Link href="#scope" className="btn-primary">
               {t('redesign.ladder.detailCta')}
             </Link>
-            <Link href="#event-simulator" className="btn-secondary btn-secondary-on-dark">
-              {t('redesign.packageDetails.simulatorCta')}
+            <Link href="#event-simulator" className="btn-secondary">
+              {t('redesign.ladder.simulatorCta')}
             </Link>
           </div>
         </article>

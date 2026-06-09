@@ -3,6 +3,8 @@ import Image from 'next/image';
 interface OperationalModuleTileProps {
   image?: string;
   visual?: 'readiness' | 'seasonal' | 'access';
+  marker: string;
+  mode: 'featured' | 'compact';
   label: string;
   title: string;
   body: string;
@@ -12,10 +14,11 @@ interface OperationalModuleTileProps {
 
 function ModuleVisual({ visual }: { visual: NonNullable<OperationalModuleTileProps['visual']> }) {
   return (
-    <div className="module-tile-visual module-tile-visual--diagram aspect-[4/3] bg-surface-light-alt p-4" aria-hidden="true">
+    <div className="module-tile-visual module-tile-visual--diagram bg-surface-light-alt p-4" aria-hidden="true">
       <svg viewBox="0 0 360 270" className="h-full w-full">
         <rect width="360" height="270" rx="18" fill="var(--surface-card)" stroke="var(--structural-light)" />
-        <ellipse cx="180" cy="146" rx="116" ry="72" fill="var(--support)" opacity="0.07" />
+        <path d="M44 58h272M44 212h272" stroke="var(--structural-light)" strokeWidth="1.5" />
+        <ellipse cx="180" cy="146" rx="122" ry="74" fill="var(--support)" opacity="0.07" />
         <g fill="none" stroke="var(--authority)" strokeWidth="7" strokeLinecap="square" strokeLinejoin="miter" opacity="0.68">
           {visual === 'readiness' && (
             <>
@@ -27,23 +30,30 @@ function ModuleVisual({ visual }: { visual: NonNullable<OperationalModuleTilePro
           )}
           {visual === 'seasonal' && (
             <>
-              <path d="M114 88h132v112H114Z" />
-              <path d="M114 132h132M158 88v112" />
-              <path d="M96 218h168" />
-              <path d="M132 230h96" />
+              <path d="M104 84h152v116H104Z" />
+              <path d="M104 124h152M150 84v116M206 84v116" />
+              <path d="M92 218h176" />
+              <path d="M130 232h100" />
+              <path d="M122 104h20M178 146h20M226 170h20" stroke="var(--accent)" opacity="0.86" />
             </>
           )}
           {visual === 'access' && (
             <>
-              <rect x="124" y="76" width="98" height="126" rx="8" />
-              <path d="M148 116h58M148 150h38" />
-              <path d="M222 196l34 34M250 176l34 34" />
-              <circle cx="250" cy="116" r="18" />
+              <rect x="106" y="74" width="98" height="132" rx="8" />
+              <path d="M130 114h58M130 150h38" />
+              <path d="M204 190l42 42M246 190l38 38" />
+              <circle cx="250" cy="112" r="18" />
+              <path d="M268 112h44M292 112v24" stroke="var(--accent)" opacity="0.86" />
             </>
           )}
         </g>
-        <circle cx="76" cy="58" r="10" fill="var(--accent)" opacity="0.78" />
-        <circle cx="288" cy="214" r="10" fill="var(--support)" opacity="0.78" />
+        <g fill="var(--accent)" opacity="0.82">
+          <circle cx="76" cy="58" r="8" />
+          <circle cx="286" cy="214" r="8" />
+        </g>
+        <g stroke="var(--support)" strokeDasharray="5 9" strokeWidth="2" opacity="0.46">
+          <path d="M82 198c68-52 132-54 196-8" fill="none" />
+        </g>
       </svg>
     </div>
   );
@@ -52,6 +62,8 @@ function ModuleVisual({ visual }: { visual: NonNullable<OperationalModuleTilePro
 export default function OperationalModuleTile({
   image,
   visual,
+  marker,
+  mode,
   label,
   title,
   body,
@@ -61,11 +73,11 @@ export default function OperationalModuleTile({
   const showBody = body.trim().length > 0 && !items.includes(body);
 
   return (
-    <article className={`operational-module-tile visual-card overflow-hidden ${image ? 'operational-module-tile--photo' : 'operational-module-tile--diagram'}`}>
+    <article className={`operational-module-tile operational-module-tile--${mode} visual-card overflow-hidden ${image ? 'operational-module-tile--photo' : 'operational-module-tile--diagram'}`}>
       {visual ? (
         <ModuleVisual visual={visual} />
       ) : image ? (
-        <div className="module-tile-visual module-tile-visual--photo relative aspect-[4/3]">
+        <div className="module-tile-visual module-tile-visual--photo relative">
           <Image
             src={image}
             alt=""
@@ -74,12 +86,16 @@ export default function OperationalModuleTile({
             className="object-cover"
           />
           <span className="module-tile-visual__frame" aria-hidden="true" />
+          <span className="module-tile-visual__marker" aria-hidden="true">{marker}</span>
         </div>
       ) : null}
       <div className="operational-module-tile__content p-4 md:p-5">
-        <p className="operational-module-tile__label mb-2 text-[10px] font-black uppercase text-accent">
-          {label}
-        </p>
+        <div className="operational-module-tile__header">
+          <span>{marker}</span>
+          <p className="operational-module-tile__label mb-0 text-[10px] font-black uppercase text-accent">
+            {label}
+          </p>
+        </div>
         <h3 className="mb-3 text-lg font-black leading-snug text-heading md:text-xl">{title}</h3>
         {showBody && <p className="mb-0 text-sm leading-relaxed text-body">{body}</p>}
         <ul className={`operational-module-tile__list space-y-2 text-sm leading-relaxed text-body ${showBody ? 'mt-3' : 'mt-1'}`}>

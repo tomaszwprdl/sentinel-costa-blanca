@@ -11,7 +11,6 @@ import Estimator from '@/components/Estimator';
 import PackageResponsibilityLadder from '@/components/PackageResponsibilityLadder';
 import UsageResponsibilityBridge from '@/components/UsageResponsibilityBridge';
 import WhatIfEventSimulator from '@/components/WhatIfEventSimulator';
-import PackageDetailPanels from '@/components/PackageDetailPanels';
 import ServiceBoundaryGrid from '@/components/ServiceBoundaryGrid';
 import OperationalModuleTile from '@/components/OperationalModuleTile';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
@@ -25,6 +24,8 @@ type Fact = {
 type OperationalModule = {
   image?: string;
   visual?: 'readiness' | 'seasonal' | 'access';
+  marker: string;
+  mode: 'featured' | 'compact';
   label: string;
   title: string;
   body: string;
@@ -60,9 +61,11 @@ export default async function ServicesPage({
     { id: 'estimator', label: t('redesign.journey.estimator') },
   ];
 
-  const operationalModules: OperationalModule[] = [
+  const operationalModules = [
     {
       image: '/photos/sentinel-cleaning-readiness-placeholder.png',
+      marker: '01',
+      mode: 'featured',
       label: t('redesign.modules.useWhen'),
       title: t('addons.rental.title'),
       body: t('redesign.modules.moduleBodies.rental'),
@@ -75,16 +78,21 @@ export default async function ServicesPage({
     },
     {
       visual: 'access',
+      marker: '02',
+      mode: 'compact',
       label: t('redesign.modules.useWhen'),
       title: t('addons.transfers.title'),
       body: t('redesign.modules.moduleBodies.access'),
       items: [
         t('executionOnly.availableItems.keyHolding'),
         t('executionOnly.availableItems.oneTimeAccess'),
+        t('addons.transfers.provider'),
       ],
     },
     {
       visual: 'seasonal',
+      marker: '03',
+      mode: 'compact',
       label: t('redesign.modules.useWhen'),
       title: t('addons.seasonal.title'),
       body: t('redesign.modules.moduleBodies.seasonal'),
@@ -94,7 +102,7 @@ export default async function ServicesPage({
         t('addons.seasonal.items.extraVisit'),
       ],
     },
-  ];
+  ] satisfies [OperationalModule, OperationalModule, OperationalModule];
 
   return (
     <>
@@ -179,11 +187,7 @@ export default async function ServicesPage({
           <WhatIfEventSimulator />
         </Section>
 
-        <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--scope">
-          <PackageDetailPanels />
-        </Section>
-
-        <Section tone="alt" className="section-primitive--compact services-interface-section services-interface-section--boundary">
+        <Section tone="alt" className="section-primitive--compact services-interface-section services-interface-section--boundary" id="scope">
           <ServiceBoundaryGrid />
         </Section>
 
@@ -194,10 +198,21 @@ export default async function ServicesPage({
               <h2 className="h2-system mt-3">{t('redesign.modules.title')}</h2>
               <p className="mt-3 text-body">{t('redesign.modules.intro')}</p>
             </div>
-            <div className="services-module-grid">
-              {operationalModules.map((module) => (
-                <OperationalModuleTile key={module.title} {...module} />
-              ))}
+            <div className="services-module-system">
+              <OperationalModuleTile {...operationalModules[0]} />
+              <div className="services-module-stack">
+                <div className="services-module-stack__header">
+                  <span>{t('redesign.modules.stackLabel')}</span>
+                  <strong>{t('redesign.modules.stackTitle')}</strong>
+                </div>
+                {operationalModules.slice(1).map((module) => (
+                  <OperationalModuleTile key={module.title} {...module} />
+                ))}
+              </div>
+            </div>
+            <div className="services-module-guardrail">
+              <span>{t('redesign.modules.guardrailLabel')}</span>
+              <p>{t('redesign.modules.guardrailBody')}</p>
             </div>
           </div>
         </Section>
@@ -315,7 +330,7 @@ export default async function ServicesPage({
         primaryLabel={t('cta.primaryButton')}
         secondaryHref="#situation"
         secondaryLabel={t('redesign.hero.secondaryCta')}
-        suppressWhenVisible="#situation, #responsibility, #event-simulator, #package-details, #scope, #operational-modules, #execution-only, #estimator"
+        suppressWhenVisible="#situation, #responsibility, #event-simulator, #scope, #operational-modules, #execution-only, #estimator"
       />
       <Footer />
     </>

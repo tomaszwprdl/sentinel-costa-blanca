@@ -132,7 +132,7 @@ export default function WhatIfEventSimulator() {
             </div>
 
             <div className="services-event-output__actions mt-6 flex flex-col gap-3 sm:flex-row">
-              <Link href="#package-details" className="btn-secondary">
+              <Link href="#responsibility" className="btn-secondary">
                 {t('redesign.events.packageCta')}
               </Link>
               <Link href={`/${locale}/contact`} className="btn-primary">

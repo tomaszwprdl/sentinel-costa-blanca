@@ -507,6 +507,7 @@
         "intro": "Po ustaleniu sytuacji użycia wybiera się poziom nadzoru: kontrola, dostęp i decyzje w uzgodnionych granicach.",
         "bridgeLine": "Najpierw sytuacja użycia. Potem poziom odpowiedzialności.",
         "detailCta": "Zobacz pełny zakres",
+        "simulatorCta": "Zobacz zdarzenia",
         "responsibilityLabel": "Główna odpowiedzialność",
         "depthLabel": "Zakres działania",
         "basic": {
@@ -615,24 +616,12 @@
           }
         }
       },
-      "packageDetails": {
-        "eyebrow": "Pełny zakres",
-        "title": "Jeden panel, jeden poziom odpowiedzialności.",
-        "intro": "Szczegóły są dostępne jednym kliknięciem, ale podstawowe różnice pozostają widoczne od razu.",
-        "selectPrompt": "Wybierz poziom odpowiedzialności, żeby zobaczyć pełny zakres i ograniczenia.",
-        "estimateCta": "Przejdź do estymatora",
-        "simulatorCta": "Zobacz zdarzenia",
-        "fullScopeLabel": "Pełny zakres i ograniczenia",
-        "fullScopeExplainer": "Rozwinięcie zachowuje istotną treść pakietów bez powtarzania jej w trzech dużych artykułach.",
-        "includedLabel": "W zakresie",
-        "notIncludedLabel": "Poza zakresem"
-      },
       "boundary": {
         "eyebrow": "Granice usługi",
         "title": "Sentinel działa lokalnie, ale tylko w ustalonym zakresie.",
         "intro": "Najważniejsze granice są widoczne przed estymatorem. Pełne brzmienie pozostaje w regulaminie i szczegółach pakietu.",
-        "doesTitle": "Sentinel wykonuje",
-        "doesNotTitle": "Sentinel nie wykonuje",
+        "doesTitle": "W uzgodnionym zakresie",
+        "doesNotTitle": "Poza uzgodnionym zakresem",
         "does": {
           "oversight": { "title": "Lokalny nadzór", "body": "Zaplanowane kontrole stanu i zapis tego, co widać na miejscu." },
           "access": { "title": "Kontrolowany dostęp", "body": "Przechowywanie lub prowadzenie kluczy zgodnie z ustaleniami i pakietem." },
@@ -648,13 +637,17 @@
       },
       "modules": {
         "eyebrow": "Warstwa operacyjna",
-        "title": "Moduły pomagają wykonać zakres. Nie tworzą czwartego pakietu.",
-        "intro": "Klucze, sprzątanie, gotowość i wejścia techników działają jako praktyczne funkcje w ustalonym systemie nadzoru.",
-        "useWhen": "Użyj, gdy",
+        "title": "Warstwa operacyjna wykonuje uzgodniony zakres. Nie tworzy czwartego pakietu.",
+        "intro": "Klucze, sprzątanie, gotowość, wejścia gości i techników, transfery lub pojazdy oraz sezonowe kontrole pozostają funkcjami praktycznymi pod wybranym poziomem odpowiedzialności.",
+        "useWhen": "Funkcja zakresu",
+        "stackLabel": "Kontrolowane zdolności",
+        "stackTitle": "Dostęp, ruch i gotowość sezonowa pozostają podporządkowane pakietowi.",
+        "guardrailLabel": "Granica",
+        "guardrailBody": "Moduł może zwiększyć zdolność wykonania, ale odpowiedzialność pakietu, SLA, uprawnienia decyzyjne i wyłączenia pozostają bez zmian.",
         "moduleBodies": {
-          "rental": "Koordynacja gotowości, sprzątania i wejść gości w ramach uzgodnionego zakresu nadzoru.",
-          "access": "Przechowywanie kluczy i jednorazowe wejścia jako funkcje operacyjne w systemie nadzoru.",
-          "seasonal": "Przygotowanie lokalu przed i po sezonie oraz dodatkowe wizyty kontrolne w uzgodnionym zakresie."
+          "rental": "Gotowość, koordynacja sprzątania i wejścia gości prowadzone jako udokumentowane wykonanie w uzgodnionym zakresie nadzoru.",
+          "access": "Klucze, jednorazowe wejścia oraz transfery lub wsparcie pojazdowe pozostają kontrolowanymi funkcjami w systemie nadzoru.",
+          "seasonal": "Otwarcie, zamknięcie, przygotowanie lokalu i dodatkowe kontrole są prowadzone tylko tam, gdzie pozwala na to zakres."
         }
       },
       "execution": {
