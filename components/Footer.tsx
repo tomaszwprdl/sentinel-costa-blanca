@@ -3,13 +3,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
-import GridFrame from '@/components/layout/GridFrame';
 import Region from '@/components/layout/Region';
 import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
 
 export default function Footer() {
   const locale = useLocale();
   const t = useTranslations('common');
+
   const serviceAreaMapLabels = {
     title: t('serviceAreaMap.title'),
     center: t('serviceAreaMap.center'),
@@ -19,7 +19,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="mt-[var(--space-40)] bg-authority-bg text-authority-on-dark">
+    <footer id="site-footer" className="mt-[var(--space-40)] bg-authority-bg text-authority-on-dark">
       <div className="container py-10 md:py-14">
         <div className="grid gap-7 border-b border-authority-on-dark/15 pb-8 md:gap-10 md:pb-10 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,0.34fr)] lg:items-start">
           <div>
@@ -68,7 +68,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <GridFrame className="gap-8 py-8 md:gap-10 md:py-10">
+        <div className="grid-frame gap-8 py-8 md:gap-10 md:py-10">
           <Region name="authority" desktopSpan="quarter">
             <div>
               <h3 className="section-label text-authority-on-dark/80">
@@ -127,18 +127,18 @@ export default function Footer() {
               <h3 className="section-label text-authority-on-dark/80">
                 {t('footer.serviceArea')}
               </h3>
-              <p className="mt-3 max-w-md text-sm leading-relaxed text-authority-on-dark/78">
+              <p className="mt-3 max-w-md break-words text-sm leading-relaxed text-authority-on-dark/78">
                 {t('footer.serviceAreaText')}
               </p>
               <ServiceAreaMap
                 labels={serviceAreaMapLabels}
                 compact
                 inverse
-                className="footer-service-area-map mt-4 w-full"
+                className="footer-service-area-map mt-4 min-w-0 max-w-full"
               />
             </div>
           </Region>
-        </GridFrame>
+        </div>
 
         <div className="border-t border-authority-on-dark/15 pt-6 text-center text-sm text-authority-on-dark/58 md:pt-8">
           <p>
