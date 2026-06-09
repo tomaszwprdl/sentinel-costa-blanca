@@ -1978,6 +1978,29 @@ textarea:focus {
   color: var(--muted);
 }
 
+.services-bridge-entry {
+  padding-top: 2.25rem;
+}
+
+.services-bridge-grid__situation {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.services-bridge-grid__visual {
+  display: none;
+  overflow: hidden;
+  border: 1px solid var(--structural-light);
+  border-radius: 0.85rem;
+  background: var(--surface-light-alt);
+}
+
+.services-bridge-visual {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
 .services-bridge-grid__row {
   border-bottom: 1px solid var(--structural-light);
 }
@@ -2087,6 +2110,20 @@ textarea:focus {
 }
 
 @media (min-width: 768px) {
+  .services-bridge-entry {
+    padding-top: 2.75rem;
+  }
+
+  .services-bridge-grid__situation {
+    grid-template-columns: minmax(7.5rem, 0.28fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 1rem;
+  }
+
+  .services-bridge-grid__visual {
+    display: block;
+  }
+
   .services-bridge-grid__head,
   .services-bridge-grid__row {
     grid-template-columns: minmax(0, 0.52fr) minmax(0, 0.48fr);

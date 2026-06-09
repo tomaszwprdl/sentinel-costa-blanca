@@ -9,7 +9,6 @@ import GridFrame from '@/components/layout/GridFrame';
 import Region from '@/components/layout/Region';
 import Estimator from '@/components/Estimator';
 import PackageResponsibilityLadder from '@/components/PackageResponsibilityLadder';
-import ScenarioFitGuide from '@/components/ScenarioFitGuide';
 import UsageResponsibilityBridge from '@/components/UsageResponsibilityBridge';
 import WhatIfEventSimulator from '@/components/WhatIfEventSimulator';
 import PackageDetailPanels from '@/components/PackageDetailPanels';
@@ -148,11 +147,7 @@ export default async function ServicesPage({
 
         <JourneyNav items={journeyItems} ariaLabel={t('redesign.hero.headline')} />
 
-        <Section tone="light" className="section-primitive--compact">
-          <ScenarioFitGuide />
-        </Section>
-
-        <Section tone="alt" className="section-primitive--compact !pt-10">
+        <Section tone="light" className="section-primitive--compact services-bridge-entry">
           <UsageResponsibilityBridge />
         </Section>
 
