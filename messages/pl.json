@@ -492,9 +492,15 @@
       },
       "hero": {
         "eyebrow": "Model nadzoru",
-        "headline": "Od sposobu używania do poziomu odpowiedzialności",
-        "lead": "Najpierw sposób używania nieruchomości. Potem poziom lokalnej odpowiedzialności Sentinel. Moduły operacyjne i orientacyjny zakres doprecyzowują model — nie tworzą osobnej oferty.",
+        "decisionQuestion": "Co ustala model usługi?",
+        "headline": "Najpierw sposób używania, potem poziom odpowiedzialności",
+        "lead": "Moduły operacyjne i orientacyjny zakres doprecyzowują model — nie tworzą osobnej oferty.",
         "secondaryCta": "Zacznij od sytuacji",
+        "flowSteps": [
+          { "index": "01", "label": "Sytuacja" },
+          { "index": "02", "label": "Odpowiedzialność" },
+          { "index": "03", "label": "Zakres" }
+        ],
         "facts": [
           { "label": "Obszar", "value": "Torrevieja + 50-70 km" },
           { "label": "Dowód", "value": "Raport po wizycie" },

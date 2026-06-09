@@ -21,6 +21,11 @@ type Fact = {
   value: string;
 };
 
+type HeroFlowStep = {
+  index: string;
+  label: string;
+};
+
 type OperationalModule = {
   image?: string;
   visual?: 'readiness' | 'seasonal' | 'access';
@@ -53,6 +58,7 @@ export default async function ServicesPage({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'services' });
   const facts = t.raw('redesign.hero.facts') as Fact[];
+  const flowSteps = t.raw('redesign.hero.flowSteps') as HeroFlowStep[];
   const journeyItems = [
     { id: 'situation', label: t('redesign.journey.situation') },
     { id: 'responsibility', label: t('redesign.journey.responsibility') },
@@ -111,13 +117,14 @@ export default async function ServicesPage({
         <Section tone="authority" className="section-primitive--first services-command-hero" id="qualification">
           <GridFrame className="services-command-hero__grid items-center gap-10">
             <Region name="main" desktopSpan="half">
-              <div className="motion-entrance max-w-[680px]">
-                <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
+              <div className="motion-entrance services-hero-copy max-w-[680px]">
+                <p className="services-hero-question">{t('redesign.hero.decisionQuestion')}</p>
+                <p className="hero-kicker services-hero-kicker">{t('redesign.hero.eyebrow')}</p>
                 <h1 className="hero-display services-hero-display !text-[2rem] md:!text-[3rem] lg:!text-[3.2rem]">
                   {t('redesign.hero.headline')}
                 </h1>
-                <p className="hero-lead">{t('redesign.hero.lead')}</p>
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <p className="hero-lead services-hero-lead">{t('redesign.hero.lead')}</p>
+                <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row">
                   <Link href={`/${locale}/contact`} className="btn-primary">
                     {t('cta.primaryButton')}
                   </Link>
@@ -125,11 +132,11 @@ export default async function ServicesPage({
                     {t('redesign.hero.secondaryCta')}
                   </Link>
                 </div>
-                <div className="hero-fact-grid">
+                <div className="services-hero-proof" aria-label={t('redesign.hero.eyebrow')}>
                   {facts.map((fact) => (
-                    <div key={fact.label} className="hero-fact">
-                      <span>{fact.label}</span>
-                      <strong>{fact.value}</strong>
+                    <div key={fact.label} className="services-hero-proof__badge">
+                      <span className="services-hero-proof__label">{fact.label}</span>
+                      <strong className="services-hero-proof__value">{fact.value}</strong>
                     </div>
                   ))}
                 </div>
@@ -162,10 +169,22 @@ export default async function ServicesPage({
                     className="object-cover"
                     unoptimized
                   />
-                  <div className="services-command-card__trace">
-                    <span />
-                    <span />
-                    <span />
+                </div>
+                <div className="services-hero-flow" aria-hidden="true">
+                  <span className="services-hero-flow__scan" />
+                  <div className="services-hero-flow__track">
+                    {flowSteps.map((step, index) => (
+                      <div key={step.index} className="services-hero-flow__item">
+                        <div className="services-hero-flow__step" data-flow-index={index}>
+                          <span className="services-hero-flow__index">{step.index}</span>
+                          <span className="services-hero-flow__label">{step.label}</span>
+                          <span className="services-hero-flow__pulse" />
+                        </div>
+                        {index < flowSteps.length - 1 && (
+                          <span className="services-hero-flow__connector">→</span>
+                        )}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </figure>
