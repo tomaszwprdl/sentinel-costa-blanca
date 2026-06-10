@@ -761,6 +761,7 @@ textarea:focus {
   position: sticky;
   top: var(--header-offset);
   z-index: 35;
+  overflow-x: clip;
 }
 
 .journey-nav {
@@ -2527,6 +2528,43 @@ textarea:focus {
   opacity: 0.26;
 }
 
+.services-command-hero::after {
+  position: absolute;
+  inset: -24%;
+  pointer-events: none;
+  background:
+    radial-gradient(32% 30% at 28% 32%, rgba(47, 111, 115, 0.22), transparent 72%),
+    radial-gradient(26% 24% at 74% 66%, rgba(184, 102, 74, 0.18), transparent 70%);
+  content: "";
+  animation: services-ambient-drift 26s ease-in-out infinite alternate;
+}
+
+@keyframes services-ambient-drift {
+  from {
+    opacity: 0.8;
+    transform: translate3d(-1.5%, -1%, 0) scale(1);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(1.5%, 1.5%, 0) scale(1.05);
+  }
+}
+
+@keyframes services-frame-float {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-6px);
+  }
+}
+
+.services-hero-visual__diagram {
+  animation: services-frame-float 8s ease-in-out infinite alternate;
+}
+
 .services-command-hero > .container,
 .services-command-hero__grid {
   position: relative;
@@ -2551,10 +2589,74 @@ textarea:focus {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(110% 70% at 8% -10%, color-mix(in srgb, var(--accent) 7%, transparent), transparent 55%),
-    radial-gradient(90% 60% at 94% 4%, color-mix(in srgb, var(--support) 8%, transparent), transparent 50%);
+    linear-gradient(180deg, rgba(255, 252, 246, 0.6), transparent 9rem),
+    radial-gradient(110% 70% at 8% -10%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 55%),
+    radial-gradient(90% 60% at 94% 4%, color-mix(in srgb, var(--support) 10%, transparent), transparent 50%);
   content: "";
-  opacity: 0.85;
+}
+
+/* Cluster motif layer: each section pair shares one quiet structural motif */
+.services-interface-section::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+}
+
+/* Cluster: bridge — blueprint grid focused on the router instrument only */
+.services-interface-section--bridge::after {
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--authority) 3.5%, transparent) 0 1px, transparent 1px 100%),
+    linear-gradient(0deg, color-mix(in srgb, var(--authority) 2.5%, transparent) 0 1px, transparent 1px 100%);
+  background-size: 76px 76px;
+  opacity: 0.42;
+  -webkit-mask-image: radial-gradient(72% 58% at 38% 42%, black 22%, transparent 72%);
+  mask-image: radial-gradient(72% 58% at 38% 42%, black 22%, transparent 72%);
+}
+
+/* Cluster: responsibility — soft wash only, no grid wallpaper */
+.services-interface-section--responsibility::after {
+  background: radial-gradient(70% 54% at 34% 46%, color-mix(in srgb, var(--authority) 4.5%, transparent), transparent 74%);
+  opacity: 0.65;
+}
+
+/* Hero light spills into the first body section */
+.services-interface-section--bridge::before {
+  background:
+    radial-gradient(58% 18rem at 50% -7rem, color-mix(in srgb, var(--support) 18%, transparent), transparent 72%),
+    linear-gradient(180deg, rgba(255, 252, 246, 0.6), transparent 9rem),
+    radial-gradient(110% 70% at 8% -10%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 55%);
+}
+
+/* Cluster: event + boundary — dashed survey arcs, echoing the event diagram orbits */
+.services-interface-section--event::after,
+.services-interface-section--boundary::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cg fill='none' stroke='%232f6f73' stroke-width='1.5' stroke-dasharray='3 11' opacity='0.28'%3E%3Ccircle cx='300' cy='300' r='186'/%3E%3Ccircle cx='300' cy='300' r='266'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 46rem 46rem;
+  opacity: 0.38;
+}
+
+.services-interface-section--event::after {
+  background-position: right -16rem top -18rem;
+}
+
+.services-interface-section--boundary::after {
+  background-position: left -18rem bottom -20rem;
+}
+
+/* Cluster: modules + execution — one soft diagonal light beam */
+.services-interface-section--modules::after,
+.services-interface-section--execution::after {
+  background: linear-gradient(112deg, transparent 34%, rgba(255, 252, 244, 0.32) 46%, rgba(255, 252, 244, 0.08) 53%, transparent 66%);
+  opacity: 0.75;
+}
+
+/* Cluster: estimator — cooler dusk light before the dark close */
+.services-interface-section--estimator::before {
+  background:
+    linear-gradient(180deg, rgba(255, 252, 246, 0.5), transparent 8rem),
+    radial-gradient(82% 60% at 50% 0%, color-mix(in srgb, var(--support) 12%, transparent), transparent 62%);
 }
 
 .services-interface-section > .container {
@@ -2594,16 +2696,35 @@ textarea:focus {
   content: "";
 }
 
+.services-journey-nav {
+  background: color-mix(in srgb, var(--surface-card) 86%, transparent);
+  backdrop-filter: blur(10px);
+}
+
 .services-journey-nav .journey-nav__link {
   position: relative;
   z-index: 1;
   border-radius: 0.85rem;
 }
 
+.services-journey-nav .journey-nav__link:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 48%, var(--line));
+  box-shadow: 0 10px 24px rgba(16, 38, 63, 0.14);
+}
+
 .services-journey-nav .journey-nav__link[aria-current="true"] {
+  border-color: color-mix(in srgb, var(--accent) 52%, var(--line));
+  background: var(--authority-bg);
+  color: var(--authority-on-dark);
   box-shadow:
-    0 12px 28px rgba(16, 38, 63, 0.18),
+    0 12px 28px rgba(16, 38, 63, 0.22),
     inset 0 -2px 0 var(--accent);
+}
+
+.services-journey-nav .journey-nav__link[aria-current="true"] .journey-nav__marker {
+  color: inherit;
+  opacity: 0.75;
 }
 
 .services-bridge-band,
@@ -2676,6 +2797,7 @@ textarea:focus {
 .services-event-switch[aria-pressed="true"] {
   background: var(--surface-card) !important;
   color: var(--heading) !important;
+  transform: translateX(4px);
 }
 
 .services-event-switch[aria-pressed="true"] span {
@@ -2683,12 +2805,12 @@ textarea:focus {
 }
 
 .services-event-simulator__stage {
-  background: var(--surface-card);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--surface-light-alt) 52%, var(--surface-card)) 0%, var(--surface-card) 40%);
 }
 
 .services-event-diagram {
   border-bottom: 1px solid var(--structural-light);
-  background: color-mix(in srgb, var(--surface-light-alt) 74%, var(--surface-card));
+  background: radial-gradient(95% 130% at 50% -16%, var(--surface-card) 18%, var(--svc-surface-inset) 100%);
 }
 
 .services-event-output {
@@ -2735,6 +2857,22 @@ textarea:focus {
   font-weight: 950;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.services-event-output.motion-panel-reveal .services-event-timeline__step {
+  animation: motion-rise-in var(--motion-slow) var(--motion-ease-out) both;
+}
+
+.services-event-output.motion-panel-reveal .services-event-timeline__step:nth-child(2) {
+  animation-delay: 70ms;
+}
+
+.services-event-output.motion-panel-reveal .services-event-timeline__step:nth-child(3) {
+  animation-delay: 140ms;
+}
+
+.services-event-output.motion-panel-reveal .services-event-timeline__step:nth-child(4) {
+  animation-delay: 210ms;
 }
 
 .services-event-timeline__step::before {
@@ -2785,7 +2923,8 @@ textarea:focus {
 }
 
 .services-boundary-column--inside {
-  border-bottom: 2px dashed color-mix(in srgb, var(--accent) 36%, var(--line));
+  border-bottom: 1px dashed color-mix(in srgb, var(--accent) 46%, var(--line));
+  background: linear-gradient(165deg, rgba(255, 253, 248, 0.7), transparent 58%);
 }
 
 .services-boundary-column--outside {
@@ -3038,6 +3177,15 @@ textarea:focus {
   min-height: 15rem;
 }
 
+.module-tile-visual--photo img {
+  filter: saturate(1.05) contrast(1.02);
+  transition: transform 700ms var(--motion-ease-out);
+}
+
+.operational-module-tile--photo:hover .module-tile-visual--photo img {
+  transform: scale(1.04);
+}
+
 .module-tile-visual--photo::after {
   position: absolute;
   inset: 0;
@@ -3045,6 +3193,21 @@ textarea:focus {
     linear-gradient(180deg, rgba(13, 33, 52, 0) 36%, color-mix(in srgb, var(--authority-bg) 84%, transparent) 88%, var(--authority-bg) 100%),
     linear-gradient(90deg, rgba(16, 38, 63, 0.22), transparent 50%);
   content: "";
+}
+
+.operational-module-tile--featured .module-tile-visual--photo::after {
+  background:
+    linear-gradient(180deg, transparent 0%, transparent 48%, rgba(16, 38, 63, 0.22) 72%, rgba(16, 38, 63, 0.72) 100%),
+    linear-gradient(90deg, rgba(16, 38, 63, 0.1), transparent 44%);
+}
+
+.operational-module-tile--featured .module-tile-visual--photo img {
+  object-position: center 40%;
+  filter: saturate(1.08) contrast(1.04) brightness(1.03);
+}
+
+.operational-module-tile--featured .module-tile-visual__frame {
+  opacity: 0.28;
 }
 
 .module-tile-visual__frame {
@@ -3197,11 +3360,29 @@ textarea:focus {
 }
 
 .services-final-cta {
-  border: 1px solid rgba(255, 250, 242, 0.18);
+  position: relative;
+  border: 1px solid rgba(255, 250, 242, 0.2);
   border-radius: var(--svc-radius-shell);
   background: var(--svc-surface-console);
-  box-shadow: var(--svc-shadow-shell-dark);
+  box-shadow:
+    var(--svc-shadow-shell-dark),
+    inset 0 1px 0 rgba(255, 250, 242, 0.14);
   color: var(--authority-on-dark);
+}
+
+.services-final-cta::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(58% 95% at 88% 10%, rgba(47, 111, 115, 0.14), transparent 58%),
+    linear-gradient(180deg, rgba(255, 250, 242, 0.05), transparent 28%);
+  content: "";
+}
+
+.services-final-cta > div {
+  position: relative;
+  z-index: 1;
 }
 
 .services-final-cta .h2-system {
@@ -3229,6 +3410,33 @@ textarea:focus {
     border-top: 0;
     border-left: 1px solid rgba(255, 250, 242, 0.16);
   }
+}
+
+/* Closing descent: light section hands off to the dark CTA card, then a clean footer */
+.services-closing-section {
+  position: relative;
+  overflow: clip;
+  background:
+    linear-gradient(
+      180deg,
+      var(--surface-light) 0%,
+      color-mix(in srgb, var(--surface-light-alt) 78%, var(--surface-light)) 42%,
+      color-mix(in srgb, var(--surface-light-alt) 92%, var(--surface-light)) 100%
+    );
+  padding-bottom: 2.25rem;
+}
+
+.services-closing-section::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(40% 12rem at 50% 92%, rgba(184, 102, 74, 0.06), transparent 72%);
+  content: "";
+}
+
+.services-closing-section > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .services-execution-list {
@@ -3373,8 +3581,8 @@ textarea:focus {
 
 @keyframes services-section-in {
   from {
-    opacity: 0.72;
-    transform: translateY(14px);
+    opacity: 0.7;
+    transform: translateY(30px);
   }
 
   to {
@@ -3387,7 +3595,7 @@ textarea:focus {
   .services-interface-section > .container > * {
     animation: services-section-in both;
     animation-timeline: view();
-    animation-range: entry 0% cover 22%;
+    animation-range: entry 0% cover 30%;
   }
 }
 
@@ -3439,8 +3647,12 @@ textarea:focus {
   }
 
   .services-boundary-column--inside {
-    border-right: 2px dashed color-mix(in srgb, var(--accent) 36%, var(--line));
+    border-right: 1px dashed color-mix(in srgb, var(--accent) 46%, var(--line));
     border-bottom: 0;
+  }
+
+  .services-boundary-column--outside {
+    box-shadow: inset 20px 0 28px -24px rgba(16, 38, 63, 0.24);
   }
 
   .services-module-system {
@@ -3452,11 +3664,26 @@ textarea:focus {
     grid-template-rows: auto repeat(2, minmax(0, 1fr));
   }
 
-  .operational-module-tile--featured .module-tile-visual--photo {
+  .operational-module-tile--featured {
+    grid-template-columns: minmax(0, 0.46fr) minmax(0, 0.54fr);
+    align-items: stretch;
     min-height: 19rem;
   }
 
+  .operational-module-tile--featured .module-tile-visual--photo {
+    min-height: 100%;
+    border-bottom: 0;
+    border-right: 1px solid rgba(255, 250, 242, 0.14);
+  }
+
+  .operational-module-tile--featured .module-tile-visual {
+    border-bottom: 0;
+  }
+
   .operational-module-tile--featured .operational-module-tile__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 1.35rem 1.45rem;
   }
 
@@ -3514,7 +3741,7 @@ textarea:focus {
     grid-template-columns: minmax(0, 1.14fr) minmax(20rem, 0.86fr);
   }
 
-  .operational-module-tile--featured .module-tile-visual--photo {
+  .operational-module-tile--featured {
     min-height: 21rem;
   }
 }
@@ -3581,6 +3808,10 @@ textarea:focus {
     display: block;
   }
 
+  .operational-module-tile--featured .module-tile-visual--photo {
+    min-height: 14.5rem;
+  }
+
   .services-boundary-column__heading {
     margin-bottom: 0.8rem;
   }
@@ -3625,6 +3856,10 @@ textarea:focus {
   .services-hero-proof__badge::after,
   .services-hero-visual__scan,
   .services-hero-visual.motion-panel-reveal,
+  .services-command-hero::after,
+  .services-hero-visual__diagram,
+  .services-responsibility-meter span,
+  .services-event-output.motion-panel-reveal .services-event-timeline__step,
   .services-interface-section > .container > * {
     animation: none !important;
   }
@@ -3634,7 +3869,11 @@ textarea:focus {
   }
 
   .operational-module-tile,
-  .estimator-control-step {
+  .estimator-control-step,
+  .services-bridge-scale__segment,
+  .services-event-switch,
+  .services-journey-nav .journey-nav__link,
+  .module-tile-visual--photo img {
     transform: none !important;
   }
 }
@@ -3858,6 +4097,7 @@ textarea:focus {
     border-color var(--motion-slow) var(--motion-ease-out),
     color var(--motion-slow) var(--motion-ease-out),
     opacity var(--motion-slow) var(--motion-ease-out),
+    transform var(--motion-slow) var(--motion-ease-out),
     box-shadow var(--motion-slow) var(--motion-ease-out);
 }
 
@@ -3873,8 +4113,9 @@ textarea:focus {
   border-color: color-mix(in srgb, var(--accent) 52%, var(--line));
   background: var(--authority-bg);
   color: var(--authority-on-dark);
-  box-shadow: 0 10px 26px rgba(16, 38, 63, 0.16);
+  box-shadow: 0 10px 26px rgba(16, 38, 63, 0.18);
   opacity: 1;
+  transform: translateY(-2px);
 }
 
 .services-bridge-scale[data-gated="true"] .services-bridge-scale__segment {
@@ -4059,8 +4300,15 @@ textarea:focus {
   margin: 1.2rem 0;
 }
 
+@keyframes services-meter-grow {
+  from {
+    width: 0;
+  }
+}
+
 .services-responsibility-meter span {
   display: block;
+  animation: services-meter-grow 0.9s var(--motion-ease-out) 120ms both;
   width: var(--responsibility-depth);
   height: 100%;
   border-radius: inherit;

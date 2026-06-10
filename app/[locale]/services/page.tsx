@@ -288,7 +288,7 @@ export default async function ServicesPage({
           </div>
         </Section>
 
-        <Section tone="light" className="!pt-10">
+        <Section tone="light" className="services-closing-section !pt-10">
           <div className="services-final-cta overflow-hidden">
             <div className="grid gap-0 lg:grid-cols-[minmax(0,0.68fr)_minmax(18rem,0.32fr)]">
               <div className="p-5 md:p-8">
