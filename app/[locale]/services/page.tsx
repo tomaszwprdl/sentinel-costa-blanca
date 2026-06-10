@@ -59,7 +59,7 @@ export default async function ServicesPage({
 
   const operationalModules = [
     {
-      image: '/photos/sentinel-cleaning-readiness-placeholder.png',
+      image: '/photos/sentinel-technician-access-placeholder.png',
       marker: '01',
       mode: 'featured',
       label: t('redesign.modules.useWhen'),
@@ -135,23 +135,23 @@ export default async function ServicesPage({
               </div>
             </Region>
             <Region name="support" tabletSpan="half" desktopSpan="half">
-              <figure className="services-hero-visual motion-panel-reveal" aria-hidden="true">
-                <div className="services-hero-visual__frame">
+              <figure className="services-hero-visual services-hero-visual--photo motion-panel-reveal" aria-hidden="true">
+                <div className="services-hero-visual__frame services-hero-visual__frame--photo">
                   <div className="services-hero-visual__chrome">
                     <span />
                     <span />
                     <span />
                   </div>
-                  <div className="services-hero-visual__diagram relative aspect-[4/3]">
+                  <div className="services-hero-visual__media relative aspect-[4/3]">
                     <Image
-                      src="/visuals/sentinel-service-scope-diagram.svg"
+                      src="/photos/sentinel-report-tablet-placeholder.png"
                       alt=""
                       fill
                       sizes="(min-width: 1024px) 44vw, 100vw"
-                      className="object-contain p-3 md:p-4"
+                      className="services-hero-visual__image object-cover"
                       priority
-                      unoptimized
                     />
+                    <span className="services-hero-visual__glow" aria-hidden="true" />
                     <span className="services-hero-visual__scan" />
                   </div>
                 </div>

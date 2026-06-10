@@ -77,15 +77,17 @@ export default function OperationalModuleTile({
       {visual ? (
         <ModuleVisual visual={visual} />
       ) : image ? (
-        <div className="module-tile-visual module-tile-visual--photo relative">
+        <div
+          className={`module-tile-visual module-tile-visual--photo relative ${mode === 'featured' ? 'module-tile-visual--featured' : ''}`}
+        >
           <Image
             src={image}
             alt=""
             fill
-            sizes="(min-width: 1024px) 33vw, 100vw"
-            className="object-cover"
+            sizes={mode === 'featured' ? '(min-width: 1024px) 50vw, 100vw' : '(min-width: 1024px) 33vw, 100vw'}
+            className={mode === 'featured' ? 'module-tile-visual__image' : 'object-cover'}
           />
-          <span className="module-tile-visual__frame" aria-hidden="true" />
+          {mode !== 'featured' && <span className="module-tile-visual__frame" aria-hidden="true" />}
           <span className="module-tile-visual__marker" aria-hidden="true">{marker}</span>
         </div>
       ) : null}
