@@ -23,9 +23,9 @@ export default function ServiceBoundaryGrid() {
             <h3>{t('redesign.boundary.doesTitle')}</h3>
           </div>
           <div className="services-boundary-list">
-            {DOES_KEYS.map((key, index) => (
+            {DOES_KEYS.map((key) => (
               <article key={key} className="services-boundary-item">
-                <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                <span aria-hidden="true" />
                 <div>
                   <p>{t(`redesign.boundary.does.${key}.title`)}</p>
                   <small>{t(`redesign.boundary.does.${key}.body`)}</small>
@@ -41,9 +41,9 @@ export default function ServiceBoundaryGrid() {
             <h3>{t('redesign.boundary.doesNotTitle')}</h3>
           </div>
           <div className="services-boundary-list">
-            {DOES_NOT_KEYS.map((key, index) => (
+            {DOES_NOT_KEYS.map((key) => (
               <article key={key} className="services-boundary-item">
-                <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                <span aria-hidden="true" />
                 <div>
                   <p>{t(`redesign.boundary.doesNot.${key}.title`)}</p>
                   <small>{t(`redesign.boundary.doesNot.${key}.body`)}</small>

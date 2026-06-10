@@ -212,24 +212,24 @@ export default async function ServicesPage({
               <p className="mt-3 text-body">{t('redesign.executionStrip.body')}</p>
             </div>
             <div className="mt-6 grid gap-4 md:grid-cols-2">
-              <div className="rounded-2xl border border-structural-light bg-surface-card p-4">
-                <h3 className="mb-3 text-sm font-black text-heading">{t('redesign.executionStrip.availableLabel')}</h3>
-                <ul className="ml-4 list-disc space-y-1.5 text-sm text-body">
+              <div className="services-execution-card services-execution-card--available">
+                <h3 className="services-execution-card__title">{t('redesign.executionStrip.availableLabel')}</h3>
+                <ul className="services-execution-list text-sm text-body">
                   {EXECUTION_ONLY_AVAILABLE_KEYS.map((key) => (
                     <li key={key}>{t(`executionOnly.availableItems.${key}`)}</li>
                   ))}
                 </ul>
               </div>
-              <div className="rounded-2xl border border-structural-light bg-surface-light-alt p-4">
-                <h3 className="mb-3 text-sm font-black text-heading">{t('redesign.executionStrip.limitsLabel')}</h3>
-                <ul className="ml-4 list-disc space-y-1.5 text-sm text-body">
+              <div className="services-execution-card services-execution-card--limits">
+                <h3 className="services-execution-card__title">{t('redesign.executionStrip.limitsLabel')}</h3>
+                <ul className="services-execution-list text-sm text-body">
                   {EXECUTION_ONLY_LIMITATION_KEYS.map((key) => (
                     <li key={key}>{t(`executionOnly.limitationsItems.${key}`)}</li>
                   ))}
                 </ul>
               </div>
             </div>
-            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="services-execution-strip__footer flex flex-col gap-3 sm:flex-row sm:items-center">
               <p className="mb-0 flex-1 text-sm text-muted">{t('executionOnly.closing')}</p>
               <Link href={`/${locale}/contact`} className="btn-secondary shrink-0">
                 {t('redesign.executionStrip.cta')}
@@ -289,7 +289,7 @@ export default async function ServicesPage({
         </Section>
 
         <Section tone="light" className="!pt-10">
-          <div className="visual-card-strong overflow-hidden">
+          <div className="services-final-cta overflow-hidden">
             <div className="grid gap-0 lg:grid-cols-[minmax(0,0.68fr)_minmax(18rem,0.32fr)]">
               <div className="p-5 md:p-8">
                 <p className="section-label">{t('redesign.ladder.eyebrow')}</p>
@@ -298,12 +298,12 @@ export default async function ServicesPage({
                   {t('cta.subheadline')}
                 </p>
               </div>
-              <div className="border-t border-structural-light bg-surface-light-alt p-5 md:p-8 lg:border-l lg:border-t-0">
+              <div className="services-final-cta__panel p-5 md:p-8">
                 <div className="flex flex-col gap-4">
                   <Link href={`/${locale}/contact`} className="btn-primary">
                     {t('cta.primaryButton')}
                   </Link>
-                  <Link href={`/${locale}/faq`} className="btn-secondary">
+                  <Link href={`/${locale}/faq`} className="btn-secondary btn-secondary-on-dark">
                     {t('cta.secondaryButton')}
                   </Link>
                 </div>

@@ -99,8 +99,8 @@ export default function WhatIfEventSimulator() {
 
             <div className="services-event-timeline">
               {detailKeys.map((key) => (
-                <div key={key} className="services-event-timeline__step rounded-2xl border border-structural-light bg-surface-light-alt p-4">
-                  <p className="mb-1 text-[11px] font-black uppercase tracking-wide text-muted">
+                <div key={key} className="services-event-timeline__step">
+                  <p className="services-event-timeline__label">
                     {t(`redesign.events.detailLabels.${key}`)}
                   </p>
                   <p className="mb-0 text-sm leading-relaxed text-body">
