@@ -1960,14 +1960,16 @@ textarea:focus {
 }
 
 .services-bridge-entry {
-  padding-top: 2.25rem;
+  padding-top: 1.35rem;
 }
 
 .estimator-embedded-shell {
+  position: relative;
   overflow: hidden;
-  border: 1px solid var(--structural-light);
-  border-radius: 1rem;
-  background: var(--surface-card);
+  border: 1px solid color-mix(in srgb, var(--line) 56%, var(--support));
+  border-radius: var(--svc-radius-shell);
+  background: var(--svc-surface-shell-cool);
+  box-shadow: var(--svc-shadow-card);
   padding: 1rem;
 }
 
@@ -2484,7 +2486,7 @@ textarea:focus {
 
 @media (min-width: 768px) {
   .services-bridge-entry {
-    padding-top: 2.75rem;
+    padding-top: 1.85rem;
   }
 
   .estimator-embedded-shell {
@@ -2513,36 +2515,53 @@ textarea:focus {
 
 /* Services guided operational interface */
 .services-page {
-  /* Services visual tokens: one elevation + radius + surface language for all section instruments */
+  /* Services visual tokens: page field, section shell, and instrument readout levels */
   --svc-radius-shell: 1.15rem;
   --svc-radius-card: 1rem;
   --svc-radius-control: 0.85rem;
   --svc-radius-item: 0.75rem;
-  --svc-shadow-shell: 0 26px 66px rgba(16, 38, 63, 0.13);
-  --svc-shadow-shell-dark: 0 28px 70px rgba(7, 24, 42, 0.26);
-  --svc-shadow-card: 0 16px 40px rgba(16, 38, 63, 0.1);
-  --svc-shadow-hover: 0 18px 44px rgba(16, 38, 63, 0.15);
-  --svc-surface-shell:
-    radial-gradient(circle at 88% 0%, color-mix(in srgb, var(--support) 11%, transparent), transparent 34%),
-    linear-gradient(145deg, color-mix(in srgb, var(--surface-card) 88%, var(--paper)), var(--surface-card));
+  --svc-page-stone: #ebe4d9;
+  --svc-page-stone-deep: #ddd4c8;
+  --svc-cool-field: #e4ece9;
+  --svc-zone-line: color-mix(in srgb, var(--line) 58%, var(--authority));
+  --svc-shadow-shell: 0 22px 52px rgba(16, 38, 63, 0.1);
+  --svc-shadow-shell-dark: 0 24px 58px rgba(7, 24, 42, 0.22);
+  --svc-shadow-card: 0 12px 30px rgba(16, 38, 63, 0.08);
+  --svc-shadow-hover: 0 16px 38px rgba(16, 38, 63, 0.11);
+  --svc-surface-shell: linear-gradient(165deg, rgba(255, 253, 249, 0.98), rgba(255, 255, 255, 0.94) 52%, rgba(248, 244, 237, 0.96));
   --svc-surface-console:
-    radial-gradient(circle at 82% 12%, rgba(47, 111, 115, 0.2), transparent 33%),
-    linear-gradient(145deg, #0f263b, #10263f);
-  --svc-surface-inset: color-mix(in srgb, var(--surface-light-alt) 74%, var(--surface-card));
-  --svc-surface-shell-cool:
-    radial-gradient(circle at 88% 0%, color-mix(in srgb, var(--support) 12%, transparent), transparent 34%),
-    linear-gradient(145deg, color-mix(in srgb, var(--surface-card) 88%, var(--base-alt)), var(--surface-card));
+    radial-gradient(20rem 14rem at 78% 8%, rgba(47, 111, 115, 0.16), transparent 72%),
+    linear-gradient(145deg, #081726, #10263f 62%, #14344a);
+  --svc-surface-inset: color-mix(in srgb, var(--surface-light-alt) 58%, var(--surface-card));
+  --svc-surface-shell-cool: linear-gradient(165deg, rgba(251, 253, 251, 0.98), rgba(255, 255, 255, 0.95) 54%, rgba(241, 247, 244, 0.96));
+  position: relative;
+  isolation: isolate;
   background:
-    linear-gradient(180deg, var(--surface-light) 0%, color-mix(in srgb, var(--surface-light-alt) 80%, var(--surface-light)) 46%, var(--surface-light) 100%);
+    radial-gradient(26rem 14rem at 84% 6%, rgba(47, 111, 115, 0.045), transparent 72%),
+    linear-gradient(180deg, #ebe4d9 0%, #f0e9df 42%, #ece5da 100%);
+}
+
+[data-theme="dark"] .services-page {
+  --svc-page-stone: #111b27;
+  --svc-page-stone-deep: #0c1622;
+  --svc-cool-field: #132431;
+  --svc-shadow-shell: 0 22px 52px rgba(0, 0, 0, 0.3);
+  --svc-shadow-card: 0 12px 30px rgba(0, 0, 0, 0.24);
+  --svc-surface-shell: linear-gradient(165deg, rgba(25, 40, 56, 0.98), rgba(20, 33, 48, 0.96) 52%, rgba(17, 29, 42, 0.98));
+  --svc-surface-inset: color-mix(in srgb, var(--surface-light-alt) 72%, var(--surface-card));
+  --svc-surface-shell-cool: linear-gradient(165deg, rgba(22, 38, 52, 0.98), rgba(20, 33, 48, 0.97) 54%, rgba(15, 28, 40, 0.98));
+  background:
+    radial-gradient(26rem 14rem at 84% 6%, rgba(93, 177, 168, 0.05), transparent 72%),
+    linear-gradient(180deg, #0f1824 0%, #121e2a 42%, #101a26 100%);
 }
 
 .services-command-hero {
   position: relative;
   overflow: clip;
   background:
-    radial-gradient(54% 46% at 86% 36%, rgba(47, 111, 115, 0.34), transparent 64%),
-    radial-gradient(40% 38% at 14% 78%, rgba(184, 102, 74, 0.16), transparent 58%),
-    linear-gradient(132deg, #04101c 0%, var(--authority-bg) 46%, #0f2f44 100%);
+    radial-gradient(44rem 32rem at 82% 42%, rgba(91, 166, 158, 0.32), transparent 64%),
+    radial-gradient(34rem 22rem at 48% 105%, rgba(184, 102, 74, 0.14), transparent 72%),
+    linear-gradient(135deg, #04101c 0%, #10263f 48%, #12384a 100%);
 }
 
 .services-command-hero::before {
@@ -2550,22 +2569,22 @@ textarea:focus {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(255, 250, 242, 0.05) 0 1px, transparent 1px 100%),
-    linear-gradient(0deg, rgba(255, 250, 242, 0.04) 0 1px, transparent 1px 100%);
-  background-size: 72px 72px;
-  -webkit-mask-image: radial-gradient(88% 72% at 78% 34%, black 18%, transparent 78%);
-  mask-image: radial-gradient(88% 72% at 78% 34%, black 18%, transparent 78%);
+    linear-gradient(90deg, rgba(255, 250, 242, 0.04) 0 1px, transparent 1px 100%),
+    linear-gradient(0deg, rgba(255, 250, 242, 0.035) 0 1px, transparent 1px 100%);
+  background-size: 84px 84px;
+  -webkit-mask-image: radial-gradient(38rem 27rem at 78% 42%, black 10%, transparent 78%);
+  mask-image: radial-gradient(38rem 27rem at 78% 42%, black 10%, transparent 78%);
   content: "";
-  opacity: 0.22;
+  opacity: 0.18;
 }
 
 .services-command-hero::after {
   position: absolute;
-  inset: -24%;
+  inset: -18%;
   pointer-events: none;
   background:
-    radial-gradient(32% 30% at 28% 32%, rgba(47, 111, 115, 0.22), transparent 72%),
-    radial-gradient(26% 24% at 74% 66%, rgba(184, 102, 74, 0.18), transparent 70%);
+    radial-gradient(30rem 24rem at 75% 45%, rgba(255, 250, 242, 0.11), transparent 72%),
+    radial-gradient(26rem 20rem at 27% 34%, rgba(47, 111, 115, 0.18), transparent 74%);
   content: "";
   animation: services-ambient-drift 26s ease-in-out infinite alternate;
 }
@@ -2614,109 +2633,17 @@ textarea:focus {
 .services-interface-section {
   position: relative;
   overflow: clip;
-}
-
-.services-interface-section::before {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
   background: transparent;
-  content: "";
 }
 
-/* Cluster motif layer: each section pair shares one quiet structural motif */
+.services-interface-section::before,
 .services-interface-section::after {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  content: "";
-}
-
-/* Instrument zone: bridge + responsibility */
-.services-interface-section--bridge::after {
-  background: radial-gradient(68% 56% at 34% 42%, color-mix(in srgb, var(--support) 10%, transparent), transparent 74%);
-  opacity: 0.9;
-}
-
-.services-interface-section--responsibility::after {
-  background: radial-gradient(64% 52% at 38% 48%, color-mix(in srgb, var(--authority) 7%, transparent), transparent 76%);
-  opacity: 0.85;
-}
-
-.services-interface-section--bridge::before {
-  background:
-    radial-gradient(72% 20rem at 50% -9rem, rgba(16, 38, 63, 0.14), transparent 72%),
-    linear-gradient(180deg, color-mix(in srgb, var(--authority-bg) 10%, transparent), transparent 11rem);
-}
-
-.services-interface-section--responsibility::before {
-  background: radial-gradient(58% 42% at 36% 52%, color-mix(in srgb, var(--support) 6%, transparent), transparent 72%);
-}
-
-/* Scenario zone: event + boundary */
-.services-interface-section--event::after {
-  background: radial-gradient(70% 58% at 78% 24%, color-mix(in srgb, var(--authority) 8%, transparent), transparent 72%);
-  opacity: 0.85;
-}
-
-.services-interface-section--boundary::after {
-  background: radial-gradient(62% 54% at 22% 58%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 74%);
-  opacity: 0.8;
-}
-
-.services-interface-section--event::before {
-  background:
-    radial-gradient(84% 64% at 68% 18%, color-mix(in srgb, var(--authority) 9%, transparent), transparent 62%),
-    linear-gradient(180deg, color-mix(in srgb, var(--surface-light-alt) 96%, var(--surface-card)), transparent 12rem);
-}
-
-/* Operational zone: modules + execution */
-.services-interface-section--modules::after {
-  background: radial-gradient(76% 58% at 22% 40%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 70%);
-  opacity: 0.9;
-}
-
-.services-interface-section--execution::after {
-  background: radial-gradient(68% 50% at 78% 36%, color-mix(in srgb, var(--support) 7%, transparent), transparent 72%);
-  opacity: 0.85;
-}
-
-/* Cluster: estimator — cooler dusk light before the dark close */
-.services-interface-section--estimator::before {
-  background:
-    linear-gradient(180deg, rgba(255, 252, 246, 0.5), transparent 8rem),
-    radial-gradient(82% 60% at 50% 0%, color-mix(in srgb, var(--support) 12%, transparent), transparent 62%);
+  display: none;
 }
 
 .services-interface-section > .container {
   position: relative;
   z-index: 1;
-}
-
-.services-interface-section--responsibility,
-.services-interface-section--execution {
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface-light-alt) 94%, var(--surface-card)), var(--surface-light-alt));
-}
-
-.services-interface-section--event {
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface-light-alt) 90%, var(--surface-card)), var(--surface-light-alt));
-}
-
-.services-interface-section--boundary {
-  background:
-    linear-gradient(180deg, var(--surface-light-alt) 0%, color-mix(in srgb, var(--surface-light) 88%, var(--surface-card)) 100%);
-}
-
-.services-interface-section--modules {
-  background:
-    linear-gradient(180deg, var(--surface-light) 0%, color-mix(in srgb, var(--surface-light-alt) 84%, var(--surface-card)) 100%);
-}
-
-.services-interface-section--estimator {
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface-light-alt) 82%, var(--base-alt)) 0%, var(--surface-light) 100%);
 }
 
 .services-journey-nav .journey-nav__track {
@@ -2730,12 +2657,14 @@ textarea:focus {
   left: 0.8rem;
   right: 0.8rem;
   height: 1px;
-  background: color-mix(in srgb, var(--line) 74%, transparent);
+  background: linear-gradient(90deg, transparent, rgba(16, 38, 63, 0.22), transparent);
   content: "";
 }
 
 .services-journey-nav {
-  background: color-mix(in srgb, var(--surface-card) 86%, transparent);
+  border-bottom: 1px solid rgba(16, 38, 63, 0.12);
+  background: color-mix(in srgb, var(--svc-page-stone) 18%, rgba(255, 253, 249, 0.94));
+  box-shadow: 0 10px 28px rgba(16, 38, 63, 0.06);
   backdrop-filter: blur(10px);
 }
 
@@ -2743,6 +2672,16 @@ textarea:focus {
   position: relative;
   z-index: 1;
   border-radius: 0.85rem;
+  background: rgba(255, 252, 246, 0.78);
+}
+
+[data-theme="dark"] .services-journey-nav {
+  border-bottom-color: rgba(237, 244, 239, 0.1);
+  background: color-mix(in srgb, var(--svc-page-stone) 24%, rgba(20, 33, 48, 0.94));
+}
+
+[data-theme="dark"] .services-journey-nav .journey-nav__link {
+  background: rgba(25, 40, 56, 0.82);
 }
 
 .services-journey-nav .journey-nav__link:hover {
@@ -2775,19 +2714,42 @@ textarea:focus {
 .services-authority-scale {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 250, 242, 0.18);
-  border-radius: var(--svc-radius-shell);
-  background: var(--svc-surface-console);
-  box-shadow: var(--svc-shadow-shell-dark);
-  padding: 0.9rem;
-}
-
-.services-event-simulator {
-  overflow: hidden;
+  isolation: isolate;
   border: 1px solid rgba(255, 250, 242, 0.22);
   border-radius: var(--svc-radius-shell);
   background: var(--svc-surface-console);
-  box-shadow: var(--svc-shadow-shell-dark);
+  box-shadow:
+    var(--svc-shadow-shell-dark),
+    0 0 72px -36px rgba(47, 111, 115, 0.34);
+  padding: 0.9rem;
+}
+
+.services-authority-scale::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255, 250, 242, 0.028) 0 1px, transparent 1px 100%),
+    linear-gradient(0deg, rgba(255, 250, 242, 0.024) 0 1px, transparent 1px 100%);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(20rem 14rem at 28% 24%, black 6%, transparent 78%);
+  mask-image: radial-gradient(20rem 14rem at 28% 24%, black 6%, transparent 78%);
+  opacity: 0.42;
+  content: "";
+}
+
+.services-event-simulator {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(255, 250, 242, 0.22);
+  border-radius: var(--svc-radius-shell);
+  background:
+    radial-gradient(22rem 14rem at 78% 6%, rgba(47, 111, 115, 0.14), transparent 72%),
+    linear-gradient(145deg, #081726, #10263f 60%, #14344a);
+  box-shadow:
+    var(--svc-shadow-shell-dark),
+    0 0 68px -34px rgba(47, 111, 115, 0.28);
 }
 
 .services-event-simulator__grid {
@@ -2843,14 +2805,16 @@ textarea:focus {
 }
 
 .services-event-simulator__stage {
-  background: linear-gradient(180deg, color-mix(in srgb, var(--surface-light-alt) 52%, var(--surface-card)) 0%, var(--surface-card) 40%);
+  background:
+    radial-gradient(26rem 18rem at 76% 0%, rgba(47, 111, 115, 0.11), transparent 70%),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-light-alt) 56%, var(--surface-card)) 0%, var(--surface-card) 42%);
 }
 
 .services-event-diagram {
   border-bottom: 1px solid var(--structural-light);
   background:
-    radial-gradient(92% 120% at 50% -10%, rgba(255, 250, 242, 0.98) 0%, color-mix(in srgb, var(--surface-light-alt) 72%, var(--surface-card)) 54%, var(--svc-surface-inset) 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 250, 242, 0.72);
+    radial-gradient(70% 90% at 50% -8%, rgba(255, 253, 249, 0.96) 0%, color-mix(in srgb, var(--surface-light-alt) 68%, var(--surface-card)) 58%, var(--svc-surface-inset) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 253, 249, 0.68);
 }
 
 .services-event-diagram figure {
@@ -2888,7 +2852,7 @@ textarea:focus {
   margin-left: 2rem;
   border: 1px solid var(--structural-light);
   border-radius: var(--svc-radius-item);
-  background: var(--svc-surface-inset);
+  background: color-mix(in srgb, var(--surface-card) 76%, var(--svc-surface-inset));
   padding: 0.95rem 1rem 1rem;
 }
 
@@ -2934,26 +2898,66 @@ textarea:focus {
 }
 
 .services-modules-band {
+  position: relative;
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--line) 68%, var(--support));
+  isolation: isolate;
+  border: 1px solid color-mix(in srgb, var(--line) 52%, var(--support));
   border-radius: var(--svc-radius-shell);
   background: var(--svc-surface-shell);
-  box-shadow: var(--svc-shadow-shell);
+  box-shadow:
+    var(--svc-shadow-shell),
+    0 0 64px -38px rgba(210, 154, 87, 0.16),
+    inset 0 1px 0 rgba(255, 253, 249, 0.9);
   padding: 1rem;
 }
 
+.services-modules-band::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(18rem 12rem at 14% 8%, rgba(210, 154, 87, 0.09), transparent 72%),
+    radial-gradient(16rem 11rem at 88% 72%, rgba(47, 111, 115, 0.06), transparent 74%);
+  content: "";
+}
+
+.services-modules-band > * {
+  position: relative;
+  z-index: 1;
+}
+
 .services-boundary-panel {
+  position: relative;
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--line) 68%, var(--support));
+  isolation: isolate;
+  border: 1px solid color-mix(in srgb, var(--line) 56%, var(--support));
   border-radius: var(--svc-radius-shell);
   background: var(--svc-surface-shell);
-  box-shadow: var(--svc-shadow-shell);
+  box-shadow:
+    var(--svc-shadow-shell),
+    0 0 58px -36px rgba(16, 38, 63, 0.1),
+    inset 0 1px 0 rgba(255, 253, 249, 0.88);
+}
+
+.services-boundary-panel::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(18rem 12rem at 82% 4%, rgba(47, 111, 115, 0.06), transparent 72%);
+  content: "";
+}
+
+.services-boundary-panel > * {
+  position: relative;
+  z-index: 1;
 }
 
 .services-boundary-panel__header {
   border-bottom: 1px solid color-mix(in srgb, var(--line) 72%, var(--support));
   background:
-    linear-gradient(90deg, color-mix(in srgb, var(--surface-light-alt) 82%, var(--surface-card)), transparent);
+    linear-gradient(90deg, rgba(230, 238, 235, 0.9), rgba(255, 252, 246, 0.7));
   padding: 1.1rem;
 }
 
@@ -3367,11 +3371,17 @@ textarea:focus {
 
 .services-execution-strip {
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--line) 68%, var(--support));
+  border: 1px solid color-mix(in srgb, var(--line) 54%, var(--support));
   border-radius: var(--svc-radius-shell);
   background: var(--svc-surface-shell);
-  box-shadow: var(--svc-shadow-shell);
+  box-shadow:
+    var(--svc-shadow-shell),
+    inset 0 1px 0 rgba(255, 253, 249, 0.88);
   padding: 1.4rem;
+}
+
+[data-theme="dark"] .services-execution-strip {
+  background: var(--svc-surface-shell);
 }
 
 .services-execution-card {
@@ -3418,11 +3428,15 @@ textarea:focus {
 
 .services-final-cta {
   position: relative;
-  border: 1px solid rgba(255, 250, 242, 0.2);
+  isolation: isolate;
+  border: 1px solid rgba(255, 250, 242, 0.24);
   border-radius: var(--svc-radius-shell);
-  background: var(--svc-surface-console);
+  background:
+    radial-gradient(22rem 14rem at 84% 10%, rgba(47, 111, 115, 0.14), transparent 72%),
+    linear-gradient(145deg, #071523, #10263f 58%, #143348);
   box-shadow:
     var(--svc-shadow-shell-dark),
+    0 20px 52px rgba(16, 38, 63, 0.2),
     inset 0 1px 0 rgba(255, 250, 242, 0.14);
   color: var(--authority-on-dark);
 }
@@ -3431,9 +3445,7 @@ textarea:focus {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background:
-    radial-gradient(58% 95% at 88% 10%, rgba(47, 111, 115, 0.14), transparent 58%),
-    linear-gradient(180deg, rgba(255, 250, 242, 0.05), transparent 28%);
+  background: radial-gradient(18rem 10rem at 90% 6%, rgba(255, 250, 242, 0.06), transparent 72%);
   content: "";
 }
 
@@ -3469,26 +3481,20 @@ textarea:focus {
   }
 }
 
-/* Closing descent: light section hands off to the dark CTA card, then a clean footer */
+/* Closing descent: page field hands off to the dark CTA card, then a clean footer */
 .services-closing-section {
   position: relative;
   overflow: clip;
-  background:
-    linear-gradient(
-      180deg,
-      var(--surface-light) 0%,
-      color-mix(in srgb, var(--surface-light-alt) 78%, var(--surface-light)) 42%,
-      color-mix(in srgb, var(--surface-light-alt) 92%, var(--surface-light)) 100%
-    );
+  background: linear-gradient(180deg, var(--svc-page-stone) 0%, color-mix(in srgb, var(--svc-page-stone-deep) 82%, #10263f) 78%, #0f2438 100%);
   padding-bottom: 2.25rem;
 }
 
 .services-closing-section::before {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(40% 12rem at 50% 92%, rgba(184, 102, 74, 0.06), transparent 72%);
-  content: "";
+  display: none;
+}
+
+[data-theme="dark"] .services-closing-section {
+  background: linear-gradient(180deg, #101a26 0%, #0e1722 72%, #0c1520 100%);
 }
 
 .services-closing-section > .container {
@@ -3526,12 +3532,35 @@ textarea:focus {
 }
 
 .services-estimator-band {
-  overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--line) 70%, var(--support));
-  border-radius: var(--svc-radius-shell);
-  background: var(--svc-surface-shell-cool);
-  box-shadow: var(--svc-shadow-shell);
-  padding: 1rem;
+  position: relative;
+  overflow: visible;
+  isolation: isolate;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.services-estimator-band::before {
+  position: absolute;
+  top: 2.5rem;
+  right: 8%;
+  left: 8%;
+  z-index: 0;
+  height: min(28rem, 72%);
+  pointer-events: none;
+  background: radial-gradient(24rem 16rem at 50% 42%, rgba(47, 111, 115, 0.07), transparent 72%);
+  content: "";
+}
+
+.services-estimator-band > * {
+  position: relative;
+  z-index: 1;
+}
+
+[data-theme="dark"] .services-estimator-band::before {
+  background: radial-gradient(24rem 16rem at 50% 42%, rgba(93, 177, 168, 0.06), transparent 72%);
 }
 
 .estimator-control-panel {
@@ -3762,8 +3791,7 @@ textarea:focus {
     transform-origin: center right;
   }
 
-  .services-modules-band,
-  .services-estimator-band {
+  .services-modules-band {
     padding: 1.6rem;
   }
 
@@ -3841,8 +3869,7 @@ textarea:focus {
     padding-bottom: 1rem;
   }
 
-  .services-modules-band,
-  .services-estimator-band {
+  .services-modules-band {
     margin-inline: -0.2rem;
   }
 
@@ -3923,13 +3950,39 @@ textarea:focus {
 
 /* Services guided product interface */
 .services-router-board {
+  position: relative;
   display: grid;
   min-width: 0;
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--line) 68%, var(--support));
+  isolation: isolate;
+  border: 1px solid color-mix(in srgb, var(--line) 62%, var(--support));
   border-radius: var(--svc-radius-shell);
-  background: var(--svc-surface-shell);
-  box-shadow: var(--svc-shadow-shell);
+  background:
+    radial-gradient(20rem 13rem at 22% 10%, rgba(47, 111, 115, 0.07), transparent 72%),
+    var(--svc-surface-shell);
+  box-shadow:
+    var(--svc-shadow-shell),
+    0 0 62px -38px rgba(47, 111, 115, 0.18);
+}
+
+.services-router-board::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(16, 38, 63, 0.035) 0 1px, transparent 1px 100%),
+    linear-gradient(0deg, rgba(47, 111, 115, 0.03) 0 1px, transparent 1px 100%);
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(17rem 11rem at 34% 22%, black 5%, transparent 78%);
+  mask-image: radial-gradient(17rem 11rem at 34% 22%, black 5%, transparent 78%);
+  opacity: 0.38;
+  content: "";
+}
+
+.services-router-board > * {
+  position: relative;
+  z-index: 1;
 }
 
 .services-router-board__choices {
@@ -4187,6 +4240,8 @@ textarea:focus {
 }
 
 .services-responsibility-console {
+  position: relative;
+  z-index: 1;
   display: grid;
   gap: 1rem;
 }
