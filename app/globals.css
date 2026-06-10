@@ -3894,25 +3894,25 @@ textarea:focus {
 
 .services-router-board__choices {
   display: grid;
-  gap: 0.65rem;
+  gap: 0.45rem;
   border-bottom: 1px solid var(--structural-light);
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--surface-light-alt) 86%, var(--surface-card)), var(--surface-light-alt));
-  padding: 1rem;
+  padding: 0.7rem;
 }
 
 .services-router-choice {
   position: relative;
   display: grid;
-  grid-template-columns: 2rem minmax(0, 1fr);
-  gap: 0.85rem;
+  grid-template-columns: 1.7rem minmax(0, 1fr);
+  gap: 0.7rem;
   align-items: center;
   min-width: 0;
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--line) 78%, transparent);
-  border-radius: 0.9rem;
+  border-radius: 0.8rem;
   background: var(--surface-card);
-  padding: 0.9rem;
+  padding: 0.6rem 0.7rem;
   text-align: left;
   transition:
     transform var(--motion-standard) var(--motion-ease-out),
@@ -3954,8 +3954,8 @@ textarea:focus {
 
 .services-router-choice__index {
   display: inline-flex;
-  width: 2rem;
-  height: 2rem;
+  width: 1.7rem;
+  height: 1.7rem;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
@@ -3980,7 +3980,7 @@ textarea:focus {
 
 .services-router-choice__label {
   color: var(--accent);
-  font-size: 0.66rem;
+  font-size: 0.62rem;
   font-weight: 900;
   letter-spacing: 0.08em;
   line-height: 1.25;
@@ -3993,7 +3993,7 @@ textarea:focus {
 
 .services-router-choice__copy strong {
   color: inherit;
-  font-size: 0.96rem;
+  font-size: 0.92rem;
   line-height: 1.22;
 }
 
@@ -4022,32 +4022,42 @@ textarea:focus {
 
 .services-router-panel__content {
   min-width: 0;
-  padding: 1.2rem;
+  padding: 1rem;
 }
 
-.services-router-panel__header {
+.services-router-panel__kicker {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  margin-bottom: 0.8rem;
-}
-
-.services-router-panel__header span {
-  display: inline-flex;
-  width: 2rem;
-  height: 2rem;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  background: var(--authority-bg);
-  color: var(--authority-on-dark);
-  font-size: 0.7rem;
+  gap: 0.45rem;
+  margin: 0 0 0.3rem;
+  color: var(--muted);
+  font-size: 0.64rem;
   font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.services-router-panel__header p,
-.services-router-panel__outcomes p {
-  margin: 0;
+.services-router-panel__kicker span {
+  color: var(--accent);
+}
+
+.services-router-panel__content h3 {
+  margin: 0 0 0.75rem;
+  color: var(--heading);
+  font-size: 1.05rem;
+  font-weight: 950;
+  line-height: 1.25;
+}
+
+.services-bridge-readout {
+  border: 1px solid var(--structural-light);
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--surface-light-alt) 74%, var(--surface-card));
+  padding: 0.95rem;
+}
+
+.services-bridge-readout__label {
+  margin: 0 0 0.7rem;
   color: var(--muted);
   font-size: 0.68rem;
   font-weight: 900;
@@ -4055,19 +4065,92 @@ textarea:focus {
   text-transform: uppercase;
 }
 
-.services-router-panel__content h3 {
-  margin: 0 0 0.6rem;
-  color: var(--heading);
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: 950;
-  line-height: 0.98;
+.services-bridge-gate {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.65rem;
 }
 
-.services-router-panel__content > p {
-  max-width: 52ch;
+.services-bridge-gate__chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, var(--line));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface-card));
+  color: var(--heading);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  padding: 0.45rem 0.85rem;
+  text-transform: uppercase;
+}
+
+.services-bridge-gate__connector {
+  flex: 1;
+  border-top: 2px dashed color-mix(in srgb, var(--line) 70%, var(--support));
+}
+
+.services-bridge-scale {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.services-bridge-scale__segment {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.55rem;
+  border: 1px solid var(--structural-light);
+  border-radius: 0.75rem;
+  background: var(--surface-card);
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 800;
+  opacity: 0.58;
+  padding: 0.45rem 0.4rem;
+  text-align: center;
+  transition:
+    background-color var(--motion-slow) var(--motion-ease-out),
+    border-color var(--motion-slow) var(--motion-ease-out),
+    color var(--motion-slow) var(--motion-ease-out),
+    opacity var(--motion-slow) var(--motion-ease-out),
+    box-shadow var(--motion-slow) var(--motion-ease-out);
+}
+
+.services-bridge-scale__segment:nth-child(2) {
+  transition-delay: 70ms;
+}
+
+.services-bridge-scale__segment:nth-child(3) {
+  transition-delay: 140ms;
+}
+
+.services-bridge-scale__segment[data-active="true"] {
+  border-color: color-mix(in srgb, var(--accent) 52%, var(--line));
+  background: var(--authority-bg);
+  color: var(--authority-on-dark);
+  box-shadow: 0 10px 26px rgba(16, 38, 63, 0.16);
+  opacity: 1;
+}
+
+.services-bridge-scale[data-gated="true"] .services-bridge-scale__segment {
+  opacity: 0.42;
+}
+
+.services-bridge-readout__reason {
+  margin: 0.7rem 0 0;
   color: var(--body);
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+
+.services-bridge-caveat {
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+  font-size: 0.83rem;
+  line-height: 1.5;
 }
 
 .services-router-panel__outcomes {
@@ -4096,7 +4179,7 @@ textarea:focus {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  margin-top: 1.3rem;
+  margin-top: 1rem;
 }
 
 .services-responsibility-console {
@@ -4949,20 +5032,11 @@ textarea:focus {
   .services-router-board__choices {
     border-right: 1px solid var(--structural-light);
     border-bottom: 0;
-    padding: 1.2rem;
-  }
-
-  .services-router-panel {
-    grid-template-columns: minmax(15rem, 0.45fr) minmax(0, 0.55fr);
-  }
-
-  .services-router-panel__visual {
-    border-right: 1px solid var(--structural-light);
-    border-bottom: 0;
+    padding: 0.9rem;
   }
 
   .services-router-panel__content {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .services-router-panel__actions,
@@ -5067,7 +5141,10 @@ textarea:focus {
     top: 6rem;
   }
 
-  .services-router-panel__content,
+  .services-router-panel__content {
+    padding: 1.4rem;
+  }
+
   .estimator-control-scene {
     padding: 1.75rem;
   }
@@ -5077,11 +5154,19 @@ textarea:focus {
   }
 }
 
-@media (max-width: 767px) {
-  .services-router-panel__content h3 {
-    font-size: clamp(1.65rem, 9vw, 2.45rem);
+@media (max-width: 479px) {
+  .services-bridge-scale {
+    grid-template-columns: minmax(0, 1fr);
   }
 
+  .services-bridge-scale__segment {
+    justify-content: flex-start;
+    padding-inline: 0.85rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 767px) {
   .services-responsibility-node {
     grid-template-columns: 2.35rem minmax(0, 1fr);
   }

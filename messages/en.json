@@ -535,6 +535,8 @@
         "situationColumn": "Usage situation",
         "depthColumn": "Typical starting point",
         "note": "Final scope always requires structured review of the property.",
+        "caveat": "The package indicates a starting point. Final scope is confirmed after a short situation review.",
+        "gateLabel": "Classification first",
         "pathways": {
           "private-use-only": {
             "depth": "Usually Basic or Extended — depending on access needs and arrival readiness."

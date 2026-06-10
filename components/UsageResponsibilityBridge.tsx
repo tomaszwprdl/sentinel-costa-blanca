@@ -4,29 +4,16 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { PATHWAY_KEYS, type PathwayKey } from '@/lib/pathway';
-import ServiceScopeDiagram from '@/components/visuals/ServiceScopeDiagram';
-import EventResponseDiagram from '@/components/visuals/EventResponseDiagram';
-import PathwaySituationDiagram from '@/components/visuals/PathwaySituationDiagram';
 
-const PATHWAY_VISUALS: Record<PathwayKey, 'private' | 'guest' | 'mixed'> = {
-  'private-use-only': 'private',
-  'regular-guest-stays': 'guest',
-  'mixed-not-defined': 'mixed',
+const SCALE_SEGMENTS = ['green', 'orange', 'red'] as const;
+
+type ScaleSegment = (typeof SCALE_SEGMENTS)[number];
+
+const SCALE_RANGES: Record<PathwayKey, Record<ScaleSegment, boolean>> = {
+  'private-use-only': { green: true, orange: true, red: false },
+  'regular-guest-stays': { green: false, orange: true, red: true },
+  'mixed-not-defined': { green: false, orange: false, red: false },
 };
-
-function PathwayVisual({ pathway }: { pathway: PathwayKey }) {
-  const visual = PATHWAY_VISUALS[pathway];
-
-  if (visual === 'private') {
-    return <ServiceScopeDiagram variant="basic" compact className="services-bridge-visual" />;
-  }
-
-  if (visual === 'guest') {
-    return <EventResponseDiagram variant="turnover" className="services-bridge-visual" />;
-  }
-
-  return <PathwaySituationDiagram pathway={pathway} className="services-bridge-visual" />;
-}
 
 export default function UsageResponsibilityBridge() {
   const t = useTranslations('services');
@@ -34,13 +21,13 @@ export default function UsageResponsibilityBridge() {
   const locale = useLocale();
   const [activeKey, setActiveKey] = useState<PathwayKey>('private-use-only');
   const activeIndex = PATHWAY_KEYS.indexOf(activeKey);
+  const isGated = activeKey === 'mixed-not-defined';
 
   return (
     <div className="services-bridge-band" id="situation">
-      <div className="mb-4 max-w-[760px]">
+      <div className="mb-3 max-w-[760px]">
         <p className="section-label">{t('redesign.bridge.eyebrow')}</p>
-        <h2 className="h2-system mt-3">{t('redesign.bridge.title')}</h2>
-        <p className="mt-3 text-body">{t('redesign.bridge.intro')}</p>
+        <h2 className="h2-system mt-2">{t('redesign.bridge.title')}</h2>
       </div>
 
       <div className="services-router-board">
@@ -64,29 +51,44 @@ export default function UsageResponsibilityBridge() {
           ))}
         </div>
 
-        <article key={activeKey} className="services-router-panel motion-panel-reveal" role="tabpanel">
-          <div className="services-router-panel__visual" aria-hidden="true">
-            <PathwayVisual pathway={activeKey} />
-          </div>
-
+        <article className="services-router-panel" role="tabpanel">
           <div className="services-router-panel__content">
-            <div className="services-router-panel__header">
+            <p className="services-router-panel__kicker">
               <span>{String(activeIndex + 1).padStart(2, '0')}</span>
-              <p>{t('redesign.scenario.selectedLabel')}</p>
-            </div>
-            <h3>{tPathway(`${activeKey}.title`)}</h3>
-            <p>{tPathway(`${activeKey}.description`)}</p>
+              {t('redesign.scenario.selectedLabel')}
+            </p>
+            <h3 key={`title-${activeKey}`} className="motion-panel-reveal">
+              {tPathway(`${activeKey}.title`)}
+            </h3>
 
-            <div className="services-router-panel__outcomes">
-              <div>
-                <p>{t('redesign.scenario.depthLabel')}</p>
-                <strong>{t(`redesign.bridge.pathways.${activeKey}.depth`)}</strong>
+            <div className="services-bridge-readout">
+              <p className="services-bridge-readout__label">{t('redesign.bridge.depthColumn')}</p>
+
+              {isGated && (
+                <div className="services-bridge-gate">
+                  <span className="services-bridge-gate__chip">{t('redesign.bridge.gateLabel')}</span>
+                  <span className="services-bridge-gate__connector" aria-hidden="true" />
+                </div>
+              )}
+
+              <div className="services-bridge-scale" data-gated={isGated} aria-hidden="true">
+                {SCALE_SEGMENTS.map((segment) => (
+                  <span
+                    key={segment}
+                    className="services-bridge-scale__segment"
+                    data-active={SCALE_RANGES[activeKey][segment]}
+                  >
+                    {t(`${segment}.badgeLabel`)}
+                  </span>
+                ))}
               </div>
-              <div>
-                <p>{t('redesign.scenario.noteLabel')}</p>
-                <span>{t('redesign.scenario.note')}</span>
-              </div>
+
+              <p key={`reason-${activeKey}`} className="services-bridge-readout__reason motion-panel-reveal">
+                {t(`redesign.bridge.pathways.${activeKey}.depth`)}
+              </p>
             </div>
+
+            <p className="services-bridge-caveat">{t('redesign.bridge.caveat')}</p>
 
             <div className="services-router-panel__actions">
               <Link href="#responsibility" className="btn-primary">
@@ -99,8 +101,6 @@ export default function UsageResponsibilityBridge() {
           </div>
         </article>
       </div>
-
-      <p className="services-bridge-map-note mt-5 mb-0 text-sm text-muted">{t('redesign.bridge.note')}</p>
     </div>
   );
 }

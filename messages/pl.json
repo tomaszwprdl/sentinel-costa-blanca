@@ -529,12 +529,14 @@
         }
       },
       "bridge": {
-        "eyebrow": "Most między sytuacją a pakietem",
+        "eyebrow": "Od sytuacji do pakietu",
         "title": "Sytuacja użycia wskazuje punkt startu. Pakiet określa poziom odpowiedzialności.",
         "intro": "To nie jest twarda rekomendacja. Pokazuje typowy kierunek rozmowy po klasyfikacji sposobu używania nieruchomości.",
         "situationColumn": "Sytuacja użycia",
         "depthColumn": "Typowy punkt startu",
         "note": "Ostateczny zakres zawsze wymaga strukturalnego przeglądu nieruchomości.",
+        "caveat": "Pakiet wskazuje punkt startu. Ostateczny zakres potwierdzamy po krótkiej analizie sytuacji.",
+        "gateLabel": "Najpierw klasyfikacja",
         "pathways": {
           "private-use-only": {
             "depth": "Zwykle Podstawowy lub Rozszerzony — zależnie od dostępu i gotowości przed przyjazdem."
