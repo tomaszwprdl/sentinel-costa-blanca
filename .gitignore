@@ -52,8 +52,13 @@ node_modules/
 node_modules/
 .next/
 
-# claude code local settings
-.claude/settings.local.json
+# local agent / IDE artifacts
+.claude/
 
-# QA screenshot folders
+# local QA captures and scripts
+doc/screenshots/
+phase3-motion-imagery-working/
 screenshots-*/
+
+# local backups and exports
+*.zip

@@ -430,7 +430,7 @@ Operational continuity and structural stability.
 If future changes involve:
 
 - Tone → update BRAND.md  
-- Layout → update LAYOUT-COMPOSITION.md  
+- Layout → update `LAYOUT COMPOSITION.md`
 - Pricing logic shift → update DECISIONS.md  
 - Operational expansion → update TASK.md  
 

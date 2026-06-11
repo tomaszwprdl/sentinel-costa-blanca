@@ -334,7 +334,7 @@ If copy conflicts with:
 
 - DECISIONS.md → DECISIONS prevails.
 - SERVICE-STRUCTURING.md → Service document prevails.
-- LAYOUT-COMPOSITION.md → Layout prevails structurally.
+- `LAYOUT COMPOSITION.md` → Layout prevails structurally.
 
 Copy must adapt.  
 Copy never overrides structure.

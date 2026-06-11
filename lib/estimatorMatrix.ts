@@ -1,5 +1,5 @@
-// PRE-LIVE INDICATIVE VALUES — Owner confirmation required before Task 8 freeze.
-// Task 8 §8.8: matrix-based + additive bands only. No formulas.
+// PRE-LIVE INDICATIVE VALUES — Owner confirmation required before public launch.
+// Matrix-based + additive bands only. No formulas.
 //
 // TODO (Matrix Integrity Session):
 // - Bedroom adjustment multiplier must be higher in Guest Mode than Private Mode.
