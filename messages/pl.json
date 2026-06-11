@@ -1445,6 +1445,11 @@
         "title": "Kiedy Sentinel działa, a kiedy właściciel zatwierdza",
         "intro": "Najważniejsza granica procesu to nie szybkość, tylko uprawnienie do działania.",
         "limitsTitle": "Limity według pakietu",
+        "securingBandTitle": "Zabezpieczenie nieruchomości (wszystkie pakiety)",
+        "securingBandIntro": "Limit dotyczy wyłącznie działań zabezpieczających w nagłym wypadku, gdy kontakt z właścicielem się nie udaje. To nie jest uprawnienie do samodzielnych decyzji naprawczych.",
+        "emergencyPostureTitle": "Reakcja awaryjna według pakietu",
+        "fullAuthorityTitle": "Autonomiczny limit decyzyjny (tylko Pakiet Pełny)",
+        "ownerApprovalLine": "Powyżej limitu, poza pakietem lub przy większych pracach wymagana jest zgoda właściciela.",
         "note": "Limit dotyczy decyzji w ramach pakietu. Działania poza zakresem wymagają osobnego ustalenia.",
         "steps": {
           "observe": { "title": "Obserwacja", "body": "Sentinel identyfikuje widoczny problem, potrzebę dostępu albo zdarzenie." },
@@ -1462,6 +1467,7 @@
           "qualification": "Kwalifikacja nieruchomości",
           "documentation": "Dane, systemy i klucze",
           "package": "Wybór pakietu i potwierdzenia",
+          "inspection": "Kontrola wstępna (Wizyta Zero)",
           "setup": "Ustawienie harmonogramu i dostępu",
           "activation": "Aktywacja i bieżący rytm"
         }

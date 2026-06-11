@@ -1445,6 +1445,11 @@
         "title": "When Sentinel acts, and when the owner approves",
         "intro": "The central process boundary is not speed. It is authority to act.",
         "limitsTitle": "Package limits",
+        "securingBandTitle": "Property securing (all packages)",
+        "securingBandIntro": "The limit applies only to immediate protective action in an emergency when the owner cannot be reached. It is not authority for autonomous repair decisions.",
+        "emergencyPostureTitle": "Emergency response by package",
+        "fullAuthorityTitle": "Autonomous decision limit (Full Package only)",
+        "ownerApprovalLine": "Above the limit, outside the package, or for larger work, owner approval is required.",
         "note": "The limit applies to decisions inside the package. Work outside scope requires separate agreement.",
         "steps": {
           "observe": { "title": "Observe", "body": "Sentinel identifies a visible issue, access need, or event." },
@@ -1462,6 +1467,7 @@
           "qualification": "Property qualification",
           "documentation": "Data, systems, and keys",
           "package": "Package choice and confirmations",
+          "inspection": "Initial inspection (Visit Zero)",
           "setup": "Schedule and access setup",
           "activation": "Activation and ongoing rhythm"
         }

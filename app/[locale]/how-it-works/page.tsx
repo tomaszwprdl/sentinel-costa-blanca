@@ -6,22 +6,18 @@ import Footer from '@/components/Footer';
 import ConfidenceBar from '@/components/ConfidenceBar';
 import DisclosureBlock from '@/components/DisclosureBlock';
 import Section from '@/components/layout/Section';
-import BeforeDuringAfterTimeline from '@/components/BeforeDuringAfterTimeline';
-import OneMinuteSection from '@/components/OneMinuteSection';
-import VisitStoryboard from '@/components/VisitStoryboard';
-import ReportWalkthrough from '@/components/ReportWalkthrough';
-import AccessChainDiagram from '@/components/AccessChainDiagram';
-import EscalationDecisionMap from '@/components/EscalationDecisionMap';
 import ProcessDetailChapters from '@/components/ProcessDetailChapters';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import JourneyNav from '@/components/JourneyNav';
+import OperatingPathChapter from '@/components/how-it-works/OperatingPathChapter';
+import LocalExecutionChapter from '@/components/how-it-works/LocalExecutionChapter';
+import ReportDecisionChapter from '@/components/how-it-works/ReportDecisionChapter';
 
 type Fact = {
   label: string;
   value: string;
 };
 
-const ONE_MINUTE_KEYS = ['qualify', 'scope', 'inspect', 'escalate'] as const;
 const RHYTHM_KEYS = ['visits', 'reports', 'access', 'changes'] as const;
 const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7'] as const;
 
@@ -32,24 +28,17 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
   const facts = t.raw('redesign.hero.facts') as Fact[];
   const journeyItems = [
     { id: 'process-start', label: t('redesign.hero.eyebrow') },
-    { id: 'process-rhythm', label: t('redesign.timeline.eyebrow') },
-    { id: 'one-minute-process', label: t('redesign.oneMinute.eyebrow') },
-    { id: 'visit-storyboard', label: t('redesign.storyboard.eyebrow') },
-    { id: 'report-walkthrough', label: t('redesign.report.eyebrow') },
-    { id: 'access-chain', label: t('redesign.access.eyebrow') },
-    { id: 'decision-map', label: t('redesign.decision.eyebrow') },
+    { id: 'operating-path', label: t('redesign.timeline.eyebrow') },
+    { id: 'local-execution', label: t('redesign.storyboard.eyebrow') },
+    { id: 'report-decision', label: t('redesign.report.eyebrow') },
+    { id: 'onboarding-detail', label: t('redesign.details.eyebrow') },
   ];
-  const oneMinuteItems = ONE_MINUTE_KEYS.map((key, index) => ({
-    marker: String(index + 1).padStart(2, '0'),
-    title: t(`redesign.oneMinute.items.${key}.title`),
-    body: t(`redesign.oneMinute.items.${key}.body`),
-  }));
 
   return (
     <>
       <HeaderClient />
-      <main className="min-h-screen">
-        <Section tone="authority" className="section-primitive--first" id="process-start">
+      <main className="min-h-screen hiw-page">
+        <Section tone="authority" className="section-primitive--first hiw-hero" id="process-start">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(20rem,0.72fr)] lg:items-center">
             <div className="motion-entrance">
               <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
@@ -59,7 +48,10 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
                 <Link href={`/${locale}/contact`} className="btn-primary">
                   {t('redesign.hero.primaryCta')}
                 </Link>
-                <Link href="#report-walkthrough" className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
+                <Link
+                  href="#report-decision"
+                  className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority"
+                >
                   {t('redesign.hero.secondaryCta')}
                 </Link>
               </div>
@@ -93,38 +85,21 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
           </div>
         </Section>
 
-        <JourneyNav items={journeyItems} ariaLabel={t('redesign.hero.headline')} />
+        <JourneyNav items={journeyItems} ariaLabel={t('redesign.hero.headline')} className="services-journey-nav" />
 
-        <Section tone="light" id="process-rhythm" className="section-primitive--compact">
-          <BeforeDuringAfterTimeline />
+        <Section tone="light" id="operating-path" className="section-primitive--compact hiw-interface-section hiw-section--operating">
+          <OperatingPathChapter />
         </Section>
 
-        <Section tone="alt" id="one-minute-process" className="section-primitive--compact">
-          <OneMinuteSection
-            eyebrow={t('redesign.oneMinute.eyebrow')}
-            title={t('redesign.oneMinute.title')}
-            intro={t('redesign.oneMinute.intro')}
-            items={oneMinuteItems}
-          />
+        <Section tone="light" className="section-primitive--compact hiw-interface-section">
+          <LocalExecutionChapter />
         </Section>
 
-        <Section tone="light" className="section-primitive--compact">
-          <VisitStoryboard />
+        <Section tone="alt" className="section-primitive--compact hiw-interface-section">
+          <ReportDecisionChapter t={t} />
         </Section>
 
-        <Section tone="alt" className="section-primitive--compact">
-          <ReportWalkthrough t={t} />
-        </Section>
-
-        <Section tone="light" className="section-primitive--compact">
-          <AccessChainDiagram />
-        </Section>
-
-        <Section tone="alt" className="section-primitive--compact">
-          <EscalationDecisionMap />
-        </Section>
-
-        <Section tone="light" className="section-primitive--compact">
+        <Section tone="light" id="onboarding-detail" className="section-primitive--compact hiw-section--ledger">
           <div className="mb-6 max-w-[760px] md:mb-8">
             <p className="section-label">{t('redesign.details.eyebrow')}</p>
             <h2 className="h2-system mt-3">{t('redesign.details.title')}</h2>
@@ -133,27 +108,23 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
           <ProcessDetailChapters t={t} />
         </Section>
 
-        <Section tone="alt" className="section-primitive--compact">
-          <div className="grid gap-6 lg:grid-cols-[minmax(0,0.54fr)_minmax(0,0.46fr)] lg:items-start lg:gap-8">
-            <div>
+        <Section tone="alt" className="section-primitive--compact hiw-interface-section hiw-section--support">
+          <div className="hiw-support-band">
+            <div className="hiw-support-band__rhythm">
               <p className="section-label">{t('redesign.rhythm.eyebrow')}</p>
               <h2 className="h2-system mt-3">{t('redesign.rhythm.title')}</h2>
-              <div className="mt-7 grid gap-4 sm:grid-cols-2">
+              <ul className="hiw-rhythm-list">
                 {RHYTHM_KEYS.map((key) => (
-                  <article key={key} className="visual-card p-5">
-                    <h3 className="mb-2 text-lg font-black text-heading">
-                      {t(`redesign.rhythm.cards.${key}.title`)}
-                    </h3>
-                    <p className="mb-0 text-sm leading-relaxed text-body">
-                      {t(`redesign.rhythm.cards.${key}.body`)}
-                    </p>
-                  </article>
+                  <li key={key} className="hiw-rhythm-list__item">
+                    <h3 className="hiw-rhythm-list__title">{t(`redesign.rhythm.cards.${key}.title`)}</h3>
+                    <p className="hiw-rhythm-list__body">{t(`redesign.rhythm.cards.${key}.body`)}</p>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
 
             <DisclosureBlock label={t('changes.title')} explainer={t('changes.packageChangesIntro')}>
-              <div className="space-y-6">
+              <div className="space-y-5">
                 <div>
                   <h3 className="text-base font-black text-heading">{t('changes.packageChangesTitle')}</h3>
                   <ul className="ml-4 list-disc space-y-2 text-sm text-body">
@@ -183,49 +154,37 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
               </div>
             </DisclosureBlock>
           </div>
-        </Section>
 
-        <Section tone="alt" className="section-primitive--compact">
-          <div className="mb-6 max-w-[760px] md:mb-8">
-            <p className="section-label">{t('redesign.faq.eyebrow')}</p>
-            <h2 className="h2-system mt-3">{t('redesign.faq.title')}</h2>
-          </div>
-          <div className="grid gap-3 md:grid-cols-2 md:gap-4">
-            {FAQ_KEYS.map((key, index) => (
-              <article
-                key={key}
-                className={[
-                  'visual-card p-4 md:p-5',
-                  ['module-card-tone-1', 'module-card-tone-2', 'module-card-tone-3'][index % 3],
-                ].join(' ')}
-              >
-                <h3 className="mb-3 text-lg font-black text-heading">{t(`faq.questions.${key}.question`)}</h3>
-                <p className="mb-0 text-sm leading-relaxed text-body">{t(`faq.questions.${key}.answer`)}</p>
-              </article>
-            ))}
-          </div>
-        </Section>
-
-        <Section tone="light" className="!pt-10">
-          <div className="visual-card-strong overflow-hidden">
-            <div className="grid gap-0 lg:grid-cols-[minmax(0,0.68fr)_minmax(18rem,0.32fr)]">
-              <div className="p-5 md:p-8">
-                <p className="section-label">{t('redesign.details.eyebrow')}</p>
-                <h2 className="h2-system mt-3">{t('cta.title')}</h2>
-                <p className="mt-4 max-w-[62ch] text-lg leading-relaxed text-body">
-                  {t('cta.nextIntro')}
-                </p>
-              </div>
-              <div className="border-t border-structural-light bg-surface-light-alt p-5 md:p-8 lg:border-l lg:border-t-0">
-                <div className="flex flex-col gap-4">
-                  <Link href={`/${locale}/contact`} className="btn-primary">
-                    {tCommon('nav.contact')}
-                  </Link>
-                  <Link href={`/${locale}/services#package-fit`} className="btn-secondary">
-                    {tCommon('nav.services')}
-                  </Link>
+          <DisclosureBlock
+            label={t('redesign.faq.title')}
+            explainer={t('redesign.faq.eyebrow')}
+            className="mt-5"
+          >
+            <dl className="hiw-faq-list">
+              {FAQ_KEYS.map((key) => (
+                <div key={key} className="hiw-faq-list__item">
+                  <dt className="hiw-faq-list__question">{t(`faq.questions.${key}.question`)}</dt>
+                  <dd className="hiw-faq-list__answer">{t(`faq.questions.${key}.answer`)}</dd>
                 </div>
-              </div>
+              ))}
+            </dl>
+          </DisclosureBlock>
+        </Section>
+
+        <Section tone="light" className="hiw-closing-section hiw-section--handoff">
+          <div className="hiw-handoff">
+            <div className="hiw-handoff__copy">
+              <p className="section-label">{t('redesign.details.eyebrow')}</p>
+              <h2 className="h2-system mt-3">{t('cta.title')}</h2>
+              <p className="mt-4 max-w-[62ch] text-lg leading-relaxed text-body">{t('cta.nextIntro')}</p>
+            </div>
+            <div className="hiw-handoff__actions">
+              <Link href={`/${locale}/contact`} className="btn-primary">
+                {tCommon('nav.contact')}
+              </Link>
+              <Link href={`/${locale}/services#package-fit`} className="btn-secondary btn-secondary-on-dark">
+                {tCommon('nav.services')}
+              </Link>
             </div>
           </div>
         </Section>
@@ -233,8 +192,9 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
       <MobileStickyCTA
         primaryHref={`/${locale}/contact`}
         primaryLabel={tCommon('nav.contact')}
-        secondaryHref="#visit-storyboard"
+        secondaryHref="#local-execution"
         secondaryLabel={t('redesign.storyboard.eyebrow')}
+        suppressWhenVisible="footer,.hiw-handoff,.hiw-section--support,#report-decision,#onboarding-detail"
       />
       <Footer />
     </>

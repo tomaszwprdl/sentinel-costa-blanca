@@ -25,32 +25,30 @@ export default function MobileStickyCTA({
   const secondaryAction = secondaryHref && secondaryLabel ? { href: secondaryHref, label: secondaryLabel } : null;
 
   useEffect(() => {
-    const intersectsViewport = (node: Element | null, topRatio = 0, bottomRatio = 1) => {
+    const STICKY_BAND_HEIGHT = 88;
+
+    const overlapsStickyBand = (node: Element | null) => {
       if (!node) {
         return false;
       }
 
       const rect = node.getBoundingClientRect();
-      const topLimit = window.innerHeight * topRatio;
-      const bottomLimit = window.innerHeight * bottomRatio;
+      const bandTop = window.innerHeight - STICKY_BAND_HEIGHT;
 
-      return rect.top < bottomLimit && rect.bottom > topLimit;
+      return rect.top < window.innerHeight && rect.bottom > bandTop;
     };
 
     const updateState = () => {
       setVisible(window.scrollY > showAfter);
 
-      const footerBlocked = intersectsViewport(document.querySelector('footer'), 0, 1);
       const suppressSelectors = suppressWhenVisible
         ? suppressWhenVisible.split(',').map((selector) => selector.trim()).filter(Boolean)
-        : [];
+        : ['footer'];
       const targetBlocked = suppressSelectors.some((selector) =>
-        Array.from(document.querySelectorAll(selector)).some((node) =>
-          intersectsViewport(node, 0.06, 0.94),
-        ),
+        Array.from(document.querySelectorAll(selector)).some((node) => overlapsStickyBand(node)),
       );
 
-      setBlocked(footerBlocked || targetBlocked);
+      setBlocked(targetBlocked);
     };
 
     const frame = window.requestAnimationFrame(updateState);
