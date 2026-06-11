@@ -9,10 +9,11 @@ Descriptive only. Does not define decisions or intent.
 | Field | Value |
 |-------|-------|
 | Project | Sentinel |
-| Latest stable remote SHA | `28ccca2` |
+| Latest website/code stability SHA | `28ccca2` |
+| Latest documentation governance SHA | `432cea8` |
 | Website phase | Pre-live / soft-launch review ready |
 | Site-polish phase | Closed (gate, pages, legal readability, contact sequencing) |
-| Documentation phase | Launch-era reset active |
+| Documentation phase | Launch-era reset complete |
 | Identity core | Locked (logo, descriptors, service model) |
 | Website visuals | Flexible per `VISUAL-FREEDOM-SPRINT.md` |
 | Indexing | `noindex,nofollow` still active |

@@ -9,7 +9,8 @@ Short briefing for Cursor, Codex, and Cloudie.
 - **Product:** Sentinel Costa Blanca — structured local owner representation (Torrevieja + ~50–70 km).
 - **Website:** Pre-live, soft-launch review ready. `noindex,nofollow` active.
 - **Phase:** Launch-era documentation reset complete; Visual Freedom Sprint and readiness audits next.
-- **Stable SHA reference:** `28ccca2`.
+- **Latest website/code stability SHA:** `28ccca2` (no website code change in doc-only commits).
+- **Latest documentation governance SHA:** `432cea8`.
 
 **Visual experimentation is allowed. Old build-era visual doctrine is no longer hard law.**
 

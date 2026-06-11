@@ -16,7 +16,7 @@ It governs:
 - Structural adaptation from PL to EN
 - Descriptor selection
 - Terminology discipline
-- Semantic clarity for Prime segment
+- Semantic clarity for international remote owners
 - PL/EN structural parity
 
 This document does not rewrite content.
@@ -213,7 +213,7 @@ Not:
 
 ---
 
-# 9. Tone Calibration for Prime Segment (EN)
+# 9. Tone Calibration for Target Owner Segment (EN)
 
 English must read as:
 

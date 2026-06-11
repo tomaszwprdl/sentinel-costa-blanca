@@ -93,13 +93,13 @@ Operational functions prove the system can act.
 
 Three escalating levels.
 
-Working names (subject to brand-layer refinement):
+Public package names (locked):
 
-- Structured Presence  
-- Active Oversight  
-- Extended Jurisdiction  
+- **Basic** / **Podstawowy**
+- **Extended** / **Rozszerzony**
+- **Full** / **Pełny**
 
-> NOTE FOR BRAND.md: Polish equivalents require refinement to avoid bureaucratic tone.
+Earlier internal labels (e.g. Structured Presence, Active Oversight, Extended Jurisdiction) were retired during the launch-era documentation reset. Public package names now govern.
 
 ---
 
@@ -125,7 +125,7 @@ These capabilities do not replace package jurisdiction.
 
 ---
 
-### 6.1 Structured Presence
+### 6.1 Basic (Podstawowy)
 
 Profile:
 Low intensity, stable property, minimal operational activity.
@@ -142,7 +142,7 @@ Maintain structural integrity of property.
 
 ---
 
-### 6.2 Active Oversight
+### 6.2 Extended (Rozszerzony)
 
 Profile:
 Primary segment. Balanced risk awareness.
@@ -163,7 +163,7 @@ Primary expected selection (≈ majority).
 
 ---
 
-### 6.3 Extended Jurisdiction
+### 6.3 Full (Pełny)
 
 Profile:
 High intensity property, high risk tolerance avoidance.

@@ -356,14 +356,8 @@ It must be rewritten.
 
 # 13. Governance Note
 
-This codex is binding once locked.
-
-Updates require:
-
-- Owner approval
-- Update to STATUS.md
-- Reference in AI-GOVERNANCE.md
+Material changes to copy discipline require Owner approval. Routine PL/EN copy edits do not require STATUS.md or AI-GOVERNANCE.md updates unless they change protected positioning, service meaning, or prohibited-language policy.
 
 ---
 
-End of Copy Discipline Codex (Task 5G)
+End of Copy Discipline Codex.
