@@ -1,31 +1,52 @@
 'use client';
 
+import { Suspense } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { useLocale } from 'next-intl';
 
-export default function LanguageControl() {
+function LanguageControlInner() {
   const locale = useLocale();
   const pathname = usePathname();
-  const otherLocale = locale === 'en' ? 'pl' : 'en';
-  const switchPath = pathname.replace(`/${locale}`, `/${otherLocale}`);
+  const searchParams = useSearchParams();
+  const queryString = searchParams.toString();
+
+  const localizedPath = (targetLocale: string) => {
+    const base = pathname.replace(`/${locale}`, `/${targetLocale}`);
+    return queryString ? `${base}?${queryString}` : base;
+  };
 
   return (
     <div className="locale-switch">
       <Link
-        href={locale === 'pl' ? pathname : switchPath}
+        href={localizedPath('pl')}
         className="locale-switch__link"
         aria-current={locale === 'pl' ? 'page' : undefined}
       >
         PL
       </Link>
       <Link
-        href={locale === 'en' ? pathname : switchPath}
+        href={localizedPath('en')}
         className="locale-switch__link"
         aria-current={locale === 'en' ? 'page' : undefined}
       >
         EN
       </Link>
     </div>
+  );
+}
+
+export default function LanguageControl() {
+  return (
+    <Suspense
+      fallback={
+        <div className="locale-switch">
+          <span className="locale-switch__link">PL</span>
+          <span className="locale-switch__link">EN</span>
+        </div>
+      }
+    >
+      <LanguageControlInner />
+    </Suspense>
   );
 }

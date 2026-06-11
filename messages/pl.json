@@ -151,7 +151,7 @@
     "priorityLabel": "Priorytet Sentinel:",
     "changesLabel": "Co to zmienia:",
     "cta": "Omów tę sytuację",
-    "reviewCta": "Przejdź do przeglądu",
+    "reviewCta": "Rozpocznij zapytanie",
     "servicesCta": "Porównaj zakres usług",
     "meaningLabel": "Znaczenie operacyjne",
     "nextLabel": "Następny krok właściciela",
@@ -197,12 +197,12 @@
       "mixed-not-defined": {
         "priority": "Najpierw klasyfikacja sposobu używania, potem dobór zakresu bez zgadywania.",
         "meaning": "Zakres nie powinien być wybierany na podstawie domysłu, jeśli model używania może się zmienić.",
-        "next": "Przejdź do uporządkowanego przeglądu, aby rozdzielić użytek prywatny, pobyty gości i potrzebny zakres.",
+        "next": "Rozpocznij wstępną ocenę zapytania, aby rozdzielić użytek prywatny, pobyty gości i potrzebny zakres.",
         "point1": "Dziś użytek prywatny, później możliwy wynajem",
         "point2": "Uniknięcie złego wyboru zakresu",
         "point3": "Uniknięcie niepotrzebnej intensywności obsługi gości",
           "point4": "Uniknięcie zbyt słabej struktury, jeśli pojawi się wynajem",
-          "point5": "Zakres potwierdzany po uporządkowanym przeglądzie"
+          "point5": "Zakres potwierdzany po wstępnej ocenie zapytania"
         }
       }
     },
@@ -244,7 +244,7 @@
         "finalContext": "Chodzi o stałą strukturę między pobytami, a nie o Twoją ciągłą obecność operacyjną."
       },
       "mixed-not-defined": {
-        "systemIntroContext": "Gdy model użytkowania nie jest jeszcze jasny, najpierw trzeba go opisać. Zakres ustala się po przeglądzie.",
+        "systemIntroContext": "Gdy model użytkowania nie jest jeszcze jasny, najpierw trzeba go opisać. Zakres ustala się po ocenie sytuacji nieruchomości.",
         "contrast": {
           "intro": "Różnica między przedwczesnym wyborem zakresu a klasyfikacją przed ustaleniem struktury.",
           "left1": "Lokal może być traktowany jak wyłącznie prywatny, mimo że później pojawią się goście.",
@@ -255,11 +255,11 @@
           "right1": "Najpierw ustalamy, jak lokal jest faktycznie używany.",
           "right2": "Ryzyko użytku prywatnego i pobytów gości są rozdzielane przed wyborem zakresu.",
           "right3": "Elementy obsługi gości nie są dodawane przed czasem.",
-          "right4": "Końcowy zakres wynika z przeglądu, nie z domysłu online.",
+          "right4": "Końcowy zakres wynika z wstępnej oceny zapytania, nie z domysłu online.",
           "rightClosing": "Najpierw klasyfikacja, potem zakres."
         },
         "distinctionIntro": "Sentinel pomaga najpierw określić sposób używania lokalu, zanim wybierze się intensywność obsługi.",
-        "finalContext": "To nie trzeci wariant wyceny. Następny krok to uporządkowany przegląd i klasyfikacja."
+        "finalContext": "To nie trzeci wariant wyceny. Następny krok to wstępna ocena zapytania i klasyfikacja."
       }
     },
     "exposure": {
@@ -465,10 +465,10 @@
     },
     "finalCta": {
       "eyebrow": "Następny krok",
-      "title": "Możesz zarządzać reaktywnie. Albo działać w ramach systemu.",
+      "title": "Możesz reagować dopiero po problemie. Albo działać według ustalonego planu.",
       "p1": "Zarządzanie reaktywne opiera się na reagowaniu. System opiera się na stałej kontroli.",
-      "p2": "Sentinel to zdefiniowany model reprezentacji właściciela. Wybór dotyczy struktury lokalnego nadzoru i reprezentacji właściciela.",
-      "cta": "Zweryfikuj dopasowanie",
+      "p2": "Sentinel pomaga utrzymać lokalny porządek działań: zakres, dokumentację, dostęp i decyzje w określonych granicach.",
+      "cta": "Rozpocznij zapytanie",
       "secondaryCta": "Zobacz pakiety"
     }
   },

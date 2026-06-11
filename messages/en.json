@@ -151,7 +151,7 @@
     "priorityLabel": "Sentinel priority:",
     "changesLabel": "What this changes:",
     "cta": "Discuss this situation",
-    "reviewCta": "Proceed to review",
+    "reviewCta": "Start an inquiry",
     "servicesCta": "Compare service scope",
     "meaningLabel": "Operational meaning",
     "nextLabel": "Owner next step",
@@ -197,12 +197,12 @@
       "mixed-not-defined": {
         "priority": "First classify the use pattern, then define the scope without guessing.",
         "meaning": "Scope should not be chosen from assumptions when the use pattern may change.",
-        "next": "Move to structured review so private use, guest stays, and required scope can be separated.",
+        "next": "Start an initial inquiry assessment so private use, guest stays, and required scope can be separated.",
         "point1": "Private use now, possible rental later",
         "point2": "Avoiding the wrong package choice",
         "point3": "Avoiding unnecessary guest-service intensity",
           "point4": "Avoiding under-structuring if guest activity starts",
-          "point5": "Scope confirmed after structured review"
+          "point5": "Scope confirmed after initial inquiry assessment"
         }
       }
     },
@@ -244,7 +244,7 @@
         "finalContext": "The question is a fixed structure between stays, not your continuous operational involvement."
       },
       "mixed-not-defined": {
-        "systemIntroContext": "When the use pattern is not yet clear, it must be described first. Scope is set after review.",
+        "systemIntroContext": "When the use pattern is not yet clear, it must be described first. Scope is set after property situation assessment.",
         "contrast": {
           "intro": "The difference between choosing intensity too early and classifying use before scope is fixed.",
           "left1": "The property may be treated as private-only even if guest activity begins later.",
@@ -255,11 +255,11 @@
           "right1": "Actual use is reviewed before operational intensity is fixed.",
           "right2": "Private-use risk and guest-stay risk are separated before scope is confirmed.",
           "right3": "Guest-support elements are not added prematurely.",
-          "right4": "Final scope follows review, not an online guess.",
+          "right4": "Final scope follows initial inquiry assessment, not an online guess.",
           "rightClosing": "Classification first, then scope."
         },
         "distinctionIntro": "Sentinel helps define how the property is used before operational intensity is chosen.",
-        "finalContext": "This is not a third pricing mode. The next step is structured review and classification."
+        "finalContext": "This is not a third pricing mode. The next step is initial inquiry assessment and classification."
       }
     },
     "exposure": {
@@ -465,10 +465,10 @@
     },
     "finalCta": {
       "eyebrow": "Next step",
-      "title": "You can manage reactively. Or operate within the system.",
+      "title": "You can react after a problem appears. Or follow an agreed on-site plan.",
       "p1": "Reactive management is based on reacting. The system is based on steady control.",
-      "p2": "Sentinel is a defined model of owner representation. The choice is about the structure of local oversight and owner representation.",
-      "cta": "Verify fit",
+      "p2": "Sentinel helps keep local operations structured: scope, documentation, access, and decisions within defined limits.",
+      "cta": "Start an inquiry",
       "secondaryCta": "View packages"
     }
   },
