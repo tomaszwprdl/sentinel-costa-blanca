@@ -1386,9 +1386,9 @@
         "intro": "A visit is not a general look around. It is a sequence of access, checks, documentation, and report.",
         "frames": {
           "arrive": { "title": "Arrive at the building", "body": "Sentinel arrives according to the rhythm or an agreed event." },
-          "access": { "title": "Controlled access", "body": "Keys and entry follow rules confirmed in advance." },
+          "access": { "title": "Controlled access", "body": "Keys and property entry are used according to rules confirmed in advance." },
           "check": { "title": "Risk points", "body": "Visible access, water, electrical, moisture, and interior condition points are checked." },
-          "document": { "title": "Photos and notes", "body": "Condition and events are recorded in a useful form for the owner." },
+          "document": { "title": "Photos and notes", "body": "Condition, photos, observations, and required decisions are recorded in one report." },
           "report": { "title": "Remote report", "body": "The owner receives a summary, photos, and next-step information." },
           "decision": { "title": "Decision boundary", "body": "If action exceeds limit or scope, owner approval is required." }
         }
@@ -1396,7 +1396,7 @@
       "report": {
         "eyebrow": "Proof of work",
         "title": "The report shows what was observed and what needs a decision.",
-        "intro": "The report appears before long process detail because it shows the mechanism: observation, documentation, status, and next action.",
+        "intro": "The report shows the working mechanism: observation, documentation, status, and next action.",
         "items": {
           "summary": { "title": "Summary", "body": "Short visit status and whether an issue was identified." },
           "checklist": { "title": "Checklist", "body": "Visible risk points are recorded in a consistent structure." },
@@ -1405,7 +1405,7 @@
           "nextAction": { "title": "Next action", "body": "The owner sees what is closed and what requires approval." }
         },
         "fullSampleLabel": "View full sample report",
-        "fullSampleExplainer": "The full table is available, but it is not the first way to learn the process."
+        "fullSampleExplainer": "The full table shows the sample report structure and the information provided to the owner."
       },
       "access": {
         "eyebrow": "Access chain",
@@ -1415,7 +1415,7 @@
           "agreement": { "title": "Owner agreement", "body": "Access scope and entry situations are defined before action." },
           "keys": { "title": "Keys or access method", "body": "Access is handed over, recorded, and used inside the package boundary." },
           "request": { "title": "Event or schedule", "body": "Entry follows a visit, request, technician appointment, or agreed module." },
-          "entry": { "title": "On-site entry", "body": "Sentinel performs or coordinates entry according to the agreement." },
+          "entry": { "title": "On-site entry", "body": "Sentinel enters the property or coordinates third-party entry according to the agreement." },
           "record": { "title": "Record after entry", "body": "After the event, a report, note, or confirmation remains." }
         }
       },
@@ -1424,11 +1424,11 @@
         "title": "When Sentinel acts, and when the owner approves",
         "intro": "The central process boundary is not speed. It is authority to act.",
         "limitsTitle": "Package limits",
-        "securingBandTitle": "Property securing (all packages)",
-        "securingBandIntro": "The limit applies only to immediate protective action in an emergency when the owner cannot be reached. It is not authority for autonomous repair decisions.",
-        "emergencyPostureTitle": "Emergency response by package",
-        "fullAuthorityTitle": "Autonomous decision limit (Full Package only)",
-        "ownerApprovalLine": "Above the limit, outside the package, or for larger work, owner approval is required.",
+        "protectiveTitle": "Protective action in an emergency",
+        "protectiveIntro": "Applies only to limiting immediate damage when the owner cannot be reached. It is not authority for autonomous repairs, larger work, or action outside package scope.",
+        "authorityTitle": "Autonomous decision limit",
+        "authorityScope": "Applies only to the Full Package.",
+        "ownerApprovalLine": "Above the limit, outside package, or for larger work, owner approval is required.",
         "note": "The limit applies to decisions inside the package. Work outside scope requires separate agreement.",
         "steps": {
           "observe": { "title": "Observe", "body": "Sentinel identifies a visible issue, access need, or event." },
@@ -1440,8 +1440,8 @@
       },
       "details": {
         "eyebrow": "Onboarding detail",
-        "title": "The full process is available, but it does not need to dominate the page.",
-        "intro": "The chapters below preserve the operational precision of the old steps in expandable form.",
+        "title": "The full onboarding scope remains available in expandable sections.",
+        "intro": "The sections below show the required data, terms, and confirmations before service activation.",
         "chapters": {
           "qualification": "Property qualification",
           "documentation": "Data, systems, and keys",
@@ -1918,7 +1918,12 @@
       }
     },
     "cta": {
-      "title": "READY TO START?",
+      "eyebrow": "Next step",
+      "title": "Start property qualification",
+      "body": "In the form, provide the property location, usage pattern, expected package, and availability for the initial inspection.",
+      "bodyFollowUp": "Sentinel responds within 24–48h to confirm geographic eligibility, required data, and the next onboarding step.",
+      "primaryCta": "Start contact",
+      "secondaryCta": "View packages",
       "subtitle": "To begin onboarding:",
       "steps": {
         "step1": "Verify your property is within service area (Torrevieja + 50-70km)",

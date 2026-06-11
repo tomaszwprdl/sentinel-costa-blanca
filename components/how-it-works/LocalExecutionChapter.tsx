@@ -50,7 +50,7 @@ export default function LocalExecutionChapter() {
               <li key={frame.key} className="hiw-execution-step">
                 <StoryboardGlyph kind={frame.kind} />
                 <div className="hiw-execution-step__copy">
-                  <p className="hiw-execution-step__index">{String(index + 1).padStart(2, '0')}</p>
+                  <p className="hiw-execution-step__index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</p>
                   <h3 className="hiw-execution-step__title">{t(`redesign.storyboard.frames.${frame.key}.title`)}</h3>
                   <p className="hiw-execution-step__body">{t(`redesign.storyboard.frames.${frame.key}.body`)}</p>
                 </div>
@@ -70,7 +70,7 @@ export default function LocalExecutionChapter() {
             <ol className="hiw-access-chain">
               {CHAIN_KEYS.map((key, index) => (
                 <li key={key} className="hiw-access-chain__item">
-                  <span className="hiw-access-chain__marker">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="hiw-access-chain__marker" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
                   <div>
                     <h4 className="hiw-access-chain__title">{t(`redesign.access.items.${key}.title`)}</h4>
                     <p className="hiw-access-chain__body">{t(`redesign.access.items.${key}.body`)}</p>

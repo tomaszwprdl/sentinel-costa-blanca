@@ -174,16 +174,17 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
         <Section tone="light" className="hiw-closing-section hiw-section--handoff">
           <div className="hiw-handoff">
             <div className="hiw-handoff__copy">
-              <p className="section-label">{t('redesign.details.eyebrow')}</p>
+              <p className="section-label">{t('cta.eyebrow')}</p>
               <h2 className="h2-system mt-3">{t('cta.title')}</h2>
-              <p className="mt-4 max-w-[62ch] text-lg leading-relaxed text-body">{t('cta.nextIntro')}</p>
+              <p className="mt-4 max-w-[62ch] text-lg leading-relaxed text-body">{t('cta.body')}</p>
+              <p className="mt-3 max-w-[62ch] text-base leading-relaxed text-body">{t('cta.bodyFollowUp')}</p>
             </div>
             <div className="hiw-handoff__actions">
               <Link href={`/${locale}/contact`} className="btn-primary">
-                {tCommon('nav.contact')}
+                {t('cta.primaryCta')}
               </Link>
               <Link href={`/${locale}/services#package-fit`} className="btn-secondary btn-secondary-on-dark">
-                {tCommon('nav.services')}
+                {t('cta.secondaryCta')}
               </Link>
             </div>
           </div>

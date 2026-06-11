@@ -23,7 +23,7 @@ export default function ReportDecisionChapter({ t }: { t: Translator }) {
           <ol className="hiw-report-flow">
             {WALKTHROUGH_KEYS.map((key, index) => (
               <li key={key} className="hiw-report-flow__item">
-                <span className="hiw-report-flow__marker">{String(index + 1).padStart(2, '0')}</span>
+                <span className="hiw-report-flow__marker" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
                 <div>
                   <h3 className="hiw-report-flow__title">{t(`redesign.report.items.${key}.title`)}</h3>
                   <p className="hiw-report-flow__body">{t(`redesign.report.items.${key}.body`)}</p>
@@ -44,7 +44,7 @@ export default function ReportDecisionChapter({ t }: { t: Translator }) {
           <ol className="hiw-decision-ladder">
             {DECISION_KEYS.map((key, index) => (
               <li key={key} className="hiw-decision-ladder__step">
-                <span className="hiw-decision-ladder__marker">{String(index + 1).padStart(2, '0')}</span>
+                <span className="hiw-decision-ladder__marker" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
                 <div>
                   <h4 className="hiw-decision-ladder__title">{t(`redesign.decision.steps.${key}.title`)}</h4>
                   <p className="hiw-decision-ladder__body">{t(`redesign.decision.steps.${key}.body`)}</p>

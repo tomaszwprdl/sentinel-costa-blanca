@@ -1386,9 +1386,9 @@
         "intro": "Wizyta nie jest ogólnym obejrzeniem lokalu. To sekwencja dostępu, kontroli, dokumentacji i raportu.",
         "frames": {
           "arrive": { "title": "Wejście do budynku", "body": "Sentinel przyjeżdża w ustalonym rytmie albo w reakcji na uzgodnione zdarzenie." },
-          "access": { "title": "Kontrolowany dostęp", "body": "Klucze i wejście są prowadzone według wcześniej potwierdzonych zasad." },
+          "access": { "title": "Kontrolowany dostęp", "body": "Klucze i wejście do lokalu są używane według wcześniej potwierdzonych zasad." },
           "check": { "title": "Punkty ryzyka", "body": "Sprawdzane są widoczne elementy: dostęp, woda, elektryka, wilgoć i stan wnętrza." },
-          "document": { "title": "Zdjęcia i notatki", "body": "Stan oraz zdarzenia są zapisywane w formie przydatnej dla właściciela." },
+          "document": { "title": "Zdjęcia i notatki", "body": "Stan, zdjęcia, obserwacje i wymagane decyzje są zapisywane w jednym raporcie." },
           "report": { "title": "Raport zdalny", "body": "Właściciel otrzymuje podsumowanie, zdjęcia i informację o następnych krokach." },
           "decision": { "title": "Granica decyzji", "body": "Jeśli działanie wykracza poza limit lub zakres, wymagana jest zgoda właściciela." }
         }
@@ -1396,7 +1396,7 @@
       "report": {
         "eyebrow": "Dowód pracy",
         "title": "Raport pokazuje, co zostało zauważone i co wymaga decyzji.",
-        "intro": "Raport jest wcześniejszy niż długie opisy procesu, bo pokazuje realny mechanizm: obserwacja, dokumentacja, status i następne działanie.",
+        "intro": "Raport pokazuje podstawowy mechanizm pracy: obserwację, dokumentację, status i następne działanie.",
         "items": {
           "summary": { "title": "Podsumowanie", "body": "Krótki status wizyty i informacja, czy wykryto problem." },
           "checklist": { "title": "Lista kontrolna", "body": "Widoczne punkty ryzyka są odnotowane w spójnej strukturze." },
@@ -1405,7 +1405,7 @@
           "nextAction": { "title": "Następne działanie", "body": "Właściciel widzi, co jest zamknięte, a co wymaga zgody." }
         },
         "fullSampleLabel": "Zobacz pełny przykładowy raport",
-        "fullSampleExplainer": "Pełna tabela jest dostępna, ale nie jest pierwszym sposobem poznawania procesu."
+        "fullSampleExplainer": "Pełna tabela pokazuje przykładową strukturę raportu i zakres informacji przekazywanych właścicielowi."
       },
       "access": {
         "eyebrow": "Łańcuch dostępu",
@@ -1415,7 +1415,7 @@
           "agreement": { "title": "Uzgodnienie właściciela", "body": "Zakres dostępu i sytuacje wejścia są ustalone przed działaniem." },
           "keys": { "title": "Klucze lub metoda dostępu", "body": "Dostęp jest przekazany, opisany i używany w granicach pakietu." },
           "request": { "title": "Zdarzenie lub harmonogram", "body": "Wejście wynika z wizyty, zgłoszenia, technika albo uzgodnionego modułu." },
-          "entry": { "title": "Wejście na miejsce", "body": "Sentinel wykonuje albo koordynuje wejście zgodnie z ustaleniami." },
+          "entry": { "title": "Wejście na miejsce", "body": "Sentinel wchodzi na miejsce albo koordynuje wejście osoby trzeciej zgodnie z ustaleniami." },
           "record": { "title": "Zapis po wejściu", "body": "Po zdarzeniu pozostaje raport, notatka lub potwierdzenie." }
         }
       },
@@ -1424,10 +1424,10 @@
         "title": "Kiedy Sentinel działa, a kiedy właściciel zatwierdza",
         "intro": "Najważniejsza granica procesu to nie szybkość, tylko uprawnienie do działania.",
         "limitsTitle": "Limity według pakietu",
-        "securingBandTitle": "Zabezpieczenie nieruchomości (wszystkie pakiety)",
-        "securingBandIntro": "Limit dotyczy wyłącznie działań zabezpieczających w nagłym wypadku, gdy kontakt z właścicielem się nie udaje. To nie jest uprawnienie do samodzielnych decyzji naprawczych.",
-        "emergencyPostureTitle": "Reakcja awaryjna według pakietu",
-        "fullAuthorityTitle": "Autonomiczny limit decyzyjny (tylko Pakiet Pełny)",
+        "protectiveTitle": "Działanie zabezpieczające w sytuacji nagłej",
+        "protectiveIntro": "Dotyczy wyłącznie ograniczenia bezpośredniej szkody, gdy kontakt z właścicielem nie jest możliwy. Nie oznacza zgody na samodzielne naprawy, większe prace ani działania poza zakresem pakietu.",
+        "authorityTitle": "Autonomiczny limit decyzyjny",
+        "authorityScope": "Dotyczy wyłącznie Pakietu Pełnego.",
         "ownerApprovalLine": "Powyżej limitu, poza pakietem lub przy większych pracach wymagana jest zgoda właściciela.",
         "note": "Limit dotyczy decyzji w ramach pakietu. Działania poza zakresem wymagają osobnego ustalenia.",
         "steps": {
@@ -1440,8 +1440,8 @@
       },
       "details": {
         "eyebrow": "Szczegóły wdrożenia",
-        "title": "Pełny proces jest dostępny, ale nie musi dominować strony.",
-        "intro": "Poniższe rozdziały zachowują operacyjną precyzję dawnych kroków, tylko w formie rozwijanej.",
+        "title": "Pełny zakres wdrożenia pozostaje dostępny w rozwijanych sekcjach.",
+        "intro": "Poniższe sekcje pokazują wymagane dane, warunki i potwierdzenia przed aktywacją usługi.",
         "chapters": {
           "qualification": "Kwalifikacja nieruchomości",
           "documentation": "Dane, systemy i klucze",
@@ -1918,7 +1918,12 @@
       }
     },
     "cta": {
-      "title": "GOTOWY DO ROZPOCZĘCIA?",
+      "eyebrow": "Następny krok",
+      "title": "Rozpocznij kwalifikację nieruchomości",
+      "body": "W formularzu podaj lokalizację nieruchomości, sposób użytkowania, oczekiwany pakiet oraz dostępność do kontroli wstępnej.",
+      "bodyFollowUp": "Sentinel odpowie w ciągu 24–48h, aby potwierdzić kwalifikację geograficzną, wymagane dane i kolejny etap wdrożenia.",
+      "primaryCta": "Rozpocznij kontakt",
+      "secondaryCta": "Zobacz pakiety",
       "subtitle": "Aby rozpocząć wdrożenie:",
       "steps": {
         "step1": "Zweryfikuj, czy Twoja nieruchomość znajduje się w obszarze obsługi (Torrevieja + 50-70km)",
