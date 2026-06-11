@@ -25,7 +25,7 @@ export default function ContactRouteCards({
         <h2 className="h2-system mt-3">{title}</h2>
         <p className="mt-3 text-body">{intro}</p>
       </div>
-      <div className="contact-route-board">
+      <div className="contact-route-board reveal-rise">
         {cards.map((card) => (
           <article key={card.marker} className="contact-route-board__col">
             <div className="p-5 md:p-6">

@@ -79,7 +79,7 @@ export default async function AboutPage({
               </div>
             </div>
 
-            <figure className="about-hero-media">
+            <figure className="about-hero-media reveal-rise">
               <div className="about-hero-media__frame">
                 <Image
                   src="/photos/sentinel-about-local-entry-placeholder.png"
@@ -95,7 +95,7 @@ export default async function AboutPage({
         </Section>
 
         <Section tone="light" className="about-section about-section--why">
-          <div className="about-shell">
+          <div className="about-shell reveal-rise">
             <div className="about-shell__header px-5 py-6 md:px-8">
               <p className="section-label">{t('redesign.why.eyebrow')}</p>
               <h2 className="h2-system mt-3">{t('redesign.why.title')}</h2>
@@ -140,7 +140,7 @@ export default async function AboutPage({
         </Section>
 
         <Section tone="alt" className="about-section about-section--local">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.48fr)_minmax(0,0.52fr)] lg:items-center">
+          <div className="reveal-rise grid gap-8 lg:grid-cols-[minmax(0,0.48fr)_minmax(0,0.52fr)] lg:items-center">
             <div>
               <p className="section-label">{t('redesign.local.eyebrow')}</p>
               <h2 className="h2-system mt-3">{t('redesign.local.title')}</h2>
@@ -161,7 +161,7 @@ export default async function AboutPage({
         </Section>
 
         <Section tone="light" className="about-section about-section--capabilities">
-          <div className="about-shell">
+          <div className="about-shell reveal-rise">
             <div className="about-shell__header px-5 py-6 md:px-8">
               <p className="section-label">{t('redesign.capabilities.eyebrow')}</p>
               <h2 className="h2-system mt-3">{t('redesign.capabilities.title')}</h2>
@@ -198,7 +198,7 @@ export default async function AboutPage({
             <h2 className="h2-system mt-3">{t('redesign.details.title')}</h2>
             <p className="mt-3 text-body">{t('redesign.details.intro')}</p>
           </div>
-          <div className="grid gap-5 lg:grid-cols-3">
+          <div className="reveal-stagger grid gap-5 lg:grid-cols-3">
             {DETAIL_KEYS.map((key) => (
               <DisclosureBlock
                 key={key}
@@ -214,7 +214,7 @@ export default async function AboutPage({
         </Section>
 
         <Section tone="authority" className="about-section about-section--final">
-          <div className="max-w-[760px]">
+          <div className="reveal-rise max-w-[760px]">
             <h2 className="h2-system text-authority-on-dark">{t('redesign.cta.title')}</h2>
             <p className="text-lg text-authority-on-dark/80 mb-10 leading-relaxed">
               {t('redesign.cta.intro')}

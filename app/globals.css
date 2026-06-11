@@ -54,6 +54,7 @@
   --motion-quick: 150ms;
   --motion-standard: 220ms;
   --motion-slow: 300ms;
+  --motion-reveal: 460ms;
   --motion-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --motion-ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
   --motion-ease-in: cubic-bezier(0.4, 0, 1, 1);
@@ -677,11 +678,11 @@ textarea:focus {
 .process-sequence > *,
 .storyboard-card,
 .timeline-card {
-  opacity: 0.92;
-  transform: translateY(6px);
+  opacity: 0.78;
+  transform: translateY(14px);
   transition:
-    opacity var(--motion-standard) var(--motion-ease-out),
-    transform var(--motion-standard) var(--motion-ease-out),
+    opacity var(--motion-reveal) var(--motion-ease-out),
+    transform var(--motion-reveal) var(--motion-ease-out),
     border-color var(--motion-standard) var(--motion-ease-out),
     box-shadow var(--motion-standard) var(--motion-ease-out);
   transition-delay: var(--motion-delay, 0ms);
@@ -725,6 +726,74 @@ textarea:focus {
 
 .motion-diagram.is-visible {
   box-shadow: 0 18px 42px rgba(16, 38, 63, 0.13);
+}
+
+/* Phase 3 — felt procedural reveals (observed by MotionObserver) */
+.reveal-rise {
+  opacity: 0.72;
+  transform: translateY(18px);
+  transition:
+    opacity var(--motion-reveal) var(--motion-ease-out),
+    transform var(--motion-reveal) var(--motion-ease-out);
+  transition-delay: var(--motion-delay, 0ms);
+}
+
+.reveal-rise.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger > * {
+  opacity: 0.72;
+  transform: translateY(16px);
+  transition:
+    opacity var(--motion-reveal) var(--motion-ease-out),
+    transform var(--motion-reveal) var(--motion-ease-out);
+}
+
+.reveal-stagger.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger.is-visible > :nth-child(2) {
+  transition-delay: 65ms;
+}
+
+.reveal-stagger.is-visible > :nth-child(3) {
+  transition-delay: 130ms;
+}
+
+.reveal-stagger.is-visible > :nth-child(4) {
+  transition-delay: 195ms;
+}
+
+.reveal-stagger.is-visible > :nth-child(5) {
+  transition-delay: 260ms;
+}
+
+.reveal-stagger.is-visible > :nth-child(6) {
+  transition-delay: 325ms;
+}
+
+.reveal-stagger.is-visible > :nth-child(7) {
+  transition-delay: 390ms;
+}
+
+.reveal-stagger.is-visible > :nth-child(n + 8) {
+  transition-delay: 455ms;
+}
+
+/* Press feedback for selectable cards/tiles (scale-feedback, no layout shift) */
+.press-scale {
+  transition:
+    transform var(--motion-quick) var(--motion-ease-out),
+    border-color var(--motion-quick) var(--motion-ease-out),
+    box-shadow var(--motion-quick) var(--motion-ease-out);
+}
+
+.press-scale:active {
+  transform: scale(0.985);
 }
 
 .scope-tier,
@@ -883,11 +952,16 @@ textarea:focus {
   color: var(--accent);
   font-size: 0.64rem;
   font-weight: 950;
+  transition:
+    background var(--motion-standard) var(--motion-ease-out),
+    color var(--motion-standard) var(--motion-ease-out),
+    transform var(--motion-standard) var(--motion-ease-out);
 }
 
 .journey-nav__link[aria-current="true"] .journey-nav__marker {
   background: var(--accent);
   color: #ffffff;
+  transform: scale(1.08);
 }
 
 .visual-card {
@@ -3868,8 +3942,16 @@ textarea:focus {
   .process-line,
   .process-sequence > *,
   .storyboard-card,
-  .timeline-card {
+  .timeline-card,
+  .reveal-rise,
+  .reveal-rise.is-visible,
+  .reveal-stagger > *,
+  .reveal-stagger.is-visible > * {
     opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .press-scale:active {
     transform: none !important;
   }
 

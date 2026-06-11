@@ -23,7 +23,7 @@ export default function ContactUnsuitableGrid({
         <h2 className="h2-system mt-3">{title}</h2>
         <p className="mt-3 text-body">{intro}</p>
       </div>
-      <div className="contact-unsuitable-ledger">
+      <div className="contact-unsuitable-ledger reveal-rise">
         {items.map((item, index) => (
           <article key={item.title} className="contact-unsuitable-ledger__item">
             <p className="contact-unsuitable-ledger__marker">

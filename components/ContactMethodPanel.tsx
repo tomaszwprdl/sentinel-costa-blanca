@@ -22,7 +22,7 @@ export default function ContactMethodPanel({
   note,
 }: ContactMethodPanelProps) {
   return (
-    <aside className="contact-method-panel p-5 md:p-6">
+    <aside className="contact-method-panel reveal-rise p-5 md:p-6">
       <p className="section-label">{eyebrow}</p>
       <h2 className="mt-3 text-2xl font-black text-heading">{title}</h2>
       <dl className="contact-method-panel__items mt-5 text-body">

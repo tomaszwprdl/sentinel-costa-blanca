@@ -17,7 +17,7 @@ export default function FAQBoundaryPanel({
   items,
 }: FAQBoundaryPanelProps) {
   return (
-    <div className="faq-boundary-console">
+    <div className="faq-boundary-console reveal-rise">
       <div className="faq-boundary-console__header px-5 py-6 md:px-8">
         <p className="section-label faq-boundary-console__eyebrow">{eyebrow}</p>
         <h2 className="h2-system mt-3">{title}</h2>

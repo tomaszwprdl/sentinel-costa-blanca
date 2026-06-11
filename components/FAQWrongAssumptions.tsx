@@ -23,7 +23,7 @@ export default function FAQWrongAssumptions({
         <h2 className="h2-system mt-3">{title}</h2>
         <p className="mt-3 text-body">{intro}</p>
       </div>
-      <div className="faq-assumption-ledger">
+      <div className="faq-assumption-ledger reveal-rise">
         {items.map((item) => (
           <article key={item.assumption} className="faq-assumption-ledger__row">
             <p className="faq-assumption-ledger__assumption">{item.assumption}</p>

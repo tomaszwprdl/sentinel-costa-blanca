@@ -20,7 +20,7 @@ export default function AboutResponsibilityFlow({
   note,
 }: AboutResponsibilityFlowProps) {
   return (
-    <div className="about-responsibility-console">
+    <div className="about-responsibility-console reveal-rise">
       <div className="about-responsibility-console__header px-5 py-6 md:px-8">
         <p className="section-label about-responsibility-console__eyebrow">{eyebrow}</p>
         <h2 className="h2-system mt-3">{title}</h2>

@@ -69,7 +69,7 @@ export default function FAQCategoryNav({
         <h2 className="h2-system mt-3">{title}</h2>
         <p className="mt-3 text-body">{intro}</p>
       </div>
-      <nav className="grid gap-3 md:grid-cols-2 lg:grid-cols-4" aria-label={title}>
+      <nav className="reveal-stagger grid gap-3 md:grid-cols-2 lg:grid-cols-4" aria-label={title}>
         {categories.map((category) => (
           <a
             key={category.id}

@@ -299,7 +299,7 @@ function ContactPageInner() {
               </div>
             </div>
 
-            <figure className="contact-hero-media">
+            <figure className="contact-hero-media reveal-rise">
               <div className="contact-hero-media__frame bg-surface-light">
                 <Image
                   src="/visuals/sentinel-contact-intake-path.svg"
@@ -348,7 +348,7 @@ function ContactPageInner() {
               </p>
             </aside>
 
-            <div className="contact-intake-shell p-4 md:p-6">
+            <div className="contact-intake-shell reveal-rise p-4 md:p-6">
               {pathwayKey && (
                 <div className="visual-card p-5 mb-5">
                   <h3 className="text-base font-black text-heading">{t('pathwayContext.title')}</h3>
@@ -652,7 +652,7 @@ function ContactPageInner() {
         </Section>
 
         <Section tone="light" className="contact-section contact-section--fit">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.52fr)_minmax(0,0.48fr)] lg:items-center">
+          <div className="reveal-rise grid gap-8 lg:grid-cols-[minmax(0,0.52fr)_minmax(0,0.48fr)] lg:items-center">
             <div>
               <p className="section-label">{t('redesign.fit.eyebrow')}</p>
               <h2 className="h2-system mt-3">{t('redesign.fit.title')}</h2>
@@ -694,7 +694,7 @@ function ContactPageInner() {
         </Section>
 
         <Section tone="authority" className="contact-section contact-section--final">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.68fr)_minmax(16rem,0.32fr)] lg:items-end">
+          <div className="reveal-rise grid gap-8 lg:grid-cols-[minmax(0,0.68fr)_minmax(16rem,0.32fr)] lg:items-end">
             <div>
               <p className="section-label text-authority-on-dark/70">{t('redesign.form.eyebrow')}</p>
               <h2 className="h2-system mt-3 text-authority-on-dark">{t('redesign.finalCta.title')}</h2>

@@ -21,7 +21,7 @@ export default function FAQQuickAnswerCards({
   items,
 }: FAQQuickAnswerCardsProps) {
   return (
-    <div className="faq-shell">
+    <div className="faq-shell reveal-rise">
       <div className="faq-shell__header px-5 py-6 md:px-8">
         <p className="section-label">{eyebrow}</p>
         <h2 className="h2-system mt-3">{title}</h2>

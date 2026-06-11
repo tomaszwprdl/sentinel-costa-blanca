@@ -48,7 +48,7 @@ export default function FAQGroupedAccordion({
           <p className="mb-0 text-body">{noResults}</p>
         </div>
       ) : (
-        <div className="grid gap-5">
+        <div className="reveal-stagger grid gap-5">
           {sections.map((section, sectionIndex) => (
             <section key={section.id} id={section.id} className="journey-scroll-target">
               <DisclosureBlock

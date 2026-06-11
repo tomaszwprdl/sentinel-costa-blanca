@@ -50,7 +50,7 @@ export default async function HomePage({
         <Suspense fallback={<UsagePathwayFallback locale={locale} selected={null} t={t} />}>
           <UsagePathwayLayer>
         <Section tone="light" className="home-section home-section--route !py-16 md:!py-20">
-          <div className="home-route-shell">
+          <div className="home-route-shell reveal-rise">
             <div className="home-route-shell__header px-5 py-6 md:px-8">
               <p className="section-label">{t('systemIntro.eyebrow')}</p>
               <div className="mt-3 grid gap-4 lg:grid-cols-[minmax(0,0.72fr)_minmax(18rem,0.34fr)] lg:items-end">
@@ -93,7 +93,7 @@ export default async function HomePage({
         {/* 4. BEZ NAS / Z NAMI — shared section rhythm */}
         <Section tone="alt" className="home-section home-section--contrast !py-16 md:!py-20">
           <div className="grid gap-8 lg:grid-cols-[minmax(16rem,0.34fr)_minmax(0,0.66fr)] lg:items-start">
-            <div>
+            <div className="reveal-rise">
               <p className="section-label">{t('contrast.eyebrow')}</p>
               <h2 className="h2-system mt-3">{t('contrast.title')}</h2>
               <p className="mt-4 max-w-[46ch] text-body leading-relaxed">
@@ -101,7 +101,7 @@ export default async function HomePage({
               </p>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="reveal-stagger grid gap-4 md:grid-cols-2">
               <article className="home-contrast-card home-contrast-card--risk">
                 <div className="home-contrast-card__header px-5 py-4">
                   <p className="mb-1 text-[11px] font-black uppercase tracking-wide text-accent">
@@ -152,7 +152,7 @@ export default async function HomePage({
         {/* 5. ZAKRES PAKIETÓW — jedna oś: wrapper flex flex-col items-center; tekst max-w-[72ch]; grid w-full max-w-[1120px] mx-auto justify-items-center; karty w-full */}
         <Section tone="light" className="home-section home-section--scope !py-16 md:!py-20">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,0.62fr)_minmax(20rem,0.38fr)] lg:items-start">
-            <div className="home-levels-shell">
+            <div className="home-levels-shell reveal-rise">
               <div className="home-levels-shell__header px-5 py-6 md:px-8">
                 <p className="section-label">{t('levels.eyebrow')}</p>
                 <h2 className="h2-system mt-3">{t('levels.title')}</h2>
@@ -181,7 +181,7 @@ export default async function HomePage({
               </div>
             </div>
 
-            <aside className="grid gap-5">
+            <aside className="reveal-rise grid gap-5">
               <div className="home-area-card p-5 md:p-6">
                 <p className="section-label">{t('serviceArea.eyebrow')}</p>
                 <h2 className="mt-3 text-2xl font-black text-heading">{t('serviceArea.title')}</h2>
@@ -209,7 +209,7 @@ export default async function HomePage({
               <PathwayCopy path="distinctionIntro" />
             </p>
           </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="reveal-stagger mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {CREDIBILITY_KEYS.map((key, index) => (
               <article key={key} className="home-distinction-card p-5">
                 <p className="mb-3 text-xs font-black uppercase tracking-wide text-accent">
@@ -228,7 +228,7 @@ export default async function HomePage({
 
         {/* 7. OBSZAR DZIAŁANIA — H2+H3, lista myślniki, bez placeholderów */}
         <Section tone="authority" className="home-section home-section--final !py-16 md:!py-20">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.68fr)_minmax(16rem,0.32fr)] lg:items-end">
+          <div className="reveal-rise grid gap-8 lg:grid-cols-[minmax(0,0.68fr)_minmax(16rem,0.32fr)] lg:items-end">
             <div>
               <p className="section-label text-authority-on-dark/70">{t('finalCta.eyebrow')}</p>
               <h2 className="h2-system mt-3 text-authority-on-dark">{t('finalCta.title')}</h2>

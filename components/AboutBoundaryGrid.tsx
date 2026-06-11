@@ -58,7 +58,7 @@ export default function AboutBoundaryGrid({
         <h2 className="h2-system mt-3">{title}</h2>
         <p className="mt-3 text-body">{intro}</p>
       </div>
-      <div className="about-boundary-board">
+      <div className="about-boundary-board reveal-rise">
         <BoundaryColumn title={isTitle} items={isItems} tone="is" />
         <BoundaryColumn title={isNotTitle} items={isNotItems} tone="isnot" />
       </div>

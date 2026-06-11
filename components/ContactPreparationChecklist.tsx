@@ -18,7 +18,7 @@ export default function ContactPreparationChecklist({
   items,
 }: ContactPreparationChecklistProps) {
   return (
-    <div className="contact-shell">
+    <div className="contact-shell reveal-rise">
       <div className="contact-shell__header px-5 py-6 md:px-8">
         <p className="section-label">{eyebrow}</p>
         <h2 className="h2-system mt-3">{title}</h2>
