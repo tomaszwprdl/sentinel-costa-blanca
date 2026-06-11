@@ -1363,7 +1363,7 @@
       },
       "timeline": {
         "eyebrow": "Whole process",
-        "title": "Agreement first. Then presence, report, and decisions.",
+        "title": "First scope and access. Then visit, report, and decision.",
         "items": {
           "before": { "title": "Before service", "body": "Sentinel qualifies the property, operating area, and how the property is used." },
           "setup": { "title": "Access setup", "body": "Keys, data, package, scope, and communication rules are confirmed." },
@@ -1442,8 +1442,8 @@
       },
       "details": {
         "eyebrow": "Onboarding detail",
-        "title": "The full onboarding scope remains available in expandable sections.",
-        "intro": "The sections below show the required data, terms, and confirmations before service activation.",
+        "title": "What must be confirmed before service activation.",
+        "intro": "Property data, access, package, initial inspection, and visit rhythm are confirmed before oversight begins.",
         "chapters": {
           "qualification": "Property qualification",
           "documentation": "Data, systems, and keys",
@@ -1455,7 +1455,7 @@
       },
       "rhythm": {
         "eyebrow": "After activation",
-        "title": "The ongoing rhythm is simple: visit, record, report, decision.",
+        "title": "After activation, the rhythm is steady: visit, report, decision, record.",
         "cards": {
           "visits": { "title": "Visits", "body": "The schedule and additional entries operate inside the package." },
           "reports": { "title": "Reports", "body": "Each relevant visit or event leaves a clear record." },

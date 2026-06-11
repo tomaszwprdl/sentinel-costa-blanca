@@ -1363,7 +1363,7 @@
       },
       "timeline": {
         "eyebrow": "Cały proces",
-        "title": "Najpierw ustalenia. Potem obecność, raport i decyzje.",
+        "title": "Najpierw ustalenia i dostęp. Potem wizyta, raport i decyzja.",
         "items": {
           "before": { "title": "Przed startem", "body": "Sentinel kwalifikuje lokal, obszar działania i sposób używania nieruchomości." },
           "setup": { "title": "Ustawienie dostępu", "body": "Uzgadnia się klucze, dane, pakiet, zakres i sposób komunikacji." },
@@ -1442,8 +1442,8 @@
       },
       "details": {
         "eyebrow": "Szczegóły wdrożenia",
-        "title": "Pełny zakres wdrożenia pozostaje dostępny w rozwijanych sekcjach.",
-        "intro": "Poniższe sekcje pokazują wymagane dane, warunki i potwierdzenia przed aktywacją usługi.",
+        "title": "Co musi być ustalone przed aktywacją usługi.",
+        "intro": "Dane nieruchomości, dostęp, pakiet, kontrola wstępna i rytm wizyt są potwierdzane przed rozpoczęciem nadzoru.",
         "chapters": {
           "qualification": "Kwalifikacja nieruchomości",
           "documentation": "Dane, systemy i klucze",
@@ -1455,7 +1455,7 @@
       },
       "rhythm": {
         "eyebrow": "Po aktywacji",
-        "title": "Stały rytm jest prosty: wizyta, zapis, raport, decyzja.",
+        "title": "Po aktywacji rytm jest stały: wizyta, raport, decyzja, zapis.",
         "cards": {
           "visits": { "title": "Wizyty", "body": "Harmonogram i dodatkowe wejścia działają w granicach pakietu." },
           "reports": { "title": "Raporty", "body": "Każda istotna wizyta lub zdarzenie zostawia czytelny zapis." },
