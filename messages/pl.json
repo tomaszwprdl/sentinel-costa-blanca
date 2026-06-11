@@ -2177,7 +2177,7 @@
     },
     "assumptions": {
       "eyebrow": "Częste błędne założenia",
-      "title": "Korekta jest ważniejsza niż hasło.",
+      "title": "Precyzyjne pytanie skraca odpowiedź.",
       "intro": "Te założenia najczęściej przesuwają usługę w złą kategorię.",
       "items": [
         { "assumption": "Same klucze oznaczają pełny nadzór", "boundary": "Przechowywanie kluczy to tylko zdolność dostępu. Nadzór wymaga zakresu pakietu i raportowania." },
@@ -2211,6 +2211,7 @@
       }
     },
     "finalCta": {
+      "eyebrow": "FAQ",
       "title": "Traktuj FAQ jako sprawdzenie dopasowania, nie zmianę umowy.",
       "intro": "Jeżeli odpowiedzi pasują do sytuacji, przejdź do kwalifikacji. Jeżeli zapytanie wymaga otwartej obsługi, Sentinel prawdopodobnie nie jest właściwą kategorią."
     }

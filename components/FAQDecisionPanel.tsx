@@ -21,19 +21,19 @@ export default function FAQDecisionPanel({
   items,
 }: FAQDecisionPanelProps) {
   return (
-    <div className="faq-shell reveal-rise">
-      <div className="faq-shell__header px-5 py-6 md:px-8">
+    <div className="faq-shell faq-shell--decision reveal-rise">
+      <div className="faq-shell__header faq-shell__header--decision">
         <p className="section-label">{eyebrow}</p>
         <h2 className="h2-system mt-3">{title}</h2>
         <p className="mt-3 mb-0 max-w-[62ch] text-body">{intro}</p>
       </div>
       <div className="faq-decision-strip">
         {items.map((item) => (
-          <article key={item.title} className="faq-decision-strip__cell flex flex-col p-5 md:p-6">
-            <h3 className="mb-3 text-lg font-black text-heading">{item.title}</h3>
-            <p className="text-sm leading-relaxed text-body">{item.body}</p>
+          <article key={item.title} className="faq-decision-strip__cell">
+            <h3 className="faq-decision-strip__title">{item.title}</h3>
+            <p className="faq-decision-strip__body">{item.body}</p>
             {item.href && item.label && (
-              <Link href={item.href} className="btn-secondary mt-auto w-full text-sm">
+              <Link href={item.href} className="faq-decision-strip__cta btn-secondary">
                 {item.label}
               </Link>
             )}

@@ -2177,7 +2177,7 @@
     },
     "assumptions": {
       "eyebrow": "Common wrong assumptions",
-      "title": "The correction matters more than the slogan.",
+      "title": "Precise context produces the right answer.",
       "intro": "These assumptions create most category drift.",
       "items": [
         { "assumption": "Keyholding alone means full oversight", "boundary": "Keyholding is only an access capability. Oversight requires package scope and reporting." },
@@ -2211,6 +2211,7 @@
       }
     },
     "finalCta": {
+      "eyebrow": "FAQ",
       "title": "Use FAQ as a fit check, not a contract rewrite.",
       "intro": "If the answers match your situation, continue to structured intake. If the request needs open-ended service, Sentinel is probably not the correct category."
     }

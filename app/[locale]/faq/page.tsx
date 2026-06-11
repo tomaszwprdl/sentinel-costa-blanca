@@ -7,7 +7,6 @@ import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
 import Section from '@/components/layout/Section';
 import FAQBoundaryPanel from '@/components/FAQBoundaryPanel';
-import FAQCategoryNav from '@/components/FAQCategoryNav';
 import FAQDecisionPanel from '@/components/FAQDecisionPanel';
 import FAQGroupedAccordion, { type FAQGroup } from '@/components/FAQGroupedAccordion';
 import FAQQuickAnswerCards from '@/components/FAQQuickAnswerCards';
@@ -25,13 +24,6 @@ type QuickAnswerSource = {
   title: string;
   answer: string;
   href: string;
-};
-
-type CategoryItem = {
-  id: string;
-  targetId: string;
-  title: string;
-  body: string;
 };
 
 type BoundaryItem = {
@@ -54,7 +46,6 @@ export default function FAQPage() {
   const journeyItems = [
     { id: 'faq-start', label: t('redesign.hero.eyebrow') },
     { id: 'faq-quick', label: t('redesign.quick.eyebrow') },
-    { id: 'faq-categories', label: t('redesign.categories.eyebrow') },
     { id: 'faq-details', label: t('redesign.details.eyebrow') },
     { id: 'faq-decision', label: t('redesign.decision.eyebrow') },
   ];
@@ -62,7 +53,6 @@ export default function FAQPage() {
     ...item,
     linkLabel: t('redesign.quick.linkLabel'),
   }));
-  const categories = t.raw('redesign.categories.items') as CategoryItem[];
   const boundaryItems = t.raw('redesign.boundary.items') as BoundaryItem[];
   const assumptionItems = t.raw('redesign.assumptions.items') as AssumptionItem[];
 
@@ -192,7 +182,7 @@ export default function FAQPage() {
                 <Link href={`/${locale}/contact`} className="btn-primary">
                   {t('redesign.hero.primaryCta')}
                 </Link>
-                <Link href={`/${locale}/services`} className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
+                <Link href={`/${locale}/services`} className="btn-secondary btn-secondary-on-dark faq-hero__secondary-cta">
                   {t('redesign.hero.secondaryCta')}
                 </Link>
               </div>
@@ -223,15 +213,6 @@ export default function FAQPage() {
           />
         </Section>
 
-        <Section tone="alt" id="faq-categories" className="faq-section faq-section--categories">
-          <FAQCategoryNav
-            eyebrow={t('redesign.categories.eyebrow')}
-            title={t('redesign.categories.title')}
-            intro={t('redesign.categories.intro')}
-            categories={categories}
-          />
-        </Section>
-
         <Section tone="light" id="faq-details" className="faq-section faq-section--details">
           <FAQGroupedAccordion
             eyebrow={t('redesign.details.eyebrow')}
@@ -239,15 +220,20 @@ export default function FAQPage() {
             intro={t('redesign.details.intro')}
             sections={filteredSections}
             noResults={t('noResults')}
+            sectionsLabel={t('sectionsLabel')}
             searchControl={(
-              <div className="faq-search-shell visual-card-strong p-3">
+              <div className="faq-search-shell">
+                <label className="faq-search-shell__label" htmlFor="faq-search-input">
+                  {t('search.placeholder')}
+                </label>
                 <input
+                  id="faq-search-input"
                   type="search"
                   aria-label={t('search.placeholder')}
                   placeholder={t('search.placeholder')}
                   value={searchQuery}
                   onChange={(event) => setSearchQuery(event.target.value)}
-                  className="faq-search-input form-control border-0 bg-surface-light-alt text-base"
+                  className="faq-search-input form-control"
                 />
               </div>
             )}
@@ -284,7 +270,7 @@ export default function FAQPage() {
         <Section tone="authority" className="faq-section faq-section--final">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.68fr)_minmax(16rem,0.32fr)] lg:items-end">
             <div>
-              <p className="section-label text-authority-on-dark/70">FAQ</p>
+              <p className="section-label text-authority-on-dark/70">{t('redesign.finalCta.eyebrow')}</p>
               <h2 className="h2-system mt-3 text-authority-on-dark">{t('redesign.finalCta.title')}</h2>
               <p className="mt-4 max-w-[62ch] text-lg leading-relaxed text-authority-on-dark/86">{t('redesign.finalCta.intro')}</p>
             </div>
