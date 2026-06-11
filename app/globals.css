@@ -4317,21 +4317,209 @@ textarea:focus {
   font-weight: 700;
 }
 
+.legal-page__section {
+  background: var(--surface-light);
+}
+
+.legal-document {
+  width: 100%;
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+.legal-document__header {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--structural-light);
+}
+
+.legal-document__title {
+  margin: 0;
+  color: var(--heading);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.75rem, 3.6vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.legal-document__subtitle {
+  margin: 0.75rem 0 0;
+  max-width: 38ch;
+  color: var(--body);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.legal-document__meta {
+  margin: 0.85rem 0 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.legal-toc {
+  margin-bottom: 2rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--structural-light);
+  border-radius: var(--site-radius-card);
+  background: color-mix(in srgb, var(--surface-light-alt) 88%, white);
+}
+
+.legal-toc__label {
+  margin: 0 0 0.65rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.legal-toc__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: legal-toc;
+}
+
+.legal-toc__list > li {
+  counter-increment: legal-toc;
+}
+
+.legal-toc__link {
+  display: block;
+  color: var(--authority);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.legal-toc__link:hover,
+.legal-toc__link:focus-visible {
+  color: var(--heading);
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+}
+
+.legal-prose {
+  max-width: none;
+}
+
 .legal-prose__section {
-  margin-bottom: var(--space-40);
+  scroll-margin-top: calc(var(--header-offset) + 1rem);
+  margin-bottom: 0;
+  padding-block: 1.65rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--structural-light) 82%, transparent);
+}
+
+.legal-prose__section:first-child {
+  padding-top: 0.25rem;
+}
+
+.legal-prose__section:last-child {
+  border-bottom: 0;
+  padding-bottom: 0.25rem;
+}
+
+.legal-prose__section-title {
+  margin: 0 0 0.85rem;
+  color: var(--heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
 }
 
 .legal-prose__body {
   color: var(--body);
-  white-space: pre-line;
 }
 
-.legal-prose__updated {
-  margin-top: var(--space-40);
-  padding-top: var(--space-40);
+.legal-prose__paragraph,
+.legal-prose__intro {
+  margin: 0 0 0.9rem;
+  max-width: 68ch;
+  line-height: 1.68;
+}
+
+.legal-prose__intro {
+  color: var(--heading);
+  font-weight: 600;
+}
+
+.legal-prose__paragraph:last-child,
+.legal-prose__intro:last-child,
+.legal-prose__list:last-child {
+  margin-bottom: 0;
+}
+
+.legal-prose__list {
+  margin: 0.15rem 0 1rem;
+  padding-left: 1.35rem;
+  list-style: disc;
+}
+
+.legal-prose__list li {
+  margin-bottom: 0.4rem;
+  padding-left: 0.2rem;
+  max-width: 66ch;
+  line-height: 1.62;
+}
+
+.legal-prose__list li::marker {
+  color: color-mix(in srgb, var(--muted) 88%, var(--authority));
+}
+
+.legal-prose__contact-line {
+  display: inline;
+}
+
+.legal-prose__link {
+  color: var(--authority);
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+}
+
+.legal-prose__link:hover,
+.legal-prose__link:focus-visible {
+  color: var(--heading);
+}
+
+.legal-document__footer {
+  margin-top: 2rem;
+  padding-top: 1.35rem;
   border-top: 1px solid var(--structural-light);
   color: var(--muted);
   font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.legal-document__footer p {
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .legal-document {
+    max-width: none;
+  }
+
+  .legal-toc {
+    margin-bottom: 1.5rem;
+    padding: 0.9rem 0.95rem;
+  }
+
+  .legal-toc__link {
+    font-size: 0.88rem;
+  }
+
+  .legal-prose__section {
+    padding-block: 1.35rem;
+  }
+
+  .legal-prose__list {
+    padding-left: 1.15rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

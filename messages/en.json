@@ -2620,6 +2620,7 @@
     },
     "pageTitle": "Terms of Service",
     "subtitle": "Sentinel — terms of service",
+    "tocLabel": "Document sections",
     "lastUpdated": "Last updated: 2026-02-23",
     "sections": [
       { "title": "1. Definition of Service", "body": "Sentinel provides a package-based local property representation service within a defined operational scope.\n\nThe service is not:\n\nInsurance\nA concierge service\nA rental agency\nA general contractor\nFull-scope property management" },
@@ -2641,6 +2642,7 @@
     },
     "pageTitle": "Privacy Policy",
     "subtitle": "Sentinel — data protection",
+    "tocLabel": "Document sections",
     "lastUpdated": "Last updated: 2026-02-23",
     "sections": [
       { "title": "1. Data Controller", "body": "The data controller is Sentinel, a local property representation service operating in Torrevieja and within a 50–70 km radius.\n\nContact for data protection matters:\nEmail: sentinelcostablanca@gmail.com" },
