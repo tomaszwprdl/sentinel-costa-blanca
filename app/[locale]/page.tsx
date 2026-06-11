@@ -46,12 +46,12 @@ export default async function HomePage({
   return (
     <>
       <HeaderClient />
-      <main className="min-h-screen flex flex-col bg-surface-light">
+      <main className="home-page min-h-screen flex flex-col bg-surface-light">
         <Suspense fallback={<UsagePathwayFallback locale={locale} selected={null} t={t} />}>
           <UsagePathwayLayer>
-        <Section tone="light" className="!py-16 md:!py-20">
-          <div className="visual-card-strong overflow-hidden">
-            <div className="border-b border-structural-light bg-surface-light-alt px-5 py-6 md:px-8">
+        <Section tone="light" className="home-section home-section--route !py-16 md:!py-20">
+          <div className="home-route-shell">
+            <div className="home-route-shell__header px-5 py-6 md:px-8">
               <p className="section-label">{t('systemIntro.eyebrow')}</p>
               <div className="mt-3 grid gap-4 lg:grid-cols-[minmax(0,0.72fr)_minmax(18rem,0.34fr)] lg:items-end">
                 <div>
@@ -60,19 +60,19 @@ export default async function HomePage({
                     <PathwayCopy path="systemIntroContext" />
                   </p>
                 </div>
-                <p className="mb-0 rounded-2xl border border-structural-light bg-surface-card p-4 text-sm leading-relaxed text-body">
+                <p className="home-route-note mb-0 p-4 text-sm leading-relaxed text-body">
                   {t('systemIntro.intro')}
                 </p>
               </div>
             </div>
 
-            <div className="grid gap-0 md:grid-cols-4">
+            <div className="home-process-grid">
               {PROCESS_KEYS.map((key, index) => (
                 <article
                   key={key}
-                  className="border-b border-structural-light p-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 md:p-6"
+                  className="home-process-step p-5 md:p-6"
                 >
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-authority-bg text-xs font-black text-authority-on-dark">
+                  <span className="home-process-step__marker">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <p className="mt-5 mb-2 text-[11px] font-black uppercase tracking-wide text-muted">
@@ -91,7 +91,7 @@ export default async function HomePage({
         </Section>
 
         {/* 4. BEZ NAS / Z NAMI — shared section rhythm */}
-        <Section tone="alt" className="!py-16 md:!py-20">
+        <Section tone="alt" className="home-section home-section--contrast !py-16 md:!py-20">
           <div className="grid gap-8 lg:grid-cols-[minmax(16rem,0.34fr)_minmax(0,0.66fr)] lg:items-start">
             <div>
               <p className="section-label">{t('contrast.eyebrow')}</p>
@@ -102,14 +102,14 @@ export default async function HomePage({
             </div>
 
             <div className="grid gap-4 md:grid-cols-2">
-              <article className="visual-card-strong overflow-hidden">
-                <div className="border-b border-structural-light bg-surface-light-alt px-5 py-4">
+              <article className="home-contrast-card home-contrast-card--risk">
+                <div className="home-contrast-card__header px-5 py-4">
                   <p className="mb-1 text-[11px] font-black uppercase tracking-wide text-accent">
                     {t('contrast.leftModeLabel')}
                   </p>
                   <h3 className="mb-0 text-xl font-black text-heading">{t('contrast.leftHeading')}</h3>
                 </div>
-                <div className="p-5">
+                <div className="home-contrast-card__body p-5">
                   <ul className="space-y-3 text-sm leading-relaxed text-body">
                     {[1, 2, 3, 4].map((item) => (
                       <li key={item} className="flex gap-3">
@@ -124,14 +124,14 @@ export default async function HomePage({
                 </div>
               </article>
 
-              <article className="visual-card-strong overflow-hidden">
-                <div className="border-b border-structural-light bg-surface-card px-5 py-4">
+              <article className="home-contrast-card home-contrast-card--control">
+                <div className="home-contrast-card__header px-5 py-4">
                   <p className="mb-1 text-[11px] font-black uppercase tracking-wide text-support">
                     {t('contrast.rightModeLabel')}
                   </p>
                   <h3 className="mb-0 text-xl font-black text-heading">{t('contrast.rightHeading')}</h3>
                 </div>
-                <div className="p-5">
+                <div className="home-contrast-card__body p-5">
                   <ul className="space-y-3 text-sm leading-relaxed text-body">
                     {[1, 2, 3, 4].map((item) => (
                       <li key={item} className="flex gap-3">
@@ -150,19 +150,19 @@ export default async function HomePage({
         </Section>
 
         {/* 5. ZAKRES PAKIETÓW — jedna oś: wrapper flex flex-col items-center; tekst max-w-[72ch]; grid w-full max-w-[1120px] mx-auto justify-items-center; karty w-full */}
-        <Section tone="light" className="!py-16 md:!py-20">
+        <Section tone="light" className="home-section home-section--scope !py-16 md:!py-20">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,0.62fr)_minmax(20rem,0.38fr)] lg:items-start">
-            <div className="visual-card-strong overflow-hidden">
-              <div className="border-b border-structural-light bg-surface-light-alt px-5 py-6 md:px-8">
+            <div className="home-levels-shell">
+              <div className="home-levels-shell__header px-5 py-6 md:px-8">
                 <p className="section-label">{t('levels.eyebrow')}</p>
                 <h2 className="h2-system mt-3">{t('levels.title')}</h2>
                 <p className="mt-3 max-w-[62ch] text-body">{t('levels.intro')}</p>
               </div>
-              <div className="grid gap-0 md:grid-cols-3">
+              <div className="home-level-scale">
                 {PACKAGE_PREVIEW.map((item) => (
                   <article
                     key={item.marker}
-                    className="border-b border-structural-light p-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 md:p-6"
+                    className="home-level-scale__item p-5 md:p-6"
                   >
                     <p className="mb-3 text-xs font-black uppercase tracking-wide text-muted">{item.marker}</p>
                     <h3 className="mb-2 text-xl font-black text-heading">{t(`levels.${item.title}`)}</h3>
@@ -171,7 +171,7 @@ export default async function HomePage({
                   </article>
                 ))}
               </div>
-              <div className="flex flex-col gap-4 border-t border-structural-light bg-surface-light-alt px-5 py-5 md:flex-row md:items-center md:justify-between md:px-8">
+              <div className="home-levels-shell__rule flex flex-col gap-4 px-5 py-5 md:flex-row md:items-center md:justify-between md:px-8">
                 <p className="mb-0 max-w-[58ch] text-sm leading-relaxed text-body">
                   {t('levels.systemRule1')} {t('levels.systemRule2')} {t('levels.systemRule3')}
                 </p>
@@ -182,7 +182,7 @@ export default async function HomePage({
             </div>
 
             <aside className="grid gap-5">
-              <div className="visual-card p-5 md:p-6">
+              <div className="home-area-card p-5 md:p-6">
                 <p className="section-label">{t('serviceArea.eyebrow')}</p>
                 <h2 className="mt-3 text-2xl font-black text-heading">{t('serviceArea.title')}</h2>
                 <p className="mt-3 text-sm leading-relaxed text-body">{t('serviceArea.intro')}</p>
@@ -201,7 +201,7 @@ export default async function HomePage({
         </Section>
 
         {/* 6. CO WYRÓŻNIA SENTINEL — bloki deklaracji modelu, 2 kolumny, bez card/badge, oś centralna */}
-        <Section tone="alt" className="!py-16 md:!py-20">
+        <Section tone="alt" className="home-section home-section--distinction !py-16 md:!py-20">
           <div className="max-w-[760px]">
             <p className="section-label">{t('distinction.eyebrow')}</p>
             <h2 className="h2-system mt-3">{t('distinction.title')}</h2>
@@ -211,7 +211,7 @@ export default async function HomePage({
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {CREDIBILITY_KEYS.map((key, index) => (
-              <article key={key} className="visual-card p-5">
+              <article key={key} className="home-distinction-card p-5">
                 <p className="mb-3 text-xs font-black uppercase tracking-wide text-accent">
                   {String(index + 1).padStart(2, '0')}
                 </p>
@@ -227,7 +227,7 @@ export default async function HomePage({
         </Section>
 
         {/* 7. OBSZAR DZIAŁANIA — H2+H3, lista myślniki, bez placeholderów */}
-        <Section tone="authority" className="!py-16 md:!py-20">
+        <Section tone="authority" className="home-section home-section--final !py-16 md:!py-20">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.68fr)_minmax(16rem,0.32fr)] lg:items-end">
             <div>
               <p className="section-label text-authority-on-dark/70">{t('finalCta.eyebrow')}</p>
