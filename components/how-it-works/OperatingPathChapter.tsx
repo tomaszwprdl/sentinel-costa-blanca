@@ -38,7 +38,7 @@ export default function OperatingPathChapter() {
         <ol className="hiw-operating-path__checklist-list">
           {ONE_MINUTE_KEYS.map((key, index) => (
             <li key={key} className="hiw-operating-path__checklist-item">
-              <span className="hiw-operating-path__checklist-index">{String(index + 1).padStart(2, '0')}</span>
+              <span className="hiw-operating-path__checklist-index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
               <div>
                 <h3 className="hiw-operating-path__checklist-title">{t(`redesign.oneMinute.items.${key}.title`)}</h3>
                 <p className="hiw-operating-path__checklist-body">{t(`redesign.oneMinute.items.${key}.body`)}</p>

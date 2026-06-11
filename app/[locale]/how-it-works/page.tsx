@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
-import ConfidenceBar from '@/components/ConfidenceBar';
 import DisclosureBlock from '@/components/DisclosureBlock';
 import Section from '@/components/layout/Section';
 import ProcessDetailChapters from '@/components/ProcessDetailChapters';
@@ -48,10 +47,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
                 <Link href={`/${locale}/contact`} className="btn-primary">
                   {t('redesign.hero.primaryCta')}
                 </Link>
-                <Link
-                  href="#report-decision"
-                  className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority"
-                >
+                <Link href="#report-decision" className="btn-secondary btn-secondary-on-dark hiw-hero__secondary-cta">
                   {t('redesign.hero.secondaryCta')}
                 </Link>
               </div>
@@ -79,10 +75,6 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
               </div>
             </figure>
           </div>
-
-          <div className="mt-10">
-            <ConfidenceBar />
-          </div>
         </Section>
 
         <JourneyNav items={journeyItems} ariaLabel={t('redesign.hero.headline')} className="services-journey-nav" />
@@ -100,29 +92,29 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
         </Section>
 
         <Section tone="light" id="onboarding-detail" className="section-primitive--compact hiw-section--ledger">
-          <div className="mb-6 max-w-[760px] md:mb-8">
+          <div className="hiw-ledger-intro">
             <p className="section-label">{t('redesign.details.eyebrow')}</p>
             <h2 className="h2-system mt-3">{t('redesign.details.title')}</h2>
-            <p className="mt-3 text-body">{t('redesign.details.intro')}</p>
+            <p className="mt-3 max-w-[62ch] text-body">{t('redesign.details.intro')}</p>
           </div>
           <ProcessDetailChapters t={t} />
         </Section>
 
         <Section tone="alt" className="section-primitive--compact hiw-interface-section hiw-section--support">
           <div className="hiw-support-band">
-            <div className="hiw-support-band__rhythm">
-              <p className="section-label">{t('redesign.rhythm.eyebrow')}</p>
-              <h2 className="h2-system mt-3">{t('redesign.rhythm.title')}</h2>
-              <ul className="hiw-rhythm-list">
-                {RHYTHM_KEYS.map((key) => (
-                  <li key={key} className="hiw-rhythm-list__item">
-                    <h3 className="hiw-rhythm-list__title">{t(`redesign.rhythm.cards.${key}.title`)}</h3>
-                    <p className="hiw-rhythm-list__body">{t(`redesign.rhythm.cards.${key}.body`)}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <p className="section-label">{t('redesign.rhythm.eyebrow')}</p>
+            <h2 className="h2-system mt-3">{t('redesign.rhythm.title')}</h2>
+            <ul className="hiw-rhythm-list">
+              {RHYTHM_KEYS.map((key) => (
+                <li key={key} className="hiw-rhythm-list__item">
+                  <h3 className="hiw-rhythm-list__title">{t(`redesign.rhythm.cards.${key}.title`)}</h3>
+                  <p className="hiw-rhythm-list__body">{t(`redesign.rhythm.cards.${key}.body`)}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
 
+          <div className="hiw-support-disclosures">
             <DisclosureBlock label={t('changes.title')} explainer={t('changes.packageChangesIntro')}>
               <div className="space-y-5">
                 <div>
@@ -153,13 +145,11 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
                 </div>
               </div>
             </DisclosureBlock>
-          </div>
 
-          <DisclosureBlock
-            label={t('redesign.faq.title')}
-            explainer={t('redesign.faq.eyebrow')}
-            className="mt-5"
-          >
+            <DisclosureBlock
+              label={t('redesign.faq.title')}
+              explainer={t('redesign.faq.eyebrow')}
+            >
             <dl className="hiw-faq-list">
               {FAQ_KEYS.map((key) => (
                 <div key={key} className="hiw-faq-list__item">
@@ -168,7 +158,8 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
                 </div>
               ))}
             </dl>
-          </DisclosureBlock>
+            </DisclosureBlock>
+          </div>
         </Section>
 
         <Section tone="light" className="hiw-closing-section hiw-section--handoff">

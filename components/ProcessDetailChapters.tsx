@@ -60,7 +60,7 @@ function LedgerRow({ index, children }: { index: number; children: ReactNode }) 
       <span className="hiw-ledger__marker" aria-hidden>
         {String(index).padStart(2, '0')}
       </span>
-      <div className="min-w-0">{children}</div>
+      <div className="hiw-ledger__step min-w-0">{children}</div>
     </li>
   );
 }
