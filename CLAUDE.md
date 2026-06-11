@@ -1,23 +1,28 @@
 # Sentinel Costa Blanca — Claude Code Instructions
 
+## Before work, read
+
+1. `doc/AGENT-BRIEFING.md`
+2. `doc/DECISIONS.md`
+3. `doc/TASK.md`
+4. `doc/STATUS.md`
+5. `doc/WORKFLOW.md`
+6. `doc/VISUAL-FREEDOM-SPRINT.md` — for visual work
+
+**Current SHAs:** website/code stability `28ccca2` · documentation governance `6a0d0f7`
+
+Build-era visual restrictions are retired. Visual experimentation is allowed when scoped and aligned with `doc/VISUAL-FREEDOM-SPRINT.md`. The site may become warmer, more tactile, more image-led, and more visually distinctive if protected contracts remain intact.
+
 ## Project identity
 
-Sentinel Costa Blanca is a structured local property oversight / owner-representation website for Torrevieja and the southern Costa Blanca.
+Structured local property oversight / owner-representation for Torrevieja and the southern Costa Blanca.
 
-Do not describe Sentinel as:
+Do not describe Sentinel as: concierge · generic property management · rental agency · cleaning-only · keyholding-only
 
-* concierge
-* generic property management
-* rental agency
-* cleaning-only service
-* keyholding-only service
+- PL: Reprezentacja właściciela na miejscu
+- EN: Structured Property Oversight
 
-Core positioning:
-
-* PL: Reprezentacja właściciela na miejscu
-* EN: Structured Property Oversight
-
-Keyholding, cleaning/readiness, guest support, access handling, and operational modules are practical capabilities inside structured oversight. They are not separate package categories.
+Keyholding, cleaning, access, and operational modules are capabilities inside structured oversight — not separate package categories.
 
 ## Golden design rule
 
@@ -34,7 +39,7 @@ Prefer small, reviewable commits.
 
 ## Task protocol
 
-Tasks are given scoped, not as vague design wishes. Expected task shape:
+Tasks are scoped, not vague design wishes. Example:
 
 ```
 Polish only the bridge section. Do not touch hero, packages, estimator, contact, or footer.
@@ -54,47 +59,31 @@ When a task names a section and a golden question:
 
 Do not change unless explicitly instructed:
 
-* pathway slugs:
-
-  * private-use-only
-  * regular-guest-stays
-  * mixed-not-defined
-
-* packages:
-
-  * PL: Podstawowy / Rozszerzony / Pełny
-  * EN: Basic / Extended / Full
-
-* SLA values:
-
-  * Basic / Podstawowy: 48h
-  * Extended / Rozszerzony: 24h
-  * Full / Pełny: same-day
-
+* pathway slugs: `private-use-only` · `regular-guest-stays` · `mixed-not-defined`
+* packages: PL Podstawowy / Rozszerzony / Pełny · EN Basic / Extended / Full
+* SLA: Basic/Podstawowy 48h · Extended/Rozszerzony 24h · Full/Pełny same-day
 * Full emergency authority: €300–500
-
 * estimator matrix and calculation logic
-
 * estimator contact handoff parameters
-
 * contact API/email behavior
-
-* public contact details:
-
-  * [sentinelcostablanca@gmail.com](mailto:sentinelcostablanca@gmail.com)
-  * +34 694 22 90 35
-
+* contact details: sentinelcostablanca@gmail.com · +34 694 22 90 35
 * noindex,nofollow until launch
-
-* service area meaning: Torrevieja + 50–70 km
+* service area: Torrevieja + 50–70 km
+* logo assets per `doc/LOGO-*.md`
 
 ## Required checks before commit
 
-Run:
-
+```bash
 npm run lint
 npm run build
 git diff --check
+```
+
+If build fails on Google Fonts/TLS only:
+
+```bash
+NEXT_TURBOPACK_EXPERIMENTAL_USE_SYSTEM_TLS_CERTS=1 npm run build
+```
 
 For visual changes, also check:
 
@@ -110,49 +99,21 @@ Never use `git add .`.
 
 Stage only the files needed for the requested change.
 
-Do not stage:
-
-* screenshots folders
-* generated QA artifacts
-* temporary scripts
-* zip files
-* `.env` files
-* local config files
+Do not stage: screenshots folders · generated QA artifacts · temporary scripts · zip files · `.env` · local config files
 
 Before commit, show staged files.
 
 ## Visual style
 
-Preferred style:
+Preferred: serious · premium · operational · local · procedural · clear hierarchy · subtle motion when it adds meaning
 
-* serious
-* premium
-* operational
-* restrained
-* local
-* procedural
-* clear hierarchy
-* subtle motion only when it adds meaning
+Avoid: decorative dashboards with no function · fake proof · generic SaaS look · loud animation · glassmorphism excess · repeated explanatory prose · form-like sections unless estimator
 
-Avoid:
-
-* decorative dashboards with no function
-* fake proof
-* generic SaaS look
-* loud animation
-* glassmorphism excess
-* repeated explanatory prose
-* repeated service-area badges everywhere
-* form-like sections unless it is the estimator
+Visual experimentation per `doc/VISUAL-FREEDOM-SPRINT.md` is allowed when scoped. Logo and service contracts stay protected.
 
 ## Motion rules
 
-Motion should be:
-
-* slow
-* restrained
-* purposeful
-* disabled under `prefers-reduced-motion`
+Slow · restrained · purposeful · disabled under `prefers-reduced-motion`
 
 No bouncing, flashing, constant attention-grabbing, or childish pulse effects.
 
