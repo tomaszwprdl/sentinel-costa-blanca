@@ -54,8 +54,8 @@ export default async function AboutPage({
   return (
     <>
       <HeaderClient />
-      <main className="min-h-screen">
-        <Section tone="authority" className="section-primitive--first" id="about-start">
+      <main className="about-page min-h-screen">
+        <Section tone="authority" className="section-primitive--first about-hero" id="about-start">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.62fr)_minmax(20rem,0.38fr)] lg:items-center">
             <div>
               <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
@@ -79,8 +79,8 @@ export default async function AboutPage({
               </div>
             </div>
 
-            <figure className="visual-card-strong overflow-hidden border-authority-on-dark/25 bg-authority-on-dark/5">
-              <div className="relative aspect-[4/3]">
+            <figure className="about-hero-media">
+              <div className="about-hero-media__frame">
                 <Image
                   src="/photos/sentinel-about-local-entry-placeholder.png"
                   alt=""
@@ -94,27 +94,31 @@ export default async function AboutPage({
           </div>
         </Section>
 
-        <Section tone="light">
-          <div className="mb-8 max-w-[780px]">
-            <p className="section-label">{t('redesign.why.eyebrow')}</p>
-            <h2 className="h2-system mt-3">{t('redesign.why.title')}</h2>
-            <p className="mt-3 text-body">{t('redesign.why.intro')}</p>
-          </div>
-          <div className="grid gap-5 lg:grid-cols-3">
-            {whyCards.map((card) => (
-              <article key={card.marker} className="visual-card p-5 md:p-6">
-                <p className="mb-5 text-4xl font-black text-accent">{card.marker}</p>
-                <h3 className="mb-3 text-xl font-black text-heading">{card.title}</h3>
-                <p className="mb-0 text-sm leading-relaxed text-body">{card.body}</p>
-              </article>
-            ))}
-          </div>
-          <div className="notice-panel mt-8">
-            <p className="mb-0 text-body">{t('redesign.why.closing')}</p>
+        <Section tone="light" className="about-section about-section--why">
+          <div className="about-shell">
+            <div className="about-shell__header px-5 py-6 md:px-8">
+              <p className="section-label">{t('redesign.why.eyebrow')}</p>
+              <h2 className="h2-system mt-3">{t('redesign.why.title')}</h2>
+              <p className="mt-3 mb-0 max-w-[62ch] text-body">{t('redesign.why.intro')}</p>
+            </div>
+            <div className="about-why-ledger">
+              {whyCards.map((card) => (
+                <article key={card.marker} className="about-why-ledger__row">
+                  <span className="about-why-ledger__marker">{card.marker}</span>
+                  <div>
+                    <h3 className="mb-2 text-lg font-black text-heading">{card.title}</h3>
+                    <p className="mb-0 max-w-[68ch] text-sm leading-relaxed text-body">{card.body}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div className="about-shell__footer px-5 py-5 md:px-8">
+              <p className="mb-0 max-w-[78ch] text-sm leading-relaxed text-body">{t('redesign.why.closing')}</p>
+            </div>
           </div>
         </Section>
 
-        <Section tone="alt">
+        <Section tone="alt" className="about-section about-section--model">
           <AboutOperatingModel
             eyebrow={t('redesign.model.eyebrow')}
             title={t('redesign.model.title')}
@@ -123,7 +127,7 @@ export default async function AboutPage({
           />
         </Section>
 
-        <Section tone="light">
+        <Section tone="light" className="about-section about-section--boundary">
           <AboutBoundaryGrid
             eyebrow={t('redesign.boundary.eyebrow')}
             title={t('redesign.boundary.title')}
@@ -135,16 +139,16 @@ export default async function AboutPage({
           />
         </Section>
 
-        <Section tone="alt">
+        <Section tone="alt" className="about-section about-section--local">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.48fr)_minmax(0,0.52fr)] lg:items-center">
             <div>
               <p className="section-label">{t('redesign.local.eyebrow')}</p>
               <h2 className="h2-system mt-3">{t('redesign.local.title')}</h2>
               <p className="mt-3 text-body">{t('redesign.local.intro')}</p>
-              <div className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+              <div className="about-local-list mt-6">
                 {localCards.map((card) => (
-                  <article key={card.title} className="rounded-2xl border border-structural-light bg-surface-card p-4">
-                    <h3 className="mb-2 text-base font-black text-heading">{card.title}</h3>
+                  <article key={card.title} className="about-local-list__item">
+                    <h3 className="mb-1 text-base font-black text-heading">{card.title}</h3>
                     <p className="mb-0 text-sm leading-relaxed text-body">{card.body}</p>
                   </article>
                 ))}
@@ -156,27 +160,29 @@ export default async function AboutPage({
           </div>
         </Section>
 
-        <Section tone="light">
-          <div className="mb-8 max-w-[780px]">
-            <p className="section-label">{t('redesign.capabilities.eyebrow')}</p>
-            <h2 className="h2-system mt-3">{t('redesign.capabilities.title')}</h2>
-            <p className="mt-3 text-body">{t('redesign.capabilities.intro')}</p>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {capabilityItems.map((item) => (
-              <article key={item.marker} className="visual-card p-5">
-                <p className="mb-3 text-[11px] font-black uppercase tracking-wide text-accent">{item.marker}</p>
-                <h3 className="mb-3 text-lg font-black text-heading">{item.title}</h3>
-                <p className="mb-0 text-sm leading-relaxed text-body">{item.body}</p>
-              </article>
-            ))}
-          </div>
-          <div className="notice-panel mt-8">
-            <p className="mb-0 text-body">{t('redesign.capabilities.note')}</p>
+        <Section tone="light" className="about-section about-section--capabilities">
+          <div className="about-shell">
+            <div className="about-shell__header px-5 py-6 md:px-8">
+              <p className="section-label">{t('redesign.capabilities.eyebrow')}</p>
+              <h2 className="h2-system mt-3">{t('redesign.capabilities.title')}</h2>
+              <p className="mt-3 mb-0 max-w-[62ch] text-body">{t('redesign.capabilities.intro')}</p>
+            </div>
+            <div className="about-capability-matrix">
+              {capabilityItems.map((item) => (
+                <article key={item.marker} className="about-capability-matrix__cell p-5 md:p-6">
+                  <p className="mb-3 text-[11px] font-black uppercase tracking-wide text-accent">{item.marker}</p>
+                  <h3 className="mb-2 text-base font-black text-heading">{item.title}</h3>
+                  <p className="mb-0 text-sm leading-relaxed text-body">{item.body}</p>
+                </article>
+              ))}
+            </div>
+            <div className="about-shell__footer px-5 py-5 md:px-8">
+              <p className="mb-0 max-w-[78ch] text-sm leading-relaxed text-body">{t('redesign.capabilities.note')}</p>
+            </div>
           </div>
         </Section>
 
-        <Section tone="alt">
+        <Section tone="alt" className="about-section about-section--responsibility">
           <AboutResponsibilityFlow
             eyebrow={t('redesign.responsibility.eyebrow')}
             title={t('redesign.responsibility.title')}
@@ -186,7 +192,7 @@ export default async function AboutPage({
           />
         </Section>
 
-        <Section tone="light">
+        <Section tone="light" className="about-section about-section--details">
           <div className="mb-8 max-w-[780px]">
             <p className="section-label">{t('redesign.details.eyebrow')}</p>
             <h2 className="h2-system mt-3">{t('redesign.details.title')}</h2>
@@ -207,7 +213,7 @@ export default async function AboutPage({
           </div>
         </Section>
 
-        <Section tone="authority">
+        <Section tone="authority" className="about-section about-section--final">
           <div className="max-w-[760px]">
             <h2 className="h2-system text-authority-on-dark">{t('redesign.cta.title')}</h2>
             <p className="text-lg text-authority-on-dark/80 mb-10 leading-relaxed">

@@ -20,29 +20,23 @@ export default function AboutResponsibilityFlow({
   note,
 }: AboutResponsibilityFlowProps) {
   return (
-    <div className="visual-card-strong overflow-hidden">
-      <div className="border-b border-structural-light bg-surface-light-alt px-5 py-6 md:px-8">
-        <p className="section-label">{eyebrow}</p>
+    <div className="about-responsibility-console">
+      <div className="about-responsibility-console__header px-5 py-6 md:px-8">
+        <p className="section-label about-responsibility-console__eyebrow">{eyebrow}</p>
         <h2 className="h2-system mt-3">{title}</h2>
-        <p className="mt-3 max-w-[62ch] text-body">{intro}</p>
+        <p className="mt-3 mb-0 max-w-[62ch]">{intro}</p>
       </div>
-      <div className="relative grid gap-0 md:grid-cols-4">
-        <div className="pointer-events-none absolute left-8 right-8 top-[4.35rem] hidden h-px bg-structural-light md:block" aria-hidden />
+      <div className="about-responsibility-console__steps">
         {steps.map((step) => (
-          <article
-            key={step.marker}
-            className="relative border-b border-structural-light p-5 last:border-b-0 md:border-b-0 md:p-6"
-          >
-            <p className="relative z-10 mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-authority-bg text-xs font-black text-authority-on-dark shadow-[0_0_0_8px_var(--surface-card)]">
-              {step.marker}
-            </p>
-            <h3 className="mb-3 text-lg font-black text-heading">{step.title}</h3>
-            <p className="mb-0 text-sm leading-relaxed text-body">{step.body}</p>
+          <article key={step.marker} className="about-responsibility-console__step p-5 md:p-6">
+            <p className="about-responsibility-console__marker">{step.marker}</p>
+            <h3 className="mb-2 text-lg font-black">{step.title}</h3>
+            <p className="mb-0 text-sm leading-relaxed">{step.body}</p>
           </article>
         ))}
       </div>
-      <div className="border-t border-structural-light bg-surface-light-alt p-5 md:px-8">
-        <p className="mb-0 text-sm leading-relaxed text-muted">{note}</p>
+      <div className="about-responsibility-console__footer px-5 py-4 md:px-8">
+        <p className="mb-0 text-sm leading-relaxed">{note}</p>
       </div>
     </div>
   );

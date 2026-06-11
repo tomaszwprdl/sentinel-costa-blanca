@@ -20,9 +20,9 @@ export default function AboutOperatingModel({
   items,
 }: AboutOperatingModelProps) {
   return (
-    <div className="visual-card-strong overflow-hidden">
+    <div className="about-model-shell">
       <div className="grid gap-0 lg:grid-cols-[minmax(0,0.44fr)_minmax(0,0.56fr)]">
-        <div className="min-h-[340px] bg-surface-light-alt p-4 md:p-5">
+        <div className="about-model-shell__diagram p-4 md:p-5">
           <ResponsibilityStructureDiagram className="h-full min-h-[300px]" />
         </div>
         <div className="p-5 md:p-8">
@@ -30,12 +30,10 @@ export default function AboutOperatingModel({
           <h2 className="h2-system mt-3">{title}</h2>
           <p className="mt-3 text-body">{intro}</p>
 
-          <div className="mt-7 grid gap-3">
+          <div className="about-model-rail mt-7">
             {items.map((item) => (
-              <article key={item.marker} className="grid grid-cols-[3rem_minmax(0,1fr)] gap-4 rounded-2xl border border-structural-light bg-surface-light-alt p-4">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-authority-bg text-xs font-black text-authority-on-dark">
-                  {item.marker}
-                </span>
+              <article key={item.marker} className="about-model-rail__row">
+                <span className="about-model-rail__marker">{item.marker}</span>
                 <div>
                   <h3 className="mb-1 text-base font-black text-heading">{item.title}</h3>
                   <p className="mb-0 text-sm leading-relaxed text-body">{item.body}</p>

@@ -20,22 +20,21 @@ function BoundaryColumn({
 }: {
   title: string;
   items: BoundaryItem[];
-  tone: 'positive' | 'negative';
+  tone: 'is' | 'isnot';
 }) {
   return (
-    <div className="visual-card p-5 md:p-6">
-      <h3 className="mb-5 text-xl font-black text-heading">{title}</h3>
-      <div className="grid gap-3">
+    <div className={`about-boundary-board__col about-boundary-board__col--${tone}`}>
+      <h3 className="about-boundary-board__title">{title}</h3>
+      <div className="about-boundary-board__items">
         {items.map((item, index) => (
-          <article
-            key={item.title}
-            className="rounded-2xl border border-structural-light bg-surface-light-alt p-4"
-          >
-            <p className={`mb-2 text-[11px] font-black uppercase tracking-wide ${tone === 'positive' ? 'text-accent' : 'text-muted'}`}>
+          <article key={item.title} className="about-boundary-board__item">
+            <p className="about-boundary-board__marker">
               {String(index + 1).padStart(2, '0')}
             </p>
-            <h4 className="mb-1 text-base font-black text-heading">{item.title}</h4>
-            <p className="mb-0 text-sm leading-relaxed text-body">{item.body}</p>
+            <div>
+              <h4 className="mb-1 text-base font-black text-heading">{item.title}</h4>
+              <p className="mb-0 text-sm leading-relaxed text-body">{item.body}</p>
+            </div>
           </article>
         ))}
       </div>
@@ -59,9 +58,9 @@ export default function AboutBoundaryGrid({
         <h2 className="h2-system mt-3">{title}</h2>
         <p className="mt-3 text-body">{intro}</p>
       </div>
-      <div className="grid gap-5 lg:grid-cols-2">
-        <BoundaryColumn title={isTitle} items={isItems} tone="positive" />
-        <BoundaryColumn title={isNotTitle} items={isNotItems} tone="negative" />
+      <div className="about-boundary-board">
+        <BoundaryColumn title={isTitle} items={isItems} tone="is" />
+        <BoundaryColumn title={isNotTitle} items={isNotItems} tone="isnot" />
       </div>
     </div>
   );
