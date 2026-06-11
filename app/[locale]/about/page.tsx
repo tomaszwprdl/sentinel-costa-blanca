@@ -221,10 +221,10 @@ export default async function AboutPage({
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link href={`/${locale}/contact`} className="btn-primary !bg-surface-light !text-authority hover:!bg-surface-light-alt !border-surface-light">
-                {tCommon('nav.contact')}
+                {t('redesign.cta.primaryCta')}
               </Link>
               <Link href={`/${locale}/services`} className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
-                {tCommon('nav.services')}
+                {t('redesign.cta.secondaryCta')}
               </Link>
             </div>
           </div>

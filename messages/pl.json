@@ -2494,7 +2494,7 @@
         "eyebrow": "Sentinel Costa Blanca",
         "headline": "Stworzony dla właścicieli, których nie ma na miejscu",
         "lead": "Sentinel to reprezentacja właściciela na miejscu dla osób posiadających nieruchomość na południowym Costa Blanca. Model porządkuje lokalną obecność, dostęp, dokumentację i decyzje właściciela w określonym zakresie operacyjnym.",
-        "primaryCta": "Poproś o przegląd zakresu",
+        "primaryCta": "Rozpocznij zapytanie",
         "secondaryCta": "Zobacz zakres usług",
         "facts": [
           { "label": "Obszar", "value": "Torrevieja + 50-70 km" },
@@ -2515,7 +2515,7 @@
       },
       "model": {
         "eyebrow": "Model działania",
-        "title": "Wiarygodność wynika z kontroli nad sposobem pracy.",
+        "title": "Sentinel działa według ustalonego sposobu pracy na miejscu.",
         "intro": "Model jest celowo uporządkowany. Określa, kiedy Sentinel jest na miejscu, co może sprawdzić, jak używany jest dostęp i kiedy decyzja wraca do właściciela.",
         "items": [
           { "marker": "01", "title": "Lokalna obecność", "body": "Praca odbywa się w realistycznym obszarze obsługi, a nie z odległego punktu koordynacji." },
@@ -2559,7 +2559,7 @@
       },
       "capabilities": {
         "eyebrow": "Zdolność bez przesady",
-        "title": "Sentinel może działać, bo praktyczne funkcje są częścią systemu nadzoru.",
+        "title": "Klucze, dostęp i gotowość lokalu wspierają ustalony nadzór.",
         "intro": "Klucze, przygotowanie lokalu, dostęp, kontrole, raportowanie i koordynacja wykonawców są funkcjami operacyjnymi. Nie zmieniają Sentinel w firmę sprzątającą, concierge ani agencję wynajmu.",
         "items": [
           { "marker": "Klucze", "title": "Podstawa dostępu", "body": "Klucze albo metody wejścia są przechowywane i używane zgodnie z ustaleniami." },
@@ -2585,8 +2585,8 @@
       },
       "details": {
         "eyebrow": "Szczegółowe granice",
-        "title": "Logika działania pozostaje dostępna, ale nie dominuje strony.",
-        "intro": "Poniższe sekcje zachowują ważne szczegóły dla właścicieli, którzy chcą sprawdzić dopasowanie przed kontaktem.",
+        "title": "Dodatkowe granice usługi.",
+        "intro": "Szczegóły modelu pakietowego, obszaru działania i odpowiedzialności są dostępne przed podjęciem decyzji.",
         "items": {
           "model": {
             "title": "Model pakietowy",
@@ -2606,8 +2606,10 @@
         }
       },
       "cta": {
-        "title": "Potraktuj stronę O nas jako sprawdzenie dopasowania.",
-        "intro": "Jeżeli ten model pasuje do nieruchomości, następnym krokiem jest przegląd zakresu. Jeżeli potrzebne jest otwarte zarządzanie nieruchomością albo usługa concierge, Sentinel nie jest właściwą kategorią."
+        "title": "Sprawdź, czy sposób działania Sentinel pasuje do Twojej nieruchomości.",
+        "intro": "Jeżeli obszar działania, zakres odpowiedzialności i sposób komunikacji odpowiadają Twojej sytuacji, rozpocznij zapytanie.",
+        "primaryCta": "Rozpocznij zapytanie",
+        "secondaryCta": "Zobacz usługi"
       }
     }
   },

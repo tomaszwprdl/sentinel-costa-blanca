@@ -2494,7 +2494,7 @@
         "eyebrow": "Sentinel Costa Blanca",
         "headline": "Built for owners who are not on site",
         "lead": "Sentinel is Structured Property Oversight for remote owners on the southern Costa Blanca. The model exists so local presence, access, documentation, and owner decisions are handled inside a defined operating scope.",
-        "primaryCta": "Request structured review",
+        "primaryCta": "Start an inquiry",
         "secondaryCta": "View service scope",
         "facts": [
           { "label": "Area", "value": "Torrevieja + 50-70 km" },
@@ -2515,7 +2515,7 @@
       },
       "model": {
         "eyebrow": "Operating model",
-        "title": "Credibility comes from how the work is controlled.",
+        "title": "Sentinel works through a defined on-site operating method.",
         "intro": "The model is deliberately structured. It defines when Sentinel is present, what can be checked, how access is handled, and when a decision returns to the owner.",
         "items": [
           { "marker": "01", "title": "Local presence", "body": "Work happens inside a realistic service area, not from a distant coordination desk." },
@@ -2539,7 +2539,7 @@
           { "title": "Structured escalation", "body": "Clear owner approval points when authority or scope is exceeded." }
         ],
         "isNotItems": [
-          { "title": "Concierge", "body": "No open-ended errands, lifestyle tasks, or undefined assistance." },
+          { "title": "Concierge", "body": "No open-ended errands, lifestyle tasks, or open-ended personal help." },
           { "title": "Rental agency", "body": "No booking platform role or rental-business management." },
           { "title": "General contractor", "body": "No construction execution or guarantee of third-party work quality." },
           { "title": "Unlimited emergency service", "body": "Response and authority are defined by package and agreed limits." },
@@ -2559,7 +2559,7 @@
       },
       "capabilities": {
         "eyebrow": "Capability without exaggeration",
-        "title": "Sentinel can act because practical functions sit inside the oversight system.",
+        "title": "Keys, access, and property readiness support the agreed oversight scope.",
         "intro": "Keys, cleaning readiness, access, checks, reporting, and contractor coordination are operational capabilities. They do not turn Sentinel into a cleaning company, concierge, or rental agency.",
         "items": [
           { "marker": "Keyholding", "title": "Access basis", "body": "Keys or access methods are held and used according to the agreement." },
@@ -2581,12 +2581,12 @@
           { "marker": "03", "title": "Documentation after action", "body": "Visits, access events, observations, and relevant decisions leave a record." },
           { "marker": "04", "title": "Owner approval above limits", "body": "Financial or operational decisions outside authority return to the owner." }
         ],
-        "note": "This is why Sentinel can be commercially useful without becoming an undefined property-management promise."
+        "note": "This is why Sentinel can be commercially useful without becoming open-ended property management."
       },
       "details": {
         "eyebrow": "Detailed boundaries",
-        "title": "The operating logic remains available without becoming the page.",
-        "intro": "The sections below preserve important detail for owners who need to verify fit before contact.",
+        "title": "Further service boundaries.",
+        "intro": "Details on the package model, service area, and responsibility limits remain available before a decision is made.",
         "items": {
           "model": {
             "title": "Package-based model",
@@ -2606,8 +2606,10 @@
         }
       },
       "cta": {
-        "title": "Use the About page as a fit check.",
-        "intro": "If the model fits your property, the next step is a structured review. If you need open-ended property management or concierge support, Sentinel is not the correct category."
+        "title": "Check whether Sentinel's operating model fits your property.",
+        "intro": "If the service area, responsibility boundaries, and communication model fit your situation, start an inquiry.",
+        "primaryCta": "Start an inquiry",
+        "secondaryCta": "View services"
       }
     }
   },
