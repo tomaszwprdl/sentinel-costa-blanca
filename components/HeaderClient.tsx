@@ -144,7 +144,7 @@ export default function HeaderClient() {
           aria-hidden={!navOpen}
         >
           <div className="container py-3">
-            <div className="mb-3 flex items-center gap-4 border-b border-structural-light pb-3">
+            <div className="mobile-nav-controls flex items-center gap-4 border-b border-structural-light">
               <LanguageControl />
               <ThemeSwitch />
             </div>

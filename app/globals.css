@@ -3714,6 +3714,19 @@ textarea:focus {
   box-shadow: 0 22px 44px rgba(0, 0, 0, 0.3);
 }
 
+.mobile-nav-panel .container {
+  padding-block: 0.85rem;
+}
+
+.mobile-nav-controls {
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.8rem;
+}
+
+.mobile-nav-link {
+  padding: 0.95rem 1rem;
+}
+
 .mobile-nav-link[aria-current="page"],
 .mobile-nav-link[aria-current="page"]:hover {
   background: var(--authority-bg);
