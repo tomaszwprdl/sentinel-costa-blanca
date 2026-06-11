@@ -23,14 +23,16 @@ export default function ContactUnsuitableGrid({
         <h2 className="h2-system mt-3">{title}</h2>
         <p className="mt-3 text-body">{intro}</p>
       </div>
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="contact-unsuitable-ledger">
         {items.map((item, index) => (
-          <article key={item.title} className="visual-card p-5">
-            <p className="mb-3 text-[11px] font-black uppercase tracking-wide text-muted">
+          <article key={item.title} className="contact-unsuitable-ledger__item">
+            <p className="contact-unsuitable-ledger__marker">
               {String(index + 1).padStart(2, '0')}
             </p>
-            <h3 className="mb-2 text-lg font-black text-heading">{item.title}</h3>
-            <p className="mb-0 text-sm leading-relaxed text-body">{item.body}</p>
+            <div>
+              <h3 className="mb-1 text-base font-black text-heading">{item.title}</h3>
+              <p className="mb-0 text-sm leading-relaxed text-body">{item.body}</p>
+            </div>
           </article>
         ))}
       </div>

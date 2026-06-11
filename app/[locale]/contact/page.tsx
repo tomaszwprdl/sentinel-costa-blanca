@@ -226,8 +226,8 @@ function ContactPageInner() {
     return (
       <>
         <HeaderClient />
-        <main className="min-h-screen">
-          <Section tone="authority" className="section-primitive--first">
+        <main className="contact-page min-h-screen">
+          <Section tone="authority" className="section-primitive--first contact-hero">
             <div className="max-w-[760px]">
               <p className="hero-kicker">{t('redesign.confirmation.eyebrow')}</p>
               <h1 className="hero-display max-w-[16ch]">{t('redesign.confirmation.headline')}</h1>
@@ -274,8 +274,8 @@ function ContactPageInner() {
   return (
     <>
       <HeaderClient />
-      <main className="min-h-screen">
-        <Section tone="authority" className="section-primitive--first" id="contact-start">
+      <main className="contact-page min-h-screen">
+        <Section tone="authority" className="section-primitive--first contact-hero" id="contact-start">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.62fr)_minmax(20rem,0.38fr)] lg:items-center">
             <div>
               <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
@@ -299,8 +299,8 @@ function ContactPageInner() {
               </div>
             </div>
 
-            <figure className="visual-card-strong overflow-hidden border-authority-on-dark/25 bg-authority-on-dark/5">
-              <div className="relative aspect-[4/3] bg-surface-light">
+            <figure className="contact-hero-media">
+              <div className="contact-hero-media__frame bg-surface-light">
                 <Image
                   src="/visuals/sentinel-contact-intake-path.svg"
                   alt=""
@@ -315,7 +315,7 @@ function ContactPageInner() {
           </div>
         </Section>
 
-        <Section tone="light">
+        <Section tone="light" className="contact-section contact-section--method">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.58fr)_minmax(18rem,0.42fr)] lg:items-start">
             <div>
               <p className="section-label">{t('redesign.method.eyebrow')}</p>
@@ -336,7 +336,7 @@ function ContactPageInner() {
           </div>
         </Section>
 
-        <Section tone="alt" id="intake-form">
+        <Section tone="alt" id="intake-form" className="contact-section contact-section--intake">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.34fr)_minmax(0,0.66fr)] lg:items-start">
             <aside className="lg:sticky lg:top-28">
               <p className="section-label">{t('redesign.form.eyebrow')}</p>
@@ -348,7 +348,7 @@ function ContactPageInner() {
               </p>
             </aside>
 
-            <div>
+            <div className="contact-intake-shell p-4 md:p-6">
               {pathwayKey && (
                 <div className="visual-card p-5 mb-5">
                   <h3 className="text-base font-black text-heading">{t('pathwayContext.title')}</h3>
@@ -633,7 +633,7 @@ function ContactPageInner() {
           </div>
         </Section>
 
-        <Section tone="light" id="prepare">
+        <Section tone="light" id="prepare" className="contact-section contact-section--prepare">
           <ContactPreparationChecklist
             eyebrow={t('redesign.prepare.eyebrow')}
             title={t('redesign.prepare.title')}
@@ -642,7 +642,7 @@ function ContactPageInner() {
           />
         </Section>
 
-        <Section tone="alt">
+        <Section tone="alt" className="contact-section contact-section--routes">
           <ContactRouteCards
             eyebrow={t('redesign.routes.eyebrow')}
             title={t('redesign.routes.title')}
@@ -651,16 +651,16 @@ function ContactPageInner() {
           />
         </Section>
 
-        <Section tone="light">
+        <Section tone="light" className="contact-section contact-section--fit">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.52fr)_minmax(0,0.48fr)] lg:items-center">
             <div>
               <p className="section-label">{t('redesign.fit.eyebrow')}</p>
               <h2 className="h2-system mt-3">{t('redesign.fit.title')}</h2>
               <p className="mt-3 text-body">{t('redesign.fit.intro')}</p>
-              <div className="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+              <div className="contact-fit-list mt-6">
                 {fitCards.map((card) => (
-                  <article key={card.title} className="rounded-2xl border border-structural-light bg-surface-card p-4">
-                    <h3 className="mb-2 text-base font-black text-heading">{card.title}</h3>
+                  <article key={card.title} className="contact-fit-list__item">
+                    <h3 className="mb-1 text-base font-black text-heading">{card.title}</h3>
                     <p className="mb-0 text-sm leading-relaxed text-body">{card.body}</p>
                   </article>
                 ))}
@@ -675,7 +675,7 @@ function ContactPageInner() {
           </div>
         </Section>
 
-        <Section tone="alt">
+        <Section tone="alt" className="contact-section contact-section--unsuitable">
           <ContactUnsuitableGrid
             eyebrow={t('redesign.unsuitable.eyebrow')}
             title={t('redesign.unsuitable.title')}
@@ -684,7 +684,7 @@ function ContactPageInner() {
           />
         </Section>
 
-        <Section tone="light">
+        <Section tone="light" className="contact-section contact-section--after">
           <ContactAfterSubmitSteps
             eyebrow={t('redesign.afterSubmit.eyebrow')}
             title={t('redesign.afterSubmit.title')}
@@ -693,26 +693,25 @@ function ContactPageInner() {
           />
         </Section>
 
-        <Section tone="light" className="!pt-10">
-          <div className="visual-card-strong overflow-hidden">
-            <div className="grid gap-0 lg:grid-cols-[minmax(0,0.68fr)_minmax(18rem,0.32fr)]">
-              <div className="p-5 md:p-8">
-                <p className="section-label">{t('redesign.form.eyebrow')}</p>
-                <h2 className="h2-system mt-3">{t('redesign.finalCta.title')}</h2>
-                <p className="mt-4 max-w-[62ch] text-lg leading-relaxed text-body">
-                  {t('redesign.finalCta.intro')}
-                </p>
-              </div>
-              <div className="border-t border-structural-light bg-surface-light-alt p-5 md:p-8 lg:border-l lg:border-t-0">
-                <div className="flex flex-col gap-4">
-                  <Link href="#intake-form" className="btn-primary">
-                    {t('form.submitButton')}
-                  </Link>
-                  <Link href={`/${locale}/services`} className="btn-secondary">
-                    {tCommon('nav.services')}
-                  </Link>
-                </div>
-              </div>
+        <Section tone="authority" className="contact-section contact-section--final">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.68fr)_minmax(16rem,0.32fr)] lg:items-end">
+            <div>
+              <p className="section-label text-authority-on-dark/70">{t('redesign.form.eyebrow')}</p>
+              <h2 className="h2-system mt-3 text-authority-on-dark">{t('redesign.finalCta.title')}</h2>
+              <p className="mt-4 max-w-[62ch] text-lg leading-relaxed text-authority-on-dark/86">
+                {t('redesign.finalCta.intro')}
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 lg:items-stretch">
+              <Link href="#intake-form" className="btn-primary !border-surface-light !bg-surface-light !text-authority hover:!bg-surface-light-alt">
+                {t('form.submitButton')}
+              </Link>
+              <Link
+                href={`/${locale}/services`}
+                className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority"
+              >
+                {tCommon('nav.services')}
+              </Link>
             </div>
           </div>
         </Section>

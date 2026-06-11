@@ -22,24 +22,24 @@ export default function ContactMethodPanel({
   note,
 }: ContactMethodPanelProps) {
   return (
-    <aside className="visual-card-strong p-5 md:p-6">
+    <aside className="contact-method-panel p-5 md:p-6">
       <p className="section-label">{eyebrow}</p>
       <h2 className="mt-3 text-2xl font-black text-heading">{title}</h2>
-      <dl className="mt-6 space-y-4 text-body">
-        <div>
-          <dt className="text-xs font-black uppercase tracking-wide text-muted">{emailLabel}</dt>
-          <dd className="mt-1 [overflow-wrap:anywhere] text-base font-bold text-heading">{email}</dd>
+      <dl className="contact-method-panel__items mt-5 text-body">
+        <div className="contact-method-panel__row">
+          <dt>{emailLabel}</dt>
+          <dd className="[overflow-wrap:anywhere]">{email}</dd>
         </div>
-        <div>
-          <dt className="text-xs font-black uppercase tracking-wide text-muted">{phoneLabel}</dt>
-          <dd className="mt-1 text-base font-bold text-heading">{phone}</dd>
+        <div className="contact-method-panel__row">
+          <dt>{phoneLabel}</dt>
+          <dd>{phone}</dd>
         </div>
-        <div>
-          <dt className="text-xs font-black uppercase tracking-wide text-muted">{hoursLabel}</dt>
-          <dd className="mt-1 text-base font-bold text-heading">{hours}</dd>
+        <div className="contact-method-panel__row">
+          <dt>{hoursLabel}</dt>
+          <dd>{hours}</dd>
         </div>
       </dl>
-      <p className="mt-5 mb-0 text-sm leading-relaxed text-muted">{note}</p>
+      <p className="mt-4 mb-0 text-sm leading-relaxed text-muted">{note}</p>
     </aside>
   );
 }
