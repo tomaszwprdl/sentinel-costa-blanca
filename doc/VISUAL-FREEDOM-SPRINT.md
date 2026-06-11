@@ -1,45 +1,58 @@
 # VISUAL-FREEDOM-SPRINT.md — SENTINEL
 
-**Status:** Active launch-era visual direction  
+**Status:** Active canonical visual system (executed on `main`)
 **Scope:** Website execution only — not logo assets, not service contracts
 
 ---
 
 # Position
 
-**Build-era website visual restrictions are suspended. Business contracts remain protected.**
+**The visual composition rebuild has been executed. This document is current system guidance, not a future sprint proposal.**
 
-Build-era visual restraint is suspended; **mature operational credibility remains required.**
+Sentinel uses **one art-directed visual atmosphere** — not a user-selectable light/dark app skin.
 
-The site should feel like a **real local operating company**, not a policy document.
+**Canonical mode (active):**
+
+- Dark cinematic hero and authority bands
+- Warm paper body sections
+- Dark final CTA and footer
+- Controlled copper / sea / clay accents
+- Premium editorial contrast
+- **No public theme toggle**
+
+Build-era visual restraint is retired. **Mature operational credibility remains required.**
+
+The site should feel like a **real local operating company**, not a policy document — and it may look premium, warm, tactile, and visually excellent while boundaries stay clear.
 
 ---
 
 # What stays protected
 
 - Sentinel name and PL/EN descriptors
-- Logo geometry, colors, and usage rules
+- Logo geometry, colors, and usage rules (`LOGO-*.md`)
 - No concierge / rental-management / lifestyle positioning
 - Service boundaries and qualification logic
 - Readable hierarchy, accessibility, mobile sanity
 
 ---
 
-# Direction
+# What is flexible (and encouraged when Owner-scoped)
 
-- Warm local operations — Costa Blanca context without resort cliché
-- Image-led first screen **allowed** where it aids recognition
-- Tactile property context (materials, light, real spaces — no stock luxury)
-- Proof-led modules (checklists, registers, access logic — no fake testimonials)
-- Stronger usage-situation choice cards
-- Warmer surfaces and clearer visual rhythm
-- Less “policy PDF,” more operational presence
+Future visual work may use:
+
+- Colors, gradients, and evolved palette (reference tokens below are **directional**, not a hard cage)
+- Imagery, photography, SVG/CSS visual systems, generated assets
+- Section, full-page, or whole-site composition shifts
+- Motion when slow, purposeful, and `prefers-reduced-motion` safe
+- Cinematic surfaces, depth, image-led composition, editorial treatment
+
+Do **not** recreate a dual global theme system unless the Owner explicitly asks.
 
 ---
 
-# Experimental website palette
+# Reference palette (directional)
 
-These colors are for **website surfaces**, not a new logo palette:
+These colors guide website surfaces — not a new logo palette:
 
 | Token | Hex |
 |-------|-----|
@@ -55,25 +68,41 @@ These colors are for **website surfaces**, not a new logo palette:
 | Muted | `#6f7883` |
 
 Logo colors remain per `LOGO-GEOMETRY-SPEC.md`.  
-Palette may evolve if coherent, accessible (WCAG AA body text), and logo-compatible.
+Palette may evolve freely if coherent, accessible (WCAG AA body text), and logo-compatible.
 
-Identity reference palette in `DECISIONS.md` §13.1 remains valid for logo/identity reference.
+Identity reference palette in `DECISIONS.md` §13.1 remains valid for logo/identity reference only.
+
+---
+
+# Composition rebuild (merged)
+
+The following are **live on `main`**, not pending:
+
+- Full-bleed pathway heroes and editorial body rails
+- Ink/paper split bands and enlarged Services console
+- How It Works chapter numerals, About is/is-not split
+- Unified final CTA / footer handoff
+- Clickable contact email/phone in contact surfaces
+- Single canonical visual mode (`data-theme="sentinel"`); legacy `sentinel-theme` localStorage neutralized
+
+Refinement after live review is normal. Rebuild-from-scratch is not required unless Owner briefs it.
 
 ---
 
 # Execution notes
 
-- Work **section by section** with Owner-approved briefs.
+- Work may be section-by-section **or** full-page / whole-site when Owner-scoped.
 - Do not silently change protected copy or service meaning.
 - Motion: slow, purposeful, `prefers-reduced-motion` respected.
-- Active docs govern; removed build-era visual specs do not block this sprint.
+- Active docs govern; removed build-era visual specs do not block approved work.
 
 ---
 
-# Out of scope for this sprint
+# Out of scope
 
 - Estimator logic or pricing matrix
 - Contact API / form schema
 - Legal substance
 - Pathway slug or package model changes
 - DNS, Netlify, indexing
+- Public theme toggle without Owner approval

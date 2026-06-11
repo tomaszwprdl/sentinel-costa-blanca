@@ -4,11 +4,12 @@ Entry point for AI coding agents in this repository.
 
 ## Current state
 
-- **Website/code stability SHA:** `28ccca2`
-- **Documentation governance SHA:** `6a0d0f7`
-- **Phase:** Launch-era — Visual Freedom Sprint active; readiness audits next
+- **Latest main / website SHA:** `e5fa7bb`
+- **Documentation governance SHA:** `6a0d0f7` (launch-era reset baseline)
+- **Phase:** Launch-era — visual composition rebuild **merged**; unified canonical visual mode **active**; final tuning + readiness audits
+- **Visual:** One art-directed Sentinel atmosphere — dark authority bands, warm paper body, dark final CTA/footer; **no public theme toggle**
 - Build-era task/audit docs were **removed** from the repo and are no longer active authority
-- Old “no visual experimentation” rules are **retired**
+- Old “no visual experimentation” and dual-theme rules are **retired**
 
 ## Read first (in order)
 
@@ -69,9 +70,11 @@ Do not change DNS, Netlify production, or env unless explicitly instructed.
 
 ## Visual work
 
-Visual experimentation is allowed when explicitly scoped and aligned with `doc/VISUAL-FREEDOM-SPRINT.md`.
+Build on the **canonical visual mode** merged on `main`. Visual work may be bold when Owner-scoped — full-section, full-page, imagery, color, motion, generated assets — per `doc/VISUAL-FREEDOM-SPRINT.md`.
 
-Website palette, imagery, surfaces, card/panel treatment, rhythm, warmth, contrast, and atmosphere may evolve. Logo assets and business/service contracts remain protected.
+Do **not** recreate a dual global theme system or public theme toggle unless Owner explicitly asks.
+
+Logo assets and business/service contracts remain protected.
 
 Still avoid:
 

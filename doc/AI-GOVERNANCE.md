@@ -57,11 +57,11 @@ Details: `WORKFLOW.md` · `AGENT-BRIEFING.md`
 
 # 5. Visual work
 
-Build-era “no visual experimentation” rules are **retired**.
+Build-era “no visual experimentation” rules and dual global theme work are **retired**.
 
-Website visual execution is **CONSTRAINED / EXPERIMENTAL** per `DECISIONS.md` §12 and `VISUAL-FREEDOM-SPRINT.md`.
+Visual composition rebuild is **merged** (`e5fa7bb`). The site uses **one canonical visual atmosphere** with **no public theme toggle** — per `DECISIONS.md` §12.3 and `VISUAL-FREEDOM-SPRINT.md`.
 
-Logo assets remain **LOCKED** per `LOGO-*.md`.
+Future visual work may be bold when Owner-scoped. Logo assets remain **LOCKED** per `LOGO-*.md`.
 
 ---
 

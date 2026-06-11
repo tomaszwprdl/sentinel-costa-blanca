@@ -8,12 +8,16 @@ Short briefing for Cursor, Codex, and Cloudie.
 
 - **Product:** Sentinel Costa Blanca — structured local owner representation (Torrevieja + ~50–70 km).
 - **Website:** Pre-live, soft-launch review ready. `noindex,nofollow` active.
-- **Phase:** Launch-era documentation reset complete; Visual Freedom Sprint and readiness audits next.
-- **Latest website/code stability SHA:** `28ccca2` (no website code change in doc-only commits).
+- **Phase:** Launch-era — visual composition rebuild merged; final visual tuning + readiness audits.
+- **Latest main / website SHA:** `e5fa7bb` (composition rebuild + unified canonical visual mode).
 - **Launch-era governance baseline SHA:** `6a0d0f7` (reset + alignment + root entry points).
 - **Optional cognitive audit tool added:** `96fef3e` (`COGNITIVE-PAGE-AUDIT.md`).
 
-**Visual experimentation is allowed. Old build-era visual doctrine is no longer hard law.**
+**Visual composition rebuild is merged. The site uses one canonical Sentinel atmosphere — not a toggleable app skin.**
+
+Canonical mode: dark cinematic hero / authority bands · warm paper body sections · dark final CTA / footer · controlled copper / sea / clay accents · **no public dark/light theme toggle**.
+
+Future visual work should **build on canonical mode**, not recreate dual themes.
 
 ---
 
@@ -40,12 +44,12 @@ Full list: `DECISIONS.md`
 
 # Flexible visual areas
 
-Website execution may evolve:
+Website execution may evolve when Owner-scoped:
 
-- Page palette and surfaces
-- Section composition and rhythm
-- Imagery and proof modules
-- Card/panel treatment, warmth, contrast, atmosphere
+- Page palette, gradients, and surfaces (reference palette is directional, not a cage)
+- Section and full-page composition, imagery, SVG/CSS visual systems
+- Card/panel treatment, warmth, contrast, atmosphere, motion
+- Generated assets and bold composition shifts
 
 Logo rules apply to the **logo**, not every surrounding surface.
 
@@ -59,7 +63,7 @@ Layout: `LAYOUT COMPOSITION.md` (guidance, not blocker)
 | Role | Responsibility |
 |------|----------------|
 | **Owner** | Final authority, approvals, launch, legal, pricing |
-| **Creative Director** | Visual direction and sprint briefs |
+| **Creative Director** | Visual direction and scoped visual briefs |
 | **Cursor** | Scoped implementation in repo |
 | **Cloudie** | Deployment, DNS, Netlify, production risk |
 | **Codex** | Deeper refactors, audits, multi-file work |
@@ -74,7 +78,7 @@ Layout: `LAYOUT COMPOSITION.md` (guidance, not blocker)
 - No screenshots or QA artifacts in commits.
 - `npm run lint` and `npm run build` before commit/push.
 - User-facing copy in `messages/pl.json` and `messages/en.json`.
-- Report changed files; no push unless Owner approves.
+- Report changed files; push only when Owner approves (docs-only alignment may push when briefed).
 
 Details: `WORKFLOW.md`
 
@@ -88,16 +92,16 @@ Details: `WORKFLOW.md`
 - Pathway slug renames
 - Package or SLA definitions
 - Removed build-era docs treated as active law
+- Reintroducing a public theme toggle or dual global theme system
 
 ---
 
 # Current next phase
 
-1. Optional Visual Freedom Sprint (Owner-scoped sections).
-2. Technical readiness audit.
-3. Production contact email verification.
-4. Legal/entity/GDPR review.
-5. Final pricing confirmation.
-6. Remove noindex + final smoke test when approved.
+1. Live visual smoke + short corrective patches if needed (header, mobile density, contact form comfort).
+2. Production contact email verification.
+3. Legal/entity/GDPR review.
+4. Final pricing confirmation.
+5. Remove noindex + final smoke test when approved.
 
 Checklist: `LAUNCH-CHECKLIST.md`

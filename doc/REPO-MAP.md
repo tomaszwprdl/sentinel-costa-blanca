@@ -45,7 +45,7 @@ Static assets including logo files.
 | `AGENT-BRIEFING.md` | Agent quick briefing |
 | `WORKFLOW.md` | Git/build discipline |
 | `LAUNCH-CHECKLIST.md` | Owner launch checklist |
-| `VISUAL-FREEDOM-SPRINT.md` | Website visual direction |
+| `VISUAL-FREEDOM-SPRINT.md` | Canonical visual system (composition rebuild merged) |
 | `AI-GOVERNANCE.md` | Lean agent governance |
 | `BRAND.md` | Brand meaning |
 | `SERVICE-STRUCTURING.md` | Service architecture |

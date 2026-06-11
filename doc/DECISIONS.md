@@ -136,15 +136,32 @@ Polish primary. English structurally equal. PL/EN parity required.
 
 ## 12.2 Website visual execution (CONSTRAINED / EXPERIMENTAL)
 
-**Website visual execution is now CONSTRAINED / EXPERIMENTAL, not LOCKED.**
+**Website visual execution is CONSTRAINED / EXPERIMENTAL, not LOCKED.**
 
-Visual experimentation is allowed when it improves clarity, authority, perceived quality, and compatibility with the Sentinel logo.
+The visual composition rebuild is **merged on `main`** (`e5fa7bb`). Future work builds on the live canonical system — it does not revert to build-era restraint.
 
-**Flexible (Owner-approved sprint work):** color palette on pages · section composition · page rhythm · imagery · proof modules · card/panel treatment · warmth · contrast · atmosphere
+**Flexible (Owner-approved work):** color palette on pages · section or full-page composition · page rhythm · imagery · SVG/CSS visual systems · proof modules · card/panel treatment · warmth · contrast · atmosphere · motion · generated assets
 
 **Still protected:** logo asset integrity · no concierge / rental-management / lifestyle positioning · readable hierarchy · mobile sanity · accessibility
 
 Direction: `VISUAL-FREEDOM-SPRINT.md`
+
+## 12.3 Canonical visual mode (LOCKED until Owner overrides)
+
+**Decision:** The public website uses **one art-directed visual atmosphere**, not a user-selectable light/dark theme.
+
+**Status:** LOCKED (website behavior)
+
+- Dark cinematic hero / authority bands
+- Warm paper body sections
+- Dark final CTA / footer
+- Controlled copper / sea / clay accents
+- **No public dark/light theme toggle**
+- OS/browser dark preference must not create a second global visual state
+
+**Flexible under Owner-approved visual work:** palette evolution · gradients · imagery · composition shifts · motion · generated assets — as long as logo integrity, accessibility, and service boundaries remain intact.
+
+Do not recreate a dual global theme system unless the Owner explicitly requests it.
 
 ---
 
@@ -158,13 +175,13 @@ Primary Authority `#203A5F` · Primary Support `#2E507A` · Base `#F4F6F8` · St
 
 Legacy percentage distribution rules are **historical guidance**, not hard law for website pages.
 
-## 13.2 Website experimental palette (CONSTRAINED)
+## 13.2 Website reference palette (CONSTRAINED — directional, not a cage)
 
-Allowed for website surfaces during launch-era visual work (not logo palette):
+Reference tokens for website surfaces (not logo palette). The live canonical mode uses these directionally; they are **not** a hard limit:
 
 Ink `#10263f` · Navy `#163b5c` · Sea `#2f6f73` · Stone `#f2eee6` · Paper `#fffaf2` · Clay `#b8664a` · Copper `#d29a57` · Sage `#738b7c` · Line `#d8cdbc` · Muted `#6f7883`
 
-Colors may evolve if coherent and accessible. WCAG AA for body text remains required.
+Colors may evolve freely if coherent and accessible. WCAG AA for body text remains required.
 
 ---
 

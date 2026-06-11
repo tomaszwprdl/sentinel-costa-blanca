@@ -29,6 +29,8 @@ git diff --check
 - [ ] Logo legible on changed headers/footers
 - [ ] Focus states still visible on interactive elements
 - [ ] `prefers-reduced-motion` — no essential meaning only in animation
+- [ ] **No public theme toggle** in header or mobile menu (unless Owner reintroduces it)
+- [ ] **Canonical visual mode** renders consistently — warm paper body, dark authority bands, dark footer; not a second global skin from OS dark preference
 
 ---
 
@@ -39,6 +41,7 @@ git diff --check
 - [ ] Terms, Privacy
 - [ ] Contact form renders; prep section before form
 - [ ] Language switch preserves query params where applicable
+- [ ] Footer `tel:` and `mailto:` links present and correctly formed
 
 ---
 

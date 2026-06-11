@@ -67,14 +67,22 @@ Copy may be clearer, warmer, and more human without becoming promotional or conc
 
 ## 5. Visual posture (website)
 
-Build-era visual restraint on pages is suspended; **mature operational credibility remains required.**
+**Brand discipline protects meaning, not dullness.** Visual excellence is allowed.
 
-- Imagery may support recognition of real property operations
-- Warmer surfaces and rhythm are allowed
-- Decoration without operational function is still weak
-- Logo and wordmark rules remain strict (`LOGO-*.md`)
+The site uses **one art-directed Sentinel atmosphere** (merged on `main`) — not a policy document, not a generic SaaS skin, not a toggleable light/dark app theme.
 
-Logo restrictions apply to the **logo asset**, not every background, card, or accent on the page.
+**Allowed when service boundaries stay clear:**
+
+- Warmth, depth, cinematic surfaces, image-led composition
+- Premium editorial treatment, tactile property context, controlled accent system
+- Full-section or full-page composition changes when Owner-scoped
+
+**Still weak:**
+
+- Decoration without operational function
+- Fake proof, testimonial theater, lifestyle/concierge drift
+
+Logo and wordmark rules remain strict (`LOGO-*.md`). Logo restrictions apply to the **logo asset**, not every background, card, or accent on the page.
 
 Direction: `VISUAL-FREEDOM-SPRINT.md`
 

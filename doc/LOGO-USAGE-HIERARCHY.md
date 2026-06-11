@@ -199,10 +199,14 @@ The claim is not part of the core mark.
 
 ---
 
-## 8. Dark Mode Rule
+## 8. Surface contrast rule (logo variant selection)
+
+This rule governs **which logo asset** to use on a given surface — not a site-wide user theme toggle.
 
 On light surfaces → Primary version  
 On navy or dark surfaces → Inverse version  
+
+The public website uses one canonical visual atmosphere (`DECISIONS.md` §12.3). There is no visitor-facing dark/light switch. Choose Primary or Inverse lockup based on the **local surface** (header, footer, hero band), not OS preference.
 
 Do not apply CSS filters such as `invert()`.
 

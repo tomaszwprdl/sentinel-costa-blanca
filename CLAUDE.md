@@ -9,9 +9,11 @@
 5. `doc/WORKFLOW.md`
 6. `doc/VISUAL-FREEDOM-SPRINT.md` — for visual work
 
-**Current SHAs:** website/code stability `28ccca2` · documentation governance `6a0d0f7`
+**Current SHAs:** latest main / website `e5fa7bb` · documentation governance `6a0d0f7`
 
-Build-era visual restrictions are retired. Visual experimentation is allowed when scoped and aligned with `doc/VISUAL-FREEDOM-SPRINT.md`. The site may become warmer, more tactile, more image-led, and more visually distinctive if protected contracts remain intact.
+Visual composition rebuild is **merged**. The site uses **one canonical Sentinel atmosphere** — dark cinematic authority bands, warm paper body, dark final CTA/footer — with **no public theme toggle**.
+
+Build-era visual restrictions and dual-theme work are retired. Future visual work may be bold when Owner-scoped; build on canonical mode per `doc/VISUAL-FREEDOM-SPRINT.md`. Protected contracts remain intact.
 
 ## Project identity
 
@@ -32,8 +34,7 @@ If a section needs long reading to justify itself, it is not finished.
 
 ## Current working method
 
-Work section by section.
-Do not redesign the full page unless explicitly asked.
+Work section by section unless the Owner scopes a full-page or whole-site pass.
 Do not touch sections outside the requested scope.
 Prefer small, reviewable commits.
 

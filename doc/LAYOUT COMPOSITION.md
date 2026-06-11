@@ -18,6 +18,8 @@ Guides:
 
 Does **not** lock page palette, imagery, card styling, or atmospheric treatment — see `VISUAL-FREEDOM-SPRINT.md`.
 
+Layout changes may be **bold** when Owner-scoped: full-section redesigns, full-page rhythm shifts, and whole-site composition passes are allowed if hierarchy, mobile sanity, and service boundaries remain intact.
+
 ---
 
 ## 2. Core rules (keep)
@@ -28,6 +30,8 @@ Does **not** lock page palette, imagery, card styling, or atmospheric treatment 
 - **Section clarity** — each block should answer one operational question where possible
 - **PL/EN structural parity** — same section order and logic
 - **Gate behavior** — homepage body below diagnostic gate only after pathway selection
+
+Conservative micro-polish is not the default expectation. **Clarity and impact** are.
 
 ---
 
@@ -47,11 +51,24 @@ No default pathway on `/pl` or `/en` without pathway parameter.
 
 - Prefer scannable blocks over wall-of-text
 - Use lists and labels when parameters matter
-- White space and visual rhythm may increase in launch-era design if hierarchy stays clear
+- White space and visual rhythm may increase freely if hierarchy stays clear
+- Mobile density may be tuned post-deploy; solve with spacing and stacking, not shrinking everything
 
 ---
 
-## 5. Components and containment
+## 5. Canonical visual mode
+
+The live site uses one designed atmosphere (see `VISUAL-FREEDOM-SPRINT.md`):
+
+- Dark cinematic hero / authority bands
+- Warm paper body sections
+- Dark final CTA / footer
+
+Layout work should assume this system — not recreate a dual theme.
+
+---
+
+## 6. Components and containment
 
 - Package presentation: vertical containment, not SaaS comparison tables
 - Proof modules: operational, not decorative dashboards
@@ -59,16 +76,17 @@ No default pathway on `/pl` or `/en` without pathway parameter.
 
 ---
 
-## 6. Accessibility
+## 7. Accessibility
 
 - Sufficient contrast for body text (WCAG AA target)
 - Focus states for interactive controls
 - Respect `prefers-reduced-motion`
 - Meaningful heading order
+- Canonical mode must render consistently regardless of OS/browser dark preference
 
 ---
 
-## 7. Conflict resolution
+## 8. Conflict resolution
 
 If layout guidance conflicts with an Owner-approved visual brief that improves clarity:
 
@@ -80,8 +98,8 @@ If layout change would blur service boundaries or hide required disclosures:
 
 ---
 
-## 8. Related docs
+## 9. Related docs
 
 - `DECISIONS.md` — pathways, packages, proof rules
-- `VISUAL-FREEDOM-SPRINT.md` — palette, imagery, warmth
+- `VISUAL-FREEDOM-SPRINT.md` — canonical visual system
 - `SERVICE-STRUCTURING.md` — what sections must communicate operationally
