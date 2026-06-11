@@ -531,10 +531,7 @@
       "bridge": {
         "eyebrow": "From situation to package",
         "title": "Usage situation points to a starting level. The package defines responsibility depth.",
-        "intro": "This is not a binding recommendation. It shows the typical direction of discussion after classifying how the property is used.",
-        "situationColumn": "Usage situation",
         "depthColumn": "Typical starting point",
-        "note": "Final scope always requires structured review of the property.",
         "caveat": "The package indicates a starting point. Final scope is confirmed after a short situation review.",
         "gateLabel": "Classification first",
         "pathways": {
@@ -550,28 +547,9 @@
         }
       },
       "scenario": {
-        "eyebrow": "Usage situation",
-        "title": "How is the property used while you are away?",
-        "intro": "This is the same model as the homepage, without the diagnostic gate. Choose a situation to see the typical responsibility direction.",
         "promptLabel": "Choose a usage situation",
-        "promptBody": "Only after this step does comparing responsibility levels make sense.",
         "selectedLabel": "Selected situation",
-        "depthLabel": "Typical responsibility direction",
-        "noteLabel": "Important",
-        "note": "This fit is educational, not a scope promise. The final model is confirmed after property review.",
-        "responsibilityCta": "View responsibility levels",
-        "packageCta": "Compare full scope",
-        "cards": {
-          "private-use-only": {
-            "result": "Usually starts at Basic or Extended — depending on whether you need condition oversight only, or also regular access and readiness."
-          },
-          "regular-guest-stays": {
-            "result": "Usually points to Extended or Full — because condition checks alone do not cover regular guest traffic, cleaning, and technician entry."
-          },
-          "mixed-not-defined": {
-            "result": "Classification of use comes first. The package is chosen after the model is clear — not upfront."
-          }
-        }
+        "responsibilityCta": "View responsibility levels"
       },
       "events": {
         "eyebrow": "What if",
