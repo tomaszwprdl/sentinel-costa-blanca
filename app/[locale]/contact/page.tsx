@@ -686,25 +686,26 @@ function ContactPageInner() {
           />
         </Section>
 
-        <Section tone="authority" className="contact-section contact-section--final">
-          <div className="reveal-rise grid gap-8 lg:grid-cols-[minmax(0,0.68fr)_minmax(16rem,0.32fr)] lg:items-end">
-            <div>
-              <p className="section-label text-authority-on-dark/70">{t('redesign.form.eyebrow')}</p>
-              <h2 className="h2-system mt-3 text-authority-on-dark">{t('redesign.finalCta.title')}</h2>
-              <p className="mt-4 max-w-[62ch] text-lg leading-relaxed text-authority-on-dark/86">
-                {t('redesign.finalCta.intro')}
-              </p>
-            </div>
-            <div className="flex flex-col gap-3 lg:items-stretch">
-              <Link href="#intake-form" className="btn-primary btn-primary-inverse">
-                {t('form.submitButton')}
-              </Link>
-              <Link
-                href={`/${locale}/services`}
-                className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority"
-              >
-                {tCommon('nav.services')}
-              </Link>
+        <Section tone="light" className="contact-section contact-closing-section !pt-10 !pb-0">
+          <div className="page-final-cta reveal-rise overflow-hidden">
+            <div className="grid gap-0 lg:grid-cols-[minmax(0,0.68fr)_minmax(18rem,0.32fr)]">
+              <div className="page-final-cta__copy p-5 md:p-8">
+                <p className="section-label">{t('redesign.form.eyebrow')}</p>
+                <h2 className="h2-system mt-3">{t('redesign.finalCta.title')}</h2>
+                <p className="mt-4 max-w-[62ch] text-lg leading-relaxed text-body">
+                  {t('redesign.finalCta.intro')}
+                </p>
+              </div>
+              <div className="page-final-cta__panel p-5 md:p-8">
+                <div className="flex flex-col gap-3">
+                  <Link href="#intake-form" className="btn-primary btn-primary-inverse">
+                    {t('form.submitButton')}
+                  </Link>
+                  <Link href={`/${locale}/services`} className="btn-secondary btn-secondary-on-dark">
+                    {tCommon('nav.services')}
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </Section>

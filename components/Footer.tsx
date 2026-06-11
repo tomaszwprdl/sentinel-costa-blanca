@@ -22,10 +22,10 @@ export default function Footer() {
               className="h-10 w-auto object-contain"
             />
           </Link>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-authority-on-dark/78">
+          <p className="site-footer__brand-line mt-5 max-w-xl text-base leading-relaxed">
             {t('footer.brandLine')}
           </p>
-          <p className="mt-3 max-w-xl text-sm leading-relaxed text-authority-on-dark/72">
+          <p className="site-footer__area-line mt-3 max-w-xl text-sm leading-relaxed">
             {t('footer.serviceAreaLine')}
           </p>
         </div>
@@ -33,32 +33,32 @@ export default function Footer() {
         <div className="grid-frame gap-7 py-7 md:gap-8 md:py-8">
           <Region name="authority" desktopSpan="quarter">
             <div>
-              <h3 className="section-label text-authority-on-dark/80">
+              <h3 className="site-footer__column-label section-label">
                 {t('footer.navigation')}
               </h3>
               <ul className="mt-4 space-y-3">
                 <li>
-                  <Link href={`/${locale}/services`} className="text-sm text-authority-on-dark/78 hover:text-authority-on-dark">
+                  <Link href={`/${locale}/services`} className="site-footer__nav-link text-sm">
                     {t('nav.services')}
                   </Link>
                 </li>
                 <li>
-                  <Link href={`/${locale}/how-it-works`} className="text-sm text-authority-on-dark/78 hover:text-authority-on-dark">
+                  <Link href={`/${locale}/how-it-works`} className="site-footer__nav-link text-sm">
                     {t('nav.howItWorks')}
                   </Link>
                 </li>
                 <li>
-                  <Link href={`/${locale}/faq`} className="text-sm text-authority-on-dark/78 hover:text-authority-on-dark">
+                  <Link href={`/${locale}/faq`} className="site-footer__nav-link text-sm">
                     {t('nav.faq')}
                   </Link>
                 </li>
                 <li>
-                  <Link href={`/${locale}/about`} className="text-sm text-authority-on-dark/78 hover:text-authority-on-dark">
+                  <Link href={`/${locale}/about`} className="site-footer__nav-link text-sm">
                     {t('nav.about')}
                   </Link>
                 </li>
                 <li>
-                  <Link href={`/${locale}/contact`} className="text-sm text-authority-on-dark/78 hover:text-authority-on-dark">
+                  <Link href={`/${locale}/contact`} className="site-footer__nav-link text-sm">
                     {t('nav.contact')}
                   </Link>
                 </li>
@@ -67,17 +67,17 @@ export default function Footer() {
           </Region>
           <Region name="authority" desktopSpan="quarter">
             <div>
-              <h3 className="section-label text-authority-on-dark/80">
+              <h3 className="site-footer__column-label section-label">
                 {t('footer.legal')}
               </h3>
               <ul className="mt-4 space-y-3">
                 <li>
-                  <Link href={`/${locale}/terms`} className="text-sm text-authority-on-dark/78 hover:text-authority-on-dark">
+                  <Link href={`/${locale}/terms`} className="site-footer__nav-link text-sm">
                     {t('footer.termsConditions')}
                   </Link>
                 </li>
                 <li>
-                  <Link href={`/${locale}/privacy`} className="text-sm text-authority-on-dark/78 hover:text-authority-on-dark">
+                  <Link href={`/${locale}/privacy`} className="site-footer__nav-link text-sm">
                     {t('footer.privacyPolicy')}
                   </Link>
                 </li>
@@ -86,7 +86,7 @@ export default function Footer() {
           </Region>
           <Region name="authority" desktopSpan="half" className="footer-contact-region">
             <div className="footer-contact-panel">
-              <p className="section-label text-authority-on-dark/80">{t('footer.contact')}</p>
+              <p className="site-footer__column-label section-label">{t('footer.contact')}</p>
               <div className="footer-contact-panel__items">
                 <p className="footer-contact-panel__phone">
                   <a
@@ -109,7 +109,7 @@ export default function Footer() {
           </Region>
         </div>
 
-        <div className="border-t border-authority-on-dark/15 pt-6 text-center text-sm text-authority-on-dark/58 md:pt-8">
+        <div className="site-footer__copyright border-t border-authority-on-dark/15 pt-6 text-center text-sm md:pt-8">
           <p>
             &copy; {new Date().getFullYear()} {t('siteName')}. {t('footer.copyright')}
           </p>

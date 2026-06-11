@@ -49,6 +49,7 @@ export default async function HomePage({
       <main className="home-page min-h-screen flex flex-col bg-surface-light">
         <Suspense fallback={<UsagePathwayFallback locale={locale} selected={null} t={t} />}>
           <UsagePathwayLayer>
+        <div className="home-pathway-body">
         <Section tone="light" className="home-section home-section--route !py-16 md:!py-24">
           <div className="reveal-rise">
             <p className="section-label">{t('systemIntro.eyebrow')}</p>
@@ -207,33 +208,37 @@ export default async function HomePage({
           </div>
         </Section>
 
-        {/* 7. OBSZAR DZIAŁANIA — H2+H3, lista myślniki, bez placeholderów */}
-        <Section tone="authority" className="home-section home-section--final !py-16 md:!py-20">
-          <div className="reveal-rise grid gap-8 lg:grid-cols-[minmax(0,0.68fr)_minmax(16rem,0.32fr)] lg:items-end">
-            <div>
-              <p className="section-label text-authority-on-dark/70">{t('finalCta.eyebrow')}</p>
-              <h2 className="h2-system mt-3 text-authority-on-dark">{t('finalCta.title')}</h2>
-              <div className="mt-5 max-w-[62ch] space-y-3 text-authority-on-dark/86">
-                <p><PathwayCopy path="finalContext" /></p>
-                <p>{t('finalCta.p2')}</p>
+        <Section tone="light" className="home-section home-closing-section !pt-10 !pb-0">
+          <div className="page-final-cta reveal-rise overflow-hidden">
+            <div className="grid gap-0 lg:grid-cols-[minmax(0,0.68fr)_minmax(18rem,0.32fr)]">
+              <div className="page-final-cta__copy p-5 md:p-8">
+                <p className="section-label">{t('finalCta.eyebrow')}</p>
+                <h2 className="h2-system mt-3">{t('finalCta.title')}</h2>
+                <div className="mt-4 max-w-[62ch] space-y-3 text-lg leading-relaxed text-body">
+                  <p><PathwayCopy path="finalContext" /></p>
+                  <p>{t('finalCta.p2')}</p>
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col gap-3 lg:items-stretch">
-              <PathwayFinalCtaLink
-                locale={locale}
-                className="btn-primary btn-primary-inverse"
-              >
-                {t('finalCta.cta')}
-              </PathwayFinalCtaLink>
-              <Link
-                href={`/${locale}/services#package-fit`}
-                className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority"
-              >
-                {t('finalCta.secondaryCta')}
-              </Link>
+              <div className="page-final-cta__panel p-5 md:p-8">
+                <div className="flex flex-col gap-3">
+                  <PathwayFinalCtaLink
+                    locale={locale}
+                    className="btn-primary btn-primary-inverse"
+                  >
+                    {t('finalCta.cta')}
+                  </PathwayFinalCtaLink>
+                  <Link
+                    href={`/${locale}/services#package-fit`}
+                    className="btn-secondary btn-secondary-on-dark"
+                  >
+                    {t('finalCta.secondaryCta')}
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </Section>
+        </div>
           </UsagePathwayLayer>
         </Suspense>
       </main>
