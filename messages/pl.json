@@ -1316,7 +1316,8 @@
         "propertySection": "Dane nieruchomości",
         "serviceSection": "Sposób używania i potrzeba usługi",
         "consentSection": "Potwierdzenie zakresu",
-        "submitNote": "Wysłanie formularza nie oznacza automatycznej akceptacji ani reakcji awaryjnej."
+        "submitNote": "Wysłanie formularza nie oznacza automatycznej akceptacji ani reakcji awaryjnej.",
+        "submitFollowUp": "Po wysłaniu Sentinel sprawdzi lokalizację, zakres i kolejny możliwy krok."
       },
       "afterSubmit": {
         "eyebrow": "Po wysłaniu",

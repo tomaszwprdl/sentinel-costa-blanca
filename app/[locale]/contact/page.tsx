@@ -15,7 +15,6 @@ import ContactMethodPanel from '@/components/ContactMethodPanel';
 import ContactPreparationChecklist from '@/components/ContactPreparationChecklist';
 import ContactRouteCards from '@/components/ContactRouteCards';
 import ContactUnsuitableGrid from '@/components/ContactUnsuitableGrid';
-import ContactAfterSubmitSteps from '@/components/ContactAfterSubmitSteps';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
 import IntakePathDiagram from '@/components/visuals/IntakePathDiagram';
@@ -105,7 +104,6 @@ function ContactPageInner() {
   const routeCards = t.raw('redesign.routes.cards') as Required<MarkedItem>[];
   const fitCards = t.raw('redesign.fit.cards') as InfoCard[];
   const unsuitableItems = t.raw('redesign.unsuitable.items') as InfoCard[];
-  const afterSubmitSteps = t.raw('redesign.afterSubmit.steps') as MarkedItem[];
   const serviceAreaMapLabels = {
     title: tCommon('serviceAreaMap.title'),
     center: tCommon('serviceAreaMap.center'),
@@ -339,6 +337,15 @@ function ContactPageInner() {
           </div>
         </Section>
 
+        <Section tone="light" id="prepare" className="contact-section contact-section--prepare">
+          <ContactPreparationChecklist
+            eyebrow={t('redesign.prepare.eyebrow')}
+            title={t('redesign.prepare.title')}
+            intro={t('redesign.prepare.intro')}
+            items={preparationItems}
+          />
+        </Section>
+
         <Section tone="alt" id="intake-form" className="contact-section contact-section--intake">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.34fr)_minmax(0,0.66fr)] lg:items-start">
             <aside className="lg:sticky lg:top-28">
@@ -346,9 +353,10 @@ function ContactPageInner() {
               <h2 className="h2-system mt-3">{t('redesign.form.title')}</h2>
               <p className="mt-3 text-body">{t('redesign.form.intro')}</p>
               <IntakePathDiagram className="mt-6 hidden lg:block" />
-              <p className="notice-panel mt-6 text-sm leading-relaxed text-body">
-                {t('redesign.form.submitNote')}
-              </p>
+              <div className="notice-panel mt-6 space-y-2 text-sm leading-relaxed text-body">
+                <p className="mb-0">{t('redesign.form.submitNote')}</p>
+                <p className="mb-0 text-muted">{t('redesign.form.submitFollowUp')}</p>
+              </div>
             </aside>
 
             <div className="contact-intake-shell reveal-rise p-4 md:p-6">
@@ -636,15 +644,6 @@ function ContactPageInner() {
           </div>
         </Section>
 
-        <Section tone="light" id="prepare" className="contact-section contact-section--prepare">
-          <ContactPreparationChecklist
-            eyebrow={t('redesign.prepare.eyebrow')}
-            title={t('redesign.prepare.title')}
-            intro={t('redesign.prepare.intro')}
-            items={preparationItems}
-          />
-        </Section>
-
         <Section tone="alt" className="contact-section contact-section--routes">
           <ContactRouteCards
             eyebrow={t('redesign.routes.eyebrow')}
@@ -684,15 +683,6 @@ function ContactPageInner() {
             title={t('redesign.unsuitable.title')}
             intro={t('redesign.unsuitable.intro')}
             items={unsuitableItems}
-          />
-        </Section>
-
-        <Section tone="light" className="contact-section contact-section--after">
-          <ContactAfterSubmitSteps
-            eyebrow={t('redesign.afterSubmit.eyebrow')}
-            title={t('redesign.afterSubmit.title')}
-            intro={t('redesign.afterSubmit.intro')}
-            steps={afterSubmitSteps}
           />
         </Section>
 

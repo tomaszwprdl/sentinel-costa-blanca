@@ -1316,7 +1316,8 @@
         "propertySection": "Property details",
         "serviceSection": "Expected usage and service need",
         "consentSection": "Scope acknowledgment",
-        "submitNote": "Submitting the form does not imply automatic acceptance or emergency response."
+        "submitNote": "Submitting the form does not imply automatic acceptance or emergency response.",
+        "submitFollowUp": "After submission, Sentinel checks the location, scope, and next possible step."
       },
       "afterSubmit": {
         "eyebrow": "After submitting",
