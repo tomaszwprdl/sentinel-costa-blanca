@@ -67,12 +67,9 @@ export default async function LocaleLayout({
   const messages = await getMessages(locale as Locale);
 
   const themeScript = `
-// Light-first: ignores prefers-color-scheme unless a future "System" mode is added.
 (function() {
-  var key = 'sentinel-theme';
-  var stored = typeof localStorage !== 'undefined' ? localStorage.getItem(key) : null;
-  var theme = stored === 'dark' || stored === 'light' ? stored : 'light';
-  document.documentElement.setAttribute('data-theme', theme);
+  try { localStorage.removeItem('sentinel-theme'); } catch (e) {}
+  document.documentElement.setAttribute('data-theme', 'sentinel');
 })();
 `;
 

@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
-import ThemeSwitch from '@/components/ThemeSwitch';
 import LanguageControl from '@/components/LanguageControl';
 
 function HamburgerIcon({ open }: { open: boolean }) {
@@ -120,9 +119,8 @@ export default function HeaderClient() {
           <div className="header-locale-mobile lg:hidden">
             <LanguageControl />
           </div>
-          <div className="hidden items-center gap-4 border-l border-structural-light pl-4 lg:flex">
+          <div className="hidden items-center border-l border-structural-light pl-4 lg:flex">
             <LanguageControl />
-            <ThemeSwitch />
           </div>
           <button
             type="button"
@@ -144,9 +142,8 @@ export default function HeaderClient() {
           aria-hidden={!navOpen}
         >
           <div className="container py-3">
-            <div className="mobile-nav-controls flex items-center gap-4 border-b border-structural-light">
+            <div className="mobile-nav-controls flex items-center border-b border-structural-light">
               <LanguageControl />
-              <ThemeSwitch />
             </div>
             {navLinks.map(({ href, label }) => (
               <Link
