@@ -58,6 +58,10 @@ Static assets including logo files.
 | `LOGO-GEOMETRY-SPEC.md` | Logo geometry |
 | `LOGO-USAGE-HIERARCHY.md` | Logo usage rules |
 
+**Optional audit tools:**
+
+- `COGNITIVE-PAGE-AUDIT.md` — page-level structural transmission audit; not doctrine, not binding.
+
 **Not in repo / not for commit:** `doc/screenshots/` — local QA captures and scripts (if present locally).
 
 Build-era task and audit documents were removed from the active repository after documentation reset.
