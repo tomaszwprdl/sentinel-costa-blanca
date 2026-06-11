@@ -1173,7 +1173,9 @@
       "maxCharacters": "Maksymalnie 500 znaków",
       "acknowledgment": "Rozumiem, że Sentinel działa w oparciu o model usługi pakietowej. Usługi nie zawarte w wybranym pakiecie są organizowane i wyceniane osobno.",
       "submitButton": "Wyślij Zapytanie",
-      "requiredField": "Pole wymagane"
+      "requiredField": "Pole wymagane",
+      "submitError": "Nie udało się wysłać zapytania.",
+      "submitErrorGeneric": "Wystąpił błąd podczas wysyłania zapytania. Spróbuj ponownie."
     },
     "confirmation": {
       "title": "ZAPYTANIE WYSŁANE",
@@ -1243,8 +1245,8 @@
     "redesign": {
       "hero": {
         "eyebrow": "Kwalifikacja zapytania",
-        "headline": "Zacznij od uporządkowanego przeglądu",
-        "lead": "Formularz kontaktowy jest pierwszym etapem kwalifikacji. Pozwala sprawdzić lokalizację, sposób używania nieruchomości, dopasowanie pakietu i to, czy zapytanie mieści się w modelu Sentinel.",
+        "headline": "Sprawdź, czy Sentinel może objąć Twoją nieruchomość.",
+        "lead": "Podaj lokalizację, sposób użytkowania nieruchomości i oczekiwany zakres wsparcia. Sentinel odpowie, czy nieruchomość mieści się w obszarze działania i modelu usługi.",
         "primaryCta": "Przejdź do formularza",
         "secondaryCta": "Przygotuj informacje",
         "facts": [
@@ -1277,7 +1279,7 @@
         "title": "Nowe zapytanie, aktywny klient i sytuacja awaryjna to różne ścieżki.",
         "intro": "Publiczny formularz służy do kwalifikacji. Nie jest kanałem operacyjnym dla aktywnych zdarzeń klienta.",
         "cards": [
-          { "marker": "Nowe zapytanie", "title": "Użyj formularza publicznego", "body": "Najlepsze dla kwalifikacji nieruchomości, sytuacji używania, dopasowania pakietu, kontekstu estymatora i rozmowy o wdrożeniu.", "note": "Ta ścieżka rozpoczyna uporządkowany przegląd." },
+          { "marker": "Nowe zapytanie", "title": "Użyj formularza publicznego", "body": "Najlepsze dla kwalifikacji nieruchomości, sytuacji używania, dopasowania pakietu, kontekstu estymatora i rozmowy o wdrożeniu.", "note": "Ta ścieżka rozpoczyna wstępną ocenę zapytania." },
           { "marker": "Aktywny klient", "title": "Użyj kanałów z wdrożenia", "body": "Istniejący klienci otrzymują dedykowane dane kontaktowe po wdrożeniu.", "note": "Nie używaj formularza publicznego do bieżących spraw operacyjnych." },
           { "marker": "Sytuacja awaryjna", "title": "To nie jest publiczna linia awaryjna", "body": "Kanały awaryjne istnieją tylko dla uprawnionych aktywnych klientów zgodnie z warunkami pakietu.", "note": "Strona publiczna nie zapewnia otwartej reakcji awaryjnej." }
         ]
@@ -1287,7 +1289,7 @@
         "title": "Pierwszym filtrem jest lokalizacja, potem zakres.",
         "intro": "Sentinel obsługuje Torrevieja i około 50-70 km wokół miasta. Zapytania spoza promienia są odrzucane zamiast rozciągane na słabą obsługę.",
         "cards": [
-          { "title": "W obszarze", "body": "Nieruchomość może zostać rozpatrzona w przeglądzie zakresu." },
+          { "title": "W obszarze", "body": "Nieruchomość może zostać rozpatrzona na etapie wstępnej oceny zapytania." },
           { "title": "Poza obszarem", "body": "Nie ma wyjątku, dopłaty ani tymczasowej obsługi poza zasięgiem." },
           { "title": "W zakresie", "body": "Zapytanie musi mieścić się w logice pakietu albo uzgodnionego modułu operacyjnego." }
         ],
@@ -1307,9 +1309,9 @@
         ]
       },
       "form": {
-        "eyebrow": "Publiczny formularz kwalifikacyjny",
+        "eyebrow": "Formularz zapytania",
         "title": "Przekaż informacje potrzebne do oceny.",
-        "intro": "Poniższe pola zachowują istniejący proces kontaktu. Grupowanie ułatwia zrozumienie logiki przeglądu.",
+        "intro": "Poniższe pola są pogrupowane, żeby Sentinel mógł ocenić zapytanie.",
         "ownerSection": "Dane właściciela",
         "propertySection": "Dane nieruchomości",
         "serviceSection": "Sposób używania i potrzeba usługi",
@@ -1323,13 +1325,13 @@
         "steps": [
           { "marker": "01", "title": "Sprawdzenie lokalizacji", "body": "Sentinel sprawdza, czy nieruchomość znajduje się w obszarze działania." },
           { "marker": "02", "title": "Przegląd zakresu", "body": "Zapytanie jest porównywane z logiką pakietów i granicami operacyjnymi." },
-          { "marker": "03", "title": "Następny krok, jeśli pasuje", "body": "Sentinel może zaproponować przegląd zakresu, rozmowę o pakiecie albo ścieżkę wdrożenia." },
+          { "marker": "03", "title": "Następny krok, jeśli pasuje", "body": "Sentinel może zaproponować wstępną ocenę zapytania, rozmowę o pakiecie albo ścieżkę wdrożenia." },
           { "marker": "04", "title": "Odmowa, jeśli nie pasuje", "body": "Jeżeli zapytanie jest poza obszarem albo zakresem, Sentinel może odmówić." }
         ]
       },
       "confirmation": {
         "eyebrow": "Zapytanie przyjęte",
-        "headline": "Zapytanie trafiło do przeglądu.",
+        "headline": "Zapytanie trafiło do wstępnej oceny.",
         "body": "Sentinel sprawdzi lokalizację i dopasowanie usługi przed zaproponowaniem kolejnego kroku."
       },
       "finalCta": {

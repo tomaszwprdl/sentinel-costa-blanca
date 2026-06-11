@@ -1173,7 +1173,9 @@
       "maxCharacters": "Maximum 500 characters",
       "acknowledgment": "I understand that Sentinel operates on a package-based service model. Services not included in the selected package are arranged and priced separately.",
       "submitButton": "Submit Inquiry",
-      "requiredField": "Required field"
+      "requiredField": "Required field",
+      "submitError": "Failed to submit inquiry.",
+      "submitErrorGeneric": "An error occurred while submitting the inquiry. Please try again."
     },
     "confirmation": {
       "title": "INQUIRY SUBMITTED",
@@ -1243,8 +1245,8 @@
     "redesign": {
       "hero": {
         "eyebrow": "Qualified intake",
-        "headline": "Start with a structured review",
-        "lead": "The contact form is the first intake step. It gives Sentinel enough information to check location, usage situation, package fit, and whether the request belongs inside the service model.",
+        "headline": "Check whether Sentinel can cover your property.",
+        "lead": "Provide the property location, usage pattern, and expected support scope. Sentinel will confirm whether the property fits the service area and operating model.",
         "primaryCta": "Go to form",
         "secondaryCta": "Prepare information",
         "facts": [
@@ -1256,7 +1258,7 @@
       "method": {
         "eyebrow": "Direct methods",
         "title": "Use these details for new-owner intake.",
-        "note": "The public contact page is for initial inquiries and structured review. Active operational requests use the channels provided during onboarding."
+        "note": "The public contact page is for initial inquiries and first assessment. Active operational requests use the channels provided during onboarding."
       },
       "prepare": {
         "eyebrow": "Before contact",
@@ -1277,7 +1279,7 @@
         "title": "New inquiries, active clients, and emergencies are not the same channel.",
         "intro": "The public form exists for qualification. It is not the operational channel for active client events.",
         "cards": [
-          { "marker": "New owner inquiry", "title": "Use the public form", "body": "Best for property qualification, usage classification, package fit, estimator context, and onboarding discussion.", "note": "This route starts a structured review." },
+          { "marker": "New owner inquiry", "title": "Use the public form", "body": "Best for property qualification, usage classification, package fit, estimator context, and onboarding discussion.", "note": "This route starts an initial inquiry review." },
           { "marker": "Active client", "title": "Use onboarding channels", "body": "Existing clients receive dedicated operational contact details after onboarding.", "note": "Do not use the public form for routine active-client requests." },
           { "marker": "Emergency", "title": "Not a public hotline", "body": "Emergency channels exist only for eligible active clients under agreed package terms.", "note": "The public page does not provide open emergency response." }
         ]
@@ -1287,7 +1289,7 @@
         "title": "The first filter is location, then scope.",
         "intro": "Sentinel serves Torrevieja and approximately 50-70 km around it. Requests outside the radius are declined rather than stretched into weak coverage.",
         "cards": [
-          { "title": "Inside area", "body": "The property can be considered for structured review." },
+          { "title": "Inside area", "body": "The property can be considered for initial inquiry review." },
           { "title": "Outside area", "body": "No exception, premium override, or temporary coverage is offered." },
           { "title": "Inside scope", "body": "The request must fit package logic or an agreed operational module." }
         ],
@@ -1307,9 +1309,9 @@
         ]
       },
       "form": {
-        "eyebrow": "Public intake form",
+        "eyebrow": "Inquiry form",
         "title": "Submit the information required for qualification.",
-        "intro": "The fields below preserve the existing contact process. They are grouped so the review logic is easier to follow.",
+        "intro": "The fields below are grouped so Sentinel can assess the inquiry.",
         "ownerSection": "Owner details",
         "propertySection": "Property details",
         "serviceSection": "Expected usage and service need",
@@ -1323,13 +1325,13 @@
         "steps": [
           { "marker": "01", "title": "Location check", "body": "Sentinel checks whether the property is inside the operating area." },
           { "marker": "02", "title": "Scope review", "body": "The request is compared with package logic and operational boundaries." },
-          { "marker": "03", "title": "Next step if suitable", "body": "Sentinel may propose a structured review, package discussion, or onboarding path." },
+          { "marker": "03", "title": "Next step if suitable", "body": "Sentinel may propose an inquiry assessment, package discussion, or onboarding path." },
           { "marker": "04", "title": "Decline if unsuitable", "body": "If the request is outside area or scope, Sentinel may decline." }
         ]
       },
       "confirmation": {
         "eyebrow": "Inquiry received",
-        "headline": "Your inquiry has entered review.",
+        "headline": "Your inquiry is under initial assessment.",
         "body": "Sentinel will check location and service fit before proposing any next step."
       },
       "finalCta": {

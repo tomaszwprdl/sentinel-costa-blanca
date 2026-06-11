@@ -210,13 +210,16 @@ function ContactPageInner() {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error || 'Failed to submit inquiry');
+        console.error('Contact submit API error:', result);
+        setSubmitError(t('form.submitError'));
+        return;
       }
 
       setReferenceNumber(result.referenceNumber);
       setSubmitSuccess(true);
     } catch (error) {
-      setSubmitError(error instanceof Error ? error.message : 'An error occurred. Please try again.');
+      console.error('Contact submit failed:', error);
+      setSubmitError(t('form.submitErrorGeneric'));
     } finally {
       setIsSubmitting(false);
     }
