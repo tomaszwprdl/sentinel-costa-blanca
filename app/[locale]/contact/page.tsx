@@ -719,7 +719,7 @@ function ContactPageInner() {
       <MobileStickyCTA
         primaryHref="#intake-form"
         primaryLabel={t('redesign.hero.primaryCta')}
-        suppressWhenVisible="#intake-form"
+        suppressWhenVisible="#intake-form, #site-footer"
       />
       <Footer />
     </>
