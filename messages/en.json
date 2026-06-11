@@ -494,12 +494,12 @@
       "hero": {
         "eyebrow": "Oversight model",
         "decisionQuestion": "What decides the service model?",
-        "headline": "Usage situation first, then responsibility level",
+        "headline": "Match the oversight scope to how the property is used.",
         "headlineParts": [
-          "Usage situation first,",
-          "then responsibility level"
+          "Match the oversight scope",
+          "to how the property is used."
         ],
-        "lead": "Operational modules and an indicative range refine the model — they do not create a separate offer.",
+        "lead": "Define how the property is used. Sentinel aligns visits, access, reporting, and local decision boundaries.",
         "secondaryCta": "Start with situation",
         "proofBadges": [
           "Report after visit",
@@ -509,9 +509,9 @@
       },
       "ladder": {
         "eyebrow": "Responsibility depth",
-        "title": "A package does not describe the client type. It defines how much local responsibility Sentinel carries.",
-        "intro": "After the usage situation is clear, you choose the oversight level: control, access, and decisions inside agreed limits.",
-        "bridgeLine": "First the usage situation. Then the responsibility level.",
+        "title": "The package defines how much responsibility Sentinel holds on site.",
+        "intro": "Packages differ by visits, access coordination, operational coordination, and action within an agreed limit.",
+        "bridgeLine": "",
         "detailCta": "View full scope",
         "simulatorCta": "View events",
         "responsibilityLabel": "Primary responsibility",
@@ -531,7 +531,8 @@
       },
       "bridge": {
         "eyebrow": "From situation to package",
-        "title": "Usage situation points to a starting level. The package defines responsibility depth.",
+        "title": "Usage pattern defines the starting point.",
+        "intro": "Oversight differs for an empty property, owner-only stays, and guest stays.",
         "depthColumn": "Typical starting point",
         "caveat": "The package indicates a starting point. Final scope is confirmed after a short situation review.",
         "gateLabel": "Classification first",
@@ -555,7 +556,7 @@
       "events": {
         "eyebrow": "What if",
         "title": "See how the scope works in a concrete event.",
-        "intro": "These scenarios explain operating logic. They do not create new promises or authority outside the package.",
+        "intro": "Scenarios show how the scope works inside package limits.",
         "packageCta": "View packages",
         "detailLabels": {
           "observes": "Sentinel checks",
@@ -605,7 +606,7 @@
       "boundary": {
         "eyebrow": "Service boundaries",
         "title": "Sentinel acts locally, but only inside the agreed scope.",
-        "intro": "The main boundaries appear before the estimator. The full legal wording remains in the terms and package detail.",
+        "intro": "We operate locally within a fixed area and agreed scope. Not with unlimited availability.",
         "doesTitle": "Inside agreed scope",
         "doesNotTitle": "Outside agreed scope",
         "does": {
@@ -623,8 +624,8 @@
       },
       "modules": {
         "eyebrow": "Operational layer",
-        "title": "The operational layer executes the agreed scope. It does not create a fourth package.",
-        "intro": "Keys, cleaning, readiness, guest entry, technician access, transfer or vehicle support, and seasonal checks remain practical functions under the selected responsibility level.",
+        "title": "Operational services support the package. They do not create a fourth level.",
+        "intro": "Cleaning, key holding, access support, and guest support are delivered within the agreed scope. They do not change Sentinel's responsibility level.",
         "useWhen": "Scope function",
         "stackLabel": "Controlled capabilities",
         "stackTitle": "Access, movement, and seasonal readiness stay subordinate to the package.",
@@ -641,12 +642,12 @@
       },
       "estimatorBand": {
         "eyebrow": "Indicative monthly range",
-        "title": "Once situation and responsibility are clear — define an indicative range.",
-        "intro": "This is an orientation tool, not a quotation form. It does not collect personal data and does not change pricing logic.",
-        "transition": "Usage situation and responsibility depth are established. You can now estimate an indicative monthly range."
+        "title": "Determine the estimated monthly oversight range.",
+        "intro": "Select the package, usage pattern, and basic property parameters. The result shows an estimated monthly range to be confirmed.",
+        "transition": "This is an orientation tool. Final scope is confirmed after review."
       },
       "executionStrip": {
-        "title": "Single-task execution — only after agreement",
+        "title": "Single actions are possible only after prior agreement.",
         "body": "Separate operational tasks may be handled outside the oversight package, but without regular checks, reporting, SLA, or decision authority.",
         "availableLabel": "Available after agreement",
         "limitsLabel": "What it does not include",
@@ -1062,8 +1063,8 @@
       "ctaProceed": "Proceed to structured review"
     },
     "cta": {
-      "headline": "Request package comparison",
-      "subheadline": "Contact to discuss package fit and parameters.",
+      "headline": "Request a package comparison for your property.",
+      "subheadline": "Contact us to compare packages and confirm scope.",
       "primaryButton": "Request structured review",
       "secondaryButton": "I have questions"
     }

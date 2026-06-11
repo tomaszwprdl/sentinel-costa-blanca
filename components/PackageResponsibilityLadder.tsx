@@ -23,7 +23,9 @@ export default function PackageResponsibilityLadder() {
     <div className="services-ladder-band" id="responsibility">
       <div className="mb-8 max-w-[760px]">
         <p className="section-label">{t('redesign.ladder.eyebrow')}</p>
-        <p className="mt-2 text-sm font-semibold text-support">{t('redesign.ladder.bridgeLine')}</p>
+        {t('redesign.ladder.bridgeLine') ? (
+          <p className="mt-2 text-sm font-semibold text-support">{t('redesign.ladder.bridgeLine')}</p>
+        ) : null}
         <h2 className="h2-system mt-3">{t('redesign.ladder.title')}</h2>
         <p className="mt-3 text-body">{t('redesign.ladder.intro')}</p>
       </div>

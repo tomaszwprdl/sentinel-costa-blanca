@@ -28,6 +28,7 @@ export default function UsageResponsibilityBridge() {
       <div className="mb-3 max-w-[760px]">
         <p className="section-label">{t('redesign.bridge.eyebrow')}</p>
         <h2 className="h2-system mt-2">{t('redesign.bridge.title')}</h2>
+        <p className="mt-3 mb-0 max-w-[62ch] text-body">{t('redesign.bridge.intro')}</p>
       </div>
 
       <div className="services-router-board">

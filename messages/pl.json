@@ -494,12 +494,12 @@
       "hero": {
         "eyebrow": "Model nadzoru",
         "decisionQuestion": "Co ustala model usługi?",
-        "headline": "Najpierw użycie, potem odpowiedzialność",
+        "headline": "Dobierz zakres nadzoru do sposobu używania nieruchomości.",
         "headlineParts": [
-          "Najpierw użycie,",
-          "potem odpowiedzialność"
+          "Dobierz zakres nadzoru",
+          "do sposobu używania nieruchomości."
         ],
-        "lead": "Moduły operacyjne i orientacyjny zakres doprecyzowują model — nie tworzą osobnej oferty.",
+        "lead": "Określ, jak nieruchomość jest używana. Sentinel dobierze zakres wizyt, dostępu, raportowania i decyzji lokalnych.",
         "secondaryCta": "Zacznij od sytuacji",
         "proofBadges": [
           "Raport po wizycie",
@@ -509,9 +509,9 @@
       },
       "ladder": {
         "eyebrow": "Poziom odpowiedzialności",
-        "title": "Pakiet nie opisuje typu klienta. Określa poziom odpowiedzialności Sentinel na miejscu.",
-        "intro": "Po ustaleniu sytuacji użycia wybiera się poziom nadzoru: kontrola, dostęp i decyzje w uzgodnionych granicach.",
-        "bridgeLine": "Najpierw sytuacja użycia. Potem poziom odpowiedzialności.",
+        "title": "Pakiet określa, ile odpowiedzialności Sentinel przejmuje na miejscu.",
+        "intro": "Różnica między pakietami dotyczy wizyt, dostępu, koordynacji i możliwości działania w ustalonym limicie.",
+        "bridgeLine": "",
         "detailCta": "Zobacz pełny zakres",
         "simulatorCta": "Zobacz zdarzenia",
         "responsibilityLabel": "Główna odpowiedzialność",
@@ -531,7 +531,8 @@
       },
       "bridge": {
         "eyebrow": "Od sytuacji do pakietu",
-        "title": "Sytuacja użycia wskazuje punkt startu. Pakiet określa poziom odpowiedzialności.",
+        "title": "Sposób użytkowania wskazuje punkt wyjścia.",
+        "intro": "Inaczej wygląda nadzór nad pustą nieruchomością, inaczej nad lokalem używanym przez właściciela, a inaczej przy pobytach gości.",
         "depthColumn": "Typowy punkt startu",
         "caveat": "Pakiet wskazuje punkt startu. Ostateczny zakres potwierdzamy po krótkiej analizie sytuacji.",
         "gateLabel": "Najpierw klasyfikacja",
@@ -555,7 +556,7 @@
       "events": {
         "eyebrow": "Co jeśli",
         "title": "Zobacz, jak zakres działa w konkretnym zdarzeniu.",
-        "intro": "Scenariusze pokazują logikę działania. Nie tworzą nowych obietnic ani dodatkowych uprawnień poza pakietem.",
+        "intro": "Scenariusze pokazują logikę działania w granicach pakietu.",
         "packageCta": "Zobacz pakiety",
         "detailLabels": {
           "observes": "Sentinel sprawdza",
@@ -605,7 +606,7 @@
       "boundary": {
         "eyebrow": "Granice usługi",
         "title": "Sentinel działa lokalnie, ale tylko w ustalonym zakresie.",
-        "intro": "Najważniejsze granice są widoczne przed estymatorem. Pełne brzmienie pozostaje w regulaminie i szczegółach pakietu.",
+        "intro": "Działamy lokalnie w ustalonym obszarze i uzgodnionym zakresie. Bez nieograniczonej dostępności.",
         "doesTitle": "W uzgodnionym zakresie",
         "doesNotTitle": "Poza uzgodnionym zakresem",
         "does": {
@@ -623,8 +624,8 @@
       },
       "modules": {
         "eyebrow": "Warstwa operacyjna",
-        "title": "Warstwa operacyjna wykonuje uzgodniony zakres. Nie tworzy czwartego pakietu.",
-        "intro": "Klucze, sprzątanie, gotowość, wejścia gości i techników, transfery lub pojazdy oraz sezonowe kontrole pozostają funkcjami praktycznymi pod wybranym poziomem odpowiedzialności.",
+        "title": "Usługi operacyjne uzupełniają pakiet. Nie tworzą czwartego poziomu.",
+        "intro": "Sprzątanie, przechowywanie kluczy, obsługa wejść i wsparcie gości są realizowane w uzgodnionym zakresie. Nie zmieniają poziomu odpowiedzialności Sentinel.",
         "useWhen": "Funkcja zakresu",
         "stackLabel": "Kontrolowane zdolności",
         "stackTitle": "Dostęp, ruch i gotowość sezonowa pozostają podporządkowane pakietowi.",
@@ -641,12 +642,12 @@
       },
       "estimatorBand": {
         "eyebrow": "Orientacyjny zakres miesięczny",
-        "title": "Gdy sytuacja i odpowiedzialność są zrozumiałe — określ orientacyjny zakres.",
-        "intro": "To narzędzie orientacyjne, nie formularz wyceny. Nie zbiera danych osobowych i nie zmienia logiki cenowej.",
-        "transition": "Sytuacja użycia i poziom odpowiedzialności są ustalone. Teraz można oszacować orientacyjny miesięczny zakres."
+        "title": "Określ orientacyjny miesięczny zakres nadzoru.",
+        "intro": "Wybierz pakiet, sposób użytkowania i podstawowe parametry lokalu. Wynik pokazuje orientacyjny miesięczny zakres do potwierdzenia.",
+        "transition": "To orientacyjne narzędzie. Ostateczny zakres potwierdzamy po weryfikacji."
       },
       "executionStrip": {
-        "title": "Realizacja pojedynczych czynności — tylko po uzgodnieniu",
+        "title": "Pojedyncze czynności są możliwe tylko po wcześniejszym uzgodnieniu.",
         "body": "Osobne zadania operacyjne mogą być wykonane poza pakietem nadzoru, ale bez regularnych kontroli, raportowania, SLA ani uprawnień decyzyjnych.",
         "availableLabel": "Możliwe po uzgodnieniu",
         "limitsLabel": "Czego nie obejmuje",
@@ -1062,8 +1063,8 @@
       "ctaProceed": "Przejdź do ustrukturyzowanej weryfikacji"
     },
     "cta": {
-      "headline": "Zapytaj o porównanie pakietów",
-      "subheadline": "Skontaktuj się w sprawie dopasowania pakietu i parametrów.",
+      "headline": "Poproś o porównanie pakietów dla swojej nieruchomości.",
+      "subheadline": "Skontaktuj się, aby porównać pakiety i potwierdzić zakres.",
       "primaryButton": "Złóż zapytanie o pakiet",
       "secondaryButton": "Mam pytania"
     }
