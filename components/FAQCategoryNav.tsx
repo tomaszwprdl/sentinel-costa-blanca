@@ -80,7 +80,7 @@ export default function FAQCategoryNav({
               lastClickedRef.current = category.id;
               setActiveCardId(category.id);
             }}
-            className="faq-category-link selected-option visual-card p-4 no-underline transition hover:border-accent"
+            className="faq-category-link selected-option p-4 no-underline"
           >
             <span className="block text-sm font-black text-heading">{category.title}</span>
             <span className="mt-2 block text-xs leading-relaxed text-muted">{category.body}</span>

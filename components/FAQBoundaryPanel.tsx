@@ -17,23 +17,20 @@ export default function FAQBoundaryPanel({
   items,
 }: FAQBoundaryPanelProps) {
   return (
-    <div className="visual-card-strong overflow-hidden">
-      <div className="border-b border-structural-light bg-surface-light-alt px-5 py-6 md:px-8">
-        <p className="section-label">{eyebrow}</p>
+    <div className="faq-boundary-console">
+      <div className="faq-boundary-console__header px-5 py-6 md:px-8">
+        <p className="section-label faq-boundary-console__eyebrow">{eyebrow}</p>
         <h2 className="h2-system mt-3">{title}</h2>
-        <p className="mt-3 max-w-[62ch] text-body">{intro}</p>
+        <p className="mt-3 mb-0 max-w-[62ch]">{intro}</p>
       </div>
-      <div className="process-sequence grid gap-0 md:grid-cols-5">
+      <div className="faq-boundary-console__items">
         {items.map((item, index) => (
-          <article
-            key={item.label}
-            className="border-b border-structural-light p-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0"
-          >
-            <p className="mb-3 text-[11px] font-black uppercase tracking-wide text-accent">
+          <article key={item.label} className="faq-boundary-console__item p-5 md:p-6">
+            <p className="faq-boundary-console__marker">
               {String(index + 1).padStart(2, '0')}
             </p>
-            <h3 className="mb-2 text-base font-black text-heading">{item.label}</h3>
-            <p className="mb-0 text-sm leading-relaxed text-body">{item.value}</p>
+            <h3 className="mb-2 text-base font-black">{item.label}</h3>
+            <p className="mb-0 text-sm leading-relaxed">{item.value}</p>
           </article>
         ))}
       </div>

@@ -23,13 +23,11 @@ export default function FAQWrongAssumptions({
         <h2 className="h2-system mt-3">{title}</h2>
         <p className="mt-3 text-body">{intro}</p>
       </div>
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="faq-assumption-ledger">
         {items.map((item) => (
-          <article key={item.assumption} className="visual-card p-5">
-            <p className="mb-2 text-xs font-black uppercase tracking-wide text-muted">{item.assumption}</p>
-            <div className="rounded-lg bg-surface-light-alt p-4">
-              <p className="mb-0 text-sm font-semibold leading-relaxed text-body">{item.boundary}</p>
-            </div>
+          <article key={item.assumption} className="faq-assumption-ledger__row">
+            <p className="faq-assumption-ledger__assumption">{item.assumption}</p>
+            <p className="faq-assumption-ledger__boundary">{item.boundary}</p>
           </article>
         ))}
       </div>

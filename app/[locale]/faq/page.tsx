@@ -181,8 +181,8 @@ export default function FAQPage() {
   return (
     <>
       <HeaderClient />
-      <main className="min-h-screen">
-        <Section tone="authority" className="section-primitive--first" id="faq-start">
+      <main className="faq-page min-h-screen">
+        <Section tone="authority" className="section-primitive--first faq-hero" id="faq-start">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(20rem,0.72fr)] lg:items-center">
             <div className="motion-entrance">
               <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
@@ -214,7 +214,7 @@ export default function FAQPage() {
 
         <JourneyNav items={journeyItems} ariaLabel={t('redesign.hero.headline')} />
 
-        <Section tone="light" id="faq-quick">
+        <Section tone="light" id="faq-quick" className="faq-section faq-section--quick">
           <FAQQuickAnswerCards
             eyebrow={t('redesign.quick.eyebrow')}
             title={t('redesign.quick.title')}
@@ -223,7 +223,7 @@ export default function FAQPage() {
           />
         </Section>
 
-        <Section tone="alt" id="faq-categories">
+        <Section tone="alt" id="faq-categories" className="faq-section faq-section--categories">
           <FAQCategoryNav
             eyebrow={t('redesign.categories.eyebrow')}
             title={t('redesign.categories.title')}
@@ -232,7 +232,7 @@ export default function FAQPage() {
           />
         </Section>
 
-        <Section tone="light" id="faq-details">
+        <Section tone="light" id="faq-details" className="faq-section faq-section--details">
           <FAQGroupedAccordion
             eyebrow={t('redesign.details.eyebrow')}
             title={t('redesign.details.title')}
@@ -254,7 +254,7 @@ export default function FAQPage() {
           />
         </Section>
 
-        <Section tone="alt">
+        <Section tone="alt" className="faq-section faq-section--boundary">
           <FAQBoundaryPanel
             eyebrow={t('redesign.boundary.eyebrow')}
             title={t('redesign.boundary.title')}
@@ -263,7 +263,7 @@ export default function FAQPage() {
           />
         </Section>
 
-        <Section tone="light">
+        <Section tone="light" className="faq-section faq-section--assumptions">
           <FAQWrongAssumptions
             eyebrow={t('redesign.assumptions.eyebrow')}
             title={t('redesign.assumptions.title')}
@@ -272,7 +272,7 @@ export default function FAQPage() {
           />
         </Section>
 
-        <Section tone="alt" id="faq-decision">
+        <Section tone="alt" id="faq-decision" className="faq-section faq-section--decision">
           <FAQDecisionPanel
             eyebrow={t('redesign.decision.eyebrow')}
             title={t('redesign.decision.title')}
@@ -281,24 +281,23 @@ export default function FAQPage() {
           />
         </Section>
 
-        <Section tone="light" className="!pt-10">
-          <div className="visual-card-strong overflow-hidden">
-            <div className="grid gap-0 lg:grid-cols-[minmax(0,0.68fr)_minmax(18rem,0.32fr)]">
-              <div className="p-5 md:p-8">
-                <p className="section-label">FAQ</p>
-                <h2 className="h2-system mt-3">{t('redesign.finalCta.title')}</h2>
-                <p className="mt-4 max-w-[62ch] text-lg leading-relaxed text-body">{t('redesign.finalCta.intro')}</p>
-              </div>
-              <div className="border-t border-structural-light bg-surface-light-alt p-5 md:p-8 lg:border-l lg:border-t-0">
-                <div className="flex flex-col gap-3">
-                  <Link href={`/${locale}/contact`} className="btn-primary">
-                    {tCommon('nav.contact')}
-                  </Link>
-                  <Link href={`/${locale}/services`} className="btn-secondary">
-                    {tCommon('nav.services')}
-                  </Link>
-                </div>
-              </div>
+        <Section tone="authority" className="faq-section faq-section--final">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.68fr)_minmax(16rem,0.32fr)] lg:items-end">
+            <div>
+              <p className="section-label text-authority-on-dark/70">FAQ</p>
+              <h2 className="h2-system mt-3 text-authority-on-dark">{t('redesign.finalCta.title')}</h2>
+              <p className="mt-4 max-w-[62ch] text-lg leading-relaxed text-authority-on-dark/86">{t('redesign.finalCta.intro')}</p>
+            </div>
+            <div className="flex flex-col gap-3 lg:items-stretch">
+              <Link href={`/${locale}/contact`} className="btn-primary !border-surface-light !bg-surface-light !text-authority hover:!bg-surface-light-alt">
+                {tCommon('nav.contact')}
+              </Link>
+              <Link
+                href={`/${locale}/services`}
+                className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority"
+              >
+                {tCommon('nav.services')}
+              </Link>
             </div>
           </div>
         </Section>
