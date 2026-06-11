@@ -1122,6 +1122,7 @@
       "fullName": "Full Name",
       "emailAddress": "Email Address",
       "phoneNumber": "Phone Number (including country code)",
+      "phonePlaceholder": "+34 …",
       "preferredContact": "Preferred Contact Method",
       "preferredLanguage": "Preferred Language",
       "contactMethods": {

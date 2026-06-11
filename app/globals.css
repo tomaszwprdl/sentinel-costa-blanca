@@ -4955,6 +4955,19 @@ textarea:focus {
     linear-gradient(180deg, #ebe4d9 0%, #f0e9df 42%, #ece5da 100%);
 }
 
+/* HIW journey nav wraps on mobile; default anchor offset is too small for hash navigation */
+@media (max-width: 767px) {
+  html:has(.hiw-page),
+  .hiw-page {
+    --journey-nav-height: 10.375rem;
+    --scroll-anchor-offset: calc(var(--header-offset) + var(--journey-nav-height) + 0.75rem);
+  }
+
+  html:has(.hiw-page) {
+    scroll-padding-top: var(--scroll-anchor-offset);
+  }
+}
+
 [data-theme="dark"] .services-page,
 [data-theme="dark"] .hiw-page {
   background:

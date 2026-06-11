@@ -419,7 +419,7 @@ function ContactPageInner() {
                         type="tel"
                         id="phone"
                         {...register('phone')}
-                        placeholder="+34 123 456 789"
+                        placeholder={t('form.phonePlaceholder')}
                         className="form-control"
                       />
                       {errors.phone && (
