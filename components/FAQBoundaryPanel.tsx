@@ -29,10 +29,8 @@ export default function FAQBoundaryPanel({
             <span className="faq-boundary-registry__marker" aria-hidden="true">
               {String(index + 1).padStart(2, '0')}
             </span>
-            <div className="faq-boundary-registry__content">
-              <h3 className="faq-boundary-registry__label">{item.label}</h3>
-              <p className="faq-boundary-registry__value">{item.value}</p>
-            </div>
+            <h3 className="faq-boundary-registry__label">{item.label}</h3>
+            <p className="faq-boundary-registry__value">{item.value}</p>
           </li>
         ))}
       </ol>
