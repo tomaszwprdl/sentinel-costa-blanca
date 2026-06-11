@@ -10,7 +10,8 @@ Short briefing for Cursor, Codex, and Cloudie.
 - **Website:** Pre-live, soft-launch review ready. `noindex,nofollow` active.
 - **Phase:** Launch-era documentation reset complete; Visual Freedom Sprint and readiness audits next.
 - **Latest website/code stability SHA:** `28ccca2` (no website code change in doc-only commits).
-- **Latest documentation governance SHA:** `432cea8`.
+- **Launch-era governance baseline SHA:** `6a0d0f7` (reset + alignment + root entry points).
+- **Optional cognitive audit tool added:** `96fef3e` (`COGNITIVE-PAGE-AUDIT.md`).
 
 **Visual experimentation is allowed. Old build-era visual doctrine is no longer hard law.**
 

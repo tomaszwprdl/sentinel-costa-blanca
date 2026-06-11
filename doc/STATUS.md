@@ -10,7 +10,8 @@ Descriptive only. Does not define decisions or intent.
 |-------|-------|
 | Project | Sentinel |
 | Latest website/code stability SHA | `28ccca2` |
-| Latest documentation governance SHA | `432cea8` |
+| Launch-era governance baseline SHA | `6a0d0f7` |
+| Optional cognitive audit tool added | `96fef3e` |
 | Website phase | Pre-live / soft-launch review ready |
 | Site-polish phase | Closed (gate, pages, legal readability, contact sequencing) |
 | Documentation phase | Launch-era reset complete |
