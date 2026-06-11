@@ -240,7 +240,7 @@ export default async function HomePage({
             <div className="flex flex-col gap-3 lg:items-stretch">
               <PathwayFinalCtaLink
                 locale={locale}
-                className="btn-primary !border-surface-light !bg-surface-light !text-authority hover:!bg-surface-light-alt"
+                className="btn-primary btn-primary-inverse"
               >
                 {t('finalCta.cta')}
               </PathwayFinalCtaLink>

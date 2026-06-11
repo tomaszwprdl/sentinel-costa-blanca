@@ -696,7 +696,7 @@ function ContactPageInner() {
               </p>
             </div>
             <div className="flex flex-col gap-3 lg:items-stretch">
-              <Link href="#intake-form" className="btn-primary !border-surface-light !bg-surface-light !text-authority hover:!bg-surface-light-alt">
+              <Link href="#intake-form" className="btn-primary btn-primary-inverse">
                 {t('form.submitButton')}
               </Link>
               <Link

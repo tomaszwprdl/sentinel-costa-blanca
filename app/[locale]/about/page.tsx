@@ -220,7 +220,7 @@ export default async function AboutPage({
               {t('redesign.cta.intro')}
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Link href={`/${locale}/contact`} className="btn-primary !bg-surface-light !text-authority hover:!bg-surface-light-alt !border-surface-light">
+              <Link href={`/${locale}/contact`} className="btn-primary btn-primary-inverse">
                 {t('redesign.cta.primaryCta')}
               </Link>
               <Link href={`/${locale}/services`} className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority">
