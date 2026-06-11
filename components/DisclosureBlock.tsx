@@ -45,20 +45,16 @@ export default function DisclosureBlock({
         onKeyDown={handleKeyDown}
         aria-expanded={isExpanded}
         aria-controls={contentId}
-        className="disclosure-trigger flex w-full items-center justify-between bg-surface-card px-5 py-5 text-left hover:bg-surface-light-alt focus:outline-none focus:ring-2 focus:ring-support focus:ring-offset-2"
+        className="disclosure-trigger"
       >
-        <div className="flex-1 pr-4">
-          <div className="text-base font-bold text-heading">{label}</div>
-          {explainer && (
-            <div className="text-sm text-muted mt-1">{explainer}</div>
-          )}
+        <div className="disclosure-trigger__text">
+          <div className="disclosure-trigger__title">{label}</div>
+          {explainer && <p className="disclosure-trigger__summary">{explainer}</p>}
         </div>
-        <div className="flex items-center gap-2 flex-shrink-0">
-          <span className="hidden text-sm font-semibold text-support hover:underline sm:inline">{isExpanded ? t('hideDetails') : t('showDetails')}</span>
+        <div className="disclosure-trigger__action">
+          <span className="disclosure-trigger__label">{isExpanded ? t('hideDetails') : t('showDetails')}</span>
           <ChevronIcon
-            className={`disclosure-icon h-5 w-5 rounded-full bg-surface-light-alt p-1 text-accent ${
-              isExpanded ? 'transform rotate-180' : ''
-            }`}
+            className={`disclosure-icon ${isExpanded ? 'disclosure-icon--open' : ''}`}
           />
         </div>
       </button>
@@ -69,7 +65,7 @@ export default function DisclosureBlock({
             role="region"
             aria-labelledby={buttonId}
             aria-hidden={!isExpanded}
-            className="disclosure-content border-t border-structural-light bg-surface-light-alt px-5 py-5"
+            className="disclosure-content"
           >
             {children}
           </div>

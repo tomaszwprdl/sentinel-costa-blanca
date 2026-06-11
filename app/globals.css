@@ -1594,16 +1594,117 @@ textarea:focus {
 }
 
 .disclosure-trigger {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.125rem 1.25rem;
+  border: 0;
+  background: var(--surface-card);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
   transition:
     background var(--motion-quick) var(--motion-ease-out),
     color var(--motion-quick) var(--motion-ease-out);
 }
 
+.disclosure-trigger:hover {
+  background: var(--surface-light-alt);
+}
+
+.disclosure-trigger:focus {
+  outline: none;
+}
+
+.disclosure-trigger:focus-visible {
+  outline: 2px solid var(--support);
+  outline-offset: 2px;
+}
+
+.disclosure-trigger__text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.disclosure-trigger__title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--heading);
+}
+
+.disclosure-trigger__summary {
+  margin: 0.4rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.disclosure-trigger__action {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 0 0 auto;
+  align-self: center;
+}
+
+.disclosure-trigger__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--support);
+  white-space: nowrap;
+}
+
 .disclosure-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: var(--surface-light-alt);
+  color: var(--accent);
+  padding: 0.25rem;
   transition:
     transform var(--motion-standard) var(--motion-ease-out),
     background var(--motion-standard) var(--motion-ease-out),
     color var(--motion-standard) var(--motion-ease-out);
+}
+
+.disclosure-icon--open {
+  transform: rotate(180deg);
+}
+
+.disclosure-content {
+  border-top: 1px solid var(--structural-light);
+  background: var(--surface-light-alt);
+  padding: 1.25rem 1.25rem 1.35rem;
+}
+
+@media (min-width: 640px) {
+  .disclosure-trigger {
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .disclosure-content {
+    padding: 1.35rem 1.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .disclosure-trigger {
+    flex-wrap: wrap;
+    row-gap: 0.75rem;
+    padding: 1.125rem 1.125rem;
+  }
+
+  .disclosure-trigger__action {
+    width: 100%;
+    justify-content: flex-end;
+    align-self: stretch;
+    padding-top: 0.1rem;
+  }
 }
 
 .disclosure-grid {
@@ -7868,8 +7969,8 @@ textarea:focus {
 
 .hiw-support-disclosures {
   display: grid;
-  gap: 0.85rem;
-  margin-top: 1rem;
+  gap: 1.15rem;
+  margin-top: 1.25rem;
 }
 
 [data-theme="dark"] .hiw-support-band {
@@ -8132,19 +8233,158 @@ textarea:focus {
   border-color: color-mix(in srgb, var(--authority) 14%, var(--structural-light));
 }
 
-.hiw-ledger__step .disclosure-trigger {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.hiw-page .hiw-ledger__step .disclosure-trigger,
+.hiw-page .hiw-support-disclosures .disclosure-trigger,
+.hiw-page .hiw-report-decision__evidence .disclosure-trigger {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
-.hiw-ledger__step .disclosure-trigger .text-base {
+.hiw-page .hiw-ledger__step .disclosure-trigger__title {
   font-size: 1.02rem;
-  line-height: 1.35;
+  line-height: 1.45;
 }
 
-.hiw-ledger__step .disclosure-trigger .text-sm {
-  margin-top: 0.35rem;
-  line-height: 1.45;
+.hiw-page .hiw-ledger__step .disclosure-trigger__summary,
+.hiw-page .hiw-support-disclosures .disclosure-trigger__summary,
+.hiw-page .hiw-report-decision__evidence .disclosure-trigger__summary {
+  margin-top: 0.45rem;
+  line-height: 1.5;
+}
+
+.hiw-page .hiw-ledger__step .disclosure-content,
+.hiw-page .hiw-support-disclosures .disclosure-content,
+.hiw-page .hiw-report-decision__evidence .disclosure-content {
+  padding-top: 1.4rem;
+  padding-bottom: 1.55rem;
+}
+
+.hiw-page .hiw-ledger .disclosure-content .grid {
+  gap: 1.75rem;
+}
+
+.hiw-page .hiw-ledger .disclosure-content .space-y-5 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 1.35rem;
+}
+
+.hiw-disclosure-detail-group__title {
+  margin: 0 0 0.625rem;
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.4;
+  color: var(--heading);
+}
+
+.hiw-disclosure-detail-group__body {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--body);
+}
+
+.hiw-disclosure-detail-group__list {
+  margin: 0;
+  margin-left: 1rem;
+  padding: 0;
+  list-style: disc;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--body);
+}
+
+.hiw-disclosure-detail-group__list > li + li {
+  margin-top: 0.4rem;
+}
+
+.hiw-disclosure-detail-group__list--spaced > li + li {
+  margin-top: 0.55rem;
+}
+
+.hiw-page .hiw-support-disclosures .disclosure-content h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.4;
+  color: var(--heading);
+}
+
+.hiw-page .hiw-support-disclosures .disclosure-content .space-y-5 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 1.35rem;
+}
+
+.hiw-page .hiw-support-disclosures .disclosure-content ul {
+  margin-top: 0;
+}
+
+.hiw-page .hiw-report-decision__evidence .disclosure-shell {
+  margin-top: 1.15rem;
+}
+
+.hiw-page .hiw-report-decision__evidence .disclosure-content .report-table-card {
+  margin-top: 0;
+  padding: 1.35rem 1.15rem;
+}
+
+.hiw-page .hiw-report-decision__evidence .disclosure-content .report-table-card > h3 {
+  margin: 0 0 1rem;
+}
+
+.hiw-page .hiw-report-decision__evidence .disclosure-content .report-table-card > .rounded-2xl.border {
+  padding: 1.15rem 1.2rem;
+}
+
+.hiw-page .hiw-report-decision__evidence .disclosure-content .report-table-card > :not(:first-child) {
+  margin-top: 1.15rem;
+}
+
+.hiw-page .hiw-report-decision__evidence .disclosure-content .report-table-card > .mt-10 {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+}
+
+.hiw-page .hiw-report-decision__evidence .report-table__th,
+.hiw-page .hiw-report-decision__evidence .report-table__td {
+  padding: 0.85rem 0.95rem;
+}
+
+@media (min-width: 640px) {
+  .hiw-page .hiw-ledger__step .disclosure-trigger,
+  .hiw-page .hiw-support-disclosures .disclosure-trigger,
+  .hiw-page .hiw-report-decision__evidence .disclosure-trigger {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .hiw-page .hiw-ledger__step .disclosure-content,
+  .hiw-page .hiw-support-disclosures .disclosure-content,
+  .hiw-page .hiw-report-decision__evidence .disclosure-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .hiw-page .hiw-ledger .disclosure-content .grid {
+    gap: 2rem 2.25rem;
+  }
+
+  .hiw-page .hiw-report-decision__evidence .disclosure-content .report-table-card {
+    padding: 1.5rem 1.35rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .hiw-page .hiw-ledger__step .disclosure-trigger,
+  .hiw-page .hiw-support-disclosures .disclosure-trigger,
+  .hiw-page .hiw-report-decision__evidence .disclosure-trigger {
+    padding: 1.125rem 1.125rem;
+  }
+
+  .hiw-page .hiw-report-decision__evidence .report-table__th,
+  .hiw-page .hiw-report-decision__evidence .report-table__td {
+    padding: 0.75rem 0.65rem;
+    font-size: 0.8125rem;
+  }
 }
 
 @media (min-width: 768px) {

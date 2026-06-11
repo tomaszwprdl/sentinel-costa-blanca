@@ -43,9 +43,9 @@ function DetailGroup({
   items: string[];
 }) {
   return (
-    <div>
-      <h4 className="mb-2 text-base font-black text-heading">{title}</h4>
-      <ul className="ml-4 list-disc space-y-1.5 text-sm text-body">
+    <div className="hiw-disclosure-detail-group">
+      <h4 className="hiw-disclosure-detail-group__title">{title}</h4>
+      <ul className="hiw-disclosure-detail-group__list">
         {items.map((item) => (
           <li key={item}>{item}</li>
         ))}
@@ -98,7 +98,7 @@ export default function ProcessDetailChapters({ t }: { t: Translator }) {
 
       <LedgerRow index={3}>
         <DisclosureBlock label={t('redesign.details.chapters.package')} explainer={t('step2.subtitle')}>
-          <ul className="ml-4 list-disc space-y-2 text-sm text-body">
+          <ul className="hiw-disclosure-detail-group__list hiw-disclosure-detail-group__list--spaced">
             {STEP2_ITEMS.map((itemKey) => (
               <li key={itemKey}>{t(`step2.${itemKey}`)}</li>
             ))}
@@ -116,13 +116,13 @@ export default function ProcessDetailChapters({ t }: { t: Translator }) {
                 items={itemKeys.map((itemKey) => t(`step3.${itemKey}`))}
               />
             ))}
-            <div>
-              <h4 className="mb-2 text-base font-black text-heading">{t('step3.approvalTitle')}</h4>
-              <p className="mb-0 text-sm text-body">{t('step3.approvalText')}</p>
+            <div className="hiw-disclosure-detail-group">
+              <h4 className="hiw-disclosure-detail-group__title">{t('step3.approvalTitle')}</h4>
+              <p className="hiw-disclosure-detail-group__body">{t('step3.approvalText')}</p>
             </div>
-            <div>
-              <h4 className="mb-2 text-base font-black text-heading">{t('step3.timelineTitle')}</h4>
-              <p className="mb-0 text-sm text-body">{t('step3.timelineText')}</p>
+            <div className="hiw-disclosure-detail-group">
+              <h4 className="hiw-disclosure-detail-group__title">{t('step3.timelineTitle')}</h4>
+              <p className="hiw-disclosure-detail-group__body">{t('step3.timelineText')}</p>
             </div>
           </div>
         </DisclosureBlock>
@@ -144,7 +144,7 @@ export default function ProcessDetailChapters({ t }: { t: Translator }) {
 
       <LedgerRow index={6}>
         <DisclosureBlock label={t('redesign.details.chapters.activation')} explainer={t('step5.confirmationText')}>
-          <ul className="ml-4 list-disc space-y-2 text-sm text-body">
+          <ul className="hiw-disclosure-detail-group__list hiw-disclosure-detail-group__list--spaced">
             {STEP5_ITEMS.map((itemKey) => (
               <li key={itemKey}>{t(`step5.${itemKey}`)}</li>
             ))}
