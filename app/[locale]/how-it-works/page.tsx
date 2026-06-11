@@ -91,11 +91,11 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
           <OperatingPathChapter />
         </Section>
 
-        <Section tone="light" className="section-primitive--compact hiw-interface-section">
+        <Section tone="light" className="section-primitive--compact hiw-interface-section hiw-section--local">
           <LocalExecutionChapter />
         </Section>
 
-        <Section tone="alt" className="section-primitive--compact hiw-interface-section">
+        <Section tone="alt" className="section-primitive--compact hiw-interface-section hiw-section--report">
           <ReportDecisionChapter t={t} />
         </Section>
 
