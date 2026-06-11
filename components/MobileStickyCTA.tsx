@@ -43,12 +43,16 @@ export default function MobileStickyCTA({
 
       const suppressSelectors = suppressWhenVisible
         ? suppressWhenVisible.split(',').map((selector) => selector.trim()).filter(Boolean)
-        : ['footer'];
-      const targetBlocked = suppressSelectors.some((selector) =>
+        : [];
+      const defaultSuppressSelectors = ['footer', '#site-footer', '.site-footer'];
+      const allSuppressSelectors = [...new Set([...defaultSuppressSelectors, ...suppressSelectors])];
+      const targetBlocked = allSuppressSelectors.some((selector) =>
         Array.from(document.querySelectorAll(selector)).some((node) => overlapsStickyBand(node)),
       );
+      const nearPageBottom =
+        window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - STICKY_BAND_HEIGHT - 8;
 
-      setBlocked(targetBlocked);
+      setBlocked(targetBlocked || nearPageBottom);
     };
 
     const frame = window.requestAnimationFrame(updateState);

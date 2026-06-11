@@ -25,6 +25,9 @@ export default function Footer() {
           <p className="mt-5 max-w-xl text-base leading-relaxed text-authority-on-dark/78">
             {t('footer.brandLine')}
           </p>
+          <p className="mt-3 max-w-xl text-sm leading-relaxed text-authority-on-dark/72">
+            {t('footer.serviceAreaLine')}
+          </p>
         </div>
 
         <div className="grid-frame gap-7 py-7 md:gap-8 md:py-8">
