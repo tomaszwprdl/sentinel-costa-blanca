@@ -221,3 +221,11 @@ The Sentinel logo system consists of:
 No additional variants may be created without governance approval.
 
 The logo system is closed and structurally defined.
+
+---
+
+## 10. Website scope note
+
+Logo restrictions apply to the **logo asset and logo usage**, not to every section around it.
+
+Website backgrounds, cards, surfaces, accents, and imagery may evolve during launch-era visual work as long as the logo remains protected, legible, and coherent with the page.

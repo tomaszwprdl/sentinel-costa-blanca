@@ -1,11 +1,9 @@
 # EN-ADAPTATION-LAYER.md  
 Sentinel — English Adaptation Governance  
-Task 5F  
-Status: ✅ COMPLETE / LOCKED
 
-English adaptation governance formalized.
-PL/EN parity rule binding.
-Structural terminology locked.
+**Status:** Active launch-era guidance
+
+PL/EN parity required. Structural terminology locked where noted below.
 
 ---
 
@@ -227,20 +225,10 @@ English must read as:
 Avoid regionally casual phrasing.
 Avoid idiomatic expressions.
 
-Sentinel tone must remain jurisdictional, not conversational.
+English may be clear and direct without becoming casual sales copy. Prefer institutional clarity over idioms.
 
 ---
 
 # 10. Governance Note
 
-This document becomes binding upon Owner lock-in.
-
-Changes require:
-
-- Update to STATUS.md
-- Reference in AI-GOVERNANCE.md
-- Cross-check with COPY-DISCIPLINE-CODEX.md
-
----
-
-End of EN Adaptation Layer (Task 5F)
+Descriptor and prohibited-category changes require Owner approval and cross-check with `COPY-DISCIPLINE-CODEX.md` and `DECISIONS.md`.

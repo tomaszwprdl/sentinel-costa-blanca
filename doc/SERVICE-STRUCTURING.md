@@ -1,10 +1,9 @@
 # SERVICE-STRUCTURING.md  
 Sentinel — Service Structuring Doctrine  
-Task 5D  
-Status: ✅ COMPLETE / LOCKED
 
-Aligned with DECISIONS.md and TASK.md.
-Changes require explicit Owner override.
+**Status:** Active — load-bearing
+
+Aligned with `DECISIONS.md`. Package, SLA, and pricing-framework changes require explicit Owner approval.
 ---
 
 ## 1. Purpose
@@ -20,7 +19,7 @@ This document defines:
 
 This document governs WHAT Sentinel offers and HOW it scales.
 
-It does not define layout (see LAYOUT-COMPOSITION.md).  
+It does not define layout (see `LAYOUT COMPOSITION.md`).  
 It does not define tone (see BRAND.md).  
 
 ---

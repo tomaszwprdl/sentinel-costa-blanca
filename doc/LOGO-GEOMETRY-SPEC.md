@@ -163,3 +163,11 @@ Outline mode frequently
 Work in black only (#000000)
 
 No color exploration at this stage.
+
+---
+
+## 12. Website scope note
+
+Geometry, colors, and containment rules in this spec apply to **logo assets only**.
+
+Page-level palette, imagery, and surface treatment are governed separately (`VISUAL-FREEDOM-SPRINT.md`, `DECISIONS.md` §12–13) and must not alter the mark.

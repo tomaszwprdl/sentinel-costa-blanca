@@ -1,711 +1,262 @@
 # DECISIONS.md — SENTINEL
 
-Purpose:  
-This file records only decisions that are intentionally made and explicitly acknowledged.
+Purpose: binding decisions only. Provisional or exploratory material does not belong here.
 
-If something is provisional, exploratory, or interpretative — it does not belong here.
+**Status legend:** LOCKED — binding unless Owner overrides · CONSTRAINED — direction/limits defined · OPEN — not decided
 
-This document defines what is binding.
+**Locked:** Sentinel name · PL/EN descriptors · logo asset geometry/color/usage · no concierge / rental-management / lifestyle drift · service model · geography · packages · SLA meaning · emergency authority · estimator logic · contact form schema/API/payload · legal substance · `noindex/nofollow` · contact details · PL/EN parity
 
----
-
-# Decision Status Legend
-
-LOCKED — Binding. May change only via explicit Owner override.  
-CONSTRAINED — Direction and limits defined. Details open within limits.  
-OPEN — Not decided. Any implementation is provisional.
+**Flexible (website execution):** palette · section composition · visual rhythm · card/panel treatment · imagery/proof modules · warmth · contrast · page atmosphere · visual experimentation under `VISUAL-FREEDOM-SPRINT.md`
 
 ---
 
 # 1. Product Name
 
-Decision: Sentinel  
-Status: LOCKED
+**Decision:** Sentinel  
+**Status:** LOCKED
 
-Rationale:
-Sentinel reflects oversight, boundary enforcement, and defined responsibility.
-
-Implications:
-- All references to Guardian are deprecated.
-- No dual naming.
-- No transitional phrasing.
-- Sentinel must stand alone as formal name.
+Guardian naming is deprecated. No dual naming.
 
 ---
 
-# 2. Functional Identity Structure
+# 2. Functional Identity
 
-Status: CONSTRAINED
+**Status:** LOCKED
 
-## 2.1 Structural Descriptor (Locked)
+| Locale | Descriptor |
+|--------|------------|
+| PL | Reprezentacja właściciela na miejscu |
+| EN | Structured Property Oversight |
 
-Primary structural descriptors:
-
-PL (Primary Locale):
-Reprezentacja właściciela na miejscu
-
-EN (Equivalent Structural Identity):
-Structured Property Oversight
-
-Rules:
-
-Both descriptors define functional identity.
-Structural, not promotional.
-Must not be altered.
-Must not be replaced by informal or campaign language.
-Each descriptor applies within its respective locale.
-When used with the wordmark, descriptor must remain visually attached to the name.
-Descriptor may be omitted in formal/legal contexts per hierarchy model.
-
-## 2.2 Optional Descriptors (Reversible)
-
-Permitted:
-- Geographic clarifiers.
-- English equivalents (EN locale only).
-
-Rules:
-- Must not override core identity.
-- Must not introduce emotional, lifestyle, or security framing.
-- Must remain secondary to name.
-
-Descriptors are not slogans.
+Rules: structural, not promotional; locale-appropriate; must not be replaced by campaign copy; when paired with wordmark, descriptor stays visually attached.
 
 ---
 
 # 3. Product Nature
 
-Decision: Sentinel is a local property oversight and representation system.  
-Status: LOCKED
+**Decision:** Local property oversight and representation system.  
+**Status:** LOCKED
 
-Explicitly not:
-- Concierge
-- Lifestyle support
-- Generic property management
-
-Non-negotiables:
-- Defined scope over flexibility
-- Procedures over personality
-- Accountability over promises
+**Not:** concierge · lifestyle support · generic property management · rental management
 
 ---
 
 # 4. Service Model
 
-Decision: Strict package-based structure.  
-Status: LOCKED
+**Decision:** Strict package-based structure.  
+**Status:** LOCKED
 
-Definition:
-- Services exist only within predefined packages.
-- Anything not explicitly listed is excluded by default.
+If not explicitly listed in package → excluded by default.
 
-Purpose:
-- Prevent scope creep
-- Enable enforceable responsibility
-- Allow operational scaling
+Packages (locked names):
+
+| PL | EN |
+|----|-----|
+| Podstawowy | Basic |
+| Rozszerzony | Extended |
+| Pełny | Full |
 
 ---
 
 # 5. Geographic Constraint
 
-Decision: Torrevieja + approx. 50–70km radius.  
-Status: LOCKED
+**Decision:** Torrevieja + approximately 50–70 km radius.  
+**Status:** LOCKED
 
-Implications:
-- No exceptions.
-- No premium override.
-- Out-of-radius properties are excluded.
-
-Physical presence must remain realistic.
+No exceptions. Out-of-radius properties excluded.
 
 ---
 
 # 6. SLA Model
 
-Decision: SLA defines response and decision time, not guaranteed resolution.  
-Status: LOCKED
+**Decision:** SLA = response and decision time, not guaranteed resolution.  
+**Status:** LOCKED
 
-Resolution depends on third parties.
-
-SLA parameters may differ between packages exclusively in:
-
-- Response window
-- Physical presence window
-
-Reporting window remains system-standard across all packages.
-
-SLA differentiation must not alter structural authority model.
+Package SLA differentiation: response/decision windows only. Reporting window remains system-standard.
 
 ---
 
-# 7. Emergency Authority Limits
+# 7. Emergency Authority
 
-Decision: Autonomous decisions allowed only within defined financial limits and designated packages.  
-Status: LOCKED
+**Decision:** Autonomous decisions only within defined financial limits (Model C).  
+**Status:** LOCKED
 
-Rules:
-- Limits apply per decision.
-- All actions documented.
-- All actions reported.
+Full package: standard €300 per decision; optional €500 if agreed. Above limit → owner approval.
 
 ---
 
-# 8. Proof & Evidence Philosophy
+# 8. Proof & Evidence
 
-Decision: Minimal, factual, non-promotional artifacts only.  
-Status: LOCKED
+**Decision:** Factual operational proof only.  
+**Status:** LOCKED
 
-Proof exists to demonstrate operational reality, not to persuade.
+**Permitted:** structural report previews, checklists, access/register examples, operational photography without client data, schematic evidence modules.
 
-Permitted:
-- Structural reporting schema displayed as schematic representation (without real client data)
-
-Explicit exclusions:
-- Testimonials
-- Lifestyle imagery
-- Case-study storytelling
-- Volume-based social proof
+**Excluded:** testimonials · lifestyle imagery · case-study storytelling · fake social proof
 
 ---
 
 # 9. Website Role
 
-Decision: Website is a system interface, not a marketing funnel.  
-Status: LOCKED
+**Decision:** Qualification-first system interface, not a conversion funnel.  
+**Status:** CONSTRAINED
 
-Implications:
-- Qualification over conversion
-- Clarity over persuasion
-- Boundaries over charm
+Clarity and boundaries over hype. The site may become warmer, more visual, and more tactile if service boundaries stay clear.
 
-Evidence must be integrated structurally within service and procedural layers.
-
-Standalone “proof” sections are not permitted.
-
+---
 
 # 10. Copy Tone
 
-Decision: Policy-first, literal, non-promotional tone.  
-Status: LOCKED
+**Decision:** Procedural, boundary-aware, non-concierge.  
+**Status:** CONSTRAINED
 
-Prohibited:
-- Sales language
-- Emotional reassurance
-- Vague promises
+Copy may be clearer and more human. It must not become promotional, vague, or lifestyle/concierge-like. See `COPY-DISCIPLINE-CODEX.md`.
 
 ---
 
 # 11. Language Strategy
 
-Decision: Polish and English only.  
-Status: LOCKED
+**Decision:** Polish and English only.  
+**Status:** LOCKED
 
-Rules:
-- Polish primary.
-- English structurally equal.
-- No mixed or locale-less pages.
+Polish primary. English structurally equal. PL/EN parity required.
 
 ---
 
 # 12. Visual Identity System
 
-Status: LOCKED
+**Status:** split — logo LOCKED · website execution CONSTRAINED / EXPERIMENTAL
 
-The identity system is binding. No reinterpretation permitted.
+## 12.1 Logo & wordmark (LOCKED)
 
----
+- Symbol geometry, variants, and production assets are locked.
+- Wordmark: SENTINEL in TT Fellows Medium, ALL CAPS.
+- Descriptor pairing rules per `LOGO-GEOMETRY-SPEC.md`, `LOGO-USAGE-HIERARCHY.md`, `LOGO-DIRECTION.md.md`.
+- Logo colors and containment rules apply to the **logo asset**, not to entire page backgrounds.
 
-## 12.1 Symbol
+## 12.2 Website visual execution (CONSTRAINED / EXPERIMENTAL)
 
-- Architectural institutional mark.
-- Bilateral structure.
-- Non-literal.
-- Framed version = authority form.
-- Open version = structural/signet variant.
-- Geometry locked.
+**Website visual execution is now CONSTRAINED / EXPERIMENTAL, not LOCKED.**
 
-No reinterpretation.
+Visual experimentation is allowed when it improves clarity, authority, perceived quality, and compatibility with the Sentinel logo.
 
----
+**Flexible (Owner-approved sprint work):** color palette on pages · section composition · page rhythm · imagery · proof modules · card/panel treatment · warmth · contrast · atmosphere
 
-## 12.2 Wordmark
+**Still protected:** logo asset integrity · no concierge / rental-management / lifestyle positioning · readable hierarchy · mobile sanity · accessibility
 
-Primary:
-SENTINEL  
-Typeface: TT Fellows  
-Weight: Medium  
-Case: ALL CAPS  
-
-Rules:
-- Must lead visually.
-- Must not be dominated by symbol.
-
-Secondary (Descriptor):
-Reprezentacja właściciela na miejscu  
-Same family.  
-Lighter weight.  
-Mixed case.  
-
-Must align to wordmark, not symbol.
-
-Descriptor must never appear without core name.
+Direction: `VISUAL-FREEDOM-SPRINT.md`
 
 ---
 
-## 12.3 Logo Reduction Model
+# 13. Color Doctrine
 
-Full:
-Symbol + Wordmark + Descriptor
+**Status:** split
 
-Reduced:
-Symbol + Wordmark
+## 13.1 Identity reference palette (LOCKED for logo / identity reference)
 
-Minimal:
-Symbol only
+Primary Authority `#203A5F` · Primary Support `#2E507A` · Base `#F4F6F8` · Structural `#4F6460` / `#51677A` · Neutral `#707B86` · Accent `#6E3A44`
 
-Descriptor never standalone.
+Legacy percentage distribution rules are **historical guidance**, not hard law for website pages.
 
----
+## 13.2 Website experimental palette (CONSTRAINED)
 
-## 12.4 Logo Variants
+Allowed for website surfaces during launch-era visual work (not logo palette):
 
-Framed:
-Institutional seal / authority.
+Ink `#10263f` · Navy `#163b5c` · Sea `#2f6f73` · Stone `#f2eee6` · Paper `#fffaf2` · Clay `#b8664a` · Copper `#d29a57` · Sage `#738b7c` · Line `#d8cdbc` · Muted `#6f7883`
 
-Open:
-Structural system element.
-
-Usage:
-Authority contexts → Framed  
-System/process contexts → Open  
+Colors may evolve if coherent and accessible. WCAG AA for body text remains required.
 
 ---
 
-## 12.5 Presentation Rules
+# 14. Typography
 
-- Rectangular containment only.
-- No rounded containers.
-- No circular badges.
-- No decorative framing.
-- No shadow effects.
-- No stylistic reinterpretation.
+**Status:** split
 
-Authority must remain restrained.
+- **Logo wordmark:** TT Fellows — LOCKED
+- **Website:** existing project font stack may be used with clearer hierarchy; no new dependencies without justification — CONSTRAINED
 
 ---
 
-# 13. Brand Communication Hierarchy
+# 15. Usage Pathways
 
-Status: LOCKED
+**Status:** LOCKED
 
-Level 1 — Full Structure  
-Sentinel  
-Reprezentacja właściciela na miejscu  
-Zajmujemy się nieruchomością pod Twoją nieobecność.
+Canonical slugs: `private-use-only` · `regular-guest-stays` · `mixed-not-defined`
 
-The wording and order of this three-line construction are LOCKED.
+Homepage: hard diagnostic gate; no default pathway; body sections only after selection.
 
-Used in first-contact environments.
-
-Level 2 — Name + Descriptor  
-Used in structured identity contexts.
-
-Level 3 — Name Only  
-Used in legal and operational contexts.
-
-Prohibited:
-- Replacing descriptor with informal alternatives.
-- Hybrid constructions.
-- Treating descriptor as campaign copy.
+Pathways may change framing, examples, emphasis, estimator defaults, contact context — not packages, SLA, emergency limits, legal boundaries, or identity.
 
 ---
 
-# 14. Color Doctrine
+# 16. Estimator & Pricing Communication
 
-Status: LOCKED
+**Status:** LOCKED (matrix values pre-live indicative)
 
-## 14.1 Palette
-
-Primary Authority → #203A5F  
-Primary Support → #2E507A  
-Base → #F4F6F8  
-Structural → #4F6460 / #51677A  
-Neutral → #707B86  
-Accent → #6E3A44  
-
-## 14.2 Distribution Range
-
-55–65% → Base  
-15–20% → Authority  
-10–15% → Support  
-5–10% → Structural  
-3–5% → Neutral  
-~1% → Accent  
-
-Accent:
-- Signature only.
-- Never primary CTA.
-- Never large surfaces.
-
-WCAG AA contrast mandatory.
-
-1# 14.3 UI Light/Dark Architecture Doctrine
-
-Status: LOCKED
-
-Sentinel jest systemem light-first.
-
-Light mode jest kanoniczną architekturą wizualną (referencyjną dla marki i projektu).
-Dark mode jest trybem adaptacyjnym (ergonomicznym), a nie osobną tożsamością.
-
-### 14.3.1 Identity Consistency Rule
-
-Dark mode nie może:
-- zmieniać tonu marki (nie może być “bardziej poważny” niż light)
-- wprowadzać dramatyzmu (pure black, wysoki kontrast teatralny, “premium noir”)
-- reinterpretować palety w sposób zmieniający charakter systemu
-
-Dark mode musi:
-- zachować ten sam porządek hierarchii (Base → Authority → Support → Structural → Neutral → Accent)
-- zachować te same ograniczenia dystrybucji (14.2) jako docelową proporcję percepcyjną
-- zachować zasadę: Accent = signature only
-
-### 14.3.2 Palette Role Mapping (Binding)
-
-Rola kolorów pozostaje taka sama w obu trybach:
-
-- Primary Authority (#203A5F): kolor jurysdykcji / containment blocks / header state
-- Primary Support (#2E507A): kolor wsparcia (secondary emphasis), nigdy tło globalne
-- Structural (#4F6460 / #51677A): linie, ramy, separatory, secondary containers
-- Neutral (#707B86): tekst drugorzędny, metadane, label-e niskiej wagi
-- Accent (#6E3A44): sygnatura / mikro-akcent, nigdy CTA i nigdy duże powierzchnie
-
-### 14.3.3 Dark Mode Background Rule
-
-W dark mode:
-- Base (#F4F6F8) nie jest używany jako tło.
-- Tło dark jest neutralne i “near-black” (nie czyste #000000).
-- #203A5F nie może stać się globalnym tłem strony.
-- Kontrast musi spełniać WCAG AA w obu trybach.
-
-### 14.3.4 Approved Dark Mode Support Adaptation (Binding)
-
-In dark mode, Primary Support may use #4B79AD as an approved perceptual adaptation.
-
-This does not introduce a new palette role. It is a dark-mode rendering of the Support role to preserve legibility and hierarchy.
-
-Light mode Support remains #2E507A.
-
-All distribution constraints (14.2) and role mapping (14.3.2) remain unchanged.
-
-### 14.3.5 Inversion Prohibition
-
-Dark mode nie jest odwróceniem kolorów (no “invert UI”).
-To adaptacja kontrastowa przy zachowaniu tożsamości.
-
-# 15. Typography System
-
-Status: LOCKED
-
-Body:
-Source Sans 3  
-Regular 400  
-Line-height 150–160%  
-66–72 char max length  
-
-Headings:
-Neue Haas Grotesk Text Pro  
-65 Medium  
-
-Procedural Accent:
-Source Sans 3 Medium/Semibold  
-Uppercase allowed  
-
-No additional families permitted.
-
-Wordmark remains TT Fellows.
+- Logic in `lib/estimatorMatrix.ts` — do not change without Owner approval.
+- Public range display; no “starting from” anchors; no hidden pricing.
+- Mixed / not defined → classification-first, not invented pricing.
+- Final commercial ranges require Owner confirmation before public launch.
 
 ---
 
-# 16. Task Sequencing Model
+# 17. Contact & Pre-Live Operations
 
-Status: LOCKED
+**Status:** LOCKED
 
-Website built sequentially.
-
-Rules:
-- One active task.
-- No partial execution of future tasks.
-- Applies to design, content, visuals, tooling.
-
-Premature execution invalid unless Owner explicitly promotes.
+- Email: `sentinelcostablanca@gmail.com`
+- Phone: `+34 694 22 90 35`
+- Contact form schema, API, and payload behavior — do not change without Owner approval.
+- `noindex,nofollow` remains active until Owner removes pre-live protection.
 
 ---
 
-# Drift Control Rule
+# 18. Legal Substance
 
-If implementation deviates from this document:
+**Status:** LOCKED
 
-1. Implementation pauses.
-2. Conflict is documented.
+Terms and privacy meaning, package boundaries, exclusions, SLA definitions, emergency limits, and service area — change only with explicit Owner approval and legal review.
+
+Presentation may improve; substance may not drift silently.
+
+---
+
+# 19. Operational Capabilities
+
+**Status:** LOCKED
+
+Keyholding and cleaning are core capabilities **inside** structured oversight — not separate brand identity.
+
+Execution-only layer remains subordinate (no SLA, no autonomous authority, no ongoing oversight implied).
+
+---
+
+# 20. Package Presentation
+
+**Status:** LOCKED
+
+Vertical containment presentation. No SaaS pricing table tropes. No “most popular” badges.
+
+---
+
+# Historical Note
+
+Build-era Task 1–8 sequencing and strict visual lock-down are **retired**. Those task and audit documents were removed from the active repository after the documentation reset. Current work is governed by the active docs listed in `REPO-MAP.md`.
+
+---
+
+# Drift Control
+
+If implementation conflicts with this document:
+
+1. Pause conflicting work.
+2. Document the conflict.
 3. Owner decides.
 
-No silent updates permitted.
+No silent contract changes.
 
 ---
 
-# Maintenance Rule
+# Maintenance
 
-This document records only real decisions.
-
-Changes require:
-1. Explicit Owner acknowledgment.
-2. Direct modification of relevant section.
-3. Clear status update if applicable.
-
-Undocumented decisions are invalid by default.
-
----
-
-# 17. Package Escalation Model
-
-Decision: Three-level jurisdictional escalation structure.  
-Status: LOCKED
-
-Definition:
-Sentinel operates exclusively through three predefined oversight levels.
-
-Escalation axis may differ ONLY by:
-- Autonomous financial decision authority
-- Minimum guaranteed inspection frequency
-- Operational priority allocation
-
-Packages must NOT differ by:
-- Lifestyle features
-- Concierge-style services
-- Convenience add-ons
-
-Purpose:
-Preserve structural clarity and institutional positioning.
-
----
-
-# 18. Usage Pathway Segmentation
-
-Decision: Sentinel uses one service architecture with three contextual usage pathways.  
-Status: LOCKED
-
-Pathways:
-- Private Use Only
-- Regular Guest Stays
-- Mixed / Not Yet Defined
-
-PL public labels:
-- Tylko użytek prywatny
-- Regularne pobyty gości
-- Model mieszany / jeszcze nieustalony
-
-Canonical slugs:
-- private-use-only
-- regular-guest-stays
-- mixed-not-defined
-
-Definition:
-Usage pathways classify the owner's operating situation and adjust the visible problem framing, examples, operational emphasis, estimator default, and contact context.
-
-Rules:
-- Pathways do NOT create separate websites.
-- Pathways do NOT create separate packages.
-- Pathways do NOT change SLA tier.
-- Pathways do NOT change emergency authority limits.
-- Pathways do NOT change legal boundaries or geographic constraint.
-- Pathways do NOT change Sentinel’s core identity.
-
-Purpose:
-Allow the website to reduce the correct anxiety for each owner type without fragmenting the service architecture.
-
-Implementation record (Task 8 homepage):
-
-- Homepage opens with identity + hard diagnostic gate; no content below gate until valid usage situation selected.
-- Selected state shows diagnostic result panel then shared homepage sections.
-- Homepage copy adaptation per usage situation is pending; governed by Task 8.12 and doc/HOMEPAGE-USAGE-SITUATION-PASS.md.
-
----
-
-# 18A. Operational Mode Overlay
-
-Decision: Guest activity is handled as an operational overlay inside the same package system.  
-Status: LOCKED
-
-Definition:
-Operational mode models activity intensity. It sits below package jurisdiction.
-
-Public usage situations map to estimator modes as follows:
-- Private Use Only -> private_use
-- Regular Guest Stays -> active_guest
-- Mixed / Not Yet Defined -> structured review / classification, no direct price calculation
-
-Rules:
-- Operational mode does NOT change package level.
-- Operational mode does NOT change SLA tier.
-- Operational mode does NOT change emergency authority limit.
-- Regular Guest Stays introduces event-driven operational allocation and may introduce per-event billing.
-- Mixed / Not Yet Defined must route toward structured review and classification, not invented pricing.
-- Estimator pricing remains limited to two calculable operational modes unless the Owner explicitly approves a pricing-matrix expansion.
-
-Purpose:
-Separate jurisdiction (package) from activity intensity (mode) and from owner anxiety framing (pathway).
-
----
-
-# 19. Emergency Authority Model
-
-Decision: Fixed-limit + owner escalation (Model C).  
-Status: LOCKED
-
-Definition:
-Each package defines a maximum autonomous spending limit per decision.
-
-Rules:
-- Limit applies per incident.
-- Owner approval required above limit.
-- All actions documented and reported.
-
-Safety-critical exceptions defined contractually.
-
----
-
-# 20. Pricing Communication Model
-
-Decision: Range-based public pricing (final amount).  
-Status: LOCKED
-
-Definition:
-Publicly displayed pricing must:
-
-- Present estimated monthly range
-- Represent final payable amount (no "+ VAT" exposure in interface)
-- Reflect package jurisdiction plus usage pathway / operational mode
-
-Prohibited:
-- "Starting from" pricing anchors
-- Hidden pricing behind contact forms
-- Dynamic pricing without disclosure
-
-Usage pathway pricing:
-Displayed through visible estimator logic using package × usage pathway / operational mode matrix.
-
-Regular Guest Stays may include additional event-driven operational allocation and per-event execution billing.
-
-Mixed / Not Yet Defined must be treated as classification-first. Final pricing is confirmed after structured review.
-
-Purpose:
-Preserve Clarity Doctrine and institutional transparency.
-
----
-
-# 21. Contract Structure
-
-Decision: Minimum engagement term of 3 months.  
-Status: LOCKED
-
-Billing:
-Monthly, in advance.
-
-Purpose:
-Operational continuity and risk control.
-
-No long-term lock-in model (12-month mandatory) permitted.
-
----
-
-# 22. Core Operational Capability Layer and Execution-Only Support
-
-Decision: Keyholding and cleaning are core operational capabilities when delivered inside Sentinel’s structured oversight system.  
-Status: LOCKED
-
-Definition:
-Sentinel’s public identity remains Structured Property Oversight / Reprezentacja właściciela na miejscu.
-
-Inside active packages, Sentinel may include or coordinate practical operational functions required for local execution:
-
-- Keyholding
-- Cleaning / cleaning coordination
-- Arrival readiness
-- Turnover cleaning support
-- Access coordination
-- Guest / technician entry support
-- Vendor coordination
-
-Rules:
-- These capabilities are core practical functions, not brand positioning.
-- Sentinel must not be presented as a cleaning company or generic keyholding service.
-- Operational capabilities must be framed as controlled functions inside a defined oversight system.
-- Frequency, responsibility, and billing must be explicitly scoped.
-
-Execution-only support:
-Execution-only services may be offered without an active oversight package, but remain structurally subordinate.
-
-Execution-only rules:
-- No inspection framework
-- No autonomous decision authority
-- No SLA guarantees
-- No jurisdictional responsibility
-- No implication of ongoing oversight
-
-Purpose:
-Reflect the real operational offer without diluting Sentinel’s institutional positioning.
-
----
-
-# 23. Package Presentation Doctrine
-
-Decision: Vertical containment presentation (no SaaS pricing table).  
-Status: LOCKED
-
-Definition:
-Oversight levels must be presented as sequential containment blocks.
-
-Prohibited:
-- Three-column SaaS pricing layout
-- “Most popular” badges
-- Visual manipulation tactics
-
-Purpose:
-Emphasize hierarchical responsibility, not product comparison.
-
----
-
-# 24. Disclosure Access Rule
-
-Decision: One-click deep access to scope details.  
-Status: LOCKED
-
-Definition:
-Detailed scope must be accessible via single-click disclosure.
-
-Rules:
-- Core parameters visible without expansion
-- Disclosure used to preserve clarity, not conceal essentials
-
-Purpose:
-Support Primary customer depth without overwhelming structure.
-
----
-
-# 23. Estimator Matrix — Pre-Live Indicative Values
-
-Decision: Current values in `lib/estimatorMatrix.ts` are accepted as pre-live indicative values for review and testing only.  
-Status: LOCKED (pre-live scope; not a final commercial pricing lock)
-
-Definition:
-- Matrix bands may be used in the estimator UI and contact handoff for qualification and structured review.
-- Values support internal review, QA, and pre-live testing.
-
-Not locked:
-- Final commercial ranges before public launch or paid traffic.
-- Matrix tuning session outcomes (Owner confirmation required).
-
-Purpose:
-Allow Task 8 functional freeze without treating placeholder matrix bands as launch-ready pricing.
-
-Final commercial ranges remain subject to Owner confirmation before public launch or paid traffic.
+Changes require explicit Owner acknowledgment and direct edit to the relevant section.

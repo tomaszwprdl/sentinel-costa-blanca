@@ -1,102 +1,82 @@
 # REPO-MAP.md — SENTINEL
 
-Purpose:
-This document provides structural orientation only.
-
-It describes repository topology.
-It does not describe behavior, intent, or correctness.
-
-If this document contains interpretation, it has failed.
+Structural orientation only. Does not define behavior or binding decisions.
 
 ---
 
-# 1. Application Structure (High-Level)
+# Application
 
-## app/[locale]/
+## `app/[locale]/`
 
-Locale-scoped routing (PL / EN).
+Locale routes (PL / EN):
 
-Typical routes:
+- `page.tsx` — Home (diagnostic gate)
+- `services/`, `how-it-works/`, `faq/`, `about/`, `contact/`
+- `terms/`, `privacy/`
+- `not-found.tsx`
 
-- page.tsx (Home)
-- services/page.tsx
-- how-it-works/page.tsx
-- faq/page.tsx
-- about/page.tsx
-- contact/page.tsx
-- terms/page.tsx
-- privacy/page.tsx
-- not-found.tsx
+## `components/`
 
----
+Reusable UI. Section-specific and shared layout components.
 
-## components/
+## `lib/`
 
-Reusable UI components.
+Shared logic (e.g. estimator matrix, legal body parsing).
 
-Known components (non-exhaustive):
+## `messages/`
 
-- HeaderClient.tsx
-- Footer.tsx
-- ConfidenceBar.tsx
-- DisclosureBlock.tsx
-- SampleInspectionReport.tsx (report table; table styles in app/globals.css)
-- OnSiteVisitPhotoGrid.tsx
+- `pl.json`, `en.json` — all user-facing strings
 
-Presence of a component does not imply compliance.
+## `public/`
+
+Static assets including logo files.
 
 ---
 
-## messages/
+# Documentation (`doc/`)
 
-Internationalization dictionaries.
+**Active (launch-era):**
 
-- en.json
-- pl.json
+| File | Role |
+|------|------|
+| `DECISIONS.md` | Binding contracts |
+| `STATUS.md` | Current snapshot |
+| `TASK.md` | Phase and scope |
+| `AGENT-BRIEFING.md` | Agent quick briefing |
+| `WORKFLOW.md` | Git/build discipline |
+| `LAUNCH-CHECKLIST.md` | Owner launch checklist |
+| `VISUAL-FREEDOM-SPRINT.md` | Website visual direction |
+| `AI-GOVERNANCE.md` | Lean agent governance |
+| `BRAND.md` | Brand meaning |
+| `SERVICE-STRUCTURING.md` | Service architecture |
+| `COPY-DISCIPLINE-CODEX.md` | Copy rules |
+| `EN-ADAPTATION-LAYER.md` | English adaptation |
+| `LAYOUT COMPOSITION.md` | Layout guidance |
+| `QA.md` | Technical QA checklist |
+| `REPO-MAP.md` | This file |
+| `LOGO-DIRECTION.md.md` | Logo concept protection |
+| `LOGO-GEOMETRY-SPEC.md` | Logo geometry |
+| `LOGO-USAGE-HIERARCHY.md` | Logo usage rules |
 
-All user-facing strings must originate here.
+**Not in repo / not for commit:** `doc/screenshots/` — local QA captures and scripts (if present locally).
 
----
-
-## doc/
-
-Project documentation.
-
-- DECISIONS.md
-- TASK.md
-- STATUS.md
-- AI-GOVERNANCE.md
-- AUDIT-*.md (per-doctrine audit files)
-- BRAND.md
-- LOGO-DIRECTION.md
-- LOGO-GEOMETRY-SPEC.md
-- REPO-MAP.md
-- QA.md (if retained)
-
-This folder defines governance authority.
-
----
-
-# 2. i18n Structural Rule
-
-- Locale is part of route: /[locale]/…
-- Mixed-language UI is invalid.
-- No hardcoded user-facing strings outside dictionary files.
+Build-era task and audit documents were removed from the active repository after documentation reset.
 
 ---
 
-# 3. Authority Boundary
+# Root agent files
 
-This document:
-
-- Does not validate correctness.
-- Does not define decisions.
-- Does not confirm build status.
-- Does not describe behavior.
-
-In case of conflict between code structure and documentation:
-→ Documentation prevails.
+- `AGENTS.md` — repository agent protocol
+- `CLAUDE.md` — Cursor/Claude instructions
 
 ---
 
-End of Repository Map
+# i18n rule
+
+- Route prefix `/pl` or `/en`
+- No mixed-language UI
+- No hardcoded user-facing strings outside `messages/`
+
+---
+
+End of repository map.

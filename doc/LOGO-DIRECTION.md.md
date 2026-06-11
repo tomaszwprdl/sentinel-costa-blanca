@@ -188,4 +188,14 @@ Any change to this document requires Owner acknowledgment.
 
 ---
 
+---
+
+# 10. Website scope note
+
+Rules in this document apply to the **Sentinel mark and its usage**.
+
+Website backgrounds, cards, surfaces, accents, and imagery around the logo may evolve during launch-era visual work. The mark itself must remain protected, legible, and coherent.
+
+---
+
 End of Logo Direction Framework

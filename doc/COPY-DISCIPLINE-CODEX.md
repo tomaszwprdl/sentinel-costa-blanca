@@ -1,11 +1,9 @@
 # COPY-DISCIPLINE-CODEX.md  
 Sentinel — Copy Discipline Codex  
-Task 5G  
-Status: ✅ COMPLETE / LOCKED
 
-Binding across PL and EN.
-Applies to all current and future content.
-Structural changes require Owner override.
+**Status:** Active launch-era guidance (PL + EN)
+
+Applies to all user-facing copy. Service or legal substance changes require Owner approval.
 
 ---
 
@@ -23,7 +21,7 @@ It governs:
 - PL / EN alignment rules  
 
 It does not define service scope (see SERVICE-STRUCTURING.md).  
-It does not define layout (see LAYOUT-COMPOSITION.md).  
+It does not define layout (see `LAYOUT COMPOSITION.md`).  
 It does not define brand philosophy (see DECISIONS.md / BRAND.md).  
 
 This document defines how Sentinel speaks.
@@ -34,23 +32,21 @@ If copy weakens structural authority, it is invalid.
 
 # 2. Foundational Tone Principle
 
-Sentinel language must be:
+**Copy may be clearer, warmer, and more human, but must not become promotional, vague, or concierge-like.**
 
-- Procedural  
-- Structured  
-- Measured  
-- Boundary-aware  
-- Non-emotional  
+Sentinel language should be:
 
-Sentinel language must not be:
+- Procedural and boundary-aware  
+- Structured and measured  
+- Direct for remote owners  
 
-- Reassuring  
-- Promotional  
-- Inspirational  
-- Lifestyle-oriented  
-- Warm for the sake of warmth  
+Avoid:
 
-Clarity prevails over charm.
+- Empty reassurance and lifestyle framing  
+- Promotional hype and vague “full support” claims  
+- Concierge or hospitality vocabulary  
+
+Clarity prevails over charm — warmth is fine when it aids clarity, not when it replaces structure.
 
 ---
 
