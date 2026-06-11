@@ -21,21 +21,21 @@ export default function FAQQuickAnswerCards({
   items,
 }: FAQQuickAnswerCardsProps) {
   return (
-    <div className="faq-shell faq-shell--quick reveal-rise">
-      <div className="faq-shell__header faq-shell__header--quick">
+    <div>
+      <div className="reveal-rise">
         <p className="section-label">{eyebrow}</p>
-        <h2 className="h2-system mt-3">{title}</h2>
+        <h2 className="h2-system mt-3 max-w-[26ch]">{title}</h2>
         <p className="mt-3 mb-0 max-w-[62ch] text-body">{intro}</p>
       </div>
-      <div className="faq-quick-board">
+      <div className="faq-quick-rail reveal-stagger">
         {items.map((item, index) => (
-          <article key={item.title} className="faq-quick-board__cell">
-            <p className="faq-quick-board__index" aria-hidden="true">
+          <article key={item.title} className="faq-quick-rail__cell">
+            <p className="faq-quick-rail__num" aria-hidden="true">
               {String(index + 1).padStart(2, '0')}
             </p>
-            <h3 className="faq-quick-board__title">{item.title}</h3>
-            <p className="faq-quick-board__answer">{item.answer}</p>
-            <Link href={item.href} className="faq-quick-board__link link-system">
+            <h3 className="faq-quick-rail__title">{item.title}</h3>
+            <p className="faq-quick-rail__answer">{item.answer}</p>
+            <Link href={item.href} className="faq-quick-rail__link link-system">
               {item.linkLabel}
             </Link>
           </article>

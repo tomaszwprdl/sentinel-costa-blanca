@@ -49,154 +49,136 @@ export default async function HomePage({
       <main className="home-page min-h-screen flex flex-col bg-surface-light">
         <Suspense fallback={<UsagePathwayFallback locale={locale} selected={null} t={t} />}>
           <UsagePathwayLayer>
-        <Section tone="light" className="home-section home-section--route !py-16 md:!py-20">
-          <div className="home-route-shell reveal-rise">
-            <div className="home-route-shell__header px-5 py-6 md:px-8">
-              <p className="section-label">{t('systemIntro.eyebrow')}</p>
-              <div className="mt-3 grid gap-4 lg:grid-cols-[minmax(0,0.72fr)_minmax(18rem,0.34fr)] lg:items-end">
-                <div>
-                  <h2 className="h2-system">{t('systemIntro.title')}</h2>
-                  <p className="mt-3 max-w-[62ch] text-body">
-                    <PathwayCopy path="systemIntroContext" />
-                  </p>
-                </div>
-                <p className="home-route-note mb-0 p-4 text-sm leading-relaxed text-body">
-                  {t('systemIntro.intro')}
+        <div className="home-pathway-body">
+        <Section tone="light" className="home-section home-section--route !py-16 md:!py-24">
+          <div className="reveal-rise">
+            <p className="section-label">{t('systemIntro.eyebrow')}</p>
+            <div className="home-route-open mt-4">
+              <h2 className="h2-system home-route-open__title">{t('systemIntro.title')}</h2>
+              <div className="home-route-open__context">
+                <p className="text-body leading-relaxed">
+                  <PathwayCopy path="systemIntroContext" />
                 </p>
+                <p className="home-route-open__note mb-0">{t('systemIntro.intro')}</p>
               </div>
             </div>
+          </div>
 
-            <div className="home-process-grid">
-              {PROCESS_KEYS.map((key, index) => (
-                <article
-                  key={key}
-                  className="home-process-step p-5 md:p-6"
-                >
-                  <span className="home-process-step__marker">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                  <p className="mt-5 mb-2 text-[11px] font-black uppercase tracking-wide text-muted">
-                    {t(`systemIntro.process.${key}.label`)}
-                  </p>
-                  <h3 className="mb-2 text-xl font-black text-heading">
-                    {t(`systemIntro.process.${key}.title`)}
-                  </h3>
-                  <p className="mb-0 text-sm leading-relaxed text-body">
-                    {t(`systemIntro.process.${key}.body`)}
-                  </p>
-                </article>
-              ))}
-            </div>
+          <div className="home-process-rail reveal-stagger">
+            {PROCESS_KEYS.map((key, index) => (
+              <article key={key} className="home-process-rail__step">
+                <span className="home-process-rail__num" aria-hidden>
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <p className="home-process-rail__label">
+                  {t(`systemIntro.process.${key}.label`)}
+                </p>
+                <h3 className="home-process-rail__title">
+                  {t(`systemIntro.process.${key}.title`)}
+                </h3>
+                <p className="home-process-rail__body mb-0">
+                  {t(`systemIntro.process.${key}.body`)}
+                </p>
+              </article>
+            ))}
           </div>
         </Section>
 
-        {/* 4. BEZ NAS / Z NAMI — shared section rhythm */}
-        <Section tone="alt" className="home-section home-section--contrast !py-16 md:!py-20">
-          <div className="grid gap-8 lg:grid-cols-[minmax(16rem,0.34fr)_minmax(0,0.66fr)] lg:items-start">
-            <div className="reveal-rise">
-              <p className="section-label">{t('contrast.eyebrow')}</p>
-              <h2 className="h2-system mt-3">{t('contrast.title')}</h2>
-              <p className="mt-4 max-w-[46ch] text-body leading-relaxed">
-                <PathwayCopy path="contrast.intro" />
+        {/* 4. BEZ NAS / Z NAMI — full split band: risk in ink, control on paper */}
+        <Section tone="alt" className="home-section home-section--contrast !py-16 md:!py-24">
+          <div className="reveal-rise">
+            <p className="section-label">{t('contrast.eyebrow')}</p>
+            <h2 className="h2-system mt-3 max-w-[24ch]">{t('contrast.title')}</h2>
+            <p className="mt-4 max-w-[56ch] text-body leading-relaxed">
+              <PathwayCopy path="contrast.intro" />
+            </p>
+          </div>
+
+          <div className="home-contrast-band reveal-rise">
+            <article className="home-contrast-band__half home-contrast-band__half--risk">
+              <p className="home-contrast-band__mode">{t('contrast.leftModeLabel')}</p>
+              <h3 className="home-contrast-band__heading">{t('contrast.leftHeading')}</h3>
+              <ul className="home-contrast-band__list">
+                {[1, 2, 3, 4].map((item) => (
+                  <li key={item}>
+                    <span className="home-contrast-band__marker" aria-hidden />
+                    <span><PathwayCopy path={`contrast.left${item}`} /></span>
+                  </li>
+                ))}
+              </ul>
+              <p className="home-contrast-band__closing">
+                <PathwayCopy path="contrast.leftClosing" />
               </p>
-            </div>
+            </article>
 
-            <div className="reveal-stagger grid gap-4 md:grid-cols-2">
-              <article className="home-contrast-card home-contrast-card--risk">
-                <div className="home-contrast-card__header px-5 py-4">
-                  <p className="mb-1 text-[11px] font-black uppercase tracking-wide text-accent">
-                    {t('contrast.leftModeLabel')}
-                  </p>
-                  <h3 className="mb-0 text-xl font-black text-heading">{t('contrast.leftHeading')}</h3>
-                </div>
-                <div className="home-contrast-card__body p-5">
-                  <ul className="space-y-3 text-sm leading-relaxed text-body">
-                    {[1, 2, 3, 4].map((item) => (
-                      <li key={item} className="flex gap-3">
-                        <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden />
-                        <span><PathwayCopy path={`contrast.left${item}`} /></span>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-5 border-t border-structural-light pt-4 text-sm font-semibold text-heading">
-                    <PathwayCopy path="contrast.leftClosing" />
-                  </p>
-                </div>
-              </article>
-
-              <article className="home-contrast-card home-contrast-card--control">
-                <div className="home-contrast-card__header px-5 py-4">
-                  <p className="mb-1 text-[11px] font-black uppercase tracking-wide text-support">
-                    {t('contrast.rightModeLabel')}
-                  </p>
-                  <h3 className="mb-0 text-xl font-black text-heading">{t('contrast.rightHeading')}</h3>
-                </div>
-                <div className="home-contrast-card__body p-5">
-                  <ul className="space-y-3 text-sm leading-relaxed text-body">
-                    {[1, 2, 3, 4].map((item) => (
-                      <li key={item} className="flex gap-3">
-                        <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-support" aria-hidden />
-                        <span><PathwayCopy path={`contrast.right${item}`} /></span>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-5 border-t border-structural-light pt-4 text-sm font-semibold text-heading">
-                    <PathwayCopy path="contrast.rightClosing" />
-                  </p>
-                </div>
-              </article>
-            </div>
+            <article className="home-contrast-band__half home-contrast-band__half--control">
+              <p className="home-contrast-band__mode">{t('contrast.rightModeLabel')}</p>
+              <h3 className="home-contrast-band__heading">{t('contrast.rightHeading')}</h3>
+              <ul className="home-contrast-band__list">
+                {[1, 2, 3, 4].map((item) => (
+                  <li key={item}>
+                    <span className="home-contrast-band__marker" aria-hidden />
+                    <span><PathwayCopy path={`contrast.right${item}`} /></span>
+                  </li>
+                ))}
+              </ul>
+              <p className="home-contrast-band__closing">
+                <PathwayCopy path="contrast.rightClosing" />
+              </p>
+            </article>
           </div>
         </Section>
 
-        {/* 5. ZAKRES PAKIETÓW — jedna oś: wrapper flex flex-col items-center; tekst max-w-[72ch]; grid w-full max-w-[1120px] mx-auto justify-items-center; karty w-full */}
-        <Section tone="light" className="home-section home-section--scope !py-16 md:!py-20">
-          <div className="grid gap-6 lg:grid-cols-[minmax(0,0.62fr)_minmax(20rem,0.38fr)] lg:items-start">
-            <div className="home-levels-shell reveal-rise">
-              <div className="home-levels-shell__header px-5 py-6 md:px-8">
-                <p className="section-label">{t('levels.eyebrow')}</p>
-                <h2 className="h2-system mt-3">{t('levels.title')}</h2>
-                <p className="mt-3 max-w-[62ch] text-body">{t('levels.intro')}</p>
-              </div>
-              <div className="home-level-scale">
-                {PACKAGE_PREVIEW.map((item) => (
-                  <article
-                    key={item.marker}
-                    className="home-level-scale__item p-5 md:p-6"
-                  >
-                    <p className="mb-3 text-xs font-black uppercase tracking-wide text-muted">{item.marker}</p>
-                    <h3 className="mb-2 text-xl font-black text-heading">{t(`levels.${item.title}`)}</h3>
-                    <p className="mb-3 text-sm font-bold text-support">{t(`levels.${item.axis}`)}</p>
-                    <p className="mb-0 text-sm leading-relaxed text-body">{t(`levels.${item.purpose}`)}</p>
-                  </article>
+        {/* 5. ZAKRES PAKIETÓW — pełnowymiarowa drabina odpowiedzialności (vertical containment) */}
+        <Section tone="light" className="home-section home-section--scope !py-16 md:!py-24">
+          <div className="reveal-rise">
+            <p className="section-label">{t('levels.eyebrow')}</p>
+            <h2 className="h2-system mt-3 max-w-[26ch]">{t('levels.title')}</h2>
+            <p className="mt-3 max-w-[62ch] text-body">{t('levels.intro')}</p>
+          </div>
+
+          <div className="home-level-ladder reveal-stagger">
+            {PACKAGE_PREVIEW.map((item) => (
+              <article key={item.marker} className="home-level-ladder__row">
+                <span className="home-level-ladder__num" aria-hidden>{item.marker}</span>
+                <div className="home-level-ladder__head">
+                  <h3 className="home-level-ladder__title">{t(`levels.${item.title}`)}</h3>
+                  <p className="home-level-ladder__axis mb-0">{t(`levels.${item.axis}`)}</p>
+                </div>
+                <p className="home-level-ladder__purpose mb-0">{t(`levels.${item.purpose}`)}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="home-level-ladder__rule reveal-rise">
+            <p className="mb-0 max-w-[58ch] text-sm leading-relaxed text-body">
+              {t('levels.systemRule1')} {t('levels.systemRule2')} {t('levels.systemRule3')}
+            </p>
+            <Link href={`/${locale}/services#package-fit`} className="btn-secondary w-fit text-sm">
+              {t('levels.ctaCompare')}
+            </Link>
+          </div>
+        </Section>
+
+        {/* 5b. OBSZAR DZIAŁANIA — mapa w dużej skali obok deklaracji zasięgu */}
+        <Section tone="alt" className="home-section home-section--area !py-16 md:!py-24">
+          <div className="home-area-band reveal-rise">
+            <div className="home-area-band__text">
+              <p className="section-label">{t('serviceArea.eyebrow')}</p>
+              <h2 className="h2-system mt-3">{t('serviceArea.title')}</h2>
+              <p className="mt-4 text-body leading-relaxed">{t('serviceArea.intro')}</p>
+              <div className="mt-6 grid gap-3">
+                {SERVICE_AREA_POINTS.map((key) => (
+                  <p key={key} className="home-area-band__point mb-0">
+                    <span className="home-area-band__marker" aria-hidden />
+                    <span>{t(`serviceArea.${key}`)}</span>
+                  </p>
                 ))}
               </div>
-              <div className="home-levels-shell__rule flex flex-col gap-4 px-5 py-5 md:flex-row md:items-center md:justify-between md:px-8">
-                <p className="mb-0 max-w-[58ch] text-sm leading-relaxed text-body">
-                  {t('levels.systemRule1')} {t('levels.systemRule2')} {t('levels.systemRule3')}
-                </p>
-                <Link href={`/${locale}/services#package-fit`} className="btn-secondary w-fit text-sm">
-                  {t('levels.ctaCompare')}
-                </Link>
-              </div>
             </div>
-
-            <aside className="reveal-rise grid gap-5">
-              <div className="home-area-card p-5 md:p-6">
-                <p className="section-label">{t('serviceArea.eyebrow')}</p>
-                <h2 className="mt-3 text-2xl font-black text-heading">{t('serviceArea.title')}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-body">{t('serviceArea.intro')}</p>
-                <div className="mt-5 grid gap-2">
-                  {SERVICE_AREA_POINTS.map((key) => (
-                    <p key={key} className="mb-0 flex gap-3 border-b border-structural-light pb-2 text-sm text-body last:border-b-0 last:pb-0">
-                      <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-support" aria-hidden />
-                      <span>{t(`serviceArea.${key}`)}</span>
-                    </p>
-                  ))}
-                </div>
-              </div>
+            <div className="home-area-band__map">
               <ServiceAreaMap labels={serviceAreaMapLabels} />
-            </aside>
+            </div>
           </div>
         </Section>
 
@@ -209,16 +191,16 @@ export default async function HomePage({
               <PathwayCopy path="distinctionIntro" />
             </p>
           </div>
-          <div className="reveal-stagger mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="reveal-stagger mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
             {CREDIBILITY_KEYS.map((key, index) => (
-              <article key={key} className="home-distinction-card p-5">
-                <p className="mb-3 text-xs font-black uppercase tracking-wide text-accent">
+              <article key={key} className="home-distinction-item">
+                <p className="home-distinction-item__num" aria-hidden>
                   {String(index + 1).padStart(2, '0')}
                 </p>
-                <h3 className="mb-2 text-lg font-black text-heading">
+                <h3 className="home-distinction-item__title">
                   {t(`distinction.cards.${key}.title`)}
                 </h3>
-                <p className="mb-0 text-sm leading-relaxed text-body">
+                <p className="home-distinction-item__body mb-0">
                   {t(`distinction.cards.${key}.body`)}
                 </p>
               </article>
@@ -226,33 +208,37 @@ export default async function HomePage({
           </div>
         </Section>
 
-        {/* 7. OBSZAR DZIAŁANIA — H2+H3, lista myślniki, bez placeholderów */}
-        <Section tone="authority" className="home-section home-section--final !py-16 md:!py-20">
-          <div className="reveal-rise grid gap-8 lg:grid-cols-[minmax(0,0.68fr)_minmax(16rem,0.32fr)] lg:items-end">
-            <div>
-              <p className="section-label text-authority-on-dark/70">{t('finalCta.eyebrow')}</p>
-              <h2 className="h2-system mt-3 text-authority-on-dark">{t('finalCta.title')}</h2>
-              <div className="mt-5 max-w-[62ch] space-y-3 text-authority-on-dark/86">
-                <p><PathwayCopy path="finalContext" /></p>
-                <p>{t('finalCta.p2')}</p>
+        <Section tone="light" className="home-section home-closing-section !pt-10 !pb-0">
+          <div className="page-final-cta reveal-rise overflow-hidden">
+            <div className="grid gap-0 lg:grid-cols-[minmax(0,0.68fr)_minmax(18rem,0.32fr)]">
+              <div className="page-final-cta__copy p-5 md:p-8">
+                <p className="section-label">{t('finalCta.eyebrow')}</p>
+                <h2 className="h2-system mt-3">{t('finalCta.title')}</h2>
+                <div className="mt-4 max-w-[62ch] space-y-3 text-lg leading-relaxed text-body">
+                  <p><PathwayCopy path="finalContext" /></p>
+                  <p>{t('finalCta.p2')}</p>
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col gap-3 lg:items-stretch">
-              <PathwayFinalCtaLink
-                locale={locale}
-                className="btn-primary btn-primary-inverse"
-              >
-                {t('finalCta.cta')}
-              </PathwayFinalCtaLink>
-              <Link
-                href={`/${locale}/services#package-fit`}
-                className="btn-secondary !border-authority-on-dark !text-authority-on-dark hover:!bg-surface-light hover:!text-authority"
-              >
-                {t('finalCta.secondaryCta')}
-              </Link>
+              <div className="page-final-cta__panel p-5 md:p-8">
+                <div className="flex flex-col gap-3">
+                  <PathwayFinalCtaLink
+                    locale={locale}
+                    className="btn-primary btn-primary-inverse"
+                  >
+                    {t('finalCta.cta')}
+                  </PathwayFinalCtaLink>
+                  <Link
+                    href={`/${locale}/services#package-fit`}
+                    className="btn-secondary btn-secondary-on-dark"
+                  >
+                    {t('finalCta.secondaryCta')}
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </Section>
+        </div>
           </UsagePathwayLayer>
         </Suspense>
       </main>

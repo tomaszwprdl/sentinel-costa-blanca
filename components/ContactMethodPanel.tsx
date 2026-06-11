@@ -28,11 +28,15 @@ export default function ContactMethodPanel({
       <dl className="contact-method-panel__items mt-5 text-body">
         <div className="contact-method-panel__row">
           <dt>{emailLabel}</dt>
-          <dd className="[overflow-wrap:anywhere]">{email}</dd>
+          <dd className="[overflow-wrap:anywhere]">
+            <a href={`mailto:${email}`} className="contact-method-panel__link">{email}</a>
+          </dd>
         </div>
         <div className="contact-method-panel__row">
           <dt>{phoneLabel}</dt>
-          <dd>{phone}</dd>
+          <dd>
+            <a href={`tel:${phone.replace(/\s+/g, '')}`} className="contact-method-panel__link">{phone}</a>
+          </dd>
         </div>
         <div className="contact-method-panel__row">
           <dt>{hoursLabel}</dt>
