@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import ThemeSwitch from '@/components/ThemeSwitch';
 import LanguageControl from '@/components/LanguageControl';
@@ -20,6 +21,7 @@ function HamburgerIcon({ open }: { open: boolean }) {
 export default function HeaderClient() {
   const locale = useLocale();
   const t = useTranslations('common');
+  const pathname = usePathname();
   const [navOpen, setNavOpen] = useState(false);
   const [navMounted, setNavMounted] = useState(false);
   const closeTimerRef = useRef<number | null>(null);
@@ -31,6 +33,9 @@ export default function HeaderClient() {
     { href: `/${locale}/about`, label: t('nav.about') },
     { href: `/${locale}/contact`, label: t('nav.contact') },
   ];
+
+  const isCurrent = (href: string) =>
+    pathname === href || pathname?.startsWith(`${href}/`);
 
   const clearCloseTimer = () => {
     if (closeTimerRef.current !== null) {
@@ -79,7 +84,7 @@ export default function HeaderClient() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-structural-light/80 bg-surface-card/90 shadow-[0_10px_30px_rgba(16,38,63,0.08)] backdrop-blur-xl">
+    <header className="site-header sticky top-0 z-50 w-full">
       <div className="container flex min-h-[76px] items-center justify-between gap-5">
         <Link
           href={`/${locale}`}
@@ -102,6 +107,7 @@ export default function HeaderClient() {
             <Link
               key={href}
               href={href}
+              aria-current={isCurrent(href) ? 'page' : undefined}
               className="site-nav__link focus:outline-none focus-visible:ring-2 focus-visible:ring-support"
               onClick={closeNav}
             >
@@ -134,7 +140,7 @@ export default function HeaderClient() {
       {navMounted && (
         <div
           id="header-nav-links"
-          className={`mobile-nav-panel absolute left-0 right-0 top-full border-b border-structural-light bg-surface-card shadow-[0_22px_44px_rgba(16,38,63,0.14)] lg:hidden ${navOpen ? 'mobile-nav-panel--open' : ''}`}
+          className={`mobile-nav-panel absolute left-0 right-0 top-full lg:hidden ${navOpen ? 'mobile-nav-panel--open' : ''}`}
           aria-hidden={!navOpen}
         >
           <div className="container py-3">
@@ -147,6 +153,7 @@ export default function HeaderClient() {
                 key={href}
                 href={href}
                 tabIndex={navOpen ? undefined : -1}
+                aria-current={isCurrent(href) ? 'page' : undefined}
                 className="mobile-nav-link block rounded-xl px-4 py-4 text-sm font-semibold text-body hover:bg-surface-light-alt focus:outline-none focus-visible:ring-2 focus-visible:ring-support"
                 onClick={closeNav}
               >

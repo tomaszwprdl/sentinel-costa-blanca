@@ -10,7 +10,7 @@ export default function Footer() {
   const t = useTranslations('common');
 
   return (
-    <footer id="site-footer" className="mt-[var(--space-40)] bg-authority-bg text-authority-on-dark">
+    <footer id="site-footer" className="site-footer text-authority-on-dark">
       <div className="container py-9 md:py-10">
         <div className="border-b border-authority-on-dark/15 pb-7 md:pb-8">
           <Link href={`/${locale}`} className="inline-block" aria-label={t('nav.home')}>
