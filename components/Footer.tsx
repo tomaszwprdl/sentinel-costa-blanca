@@ -89,7 +89,12 @@ export default function Footer() {
               <p className="section-label text-authority-on-dark/80">{t('footer.contact')}</p>
               <div className="footer-contact-panel__items">
                 <p className="footer-contact-panel__phone">
-                  {t('contact.phone')}
+                  <a
+                    href={`tel:${t('contact.phone').replace(/\s+/g, '')}`}
+                    className="hover:text-authority-on-dark"
+                  >
+                    {t('contact.phone')}
+                  </a>
                 </p>
                 <p>
                   <a href={`mailto:${t('contact.email')}`} className="hover:text-authority-on-dark">

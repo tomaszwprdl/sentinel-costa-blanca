@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Section from '@/components/layout/Section';
-import PathwaySituationDiagram from '@/components/visuals/PathwaySituationDiagram';
 import {
   PATHWAY_KEYS,
   normalizePathwayParam,
@@ -17,6 +16,12 @@ const PATHWAY_POINT_COUNTS: Record<PathwayKey, number> = {
   'private-use-only': 5,
   'regular-guest-stays': 6,
   'mixed-not-defined': 5,
+};
+
+const PATHWAY_MEDIA: Record<PathwayKey, string> = {
+  'private-use-only': '/photos/sentinel-apartment-entry-placeholder.png',
+  'regular-guest-stays': '/photos/sentinel-cleaning-readiness-placeholder.png',
+  'mixed-not-defined': '/photos/sentinel-corridor-exterior-placeholder.png',
 };
 
 type UsagePathwayLayerProps = {
@@ -88,49 +93,37 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
         </Section>
       )}
 
-      {!showFullGate && (
+      {!showFullGate && showPicker && (
         <Section tone="alt" className="section-primitive--first !pb-12">
           <div className="mx-auto w-full max-w-5xl">
-            {showPicker && (
-              <div className="diagnostic-result-shell motion-panel-reveal mb-8">
-                <div className="diagnostic-result-top">
-                  <div>
-                    <h2 className="text-2xl md:text-3xl">{tp('selectorTitle')}</h2>
-                    <p className="mt-2 max-w-2xl text-sm text-body">{tp('selectorInstruction')}</p>
-                  </div>
-                </div>
-                <div className="diagnostic-result-body">
-                  <DiagnosticChoiceBlock
-                    selected={activeSelection}
-                    isChanging={isChanging}
-                    onSelect={selectPathway}
-                    t={tp}
-                  />
+            <div className="diagnostic-result-shell motion-panel-reveal mb-8">
+              <div className="diagnostic-result-top">
+                <div>
+                  <h2 className="text-2xl md:text-3xl">{tp('selectorTitle')}</h2>
+                  <p className="mt-2 max-w-2xl text-sm text-body">{tp('selectorInstruction')}</p>
                 </div>
               </div>
-            )}
-
-            {hasSelection && !isChanging && selected && (
-              <>
-                <div className="diagnostic-result-top motion-panel-reveal r mb-5 border border-structural-light bg-surface-card">
-                  <span className="text-sm text-body">
-                    <span className="text-muted">{tp('selectedSituationLabel')}</span>{' '}
-                    <span className="font-bold text-heading">{tp(`cards.${selected}.title`)}</span>
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => setIsChanging(true)}
-                    className="btn-secondary min-h-0 px-4 py-2 text-sm"
-                  >
-                    {tp('changeSituation')}
-                  </button>
-                </div>
-
-                <PathwayDetailPanel key={selected} locale={locale} pathway={selected} t={tp} />
-              </>
-            )}
+              <div className="diagnostic-result-body">
+                <DiagnosticChoiceBlock
+                  selected={activeSelection}
+                  isChanging={isChanging}
+                  onSelect={selectPathway}
+                  t={tp}
+                />
+              </div>
+            </div>
           </div>
         </Section>
+      )}
+
+      {!showFullGate && hasSelection && !isChanging && selected && (
+        <PathwayHero
+          key={selected}
+          locale={locale}
+          pathway={selected}
+          t={tp}
+          onChange={() => setIsChanging(true)}
+        />
       )}
 
       {hasSelection && children}
@@ -271,14 +264,16 @@ function DiagnosticChoiceBlock({
   );
 }
 
-function PathwayDetailPanel({
+function PathwayHero({
   locale,
   pathway,
   t,
+  onChange,
 }: {
   locale: string;
   pathway: PathwayKey;
   t: ReturnType<typeof useTranslations<'home.pathway'>>;
+  onChange: () => void;
 }) {
   const primaryHref =
     pathway === 'mixed-not-defined'
@@ -292,65 +287,68 @@ function PathwayDetailPanel({
   const secondaryLabel = pathway === 'mixed-not-defined' ? t('servicesCta') : t('reviewCta');
 
   return (
-    <div className="diagnostic-result-shell motion-panel-reveal">
-      <div className="grid gap-0 lg:grid-cols-[minmax(0,0.95fr)_minmax(18rem,0.45fr)]">
-        <div className="pathway-result-main p-6 pt-7 md:p-8 md:pt-8">
-          <p className="section-label hidden md:block">{t('selectedLabel')}</p>
-          <h2 className="mt-0 max-w-[18ch] text-3xl font-black leading-tight text-heading md:mt-2 md:text-4xl">
-            {t(`cards.${pathway}.title`)}
-          </h2>
-          <p className="mt-5 text-base leading-relaxed text-body">
-            {t(`detail.${pathway}.priority`)}
-          </p>
+    <section className="pathway-hero motion-panel-reveal" data-pathway={pathway}>
+      <div className="pathway-hero__media" aria-hidden>
+        <Image
+          src={PATHWAY_MEDIA[pathway]}
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover"
+          priority
+        />
+      </div>
 
-          <div className="mt-6 grid gap-3 lg:grid-cols-2">
-            <div className="rounded-2xl border border-structural-light bg-surface-light-alt p-4">
-              <p className="mb-2 text-[11px] font-black uppercase tracking-wide text-muted">
-                {t('meaningLabel')}
-              </p>
-              <p className="mb-0 text-sm leading-relaxed text-body">
-                {t(`detail.${pathway}.meaning`)}
-              </p>
+      <div className="container pathway-hero__inner">
+        <div className="pathway-hero__main">
+          <div className="pathway-hero__topline">
+            <p className="pathway-hero__eyebrow">
+              {t('selectedSituationLabel')}
+            </p>
+            <button type="button" onClick={onChange} className="pathway-hero__change">
+              {t('changeSituation')}
+            </button>
+          </div>
+
+          <h2 className="pathway-hero__title">{t(`cards.${pathway}.title`)}</h2>
+          <p className="pathway-hero__lead">{t(`detail.${pathway}.priority`)}</p>
+
+          <div className="pathway-hero__facts">
+            <div className="pathway-hero__fact">
+              <p className="pathway-hero__fact-label">{t('meaningLabel')}</p>
+              <p className="pathway-hero__fact-body">{t(`detail.${pathway}.meaning`)}</p>
             </div>
-            <div className="rounded-2xl border border-structural-light bg-surface-light-alt p-4">
-              <p className="mb-2 text-[11px] font-black uppercase tracking-wide text-muted">
-                {t('nextLabel')}
-              </p>
-              <p className="mb-0 text-sm leading-relaxed text-body">
-                {t(`detail.${pathway}.next`)}
-              </p>
+            <div className="pathway-hero__fact">
+              <p className="pathway-hero__fact-label">{t('nextLabel')}</p>
+              <p className="pathway-hero__fact-body">{t(`detail.${pathway}.next`)}</p>
             </div>
           </div>
 
-          <div className="mt-7 flex flex-col gap-3 lg:flex-row">
-            <Link
-              href={primaryHref}
-              className="btn-primary inline-flex w-fit text-sm"
-            >
+          <div className="pathway-hero__ctas">
+            <Link href={primaryHref} className="btn-primary inline-flex w-fit text-sm">
               {primaryLabel}
             </Link>
             <Link
               href={secondaryHref}
-              className="btn-secondary inline-flex w-fit text-sm"
+              className="btn-secondary btn-secondary-on-dark inline-flex w-fit text-sm"
             >
               {secondaryLabel}
             </Link>
           </div>
         </div>
 
-        <div className="border-t border-structural-light bg-surface-light-alt p-6 md:p-8 lg:border-l lg:border-t-0">
-          <PathwaySituationDiagram pathway={pathway} className="motion-panel-reveal mb-5 shadow-none" />
-          <p className="section-label">{t('changesLabel')}</p>
-          <ul className="mt-4 space-y-3 text-sm leading-relaxed text-body">
+        <aside className="pathway-hero__changes">
+          <p className="pathway-hero__changes-label">{t('changesLabel')}</p>
+          <ul className="pathway-hero__changes-list">
             {Array.from({ length: PATHWAY_POINT_COUNTS[pathway] }, (_, i) => (
-              <li key={i} className="flex gap-3">
-                <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden />
+              <li key={i}>
+                <span className="pathway-hero__tick" aria-hidden />
                 <span>{t(`detail.${pathway}.point${i + 1}`)}</span>
               </li>
             ))}
           </ul>
-        </div>
+        </aside>
       </div>
-    </div>
+    </section>
   );
 }

@@ -18,17 +18,17 @@ export default function ContactPreparationChecklist({
   items,
 }: ContactPreparationChecklistProps) {
   return (
-    <div className="contact-shell reveal-rise">
-      <div className="contact-shell__header px-5 py-6 md:px-8">
+    <div>
+      <div className="reveal-rise">
         <p className="section-label">{eyebrow}</p>
-        <h2 className="h2-system mt-3">{title}</h2>
+        <h2 className="h2-system mt-3 max-w-[26ch]">{title}</h2>
         <p className="mt-3 mb-0 max-w-[62ch] text-body">{intro}</p>
       </div>
-      <div className="contact-prepare-grid">
+      <div className="contact-prepare-rail reveal-stagger">
         {items.map((item) => (
-          <article key={item.marker} className="contact-prepare-grid__cell p-5 md:p-6">
-            <p className="contact-marker-chip mb-4">{item.marker}</p>
-            <h3 className="mb-2 text-lg font-black text-heading">{item.title}</h3>
+          <article key={item.marker} className="contact-prepare-rail__cell">
+            <p className="contact-prepare-rail__num" aria-hidden>{item.marker}</p>
+            <h3 className="contact-prepare-rail__title">{item.title}</h3>
             <p className="mb-0 text-sm leading-relaxed text-body">{item.body}</p>
           </article>
         ))}
