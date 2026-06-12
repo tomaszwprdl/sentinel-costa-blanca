@@ -9878,3 +9878,374 @@ textarea:focus {
     max-width: none;
   }
 }
+
+
+/* ============================================================
+   SENTINEL GRAPHIC SYSTEM — operational cartography layer
+   Reusable graphic language: radius rings, inspection routes,
+   register rules, stamps, dossier surfaces, jurisdiction scale.
+   Decorative only; never carries essential meaning by itself.
+   ============================================================ */
+
+/* --- Field positioning: full-bleed decorative layer behind content --- */
+.gfx-field {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.gfx-field svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Content above any field inside the same positioned ancestor */
+.gfx-field ~ * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile: fields stay present but recede so copy keeps full contrast */
+@media (max-width: 767px) {
+  .gfx-field {
+    opacity: 0.45;
+  }
+}
+
+/* --- Line-draw choreography (observed by MotionObserver) --- */
+.gfx-field .gfx-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1600ms var(--motion-ease-out);
+  transition-delay: calc(220ms + var(--gfx-i, 0) * 200ms);
+}
+
+.gfx-field.is-visible .gfx-draw {
+  stroke-dashoffset: 0;
+}
+
+.gfx-field .gfx-fade {
+  opacity: 0;
+  transition: opacity 1100ms var(--motion-ease-out);
+  transition-delay: calc(700ms + var(--gfx-i, 0) * 150ms);
+}
+
+.gfx-field.is-visible .gfx-fade {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gfx-field .gfx-draw {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+
+  .gfx-field .gfx-fade {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+/* --- Operational stamp: factual registry mark on dark surfaces --- */
+.gfx-stamp {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  border: 1px solid color-mix(in srgb, var(--copper) 55%, rgba(255, 250, 242, 0.25));
+  border-radius: 0.45rem;
+  background: rgba(7, 21, 36, 0.45);
+  padding: 0.55rem 0.85rem;
+  color: var(--authority-on-dark);
+  transform: rotate(-1.2deg);
+  box-shadow: inset 0 0 0 3px rgba(7, 21, 36, 0.3), inset 0 1px 0 rgba(255, 250, 242, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+.gfx-stamp__ring {
+  position: relative;
+  width: 1.7rem;
+  height: 1.7rem;
+  flex: none;
+  border: 1.4px solid color-mix(in srgb, var(--copper) 80%, transparent);
+  border-radius: 999px;
+}
+
+.gfx-stamp__ring::before {
+  position: absolute;
+  inset: 4px;
+  border: 1px dashed rgba(255, 250, 242, 0.55);
+  border-radius: 999px;
+  content: "";
+}
+
+.gfx-stamp__ring::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--copper);
+  content: "";
+  transform: translate(-50%, -50%);
+}
+
+.gfx-stamp__text {
+  display: grid;
+  line-height: 1.25;
+}
+
+.gfx-stamp__text strong {
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--authority-on-dark) 72%, var(--copper));
+}
+
+.gfx-stamp__text em {
+  font-style: normal;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(255, 250, 242, 0.62);
+}
+
+/* --- Survey ruler: coordinate tick strip along hero base lines --- */
+.gfx-ruler {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 2;
+  height: 14px;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--copper) 0 2.25rem, transparent 2.25rem 100%) bottom left / 100% 2px no-repeat,
+    repeating-linear-gradient(90deg, rgba(255, 250, 242, 0.28) 0 1px, transparent 1px 56px) bottom left / 100% 7px no-repeat,
+    repeating-linear-gradient(90deg, rgba(255, 250, 242, 0.16) 0 1px, transparent 1px 14px) bottom left / 100% 4px no-repeat;
+}
+
+/* ============================================================
+   Homepage diagnostic gate — structured selection console
+   ============================================================ */
+
+.diagnostic-panel--gate {
+  position: relative;
+  overflow: hidden;
+}
+
+.diagnostic-panel--gate::before {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 6px;
+  background:
+    linear-gradient(90deg, var(--sea) 0 33.4%, var(--copper) 33.4% 66.7%, var(--clay) 66.7% 100%);
+  content: "";
+  opacity: 0.85;
+}
+
+.diagnostic-panel--gate::after {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+  height: 9px;
+  background: repeating-linear-gradient(90deg, rgba(16, 38, 63, 0.18) 0 1px, transparent 1px 28px);
+  background-size: 100% 5px;
+  background-repeat: no-repeat;
+  content: "";
+}
+
+/* Pathway accents: each gate choice carries its operating color */
+.diagnostic-choice-grid {
+  counter-reset: gate-choice;
+}
+
+.diagnostic-choice-card {
+  --gate-accent: var(--accent);
+  counter-increment: gate-choice;
+}
+
+.diagnostic-choice-card:nth-child(1) {
+  --gate-accent: var(--sea);
+}
+
+.diagnostic-choice-card:nth-child(2) {
+  --gate-accent: var(--copper);
+}
+
+.diagnostic-choice-card:nth-child(3) {
+  --gate-accent: var(--clay);
+}
+
+.diagnostic-choice-card::before {
+  background: var(--gate-accent);
+}
+
+.diagnostic-choice-card:hover,
+.diagnostic-choice-card:focus-visible {
+  border-color: color-mix(in srgb, var(--gate-accent) 78%, var(--copper));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.72),
+    0 22px 44px rgba(16, 38, 63, 0.16),
+    0 0 0 1px color-mix(in srgb, var(--gate-accent) 30%, transparent),
+    0 0 32px color-mix(in srgb, var(--gate-accent) 15%, transparent);
+}
+
+.diagnostic-choice-card__title {
+  padding-right: 2.6rem;
+}
+
+/* Registry numeral on each gate card */
+.diagnostic-choice-card__title::after {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.95rem;
+  z-index: 1;
+  content: "0" counter(gate-choice);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 640;
+  line-height: 1;
+  color: color-mix(in srgb, var(--gate-accent) 72%, var(--heading));
+  opacity: 0.6;
+  transition: opacity var(--motion-standard) var(--motion-ease-out);
+}
+
+.diagnostic-choice-card:hover .diagnostic-choice-card__title::after,
+.diagnostic-choice-card:focus-visible .diagnostic-choice-card__title::after,
+.diagnostic-choice-card[aria-pressed="true"] .diagnostic-choice-card__title::after {
+  opacity: 1;
+}
+
+/* ============================================================
+   Services — jurisdiction scale (escalation meter with ticks)
+   ============================================================ */
+
+.services-responsibility-meter {
+  position: relative;
+  height: 1.05rem;
+  border-radius: 0.3rem;
+  border: 1px solid color-mix(in srgb, var(--line) 70%, var(--authority));
+  background:
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--authority) 22%, transparent) 0 1px, transparent 1px calc(100% / 12)),
+    color-mix(in srgb, var(--line) 42%, var(--surface-light-alt));
+  overflow: visible;
+}
+
+.services-responsibility-meter::before {
+  position: absolute;
+  left: 33.4%;
+  top: -5px;
+  bottom: -5px;
+  width: 1.5px;
+  background: color-mix(in srgb, var(--authority) 55%, transparent);
+  content: "";
+}
+
+.services-responsibility-meter::after {
+  position: absolute;
+  left: 66.7%;
+  top: -5px;
+  bottom: -5px;
+  width: 1.5px;
+  background: color-mix(in srgb, var(--authority) 55%, transparent);
+  content: "";
+}
+
+.services-responsibility-meter span {
+  border-radius: 0.22rem;
+  background: linear-gradient(90deg, var(--support), var(--copper) 78%, var(--accent));
+  box-shadow:
+    0 0 22px color-mix(in srgb, var(--accent) 32%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+/* ============================================================
+   Contact — intake dossier surface
+   ============================================================ */
+
+.contact-intake-shell {
+  border-top-left-radius: 0.4rem;
+}
+
+.contact-intake-shell::before {
+  height: 5px;
+}
+
+/* Ruled registry margin down the dossier */
+.contact-intake-shell::after {
+  position: absolute;
+  top: 5px;
+  bottom: 0;
+  left: 1.05rem;
+  width: 1px;
+  background: color-mix(in srgb, var(--clay) 38%, transparent);
+  content: "";
+  pointer-events: none;
+}
+
+/* File tab above the dossier shell */
+.contact-intake-tab {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: -1px;
+  border: 1px solid color-mix(in srgb, var(--line) 56%, var(--support));
+  border-bottom: 0;
+  border-radius: 0.7rem 0.7rem 0 0;
+  background: var(--site-surface-shell-cool);
+  padding: 0.5rem 1.1rem 0.62rem;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--support);
+}
+
+.contact-intake-tab::before {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--copper);
+  content: "";
+}
+
+/* ============================================================
+   Evidence frame: corner-marked operational media/panel frame
+   ============================================================ */
+
+.gfx-evidence-frame {
+  position: relative;
+}
+
+.gfx-evidence-frame::before,
+.gfx-evidence-frame::after {
+  position: absolute;
+  width: 1.4rem;
+  height: 1.4rem;
+  border: 2px solid color-mix(in srgb, var(--copper) 85%, transparent);
+  content: "";
+  pointer-events: none;
+  z-index: 2;
+}
+
+.gfx-evidence-frame::before {
+  top: -7px;
+  left: -7px;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.gfx-evidence-frame::after {
+  bottom: -7px;
+  right: -7px;
+  border-left: 0;
+  border-top: 0;
+}

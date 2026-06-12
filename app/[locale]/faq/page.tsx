@@ -14,6 +14,7 @@ import FAQWrongAssumptions from '@/components/FAQWrongAssumptions';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import JourneyNav from '@/components/JourneyNav';
 import FAQRoutingDiagram from '@/components/visuals/FAQRoutingDiagram';
+import OperationalField from '@/components/graphics/OperationalField';
 
 type HeroFact = {
   label: string;
@@ -173,6 +174,8 @@ export default function FAQPage() {
       <HeaderClient />
       <main className="faq-page min-h-screen">
         <Section tone="authority" className="section-primitive--first faq-hero" id="faq-start">
+          <OperationalField variant="index" />
+          <span className="gfx-ruler" aria-hidden="true" />
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(20rem,0.72fr)] lg:items-center">
             <div className="motion-entrance">
               <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>

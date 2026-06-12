@@ -11,6 +11,7 @@ import JourneyNav from '@/components/JourneyNav';
 import OperatingPathChapter from '@/components/how-it-works/OperatingPathChapter';
 import LocalExecutionChapter from '@/components/how-it-works/LocalExecutionChapter';
 import ReportDecisionChapter from '@/components/how-it-works/ReportDecisionChapter';
+import OperationalField from '@/components/graphics/OperationalField';
 
 type Fact = {
   label: string;
@@ -38,6 +39,8 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
       <HeaderClient />
       <main className="min-h-screen hiw-page">
         <Section tone="authority" className="section-primitive--first hiw-hero" id="process-start">
+          <OperationalField variant="sequence" />
+          <span className="gfx-ruler" aria-hidden="true" />
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(20rem,0.72fr)] lg:items-center">
             <div className="motion-entrance">
               <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
@@ -61,7 +64,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
               </div>
             </div>
 
-            <figure className="visual-card-strong motion-panel-reveal overflow-hidden border-authority-on-dark/25 bg-authority-on-dark/5">
+            <figure className="visual-card-strong gfx-evidence-frame motion-panel-reveal overflow-hidden border-authority-on-dark/25 bg-authority-on-dark/5">
               <div className="relative aspect-[4/3] bg-surface-light">
                 <Image
                   src="/visuals/sentinel-process-report-preview.svg"

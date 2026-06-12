@@ -12,6 +12,7 @@ const MOTION_SELECTOR = [
   '.timeline-card',
   '.reveal-rise',
   '.reveal-stagger',
+  '.gfx-field',
 ].join(',');
 
 export default function MotionObserver() {

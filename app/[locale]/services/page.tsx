@@ -15,6 +15,9 @@ import ServiceBoundaryGrid from '@/components/ServiceBoundaryGrid';
 import OperationalModuleTile from '@/components/OperationalModuleTile';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import JourneyNav from '@/components/JourneyNav';
+import OperationalField from '@/components/graphics/OperationalField';
+import OperationalStamp from '@/components/graphics/OperationalStamp';
+import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
 
 type OperationalModule = {
   image?: string;
@@ -47,6 +50,14 @@ export default async function ServicesPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'services' });
+  const tCommon = await getTranslations({ locale, namespace: 'common' });
+  const serviceAreaMapLabels = {
+    title: tCommon('serviceAreaMap.title'),
+    center: tCommon('serviceAreaMap.center'),
+    radius: tCommon('serviceAreaMap.radius'),
+    boundary: tCommon('serviceAreaMap.boundary'),
+    caption: tCommon('serviceAreaMap.caption'),
+  };
   const proofBadges = t.raw('redesign.hero.proofBadges') as string[];
   const headlineParts = t.raw('redesign.hero.headlineParts') as string[];
   const journeyItems = [
@@ -105,6 +116,8 @@ export default async function ServicesPage({
       <HeaderClient />
       <main className="services-page min-h-screen">
         <Section tone="authority" className="section-primitive--first services-command-hero" id="qualification">
+          <OperationalField variant="cartography" />
+          <span className="gfx-ruler" aria-hidden="true" />
           <GridFrame className="services-command-hero__grid items-center">
             <Region name="main" desktopSpan="half">
               <div className="motion-entrance services-hero-copy max-w-[680px]">
@@ -136,7 +149,7 @@ export default async function ServicesPage({
             </Region>
             <Region name="support" tabletSpan="half" desktopSpan="half">
               <figure className="services-hero-visual services-hero-visual--photo motion-panel-reveal" aria-hidden="true">
-                <div className="services-hero-visual__frame services-hero-visual__frame--photo">
+                <div className="services-hero-visual__frame services-hero-visual__frame--photo gfx-evidence-frame">
                   <div className="services-hero-visual__chrome">
                     <span />
                     <span />
@@ -297,9 +310,15 @@ export default async function ServicesPage({
                 <p className="mt-4 max-w-[62ch] text-lg leading-relaxed text-body">
                   {t('cta.subheadline')}
                 </p>
+                <OperationalStamp
+                  className="mt-6"
+                  primary={serviceAreaMapLabels.center}
+                  secondary={serviceAreaMapLabels.radius}
+                />
               </div>
               <div className="services-final-cta__panel p-5 md:p-8">
                 <div className="flex flex-col gap-4">
+                  <ServiceAreaMap labels={serviceAreaMapLabels} compact inverse />
                   <Link href={`/${locale}/contact`} className="btn-primary">
                     {t('cta.primaryButton')}
                   </Link>

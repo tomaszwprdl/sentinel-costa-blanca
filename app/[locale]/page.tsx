@@ -7,6 +7,7 @@ import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
 import Section from '@/components/layout/Section';
 import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
+import OperationalField from '@/components/graphics/OperationalField';
 import {
   PATHWAY_KEYS,
   type PathwayKey,
@@ -275,6 +276,8 @@ function UsagePathwayFallback({
               priority
             />
           </div>
+
+          <OperationalField variant="gate" />
 
           <div className="visual-hero-content">
             <div className="hero-copy-panel">

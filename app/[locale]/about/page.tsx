@@ -9,6 +9,7 @@ import AboutOperatingModel from '@/components/AboutOperatingModel';
 import AboutBoundaryGrid from '@/components/AboutBoundaryGrid';
 import AboutResponsibilityFlow from '@/components/AboutResponsibilityFlow';
 import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
+import OperationalField from '@/components/graphics/OperationalField';
 
 type Fact = {
   label: string;
@@ -56,6 +57,8 @@ export default async function AboutPage({
       <HeaderClient />
       <main className="about-page min-h-screen">
         <Section tone="authority" className="section-primitive--first about-hero" id="about-start">
+          <OperationalField variant="footprint" />
+          <span className="gfx-ruler" aria-hidden="true" />
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.62fr)_minmax(20rem,0.38fr)] lg:items-center">
             <div>
               <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
@@ -80,7 +83,7 @@ export default async function AboutPage({
             </div>
 
             <figure className="about-hero-media reveal-rise">
-              <div className="about-hero-media__frame">
+              <div className="about-hero-media__frame gfx-evidence-frame">
                 <Image
                   src="/photos/sentinel-about-local-entry-placeholder.png"
                   alt=""
