@@ -5,9 +5,9 @@ import { useState, type CSSProperties } from 'react';
 import { useTranslations } from 'next-intl';
 
 const PACKAGES = [
-  { packageKey: 'green', levelKey: 'basic', marker: '01', axisKey: 'axis1', slaKey: '48h', depth: '34%' },
-  { packageKey: 'orange', levelKey: 'extended', marker: '02', axisKey: 'axis2', slaKey: '24h', depth: '67%' },
-  { packageKey: 'red', levelKey: 'full', marker: '03', axisKey: 'axis3', slaKey: 'sameDay', depth: '100%' },
+  { packageKey: 'green', levelKey: 'basic', marker: '01', axisKey: 'axis1', slaKey: '48h', depth: '34%', windowPos: '33.3%' },
+  { packageKey: 'orange', levelKey: 'extended', marker: '02', axisKey: 'axis2', slaKey: '24h', depth: '67%', windowPos: '66.7%' },
+  { packageKey: 'red', levelKey: 'full', marker: '03', axisKey: 'axis3', slaKey: 'sameDay', depth: '100%', windowPos: '100%' },
 ] as const;
 
 type PackageLevel = (typeof PACKAGES)[number]['levelKey'];
@@ -64,7 +64,14 @@ export default function PackageResponsibilityLadder() {
               <p>{tHomeLevels(active.axisKey)}</p>
               <h3>{t(`${active.packageKey}.title`)}</h3>
             </div>
-            <span>{activeSla}</span>
+            <span className="services-responsibility-reveal__sla">
+              {activeSla}
+              <span
+                className="svc-window"
+                style={{ '--window-pos': active.windowPos } as CSSProperties}
+                aria-hidden="true"
+              />
+            </span>
           </div>
 
           <div
@@ -94,7 +101,14 @@ export default function PackageResponsibilityLadder() {
             </div>
             <div>
               <dt>{t(`${active.packageKey}.summary.decisionsLabel`)}</dt>
-              <dd>{t(`${active.packageKey}.summary.decisionsValue`)}</dd>
+              <dd>
+                {t(`${active.packageKey}.summary.decisionsValue`)}
+                <span
+                  className="svc-instrument svc-depth"
+                  style={{ '--depth-pos': active.depth } as CSSProperties}
+                  aria-hidden="true"
+                />
+              </dd>
             </div>
           </dl>
 

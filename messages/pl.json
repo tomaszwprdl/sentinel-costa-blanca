@@ -295,6 +295,16 @@
       "right7": "Odpowiedzialność i zakres są jasno określone.",
       "rightClosing": "Tu działa porządek, nie przypadek."
     },
+  "proofLedger": {
+    "label": "Procedura zdarzenia",
+    "title": "Od zdarzenia do udokumentowanej decyzji",
+    "steps": {
+      "issue": { "title": "Zdarzenie", "body": "Usterka, ryzyko albo potrzeba dostępu zostaje wykryta podczas wizyty lub zgłoszenia." },
+      "evidence": { "title": "Dokumentacja", "body": "Stan zostaje zapisany: zdjęcia, notatka, czas i zakres." },
+      "decision": { "title": "Decyzja", "body": "Decyzja zapada w ustalonym limicie albo wraca do właściciela." },
+      "action": { "title": "Działanie", "body": "Wykonanie i potwierdzenie trafiają do raportu." }
+    }
+  },
   "systemIntro": {
     "eyebrow": "Krótki proces",
     "title": "Jak działa system Sentinel",
@@ -636,6 +646,17 @@
           "access": "Klucze, jednorazowe wejścia oraz transfery lub wsparcie pojazdowe pozostają kontrolowanymi funkcjami w systemie nadzoru.",
           "seasonal": "Otwarcie, zamknięcie, przygotowanie lokalu i dodatkowe kontrole są prowadzone tylko tam, gdzie pozwala na to zakres."
         }
+      },
+      "custody": {
+        "eyebrow": "Łańcuch dostępu",
+        "title": "Klucze i dostęp mają udokumentowany obieg.",
+        "steps": {
+          "register": { "title": "Rejestracja kluczy", "body": "Klucze są przyjęte i oznaczone w rejestrze." },
+          "custody": { "title": "Kontrolowane przechowywanie", "body": "Przechowywanie i wydanie wyłącznie w ustalonym zakresie." },
+          "access": { "title": "Udokumentowane wejście", "body": "Każde wejście ma powód, datę i wpis." },
+          "confirm": { "title": "Potwierdzenie i raport", "body": "Zamknięcie wizyty zostaje odnotowane w raporcie." }
+        },
+        "note": "Obieg dostępu działa wewnątrz nadzoru — nie jako osobna usługa."
       },
       "execution": {
         "cta": "Zapytaj o ograniczony zakres"
@@ -1442,6 +1463,12 @@
           "withinLimit": { "title": "Działanie w limicie", "body": "Jeżeli pakiet i limit na to pozwalają, Sentinel może wykonać uzgodnione działanie." },
           "ownerApproval": { "title": "Zgoda właściciela", "body": "Powyżej limitu, poza pakietem lub przy większych pracach decyzja wraca do właściciela." }
         }
+      },
+      "route": {
+        "visit": "Wizyta",
+        "report": "Raport",
+        "decision": "Decyzja",
+        "action": "Działanie"
       },
       "details": {
         "eyebrow": "Szczegóły wdrożenia",

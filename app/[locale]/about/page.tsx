@@ -10,6 +10,7 @@ import AboutBoundaryGrid from '@/components/AboutBoundaryGrid';
 import AboutResponsibilityFlow from '@/components/AboutResponsibilityFlow';
 import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
 import OperationalField from '@/components/graphics/OperationalField';
+import OperationalStamp from '@/components/graphics/OperationalStamp';
 
 type Fact = {
   label: string;
@@ -159,7 +160,14 @@ export default async function AboutPage({
               <p className="mt-5 mb-0 text-sm leading-relaxed text-muted">{t('redesign.local.note')}</p>
             </div>
 
-            <ServiceAreaMap labels={serviceAreaMapLabels} />
+            <div className="home-area-band__map">
+              <OperationalStamp
+                className="gfx-stamp--paper"
+                primary={serviceAreaMapLabels.center}
+                secondary={serviceAreaMapLabels.radius}
+              />
+              <ServiceAreaMap labels={serviceAreaMapLabels} />
+            </div>
           </div>
         </Section>
 

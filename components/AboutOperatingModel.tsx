@@ -22,7 +22,7 @@ export default function AboutOperatingModel({
   return (
     <div className="about-model-shell reveal-rise">
       <div className="grid gap-0 lg:grid-cols-[minmax(0,0.44fr)_minmax(0,0.56fr)]">
-        <div className="about-model-shell__diagram p-4 md:p-5">
+        <div className="about-model-shell__diagram gfx-evidence-frame p-4 md:p-5">
           <ResponsibilityStructureDiagram className="h-full min-h-[300px]" />
         </div>
         <div className="p-5 md:p-8">

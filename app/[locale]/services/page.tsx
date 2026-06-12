@@ -17,6 +17,7 @@ import MobileStickyCTA from '@/components/MobileStickyCTA';
 import JourneyNav from '@/components/JourneyNav';
 import OperationalField from '@/components/graphics/OperationalField';
 import OperationalStamp from '@/components/graphics/OperationalStamp';
+import AccessCustodyChain from '@/components/graphics/AccessCustodyChain';
 import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
 
 type OperationalModule = {
@@ -210,6 +211,15 @@ export default async function ServicesPage({
                 ))}
               </div>
             </div>
+            <AccessCustodyChain
+              eyebrow={t('redesign.custody.eyebrow')}
+              title={t('redesign.custody.title')}
+              steps={['register', 'custody', 'access', 'confirm'].map((key) => ({
+                title: t(`redesign.custody.steps.${key}.title`),
+                body: t(`redesign.custody.steps.${key}.body`),
+              }))}
+              note={t('redesign.custody.note')}
+            />
             <div className="services-module-guardrail">
               <span>{t('redesign.modules.guardrailLabel')}</span>
               <p>{t('redesign.modules.guardrailBody')}</p>
