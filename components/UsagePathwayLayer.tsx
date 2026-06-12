@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import HeroGateFrame from '@/components/HeroGateFrame';
 import Section from '@/components/layout/Section';
 import OperationalField from '@/components/graphics/OperationalField';
 import {
@@ -175,28 +176,17 @@ function DiagnosticGateIntro({
   children: ReactNode;
 }) {
   return (
-    <div className="visual-hero-shell">
-      <div className="visual-hero-media">
-        <Image
-          src="/photos/sentinel-costa-blanca-entry-hero.png"
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover"
-          priority
-        />
-      </div>
-
-      <OperationalField variant="gate" />
-
+    <HeroGateFrame>
       <div className="visual-hero-content motion-entrance">
         <div className="hero-copy-panel motion-entrance">
-          <p className="hero-kicker">{tp('companyEyebrow')}</p>
-          <h1 className="hero-display">{tp('companyHeadline')}</h1>
-          <p className="hero-lead mt-6">{tp('companyLine')}</p>
-          <p className="mt-4 hidden max-w-xl text-sm leading-relaxed text-authority-on-dark/70 sm:block">
-            {tp('companyProofLine')}
-          </p>
+          <div className="hero-copy-stack">
+            <p className="hero-kicker">{tp('companyEyebrow')}</p>
+            <h1 className="hero-display">{tp('companyHeadline')}</h1>
+            <p className="hero-lead">{tp('companyLine')}</p>
+            <p className="hero-proof-line hidden max-w-xl text-sm leading-relaxed text-authority-on-dark/70 sm:block">
+              {tp('companyProofLine')}
+            </p>
+          </div>
 
           <div className="hero-fact-grid">
             <HeroFactChip label={tp('companyFacts.area.label')} value={tp('companyFacts.area.value')} />
@@ -204,7 +194,7 @@ function DiagnosticGateIntro({
             <HeroFactChip label={tp('companyFacts.access.label')} value={tp('companyFacts.access.value')} />
           </div>
 
-          <a href="#usage-situation-gate" className="gate-scroll-cue mt-5 inline-flex lg:hidden">
+          <a href="#usage-situation-gate" className="gate-scroll-cue inline-flex lg:hidden">
             <span>{tp('gateScrollCue')}</span>
           </a>
         </div>
@@ -219,7 +209,7 @@ function DiagnosticGateIntro({
           <div className="mt-5">{children}</div>
         </div>
       </div>
-    </div>
+    </HeroGateFrame>
   );
 }
 

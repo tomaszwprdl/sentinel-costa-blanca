@@ -10,7 +10,6 @@ const MOTION_SELECTOR = [
   '.process-sequence > *',
   '.reveal-rise',
   '.reveal-stagger',
-  '.gfx-field',
 ].join(',');
 
 export default function MotionObserver() {

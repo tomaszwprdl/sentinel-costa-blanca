@@ -1,12 +1,11 @@
 import { Suspense } from 'react';
 import UsagePathwayLayer, { PathwayCopy, PathwayFinalCtaLink } from '@/components/UsagePathwayLayer';
-import Image from 'next/image';
+import HeroGateFrame from '@/components/HeroGateFrame';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
 import Section from '@/components/layout/Section';
-import OperationalField from '@/components/graphics/OperationalField';
 import {
   PATHWAY_KEYS,
   type PathwayKey,
@@ -253,28 +252,17 @@ function UsagePathwayFallback({
       className={hasSelection ? 'section-primitive--first !pb-12' : 'visual-hero-section'}
     >
       {!hasSelection && (
-        <div className="visual-hero-shell">
-          <div className="visual-hero-media">
-            <Image
-              src="/photos/sentinel-costa-blanca-entry-hero.png"
-              alt=""
-              fill
-              sizes="100vw"
-              className="object-cover"
-              priority
-            />
-          </div>
-
-          <OperationalField variant="gate" />
-
+        <HeroGateFrame>
           <div className="visual-hero-content">
             <div className="hero-copy-panel">
-              <p className="hero-kicker">{t('pathway.companyEyebrow')}</p>
-              <h1 className="hero-display">{t('pathway.companyHeadline')}</h1>
-              <p className="hero-lead mt-6">{t('pathway.companyLine')}</p>
-              <p className="mt-4 max-w-xl text-sm leading-relaxed text-authority-on-dark/70">
-                {t('pathway.companyProofLine')}
-              </p>
+              <div className="hero-copy-stack">
+                <p className="hero-kicker">{t('pathway.companyEyebrow')}</p>
+                <h1 className="hero-display">{t('pathway.companyHeadline')}</h1>
+                <p className="hero-lead">{t('pathway.companyLine')}</p>
+                <p className="hero-proof-line max-w-xl text-sm leading-relaxed text-authority-on-dark/70">
+                  {t('pathway.companyProofLine')}
+                </p>
+              </div>
 
               <div className="hero-fact-grid">
                 <FallbackHeroFactChip label={t('pathway.companyFacts.area.label')} value={t('pathway.companyFacts.area.value')} />
@@ -294,7 +282,7 @@ function UsagePathwayFallback({
               <p className="mt-4 text-sm text-muted leading-relaxed">{t('pathway.gateInstruction')}</p>
             </div>
           </div>
-        </div>
+        </HeroGateFrame>
       )}
 
       {hasSelection && selected && (

@@ -7,12 +7,14 @@
  * aria-hidden geometry — numerals, units and local place names only, so it
  * stays locale-neutral (precedent: ServiceAreaMap place labels).
  *
- * Line work draws in on reveal via MotionObserver (`.gfx-field.is-visible`);
- * under prefers-reduced-motion the observer reveals immediately and CSS
- * removes the transitions, so geometry is always readable without motion.
+ * Line work draws in on reveal via `.gfx-field.is-visible`, toggled after
+ * mount by OperationalField itself so SSR and hydration share the same initial
+ * className; under prefers-reduced-motion the field reveals on the next frame.
  */
 
-import type { CSSProperties, ReactElement } from 'react';
+'use client';
+
+import { useEffect, useRef, useState, type CSSProperties, type ReactElement } from 'react';
 
 type OperationalFieldVariant =
   | 'cartography'
@@ -37,6 +39,11 @@ const CLAY = '#cd7a58';
 const INKDEEP = '#0b1d33';
 
 const FONT = 'var(--font-sans), Arial, sans-serif';
+
+function coord(value: number, precision = 2): string {
+  const factor = 10 ** precision;
+  return (Math.round(value * factor) / factor).toFixed(precision);
+}
 
 function draw(index: number) {
   return { className: 'gfx-draw', style: { ['--gfx-i' as string]: index } as CSSProperties };
@@ -65,7 +72,9 @@ function RingTicks({
     const y1 = cy + Math.sin(angle) * r;
     const x2 = cx + Math.cos(angle) * (r + length);
     const y2 = cy + Math.sin(angle) * (r + length);
-    return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} />;
+    return (
+      <line key={i} x1={coord(x1)} y1={coord(y1)} x2={coord(x2)} y2={coord(y2)} />
+    );
   });
   return (
     <g stroke={stroke} strokeOpacity={opacity} strokeWidth="1">
@@ -191,7 +200,6 @@ function GateField() {
           <line x1={cx} y1={cy - 24} x2={cx} y2={cy + 24} stroke={COPPER} strokeOpacity="0.85" strokeWidth="1.4" />
           <circle cx={cx} cy={cy} r="4.5" fill={COPPER} />
           <circle cx={cx} cy={cy} r="11" fill="none" stroke={PAPER} strokeOpacity="0.5" strokeWidth="1.2" />
-          <text x={cx + 22} y={cy + 34} fontFamily={FONT} fontSize="11" fontWeight="800" letterSpacing="0.08em" fill={PAPER} fillOpacity="0.8">TORREVIEJA</text>
         </g>
 
         {/* radius annotation along the copper ring */}
@@ -514,18 +522,26 @@ function InspectionField() {
 
         {/* scheduled visit marks on the cadence ring */}
         <g className="gfx-fade" fill={SEA} fillOpacity="0.9">
-          {[-90, -30, 30, 90, 150, 210].map((deg, i) =>
-            i % 2 === 0 ? (
+          {[-90, -30, 30, 90, 150, 210].map((deg, i) => {
+            if (i % 2 !== 0) {
+              return null;
+            }
+
+            const rad = (deg * Math.PI) / 180;
+            const px = cx + Math.cos(rad) * 210;
+            const py = cy + Math.sin(rad) * 210;
+
+            return (
               <rect
                 key={deg}
-                x={cx + Math.cos((deg * Math.PI) / 180) * 210 - 5}
-                y={cy + Math.sin((deg * Math.PI) / 180) * 210 - 5}
+                x={coord(px - 5)}
+                y={coord(py - 5)}
                 width="10"
                 height="10"
-                transform={`rotate(45 ${cx + Math.cos((deg * Math.PI) / 180) * 210} ${cy + Math.sin((deg * Math.PI) / 180) * 210})`}
+                transform={`rotate(45 ${coord(px)} ${coord(py)})`}
               />
-            ) : null
-          )}
+            );
+          })}
         </g>
 
         {/* closed property at centre */}
@@ -692,9 +708,48 @@ const VARIANTS: Record<OperationalFieldVariant, () => ReactElement> = {
 };
 
 export default function OperationalField({ variant, className = '' }: OperationalFieldProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
   const Field = VARIANTS[variant];
+
+  useEffect(() => {
+    const root = ref.current;
+    if (!root) {
+      return;
+    }
+
+    const reveal = () => setVisible(true);
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reducedMotion || !('IntersectionObserver' in window)) {
+      const frame = window.requestAnimationFrame(reveal);
+      return () => window.cancelAnimationFrame(frame);
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting && entry.boundingClientRect.top >= 0) {
+            return;
+          }
+
+          reveal();
+          observer.disconnect();
+        });
+      },
+      { rootMargin: '0px 0px -10% 0px', threshold: 0.12 },
+    );
+
+    observer.observe(root);
+    return () => observer.disconnect();
+  }, [variant]);
+
+  const classes = ['gfx-field', `gfx-field--${variant}`, visible ? 'is-visible' : '', className]
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <div className={`gfx-field gfx-field--${variant} ${className}`.trim()} aria-hidden="true">
+    <div ref={ref} className={classes} aria-hidden="true">
       <Field />
     </div>
   );
