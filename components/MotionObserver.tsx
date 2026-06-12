@@ -8,8 +8,6 @@ const MOTION_SELECTOR = [
   '.motion-step',
   '.motion-diagram',
   '.process-sequence > *',
-  '.storyboard-card',
-  '.timeline-card',
   '.reveal-rise',
   '.reveal-stagger',
   '.gfx-field',

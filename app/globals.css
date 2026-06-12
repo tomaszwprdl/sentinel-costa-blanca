@@ -346,18 +346,6 @@ img {
   border-left: 3px solid color-mix(in srgb, var(--authority) 34%, var(--line));
 }
 
-.storyboard-card:nth-child(3n + 1) {
-  border-left: 3px solid color-mix(in srgb, var(--accent) 40%, var(--line));
-}
-
-.storyboard-card:nth-child(3n + 2) {
-  border-left: 3px solid color-mix(in srgb, var(--support) 46%, var(--line));
-}
-
-.storyboard-card:nth-child(3n) {
-  border-left: 3px solid color-mix(in srgb, var(--authority) 32%, var(--line));
-}
-
 .bg-surface-light,
 .bg-surface-light-alt,
 .bg-authority-bg {
@@ -554,7 +542,7 @@ img {
     0 20px 48px rgba(0, 0, 0, 0.3);
 }
 
-/* In dark theme the paper face stays warm-light so it still reads against ink sections */
+/* On dark authority sections the paper face stays warm-light so it still reads against ink */
 
 
 
@@ -700,9 +688,7 @@ textarea:focus {
 .motion-reveal,
 .motion-step,
 .motion-diagram,
-.process-sequence > *,
-.storyboard-card,
-.timeline-card {
+.process-sequence > * {
   opacity: 0.78;
   transform: translateY(14px);
   transition:
@@ -716,37 +702,21 @@ textarea:focus {
 .motion-reveal.is-visible,
 .motion-step.is-visible,
 .motion-diagram.is-visible,
-.process-sequence > *.is-visible,
-.storyboard-card.is-visible,
-.timeline-card.is-visible {
+.process-sequence > *.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.process-sequence > :nth-child(2),
-.storyboard-card:nth-child(2),
-.timeline-card:nth-child(2) {
+.process-sequence > :nth-child(2) {
   --motion-delay: 45ms;
 }
 
-.process-sequence > :nth-child(3),
-.storyboard-card:nth-child(3),
-.timeline-card:nth-child(3) {
+.process-sequence > :nth-child(3) {
   --motion-delay: 90ms;
 }
 
-.process-sequence > :nth-child(4),
-.storyboard-card:nth-child(4),
-.timeline-card:nth-child(4) {
+.process-sequence > :nth-child(4) {
   --motion-delay: 135ms;
-}
-
-.storyboard-card:nth-child(5) {
-  --motion-delay: 180ms;
-}
-
-.storyboard-card:nth-child(6) {
-  --motion-delay: 225ms;
 }
 
 .motion-diagram.is-visible {
@@ -909,10 +879,6 @@ textarea:focus {
 #onboarding-detail,
 #process-rhythm,
 #one-minute-process,
-#visit-storyboard,
-#report-walkthrough,
-#access-chain,
-#decision-map,
 #faq-start,
 #faq-quick,
 #faq-details,
@@ -1820,10 +1786,6 @@ textarea:focus {
     border-radius: 1rem;
   }
 
-  .storyboard-card .storyboard-media {
-    display: none;
-  }
-
   .module-tile-visual--diagram {
     display: none;
   }
@@ -2289,17 +2251,6 @@ textarea:focus {
   }
 }
 
-.process-line {
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform var(--motion-slow) var(--motion-ease-out);
-}
-
-.visual-card-strong:has(.timeline-card.is-visible) .process-line {
-  transform: scaleX(1);
-}
-
-.timeline-card.is-visible .process-node,
 .process-sequence > *.is-visible .process-node,
 .motion-step.is-visible .process-node {
   box-shadow: 0 0 0 8px var(--surface-card), 0 0 0 12px color-mix(in srgb, var(--accent) 16%, transparent);
@@ -3156,7 +3107,7 @@ textarea:focus {
   color: color-mix(in srgb, var(--clay) 65%, #fffaf2);
 }
 
-/* The paper half keeps ink text even in dark theme — it is a literal light surface */
+/* The paper half keeps ink text on dark authority sections; it is a literal light surface */
 
 
 
@@ -5100,10 +5051,7 @@ textarea:focus {
   .motion-step,
   .motion-diagram,
   .motion-panel-reveal,
-  .process-line,
   .process-sequence > *,
-  .storyboard-card,
-  .timeline-card,
   .reveal-rise,
   .reveal-rise.is-visible,
   .reveal-stagger > *,
@@ -10260,159 +10208,6 @@ textarea:focus {
    from the dictionaries.
    ============================================================ */
 
-/* --- Operational ledger: issue → evidence → decision → action --- */
-.op-ledger {
-  position: relative;
-  overflow: hidden;
-  margin-top: 3rem;
-  border: 1px solid rgba(255, 250, 242, 0.22);
-  border-radius: var(--site-radius-shell);
-  background:
-    radial-gradient(24rem 14rem at 88% -10%, rgba(210, 154, 87, 0.14), transparent 70%),
-    linear-gradient(150deg, #081827, #10263f 62%, #133349);
-  box-shadow: var(--site-shadow-shell-dark);
-  color: var(--authority-on-dark);
-  padding: 1.75rem 1.5rem 1.9rem;
-}
-
-@media (min-width: 768px) {
-  .op-ledger {
-    padding: 2.4rem 2.5rem 2.6rem;
-  }
-}
-
-.op-ledger__head {
-  display: grid;
-  gap: 0.4rem;
-  margin-bottom: 2rem;
-}
-
-.op-ledger__label {
-  margin: 0;
-  color: color-mix(in srgb, var(--authority-on-dark) 55%, var(--copper));
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.op-ledger__title {
-  margin: 0;
-  max-width: 26ch;
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 640;
-  letter-spacing: -0.01em;
-  line-height: 1.15;
-  color: var(--authority-on-dark);
-}
-
-@media (min-width: 768px) {
-  .op-ledger__title {
-    font-size: 1.9rem;
-  }
-}
-
-.op-ledger__track {
-  position: relative;
-  display: grid;
-  gap: 1.9rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-@media (min-width: 900px) {
-  .op-ledger__track {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 2rem;
-  }
-
-  /* route line through the station nodes */
-  .op-ledger__track::before {
-    position: absolute;
-    top: 1.55rem;
-    right: 6%;
-    left: 1.55rem;
-    border-top: 1.5px solid color-mix(in srgb, var(--copper) 45%, rgba(255, 250, 242, 0.2));
-    content: "";
-  }
-}
-
-.op-ledger__station {
-  position: relative;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: start;
-  column-gap: 1rem;
-}
-
-.op-ledger__node {
-  grid-row: 1 / span 3;
-  display: grid;
-  place-items: center;
-  width: 3.1rem;
-  height: 3.1rem;
-  border: 1.4px solid color-mix(in srgb, var(--copper) 65%, rgba(255, 250, 242, 0.3));
-  border-radius: 999px;
-  background: #0b1d33;
-  color: color-mix(in srgb, var(--authority-on-dark) 70%, var(--copper));
-  box-shadow: 0 0 0 6px rgba(8, 24, 39, 0.85);
-}
-
-.op-ledger__node svg {
-  width: 1.9rem;
-  height: 1.9rem;
-}
-
-.op-ledger__num {
-  color: color-mix(in srgb, var(--copper) 80%, var(--authority-on-dark));
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 650;
-  line-height: 1.2;
-}
-
-.op-ledger__step-title {
-  margin: 0.1rem 0 0.35rem;
-  color: var(--authority-on-dark);
-  font-size: 1.02rem;
-  font-weight: 800;
-}
-
-.op-ledger__step-body {
-  margin: 0;
-  color: rgba(255, 250, 242, 0.72);
-  font-size: 0.88rem;
-  line-height: 1.6;
-}
-
-/* staggered station entrance, driven by the existing reveal observer */
-.op-ledger.reveal-rise .op-ledger__station {
-  opacity: 0;
-  transform: translateY(10px);
-  transition:
-    opacity 600ms var(--motion-ease-out),
-    transform 600ms var(--motion-ease-out);
-}
-
-.op-ledger.reveal-rise.is-visible .op-ledger__station {
-  opacity: 1;
-  transform: none;
-}
-
-.op-ledger.reveal-rise.is-visible .op-ledger__station:nth-child(2) { transition-delay: 140ms; }
-.op-ledger.reveal-rise.is-visible .op-ledger__station:nth-child(3) { transition-delay: 280ms; }
-.op-ledger.reveal-rise.is-visible .op-ledger__station:nth-child(4) { transition-delay: 420ms; }
-
-@media (prefers-reduced-motion: reduce) {
-  .op-ledger.reveal-rise .op-ledger__station {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-}
-
 /* --- Access custody chain: registered keys → documented entry --- */
 .custody-chain {
   margin-top: 2.5rem;
@@ -10606,96 +10401,6 @@ textarea:focus {
   color: var(--body);
   font-size: 0.88rem;
   line-height: 1.6;
-}
-
-/* --- Process route: standing sequence strip between chapters --- */
-.process-route {
-  display: flex;
-  justify-content: center;
-  padding: 0.5rem 0 0.75rem;
-}
-
-.process-route__track {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.3rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-@media (min-width: 640px) {
-  .process-route__track {
-    gap: 2.4rem;
-  }
-}
-
-.process-route__station {
-  position: relative;
-  display: grid;
-  justify-items: center;
-  row-gap: 0.45rem;
-  min-width: 3.4rem;
-}
-
-.process-route__station:not(:last-child)::after {
-  position: absolute;
-  top: 1.05rem;
-  left: calc(100% - 0.35rem);
-  width: calc(1.3rem + 0.7rem);
-  border-top: 1.5px dashed color-mix(in srgb, var(--line) 55%, var(--authority));
-  content: "";
-}
-
-@media (min-width: 640px) {
-  .process-route__station:not(:last-child)::after {
-    width: calc(2.4rem + 0.7rem);
-  }
-}
-
-.process-route__node {
-  display: grid;
-  place-items: center;
-  width: 2.2rem;
-  height: 2.2rem;
-  border: 1.4px solid color-mix(in srgb, var(--line) 50%, var(--authority));
-  border-radius: 999px;
-  background: var(--surface-card);
-  color: var(--muted);
-}
-
-.process-route__node svg {
-  width: 1.45rem;
-  height: 1.45rem;
-}
-
-.process-route__label {
-  color: var(--muted);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.process-route__station[data-state="active"] .process-route__node {
-  border-color: var(--accent);
-  background: var(--authority-bg);
-  color: var(--authority-on-dark);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent);
-}
-
-.process-route__station[data-state="active"] .process-route__label {
-  color: var(--accent);
-}
-
-.process-route__station[data-state="done"] .process-route__node {
-  border-color: color-mix(in srgb, var(--support) 65%, var(--line));
-  color: var(--support);
-}
-
-.process-route__station[data-state="done"]:not(:last-child)::after {
-  border-top-style: solid;
-  border-top-color: color-mix(in srgb, var(--support) 50%, var(--line));
 }
 
 /* ============================================================
