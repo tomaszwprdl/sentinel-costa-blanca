@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Section from '@/components/layout/Section';
+import OperationalField from '@/components/graphics/OperationalField';
 import {
   PATHWAY_KEYS,
   normalizePathwayParam,
@@ -22,6 +23,13 @@ const PATHWAY_MEDIA: Record<PathwayKey, string> = {
   'private-use-only': '/photos/sentinel-apartment-entry-placeholder.png',
   'regular-guest-stays': '/photos/sentinel-cleaning-readiness-placeholder.png',
   'mixed-not-defined': '/photos/sentinel-corridor-exterior-placeholder.png',
+};
+
+// Each pathway carries its own operational geometry on the selected hero
+const PATHWAY_FIELD: Record<PathwayKey, 'inspection' | 'turnover' | 'classification'> = {
+  'private-use-only': 'inspection',
+  'regular-guest-stays': 'turnover',
+  'mixed-not-defined': 'classification',
 };
 
 type UsagePathwayLayerProps = {
@@ -179,6 +187,8 @@ function DiagnosticGateIntro({
         />
       </div>
 
+      <OperationalField variant="gate" />
+
       <div className="visual-hero-content motion-entrance">
         <div className="hero-copy-panel motion-entrance">
           <p className="hero-kicker">{tp('companyEyebrow')}</p>
@@ -298,6 +308,8 @@ function PathwayHero({
           priority
         />
       </div>
+
+      <OperationalField variant={PATHWAY_FIELD[pathway]} />
 
       <div className="container pathway-hero__inner">
         <div className="pathway-hero__main">

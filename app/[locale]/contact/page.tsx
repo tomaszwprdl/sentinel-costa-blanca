@@ -18,6 +18,7 @@ import ContactUnsuitableGrid from '@/components/ContactUnsuitableGrid';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
 import IntakePathDiagram from '@/components/visuals/IntakePathDiagram';
+import OperationalField from '@/components/graphics/OperationalField';
 
 import { normalizePathwayParam } from '@/lib/pathway';
 import {
@@ -277,6 +278,8 @@ function ContactPageInner() {
       <HeaderClient />
       <main className="contact-page min-h-screen">
         <Section tone="authority" className="section-primitive--first contact-hero" id="contact-start">
+          <OperationalField variant="intake" />
+          <span className="gfx-ruler" aria-hidden="true" />
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.62fr)_minmax(20rem,0.38fr)] lg:items-center">
             <div>
               <p className="hero-kicker">{t('redesign.hero.eyebrow')}</p>
@@ -301,7 +304,7 @@ function ContactPageInner() {
             </div>
 
             <figure className="contact-hero-media reveal-rise">
-              <div className="contact-hero-media__frame bg-surface-light">
+              <div className="contact-hero-media__frame bg-surface-light gfx-evidence-frame">
                 <Image
                   src="/visuals/sentinel-contact-intake-path.svg"
                   alt=""
@@ -359,7 +362,9 @@ function ContactPageInner() {
               </div>
             </aside>
 
-            <div className="contact-intake-shell reveal-rise p-4 md:p-6">
+            <div className="reveal-rise">
+              <span className="contact-intake-tab">{t('redesign.form.eyebrow')}</span>
+            <div className="contact-intake-shell p-4 md:p-6">
               {pathwayKey && (
                 <div className="visual-card p-5 mb-5">
                   <h3 className="text-base font-black text-heading">{t('pathwayContext.title')}</h3>
@@ -640,6 +645,7 @@ function ContactPageInner() {
                   </button>
                 </div>
               </form>
+            </div>
             </div>
           </div>
         </Section>
