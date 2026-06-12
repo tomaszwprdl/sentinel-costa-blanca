@@ -6,10 +6,7 @@ import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
 import Section from '@/components/layout/Section';
-import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
 import OperationalField from '@/components/graphics/OperationalField';
-import OperationalLedger from '@/components/graphics/OperationalLedger';
-import OperationalStamp from '@/components/graphics/OperationalStamp';
 import {
   PATHWAY_KEYS,
   type PathwayKey,
@@ -28,7 +25,6 @@ const PACKAGE_PREVIEW = [
   { marker: '03', title: 'level3Title', axis: 'axis3', purpose: 'level3Purpose' },
 ] as const;
 const CREDIBILITY_KEYS = ['scope', 'documentation', 'decisions', 'responsibility'] as const;
-const SERVICE_AREA_POINTS = ['bullet1', 'bullet2', 'bullet3', 'bullet4'] as const;
 
 export default async function HomePage({
   params
@@ -37,14 +33,6 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'home' });
-  const tCommon = await getTranslations({ locale, namespace: 'common' });
-  const serviceAreaMapLabels = {
-    title: tCommon('serviceAreaMap.title'),
-    center: tCommon('serviceAreaMap.center'),
-    radius: tCommon('serviceAreaMap.radius'),
-    boundary: tCommon('serviceAreaMap.boundary'),
-    caption: tCommon('serviceAreaMap.caption'),
-  };
 
   return (
     <>
@@ -131,14 +119,25 @@ export default async function HomePage({
             </article>
           </div>
 
-          <OperationalLedger
-            label={t('proofLedger.label')}
-            title={t('proofLedger.title')}
-            steps={['issue', 'evidence', 'decision', 'action'].map((key) => ({
-              title: t(`proofLedger.steps.${key}.title`),
-              body: t(`proofLedger.steps.${key}.body`),
-            }))}
-          />
+          <div className="home-mechanism-board reveal-rise" aria-label={t('proofLedger.title')}>
+            <div className="home-mechanism-board__header">
+              <p className="section-label">{t('proofLedger.label')}</p>
+              <h3>{t('proofLedger.title')}</h3>
+            </div>
+            <div className="home-mechanism-board__track">
+              {['issue', 'evidence', 'decision', 'action'].map((key, index) => (
+                <article key={key} className="home-mechanism-board__step">
+                  <span className="home-mechanism-board__index" aria-hidden>
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h4>{t(`proofLedger.steps.${key}.title`)}</h4>
+                    <p>{t(`proofLedger.steps.${key}.body`)}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
         </Section>
 
         {/* 5. ZAKRES PAKIETÓW — pełnowymiarowa drabina odpowiedzialności (vertical containment) */}
@@ -169,33 +168,6 @@ export default async function HomePage({
             <Link href={`/${locale}/services#package-fit`} className="btn-secondary w-fit text-sm">
               {t('levels.ctaCompare')}
             </Link>
-          </div>
-        </Section>
-
-        {/* 5b. OBSZAR DZIAŁANIA — mapa w dużej skali obok deklaracji zasięgu */}
-        <Section tone="alt" className="home-section home-section--area !py-16 md:!py-24">
-          <div className="home-area-band reveal-rise">
-            <div className="home-area-band__text">
-              <p className="section-label">{t('serviceArea.eyebrow')}</p>
-              <h2 className="h2-system mt-3">{t('serviceArea.title')}</h2>
-              <p className="mt-4 text-body leading-relaxed">{t('serviceArea.intro')}</p>
-              <div className="mt-6 grid gap-3">
-                {SERVICE_AREA_POINTS.map((key) => (
-                  <p key={key} className="home-area-band__point mb-0">
-                    <span className="home-area-band__marker" aria-hidden />
-                    <span>{t(`serviceArea.${key}`)}</span>
-                  </p>
-                ))}
-              </div>
-            </div>
-            <div className="home-area-band__map">
-              <OperationalStamp
-                className="gfx-stamp--paper"
-                primary={serviceAreaMapLabels.center}
-                secondary={serviceAreaMapLabels.radius}
-              />
-              <ServiceAreaMap labels={serviceAreaMapLabels} />
-            </div>
           </div>
         </Section>
 

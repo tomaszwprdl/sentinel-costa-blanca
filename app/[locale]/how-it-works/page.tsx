@@ -12,7 +12,6 @@ import OperatingPathChapter from '@/components/how-it-works/OperatingPathChapter
 import LocalExecutionChapter from '@/components/how-it-works/LocalExecutionChapter';
 import ReportDecisionChapter from '@/components/how-it-works/ReportDecisionChapter';
 import OperationalField from '@/components/graphics/OperationalField';
-import ProcessRoute from '@/components/graphics/ProcessRoute';
 
 type Fact = {
   label: string;
@@ -27,12 +26,6 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
   const t = await getTranslations({ locale, namespace: 'howItWorks' });
   const tCommon = await getTranslations({ locale, namespace: 'common' });
   const facts = t.raw('redesign.hero.facts') as Fact[];
-  const routeLabels = [
-    t('redesign.route.visit'),
-    t('redesign.route.report'),
-    t('redesign.route.decision'),
-    t('redesign.route.action'),
-  ];
   const journeyItems = [
     { id: 'process-start', label: t('redesign.hero.eyebrow') },
     { id: 'operating-path', label: t('redesign.timeline.eyebrow') },
@@ -94,17 +87,14 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
         </Section>
 
         <Section tone="light" className="section-primitive--compact hiw-interface-section hiw-section--local">
-          <ProcessRoute labels={routeLabels} active={0} className="mb-10" />
           <LocalExecutionChapter />
         </Section>
 
         <Section tone="alt" className="section-primitive--compact hiw-interface-section hiw-section--report">
-          <ProcessRoute labels={routeLabels} active={1} className="mb-10" />
           <ReportDecisionChapter t={t} />
         </Section>
 
         <Section tone="light" id="onboarding-detail" className="section-primitive--compact hiw-section--ledger">
-          <ProcessRoute labels={routeLabels} active={2} className="mb-10" />
           <div className="hiw-ledger-intro">
             <p className="section-label">{t('redesign.details.eyebrow')}</p>
             <h2 className="h2-system mt-3">{t('redesign.details.title')}</h2>

@@ -322,7 +322,7 @@ function PathwayHero({
             </button>
           </div>
 
-          <h2 className="pathway-hero__title">{t(`cards.${pathway}.title`)}</h2>
+          <h1 className="pathway-hero__title">{t(`cards.${pathway}.title`)}</h1>
           <p className="pathway-hero__lead">{t(`detail.${pathway}.priority`)}</p>
 
           <div className="pathway-hero__facts">

@@ -16,7 +16,6 @@ import ContactPreparationChecklist from '@/components/ContactPreparationChecklis
 import ContactRouteCards from '@/components/ContactRouteCards';
 import ContactUnsuitableGrid from '@/components/ContactUnsuitableGrid';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
-import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
 import IntakePathDiagram from '@/components/visuals/IntakePathDiagram';
 import OperationalField from '@/components/graphics/OperationalField';
 
@@ -105,14 +104,6 @@ function ContactPageInner() {
   const routeCards = t.raw('redesign.routes.cards') as Required<MarkedItem>[];
   const fitCards = t.raw('redesign.fit.cards') as InfoCard[];
   const unsuitableItems = t.raw('redesign.unsuitable.items') as InfoCard[];
-  const serviceAreaMapLabels = {
-    title: tCommon('serviceAreaMap.title'),
-    center: tCommon('serviceAreaMap.center'),
-    radius: tCommon('serviceAreaMap.radius'),
-    boundary: tCommon('serviceAreaMap.boundary'),
-    caption: tCommon('serviceAreaMap.caption'),
-  };
-
   const estimatorPrefill = useMemo(() => {
     const package_ = searchParams.get('est_package');
     const mode = searchParams.get('est_mode');
@@ -676,9 +667,8 @@ function ContactPageInner() {
               <p className="mt-5 mb-0 text-sm leading-relaxed text-muted">{t('redesign.fit.note')}</p>
             </div>
 
-            <div className="grid gap-4">
+            <div className="contact-fit-dossier">
               <IntakePathDiagram />
-              <ServiceAreaMap labels={serviceAreaMapLabels} compact />
             </div>
           </div>
         </Section>
