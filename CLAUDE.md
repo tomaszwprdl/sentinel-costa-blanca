@@ -9,11 +9,11 @@
 5. `doc/WORKFLOW.md`
 6. `doc/VISUAL-FREEDOM-SPRINT.md` — for visual work
 
-**Current SHAs:** latest main / website `cef326b` · graphic passes `38a4849` / `cef326b` · documentation governance `6a0d0f7`
+**Current SHAs:** latest main / website `97997eb` · graphic passes `38a4849` / `cef326b` · documentation governance `6a0d0f7`
 
 Visual composition rebuild is **merged**. The site uses **one canonical Sentinel atmosphere** — dark cinematic authority bands, warm paper body, dark final CTA/footer — with **no public theme toggle**.
 
-Build-era visual restrictions and dual-theme work are retired. Current phase is **post-rebuild visual refinement and anti-repetition restructuring**. Future visual work may be bold when Owner-scoped — including page-specific middle-section rebuilds and removal of redundant proof modules. Build on canonical mode per `doc/VISUAL-FREEDOM-SPRINT.md`. Protected contracts remain intact.
+Build-era visual restrictions and dual-theme work are retired. Current phase is **repo cleanup baseline and readiness audits**. Global visual iteration is paused; future improvements should be page-by-page, plan-first, and Owner-scoped. Visual work may still be bold when explicitly briefed, including page-specific middle-section rebuilds and removal of redundant proof modules. Build on canonical mode per `doc/VISUAL-FREEDOM-SPRINT.md`. Protected contracts remain intact.
 
 ## Project identity
 
@@ -34,7 +34,7 @@ If a section needs long reading to justify itself, it is not finished.
 
 ## Current working method
 
-Work page-by-page or section-by-section per the Owner brief. A scoped brief may be a large middle-section rebuild — **scoped** means bounded by the approved brief, not limited to small visual tweaks.
+Work page-by-page or section-by-section per the Owner brief. A scoped brief may be a large middle-section rebuild — **scoped** means bounded by the approved brief, not limited to small visual tweaks. Do not initiate another broad global visual pass unless the Owner explicitly asks for one.
 Do not touch sections outside the requested scope.
 Prefer small, reviewable commits (git discipline — not a cap on visual ambition).
 

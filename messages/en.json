@@ -30,12 +30,6 @@
       "hours": "Mon-Fri 9:00-18:00"
     },
     "language": "Language",
-    "theme": {
-      "light": "Light",
-      "dark": "Dark",
-      "switchToLight": "Switch to light mode",
-      "switchToDark": "Switch to dark mode"
-    },
     "submit": "Submit",
     "loading": "Loading...",
     "disclosure": {
@@ -46,21 +40,6 @@
       "open": "Open menu",
       "close": "Close menu",
       "home": "Home"
-    },
-    "confidenceBar": {
-      "title": "Key Operating Parameters",
-      "serviceArea": {
-        "label": "Service Area",
-        "text": "Torrevieja + 50-70km radius; no exceptions"
-      },
-      "sla": {
-        "label": "SLA Definition",
-        "text": "Reaction/decision time, not guaranteed resolution time"
-      },
-      "scope": {
-        "label": "Scope Rule",
-        "text": "If not explicitly listed in package → not included"
-      }
     },
     "serviceAreaMap": {
       "title": "Service area map",
@@ -1546,17 +1525,6 @@
         "body": "Summary:\nNo critical issues identified at time of inspection.\n\nRecommendations:\nMonitor kitchen valve during first month of service.\nNo immediate action required."
       },
       "acknowledgement": "Client acknowledgement required to confirm baseline condition.\nThis report serves as the reference point for future inspections."
-    },
-    "photoGrid": {
-      "label": "Example: On-site visit documentation (anonymized)",
-      "captureLabel": "SEN-CAP-{number}",
-      "ownerProvidedNote": "Redacted operational capture",
-      "captions": {
-        "waterShutoff": "Main water shut-off valve — visual check",
-        "boilerUnit": "Boiler unit — status verification",
-        "electricalPanel": "Electrical panel — access check",
-        "frontDoorLock": "Front door lock — access inspection"
-      }
     },
     "step0": {
       "title": "STEP 0: INITIAL QUALIFICATION",

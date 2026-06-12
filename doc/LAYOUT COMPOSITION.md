@@ -18,7 +18,7 @@ Guides:
 
 Does **not** lock page palette, imagery, card styling, or atmospheric treatment — see `VISUAL-FREEDOM-SPRINT.md`.
 
-Layout changes may be **bold** when Owner-scoped: full-section redesigns, full-page rhythm shifts, and whole-site composition passes are allowed if hierarchy, mobile sanity, and service boundaries remain intact.
+Layout changes may be **bold** when Owner-scoped: full-section redesigns and full-page rhythm shifts are allowed if hierarchy, mobile sanity, and service boundaries remain intact. Global visual iteration is currently paused; future improvements should be page-by-page and plan-first.
 
 ---
 

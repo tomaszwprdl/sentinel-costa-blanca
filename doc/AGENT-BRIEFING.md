@@ -8,8 +8,8 @@ Short briefing for Cursor, Codex, and Cloudie.
 
 - **Product:** Sentinel Costa Blanca — structured local owner representation (Torrevieja + ~50–70 km).
 - **Website:** Pre-live, soft-launch review ready. `noindex,nofollow` active.
-- **Phase:** Launch-era — post-rebuild visual refinement and anti-repetition restructuring + readiness audits.
-- **Latest main / website SHA:** `cef326b` (graphic passes through `38a4849` major graphic system + `cef326b` middle-page visual proof; composition rebuild baseline `e5fa7bb`).
+- **Phase:** Launch-era — repo cleanup baseline and readiness audits; global visual iteration paused.
+- **Latest main / website SHA:** `97997eb` (Codex middle-page rebuild merge; prior graphic passes through `38a4849` major graphic system + `cef326b` middle-page visual proof; composition rebuild baseline `e5fa7bb`).
 - **Launch-era governance baseline SHA:** `6a0d0f7` (reset + alignment + root entry points).
 - **Optional cognitive audit tool added:** `96fef3e` (`COGNITIVE-PAGE-AUDIT.md`).
 
@@ -17,9 +17,9 @@ Short briefing for Cursor, Codex, and Cloudie.
 
 Canonical mode: dark cinematic hero / authority bands · warm paper body sections · dark final CTA / footer · controlled copper / sea / clay accents · **no public dark/light theme toggle**.
 
-Future visual work should **build on canonical mode**, not recreate dual themes.
+Future visual work should **build on canonical mode**, not recreate dual themes. It should be page-by-page, plan-first, and Owner-scoped rather than another global transformation pass.
 
-**Current visual issue:** heroes are stronger, but middle sections remain repetitive and text-heavy. Recent graphic passes added useful language but also repeated motifs (jurisdiction rings, service-radius graphics, operational ledgers, identical proof bands). Owner-scoped page-specific rebuilds are **allowed** — including removing or demoting redundant modules.
+**Current baseline issue:** recent global visual passes left useful page language, but also redundant motifs, stale artifacts, and dead code. The current task is to clean the repo into a stable baseline before future page-specific improvements. Owner-scoped page-specific rebuilds remain **allowed** later — including removing or demoting redundant modules.
 
 ---
 
@@ -106,11 +106,12 @@ Details: `WORKFLOW.md`
 
 # Current next phase
 
-1. Owner-scoped middle-page visual/narrative rebuilds — anti-repetition, page-specific proof, substantial middle sections.
-2. Post-deploy refinement (header, mobile density, contact form comfort).
-3. Production contact email verification.
-4. Legal/entity/GDPR review.
-5. Final pricing confirmation.
-6. Remove noindex + deploy smoke test when approved.
+1. Repo cleanup baseline and readiness audit.
+2. Future page-by-page improvement briefs — plan-first, Owner-scoped, anti-repetition aware.
+3. Post-deploy refinement candidates (header, mobile density, contact form comfort).
+4. Production contact email verification.
+5. Legal/entity/GDPR review.
+6. Final pricing confirmation.
+7. Remove noindex + deploy smoke test when approved.
 
 Checklist: `LAUNCH-CHECKLIST.md`

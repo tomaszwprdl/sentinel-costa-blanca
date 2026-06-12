@@ -8,11 +8,11 @@ This file does **not** define binding decisions (`DECISIONS.md` does).
 
 # Current phase
 
-**Launch-era: post-rebuild visual refinement and anti-repetition restructuring + readiness audits**
+**Launch-era: repo cleanup baseline + readiness audits**
 
-The visual composition rebuild and unified canonical visual mode are **on `main`** (baseline `e5fa7bb`; graphic passes through `cef326b`). The old build-era sequential Task 1–8 model is **retired**. Build-era task and audit documents were removed from the active repository after documentation reset.
+The visual composition rebuild and unified canonical visual mode are **on `main`** (baseline `e5fa7bb`; graphic passes through `cef326b`; current live/main baseline `97997eb`). The old build-era sequential Task 1–8 model is **retired**. Build-era task and audit documents were removed from the active repository after documentation reset.
 
-**Current visual priority:** middle sections are still repetitive and text-heavy despite stronger heroes. Owner-scoped page-specific visual/narrative passes are **allowed and expected** — not cautious 2% polish.
+**Current priority:** clean the repository into a stable baseline after rapid global visual passes. Global visual iteration is paused. Future improvements should be page-by-page, plan-first, and Owner-scoped.
 
 ---
 
@@ -32,7 +32,7 @@ The visual composition rebuild and unified canonical visual mode are **on `main`
 # Rules
 
 1. No task may change protected contracts silently.
-2. Visual work is **allowed and expected** when Owner-scoped — including bold composition, imagery, color, motion, generated assets, full-section or full-page passes, and removal/demotion of redundant proof modules. Build on canonical mode; do not imply old build-era visual restraint.
+2. Visual work is **allowed** when Owner-scoped — including bold composition, imagery, color, motion, generated assets, full-section or full-page passes, and removal/demotion of redundant proof modules. Build on canonical mode; do not imply old build-era visual restraint. Do not start another global visual transformation pass without explicit Owner approval.
 3. **Anti-repetition:** the visual system must not become a repeated decoration layer. Motifs such as jurisdiction rings, service-radius graphics, operational ledgers, stamps, map/radius motifs, and identical proof bands should appear only where they answer a page-specific question. Agents may remove or replace recently added modules that create repetition.
 4. **Service area:** Torrevieja + 50–70 km remains locked, but service area/radius is an operational boundary, not a brand boast. Footer/contact mention and one strong local footprint module are fine; repeated service-area/radius graphics across many pages should be avoided unless they solve a real comprehension problem.
 5. **Page-specific narratives:** each major page should have its own middle-section visual argument (see `VISUAL-FREEDOM-SPRINT.md` and `LAYOUT COMPOSITION.md`). Avoid one generic graphic system applied everywhere.
@@ -47,7 +47,8 @@ The visual composition rebuild and unified canonical visual mode are **on `main`
 
 | Type | Examples |
 |------|----------|
-| Middle-page visual rebuild | Page-specific narrative passes, anti-repetition restructuring, proof-module demotion/removal — Owner-scoped |
+| Repo cleanup baseline | Remove proven-unused code/assets, stale local artifacts, dead message keys, stale docs references |
+| Page-by-page improvement | Page-specific narrative passes, anti-repetition restructuring, proof-module demotion/removal — Owner-scoped and plan-first |
 | Visual refinement | Post-deploy tuning, mobile density, hierarchy, atmosphere — Owner-scoped |
 | Readiness audit | Technical, legal, pricing, production email |
 | Scoped bugfix | Layout, i18n, form error, anchor — Owner brief only |

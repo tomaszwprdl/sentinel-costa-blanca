@@ -9,7 +9,7 @@ Descriptive only. Does not define decisions or intent.
 | Field | Value |
 |-------|-------|
 | Project | Sentinel |
-| Latest main / website SHA | `cef326b` |
+| Latest main / website SHA | `97997eb` |
 | Major graphic system pass | `38a4849` |
 | Middle-page visual proof pass | `cef326b` |
 | Launch-era governance baseline SHA | `6a0d0f7` |
@@ -17,7 +17,7 @@ Descriptive only. Does not define decisions or intent.
 | Website phase | Pre-live / soft-launch review ready |
 | Visual composition rebuild | **Merged** (`e5fa7bb` baseline; graphic passes through `cef326b`) |
 | Canonical visual mode | **Active** — one art-directed atmosphere; no public theme toggle |
-| Current visual focus | Post-rebuild refinement and anti-repetition restructuring — Owner-scoped page-specific passes allowed |
+| Current focus | Repo cleanup baseline and readiness audit; global visual iteration paused |
 | Site-polish phase | Closed (gate, pages, legal readability, contact sequencing) |
 | Documentation phase | Aligned for middle-page visual/narrative rebuild briefs |
 | Identity core | Locked (logo, descriptors, service model) |
@@ -38,6 +38,7 @@ Descriptive only. Does not define decisions or intent.
 - **Unified canonical visual mode** — dark cinematic authority bands, warm paper body, dark final CTA/footer; theme toggle removed — `d7ab89e` / `e5fa7bb`.
 - **Major graphic system pass** — jurisdiction rings, operational ledgers, proof modules, service-area motifs — `38a4849`.
 - **Middle-page visual proof pass** — additional proof bands and graphic language across middle sections — `cef326b`.
+- **Codex middle-page rebuild merged and deployed** — `97997eb`.
 - Heroes are materially stronger; middle sections still need page-specific visual/narrative differentiation (anti-repetition work pending Owner brief).
 - Build/lint passing on recent pushes.
 
@@ -45,7 +46,8 @@ Descriptive only. Does not define decisions or intent.
 
 # What is not done (launch work)
 
-- Post-rebuild visual refinement: anti-repetition restructuring, page-specific middle-section narratives, deploy catch-up (header spacing, mobile density, contact form comfort).
+- Repo cleanup baseline after rapid global visual passes.
+- Future page-by-page visual/narrative improvements: anti-repetition restructuring, page-specific middle-section narratives, deploy catch-up (header spacing, mobile density, contact form comfort).
 - Contact form production email end-to-end verification (inbox receipt pending Owner confirmation).
 - Final commercial pricing / estimator matrix confirmation.
 - Legal / entity / GDPR review for indexed public launch.
@@ -57,7 +59,7 @@ Descriptive only. Does not define decisions or intent.
 
 **Protected:** see `DECISIONS.md` — service model, packages, SLA meaning, pathways, estimator logic, contact details, legal substance, logo assets, noindex state.
 
-**Flexible:** website palette, composition, imagery, rhythm, proof modules, warmth, motion, generated assets, full-page or whole-site visual passes when Owner-scoped — per `VISUAL-FREEDOM-SPRINT.md`. Build on canonical mode; do not recreate a dual theme system unless Owner explicitly asks. Agents may remove, demote, or replace recently added modules when they create repetition or weaken page-specific storytelling.
+**Flexible:** website palette, composition, imagery, rhythm, proof modules, warmth, motion, generated assets, and page-specific visual passes when Owner-scoped — per `VISUAL-FREEDOM-SPRINT.md`. Global visual iteration is paused; future improvements should be page-by-page and plan-first. Build on canonical mode; do not recreate a dual theme system unless Owner explicitly asks. Agents may remove, demote, or replace recently added modules when they create repetition or weaken page-specific storytelling.
 
 ---
 

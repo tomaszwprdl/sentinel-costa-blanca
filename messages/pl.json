@@ -30,12 +30,6 @@
       "hours": "Pon-Pią 9:00-18:00"
     },
     "language": "Język",
-    "theme": {
-      "light": "Jasny",
-      "dark": "Ciemny",
-      "switchToLight": "Włącz tryb jasny",
-      "switchToDark": "Włącz tryb ciemny"
-    },
     "submit": "Wyślij",
     "loading": "Ładowanie...",
     "disclosure": {
@@ -46,21 +40,6 @@
       "open": "Otwórz menu",
       "close": "Zamknij menu",
       "home": "Strona główna"
-    },
-    "confidenceBar": {
-      "title": "Kluczowe Parametry Operacyjne",
-      "serviceArea": {
-        "label": "Obszar Obsługi",
-        "text": "Torrevieja + promień 50-70km; bez wyjątków"
-      },
-      "sla": {
-        "label": "Definicja SLA",
-        "text": "Czas reakcji/decyzji, nie gwarantowany czas rozwiązania"
-      },
-      "scope": {
-        "label": "Zasada Zakresu",
-        "text": "Jeśli nie jest wyraźnie wymienione w pakiecie → nie jest wliczone"
-      }
     },
     "serviceAreaMap": {
       "title": "Mapa obszaru obsługi",
@@ -1546,17 +1525,6 @@
         "body": "Podsumowanie:\nW momencie kontroli nie stwierdzono krytycznych problemów.\n\nRekomendacje:\nMonitorować zawór kuchenny w pierwszym miesiącu usługi.\nBrak potrzeby działań natychmiastowych."
       },
       "acknowledgement": "Wymagane potwierdzenie klienta w celu zatwierdzenia stanu bazowego.\nTen raport stanowi punkt odniesienia dla przyszłych kontroli."
-    },
-    "photoGrid": {
-      "label": "Przykład: Dokumentacja wizyty na miejscu (zanonimizowana)",
-      "captureLabel": "SEN-CAP-{number}",
-      "ownerProvidedNote": "Zanonimizowane ujęcie operacyjne",
-      "captions": {
-        "waterShutoff": "Główny zawór wody — kontrola wizualna",
-        "boilerUnit": "Bojler — weryfikacja stanu",
-        "electricalPanel": "Skrzynka elektryczna — kontrola dostępu",
-        "frontDoorLock": "Zamek drzwi wejściowych — kontrola dostępu"
-      }
     },
     "step0": {
       "title": "KROK 0: KWALIFIKACJA WSTĘPNA",

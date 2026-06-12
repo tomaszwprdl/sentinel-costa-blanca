@@ -1,6 +1,6 @@
 # VISUAL-FREEDOM-SPRINT.md — SENTINEL
 
-**Status:** Active canonical visual system (executed on `main`; latest graphic passes `38a4849` / `cef326b`)
+**Status:** Active canonical visual system (executed on `main`; current live/main baseline `97997eb`; graphic passes `38a4849` / `cef326b`)
 **Scope:** Website execution only — not logo assets, not service contracts
 
 ---
@@ -24,7 +24,7 @@ Build-era visual restraint is retired. **Mature operational credibility remains 
 
 The site should feel like a **real local operating company**, not a policy document — and it may look premium, warm, tactile, and visually excellent while boundaries stay clear.
 
-**Current state:** heroes are materially stronger after the graphic passes. Middle sections still need page-specific visual narratives — not another cautious 2% polish pass.
+**Current state:** heroes are materially stronger after the graphic passes. Global visual iteration is paused while the repo is cleaned into a stable baseline. Future improvements should be page-by-page, plan-first, and Owner-scoped, with page-specific visual narratives rather than another whole-site transformation pass.
 
 ---
 
@@ -87,7 +87,7 @@ Future visual work may use:
 
 - Colors, gradients, and evolved palette (reference tokens below are **directional**, not a hard cage)
 - Imagery, photography, SVG/CSS visual systems, generated assets
-- Section, full-page, or whole-site composition shifts
+- Section or full-page composition shifts
 - Motion when slow, purposeful, and `prefers-reduced-motion` safe
 - Cinematic surfaces, depth, image-led composition, editorial treatment
 
@@ -131,14 +131,15 @@ The following are **live on `main`**, not pending:
 - Single canonical visual mode (`data-theme="sentinel"`); legacy `sentinel-theme` localStorage neutralized
 - Major graphic system pass — jurisdiction rings, ledgers, proof modules — `38a4849`
 - Middle-page visual proof pass — additional proof bands across pages — `cef326b`
+- Codex middle-page rebuild merge — `97997eb`
 
-Post-rebuild refinement and anti-repetition restructuring are normal next steps. Page-specific middle-section rebuilds are allowed when Owner briefs them.
+Post-cleanup refinement and anti-repetition restructuring are normal next steps. Page-specific middle-section rebuilds are allowed when Owner briefs them.
 
 ---
 
 # Execution notes
 
-- Work may be section-by-section, page-by-page, **or** full-page / whole-site when Owner-scoped. **Scoped** means bounded by the approved brief — not “small changes only.”
+- Work may be section-by-section, page-by-page, **or** full-page when Owner-scoped. **Scoped** means bounded by the approved brief — not “small changes only.” Do not start another global visual transformation pass without explicit Owner approval.
 - Do not silently change protected copy or service meaning.
 - Motion: slow, purposeful, `prefers-reduced-motion` respected.
 - Active docs govern; removed build-era visual specs do not block approved work.

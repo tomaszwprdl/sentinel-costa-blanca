@@ -59,9 +59,9 @@ Details: `WORKFLOW.md` · `AGENT-BRIEFING.md`
 
 Build-era “no visual experimentation” rules and dual global theme work are **retired**.
 
-Visual composition rebuild is **merged** (baseline `e5fa7bb`; latest graphic passes through `cef326b`). The site uses **one canonical visual atmosphere** with **no public theme toggle** — per `DECISIONS.md` §12.3 and `VISUAL-FREEDOM-SPRINT.md`.
+Visual composition rebuild is **merged** (baseline `e5fa7bb`; graphic passes through `cef326b`; current live/main baseline `97997eb`). The site uses **one canonical visual atmosphere** with **no public theme toggle** — per `DECISIONS.md` §12.3 and `VISUAL-FREEDOM-SPRINT.md`.
 
-Future visual work may be bold when Owner-scoped — including page-specific middle-section rebuilds and anti-repetition restructuring. Logo assets remain **LOCKED** per `LOGO-*.md`.
+Global visual iteration is paused. Future visual work may be bold when Owner-scoped, but should be page-by-page and plan-first — including page-specific middle-section rebuilds and anti-repetition restructuring. Logo assets remain **LOCKED** per `LOGO-*.md`.
 
 ---
 
