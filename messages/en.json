@@ -295,6 +295,16 @@
       "right7": "Responsibility and scope are defined in advance.",
       "rightClosing": "Order runs this, not chance."
     },
+  "proofLedger": {
+    "label": "Event procedure",
+    "title": "From event to documented decision",
+    "steps": {
+      "issue": { "title": "Event", "body": "A fault, risk, or access need is identified during a visit or report." },
+      "evidence": { "title": "Documentation", "body": "The condition is recorded: photos, note, time, and scope." },
+      "decision": { "title": "Decision", "body": "The decision is taken within the agreed limit or returned to the owner." },
+      "action": { "title": "Action", "body": "Execution and confirmation are recorded in the report." }
+    }
+  },
   "systemIntro": {
     "eyebrow": "Short process",
     "title": "How the Sentinel system works",
@@ -636,6 +646,17 @@
           "access": "Keys, one-off entries, and transfer or vehicle support remain controlled functions inside the oversight system.",
           "seasonal": "Opening, closing, property preparation, and additional checks are handled only where the scope allows it."
         }
+      },
+      "custody": {
+        "eyebrow": "Access chain",
+        "title": "Keys and access follow a documented chain.",
+        "steps": {
+          "register": { "title": "Key registration", "body": "Keys are received and logged in the register." },
+          "custody": { "title": "Controlled custody", "body": "Held and released only within the agreed scope." },
+          "access": { "title": "Documented entry", "body": "Every entry has a purpose, date, and record." },
+          "confirm": { "title": "Confirmation and report", "body": "Visit close-out is recorded in the report." }
+        },
+        "note": "The access chain operates inside oversight — not as a separate service."
       },
       "execution": {
         "cta": "Ask about limited scope"
@@ -1442,6 +1463,12 @@
           "withinLimit": { "title": "Act within limit", "body": "If the package and limit allow it, Sentinel may take the agreed action." },
           "ownerApproval": { "title": "Owner approval", "body": "Above the limit, outside package, or for larger work, the decision returns to the owner." }
         }
+      },
+      "route": {
+        "visit": "Visit",
+        "report": "Report",
+        "decision": "Decision",
+        "action": "Action"
       },
       "details": {
         "eyebrow": "Onboarding detail",

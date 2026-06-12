@@ -8,6 +8,8 @@ import Footer from '@/components/Footer';
 import Section from '@/components/layout/Section';
 import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
 import OperationalField from '@/components/graphics/OperationalField';
+import OperationalLedger from '@/components/graphics/OperationalLedger';
+import OperationalStamp from '@/components/graphics/OperationalStamp';
 import {
   PATHWAY_KEYS,
   type PathwayKey,
@@ -128,6 +130,15 @@ export default async function HomePage({
               </p>
             </article>
           </div>
+
+          <OperationalLedger
+            label={t('proofLedger.label')}
+            title={t('proofLedger.title')}
+            steps={['issue', 'evidence', 'decision', 'action'].map((key) => ({
+              title: t(`proofLedger.steps.${key}.title`),
+              body: t(`proofLedger.steps.${key}.body`),
+            }))}
+          />
         </Section>
 
         {/* 5. ZAKRES PAKIETÓW — pełnowymiarowa drabina odpowiedzialności (vertical containment) */}
@@ -178,6 +189,11 @@ export default async function HomePage({
               </div>
             </div>
             <div className="home-area-band__map">
+              <OperationalStamp
+                className="gfx-stamp--paper"
+                primary={serviceAreaMapLabels.center}
+                secondary={serviceAreaMapLabels.radius}
+              />
               <ServiceAreaMap labels={serviceAreaMapLabels} />
             </div>
           </div>

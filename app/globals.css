@@ -10249,3 +10249,936 @@ textarea:focus {
   border-left: 0;
   border-top: 0;
 }
+
+
+/* ============================================================
+   SENTINEL PROOF MODULES — middle-page operational evidence
+   Large proof objects that carry the operating story after the
+   hero: event ledger, custody chain, report anatomy, process
+   route, jurisdiction instruments, exposure board, dossier
+   boards. Decorative graphics are aria-hidden; all text comes
+   from the dictionaries.
+   ============================================================ */
+
+/* --- Operational ledger: issue → evidence → decision → action --- */
+.op-ledger {
+  position: relative;
+  overflow: hidden;
+  margin-top: 3rem;
+  border: 1px solid rgba(255, 250, 242, 0.22);
+  border-radius: var(--site-radius-shell);
+  background:
+    radial-gradient(24rem 14rem at 88% -10%, rgba(210, 154, 87, 0.14), transparent 70%),
+    linear-gradient(150deg, #081827, #10263f 62%, #133349);
+  box-shadow: var(--site-shadow-shell-dark);
+  color: var(--authority-on-dark);
+  padding: 1.75rem 1.5rem 1.9rem;
+}
+
+@media (min-width: 768px) {
+  .op-ledger {
+    padding: 2.4rem 2.5rem 2.6rem;
+  }
+}
+
+.op-ledger__head {
+  display: grid;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+}
+
+.op-ledger__label {
+  margin: 0;
+  color: color-mix(in srgb, var(--authority-on-dark) 55%, var(--copper));
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.op-ledger__title {
+  margin: 0;
+  max-width: 26ch;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 640;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--authority-on-dark);
+}
+
+@media (min-width: 768px) {
+  .op-ledger__title {
+    font-size: 1.9rem;
+  }
+}
+
+.op-ledger__track {
+  position: relative;
+  display: grid;
+  gap: 1.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 900px) {
+  .op-ledger__track {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  /* route line through the station nodes */
+  .op-ledger__track::before {
+    position: absolute;
+    top: 1.55rem;
+    right: 6%;
+    left: 1.55rem;
+    border-top: 1.5px solid color-mix(in srgb, var(--copper) 45%, rgba(255, 250, 242, 0.2));
+    content: "";
+  }
+}
+
+.op-ledger__station {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  column-gap: 1rem;
+}
+
+.op-ledger__node {
+  grid-row: 1 / span 3;
+  display: grid;
+  place-items: center;
+  width: 3.1rem;
+  height: 3.1rem;
+  border: 1.4px solid color-mix(in srgb, var(--copper) 65%, rgba(255, 250, 242, 0.3));
+  border-radius: 999px;
+  background: #0b1d33;
+  color: color-mix(in srgb, var(--authority-on-dark) 70%, var(--copper));
+  box-shadow: 0 0 0 6px rgba(8, 24, 39, 0.85);
+}
+
+.op-ledger__node svg {
+  width: 1.9rem;
+  height: 1.9rem;
+}
+
+.op-ledger__num {
+  color: color-mix(in srgb, var(--copper) 80%, var(--authority-on-dark));
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.op-ledger__step-title {
+  margin: 0.1rem 0 0.35rem;
+  color: var(--authority-on-dark);
+  font-size: 1.02rem;
+  font-weight: 800;
+}
+
+.op-ledger__step-body {
+  margin: 0;
+  color: rgba(255, 250, 242, 0.72);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* staggered station entrance, driven by the existing reveal observer */
+.op-ledger.reveal-rise .op-ledger__station {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 600ms var(--motion-ease-out),
+    transform 600ms var(--motion-ease-out);
+}
+
+.op-ledger.reveal-rise.is-visible .op-ledger__station {
+  opacity: 1;
+  transform: none;
+}
+
+.op-ledger.reveal-rise.is-visible .op-ledger__station:nth-child(2) { transition-delay: 140ms; }
+.op-ledger.reveal-rise.is-visible .op-ledger__station:nth-child(3) { transition-delay: 280ms; }
+.op-ledger.reveal-rise.is-visible .op-ledger__station:nth-child(4) { transition-delay: 420ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .op-ledger.reveal-rise .op-ledger__station {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* --- Access custody chain: registered keys → documented entry --- */
+.custody-chain {
+  margin-top: 2.5rem;
+  border: 1px solid color-mix(in srgb, var(--line) 60%, var(--authority));
+  border-radius: var(--site-radius-shell);
+  background: var(--site-surface-shell);
+  box-shadow: var(--site-shadow-card);
+  padding: 1.6rem 1.4rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .custody-chain {
+    padding: 2.1rem 2.25rem 1.9rem;
+  }
+}
+
+.custody-chain__head {
+  margin-bottom: 1.8rem;
+}
+
+.custody-chain__eyebrow {
+  margin: 0 0 0.4rem;
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.custody-chain__title {
+  margin: 0;
+  max-width: 34ch;
+  color: var(--heading);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+  .custody-chain__title {
+    font-size: 1.6rem;
+  }
+}
+
+.custody-chain__track {
+  display: grid;
+  gap: 1.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 900px) {
+  .custody-chain__track {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+.custody-chain__link {
+  position: relative;
+  min-width: 0;
+}
+
+/* chain coupling between links */
+@media (min-width: 900px) {
+  .custody-chain__link:not(:last-child)::after {
+    position: absolute;
+    top: 1.35rem;
+    right: -1.65rem;
+    width: 1.3rem;
+    border-top: 2px dashed color-mix(in srgb, var(--copper) 55%, var(--line));
+    content: "";
+  }
+}
+
+.custody-chain__node {
+  display: grid;
+  place-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 1.4px solid color-mix(in srgb, var(--authority) 38%, var(--line));
+  border-radius: 0.7rem;
+  background: var(--surface-card);
+  color: var(--authority);
+  box-shadow: var(--site-shadow-card);
+}
+
+.custody-chain__node svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.custody-chain__step-title {
+  margin: 0.85rem 0 0.3rem;
+  color: var(--heading);
+  font-size: 0.98rem;
+  font-weight: 800;
+}
+
+.custody-chain__step-body {
+  margin: 0;
+  color: var(--body);
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.custody-chain__note {
+  margin: 1.6rem 0 0;
+  border-top: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
+  padding-top: 1rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* --- Report anatomy: schematic sheet + numbered callouts --- */
+.report-anatomy {
+  display: grid;
+  gap: 1.75rem;
+}
+
+@media (min-width: 900px) {
+  .report-anatomy {
+    grid-template-columns: minmax(0, 0.48fr) minmax(0, 0.52fr);
+    align-items: center;
+    gap: 2.25rem;
+  }
+}
+
+.report-anatomy__sheet {
+  margin: 0;
+  border: 1px solid var(--structural-light);
+  border-radius: 1rem;
+  background: var(--surface-light-alt);
+  box-shadow: var(--site-shadow-card);
+  padding: 1rem;
+}
+
+.report-anatomy__sheet svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.report-anatomy__callouts {
+  display: grid;
+  gap: 1.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.report-anatomy__callout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.9rem;
+  align-items: start;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 78%, transparent);
+  padding-bottom: 1.1rem;
+}
+
+.report-anatomy__callout:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.report-anatomy__pin {
+  display: grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border: 1.3px solid color-mix(in srgb, var(--copper) 70%, var(--line));
+  border-radius: 999px;
+  background: var(--authority-bg);
+  color: var(--authority-on-dark);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.report-anatomy__callout-title {
+  margin: 0.1rem 0 0.25rem;
+  color: var(--heading);
+  font-size: 0.98rem;
+  font-weight: 800;
+}
+
+.report-anatomy__callout-body {
+  margin: 0;
+  color: var(--body);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* --- Process route: standing sequence strip between chapters --- */
+.process-route {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0 0.75rem;
+}
+
+.process-route__track {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 640px) {
+  .process-route__track {
+    gap: 2.4rem;
+  }
+}
+
+.process-route__station {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  row-gap: 0.45rem;
+  min-width: 3.4rem;
+}
+
+.process-route__station:not(:last-child)::after {
+  position: absolute;
+  top: 1.05rem;
+  left: calc(100% - 0.35rem);
+  width: calc(1.3rem + 0.7rem);
+  border-top: 1.5px dashed color-mix(in srgb, var(--line) 55%, var(--authority));
+  content: "";
+}
+
+@media (min-width: 640px) {
+  .process-route__station:not(:last-child)::after {
+    width: calc(2.4rem + 0.7rem);
+  }
+}
+
+.process-route__node {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 1.4px solid color-mix(in srgb, var(--line) 50%, var(--authority));
+  border-radius: 999px;
+  background: var(--surface-card);
+  color: var(--muted);
+}
+
+.process-route__node svg {
+  width: 1.45rem;
+  height: 1.45rem;
+}
+
+.process-route__label {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.process-route__station[data-state="active"] .process-route__node {
+  border-color: var(--accent);
+  background: var(--authority-bg);
+  color: var(--authority-on-dark);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.process-route__station[data-state="active"] .process-route__label {
+  color: var(--accent);
+}
+
+.process-route__station[data-state="done"] .process-route__node {
+  border-color: color-mix(in srgb, var(--support) 65%, var(--line));
+  color: var(--support);
+}
+
+.process-route__station[data-state="done"]:not(:last-child)::after {
+  border-top-style: solid;
+  border-top-color: color-mix(in srgb, var(--support) 50%, var(--line));
+}
+
+/* ============================================================
+   Home middle: exposure board, procedure rail, ladder meters
+   ============================================================ */
+
+/* Contrast band → exposure board */
+.home-contrast-band__half--risk {
+  background:
+    repeating-linear-gradient(-45deg, rgba(184, 102, 74, 0.07) 0 10px, transparent 10px 26px),
+    radial-gradient(30rem 18rem at 12% 110%, rgba(184, 102, 74, 0.18), transparent 70%),
+    linear-gradient(150deg, #0a1c30, #10263f 70%);
+}
+
+.home-contrast-band__half--control {
+  background:
+    linear-gradient(0deg, rgba(47, 111, 115, 0.04) 0 1px, transparent 1px 100%) 0 0 / 100% 2.78rem,
+    radial-gradient(30rem 18rem at 88% 110%, rgba(47, 111, 115, 0.1), transparent 70%),
+    linear-gradient(150deg, #fffdf8, var(--paper) 60%, #f7f1e6);
+}
+
+.home-contrast-band {
+  position: relative;
+}
+
+/* split-state node on the centre seam */
+@media (min-width: 900px) {
+  .home-contrast-band::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2.6rem;
+    height: 2.6rem;
+    border: 2px solid var(--paper);
+    border-radius: 999px;
+    background: linear-gradient(90deg, #10263f 0 50%, var(--paper) 50% 100%);
+    box-shadow: 0 6px 22px rgba(16, 38, 63, 0.35);
+    content: "";
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+}
+
+.home-contrast-band__list li {
+  border-bottom: 1px dashed color-mix(in srgb, currentColor 18%, transparent);
+  padding-bottom: 0.85rem;
+}
+
+.home-contrast-band__list li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* risk markers: open question diamonds · control markers: confirmed squares */
+.home-contrast-band__half--risk .home-contrast-band__marker {
+  border-radius: 0;
+  background: transparent;
+  border: 1.6px solid var(--clay);
+  transform: rotate(45deg);
+  box-shadow: none;
+}
+
+.home-contrast-band__half--control .home-contrast-band__marker {
+  position: relative;
+  border-radius: 2px;
+  background: var(--support);
+  box-shadow: none;
+}
+
+.home-contrast-band__half--control .home-contrast-band__marker::after {
+  position: absolute;
+  top: 1px;
+  left: 1.5px;
+  width: 5.5px;
+  height: 3px;
+  border-bottom: 1.6px solid #fff;
+  border-left: 1.6px solid #fff;
+  content: "";
+  transform: rotate(-45deg);
+}
+
+/* Procedure rail: connect the numbered steps into a route */
+.home-process-rail__step {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .home-process-rail__step::before {
+    position: absolute;
+    top: 1.55rem;
+    left: 4.4rem;
+    right: -0.6rem;
+    border-top: 1.5px dashed color-mix(in srgb, var(--copper) 42%, var(--line));
+    content: "";
+  }
+
+  .home-process-rail__step:last-child::before {
+    right: 0.4rem;
+  }
+
+  .home-process-rail__step::after {
+    position: absolute;
+    top: 1.18rem;
+    right: -0.6rem;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-top: 1.5px solid color-mix(in srgb, var(--copper) 60%, var(--line));
+    border-right: 1.5px solid color-mix(in srgb, var(--copper) 60%, var(--line));
+    content: "";
+    transform: rotate(45deg);
+  }
+
+  .home-process-rail__step:last-child::after {
+    display: none;
+  }
+
+  .home-process-rail__num {
+    position: relative;
+    z-index: 1;
+    padding-right: 0.9rem;
+    background: var(--surface-light);
+    width: fit-content;
+  }
+}
+
+/* Level ladder: segmented jurisdiction scale per responsibility row */
+.home-level-ladder__row::after {
+  position: absolute;
+  right: 0;
+  bottom: 1.6rem;
+  width: 8.5rem;
+  height: 7px;
+  border-radius: 3px;
+  background:
+    linear-gradient(90deg, var(--support), var(--copper) 85%) 0 0 / var(--ladder-depth, 33%) 100% no-repeat,
+    color-mix(in srgb, var(--line) 45%, var(--surface-light));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--line) 80%, var(--authority));
+  content: "";
+}
+
+.home-level-ladder__row::before {
+  z-index: 1;
+}
+
+.home-level-ladder__row:nth-child(1) { --ladder-depth: 33.4%; }
+.home-level-ladder__row:nth-child(2) { --ladder-depth: 66.7%; }
+.home-level-ladder__row:nth-child(3) { --ladder-depth: 100%; }
+
+/* segment dividers over the scale */
+.home-level-ladder__row .home-level-ladder__purpose {
+  padding-bottom: 1.4rem;
+}
+
+@media (max-width: 899px) {
+  .home-level-ladder__row::after {
+    right: auto;
+    left: 0;
+    bottom: 0.9rem;
+  }
+
+  .home-level-ladder__row {
+    padding-bottom: 2.6rem;
+  }
+}
+
+/* Area band: map carries jurisdiction stamp */
+.home-area-band__map {
+  position: relative;
+}
+
+.home-area-band__map .gfx-stamp {
+  position: absolute;
+  top: -0.9rem;
+  right: 1.1rem;
+  z-index: 2;
+}
+
+/* paper-tone stamp variant for light surfaces */
+.gfx-stamp--paper {
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
+  background: rgba(255, 253, 248, 0.92);
+  color: var(--heading);
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.6), 0 10px 26px rgba(16, 38, 63, 0.14);
+}
+
+.gfx-stamp--paper .gfx-stamp__text strong {
+  color: var(--accent);
+}
+
+.gfx-stamp--paper .gfx-stamp__text em {
+  color: var(--muted);
+}
+
+.gfx-stamp--paper .gfx-stamp__ring {
+  border-color: color-mix(in srgb, var(--accent) 75%, transparent);
+}
+
+.gfx-stamp--paper .gfx-stamp__ring::before {
+  border-color: color-mix(in srgb, var(--authority) 45%, transparent);
+}
+
+.gfx-stamp--paper .gfx-stamp__ring::after {
+  background: var(--accent);
+}
+
+/* ============================================================
+   Services middle: jurisdiction instruments in the console
+   ============================================================ */
+
+.svc-instrument {
+  margin-top: 0.65rem;
+}
+
+/* cadence: month strip with guaranteed-visit slots */
+.svc-cadence {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.svc-cadence span {
+  width: 1.15rem;
+  height: 0.55rem;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--line) 50%, var(--surface-card));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--line) 90%, var(--authority));
+}
+
+.svc-cadence span[data-on] {
+  background: var(--support);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--support) 80%, var(--authority));
+}
+
+/* response window: 48h → 24h → same-day scale */
+.svc-window {
+  position: relative;
+  height: 0.55rem;
+  border-radius: 3px;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 calc(33.3% - 1px), color-mix(in srgb, var(--authority) 35%, transparent) calc(33.3% - 1px) 33.3%),
+    color-mix(in srgb, var(--line) 50%, var(--surface-card));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--line) 90%, var(--authority));
+}
+
+.svc-window::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: var(--window-pos, 33.3%);
+  border-radius: 3px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--support) 70%, var(--copper)), var(--copper));
+  content: "";
+}
+
+.svc-window::after {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  left: calc(var(--window-pos, 33.3%) - 2px);
+  width: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+  content: "";
+}
+
+/* authority depth: decision limit bar */
+.svc-depth {
+  position: relative;
+  height: 0.55rem;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--line) 50%, var(--surface-card));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--line) 90%, var(--authority));
+}
+
+.svc-depth::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--depth-pos, 33%);
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--support), var(--accent));
+  content: "";
+}
+
+/* ============================================================
+   Contact middle: preparation board + triage routing
+   ============================================================ */
+
+/* preparation rail becomes a dossier checklist board */
+.contact-prepare-rail {
+  border: 1px solid color-mix(in srgb, var(--line) 60%, var(--support));
+  border-radius: var(--site-radius-shell);
+  background: var(--site-surface-shell-cool);
+  box-shadow: var(--site-shadow-card);
+  padding: 1.6rem 1.4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .contact-prepare-rail {
+    padding: 2rem 2.1rem;
+  }
+}
+
+.contact-prepare-rail::before {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--support), var(--copper) 70%, transparent);
+  content: "";
+}
+
+.contact-prepare-rail__cell {
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+/* check slot: the item the owner prepares */
+.contact-prepare-rail__cell::before {
+  position: absolute;
+  top: 0.35rem;
+  left: 0;
+  width: 1.35rem;
+  height: 1.35rem;
+  border: 1.6px dashed color-mix(in srgb, var(--support) 55%, var(--line));
+  border-radius: 0.35rem;
+  background: var(--surface-card);
+  content: "";
+}
+
+/* triage ledger: inquiries routed out */
+.contact-unsuitable-ledger__item {
+  position: relative;
+}
+
+.contact-unsuitable-ledger__marker {
+  position: relative;
+}
+
+.contact-unsuitable-ledger__item::after {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.75rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  border: 1.5px solid color-mix(in srgb, var(--clay) 70%, var(--line));
+  border-radius: 2px;
+  background:
+    linear-gradient(45deg, transparent calc(50% - 0.9px), var(--clay) calc(50% - 0.9px) calc(50% + 0.9px), transparent calc(50% + 0.9px)),
+    linear-gradient(-45deg, transparent calc(50% - 0.9px), var(--clay) calc(50% - 0.9px) calc(50% + 0.9px), transparent calc(50% + 0.9px));
+  content: "";
+  opacity: 0.75;
+}
+
+/* ============================================================
+   About middle: verdict board
+   ============================================================ */
+
+.about-boundary-board__col {
+  position: relative;
+}
+
+.about-boundary-board__title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.about-boundary-board__title::before {
+  display: grid;
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 0.3rem;
+  content: "";
+}
+
+.about-boundary-board__col--is .about-boundary-board__title::before {
+  background:
+    linear-gradient(-45deg, transparent calc(50% - 4.2px), transparent calc(50% - 1.4px)) ,
+    var(--support);
+  box-shadow: inset 0 0 0 1.4px color-mix(in srgb, var(--support) 80%, var(--authority));
+  background-color: var(--support);
+  clip-path: none;
+  position: relative;
+}
+
+.about-boundary-board__col--is .about-boundary-board__title {
+  position: relative;
+}
+
+.about-boundary-board__col--is .about-boundary-board__title::after {
+  position: absolute;
+  left: 0.27rem;
+  top: 50%;
+  width: 0.72rem;
+  height: 0.4rem;
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #fff;
+  content: "";
+  transform: translateY(-72%) rotate(-45deg);
+}
+
+.about-boundary-board__col--isnot .about-boundary-board__title::before {
+  border: 1.5px solid color-mix(in srgb, var(--clay) 75%, var(--line));
+  background:
+    linear-gradient(45deg, transparent calc(50% - 1.1px), var(--clay) calc(50% - 1.1px) calc(50% + 1.1px), transparent calc(50% + 1.1px)),
+    linear-gradient(-45deg, transparent calc(50% - 1.1px), var(--clay) calc(50% - 1.1px) calc(50% + 1.1px), transparent calc(50% + 1.1px));
+}
+
+/* SLA pill carries the response-window scale */
+.services-responsibility-reveal__header > span.services-responsibility-reveal__sla {
+  display: grid;
+  gap: 0.4rem;
+  min-width: 6.5rem;
+  border-radius: 0.8rem;
+  text-align: center;
+}
+
+.services-responsibility-reveal__sla .svc-window {
+  display: block;
+}
+
+/* instrument rows inside metric values */
+.services-responsibility-metrics dd .svc-instrument {
+  display: flex;
+}
+
+.services-responsibility-metrics dd .svc-window,
+.services-responsibility-metrics dd .svc-depth {
+  display: block;
+}
+
+/* report anatomy inside the evidence shell: tighter columns */
+.hiw-report-decision__evidence .report-anatomy {
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================================
+   FAQ middle: answer-register structure (restrained)
+   ============================================================ */
+
+.faq-section-anchor-strip {
+  counter-reset: faq-cat;
+}
+
+.faq-section-anchor-strip__link {
+  counter-increment: faq-cat;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.faq-section-anchor-strip__link::before {
+  content: counter(faq-cat, decimal-leading-zero);
+  color: color-mix(in srgb, var(--copper) 75%, var(--accent));
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+
+/* quick answers read as resolved register entries */
+.faq-quick-rail__cell {
+  position: relative;
+}
+
+.faq-quick-rail__cell::after {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.15rem;
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 0.25rem;
+  background: var(--support);
+  content: "";
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm12.03 4.28a.75.75 0 0 0-1.06-1.06L7 9.19 5.03 7.22a.75.75 0 0 0-1.06 1.06l2.5 2.5a.75.75 0 0 0 1.06 0z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm12.03 4.28a.75.75 0 0 0-1.06-1.06L7 9.19 5.03 7.22a.75.75 0 0 0-1.06 1.06l2.5 2.5a.75.75 0 0 0 1.06 0z'/%3E%3C/svg%3E") center / contain no-repeat;
+  opacity: 0.75;
+}
+
+/* the jurisdiction stamp shrink-wraps over the map corner */
+.home-area-band__map > .gfx-stamp.gfx-stamp--paper {
+  width: auto;
+  max-width: calc(100% - 2.2rem);
+}

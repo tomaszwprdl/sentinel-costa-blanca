@@ -1,6 +1,6 @@
 import DisclosureBlock from '@/components/DisclosureBlock';
 import SampleInspectionReport from '@/components/SampleInspectionReport';
-import ReportEvidenceDiagram from '@/components/visuals/ReportEvidenceDiagram';
+import ReportAnatomy from '@/components/graphics/ReportAnatomy';
 import ReportDecisionLimits from '@/components/how-it-works/ReportDecisionLimits';
 
 type Translator = (key: string, values?: Record<string, string | number | Date>) => string;
@@ -19,18 +19,13 @@ export default function ReportDecisionChapter({ t }: { t: Translator }) {
 
       <div className="hiw-report-decision__grid">
         <section className="hiw-report-decision__evidence" aria-label={t('redesign.report.title')}>
-          <ReportEvidenceDiagram className="motion-diagram" />
-          <ol className="hiw-report-flow">
-            {WALKTHROUGH_KEYS.map((key, index) => (
-              <li key={key} className="hiw-report-flow__item">
-                <span className="hiw-report-flow__marker" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-                <div>
-                  <h3 className="hiw-report-flow__title">{t(`redesign.report.items.${key}.title`)}</h3>
-                  <p className="hiw-report-flow__body">{t(`redesign.report.items.${key}.body`)}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
+          <ReportAnatomy
+            className="reveal-rise"
+            items={WALKTHROUGH_KEYS.map((key) => ({
+              title: t(`redesign.report.items.${key}.title`),
+              body: t(`redesign.report.items.${key}.body`),
+            }))}
+          />
           <DisclosureBlock label={t('redesign.report.fullSampleLabel')} explainer={t('redesign.report.fullSampleExplainer')}>
             <SampleInspectionReport t={t} />
           </DisclosureBlock>
