@@ -16,9 +16,7 @@ import OperationalModuleTile from '@/components/OperationalModuleTile';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import JourneyNav from '@/components/JourneyNav';
 import OperationalField from '@/components/graphics/OperationalField';
-import OperationalStamp from '@/components/graphics/OperationalStamp';
 import AccessCustodyChain from '@/components/graphics/AccessCustodyChain';
-import ServiceAreaMap from '@/components/visuals/ServiceAreaMap';
 
 type OperationalModule = {
   image?: string;
@@ -51,14 +49,6 @@ export default async function ServicesPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'services' });
-  const tCommon = await getTranslations({ locale, namespace: 'common' });
-  const serviceAreaMapLabels = {
-    title: tCommon('serviceAreaMap.title'),
-    center: tCommon('serviceAreaMap.center'),
-    radius: tCommon('serviceAreaMap.radius'),
-    boundary: tCommon('serviceAreaMap.boundary'),
-    caption: tCommon('serviceAreaMap.caption'),
-  };
   const proofBadges = t.raw('redesign.hero.proofBadges') as string[];
   const headlineParts = t.raw('redesign.hero.headlineParts') as string[];
   const journeyItems = [
@@ -181,7 +171,9 @@ export default async function ServicesPage({
         </Section>
 
         <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--responsibility">
-          <PackageResponsibilityLadder />
+          <div className="services-responsibility-stage">
+            <PackageResponsibilityLadder />
+          </div>
         </Section>
 
         <Section tone="alt" className="section-primitive--compact services-interface-section services-interface-section--event">
@@ -193,7 +185,7 @@ export default async function ServicesPage({
         </Section>
 
         <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--modules" id="operational-modules">
-          <div className="services-modules-band">
+          <div className="services-modules-band services-capability-theatre">
             <div className="mb-6 max-w-[760px]">
               <p className="section-label">{t('redesign.modules.eyebrow')}</p>
               <h2 className="h2-system mt-3">{t('redesign.modules.title')}</h2>
@@ -312,7 +304,7 @@ export default async function ServicesPage({
         </Section>
 
         <Section tone="light" className="services-closing-section !pt-10">
-          <div className="services-final-cta overflow-hidden">
+          <div className="services-final-cta services-final-cta--no-map overflow-hidden">
             <div className="grid gap-0 lg:grid-cols-[minmax(0,0.68fr)_minmax(18rem,0.32fr)]">
               <div className="p-5 md:p-8">
                 <p className="section-label">{t('redesign.ladder.eyebrow')}</p>
@@ -320,15 +312,14 @@ export default async function ServicesPage({
                 <p className="mt-4 max-w-[62ch] text-lg leading-relaxed text-body">
                   {t('cta.subheadline')}
                 </p>
-                <OperationalStamp
-                  className="mt-6"
-                  primary={serviceAreaMapLabels.center}
-                  secondary={serviceAreaMapLabels.radius}
-                />
               </div>
               <div className="services-final-cta__panel p-5 md:p-8">
                 <div className="flex flex-col gap-4">
-                  <ServiceAreaMap labels={serviceAreaMapLabels} compact inverse />
+                  <div className="services-final-registry">
+                    <p>{t('framework.visitSchedulingTitle')}</p>
+                    <p>{t('framework.decisionLimitsTitle')}</p>
+                    <p>{t('framework.minCommitmentTitle')}</p>
+                  </div>
                   <Link href={`/${locale}/contact`} className="btn-primary">
                     {t('cta.primaryButton')}
                   </Link>
