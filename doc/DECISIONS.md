@@ -138,9 +138,11 @@ Polish primary. English structurally equal. PL/EN parity required.
 
 **Website visual execution is CONSTRAINED / EXPERIMENTAL, not LOCKED.**
 
-The visual composition rebuild is **merged on `main`** (`e5fa7bb`). Future work builds on the live canonical system — it does not revert to build-era restraint.
+The visual composition rebuild is **merged on `main`** (baseline `e5fa7bb`; graphic passes through `cef326b`). Future work builds on the live canonical system — it does not revert to build-era restraint.
 
-**Flexible (Owner-approved work):** color palette on pages · section or full-page composition · page rhythm · imagery · SVG/CSS visual systems · proof modules · card/panel treatment · warmth · contrast · atmosphere · motion · generated assets
+**Flexible (Owner-approved work):** color palette on pages · section or full-page composition · page rhythm · imagery · SVG/CSS visual systems · proof modules · card/panel treatment · warmth · contrast · atmosphere · motion · generated assets · anti-repetition restructuring · removal/demotion of redundant proof modules · page-specific middle-section narratives
+
+**Anti-repetition:** repeated motifs (jurisdiction rings, service-radius graphics, operational ledgers, stamps, identical proof bands) must serve page-specific questions — not decorate every section. See `VISUAL-FREEDOM-SPRINT.md`.
 
 **Still protected:** logo asset integrity · no concierge / rental-management / lifestyle positioning · readable hierarchy · mobile sanity · accessibility
 

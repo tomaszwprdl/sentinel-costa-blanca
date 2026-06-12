@@ -8,8 +8,8 @@ Short briefing for Cursor, Codex, and Cloudie.
 
 - **Product:** Sentinel Costa Blanca — structured local owner representation (Torrevieja + ~50–70 km).
 - **Website:** Pre-live, soft-launch review ready. `noindex,nofollow` active.
-- **Phase:** Launch-era — visual composition rebuild merged; final visual tuning + readiness audits.
-- **Latest main / website SHA:** `e5fa7bb` (composition rebuild + unified canonical visual mode).
+- **Phase:** Launch-era — post-rebuild visual refinement and anti-repetition restructuring + readiness audits.
+- **Latest main / website SHA:** `cef326b` (graphic passes through `38a4849` major graphic system + `cef326b` middle-page visual proof; composition rebuild baseline `e5fa7bb`).
 - **Launch-era governance baseline SHA:** `6a0d0f7` (reset + alignment + root entry points).
 - **Optional cognitive audit tool added:** `96fef3e` (`COGNITIVE-PAGE-AUDIT.md`).
 
@@ -18,6 +18,8 @@ Short briefing for Cursor, Codex, and Cloudie.
 Canonical mode: dark cinematic hero / authority bands · warm paper body sections · dark final CTA / footer · controlled copper / sea / clay accents · **no public dark/light theme toggle**.
 
 Future visual work should **build on canonical mode**, not recreate dual themes.
+
+**Current visual issue:** heroes are stronger, but middle sections remain repetitive and text-heavy. Recent graphic passes added useful language but also repeated motifs (jurisdiction rings, service-radius graphics, operational ledgers, identical proof bands). Owner-scoped page-specific rebuilds are **allowed** — including removing or demoting redundant modules.
 
 ---
 
@@ -56,6 +58,12 @@ Logo rules apply to the **logo**, not every surrounding surface.
 Direction: `VISUAL-FREEDOM-SPRINT.md`  
 Layout: `LAYOUT COMPOSITION.md` (guidance, not blocker)
 
+**Anti-repetition:** visual motifs are not wallpaper. Use jurisdiction rings, ledgers, stamps, map/radius graphics, and proof bands only where they answer a page-specific operational question.
+
+**Service area:** Torrevieja + 50–70 km stays locked. Treat it as an operational boundary — not a repeated proof boast. Footer/contact mention + one strong local footprint module is enough unless a page has a real comprehension need.
+
+**Page-specific narratives:** Home · Services · How It Works · Contact · FAQ · About each need their own middle-section visual argument (see `VISUAL-FREEDOM-SPRINT.md`).
+
 ---
 
 # Agent routing
@@ -73,7 +81,7 @@ Layout: `LAYOUT COMPOSITION.md` (guidance, not blocker)
 # Workflow rules
 
 - Start with clean `git status`; confirm HEAD.
-- Scoped patch only; one code editor at a time.
+- **Scoped** patch only — bounded by the approved brief, not limited to small visual changes; one code editor at a time.
 - Stage exact files only — never `git add .`
 - No screenshots or QA artifacts in commits.
 - `npm run lint` and `npm run build` before commit/push.
@@ -98,10 +106,11 @@ Details: `WORKFLOW.md`
 
 # Current next phase
 
-1. Live visual smoke + short corrective patches if needed (header, mobile density, contact form comfort).
-2. Production contact email verification.
-3. Legal/entity/GDPR review.
-4. Final pricing confirmation.
-5. Remove noindex + final smoke test when approved.
+1. Owner-scoped middle-page visual/narrative rebuilds — anti-repetition, page-specific proof, substantial middle sections.
+2. Post-deploy refinement (header, mobile density, contact form comfort).
+3. Production contact email verification.
+4. Legal/entity/GDPR review.
+5. Final pricing confirmation.
+6. Remove noindex + deploy smoke test when approved.
 
 Checklist: `LAUNCH-CHECKLIST.md`

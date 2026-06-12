@@ -33,9 +33,30 @@ Layout changes may be **bold** when Owner-scoped: full-section redesigns, full-p
 
 Conservative micro-polish is not the default expectation. **Clarity and impact** are.
 
+**Anti-repetition:** do not apply the same proof module, jurisdiction ring, ledger, stamp, or service-radius graphic on every page. Each motif should earn its place by answering that page's operational question.
+
+**Service area:** Torrevieja + 50–70 km stays clear but should not dominate as a repeated visual proof point. Footer/contact mention and one strong local footprint module are sufficient unless a page has a specific comprehension need.
+
 ---
 
-## 3. Homepage diagnostic gate
+## 3. Page-specific middle-section narratives
+
+Each major page needs its own middle-section visual argument — not a shared decorative system:
+
+| Page | Visual argument |
+|------|-----------------|
+| Home | Exposure without Sentinel vs structured oversight |
+| Services | Service architecture, package jurisdiction, capabilities inside oversight |
+| How It Works | Procedure and sequence |
+| Contact | Structured intake / dossier |
+| FAQ | Fast objection resolution; readability first |
+| About | Local credibility and boundaries |
+
+Owner-scoped middle-section rebuilds may be large. **Scoped** means bounded by the approved brief, not limited to small visual tweaks.
+
+---
+
+## 4. Homepage diagnostic gate
 
 First viewport:
 
@@ -47,7 +68,7 @@ No default pathway on `/pl` or `/en` without pathway parameter.
 
 ---
 
-## 4. Density and rhythm
+## 5. Density and rhythm
 
 - Prefer scannable blocks over wall-of-text
 - Use lists and labels when parameters matter
@@ -56,7 +77,7 @@ No default pathway on `/pl` or `/en` without pathway parameter.
 
 ---
 
-## 5. Canonical visual mode
+## 6. Canonical visual mode
 
 The live site uses one designed atmosphere (see `VISUAL-FREEDOM-SPRINT.md`):
 
@@ -68,15 +89,15 @@ Layout work should assume this system — not recreate a dual theme.
 
 ---
 
-## 6. Components and containment
+## 7. Components and containment
 
 - Package presentation: vertical containment, not SaaS comparison tables
-- Proof modules: operational, not decorative dashboards
+- Proof modules: operational, not decorative dashboards — and not repeated identically across pages
 - Forms: estimator is the structured input surface; contact form follows `contact` page sequence
 
 ---
 
-## 7. Accessibility
+## 8. Accessibility
 
 - Sufficient contrast for body text (WCAG AA target)
 - Focus states for interactive controls
@@ -86,7 +107,7 @@ Layout work should assume this system — not recreate a dual theme.
 
 ---
 
-## 8. Conflict resolution
+## 9. Conflict resolution
 
 If layout guidance conflicts with an Owner-approved visual brief that improves clarity:
 
@@ -98,7 +119,7 @@ If layout change would blur service boundaries or hide required disclosures:
 
 ---
 
-## 9. Related docs
+## 10. Related docs
 
 - `DECISIONS.md` — pathways, packages, proof rules
 - `VISUAL-FREEDOM-SPRINT.md` — canonical visual system

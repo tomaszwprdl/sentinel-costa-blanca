@@ -9,11 +9,11 @@
 5. `doc/WORKFLOW.md`
 6. `doc/VISUAL-FREEDOM-SPRINT.md` — for visual work
 
-**Current SHAs:** latest main / website `e5fa7bb` · documentation governance `6a0d0f7`
+**Current SHAs:** latest main / website `cef326b` · graphic passes `38a4849` / `cef326b` · documentation governance `6a0d0f7`
 
 Visual composition rebuild is **merged**. The site uses **one canonical Sentinel atmosphere** — dark cinematic authority bands, warm paper body, dark final CTA/footer — with **no public theme toggle**.
 
-Build-era visual restrictions and dual-theme work are retired. Future visual work may be bold when Owner-scoped; build on canonical mode per `doc/VISUAL-FREEDOM-SPRINT.md`. Protected contracts remain intact.
+Build-era visual restrictions and dual-theme work are retired. Current phase is **post-rebuild visual refinement and anti-repetition restructuring**. Future visual work may be bold when Owner-scoped — including page-specific middle-section rebuilds and removal of redundant proof modules. Build on canonical mode per `doc/VISUAL-FREEDOM-SPRINT.md`. Protected contracts remain intact.
 
 ## Project identity
 
@@ -34,9 +34,9 @@ If a section needs long reading to justify itself, it is not finished.
 
 ## Current working method
 
-Work section by section unless the Owner scopes a full-page or whole-site pass.
+Work page-by-page or section-by-section per the Owner brief. A scoped brief may be a large middle-section rebuild — **scoped** means bounded by the approved brief, not limited to small visual tweaks.
 Do not touch sections outside the requested scope.
-Prefer small, reviewable commits.
+Prefer small, reviewable commits (git discipline — not a cap on visual ambition).
 
 ## Task protocol
 
@@ -108,9 +108,9 @@ Before commit, show staged files.
 
 Preferred: serious · premium · operational · local · procedural · clear hierarchy · subtle motion when it adds meaning
 
-Avoid: decorative dashboards with no function · fake proof · generic SaaS look · loud animation · glassmorphism excess · repeated explanatory prose · form-like sections unless estimator
+Avoid: decorative dashboards with no function · fake proof · generic SaaS look · loud animation · glassmorphism excess · repeated explanatory prose · form-like sections unless estimator · repeating jurisdiction rings, ledgers, service-radius graphics, or identical proof bands across pages
 
-Visual experimentation per `doc/VISUAL-FREEDOM-SPRINT.md` is allowed when scoped. Logo and service contracts stay protected.
+Visual experimentation per `doc/VISUAL-FREEDOM-SPRINT.md` is allowed when scoped. Logo and service contracts stay protected. Service area (Torrevieja + 50–70 km) is an operational boundary — not a repeated brand boast.
 
 ## Motion rules
 

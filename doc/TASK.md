@@ -8,9 +8,11 @@ This file does **not** define binding decisions (`DECISIONS.md` does).
 
 # Current phase
 
-**Launch-era: visual composition rebuild merged; final visual tuning + readiness audits**
+**Launch-era: post-rebuild visual refinement and anti-repetition restructuring + readiness audits**
 
-The visual composition rebuild and unified canonical visual mode are **on `main`** (`e5fa7bb`). The old build-era sequential Task 1–8 model is **retired**. Build-era task and audit documents were removed from the active repository after documentation reset.
+The visual composition rebuild and unified canonical visual mode are **on `main`** (baseline `e5fa7bb`; graphic passes through `cef326b`). The old build-era sequential Task 1–8 model is **retired**. Build-era task and audit documents were removed from the active repository after documentation reset.
+
+**Current visual priority:** middle sections are still repetitive and text-heavy despite stronger heroes. Owner-scoped page-specific visual/narrative passes are **allowed and expected** — not cautious 2% polish.
 
 ---
 
@@ -30,11 +32,14 @@ The visual composition rebuild and unified canonical visual mode are **on `main`
 # Rules
 
 1. No task may change protected contracts silently.
-2. Visual work is **allowed and expected** when Owner-scoped — including bold composition, imagery, color, motion, generated assets, full-section or full-page passes. Build on canonical mode; do not imply old build-era visual restraint.
-3. Service, legal, estimator, contact API, pathway slugs, and package model changes require **explicit Owner approval**.
-4. One agent modifies code at a time.
-5. Small, reviewable patches; no `git add .`; no screenshots/artifacts in commits.
-6. PL/EN parity for user-facing strings (`messages/pl.json`, `messages/en.json`).
+2. Visual work is **allowed and expected** when Owner-scoped — including bold composition, imagery, color, motion, generated assets, full-section or full-page passes, and removal/demotion of redundant proof modules. Build on canonical mode; do not imply old build-era visual restraint.
+3. **Anti-repetition:** the visual system must not become a repeated decoration layer. Motifs such as jurisdiction rings, service-radius graphics, operational ledgers, stamps, map/radius motifs, and identical proof bands should appear only where they answer a page-specific question. Agents may remove or replace recently added modules that create repetition.
+4. **Service area:** Torrevieja + 50–70 km remains locked, but service area/radius is an operational boundary, not a brand boast. Footer/contact mention and one strong local footprint module are fine; repeated service-area/radius graphics across many pages should be avoided unless they solve a real comprehension problem.
+5. **Page-specific narratives:** each major page should have its own middle-section visual argument (see `VISUAL-FREEDOM-SPRINT.md` and `LAYOUT COMPOSITION.md`). Avoid one generic graphic system applied everywhere.
+6. Service, legal, estimator, contact API, pathway slugs, and package model changes require **explicit Owner approval**.
+7. One agent modifies code at a time.
+8. **Scoped** means bounded by the approved brief — not “small visual changes only.” A scoped Owner-approved brief may still be a large page-section rebuild. Git discipline remains: small, reviewable commits; no `git add .`; no screenshots/artifacts in commits.
+9. PL/EN parity for user-facing strings (`messages/pl.json`, `messages/en.json`).
 
 ---
 
@@ -42,10 +47,11 @@ The visual composition rebuild and unified canonical visual mode are **on `main`
 
 | Type | Examples |
 |------|----------|
+| Middle-page visual rebuild | Page-specific narrative passes, anti-repetition restructuring, proof-module demotion/removal — Owner-scoped |
 | Visual refinement | Post-deploy tuning, mobile density, hierarchy, atmosphere — Owner-scoped |
 | Readiness audit | Technical, legal, pricing, production email |
 | Scoped bugfix | Layout, i18n, form error, anchor — Owner brief only |
-| Launch ops | noindex removal, domain, smoke test — Owner only |
+| Launch ops | noindex removal, domain, deploy smoke test — Owner only |
 
 ---
 

@@ -4,9 +4,9 @@ Entry point for AI coding agents in this repository.
 
 ## Current state
 
-- **Latest main / website SHA:** `e5fa7bb`
+- **Latest main / website SHA:** `cef326b` (graphic passes: `38a4849` major graphic system · `cef326b` middle-page visual proof)
 - **Documentation governance SHA:** `6a0d0f7` (launch-era reset baseline)
-- **Phase:** Launch-era — visual composition rebuild **merged**; unified canonical visual mode **active**; final tuning + readiness audits
+- **Phase:** Launch-era — visual composition rebuild **merged**; unified canonical visual mode **active**; post-rebuild anti-repetition restructuring + readiness audits
 - **Visual:** One art-directed Sentinel atmosphere — dark authority bands, warm paper body, dark final CTA/footer; **no public theme toggle**
 - Build-era task/audit docs were **removed** from the repo and are no longer active authority
 - Old “no visual experimentation” and dual-theme rules are **retired**
@@ -70,11 +70,15 @@ Do not change DNS, Netlify production, or env unless explicitly instructed.
 
 ## Visual work
 
-Build on the **canonical visual mode** merged on `main`. Visual work may be bold when Owner-scoped — full-section, full-page, imagery, color, motion, generated assets — per `doc/VISUAL-FREEDOM-SPRINT.md`.
+Build on the **canonical visual mode** merged on `main`. Visual work may be bold when Owner-scoped — full-section, full-page, imagery, color, motion, generated assets, page-specific middle-section rebuilds, and removal/demotion of redundant proof modules — per `doc/VISUAL-FREEDOM-SPRINT.md`.
+
+**Scoped** means bounded by the approved brief — not “small visual changes only.” A scoped Owner-approved brief may still be a large page-section rebuild.
 
 Do **not** recreate a dual global theme system or public theme toggle unless Owner explicitly asks.
 
 Logo assets and business/service contracts remain protected.
+
+**Anti-repetition:** jurisdiction rings, service-radius graphics, operational ledgers, stamps, and identical proof bands should appear only where they answer a page-specific question. Service area (Torrevieja + 50–70 km) is an operational boundary — not a repeated brand boast.
 
 Still avoid:
 

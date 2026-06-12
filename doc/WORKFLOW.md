@@ -15,7 +15,7 @@ Execution rules for code changes.
 
 # During work
 
-- **Scoped patch only** — do not redesign unrelated sections.
+- **Scoped patch only** — bounded by the approved brief; may include large page-section rebuilds when Owner-scoped. Do not redesign unrelated sections.
 - **One agent edits code at a time.**
 - User-facing strings: update both `messages/pl.json` and `messages/en.json`.
 - Protected contracts unchanged unless Owner explicitly approved.
