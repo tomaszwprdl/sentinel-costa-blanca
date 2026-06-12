@@ -2144,23 +2144,72 @@ textarea:focus {
   inset: 0;
   content: "";
   background:
-    radial-gradient(48rem 26rem at 88% 110%, color-mix(in srgb, var(--pw-accent) 24%, transparent), transparent 68%),
-    linear-gradient(90deg, rgba(7, 21, 36, 0.95) 0%, rgba(11, 29, 51, 0.84) 46%, rgba(11, 29, 51, 0.5) 100%),
-    linear-gradient(180deg, rgba(7, 21, 36, 0.5), rgba(7, 21, 36, 0.84));
+    radial-gradient(42rem 24rem at 92% 108%, color-mix(in srgb, var(--pw-accent) 18%, transparent), transparent 68%),
+    linear-gradient(180deg, rgba(7, 21, 36, 0.32) 0%, rgba(7, 21, 36, 0.62) 100%);
+}
+
+/* Integrated left readability veil — authority surface for copy, not a boxed panel */
+.pathway-hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(
+    108deg,
+    rgba(7, 21, 36, 0.98) 0%,
+    rgba(7, 21, 36, 0.96) 22%,
+    rgba(7, 21, 36, 0.9) 36%,
+    rgba(11, 29, 51, 0.58) 52%,
+    rgba(11, 29, 51, 0.28) 66%,
+    transparent 78%
+  );
 }
 
 .pathway-hero::after {
   position: absolute;
   inset: auto 0 0 0;
+  z-index: 2;
   height: 4px;
   background: linear-gradient(90deg, var(--pw-accent), transparent 72%);
   content: "";
 }
 
+/* Operational field — center-right, scaled down, supports checklist zone */
+.pathway-hero .gfx-field {
+  z-index: 0;
+  inset: auto;
+  top: 50%;
+  right: 0;
+  width: 58%;
+  height: 82%;
+  transform: translateY(-48%);
+  opacity: 0.78;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.55) 38%, #000 58%);
+  mask-image: linear-gradient(90deg, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.55) 38%, #000 58%);
+}
+
+.pathway-hero .gfx-field svg {
+  transform: scale(0.88);
+  transform-origin: 68% 50%;
+}
+
 .pathway-hero__inner {
+  position: relative;
+  z-index: 1;
   display: grid;
   width: 100%;
+  max-width: 1440px;
   gap: 2.25rem;
+  padding-inline: clamp(1.25rem, 4.25vw, 4rem);
+}
+
+.pathway-hero__main {
+  position: relative;
+  z-index: 1;
+  max-width: 46rem;
+  min-width: 0;
+  transform: none;
 }
 
 @media (min-width: 1024px) {
@@ -2169,10 +2218,38 @@ textarea:focus {
     padding-block: 5rem 4.5rem;
   }
 
+  .pathway-hero::before {
+    background: linear-gradient(
+      112deg,
+      rgba(7, 21, 36, 0.98) 0%,
+      rgba(7, 21, 36, 0.97) 18%,
+      rgba(7, 21, 36, 0.93) 32%,
+      rgba(11, 29, 51, 0.62) 48%,
+      rgba(11, 29, 51, 0.32) 62%,
+      transparent 76%
+    );
+  }
+
+  .pathway-hero .gfx-field {
+    top: 54%;
+    right: -1%;
+    width: 44%;
+    height: 72%;
+    transform: translateY(-50%);
+    opacity: 0.78;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 12%, rgba(0, 0, 0, 0.5) 30%, #000 52%);
+    mask-image: linear-gradient(90deg, transparent 0%, transparent 12%, rgba(0, 0, 0, 0.5) 30%, #000 52%);
+  }
+
+  .pathway-hero .gfx-field svg {
+    transform: scale(0.82);
+    transform-origin: 72% 48%;
+  }
+
   .pathway-hero__inner {
-    grid-template-columns: minmax(0, 0.96fr) minmax(20rem, 0.48fr);
+    grid-template-columns: minmax(0, 1fr) minmax(22rem, 26rem);
     align-items: start;
-    gap: 3.5rem;
+    gap: clamp(3rem, 5vw, 5.5rem);
   }
 }
 
@@ -2180,8 +2257,8 @@ textarea:focus {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  justify-content: flex-start;
+  gap: 1rem 1.35rem;
   margin-bottom: 1.6rem;
 }
 
@@ -2232,7 +2309,7 @@ textarea:focus {
   font-weight: 630;
   letter-spacing: -0.018em;
   line-height: 1.05;
-  text-shadow: 0 2px 26px rgba(7, 21, 36, 0.45);
+  text-shadow: 0 1px 2px rgba(7, 21, 36, 0.55), 0 4px 22px rgba(7, 21, 36, 0.38);
 }
 
 @media (min-width: 768px) {
@@ -2244,9 +2321,10 @@ textarea:focus {
 .pathway-hero__lead {
   margin: 1.4rem 0 0;
   max-width: 56ch;
-  color: color-mix(in srgb, var(--authority-on-dark) 88%, transparent);
+  color: var(--authority-on-dark);
   font-size: 1.04rem;
-  line-height: 1.7;
+  line-height: 1.72;
+  text-shadow: 0 1px 2px rgba(7, 21, 36, 0.45);
 }
 
 @media (min-width: 768px) {
@@ -2284,40 +2362,54 @@ textarea:focus {
 
 .pathway-hero__fact-body {
   margin: 0;
-  color: color-mix(in srgb, var(--authority-on-dark) 86%, transparent);
+  color: color-mix(in srgb, var(--authority-on-dark) 92%, transparent);
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.65;
+  text-shadow: 0 1px 2px rgba(7, 21, 36, 0.35);
 }
 
 .pathway-hero__ctas {
   display: flex;
   flex-wrap: wrap;
   gap: 0.85rem;
-  margin-top: 2.1rem;
+  margin-top: 2.25rem;
 }
 
+/* Operational dossier — checklist panel beside / below the pathway decision */
 .pathway-hero__changes {
+  position: relative;
+  z-index: 1;
   align-self: stretch;
-  border: 1px solid rgba(255, 250, 242, 0.18);
-  border-top: 3px solid var(--pw-accent);
-  border-radius: 1.25rem;
-  background: linear-gradient(175deg, rgba(255, 250, 242, 0.13), rgba(255, 250, 242, 0.06));
+  justify-self: stretch;
+  overflow: hidden;
+  border: 1px solid rgba(255, 250, 242, 0.22);
+  border-radius: 0.45rem;
+  background: linear-gradient(168deg, rgba(11, 29, 51, 0.94) 0%, rgba(7, 21, 36, 0.9) 100%);
   box-shadow:
-    inset 0 1px 0 rgba(255, 250, 242, 0.12),
-    0 24px 60px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(12px);
-  padding: 1.5rem;
+    inset 0 1px 0 rgba(255, 250, 242, 0.1),
+    0 22px 52px rgba(0, 0, 0, 0.34);
+  padding: 0;
+}
+
+@media (min-width: 1024px) {
+  .pathway-hero__changes {
+    justify-self: end;
+    width: min(100%, 26rem);
+  }
 }
 
 @media (min-width: 768px) {
   .pathway-hero__changes {
-    padding: 1.85rem;
+    border-radius: 0.5rem;
   }
 }
 
 .pathway-hero__changes-label {
-  margin: 0 0 1rem;
-  color: color-mix(in srgb, var(--authority-on-dark) 55%, var(--pw-accent));
+  margin: 0;
+  padding: 1rem 1.3rem;
+  border-bottom: 1px solid rgba(255, 250, 242, 0.14);
+  background: linear-gradient(180deg, rgba(255, 250, 242, 0.08) 0%, rgba(255, 250, 242, 0.03) 100%);
+  color: color-mix(in srgb, var(--authority-on-dark) 68%, var(--pw-accent));
   font-size: 0.72rem;
   font-weight: 900;
   letter-spacing: 0.14em;
@@ -2326,28 +2418,88 @@ textarea:focus {
 
 .pathway-hero__changes-list {
   display: grid;
-  gap: 0.85rem;
+  gap: 0;
   margin: 0;
-  padding: 0;
+  padding: 0.35rem 1.3rem 1.2rem;
   list-style: none;
 }
 
 .pathway-hero__changes-list li {
   display: flex;
-  gap: 0.8rem;
-  color: color-mix(in srgb, var(--authority-on-dark) 90%, transparent);
-  font-size: 0.92rem;
-  line-height: 1.55;
+  gap: 0.85rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255, 250, 242, 0.09);
+  color: color-mix(in srgb, var(--authority-on-dark) 94%, transparent);
+  font-size: 0.93rem;
+  line-height: 1.62;
+}
+
+.pathway-hero__changes-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0.15rem;
 }
 
 .pathway-hero__tick {
-  margin-top: 0.5rem;
-  width: 0.55rem;
-  height: 0.55rem;
+  margin-top: 0.58rem;
+  width: 0.42rem;
+  height: 0.42rem;
   flex-shrink: 0;
-  border-radius: 999px;
+  border-radius: 1px;
   background: var(--pw-accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--pw-accent) 25%, transparent);
+  box-shadow: none;
+}
+
+@media (max-width: 767px) {
+  .pathway-hero {
+    align-items: flex-start;
+    padding-block: 2.75rem 2.5rem;
+  }
+
+  .pathway-hero::before {
+    background: linear-gradient(
+      180deg,
+      rgba(7, 21, 36, 0.98) 0%,
+      rgba(7, 21, 36, 0.96) 38%,
+      rgba(7, 21, 36, 0.92) 58%,
+      rgba(11, 29, 51, 0.82) 100%
+    );
+  }
+
+  .pathway-hero .gfx-field {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 40%;
+    transform: none;
+    opacity: 0.4;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 22%, #000 52%);
+    mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 22%, #000 52%);
+  }
+
+  .pathway-hero .gfx-field svg {
+    transform: scale(0.72);
+    transform-origin: 70% 88%;
+  }
+
+  .pathway-hero__inner {
+    gap: 1.75rem;
+  }
+
+  .pathway-hero__title {
+    max-width: none;
+    font-size: 2.15rem;
+  }
+
+  .pathway-hero__facts {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+    margin-top: 1.5rem;
+  }
+
+  .pathway-hero__ctas {
+    margin-top: 1.85rem;
+  }
 }
 
 .footer-contact-region {

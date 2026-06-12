@@ -495,8 +495,8 @@ function FootprintField() {
 }
 
 function InspectionField() {
-  const cx = 820;
-  const cy = 300;
+  const cx = 900;
+  const cy = 310;
   return (
     <svg viewBox="0 0 1200 620" preserveAspectRatio="xMidYMid slice" focusable="false">
       <defs>
@@ -560,9 +560,9 @@ function InspectionField() {
 }
 
 function TurnoverField() {
-  const ax = 660;
+  const ax = 720;
   const ay = 340;
-  const bx = 1010;
+  const bx = 1050;
   const by = 250;
   return (
     <svg viewBox="0 0 1200 620" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -631,7 +631,7 @@ function TurnoverField() {
 }
 
 function ClassificationField() {
-  const mx = 760;
+  const mx = 860;
   const my = 310;
   return (
     <svg viewBox="0 0 1200 620" preserveAspectRatio="xMidYMid slice" focusable="false">
