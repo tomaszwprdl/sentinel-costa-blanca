@@ -28,17 +28,57 @@ The website is a qualification-first system interface — it may be warmer and m
 
 ---
 
-# 3. Roles
+# 3. Roles and agent routing
+
+Full page-polish protocol: `polish.md` (Owner operational doc). This section summarizes routing only.
+
+| Work type | Best agent |
+|-----------|------------|
+| Creative decision / acceptance | ChatGPT + Owner |
+| Fine visual/layout implementation | **Codex** |
+| Root-cause CSS/grid/component diagnosis | **Codex** |
+| Simple edits / push / screenshots / file staging | Cursor |
+| Visual exploration / assets / outsider critique | Gemini + Nano Banana |
+| Deployment / DNS / Netlify / production risk | Cloudie / Claude |
+| Legal / pricing / contact / schema / noindex | Owner approval required |
+
+**Routing assumption:** Cursor handles mechanical work. Codex handles serious page polish. ChatGPT judges. Owner approves. Cloudie protects deploy risk. Gemini explores visuals.
 
 | Role | Authority |
 |------|-----------|
 | **Owner** | Final decisions, launch, legal, pricing |
-| **Creative Director** | Visual direction and sprint briefs |
-| **Cursor** | Scoped implementation |
-| **Cloudie** | Deployment, Netlify, DNS, production risk |
-| **Codex** | Deep refactors, audits, multi-file tasks |
+| **ChatGPT** | Creative direction, verdicts, scoped briefs, accept/revert/escalate — does not implement code |
+| **Codex** | Serious page polish, CSS/grid diagnosis, multi-file layout work |
+| **Cursor** | Mechanical implementation, screenshots, staging, commits/push when briefed |
+| **Gemini + Nano Banana** | Visual critique and asset concepts — not project authority |
+| **Cloudie / Claude** | Deployment, Netlify, DNS, production and architecture risk |
 
 One agent modifies code at a time. No hidden commits.
+
+### Escalation and anti-loop
+
+- Maximum **two tuning passes** per section from the same agent; then ChatGPT/Owner must accept, revert, escalate to Codex, or re-scope. No third blind Cursor pass.
+- If two Cursor visual attempts do not match the brief — stop Cursor.
+- If CSS applies technically but not visually — DOM/computed-style verification, not another guess.
+- Grid architecture, animation layering, masking, responsive balance, or variant-specific states → start with **Codex**.
+
+### Live judgment for motion
+
+Screenshots verify layout only. Animation visibility, hover behavior, and motion atmosphere require **live browser review**. Human acceptance required when the task is “visible but not dominant.”
+
+### Codex auto-commit / push
+
+Codex may auto-commit and push scoped implementation patches when:
+
+- brief is Owner-approved;
+- no protected contracts are touched;
+- lint / build / `git diff --check` pass;
+- screenshots and QA artifacts are not staged;
+- report lists files changed, validation, SHA, and push result.
+
+**No auto-push** for: estimator/pricing · packages/SLA/emergency authority · contact API/schema · legal substance · pathway slugs/routing · noindex/launch state · DNS/Netlify settings · broad redesign beyond approved brief.
+
+Cursor push still requires Owner approval unless Owner has explicitly delegated for a mechanical task.
 
 ---
 
@@ -48,7 +88,7 @@ One agent modifies code at a time. No hidden commits.
 - No screenshots or QA artifacts in commits
 - PL/EN parity; user-facing strings in `messages/pl.json` and `messages/en.json`
 - `npm run lint` and `npm run build` before commit/push
-- No push unless Owner approves
+- No push unless Owner approves — except Codex scoped auto-push per §3 when protected contracts are untouched
 - No service-contract changes without Owner approval
 
 Details: `WORKFLOW.md` · `AGENT-BRIEFING.md`
@@ -82,6 +122,7 @@ Do not silently change packages, SLA, estimator, contact API, pathways, or legal
 | Topic | Doc |
 |-------|-----|
 | Agent briefing | `AGENT-BRIEFING.md` |
+| Page polish protocol (full) | `polish.md` |
 | Service model | `SERVICE-STRUCTURING.md` |
 | Copy rules | `COPY-DISCIPLINE-CODEX.md` |
 | English | `EN-ADAPTATION-LAYER.md` |

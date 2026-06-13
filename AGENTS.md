@@ -133,6 +133,26 @@ Do not claim build passed unless actually run.
 
 ## Agent routing
 
-- **FOR Cursor** — scoped implementation
+Full protocol: `polish.md`. Authority and auto-push rules: `doc/AI-GOVERNANCE.md` §3.
+
+| Work type | Agent |
+|-----------|-------|
+| Decide, accept, brief | ChatGPT + Owner |
+| Serious page polish, CSS/grid diagnosis | **Codex** |
+| Mechanical edits, screenshots, staging, push | **Cursor** |
+| Visual exploration / assets / critique | Gemini + Nano Banana |
+| Deploy / DNS / production risk | Cloudie / Claude |
+| Protected contracts | Owner approval only |
+
+**Cursor = mechanical.** **Codex = serious polish.** Do not use Cursor for fine visual/layout tuning or repeated aesthetic iterations.
+
+**Escalate to Codex** when: two passes fail to match the brief; CSS changes apply but are not visible; grid/mask/animation/responsive balance is unclear; section oscillates between too flat and too busy. **No third blind Cursor pass.**
+
+**Motion/watermark tasks:** screenshots = layout proof only; live browser = animation proof.
+
+**Codex auto-push:** allowed for Owner-approved scoped patches when validation passes and protected contracts are untouched. See `doc/AI-GOVERNANCE.md` §3 for blocklist.
+
+- **FOR Codex** — fine visual/layout implementation, root-cause diagnosis, scoped section rebuilds
+- **FOR Cursor** — mechanical implementation, message keys, screenshots, staging, lint/build, commit when briefed
 - **FOR Cloudie** — deployment, Netlify, DNS, production risk
-- **FOR OWNER** — decisions, launch, legal, pricing
+- **FOR OWNER** — decisions, launch, legal, pricing, protected contracts
