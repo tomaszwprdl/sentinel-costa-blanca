@@ -40,38 +40,44 @@ export default async function HomePage({
         <Suspense fallback={<UsagePathwayFallback locale={locale} selected={null} t={t} />}>
           <UsagePathwayLayer>
         <div className="home-pathway-body">
-        <Section tone="light" className="home-section home-section--route !py-16 md:!py-24">
-          <div className="reveal-rise">
-            <p className="section-label">{t('systemIntro.eyebrow')}</p>
-            <div className="home-route-open mt-4">
-              <h2 className="h2-system home-route-open__title">{t('systemIntro.title')}</h2>
-              <div className="home-route-open__context">
-                <p className="text-body leading-relaxed">
-                  <PathwayCopy path="systemIntroContext" />
-                </p>
-                <p className="home-route-open__note mb-0">{t('systemIntro.intro')}</p>
+        <Section id="system-intro" tone="light" className="home-section home-section--route !py-16 md:!py-24">
+          <div className="home-system-intro reveal-rise">
+            <header className="home-system-intro__header">
+              <p className="section-label">{t('systemIntro.eyebrow')}</p>
+              <div className="home-route-open mt-4">
+                <h2 className="h2-system home-route-open__title">{t('systemIntro.title')}</h2>
+                <div className="home-route-open__context">
+                  <p className="home-route-open__lead">
+                    <PathwayCopy path="systemIntroContext" />
+                  </p>
+                  <p className="home-route-open__note mb-0">{t('systemIntro.intro')}</p>
+                </div>
               </div>
-            </div>
+            </header>
           </div>
 
-          <div className="home-process-rail reveal-stagger">
+          <ol className="home-process-rail reveal-stagger" aria-label={t('systemIntro.title')}>
             {PROCESS_KEYS.map((key, index) => (
-              <article key={key} className="home-process-rail__step">
-                <span className="home-process-rail__num" aria-hidden>
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <p className="home-process-rail__label">
-                  {t(`systemIntro.process.${key}.label`)}
-                </p>
-                <h3 className="home-process-rail__title">
-                  {t(`systemIntro.process.${key}.title`)}
-                </h3>
-                <p className="home-process-rail__body mb-0">
-                  {t(`systemIntro.process.${key}.body`)}
-                </p>
-              </article>
+              <li key={key} className="home-process-rail__step">
+                <div className="home-process-rail__marker">
+                  <span className="home-process-rail__num" aria-hidden>
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                </div>
+                <div className="home-process-rail__content">
+                  <p className="home-process-rail__label">
+                    {t(`systemIntro.process.${key}.label`)}
+                  </p>
+                  <h3 className="home-process-rail__title">
+                    {t(`systemIntro.process.${key}.title`)}
+                  </h3>
+                  <p className="home-process-rail__body mb-0">
+                    {t(`systemIntro.process.${key}.body`)}
+                  </p>
+                </div>
+              </li>
             ))}
-          </div>
+          </ol>
         </Section>
 
         {/* 4. BEZ NAS / Z NAMI — full split band: risk in ink, control on paper */}
