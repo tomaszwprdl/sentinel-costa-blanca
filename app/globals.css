@@ -2400,12 +2400,14 @@ textarea:focus {
 
   .pathway-hero[data-pathway="mixed-not-defined"] .pathway-hero__changes > .pathway-hero__changes-field {
     inset: -14% -42% -28% -12%;
-    opacity: 0.62;
+    opacity: 0.86;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, transparent 30%, rgba(0, 0, 0, 0.38) 48%, #000 100%);
+    mask-image: linear-gradient(180deg, transparent 0%, transparent 30%, rgba(0, 0, 0, 0.38) 48%, #000 100%);
   }
 
   .pathway-hero[data-pathway="mixed-not-defined"] .pathway-hero__changes > .pathway-hero__changes-field svg {
-    transform: translate(0, 12%) scale(0.86);
-    transform-origin: 64% 60%;
+    transform: translate(8%, 18%) scale(0.72);
+    transform-origin: 64% 70%;
   }
 }
 
