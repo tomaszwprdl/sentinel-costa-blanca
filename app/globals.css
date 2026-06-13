@@ -2175,25 +2175,6 @@ textarea:focus {
   content: "";
 }
 
-/* Operational field — center-right, scaled down, supports checklist zone */
-.pathway-hero .gfx-field {
-  z-index: 0;
-  inset: auto;
-  top: 50%;
-  right: 0;
-  width: 58%;
-  height: 82%;
-  transform: translateY(-48%);
-  opacity: 0.78;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.55) 38%, #000 58%);
-  mask-image: linear-gradient(90deg, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.55) 38%, #000 58%);
-}
-
-.pathway-hero .gfx-field svg {
-  transform: scale(0.88);
-  transform-origin: 68% 50%;
-}
-
 .pathway-hero__inner {
   position: relative;
   z-index: 1;
@@ -2228,22 +2209,6 @@ textarea:focus {
       rgba(11, 29, 51, 0.32) 62%,
       transparent 76%
     );
-  }
-
-  .pathway-hero .gfx-field {
-    top: 54%;
-    right: -1%;
-    width: 44%;
-    height: 72%;
-    transform: translateY(-50%);
-    opacity: 0.78;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 12%, rgba(0, 0, 0, 0.5) 30%, #000 52%);
-    mask-image: linear-gradient(90deg, transparent 0%, transparent 12%, rgba(0, 0, 0, 0.5) 30%, #000 52%);
-  }
-
-  .pathway-hero .gfx-field svg {
-    transform: scale(0.82);
-    transform-origin: 72% 48%;
   }
 
   .pathway-hero__inner {
@@ -2391,10 +2356,46 @@ textarea:focus {
   padding: 0;
 }
 
+.pathway-hero__changes::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(7, 21, 36, 0.44), rgba(7, 21, 36, 0.05) 52%, rgba(7, 21, 36, 0.28)),
+    linear-gradient(180deg, rgba(7, 21, 36, 0.16), rgba(7, 21, 36, 0.5));
+}
+
+.pathway-hero__changes > .pathway-hero__changes-field {
+  position: absolute;
+  inset: -18% -24% -16% -24%;
+  z-index: 0;
+  opacity: 0.58;
+  pointer-events: none;
+  transform: none;
+  -webkit-mask-image: radial-gradient(circle at 56% 48%, #000 0%, rgba(0, 0, 0, 0.92) 44%, rgba(0, 0, 0, 0.35) 70%, transparent 100%);
+  mask-image: radial-gradient(circle at 56% 48%, #000 0%, rgba(0, 0, 0, 0.92) 44%, rgba(0, 0, 0, 0.35) 70%, transparent 100%);
+}
+
+.pathway-hero__changes > .pathway-hero__changes-field svg {
+  transform: translateX(-20%) scale(1.22);
+  transform-origin: 50% 50%;
+}
+
 @media (min-width: 1024px) {
   .pathway-hero__changes {
     justify-self: end;
     width: min(100%, 26rem);
+  }
+
+  .pathway-hero .pathway-hero__changes > .pathway-hero__changes-field {
+    inset: -22% -30% -20% -30%;
+    opacity: 0.62;
+  }
+
+  .pathway-hero .pathway-hero__changes > .pathway-hero__changes-field svg {
+    transform: translateX(-24%) scale(1.32);
   }
 }
 
@@ -2404,7 +2405,9 @@ textarea:focus {
   }
 }
 
-.pathway-hero__changes-label {
+.pathway-hero__changes > .pathway-hero__changes-label {
+  position: relative;
+  z-index: 2;
   margin: 0;
   padding: 1rem 1.3rem;
   border-bottom: 1px solid rgba(255, 250, 242, 0.14);
@@ -2416,7 +2419,9 @@ textarea:focus {
   text-transform: uppercase;
 }
 
-.pathway-hero__changes-list {
+.pathway-hero__changes > .pathway-hero__changes-list {
+  position: relative;
+  z-index: 2;
   display: grid;
   gap: 0;
   margin: 0;
@@ -2465,25 +2470,21 @@ textarea:focus {
     );
   }
 
-  .pathway-hero .gfx-field {
-    top: auto;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 40%;
-    transform: none;
-    opacity: 0.4;
-    -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 22%, #000 52%);
-    mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 22%, #000 52%);
-  }
-
-  .pathway-hero .gfx-field svg {
-    transform: scale(0.72);
-    transform-origin: 70% 88%;
-  }
-
   .pathway-hero__inner {
     gap: 1.75rem;
+  }
+
+  .pathway-hero .pathway-hero__changes > .pathway-hero__changes-field:not(.gfx-field--gate) {
+    inset: -10% -22% auto -22%;
+    height: 58%;
+    opacity: 0.22;
+    -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.34) 62%, transparent 100%);
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.34) 62%, transparent 100%);
+  }
+
+  .pathway-hero .pathway-hero__changes > .pathway-hero__changes-field svg {
+    transform: translateX(-10%) scale(0.92);
+    transform-origin: 54% 26%;
   }
 
   .pathway-hero__title {

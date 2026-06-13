@@ -299,8 +299,6 @@ function PathwayHero({
         />
       </div>
 
-      <OperationalField variant={PATHWAY_FIELD[pathway]} />
-
       <div className="container pathway-hero__inner">
         <div className="pathway-hero__main">
           <div className="pathway-hero__topline">
@@ -340,6 +338,7 @@ function PathwayHero({
         </div>
 
         <aside className="pathway-hero__changes">
+          <OperationalField variant={PATHWAY_FIELD[pathway]} className="pathway-hero__changes-field" />
           <p className="pathway-hero__changes-label">{t('changesLabel')}</p>
           <ul className="pathway-hero__changes-list">
             {Array.from({ length: PATHWAY_POINT_COUNTS[pathway] }, (_, i) => (
