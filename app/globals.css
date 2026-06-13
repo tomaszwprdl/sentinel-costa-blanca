@@ -2363,15 +2363,15 @@ textarea:focus {
   pointer-events: none;
   content: "";
   background:
-    linear-gradient(90deg, rgba(7, 21, 36, 0.44), rgba(7, 21, 36, 0.05) 52%, rgba(7, 21, 36, 0.28)),
-    linear-gradient(180deg, rgba(7, 21, 36, 0.16), rgba(7, 21, 36, 0.5));
+    linear-gradient(90deg, rgba(7, 21, 36, 0.32), rgba(7, 21, 36, 0.02) 52%, rgba(7, 21, 36, 0.2)),
+    linear-gradient(180deg, rgba(7, 21, 36, 0.08), rgba(7, 21, 36, 0.34));
 }
 
 .pathway-hero__changes > .pathway-hero__changes-field {
   position: absolute;
   inset: -18% -24% -16% -24%;
   z-index: 0;
-  opacity: 0.58;
+  opacity: 0.72;
   pointer-events: none;
   transform: none;
   -webkit-mask-image: radial-gradient(circle at 56% 48%, #000 0%, rgba(0, 0, 0, 0.92) 44%, rgba(0, 0, 0, 0.35) 70%, transparent 100%);
@@ -2391,7 +2391,7 @@ textarea:focus {
 
   .pathway-hero .pathway-hero__changes > .pathway-hero__changes-field {
     inset: -22% -30% -20% -30%;
-    opacity: 0.62;
+    opacity: 0.78;
   }
 
   .pathway-hero .pathway-hero__changes > .pathway-hero__changes-field svg {
@@ -2399,12 +2399,12 @@ textarea:focus {
   }
 
   .pathway-hero[data-pathway="mixed-not-defined"] .pathway-hero__changes > .pathway-hero__changes-field {
-    inset: -16% -42% -24% -16%;
-    opacity: 0.5;
+    inset: -14% -42% -28% -12%;
+    opacity: 0.62;
   }
 
   .pathway-hero[data-pathway="mixed-not-defined"] .pathway-hero__changes > .pathway-hero__changes-field svg {
-    transform: translate(-8%, 10%) scale(0.92);
+    transform: translate(0, 12%) scale(0.86);
     transform-origin: 64% 60%;
   }
 }
