@@ -148,6 +148,93 @@ export function PathwayCopy({ path }: { path: string }) {
   return <>{t(`pathwayContent.${selected}.${path}`)}</>;
 }
 
+export function PathwayModeLens() {
+  const t = useTranslations('home');
+  const searchParams = useSearchParams();
+  const selected = normalizePathwayParam(searchParams.get('pathway')) ?? 'private-use-only';
+
+  return (
+    <div className="home-route-open__lens" data-pathway={selected}>
+      <p className="home-route-open__lens-label">{t('systemIntro.lensLabel')}</p>
+      <p className="home-route-open__note mb-0">
+        {t(`pathwayContent.${selected}.systemIntroLens`)}
+      </p>
+    </div>
+  );
+}
+
+const PROCESS_KEYS = ['scope', 'documentation', 'procedure', 'decisions'] as const;
+
+const PROCESS_EMPHASIS: Record<PathwayKey, readonly (typeof PROCESS_KEYS)[number][]> = {
+  'private-use-only': ['scope', 'decisions'],
+  'regular-guest-stays': ['documentation', 'procedure'],
+  'mixed-not-defined': ['scope'],
+};
+
+export function PathwayProcessPosture() {
+  const t = useTranslations('home');
+  const searchParams = useSearchParams();
+  const selected = normalizePathwayParam(searchParams.get('pathway')) ?? 'private-use-only';
+
+  return (
+    <p className="home-process-posture" data-pathway={selected}>
+      {t(`pathwayContent.${selected}.systemIntroPosture`)}
+    </p>
+  );
+}
+
+export function PathwayProcessPanel() {
+  const searchParams = useSearchParams();
+  const selected = normalizePathwayParam(searchParams.get('pathway')) ?? 'private-use-only';
+
+  return (
+    <div className="home-process-panel reveal-rise" data-pathway={selected}>
+      <PathwayProcessPosture />
+      <PathwayProcessRail />
+    </div>
+  );
+}
+
+export function PathwayProcessRail() {
+  const t = useTranslations('home');
+  const searchParams = useSearchParams();
+  const selected = normalizePathwayParam(searchParams.get('pathway')) ?? 'private-use-only';
+  const emphasized = PROCESS_EMPHASIS[selected];
+
+  return (
+    <ol
+      className="home-process-rail reveal-stagger"
+      data-pathway={selected}
+      aria-label={t('systemIntro.title')}
+    >
+      {PROCESS_KEYS.map((key, index) => (
+        <li
+          key={key}
+          className="home-process-rail__step"
+          data-emphasis={emphasized.includes(key) ? 'true' : undefined}
+        >
+          <div className="home-process-rail__marker">
+            <span className="home-process-rail__num" aria-hidden>
+              {String(index + 1).padStart(2, '0')}
+            </span>
+          </div>
+          <div className="home-process-rail__content">
+            <p className="home-process-rail__label">
+              {t(`systemIntro.process.${key}.label`)}
+            </p>
+            <h3 className="home-process-rail__title">
+              {t(`systemIntro.process.${key}.title`)}
+            </h3>
+            <p className="home-process-rail__body mb-0">
+              {t(`pathwayContent.${selected}.systemIntroProcess.${key}.body`)}
+            </p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 export function PathwayFinalCtaLink({
   locale,
   className,

@@ -188,6 +188,22 @@
     "pathwayContent": {
       "private-use-only": {
         "systemIntroContext": "Gdy lokal służy wyłącznie Tobie lub rodzinie, liczy się stan między pobytami i gotowość przed przyjazdem.",
+        "systemIntroLens": "Sentinel utrzymuje lokal w znanym stanie, zanim nieobecność zmieni drobne ryzyko w problem przed przyjazdem.",
+        "systemIntroPosture": "Nieobecność → kontrola stanu → gotowość przed przyjazdem",
+        "systemIntroProcess": {
+          "scope": {
+            "body": "Najpierw ustala się, co ma być sprawdzane podczas nieobecności i gdzie kończy się lokalna odpowiedzialność."
+          },
+          "documentation": {
+            "body": "Każda kontrola zostawia zapis stanu lokalu między pobytami, nie tylko ogólne potwierdzenie wizyty."
+          },
+          "procedure": {
+            "body": "Wizyty, dostęp i przygotowanie przed przyjazdem przebiegają według stałego porządku."
+          },
+          "decisions": {
+            "body": "Reakcja odbywa się w uzgodnionych limitach, zanim problem zacznie wpływać na Twój przyjazd."
+          }
+        },
         "contrast": {
           "intro": "Różnica między pustym lokalem bez regularnej kontroli a lokalną obecnością, gdy Cię nie ma.",
           "left1": "Między pobytami nikt regularnie nie sprawdza lokalu.",
@@ -206,6 +222,22 @@
       },
       "regular-guest-stays": {
         "systemIntroContext": "Przy regularnych pobytach gości liczy się porządek między wyjazdami: dostęp, sprzątanie, stan i dokumentacja zdarzeń.",
+        "systemIntroLens": "Każda rotacja wraca do tego samego rytmu: wejście, przygotowanie, kontrola i zapis przed kolejnym użyciem.",
+        "systemIntroPosture": "Wyjazd → dostęp → przygotowanie → zapis stanu",
+        "systemIntroProcess": {
+          "scope": {
+            "body": "Zakres rozdziela kontrolę lokalu, dostęp dla osób na miejscu i przygotowanie przed kolejnym użyciem."
+          },
+          "documentation": {
+            "body": "Po pobycie powstaje zapis stanu, zdarzeń i wykonanych działań przed kolejną rotacją."
+          },
+          "procedure": {
+            "body": "Dostęp, sprzątanie, kontrola i zgłoszenia wracają do tego samego rytmu między pobytami."
+          },
+          "decisions": {
+            "body": "Decyzje operacyjne pozostają w uzgodnionych granicach, bez przenoszenia każdej rotacji na właściciela."
+          }
+        },
         "contrast": {
           "intro": "Różnica między samodzielną organizacją rotacji a stałą strukturą na miejscu.",
           "left1": "Sprzątanie, dostęp i gotowość zależą od wielu osób bez jednego punktu odniesienia.",
@@ -224,6 +256,22 @@
       },
       "mixed-not-defined": {
         "systemIntroContext": "Gdy model użytkowania nie jest jeszcze jasny, najpierw trzeba go opisać. Zakres ustala się po ocenie sytuacji nieruchomości.",
+        "systemIntroLens": "Najpierw rozpoznaje się model używania. Dopiero po tej klasyfikacji zakres może być ustawiony bez zgadywania.",
+        "systemIntroPosture": "Ocena → klasyfikacja → zakres → działanie",
+        "systemIntroProcess": {
+          "scope": {
+            "body": "Pierwszym krokiem jest klasyfikacja sposobu używania lokalu, zanim zostanie dobrany zakres obsługi."
+          },
+          "documentation": {
+            "body": "Zapis pomaga oddzielić potrzeby prywatnego użytku od sytuacji, które wymagają rytmu dla pobytów gości."
+          },
+          "procedure": {
+            "body": "Dopiero po ocenie ustala się, które kroki mają działać stale, a które tylko w razie potrzeby."
+          },
+          "decisions": {
+            "body": "Limity i reakcje wynikają z potwierdzonego modelu, nie z założenia przyjętego na początku."
+          }
+        },
         "contrast": {
           "intro": "Różnica między przedwczesnym wyborem zakresu a klasyfikacją przed ustaleniem struktury.",
           "left1": "Lokal może być traktowany jak wyłącznie prywatny, mimo że później pojawią się goście.",
@@ -287,6 +335,7 @@
   "systemIntro": {
     "eyebrow": "Krótki proces",
     "title": "Jak działa system Sentinel",
+    "lensLabel": "Logika trybu",
     "intro": "Sentinel wprowadza stałą, lokalną kontrolę nad Twoją nieruchomością.",
     "process": {
       "scope": {

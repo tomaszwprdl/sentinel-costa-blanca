@@ -1,5 +1,10 @@
 import { Suspense } from 'react';
-import UsagePathwayLayer, { PathwayCopy, PathwayFinalCtaLink } from '@/components/UsagePathwayLayer';
+import UsagePathwayLayer, {
+  PathwayCopy,
+  PathwayFinalCtaLink,
+  PathwayModeLens,
+  PathwayProcessPanel,
+} from '@/components/UsagePathwayLayer';
 import HeroGateFrame from '@/components/HeroGateFrame';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
@@ -17,7 +22,6 @@ const PATHWAY_POINT_COUNTS: Record<PathwayKey, number> = {
   'mixed-not-defined': 5,
 };
 
-const PROCESS_KEYS = ['scope', 'documentation', 'procedure', 'decisions'] as const;
 const PACKAGE_PREVIEW = [
   { marker: '01', title: 'level1Title', axis: 'axis1', purpose: 'level1Purpose' },
   { marker: '02', title: 'level2Title', axis: 'axis2', purpose: 'level2Purpose' },
@@ -50,34 +54,13 @@ export default async function HomePage({
                   <p className="home-route-open__lead">
                     <PathwayCopy path="systemIntroContext" />
                   </p>
-                  <p className="home-route-open__note mb-0">{t('systemIntro.intro')}</p>
+                  <PathwayModeLens />
                 </div>
               </div>
             </header>
           </div>
 
-          <ol className="home-process-rail reveal-stagger" aria-label={t('systemIntro.title')}>
-            {PROCESS_KEYS.map((key, index) => (
-              <li key={key} className="home-process-rail__step">
-                <div className="home-process-rail__marker">
-                  <span className="home-process-rail__num" aria-hidden>
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                </div>
-                <div className="home-process-rail__content">
-                  <p className="home-process-rail__label">
-                    {t(`systemIntro.process.${key}.label`)}
-                  </p>
-                  <h3 className="home-process-rail__title">
-                    {t(`systemIntro.process.${key}.title`)}
-                  </h3>
-                  <p className="home-process-rail__body mb-0">
-                    {t(`systemIntro.process.${key}.body`)}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ol>
+          <PathwayProcessPanel />
         </Section>
 
         {/* 4. BEZ NAS / Z NAMI — full split band: risk in ink, control on paper */}

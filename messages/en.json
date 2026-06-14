@@ -188,6 +188,22 @@
     "pathwayContent": {
       "private-use-only": {
         "systemIntroContext": "For private use, what matters is the property's condition between visits and readiness before you or your family arrive.",
+        "systemIntroLens": "Sentinel keeps the property in a known condition before absence turns a small risk into an arrival problem.",
+        "systemIntroPosture": "Absence → condition control → readiness before arrival",
+        "systemIntroProcess": {
+          "scope": {
+            "body": "The first step defines what is checked during absence and where local responsibility stops."
+          },
+          "documentation": {
+            "body": "Each check leaves a condition record between visits, not just a general confirmation that someone attended."
+          },
+          "procedure": {
+            "body": "Visits, access, and pre-arrival preparation follow a fixed operating order."
+          },
+          "decisions": {
+            "body": "Response stays inside agreed limits before an issue starts affecting your arrival."
+          }
+        },
         "contrast": {
           "intro": "The difference between an unchecked empty property and fixed local presence while you are away.",
           "left1": "Between visits, no one checks the property on a regular schedule.",
@@ -206,6 +222,22 @@
       },
       "regular-guest-stays": {
         "systemIntroContext": "For regular guest stays, what matters is order between departures: access, cleaning, condition, and event documentation.",
+        "systemIntroLens": "Each turnover returns to the same rhythm: entry, preparation, check, and record before the next use.",
+        "systemIntroPosture": "Departure → access → preparation → condition record",
+        "systemIntroProcess": {
+          "scope": {
+            "body": "Scope separates property checks, access for people on site, and preparation before the next use."
+          },
+          "documentation": {
+            "body": "After a stay, the record captures condition, events, and completed actions before the next turnover."
+          },
+          "procedure": {
+            "body": "Access, cleaning, checks, and requests return to the same rhythm between stays."
+          },
+          "decisions": {
+            "body": "Operational decisions remain inside agreed boundaries instead of sending every turnover back to the owner."
+          }
+        },
         "contrast": {
           "intro": "The difference between owner-led turnover logistics and a fixed local structure on site.",
           "left1": "Cleaning, access, and readiness depend on several people without one reference point.",
@@ -224,6 +256,22 @@
       },
       "mixed-not-defined": {
         "systemIntroContext": "When the use pattern is not yet clear, it must be described first. Scope is set after property situation assessment.",
+        "systemIntroLens": "The use model is identified first. Only after that classification can scope be set without guessing.",
+        "systemIntroPosture": "Assessment → classification → scope → action",
+        "systemIntroProcess": {
+          "scope": {
+            "body": "The first step is classifying how the property is used before the service scope is selected."
+          },
+          "documentation": {
+            "body": "The record helps separate private-use needs from situations that require a guest-stay rhythm."
+          },
+          "procedure": {
+            "body": "Only after assessment is it clear which steps should run continuously and which are needed case by case."
+          },
+          "decisions": {
+            "body": "Limits and responses follow the confirmed model, not an assumption made at the start."
+          }
+        },
         "contrast": {
           "intro": "The difference between choosing intensity too early and classifying use before scope is fixed.",
           "left1": "The property may be treated as private-only even if guest activity begins later.",
@@ -287,6 +335,7 @@
   "systemIntro": {
     "eyebrow": "Short process",
     "title": "How the Sentinel system works",
+    "lensLabel": "Mode logic",
     "intro": "Sentinel provides fixed, local control over your property.",
     "process": {
       "scope": {
