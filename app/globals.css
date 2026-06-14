@@ -2900,6 +2900,10 @@ textarea:focus {
   overflow: hidden;
 }
 
+.home-process-panel.is-visible {
+  --process-motion-state: running;
+}
+
 .home-process-panel::before,
 .home-process-panel::after {
   position: absolute;
@@ -2926,6 +2930,9 @@ textarea:focus {
   height: 27rem;
   opacity: 0.5;
   filter: drop-shadow(0 22px 42px rgba(16, 38, 63, 0.08));
+  animation: process-field-drift 18s ease-in-out infinite alternate;
+  animation-play-state: var(--process-motion-state, paused);
+  transform: translate3d(0, 0, 0);
 }
 
 .home-process-panel[data-pathway="private-use-only"]::after {
@@ -2946,6 +2953,8 @@ textarea:focus {
     conic-gradient(from 35deg, transparent 0 14%, color-mix(in srgb, var(--accent) 34%, transparent) 14% 24%, transparent 24% 46%, color-mix(in srgb, var(--copper) 32%, transparent) 46% 56%, transparent 56% 100%),
     repeating-conic-gradient(from 4deg, transparent 0 7deg, color-mix(in srgb, var(--accent) 12%, transparent) 7deg 8deg, transparent 8deg 16deg),
     radial-gradient(circle, transparent 0 56%, color-mix(in srgb, var(--accent) 28%, transparent) 57% 58%, transparent 60%);
+  animation-name: process-field-turnover;
+  animation-duration: 22s;
 }
 
 .home-process-panel[data-pathway="mixed-not-defined"]::after {
@@ -2959,6 +2968,8 @@ textarea:focus {
     linear-gradient(135deg, transparent 0 43%, color-mix(in srgb, var(--support) 40%, transparent) 43% 44%, transparent 44%),
     linear-gradient(25deg, transparent 0 48%, color-mix(in srgb, var(--support) 30%, transparent) 48% 49%, transparent 49%),
     linear-gradient(155deg, transparent 0 48%, color-mix(in srgb, var(--accent) 24%, transparent) 48% 49%, transparent 49%);
+  animation-name: process-field-decision;
+  animation-duration: 20s;
 }
 
 .home-process-posture {
@@ -3077,6 +3088,13 @@ textarea:focus {
   background: linear-gradient(90deg, var(--rail-start, var(--accent)), var(--rail-end, var(--copper)));
   box-shadow: 0 0 18px color-mix(in srgb, var(--rail-start, var(--accent)) 18%, transparent);
   content: "";
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 900ms var(--motion-ease-out);
+}
+
+.home-process-rail.is-visible::before {
+  transform: scaleX(1);
 }
 
 .home-process-rail__step {
@@ -3106,6 +3124,7 @@ textarea:focus {
 .home-process-rail__marker {
   position: relative;
   z-index: 3;
+  isolation: isolate;
   display: grid;
   place-items: center;
   width: 2.75rem;
@@ -3119,6 +3138,22 @@ textarea:focus {
     0 0 0 4px color-mix(in srgb, var(--surface-light) 88%, transparent),
     0 14px 30px rgba(16, 38, 63, 0.08),
     inset 0 1px 0 rgba(255, 253, 249, 0.85);
+  transform: translateY(0);
+  transition:
+    border-color 420ms var(--motion-ease-out),
+    box-shadow 420ms var(--motion-ease-out),
+    transform 520ms var(--motion-ease-out);
+}
+
+.home-process-rail__marker::before {
+  position: absolute;
+  inset: -0.72rem -0.88rem;
+  z-index: -1;
+  border-radius: 0.82rem;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 253, 249, 0.98), rgba(255, 250, 242, 0.92) 54%, transparent 72%);
+  content: "";
+  pointer-events: none;
 }
 
 .home-process-rail__step[data-emphasis="true"] .home-process-rail__marker {
@@ -3165,6 +3200,11 @@ textarea:focus {
     0 18px 44px rgba(16, 38, 63, 0.07),
     0 1px 0 rgba(255, 253, 249, 0.8),
     inset 0 1px 0 rgba(255, 253, 249, 0.94);
+  transform: translateY(0);
+  transition:
+    border-color 420ms var(--motion-ease-out),
+    box-shadow 420ms var(--motion-ease-out),
+    transform 520ms var(--motion-ease-out);
 }
 
 .home-process-rail__content::before {
@@ -3284,6 +3324,13 @@ textarea:focus {
     content: "";
     pointer-events: none;
     box-shadow: 0 0 18px color-mix(in srgb, var(--rail-start, var(--accent)) 12%, transparent);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 1150ms var(--motion-ease-out) 140ms;
+  }
+
+  .home-process-rail.is-visible::after {
+    transform: scaleX(1);
   }
 
   .home-process-rail[data-pathway="private-use-only"]::after {
@@ -3313,6 +3360,8 @@ textarea:focus {
     box-shadow: 0 0 0 8px color-mix(in srgb, var(--support) 10%, transparent);
     content: "";
     transform: translateX(2.35rem);
+    animation: process-readiness-pulse 4.8s ease-in-out infinite;
+    animation-play-state: var(--process-motion-state, paused);
   }
 
   .home-process-rail[data-pathway="regular-guest-stays"]::after {
@@ -3375,6 +3424,8 @@ textarea:focus {
     border-radius: 0.35rem;
     content: "";
     transform: rotate(45deg);
+    animation: process-gate-breathe 5.6s ease-in-out infinite;
+    animation-play-state: var(--process-motion-state, paused);
   }
 
   .home-process-rail__step {
@@ -3402,6 +3453,59 @@ textarea:focus {
 }
 
 /* Contrast band — one large split: risk in ink, control on paper */
+@keyframes process-field-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(-0.85rem, -0.55rem, 0) scale(1.035);
+  }
+}
+
+@keyframes process-field-turnover {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translate3d(-0.6rem, -0.45rem, 0) rotate(5deg) scale(1.025);
+  }
+}
+
+@keyframes process-field-decision {
+  0% {
+    transform: translate3d(0, 0, 0) skewX(0deg);
+  }
+  100% {
+    transform: translate3d(-0.5rem, -0.35rem, 0) skewX(-1.5deg);
+  }
+}
+
+@keyframes process-readiness-pulse {
+  0%,
+  100% {
+    opacity: 0.72;
+    box-shadow: 0 0 0 8px color-mix(in srgb, var(--support) 10%, transparent);
+  }
+  50% {
+    opacity: 1;
+    box-shadow:
+      0 0 0 8px color-mix(in srgb, var(--support) 12%, transparent),
+      0 0 24px color-mix(in srgb, var(--support) 18%, transparent);
+  }
+}
+
+@keyframes process-gate-breathe {
+  0%,
+  100% {
+    opacity: 0.78;
+    transform: rotate(45deg) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(45deg) scale(1.035);
+  }
+}
+
 .home-contrast-band {
   display: grid;
   overflow: hidden;
@@ -5982,6 +6086,18 @@ textarea:focus {
   .diagnostic-choice-grid.motion-entrance > .diagnostic-choice-card::before,
   .diagnostic-choice-grid.motion-entrance > .diagnostic-choice-card::after {
     animation: none !important;
+  }
+
+  .home-process-panel::after,
+  .home-process-rail[data-pathway="private-use-only"] .home-process-rail__step:last-child::before,
+  .home-process-rail[data-pathway="mixed-not-defined"] .home-process-rail__step:first-child::before {
+    animation: none !important;
+  }
+
+  .home-process-rail::before,
+  .home-process-rail::after {
+    transform: none !important;
+    transition: none !important;
   }
 
   .disclosure-grid {
@@ -11406,6 +11522,20 @@ textarea:focus {
 }
 
 /* Procedure rail: legacy step connectors retired — see .home-process-rail block */
+
+@media (prefers-reduced-motion: reduce) {
+  .home-process-panel::after,
+  .home-process-rail[data-pathway="private-use-only"] .home-process-rail__step:last-child::before,
+  .home-process-rail[data-pathway="mixed-not-defined"] .home-process-rail__step:first-child::before {
+    animation: none !important;
+  }
+
+  .home-process-rail::before,
+  .home-process-rail::after {
+    transform: none !important;
+    transition: none !important;
+  }
+}
 
 /* Level ladder: segmented jurisdiction scale per responsibility row */
 .home-level-ladder__row::after {
