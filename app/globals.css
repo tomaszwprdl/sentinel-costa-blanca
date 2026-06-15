@@ -11523,15 +11523,891 @@ textarea:focus {
 
 /* Procedure rail: legacy step connectors retired — see .home-process-rail block */
 
+/* Homepage process board: premium operational surface, pathway-specific but one system */
+.home-pathway-body .home-section--route {
+  background:
+    radial-gradient(64rem 30rem at 50% 42%, rgba(255, 253, 249, 0.82), transparent 68%),
+    radial-gradient(42rem 26rem at 17% 24%, rgba(112, 135, 116, 0.1), transparent 72%),
+    radial-gradient(36rem 22rem at 84% 20%, rgba(191, 116, 68, 0.1), transparent 70%),
+    linear-gradient(180deg, #f8f3ea 0%, #f4eee3 52%, #f7f1e8 100%);
+  box-shadow:
+    inset 0 30px 56px rgba(8, 24, 42, 0.16),
+    inset 0 -54px 90px rgba(255, 250, 242, 0.74);
+}
+
+.home-section--route:has(.home-process-panel[data-pathway="private-use-only"])::before {
+  background:
+    radial-gradient(58rem 28rem at 74% 49%, rgba(65, 126, 111, 0.22), transparent 68%),
+    radial-gradient(30rem 18rem at 44% 62%, rgba(39, 111, 115, 0.1), transparent 74%),
+    radial-gradient(34rem 20rem at 22% 18%, rgba(255, 253, 249, 0.88), transparent 72%),
+    linear-gradient(180deg, rgba(9, 28, 48, 0.08), rgba(255, 253, 249, 0.5) 18%, transparent 76%);
+}
+
+.home-section--route:has(.home-process-panel[data-pathway="regular-guest-stays"])::before {
+  background:
+    radial-gradient(58rem 28rem at 74% 48%, rgba(196, 106, 58, 0.24), transparent 68%),
+    radial-gradient(30rem 18rem at 44% 62%, rgba(210, 137, 68, 0.12), transparent 74%),
+    radial-gradient(34rem 20rem at 22% 18%, rgba(255, 253, 249, 0.88), transparent 72%),
+    linear-gradient(180deg, rgba(9, 28, 48, 0.08), rgba(255, 253, 249, 0.48) 18%, transparent 76%);
+}
+
+.home-section--route:has(.home-process-panel[data-pathway="mixed-not-defined"])::before {
+  background:
+    radial-gradient(58rem 28rem at 74% 48%, rgba(45, 101, 116, 0.24), transparent 68%),
+    radial-gradient(30rem 18rem at 44% 62%, rgba(16, 38, 63, 0.1), transparent 74%),
+    radial-gradient(34rem 20rem at 22% 18%, rgba(255, 253, 249, 0.88), transparent 72%),
+    linear-gradient(180deg, rgba(9, 28, 48, 0.08), rgba(255, 253, 249, 0.48) 18%, transparent 76%);
+}
+
+.home-pathway-body .home-section--route::after {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--authority) 10%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--authority) 8%, transparent) 1px, transparent 1px),
+    radial-gradient(ellipse at 50% 44%, rgba(255, 253, 249, 0.64), transparent 44%),
+    radial-gradient(ellipse at 50% 100%, rgba(16, 38, 63, 0.08), transparent 66%);
+  background-size: 56px 56px, 56px 56px, 100% 100%, 100% 100%;
+  opacity: 0.46;
+}
+
+.home-process-panel {
+  --process-board-tint: rgba(112, 135, 116, 0.1);
+  --process-board-accent: color-mix(in srgb, var(--support) 62%, var(--accent));
+  --process-board-paper: #fffaf2;
+  --process-board-edge: rgba(153, 128, 99, 0.2);
+  --process-signal: color-mix(in srgb, var(--process-board-accent) 88%, #fffaf2);
+  --process-signal-glow: color-mix(in srgb, var(--process-signal) 40%, transparent);
+  border-color: var(--process-board-edge);
+  border-radius: 1rem;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 249, 0.94) 0%, rgba(248, 241, 230, 0.84) 100%),
+    radial-gradient(62rem 26rem at 50% 4%, rgba(255, 253, 249, 0.78), transparent 66%),
+    radial-gradient(46rem 24rem at 84% 20%, var(--process-board-tint), transparent 72%),
+    linear-gradient(135deg, rgba(226, 217, 200, 0.56), rgba(255, 253, 249, 0.38));
+  box-shadow:
+    0 38px 90px rgba(16, 38, 63, 0.14),
+    0 14px 34px rgba(93, 74, 55, 0.08),
+    0 0 0 1px rgba(255, 253, 249, 0.62),
+    inset 0 1px 0 rgba(255, 253, 249, 0.98),
+    inset 0 -1px 0 rgba(161, 134, 105, 0.22);
+}
+
+.home-process-panel[data-pathway="private-use-only"] {
+  --process-board-tint: rgba(45, 126, 113, 0.18);
+  --process-board-accent: color-mix(in srgb, #2f7d72 74%, var(--support));
+  --process-signal: #287f74;
+  --process-signal-glow: rgba(40, 127, 116, 0.32);
+}
+
+.home-process-panel[data-pathway="regular-guest-stays"] {
+  --process-board-tint: rgba(202, 111, 53, 0.22);
+  --process-board-accent: color-mix(in srgb, #c96f35 76%, var(--accent));
+  --process-signal: #bf6732;
+  --process-signal-glow: rgba(191, 103, 50, 0.34);
+}
+
+.home-process-panel[data-pathway="mixed-not-defined"] {
+  --process-board-tint: rgba(38, 102, 118, 0.22);
+  --process-board-accent: color-mix(in srgb, #276676 72%, var(--support));
+  --process-signal: #276676;
+  --process-signal-glow: rgba(39, 102, 118, 0.34);
+}
+
+.home-process-panel::before {
+  background:
+    linear-gradient(180deg, rgba(255, 253, 249, 0.5), transparent 16%, transparent 82%, rgba(120, 98, 76, 0.07)),
+    radial-gradient(36rem 18rem at 50% 18%, rgba(255, 253, 249, 0.62), transparent 72%),
+    linear-gradient(90deg, color-mix(in srgb, var(--line) 24%, transparent) 1px, transparent 1px),
+    linear-gradient(180deg, color-mix(in srgb, var(--line) 20%, transparent) 1px, transparent 1px);
+  background-size: auto, auto, 3.7rem 3.7rem, 3.7rem 3.7rem;
+  mask-image: linear-gradient(180deg, #000, #000 84%, transparent);
+  opacity: 0.62;
+}
+
+.home-process-panel::after {
+  opacity: 0.42;
+  filter: drop-shadow(0 24px 48px rgba(16, 38, 63, 0.08));
+}
+
+.home-process-panel[data-pathway="private-use-only"]::after {
+  right: -4rem;
+  bottom: -7.75rem;
+  width: 29rem;
+  height: 29rem;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 253, 249, 0.22) 0 18%, transparent 19%),
+    radial-gradient(circle at 50% 50%, transparent 0 54%, color-mix(in srgb, var(--process-board-accent) 26%, transparent) 55% 56%, transparent 57%),
+    repeating-radial-gradient(circle, transparent 0 3.2rem, color-mix(in srgb, var(--process-board-accent) 30%, transparent) 3.28rem 3.36rem);
+}
+
+.home-process-panel[data-pathway="regular-guest-stays"]::after {
+  opacity: 0.44;
+  background:
+    conic-gradient(from 35deg, transparent 0 13%, color-mix(in srgb, var(--process-board-accent) 34%, transparent) 13% 24%, transparent 24% 47%, color-mix(in srgb, var(--copper) 34%, transparent) 47% 58%, transparent 58% 100%),
+    repeating-conic-gradient(from 4deg, transparent 0 8deg, color-mix(in srgb, var(--process-board-accent) 13%, transparent) 8deg 9deg, transparent 9deg 17deg),
+    radial-gradient(circle, transparent 0 56%, color-mix(in srgb, var(--process-board-accent) 28%, transparent) 57% 58%, transparent 60%);
+}
+
+.home-process-panel[data-pathway="mixed-not-defined"]::after {
+  opacity: 0.48;
+  background:
+    radial-gradient(circle at 38% 42%, color-mix(in srgb, var(--process-board-accent) 18%, transparent) 0 0.42rem, transparent 0.48rem),
+    radial-gradient(circle at 68% 64%, color-mix(in srgb, var(--accent) 13%, transparent) 0 0.34rem, transparent 0.4rem),
+    linear-gradient(135deg, transparent 0 43%, color-mix(in srgb, var(--process-board-accent) 44%, transparent) 43% 44%, transparent 44%),
+    linear-gradient(25deg, transparent 0 48%, color-mix(in srgb, var(--process-board-accent) 34%, transparent) 48% 49%, transparent 49%),
+    linear-gradient(155deg, transparent 0 48%, color-mix(in srgb, var(--accent) 24%, transparent) 48% 49%, transparent 49%);
+}
+
+.home-process-posture {
+  border-color: color-mix(in srgb, var(--process-board-accent, var(--accent)) 36%, var(--line));
+  background:
+    radial-gradient(14rem 5rem at 12% 0%, rgba(255, 253, 249, 0.96), transparent 72%),
+    linear-gradient(90deg, color-mix(in srgb, var(--process-board-accent, var(--accent)) 9%, var(--surface-light)), rgba(255, 253, 249, 0.95)),
+    repeating-linear-gradient(90deg, transparent 0, transparent 2.15rem, color-mix(in srgb, var(--line) 36%, transparent) 2.2rem, transparent 2.25rem);
+  box-shadow:
+    0 16px 36px rgba(16, 38, 63, 0.08),
+    0 0 0 5px rgba(255, 253, 249, 0.34),
+    inset 0 1px 0 rgba(255, 253, 249, 0.98);
+}
+
+.home-process-rail {
+  border-top-color: color-mix(in srgb, var(--process-board-accent, var(--accent)) 34%, var(--line));
+}
+
+.home-process-rail__marker {
+  border-color: color-mix(in srgb, var(--rail-marker) 70%, var(--line));
+  border-radius: 0.48rem;
+  background:
+    radial-gradient(circle at 35% 24%, rgba(255, 253, 249, 0.98), transparent 50%),
+    linear-gradient(180deg, rgba(255, 250, 242, 0.98), rgba(242, 235, 225, 0.92));
+  box-shadow:
+    0 0 0 8px color-mix(in srgb, var(--process-board-paper) 86%, transparent),
+    0 14px 28px rgba(16, 38, 63, 0.1),
+    inset 0 1px 0 rgba(255, 253, 249, 0.92);
+}
+
+.home-process-rail__marker::before {
+  inset: -0.95rem -1.1rem;
+  border-radius: 0.95rem;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 253, 249, 0.98), rgba(255, 250, 242, 0.92) 52%, rgba(255, 250, 242, 0.42) 68%, transparent 76%);
+}
+
+.home-process-rail__marker::after {
+  position: absolute;
+  inset: -0.32rem;
+  z-index: -1;
+  border: 1px solid transparent;
+  border-radius: 0.72rem;
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+}
+
+.home-process-rail[data-pathway="private-use-only"] .home-process-rail__step:last-child .home-process-rail__marker::after,
+.home-process-rail[data-pathway="mixed-not-defined"] .home-process-rail__step:first-child .home-process-rail__marker::after {
+  border-color: color-mix(in srgb, var(--process-signal) 72%, transparent);
+  box-shadow:
+    0 0 0 5px color-mix(in srgb, var(--process-signal) 13%, transparent),
+    0 0 28px var(--process-signal-glow);
+  opacity: 1;
+  animation: process-signal-pulse 4.8s ease-in-out infinite;
+  animation-play-state: var(--process-motion-state, paused);
+}
+
+.home-process-rail[data-pathway="private-use-only"] .home-process-rail__step:last-child .home-process-rail__marker::after {
+  border-radius: 999px;
+}
+
+.home-process-rail[data-pathway="mixed-not-defined"] .home-process-rail__step:first-child .home-process-rail__marker::after {
+  inset: -0.42rem;
+  border-radius: 0.28rem;
+  transform: rotate(45deg);
+}
+
+.home-process-rail__content {
+  border-color: rgba(151, 126, 97, 0.22);
+  border-radius: 0.62rem;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 249, 0.98), rgba(249, 242, 232, 0.92)),
+    radial-gradient(14rem 8rem at 18% 0%, rgba(255, 253, 249, 0.96), transparent 72%),
+    linear-gradient(120deg, color-mix(in srgb, var(--process-board-accent, var(--accent)) 7%, transparent), transparent 56%);
+  box-shadow:
+    0 18px 38px rgba(16, 38, 63, 0.08),
+    0 4px 12px rgba(93, 74, 55, 0.05),
+    inset 0 1px 0 rgba(255, 253, 249, 0.98),
+    inset 0 -1px 0 rgba(153, 128, 99, 0.14);
+}
+
+.home-process-rail__content::before {
+  top: -1px;
+  left: 0.85rem;
+  width: 3.3rem;
+  height: 4px;
+  border-radius: 0 0 999px 999px;
+  background: linear-gradient(90deg, var(--rail-start, var(--accent)), color-mix(in srgb, var(--rail-mid, var(--accent)) 55%, transparent));
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--rail-start, var(--accent)) 12%, transparent);
+}
+
+.home-process-rail__content::after {
+  right: 0;
+  bottom: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 0;
+  background:
+    linear-gradient(135deg, transparent 0 49%, rgba(153, 128, 99, 0.18) 50%, transparent 51%),
+    linear-gradient(135deg, transparent 0 50%, rgba(255, 253, 249, 0.72) 51% 100%);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  opacity: 0.54;
+}
+
+.home-process-rail__step[data-emphasis="true"] .home-process-rail__content,
+.home-process-rail[data-pathway="private-use-only"] .home-process-rail__step:last-child .home-process-rail__content,
+.home-process-rail[data-pathway="regular-guest-stays"] .home-process-rail__step:nth-child(2) .home-process-rail__content,
+.home-process-rail[data-pathway="regular-guest-stays"] .home-process-rail__step:nth-child(3) .home-process-rail__content,
+.home-process-rail[data-pathway="mixed-not-defined"] .home-process-rail__step:first-child .home-process-rail__content {
+  background:
+    linear-gradient(180deg, rgba(255, 253, 249, 0.98), rgba(249, 242, 232, 0.92)),
+    radial-gradient(13rem 8rem at 20% 0%, color-mix(in srgb, var(--process-board-accent, var(--accent)) 11%, transparent), transparent 70%),
+    linear-gradient(120deg, color-mix(in srgb, var(--process-board-accent, var(--accent)) 8%, transparent), transparent 58%);
+}
+
+@media (min-width: 1024px) {
+  .home-process-panel {
+    padding: 1.35rem 1.35rem 1.65rem;
+  }
+
+  .home-process-rail::after {
+    display: none;
+  }
+
+  .home-process-rail__step:not(:last-child)::after {
+    position: absolute;
+    top: 1.35rem;
+    right: 2.35rem;
+    left: 3.7rem;
+    z-index: 1;
+    display: block;
+    width: auto;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--rail-start), var(--rail-mid) 58%, var(--rail-end));
+    box-shadow: 0 0 16px color-mix(in srgb, var(--rail-start) 12%, transparent);
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 900ms var(--motion-ease-out) 120ms;
+  }
+
+  .home-process-rail.is-visible .home-process-rail__step:not(:last-child)::after {
+    transform: scaleX(1);
+  }
+
+  .home-process-rail[data-pathway="private-use-only"] .home-process-rail__step:not(:last-child)::after {
+    height: 2px;
+    background: linear-gradient(90deg, var(--rail-start), var(--rail-mid) 60%, var(--rail-end));
+  }
+
+  .home-process-rail[data-pathway="regular-guest-stays"] .home-process-rail__step:not(:last-child)::after {
+    background:
+      radial-gradient(circle at var(--process-bead-x, 62%) 50%, #fffaf2 0 0.13rem, var(--process-signal) 0.14rem 0.34rem, transparent 0.35rem),
+      repeating-linear-gradient(90deg, color-mix(in srgb, var(--rail-start) 82%, var(--line)) 0 0.62rem, transparent 0.62rem 1.28rem),
+      linear-gradient(90deg, var(--rail-start), var(--rail-mid), var(--rail-end));
+    box-shadow:
+      0 0 18px var(--process-signal-glow),
+      0 8px 24px color-mix(in srgb, var(--copper) 10%, transparent);
+    animation: process-cadence-bead 6.5s ease-in-out infinite;
+    animation-play-state: var(--process-motion-state, paused);
+  }
+
+  .home-process-rail[data-pathway="regular-guest-stays"] .home-process-rail__step:nth-child(2)::after {
+    --process-bead-x: 76%;
+  }
+
+  .home-process-rail[data-pathway="mixed-not-defined"] .home-process-rail__step:not(:last-child)::after {
+    background: linear-gradient(90deg, var(--rail-start) 0%, var(--rail-mid) 44%, var(--rail-end) 100%);
+  }
+
+  .home-process-rail[data-pathway="regular-guest-stays"] .home-process-rail__step::before {
+    top: 1.68rem;
+    left: 4.15rem;
+    width: calc(100% - 6.7rem);
+    opacity: 0.38;
+  }
+
+  .home-process-rail__step:nth-child(1) .home-process-rail__content {
+    transform: rotate(-0.28deg);
+  }
+
+  .home-process-rail__step:nth-child(2) .home-process-rail__content {
+    transform: rotate(0.2deg);
+  }
+
+  .home-process-rail__step:nth-child(3) .home-process-rail__content {
+    transform: rotate(-0.16deg);
+  }
+
+  .home-process-rail__step:nth-child(4) .home-process-rail__content {
+    transform: rotate(0.24deg);
+  }
+}
+
+@media (max-width: 390px) {
+  .home-process-panel {
+    border-radius: 0.72rem;
+  }
+
+  .home-process-rail__content {
+    border-radius: 0.56rem;
+  }
+
+  .home-process-rail__content::before {
+    left: 0.75rem;
+    width: 2.8rem;
+  }
+}
+
+@keyframes process-signal-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 5px color-mix(in srgb, var(--process-signal) 12%, transparent),
+      0 0 22px var(--process-signal-glow);
+    opacity: 0.82;
+  }
+
+  48% {
+    box-shadow:
+      0 0 0 9px color-mix(in srgb, var(--process-signal) 18%, transparent),
+      0 0 34px var(--process-signal-glow);
+    opacity: 1;
+  }
+}
+
+@keyframes process-cadence-bead {
+  0%,
+  100% {
+    filter: saturate(1);
+    opacity: 0.82;
+  }
+
+  48% {
+    filter: saturate(1.18);
+    opacity: 1;
+  }
+}
+
+/* Bold signal-band correction: the process moment needs contrast, not more beige. */
+.home-process-panel {
+  --process-band: #071524;
+  --process-band-mid: #0b1d33;
+  --process-band-soft: rgba(11, 29, 51, 0.9);
+  background:
+    radial-gradient(24rem 12rem at var(--process-signal-x, 82%) 6.4rem, var(--process-signal-glow), transparent 72%),
+    linear-gradient(
+      180deg,
+      var(--process-band) 0,
+      var(--process-band-mid) 12.9rem,
+      rgba(14, 35, 58, 0.94) 15.35rem,
+      rgba(244, 237, 226, 0.96) 15.45rem,
+      rgba(255, 250, 242, 0.95) 100%
+    ),
+    radial-gradient(46rem 24rem at 84% 20%, var(--process-board-tint), transparent 72%),
+    linear-gradient(135deg, rgba(226, 217, 200, 0.56), rgba(255, 253, 249, 0.38));
+  border-color: color-mix(in srgb, var(--process-band-mid) 36%, var(--process-board-edge));
+  box-shadow:
+    0 42px 96px rgba(16, 38, 63, 0.18),
+    0 18px 42px rgba(7, 21, 36, 0.12),
+    0 0 0 1px rgba(255, 253, 249, 0.58),
+    inset 0 1px 0 rgba(255, 253, 249, 0.18),
+    inset 0 -1px 0 rgba(161, 134, 105, 0.22);
+}
+
+.home-process-panel[data-pathway="private-use-only"] {
+  --process-signal-x: 88%;
+  --process-signal: #28c5b4;
+  --process-signal-glow: rgba(40, 197, 180, 0.38);
+}
+
+.home-process-panel[data-pathway="regular-guest-stays"] {
+  --process-signal-x: 52%;
+  --process-signal: #f08b3f;
+  --process-signal-glow: rgba(240, 139, 63, 0.42);
+}
+
+.home-process-panel[data-pathway="mixed-not-defined"] {
+  --process-signal-x: 15%;
+  --process-signal: #32b7c5;
+  --process-signal-glow: rgba(50, 183, 197, 0.4);
+}
+
+.home-process-panel::before {
+  background:
+    radial-gradient(26rem 11rem at var(--process-signal-x, 82%) 6rem, color-mix(in srgb, var(--process-signal) 32%, transparent), transparent 74%),
+    linear-gradient(90deg, rgba(255, 250, 242, 0.075) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 250, 242, 0.065) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 250, 242, 0.08), transparent 15.2rem);
+  background-size: auto, 3.6rem 3.6rem, 3.6rem 3.6rem, auto;
+  mask-image: linear-gradient(180deg, #000 0, #000 15.3rem, transparent 17.2rem);
+  opacity: 0.86;
+}
+
+.home-process-panel::after {
+  opacity: 0.58;
+  filter:
+    drop-shadow(0 0 30px color-mix(in srgb, var(--process-signal) 22%, transparent))
+    drop-shadow(0 24px 48px rgba(16, 38, 63, 0.08));
+}
+
+.home-process-posture {
+  border-color: color-mix(in srgb, var(--process-signal) 42%, rgba(255, 250, 242, 0.24));
+  background:
+    radial-gradient(16rem 6rem at 12% 0%, color-mix(in srgb, var(--process-signal) 18%, transparent), transparent 72%),
+    linear-gradient(135deg, rgba(255, 250, 242, 0.1), rgba(255, 250, 242, 0.035)),
+    linear-gradient(180deg, rgba(7, 21, 36, 0.86), rgba(11, 29, 51, 0.72));
+  color: rgba(255, 250, 242, 0.9);
+  box-shadow:
+    0 16px 38px rgba(0, 0, 0, 0.22),
+    0 0 0 1px rgba(255, 250, 242, 0.08),
+    0 0 34px color-mix(in srgb, var(--process-signal) 16%, transparent),
+    inset 0 1px 0 rgba(255, 250, 242, 0.2);
+}
+
+.home-process-posture::before {
+  border-color: var(--process-signal);
+  background: var(--process-band);
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--process-signal) 15%, transparent),
+    0 0 20px color-mix(in srgb, var(--process-signal) 34%, transparent);
+}
+
+.home-process-posture::after {
+  background: rgba(255, 250, 242, 0.22);
+}
+
+.home-process-rail {
+  border-top-color: color-mix(in srgb, var(--process-signal) 38%, rgba(255, 250, 242, 0.18));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 250, 242, 0.12),
+    0 -1px 0 rgba(7, 21, 36, 0.42);
+}
+
+.home-process-rail[data-pathway] {
+  --rail-start: var(--process-signal);
+  --rail-mid: color-mix(in srgb, var(--process-signal) 56%, rgba(255, 250, 242, 0.36));
+  --rail-end: color-mix(in srgb, var(--process-signal) 82%, var(--copper));
+  --rail-marker: color-mix(in srgb, var(--process-signal) 58%, rgba(255, 250, 242, 0.55));
+}
+
+.home-process-rail::before {
+  background: linear-gradient(90deg, var(--process-signal), color-mix(in srgb, var(--process-signal) 42%, transparent));
+  box-shadow:
+    0 0 20px color-mix(in srgb, var(--process-signal) 34%, transparent),
+    0 0 44px color-mix(in srgb, var(--process-signal) 16%, transparent);
+}
+
+.home-process-rail__marker {
+  border-color: color-mix(in srgb, var(--process-signal) 36%, rgba(255, 250, 242, 0.46));
+  background:
+    radial-gradient(circle at 35% 24%, rgba(255, 253, 249, 0.98), transparent 50%),
+    linear-gradient(180deg, rgba(255, 250, 242, 0.98), rgba(239, 229, 214, 0.94));
+  box-shadow:
+    0 0 0 9px rgba(7, 21, 36, 0.9),
+    0 0 0 10px color-mix(in srgb, var(--process-signal) 24%, transparent),
+    0 18px 34px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 253, 249, 0.92);
+}
+
+.home-process-rail__marker::before {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(7, 21, 36, 0.96), rgba(7, 21, 36, 0.92) 46%, transparent 74%);
+}
+
+.home-process-rail[data-pathway="private-use-only"] .home-process-rail__step:last-child .home-process-rail__marker,
+.home-process-rail[data-pathway="mixed-not-defined"] .home-process-rail__step:first-child .home-process-rail__marker {
+  border-color: color-mix(in srgb, var(--process-signal) 74%, #fffaf2);
+  box-shadow:
+    0 0 0 9px rgba(7, 21, 36, 0.9),
+    0 0 0 15px color-mix(in srgb, var(--process-signal) 22%, transparent),
+    0 0 44px color-mix(in srgb, var(--process-signal) 46%, transparent),
+    0 20px 38px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 253, 249, 0.92);
+}
+
+.home-process-rail[data-pathway="private-use-only"] .home-process-rail__step:last-child .home-process-rail__marker::after,
+.home-process-rail[data-pathway="mixed-not-defined"] .home-process-rail__step:first-child .home-process-rail__marker::after {
+  inset: -0.74rem;
+  border-width: 2px;
+  border-color: color-mix(in srgb, var(--process-signal) 88%, transparent);
+  box-shadow:
+    0 0 0 8px color-mix(in srgb, var(--process-signal) 18%, transparent),
+    0 0 48px color-mix(in srgb, var(--process-signal) 54%, transparent);
+}
+
+.home-process-rail__content {
+  border-color: rgba(255, 250, 242, 0.54);
+  box-shadow:
+    0 22px 42px rgba(0, 0, 0, 0.2),
+    0 4px 14px rgba(7, 21, 36, 0.1),
+    inset 0 1px 0 rgba(255, 253, 249, 0.98),
+    inset 0 -1px 0 rgba(153, 128, 99, 0.14);
+}
+
+@media (min-width: 1024px) {
+  .home-process-rail__step:not(:last-child)::after {
+    top: 1.36rem;
+    right: 2.65rem;
+    left: 3.95rem;
+    height: 4px;
+    background:
+      radial-gradient(circle at 100% 50%, color-mix(in srgb, var(--process-signal) 72%, #fffaf2) 0 0.24rem, transparent 0.25rem),
+      linear-gradient(90deg, var(--rail-start), var(--rail-mid) 58%, var(--rail-end));
+    box-shadow:
+      0 0 20px color-mix(in srgb, var(--process-signal) 35%, transparent),
+      0 0 42px color-mix(in srgb, var(--process-signal) 16%, transparent);
+  }
+
+  .home-process-rail[data-pathway="regular-guest-stays"] .home-process-rail__step:not(:last-child)::after {
+    height: 5px;
+    background:
+      radial-gradient(circle at var(--process-bead-x, 62%) 50%, #fffaf2 0 0.15rem, var(--process-signal) 0.16rem 0.46rem, transparent 0.47rem),
+      linear-gradient(90deg, color-mix(in srgb, var(--process-signal) 22%, transparent), var(--process-signal) 44%, color-mix(in srgb, var(--process-signal) 62%, transparent)),
+      repeating-linear-gradient(90deg, color-mix(in srgb, var(--rail-start) 82%, var(--line)) 0 0.62rem, transparent 0.62rem 1.28rem);
+    box-shadow:
+      0 0 26px color-mix(in srgb, var(--process-signal) 48%, transparent),
+      0 0 56px color-mix(in srgb, var(--process-signal) 22%, transparent);
+  }
+
+  .home-process-rail[data-pathway="regular-guest-stays"] .home-process-rail__step:nth-child(1)::after,
+  .home-process-rail[data-pathway="regular-guest-stays"] .home-process-rail__step:nth-child(3)::after {
+    opacity: 0.62;
+  }
+
+  .home-process-rail[data-pathway="regular-guest-stays"] .home-process-rail__step:nth-child(2)::after {
+    --process-bead-x: 54%;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 390px) {
+  .home-process-panel {
+    background:
+      radial-gradient(18rem 10rem at var(--process-signal-x, 80%) 5rem, var(--process-signal-glow), transparent 72%),
+      linear-gradient(
+        180deg,
+        var(--process-band) 0,
+        var(--process-band-mid) 12.75rem,
+        rgba(244, 237, 226, 0.96) 12.85rem,
+        rgba(255, 250, 242, 0.96) 100%
+      );
+  }
+
+  .home-process-posture {
+    font-size: 0.66rem;
+  }
+
+  .home-process-rail__marker {
+    box-shadow:
+      0 0 0 7px rgba(7, 21, 36, 0.92),
+      0 0 0 8px color-mix(in srgb, var(--process-signal) 22%, transparent),
+      0 14px 26px rgba(0, 0, 0, 0.22),
+      inset 0 1px 0 rgba(255, 253, 249, 0.92);
+  }
+}
+
+/* High-visibility signal correction: one unmistakable luminous event per pathway. */
+.home-process-panel {
+  background:
+    radial-gradient(30rem 14rem at var(--process-signal-x, 82%) 6.25rem, color-mix(in srgb, var(--process-signal) 34%, transparent), transparent 72%),
+    linear-gradient(
+      180deg,
+      #050f1d 0,
+      #071524 9rem,
+      #0b1d33 13.4rem,
+      rgba(14, 35, 58, 0.96) 15.35rem,
+      rgba(244, 237, 226, 0.96) 15.45rem,
+      rgba(255, 250, 242, 0.95) 100%
+    );
+}
+
+.home-process-panel[data-pathway="private-use-only"] {
+  --process-signal: #00e5ff;
+  --process-signal-glow: rgba(0, 229, 255, 0.56);
+}
+
+.home-process-panel[data-pathway="regular-guest-stays"] {
+  --process-signal: #ff9e2c;
+  --process-signal-glow: rgba(255, 158, 44, 0.58);
+}
+
+.home-process-panel[data-pathway="mixed-not-defined"] {
+  --process-signal: #7c5cff;
+  --process-signal-glow: rgba(124, 92, 255, 0.5);
+  --process-signal-secondary: #00d6ff;
+}
+
+.home-process-panel::before {
+  background:
+    radial-gradient(30rem 12rem at var(--process-signal-x, 82%) 5.8rem, color-mix(in srgb, var(--process-signal) 44%, transparent), transparent 72%),
+    linear-gradient(90deg, rgba(255, 250, 242, 0.085) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 250, 242, 0.075) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 250, 242, 0.1), transparent 15.2rem);
+}
+
+.home-process-rail[data-pathway="private-use-only"] .home-process-rail__step:last-child .home-process-rail__marker,
+.home-process-rail[data-pathway="mixed-not-defined"] .home-process-rail__step:first-child .home-process-rail__marker {
+  transform: translateY(-0.05rem);
+  border-color: #fffaf2;
+  box-shadow:
+    0 0 0 9px rgba(5, 15, 29, 0.94),
+    0 0 0 17px color-mix(in srgb, var(--process-signal) 30%, transparent),
+    0 0 22px color-mix(in srgb, var(--process-signal) 82%, transparent),
+    0 0 68px color-mix(in srgb, var(--process-signal) 52%, transparent),
+    0 22px 42px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 253, 249, 0.98);
+}
+
+.home-process-rail[data-pathway="private-use-only"] .home-process-rail__step:last-child .home-process-rail__marker::after,
+.home-process-rail[data-pathway="mixed-not-defined"] .home-process-rail__step:first-child .home-process-rail__marker::after {
+  inset: -1.04rem;
+  border-width: 2.5px;
+  border-color: color-mix(in srgb, var(--process-signal) 92%, #fffaf2);
+  box-shadow:
+    0 0 0 10px color-mix(in srgb, var(--process-signal) 20%, transparent),
+    0 0 24px color-mix(in srgb, var(--process-signal) 76%, transparent),
+    0 0 78px color-mix(in srgb, var(--process-signal) 56%, transparent);
+  animation-duration: 3.8s;
+}
+
+.home-process-rail[data-pathway="private-use-only"] .home-process-rail__step:last-child .home-process-rail__marker::after {
+  border-radius: 999px;
+}
+
+.home-process-rail[data-pathway="mixed-not-defined"] .home-process-rail__step:first-child .home-process-rail__marker::after {
+  border-color: color-mix(in srgb, var(--process-signal) 64%, var(--process-signal-secondary, #00d6ff));
+  border-radius: 0.22rem;
+  box-shadow:
+    0 0 0 9px color-mix(in srgb, var(--process-signal-secondary, #00d6ff) 18%, transparent),
+    0 0 26px color-mix(in srgb, var(--process-signal-secondary, #00d6ff) 65%, transparent),
+    0 0 82px color-mix(in srgb, var(--process-signal) 52%, transparent);
+}
+
+.home-process-rail[data-pathway="private-use-only"] .home-process-rail__step:last-child .home-process-rail__num,
+.home-process-rail[data-pathway="mixed-not-defined"] .home-process-rail__step:first-child .home-process-rail__num {
+  color: color-mix(in srgb, var(--process-signal) 82%, var(--heading));
+  text-shadow: 0 0 16px color-mix(in srgb, var(--process-signal) 72%, transparent);
+}
+
+.home-process-rail[data-pathway="regular-guest-stays"] .home-process-rail__step:nth-child(2)::after {
+  opacity: 1;
+  background:
+    radial-gradient(circle at 50% 50%, #fffaf2 0 0.18rem, var(--process-signal) 0.19rem 0.58rem, transparent 0.6rem) -34% 50% / 9rem 100% no-repeat,
+    linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--process-signal) 76%, transparent) 22%, var(--process-signal) 50%, color-mix(in srgb, var(--process-signal) 76%, transparent) 78%, transparent 100%),
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--process-signal) 78%, #fffaf2) 0 0.62rem, transparent 0.62rem 1.26rem);
+  box-shadow:
+    0 0 18px color-mix(in srgb, var(--process-signal) 86%, transparent),
+    0 0 42px color-mix(in srgb, var(--process-signal) 58%, transparent),
+    0 0 88px color-mix(in srgb, var(--process-signal) 28%, transparent);
+  animation: process-cadence-scan 4.6s ease-in-out infinite;
+  animation-play-state: var(--process-motion-state, paused);
+}
+
+@media (max-width: 1023px) {
+  .home-process-rail[data-pathway="regular-guest-stays"] .home-process-rail__step:nth-child(2)::after {
+    width: 3px;
+    background:
+      radial-gradient(circle at 50% 50%, #fffaf2 0 0.17rem, var(--process-signal) 0.18rem 0.5rem, transparent 0.52rem) 50% 12% / 100% 5.5rem no-repeat,
+      linear-gradient(180deg, color-mix(in srgb, var(--process-signal) 22%, transparent), var(--process-signal), color-mix(in srgb, var(--process-signal) 28%, transparent));
+    box-shadow:
+      0 0 18px color-mix(in srgb, var(--process-signal) 72%, transparent),
+      0 0 46px color-mix(in srgb, var(--process-signal) 34%, transparent);
+    animation-name: process-cadence-scan-mobile;
+  }
+}
+
+@media (max-width: 390px) {
+  .home-process-panel {
+    background:
+      radial-gradient(20rem 10rem at var(--process-signal-x, 80%) 5rem, color-mix(in srgb, var(--process-signal) 32%, transparent), transparent 72%),
+      linear-gradient(
+        180deg,
+        #050f1d 0,
+        #071524 8.8rem,
+        #0b1d33 12.9rem,
+        rgba(244, 237, 226, 0.96) 13rem,
+        rgba(255, 250, 242, 0.96) 100%
+      );
+  }
+
+  .home-process-rail[data-pathway="private-use-only"] .home-process-rail__step:last-child .home-process-rail__marker::after,
+  .home-process-rail[data-pathway="mixed-not-defined"] .home-process-rail__step:first-child .home-process-rail__marker::after {
+    inset: -0.76rem;
+  }
+}
+
+@keyframes process-cadence-scan {
+  0%,
+  100% {
+    background-position: -34% 50%, 0 0, 0 0;
+    filter: saturate(1.08);
+  }
+
+  48% {
+    background-position: 104% 50%, 0 0, 0 0;
+    filter: saturate(1.32);
+  }
+}
+
+@keyframes process-cadence-scan-mobile {
+  0%,
+  100% {
+    background-position: 50% 12%, 0 0;
+    filter: saturate(1.08);
+  }
+
+  48% {
+    background-position: 50% 88%, 0 0;
+    filter: saturate(1.32);
+  }
+}
+
+/* Micro-fix: keep process numbers legible as lit labels on dark nodes. */
+.home-process-rail__marker {
+  z-index: 5;
+  background:
+    radial-gradient(circle at 34% 22%, rgba(255, 250, 242, 0.18) 0%, transparent 54%),
+    linear-gradient(180deg, #10263f 0%, #071524 100%);
+  box-shadow:
+    0 0 0 9px rgba(5, 15, 29, 0.94),
+    0 0 0 10px color-mix(in srgb, var(--process-signal) 24%, transparent),
+    0 18px 34px rgba(0, 0, 0, 0.26),
+    inset 0 1px 0 rgba(255, 250, 242, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.42);
+}
+
+.home-process-rail__num {
+  color: #f4fbff;
+  font-size: 0.82rem;
+  font-weight: 950;
+  letter-spacing: 0.075em;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.74),
+    0 0 10px rgba(244, 251, 255, 0.34);
+}
+
+.home-process-rail[data-pathway="private-use-only"] .home-process-rail__step:last-child .home-process-rail__num,
+.home-process-rail[data-pathway="mixed-not-defined"] .home-process-rail__step:first-child .home-process-rail__num {
+  color: #f4fbff;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.78),
+    0 0 12px rgba(244, 251, 255, 0.42),
+    0 0 18px color-mix(in srgb, var(--process-signal) 46%, transparent);
+}
+
+.home-process-rail[data-pathway="regular-guest-stays"] .home-process-rail__step:nth-child(2) .home-process-rail__num,
+.home-process-rail[data-pathway="regular-guest-stays"] .home-process-rail__step:nth-child(3) .home-process-rail__num {
+  color: #fff7ea;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.78),
+    0 0 12px rgba(255, 247, 234, 0.36),
+    0 0 16px color-mix(in srgb, var(--process-signal) 34%, transparent);
+}
+
+@media (max-width: 390px) {
+  .home-process-rail__num {
+    font-size: 0.8rem;
+  }
+}
+
+/* Final surface-cohesion pass: soften joins without changing the concept. */
+.home-process-panel {
+  background:
+    radial-gradient(30rem 14rem at var(--process-signal-x, 82%) 6.25rem, color-mix(in srgb, var(--process-signal) 34%, transparent), transparent 72%),
+    linear-gradient(
+      180deg,
+      #050f1d 0,
+      #071524 8.8rem,
+      #0b1d33 12.6rem,
+      rgba(16, 38, 63, 0.94) 14.15rem,
+      rgba(44, 50, 52, 0.64) 15.15rem,
+      rgba(138, 125, 103, 0.26) 15.9rem,
+      rgba(244, 237, 226, 0.96) 16.35rem,
+      rgba(255, 250, 242, 0.95) 100%
+    );
+}
+
+.home-process-panel::before {
+  mask-image: linear-gradient(180deg, #000 0, #000 14.6rem, rgba(0, 0, 0, 0.42) 16rem, transparent 17.8rem);
+}
+
+.home-process-rail__content {
+  border-color: rgba(255, 250, 242, 0.64);
+  background:
+    linear-gradient(180deg, rgba(255, 253, 249, 0.99), rgba(249, 242, 232, 0.94)),
+    radial-gradient(15rem 8rem at 18% 0%, rgba(255, 253, 249, 0.96), transparent 72%),
+    linear-gradient(120deg, color-mix(in srgb, var(--process-board-accent, var(--accent)) 7%, transparent), transparent 56%);
+  box-shadow:
+    0 -1px 0 rgba(255, 250, 242, 0.2),
+    0 20px 38px rgba(7, 21, 36, 0.18),
+    0 5px 16px rgba(7, 21, 36, 0.1),
+    inset 0 1px 0 rgba(255, 253, 249, 0.98),
+    inset 0 -1px 0 rgba(153, 128, 99, 0.16);
+}
+
+.home-process-rail__marker {
+  border-color: rgba(255, 250, 242, 0.26);
+  background:
+    radial-gradient(circle at 34% 22%, rgba(255, 250, 242, 0.16) 0%, transparent 52%),
+    linear-gradient(180deg, #133052 0%, #071524 100%);
+  box-shadow:
+    0 0 0 8px rgba(5, 15, 29, 0.92),
+    0 0 0 9px color-mix(in srgb, var(--process-signal) 18%, transparent),
+    0 14px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 250, 242, 0.2),
+    inset 0 -6px 14px rgba(0, 0, 0, 0.26);
+}
+
+.home-process-rail[data-pathway="private-use-only"] .home-process-rail__step:last-child .home-process-rail__marker,
+.home-process-rail[data-pathway="mixed-not-defined"] .home-process-rail__step:first-child .home-process-rail__marker {
+  border-color: color-mix(in srgb, var(--process-signal) 54%, rgba(255, 250, 242, 0.62));
+  box-shadow:
+    0 0 0 8px rgba(5, 15, 29, 0.94),
+    0 0 0 14px color-mix(in srgb, var(--process-signal) 24%, transparent),
+    0 0 28px color-mix(in srgb, var(--process-signal) 58%, transparent),
+    0 18px 34px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 250, 242, 0.22),
+    inset 0 -6px 14px rgba(0, 0, 0, 0.28);
+}
+
+@media (max-width: 390px) {
+  .home-process-panel {
+    background:
+      radial-gradient(20rem 10rem at var(--process-signal-x, 80%) 5rem, color-mix(in srgb, var(--process-signal) 32%, transparent), transparent 72%),
+      linear-gradient(
+        180deg,
+        #050f1d 0,
+        #071524 8.6rem,
+        #0b1d33 12.2rem,
+        rgba(54, 56, 54, 0.54) 12.78rem,
+        rgba(244, 237, 226, 0.96) 13.25rem,
+        rgba(255, 250, 242, 0.96) 100%
+      );
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .home-process-panel::after,
+  .home-process-rail__step::after,
+  .home-process-rail__marker::after,
   .home-process-rail[data-pathway="private-use-only"] .home-process-rail__step:last-child::before,
   .home-process-rail[data-pathway="mixed-not-defined"] .home-process-rail__step:first-child::before {
     animation: none !important;
+    transition: none !important;
   }
 
   .home-process-rail::before,
-  .home-process-rail::after {
+  .home-process-rail::after,
+  .home-process-rail__step::after {
     transform: none !important;
     transition: none !important;
   }
