@@ -45,7 +45,7 @@ export default async function HomePage({
           <UsagePathwayLayer>
         <div className="home-pathway-body">
         <Section id="system-intro" tone="light" className="home-section home-section--route !py-16 md:!py-24">
-          <div className="home-system-intro reveal-rise">
+          <div className="home-system-intro">
             <header className="home-system-intro__header">
               <p className="section-label">{t('systemIntro.eyebrow')}</p>
               <div className="home-route-open mt-4">

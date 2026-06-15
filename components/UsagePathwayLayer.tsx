@@ -188,7 +188,7 @@ export function PathwayProcessPanel() {
   const selected = normalizePathwayParam(searchParams.get('pathway')) ?? 'private-use-only';
 
   return (
-    <div className="home-process-panel reveal-rise" data-pathway={selected}>
+    <div className="home-process-panel home-command-panel reveal-rise" data-pathway={selected}>
       <PathwayProcessPosture />
       <PathwayProcessRail />
     </div>
@@ -202,36 +202,94 @@ export function PathwayProcessRail() {
   const emphasized = PROCESS_EMPHASIS[selected];
 
   return (
-    <ol
-      className="home-process-rail reveal-stagger"
+    <div
+      className="home-command-system reveal-stagger"
       data-pathway={selected}
       aria-label={t('systemIntro.title')}
     >
-      {PROCESS_KEYS.map((key, index) => (
-        <li
-          key={key}
-          className="home-process-rail__step"
-          data-emphasis={emphasized.includes(key) ? 'true' : undefined}
-        >
-          <div className="home-process-rail__marker">
-            <span className="home-process-rail__num" aria-hidden>
+      <svg
+        className="home-property-trace"
+        viewBox="0 0 720 420"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <g className="home-property-trace__plan" vectorEffect="non-scaling-stroke">
+          <path d="M64 58 H276 V132 H352 V316 H66 V214" />
+          <path d="M66 188 V58" />
+          <path d="M116 132 H276" />
+          <path d="M176 132 V316" />
+          <path d="M176 224 H352" />
+          <path d="M64 214 H116" />
+          <path d="M138 214 H176" />
+          <path d="M276 132 V180" />
+          <path d="M276 206 V224" />
+          <path d="M106 88 H136" />
+          <path d="M304 258 H334" />
+        </g>
+        <g className="home-property-trace__route" vectorEffect="non-scaling-stroke">
+          <path d="M94 95 H148 V176 H226 V254 H322" />
+          <path d="M226 254 V296 H300" />
+        </g>
+        <g className="home-property-trace__checks" vectorEffect="non-scaling-stroke">
+          <path d="M92 92 H104 M98 86 V98" />
+          <path d="M220 248 H232 M226 242 V254" />
+          <path d="M318 250 H330 M324 244 V256" />
+        </g>
+        <g className="home-property-trace__mixed" vectorEffect="non-scaling-stroke">
+          <path d="M92 92 H142 L178 128" />
+          <path d="M92 92 H142 L178 56" />
+        </g>
+      </svg>
+
+      <div className="home-command-spine" aria-hidden>
+        <div className="home-command-spine__plate">
+          <span className="home-command-spine__channel" />
+          <span className="home-command-spine__signal" />
+          <span className="home-command-spine__branch home-command-spine__branch--upper" />
+          <span className="home-command-spine__branch home-command-spine__branch--lower" />
+          <ol className="home-command-spine__nodes">
+            {PROCESS_KEYS.map((key, index) => (
+              <li
+                key={key}
+                className="home-command-spine__node"
+                data-process-key={key}
+                data-emphasis={emphasized.includes(key) ? 'true' : undefined}
+              >
+                <span className="home-command-spine__node-face">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+
+      <ol className="home-command-outputs">
+        {PROCESS_KEYS.map((key, index) => (
+          <li
+            key={key}
+            className="home-command-output"
+            data-process-key={key}
+            data-emphasis={emphasized.includes(key) ? 'true' : undefined}
+          >
+            <span className="home-command-output__num" aria-hidden>
               {String(index + 1).padStart(2, '0')}
             </span>
-          </div>
-          <div className="home-process-rail__content">
-            <p className="home-process-rail__label">
-              {t(`systemIntro.process.${key}.label`)}
-            </p>
-            <h3 className="home-process-rail__title">
-              {t(`systemIntro.process.${key}.title`)}
-            </h3>
-            <p className="home-process-rail__body mb-0">
-              {t(`pathwayContent.${selected}.systemIntroProcess.${key}.body`)}
-            </p>
-          </div>
-        </li>
-      ))}
-    </ol>
+            <div className="home-command-output__copy">
+              <p className="home-command-output__label">
+                {t(`systemIntro.process.${key}.label`)}
+              </p>
+              <h3 className="home-command-output__title">
+                {t(`systemIntro.process.${key}.title`)}
+              </h3>
+              <p className="home-command-output__body mb-0">
+                {t(`pathwayContent.${selected}.systemIntroProcess.${key}.body`)}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
   );
 }
 
