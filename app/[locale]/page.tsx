@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
+import HomeContrastBlock from '@/components/HomeContrastBlock';
 import Section from '@/components/layout/Section';
 import {
   PATHWAY_KEYS,
@@ -63,69 +64,9 @@ export default async function HomePage({
           <PathwayProcessPanel />
         </Section>
 
-        {/* 4. BEZ NAS / Z NAMI — full split band: risk in ink, control on paper */}
+        {/* 4. BEZ NAS / Z NAMI — private-use risk carousel; split band for the other pathways */}
         <Section tone="alt" className="home-section home-section--contrast !py-16 md:!py-24">
-          <div className="reveal-rise">
-            <p className="section-label">{t('contrast.eyebrow')}</p>
-            <h2 className="h2-system mt-3 max-w-[24ch]">{t('contrast.title')}</h2>
-            <p className="mt-4 max-w-[56ch] text-body leading-relaxed">
-              <PathwayCopy path="contrast.intro" />
-            </p>
-          </div>
-
-          <div className="home-contrast-band reveal-rise">
-            <article className="home-contrast-band__half home-contrast-band__half--risk">
-              <p className="home-contrast-band__mode">{t('contrast.leftModeLabel')}</p>
-              <h3 className="home-contrast-band__heading">{t('contrast.leftHeading')}</h3>
-              <ul className="home-contrast-band__list">
-                {[1, 2, 3, 4].map((item) => (
-                  <li key={item}>
-                    <span className="home-contrast-band__marker" aria-hidden />
-                    <span><PathwayCopy path={`contrast.left${item}`} /></span>
-                  </li>
-                ))}
-              </ul>
-              <p className="home-contrast-band__closing">
-                <PathwayCopy path="contrast.leftClosing" />
-              </p>
-            </article>
-
-            <article className="home-contrast-band__half home-contrast-band__half--control">
-              <p className="home-contrast-band__mode">{t('contrast.rightModeLabel')}</p>
-              <h3 className="home-contrast-band__heading">{t('contrast.rightHeading')}</h3>
-              <ul className="home-contrast-band__list">
-                {[1, 2, 3, 4].map((item) => (
-                  <li key={item}>
-                    <span className="home-contrast-band__marker" aria-hidden />
-                    <span><PathwayCopy path={`contrast.right${item}`} /></span>
-                  </li>
-                ))}
-              </ul>
-              <p className="home-contrast-band__closing">
-                <PathwayCopy path="contrast.rightClosing" />
-              </p>
-            </article>
-          </div>
-
-          <div className="home-mechanism-board reveal-rise" aria-label={t('proofLedger.title')}>
-            <div className="home-mechanism-board__header">
-              <p className="section-label">{t('proofLedger.label')}</p>
-              <h3>{t('proofLedger.title')}</h3>
-            </div>
-            <div className="home-mechanism-board__track">
-              {['issue', 'evidence', 'decision', 'action'].map((key, index) => (
-                <article key={key} className="home-mechanism-board__step">
-                  <span className="home-mechanism-board__index" aria-hidden>
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                  <div>
-                    <h4>{t(`proofLedger.steps.${key}.title`)}</h4>
-                    <p>{t(`proofLedger.steps.${key}.body`)}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
+          <HomeContrastBlock />
         </Section>
 
         {/* 5. ZAKRES PAKIETÓW — pełnowymiarowa drabina odpowiedzialności (vertical containment) */}

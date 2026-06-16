@@ -332,6 +332,139 @@
       "action": { "title": "Działanie", "body": "Wykonanie i potwierdzenie trafiają do raportu." }
     }
   },
+    "privateRisk": {
+      "riskModeLabel": "Ryzyko bez struktury",
+      "controlModeLabel": "Kontrolowana wersja",
+      "riskHeading": "Bez nas",
+      "controlHeading": "Z nami",
+      "controlImageAlt": "Przygotowana, czysta kuchnia w kontrolowanym lokalu.",
+      "mechanismLabel": "Stały mechanizm",
+      "position": "Sytuacja {n} z {total}",
+      "prev": "Poprzednia sytuacja",
+      "next": "Następna sytuacja",
+      "mechanism": {
+        "detection": "Wykrycie",
+        "documentation": "Dokumentacja",
+        "decision": "Decyzja",
+        "action": "Działanie"
+      },
+      "slides": {
+        "water": {
+          "title": "Przeciek, którego nikt nie widzi, potrafi zrobić rachunek na tysiące euro.",
+          "body": "Gdy lokal stoi pusty, woda ma tygodnie, żeby wejść w podłogę, zabudowę i ściany — zanim zobaczysz skutki po przylocie.",
+          "responseLead": "Sentinel skraca czas, w którym problem zostaje sam.",
+          "responseBody": "Podczas kontroli szukamy takich sygnałów, dokumentujemy je i uruchamiamy ustaloną ścieżkę działania, zanim mały wyciek stanie się dużą szkodą.",
+          "alt": "Ślad wody i uszkodzenie przy podłodze w niesprawdzanym lokalu."
+        },
+        "moisture": {
+          "title": "Wilgoć w zamkniętym mieszkaniu nie zostaje na powierzchni.",
+          "body": "Przy morzu i bez regularnego wietrzenia mały ślad może wejść głębiej w ścianę. Potem to już nie jest sprzątanie, tylko osuszanie, usuwanie grzyba i kosztowna naprawa.",
+          "responseLead": "Sentinel regularnie sprawdza lokal między Twoimi pobytami.",
+          "responseBody": "Wietrzenie, sprawdzenie ścian i zapis stanu pomagają wychwycić wilgoć wcześniej — zanim wrócisz do zapachu, plam i problemu, który zdążył urosnąć.",
+          "alt": "Wilgoć i wczesny nalot przy jednostce klimatyzacji."
+        },
+        "access": {
+          "title": "Technik nie pomoże, jeśli nikt nie może otworzyć drzwi.",
+          "body": "Klucze, wejście, kontrola albo przygotowanie lokalu zaczynają wtedy zależeć od pilnych telefonów z zagranicy i szukania kogoś „na szybko”.",
+          "responseLead": "Dostęp jest ustalony zanim pojawi się problem.",
+          "responseBody": "Ty decydujesz zdalnie, a Sentinel otwiera, koordynuje i potwierdza działania na miejscu — według wcześniej ustalonych zasad.",
+          "alt": "Klucze i koordynacja dostępu do lokalu."
+        },
+        "arrival": {
+          "title": "Urlop nie powinien zamieniać się w tydzień ogarniania mieszkania.",
+          "body": "Przyjeżdżasz na kilka dni, a zamiast odpocząć sprawdzasz usterki, wietrzysz, sprzątasz, szukasz technika i pilnujesz spraw, które mogły ruszyć wcześniej.",
+          "responseLead": "Część lokalnej pracy dzieje się przed Twoim przyjazdem.",
+          "responseBody": "Kontrola, wietrzenie, sprzątanie, przygotowanie i koordynacja ustalonych spraw pomagają Ci wejść do lokalu gotowego do użycia — nie do kolejnej listy problemów.",
+          "alt": "Sypialnia nieprzygotowana na przyjazd właściciela."
+        }
+      }
+    },
+    "guestRisk": {
+      "riskHeading": "Bez nas",
+      "controlHeading": "Z nami",
+      "position": "Sytuacja {n} z {total}",
+      "prev": "Poprzednia sytuacja",
+      "next": "Następna sytuacja",
+      "mechanism": {
+        "detection": "Wykrycie",
+        "documentation": "Dokumentacja",
+        "decision": "Decyzja",
+        "action": "Działanie"
+      },
+      "slides": {
+        "turnover": {
+          "title": "Gość nie ocenia procesu. Ocenia to, co widzi po wejściu.",
+          "body": "Po rotacji nawet drobiazg — zapach, kurz, brak ręczników albo niedomknięte przygotowanie — staje się problemem w pierwszych minutach pobytu.",
+          "responseLead": "Sentinel traktuje rotację jak proces, nie improwizację.",
+          "responseBody": "Przygotowanie, dostęp, gotowość i widoczne ryzyka są sprawdzane lokalnie, zanim problem trafi do gościa.",
+          "alt": "Mieszkanie tuż po pobycie gości, jeszcze nieprzygotowane do kolejnego wejścia."
+        },
+        "damage": {
+          "title": "Szkoda po pobycie łatwo znika między wiadomościami.",
+          "body": "Pęknięcie, plama, brakujący element albo usterka mogą zostać zauważone dopiero wtedy, gdy kolejny gość już jest w lokalu.",
+          "responseLead": "Stan po pobycie trafia do zapisu.",
+          "responseBody": "Widoczne szkody i odchylenia są dokumentowane, żeby decyzja nie opierała się na domysłach i spóźnionych wiadomościach.",
+          "alt": "Drobne uszkodzenie w lokalu zauważone po pobycie gości."
+        },
+        "dispatcher": {
+          "title": "Bez struktury właściciel staje się dyspozytorem każdej rotacji.",
+          "body": "Sprzątanie, wejście, technik, klucze, pytania gości — wszystko zaczyna wracać do Ciebie wtedy, gdy powinno działać lokalnie.",
+          "responseLead": "Sentinel przejmuje lokalną koordynację ustalonych działań.",
+          "responseBody": "Zamiast serii pilnych telefonów masz zapis, lokalne wykonanie i jasną ścieżkę decyzji między pobytami.",
+          "alt": "Klucze i sprawy do koordynacji między pobytami gości."
+        },
+        "review": {
+          "title": "Jeden słaby przyjazd potrafi kosztować więcej niż sprzątanie.",
+          "body": "Nieprzygotowany lokal oznacza skargi, presję na zwrot, gorszą opinię i nerwowe ratowanie sytuacji po fakcie.",
+          "responseLead": "Gotowość lokalu jest sprawdzana zanim stanie się oceną gościa.",
+          "responseBody": "Sentinel pomaga wychwycić braki i ryzyka przed przyjazdem, żeby rotacja nie zaczynała się od reklamacji.",
+          "alt": "Wejście do lokalu, które robi słabe pierwsze wrażenie na gościu."
+        }
+      }
+    },
+    "mixedRisk": {
+      "riskHeading": "Bez nas",
+      "controlHeading": "Z nami",
+      "position": "Sytuacja {n} z {total}",
+      "prev": "Poprzednia sytuacja",
+      "next": "Następna sytuacja",
+      "mechanism": {
+        "detection": "Wykrycie",
+        "documentation": "Dokumentacja",
+        "decision": "Decyzja",
+        "action": "Działanie"
+      },
+      "slides": {
+        "wrongModel": {
+          "title": "Zły model obsługi ustawia cały system w złym kierunku.",
+          "body": "Lokal używany prywatnie i lokal z gośćmi mają inne ryzyka. Jeśli potraktujesz je tak samo, błędy pojawią się dopiero w działaniu.",
+          "responseLead": "Najpierw klasyfikujemy rzeczywisty sposób używania lokalu.",
+          "responseBody": "Sentinel pomaga oddzielić użytek prywatny, pobyty gości i model mieszany, zanim zakres usługi zostanie ustawiony na złych założeniach.",
+          "alt": "Lokal, w którym rzeczy właściciela i elementy dla gości są wymieszane."
+        },
+        "adHoc": {
+          "title": "To, co nieustalone na początku, wraca później jako chaos.",
+          "body": "Dostęp, sprzątanie, dokumentacja, decyzje i przygotowanie lokalu zaczynają być dokładane dopiero wtedy, gdy problem już się pojawił.",
+          "responseLead": "Zakres powstaje przed działaniem, nie po pierwszym kryzysie.",
+          "responseBody": "Ustalamy, co ma być kontrolowane, dokumentowane i wykonywane lokalnie, zanim każda sprawa zacznie wymagać osobnej improwizacji.",
+          "alt": "Lokal urządzony prowizorycznie, z elementami dokładanymi bez planu."
+        },
+        "conflict": {
+          "title": "Prywatny pobyt i pobyt gości nie powinny mieszać się bez zasad.",
+          "body": "Ręczniki, rzeczy właściciela, dostęp, sprzątanie i stan lokalu szybko zaczynają kolidować, jeśli nie wiadomo, kto i kiedy używa mieszkania.",
+          "responseLead": "Zasady używania lokalu są rozdzielone przed rotacją.",
+          "responseBody": "Sentinel pomaga ustalić, co dotyczy właściciela, co dotyczy gości i jakie przygotowanie musi być wykonane przed każdym typem pobytu.",
+          "alt": "Rzeczy właściciela obok elementów przygotowanych dla gości."
+        },
+        "wrongPackage": {
+          "title": "Pakiet wybrany z założenia rzadko pasuje do rzeczywistości.",
+          "body": "Jeśli zakres wybierasz zanim wiadomo, jak lokal będzie używany, płacisz za niepotrzebne elementy albo odkrywasz braki za późno.",
+          "responseLead": "Najpierw decyzja o modelu, potem zakres.",
+          "responseBody": "Dobór nadzoru wynika z używania lokalu, częstotliwości pobytów, dostępu i poziomu decyzji, a nie z domyślnego wyboru online.",
+          "alt": "Lokal, którego zakres obsługi nie pasuje do faktycznego sposobu używania."
+        }
+      }
+    },
   "systemIntro": {
     "eyebrow": "Krótki proces",
     "title": "Jak działa system Sentinel",

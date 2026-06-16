@@ -1,0 +1,53 @@
+{
+  "pathway": "mixed-not-defined",
+  "status": "pending-assets",
+  "purpose": "Left-plane risk/evidence images for the home 'Bez nas / Z nami' risk carousel (mixed-not-defined variant). The anxiety here is confusion vs clarity, not dirt vs clean.",
+  "destinationFolder": "/public/images/home/mixed-not-defined",
+  "format": "webp",
+  "targetWeightKb": "under 500",
+  "aspectRatio": "3:2 landscape (min 1800x1200); final crop tuned via CSS object-position",
+  "tone": "Realistic southern Costa Blanca / Torrevieja apartment, same vocabulary as the other pathways. The feeling is ambiguity, wrong assumptions, and future chaos — calm surfaces that are quietly unresolved. More analytical/classification energy than the guest set.",
+  "sharedNegativePrompt": "people, faces, hands, body parts, text, lettering, numbers, watermark, logo, brand name, signage, UI, smiling hosts, real-estate-ad gloss, luxury glamour, HDR halos, oversaturation, fisheye, tilt-shift, cartoon, illustration, 3d render look, AI artifacts, distorted geometry, warped lines, duplicated objects, exaggerated disaster, flooding, fire, dramatic destruction, horror mold, generic cleaning-product stock photo",
+  "globalConstraints": [
+    "No people and no pets anywhere in frame.",
+    "No readable text, screens, brand marks or signage.",
+    "Confusion must read as ambiguity and mixed signals, never as filth or damage.",
+    "Coherent single-source natural lighting; believable shadows.",
+    "Same apartment vocabulary across all four so the set feels like one property."
+  ],
+  "riskNote": "Mixed/undefined is the hardest pathway to carry with photography because the idea is abstract (classify before scope). If a coherent, clearly-intentional photo set cannot be produced, prefer an abstract operational 'decision/classification' treatment over weak literal photos. Until a strong set exists, keep this pathway on the existing comparison band + procedure board (CAROUSEL_READY['mixed-not-defined'] = false).",
+  "images": [
+    {
+      "id": "wrongModel",
+      "filename": "mixed-risk-wrong-model.webp",
+      "emotionalPurpose": "Private-use and guest-use carry different risks; treating them the same hides mistakes until operation.",
+      "prompt": "Interior still-life photo of a console table in a Costa Blanca apartment where private and guest signals are mixed: a couple of framed personal photographs and a personal jacket on one side, and a neat stack of folded white guest towels with a small welcome tray on the other side, sharing the same surface. Calm natural daylight. The mix is quiet but clearly unresolved — nobody has decided what this property is.",
+      "recommendedObjectPosition": "center",
+      "focalPoint": "the boundary where personal items meet guest towels"
+    },
+    {
+      "id": "adHoc",
+      "filename": "mixed-risk-ad-hoc-scope.webp",
+      "emotionalPurpose": "What is not agreed at the start returns later as ad-hoc additions after the problem appears.",
+      "prompt": "Interior photo of a hallway or spare corner in a Costa Blanca apartment set up improvised and piecemeal: spare bed linens and a folded blanket stacked on a chair that is not meant for storage, an extra set of keys on top, a cardboard box half used, items added without a plan. Realistic, restrained, quietly disorganised rather than messy. Natural light.",
+      "recommendedObjectPosition": "center 50%",
+      "focalPoint": "the improvised linen-on-chair stack"
+    },
+    {
+      "id": "conflict",
+      "filename": "mixed-risk-private-guest-conflict.webp",
+      "emotionalPurpose": "Private stays and guest stays colliding when nobody defined who uses the property and when.",
+      "prompt": "Interior photo of an open wardrobe or shelving unit in a Costa Blanca apartment showing a direct conflict of use: personal clothing and personal belongings on one side, and a stack of fresh folded guest linens and spare amenities on the other, with no clear separation. Soft daylight, realistic textures, calm but visibly unresolved.",
+      "recommendedObjectPosition": "center",
+      "focalPoint": "personal belongings directly beside guest linens"
+    },
+    {
+      "id": "wrongPackage",
+      "filename": "mixed-risk-wrong-package.webp",
+      "emotionalPurpose": "A scope chosen from assumptions rarely fits reality — over-prepared in one place, neglected in another.",
+      "prompt": "Wide interior photo of a Costa Blanca living room that is unevenly prepared: one half carefully arranged and guest-ready, the other half clearly still in private/unfinished state, the two not matching. The composition reads as a property set up against the wrong assumption. Natural light, realistic, restrained. NOTE: if this does not read clearly as a photo, replace with an abstract operational treatment.",
+      "recommendedObjectPosition": "center",
+      "focalPoint": "the seam between the prepared and unprepared halves"
+    }
+  ]
+}
