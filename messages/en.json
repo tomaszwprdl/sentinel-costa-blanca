@@ -217,7 +217,7 @@
           "right4": "Condition is documented and preparation can be planned before arrival.",
           "rightClosing": "You have a local point of control while you are away."
         },
-        "distinctionIntro": "Sentinel maintains regular presence, visible checks, and documented readiness for a private-use property.",
+        "distinctionIntro": "Sentinel closes the gap between owner absence and the real condition of the property through defined scope, local presence, documentation, and bounded decisions.",
         "finalContext": "The question is local control before arrival, not arranging everything from abroad."
       },
       "regular-guest-stays": {
@@ -251,7 +251,7 @@
           "right4": "Damage and events are recorded, not scattered across messages.",
           "rightClosing": "Turnover becomes a process, not a chain of urgent calls."
         },
-        "distinctionIntro": "Sentinel handles local order between stays. It does not cover bookings, guest communication, or rental management.",
+        "distinctionIntro": "Sentinel structures responsibility between stays, access, and property readiness through defined scope, local presence, documentation, and bounded decisions.",
         "finalContext": "The question is a fixed structure between stays, not your continuous operational involvement."
       },
       "mixed-not-defined": {
@@ -285,7 +285,7 @@
           "right4": "Final scope follows initial inquiry assessment, not an online guess.",
           "rightClosing": "Classification first, then scope."
         },
-        "distinctionIntro": "Sentinel helps define how the property is used before operational intensity is chosen.",
+        "distinctionIntro": "Sentinel first clarifies how the property is used before operating scope, local presence, documentation, and decision boundaries are selected.",
         "finalContext": "This is not a third pricing mode. The next step is initial inquiry assessment and classification."
       }
     },
@@ -516,24 +516,24 @@
     "axis3": "Control + Access + Decisions"
   },
     "distinction": {
-      "eyebrow": "Why the model works",
-      "title": "What distinguishes Sentinel",
+      "eyebrow": "WHY THE MODEL WORKS",
+      "title": "Why the model works",
       "cards": {
         "scope": {
           "title": "Scope before action",
-          "body": "The operating model and responsibility boundaries are defined before local execution starts."
+          "body": "The use model and responsibility boundaries are defined before execution begins."
+        },
+        "presence": {
+          "title": "Local physical presence",
+          "body": "Access, visible checks, and condition assessment happen physically at the property."
         },
         "documentation": {
-          "title": "Documentation after visits",
-          "body": "Checks, access, and events leave a dated record of actions and property condition."
+          "title": "Visit documentation",
+          "body": "Each visit leaves a dated record of scope, findings, and visible property condition."
         },
         "decisions": {
-          "title": "Decisions within limits",
-          "body": "Responses stay inside agreed boundaries. Above the limit, owner approval is required."
-        },
-        "responsibility": {
-          "title": "Local responsibility",
-          "body": "The model is procedural, but execution has a defined local responsibility point."
+          "title": "Decisions inside limits",
+          "body": "Action stays inside agreed boundaries. Above the limit, the decision returns to the owner."
         }
       },
       "block1Title": "Fixed rules, clear responsibility",

@@ -2789,7 +2789,8 @@ textarea:focus {
 
 .home-section--distinction::after {
   background:
-    linear-gradient(90deg, transparent 0 14%, color-mix(in srgb, var(--authority) 15%, transparent) 14% 14.2%, transparent 14.2% 50%, color-mix(in srgb, var(--authority) 12%, transparent) 50% 50.2%, transparent 50.2%);
+    radial-gradient(36rem 18rem at 86% 10%, rgba(210, 154, 87, 0.13), transparent 72%),
+    linear-gradient(90deg, transparent 0 16%, color-mix(in srgb, var(--authority) 12%, transparent) 16% 16.12%, transparent 16.12% 58%, color-mix(in srgb, var(--authority) 10%, transparent) 58% 58.12%, transparent 58.12%);
 }
 
 .home-section--final {
@@ -4781,33 +4782,124 @@ textarea:focus {
   width: 100%;
 }
 
-/* Distinction — open editorial columns with oversized numerals */
-.home-distinction-item {
+/* Distinction — closed operating chain between carousel and CTA */
+.home-distinction-layout {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .home-distinction-layout {
+    grid-template-columns: minmax(17rem, 0.34fr) minmax(0, 0.66fr);
+    align-items: stretch;
+    gap: clamp(2rem, 4vw, 4rem);
+  }
+}
+
+.home-distinction-header {
+  max-width: 46rem;
+}
+
+@media (min-width: 1024px) {
+  .home-distinction-header {
+    align-self: center;
+  }
+}
+
+.home-distinction-chain {
+  position: relative;
+  display: grid;
   min-width: 0;
-  border-top: 2px solid color-mix(in srgb, var(--line) 58%, var(--authority));
-  padding-top: 1.4rem;
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--authority) 34%, var(--line));
+  border-radius: 0.5rem;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 242, 0.1), transparent 34%),
+    linear-gradient(180deg, #19324d 0%, #10263f 100%);
+  box-shadow:
+    0 24px 70px rgba(16, 38, 63, 0.18),
+    inset 0 1px 0 rgba(255, 253, 249, 0.18);
+}
+
+@media (min-width: 768px) {
+  .home-distinction-chain {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.home-distinction-chain::before {
+  content: "";
+  position: absolute;
+  inset: 1.85rem 1.25rem auto;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(210, 154, 87, 0.15), rgba(210, 154, 87, 0.72), rgba(255, 250, 242, 0.18));
+  pointer-events: none;
+}
+
+.home-distinction-item {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  align-content: start;
+  gap: 0.75rem;
+  padding: 1.25rem 1.2rem 1.35rem;
+  color: rgba(255, 250, 242, 0.84);
+}
+
+.home-distinction-item + .home-distinction-item {
+  border-top: 1px solid rgba(255, 250, 242, 0.12);
+}
+
+@media (min-width: 768px) {
+  .home-distinction-item {
+    min-height: 17rem;
+    padding: 1.4rem 1.15rem 1.45rem;
+  }
+
+  .home-distinction-item + .home-distinction-item {
+    border-top: 0;
+    border-left: 1px solid rgba(255, 250, 242, 0.12);
+  }
+}
+
+.home-distinction-item::before {
+  content: "";
+  position: absolute;
+  top: 1.55rem;
+  left: 1.25rem;
+  width: 0.68rem;
+  height: 0.68rem;
+  border: 1px solid rgba(255, 250, 242, 0.82);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--copper) 72%, #fffaf2);
+  box-shadow: 0 0 0 0.32rem rgba(210, 154, 87, 0.12);
 }
 
 .home-distinction-item__num {
   margin: 0;
-  color: color-mix(in srgb, var(--copper) 70%, var(--accent));
+  padding-left: 1.4rem;
+  color: color-mix(in srgb, var(--copper) 72%, #fffaf2);
   font-family: var(--font-display);
-  font-size: 2.6rem;
-  font-weight: 620;
+  font-size: 0.78rem;
+  font-weight: 760;
+  letter-spacing: 0;
   line-height: 1;
 }
 
 .home-distinction-item__title {
-  margin: 1rem 0 0.5rem;
-  color: var(--heading);
-  font-size: 1.15rem;
-  font-weight: 800;
+  margin: 1.5rem 0 0;
+  color: #fffaf2;
+  font-size: clamp(1rem, 1.2vw, 1.18rem);
+  font-weight: 820;
+  line-height: 1.18;
 }
 
 .home-distinction-item__body {
-  color: var(--body);
-  font-size: 0.95rem;
-  line-height: 1.65;
+  margin: 0;
+  color: rgba(255, 250, 242, 0.73);
+  font-size: 0.94rem;
+  line-height: 1.62;
 }
 
 

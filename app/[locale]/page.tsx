@@ -23,7 +23,7 @@ const PATHWAY_POINT_COUNTS: Record<PathwayKey, number> = {
   'mixed-not-defined': 5,
 };
 
-const CREDIBILITY_KEYS = ['scope', 'documentation', 'decisions', 'responsibility'] as const;
+const MODEL_PROOF_KEYS = ['scope', 'presence', 'documentation', 'decisions'] as const;
 
 export default async function HomePage({
   params
@@ -64,29 +64,31 @@ export default async function HomePage({
           <HomeContrastBlock />
         </Section>
 
-        {/* 5. CO WYRÓŻNIA SENTINEL — bloki deklaracji modelu, 2 kolumny, bez card/badge, oś centralna */}
+        {/* 5. DLACZEGO MODEL DZIAŁA — zamknięty łańcuch odpowiedzialności */}
         <Section tone="alt" className="home-section home-section--distinction !py-16 md:!py-20">
-          <div className="max-w-[760px]">
-            <p className="section-label">{t('distinction.eyebrow')}</p>
-            <h2 className="h2-system mt-3">{t('distinction.title')}</h2>
-            <p className="mt-4 text-body leading-relaxed">
-              <PathwayCopy path="distinctionIntro" />
-            </p>
-          </div>
-          <div className="reveal-stagger mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
-            {CREDIBILITY_KEYS.map((key, index) => (
-              <article key={key} className="home-distinction-item">
-                <p className="home-distinction-item__num" aria-hidden>
-                  {String(index + 1).padStart(2, '0')}
-                </p>
-                <h3 className="home-distinction-item__title">
-                  {t(`distinction.cards.${key}.title`)}
-                </h3>
-                <p className="home-distinction-item__body mb-0">
-                  {t(`distinction.cards.${key}.body`)}
-                </p>
-              </article>
-            ))}
+          <div className="home-distinction-layout">
+            <div className="home-distinction-header">
+              <p className="section-label">{t('distinction.eyebrow')}</p>
+              <h2 className="h2-system mt-3">{t('distinction.title')}</h2>
+              <p className="mt-4 text-body leading-relaxed">
+                <PathwayCopy path="distinctionIntro" />
+              </p>
+            </div>
+            <div className="home-distinction-chain reveal-stagger">
+              {MODEL_PROOF_KEYS.map((key, index) => (
+                <article key={key} className="home-distinction-item">
+                  <p className="home-distinction-item__num" aria-hidden>
+                    {String(index + 1).padStart(2, '0')}
+                  </p>
+                  <h3 className="home-distinction-item__title">
+                    {t(`distinction.cards.${key}.title`)}
+                  </h3>
+                  <p className="home-distinction-item__body mb-0">
+                    {t(`distinction.cards.${key}.body`)}
+                  </p>
+                </article>
+              ))}
+            </div>
           </div>
         </Section>
 

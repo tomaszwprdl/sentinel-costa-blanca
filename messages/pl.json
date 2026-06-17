@@ -217,7 +217,7 @@
           "right4": "Stan jest dokumentowany, a przygotowanie może być zaplanowane przed przyjazdem.",
           "rightClosing": "Masz lokalny punkt kontroli, gdy Cię nie ma."
         },
-        "distinctionIntro": "Sentinel utrzymuje regularną obecność, widoczne kontrole i udokumentowane przygotowanie pustego lokalu.",
+        "distinctionIntro": "Sentinel zamyka lukę między nieobecnością właściciela a realnym stanem lokalu: przez ustalony zakres, obecność na miejscu, dokumentację i decyzje w limitach.",
         "finalContext": "Chodzi o lokalną kontrolę przed przyjazdem, a nie o organizowanie wszystkiego z dystansu."
       },
       "regular-guest-stays": {
@@ -251,7 +251,7 @@
           "right4": "Szkody i zdarzenia trafiają do zapisu, nie do rozproszonych wiadomości.",
           "rightClosing": "Rotacja jest procesem, nie serią pilnych telefonów."
         },
-        "distinctionIntro": "Sentinel przejmuje lokalny porządek między pobytami. Bez rezerwacji, obsługi gości ani zarządzania wynajmem.",
+        "distinctionIntro": "Sentinel porządkuje odpowiedzialność między pobytami, dostępem i przygotowaniem lokalu: przez ustalony zakres, obecność na miejscu, dokumentację i decyzje w limitach.",
         "finalContext": "Chodzi o stałą strukturę między pobytami, a nie o Twoją ciągłą obecność operacyjną."
       },
       "mixed-not-defined": {
@@ -285,7 +285,7 @@
           "right4": "Końcowy zakres wynika z wstępnej oceny zapytania, nie z domysłu online.",
           "rightClosing": "Najpierw klasyfikacja, potem zakres."
         },
-        "distinctionIntro": "Sentinel pomaga najpierw określić sposób używania lokalu, zanim wybierze się intensywność obsługi.",
+        "distinctionIntro": "Sentinel najpierw porządkuje sposób używania lokalu, zanim zostanie dobrany zakres obsługi, rytm obecności, dokumentacja i granice decyzji.",
         "finalContext": "To nie trzeci wariant wyceny. Następny krok to wstępna ocena zapytania i klasyfikacja."
       }
     },
@@ -516,24 +516,24 @@
     "axis3": "Kontrola + Dostęp + Decyzje"
   },
     "distinction": {
-      "eyebrow": "Dlaczego model działa",
-      "title": "Co wyróżnia Sentinel",
+      "eyebrow": "DLACZEGO MODEL DZIAŁA",
+      "title": "Dlaczego model działa",
       "cards": {
         "scope": {
           "title": "Zakres przed działaniem",
-          "body": "Najpierw ustalony model i granice odpowiedzialności. Dopiero potem wykonanie na miejscu."
+          "body": "Model używania i granice odpowiedzialności są ustalone przed rozpoczęciem wykonania."
+        },
+        "presence": {
+          "title": "Obecność na miejscu",
+          "body": "Dostęp, widoczne sprawdzenia i ocena stanu odbywają się fizycznie w lokalu."
         },
         "documentation": {
           "title": "Dokumentacja po wizycie",
-          "body": "Kontrola, dostęp i zdarzenia zostawiają zapis: datę, zakres czynności i materiał o stanie lokalu."
+          "body": "Wizyta zostawia datowany zapis zakresu, ustaleń i widocznego stanu nieruchomości."
         },
         "decisions": {
           "title": "Decyzje w limitach",
-          "body": "Reakcje odbywają się w uzgodnionych granicach. Powyżej limitu wymagana jest zgoda właściciela."
-        },
-        "responsibility": {
-          "title": "Lokalna odpowiedzialność",
-          "body": "System jest proceduralny, ale wykonanie ma konkretny lokalny punkt odpowiedzialności."
+          "body": "Działanie odbywa się w uzgodnionych granicach. Powyżej limitu decyzja wraca do właściciela."
         }
       },
       "block1Title": "Stałe zasady, konkretna odpowiedzialność",
