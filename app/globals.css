@@ -4812,83 +4812,229 @@ textarea:focus {
   min-width: 0;
   gap: 0;
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--authority) 34%, var(--line));
-  border-radius: 0.5rem;
+  isolation: isolate;
+  border: 1px solid color-mix(in srgb, var(--authority) 40%, var(--line));
+  border-radius: 0.6rem;
   background:
+    repeating-linear-gradient(90deg, rgba(255, 250, 242, 0.035) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(0deg, rgba(255, 250, 242, 0.024) 0 1px, transparent 1px 32px),
+    radial-gradient(130% 96% at 6% -10%, rgba(210, 154, 87, 0.17), transparent 50%),
     linear-gradient(135deg, rgba(255, 250, 242, 0.1), transparent 34%),
-    linear-gradient(180deg, #19324d 0%, #10263f 100%);
+    linear-gradient(180deg, #19324d 0%, #102740 62%, #0d2138 100%);
   box-shadow:
-    0 24px 70px rgba(16, 38, 63, 0.18),
-    inset 0 1px 0 rgba(255, 253, 249, 0.18);
+    0 28px 78px rgba(16, 38, 63, 0.24),
+    inset 0 1px 0 rgba(255, 253, 249, 0.2),
+    inset 0 0 92px rgba(8, 22, 38, 0.42);
+}
+
+/* Operating spine — recessed copper track running through every node.
+   Vertical on mobile (stacked chain), horizontal on desktop (process row). */
+.home-distinction-chain::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 1.9rem;
+  bottom: 1.7rem;
+  left: 1.58rem;
+  width: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--copper) 82%, #fffaf2) 0%,
+    rgba(210, 154, 87, 0.55) 46%,
+    rgba(210, 154, 87, 0.24) 100%
+  );
+  box-shadow: 0 0 0 1px rgba(8, 22, 38, 0.5);
+  pointer-events: none;
+}
+
+/* Active signal — slow bounded highlight travelling the spine.
+   Hidden by default (opacity 0); only the motion query reveals + moves it. */
+.home-distinction-chain::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 1.9rem;
+  bottom: 1.7rem;
+  left: calc(1.58rem - 1px);
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 36%,
+    color-mix(in srgb, var(--copper) 92%, #fffaf2) 50%,
+    transparent 64%,
+    transparent 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 230%;
+  background-position: 0 130%;
+  opacity: 0;
+  pointer-events: none;
 }
 
 @media (min-width: 768px) {
   .home-distinction-chain {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
-}
 
-.home-distinction-chain::before {
-  content: "";
-  position: absolute;
-  inset: 1.85rem 1.25rem auto;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(210, 154, 87, 0.15), rgba(210, 154, 87, 0.72), rgba(255, 250, 242, 0.18));
-  pointer-events: none;
+  .home-distinction-chain::before {
+    top: 2.84rem;
+    right: 1.4rem;
+    bottom: auto;
+    left: 1.4rem;
+    width: auto;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--copper) 82%, #fffaf2) 0%,
+      rgba(210, 154, 87, 0.62) 64%,
+      rgba(210, 154, 87, 0.26) 100%
+    );
+  }
+
+  .home-distinction-chain::after {
+    top: 2.78rem;
+    right: 1.4rem;
+    bottom: auto;
+    left: 1.4rem;
+    width: auto;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 38%,
+      color-mix(in srgb, var(--copper) 92%, #fffaf2) 50%,
+      transparent 62%,
+      transparent 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 230% 100%;
+    background-position: 130% 0;
+  }
 }
 
 .home-distinction-item {
   position: relative;
+  z-index: 3;
   display: grid;
   min-width: 0;
   align-content: start;
-  gap: 0.75rem;
-  padding: 1.25rem 1.2rem 1.35rem;
+  gap: 0.7rem;
+  padding: 1.3rem 1.25rem 1.4rem 2.75rem;
   color: rgba(255, 250, 242, 0.84);
+  transition:
+    opacity var(--motion-reveal) var(--motion-ease-out),
+    transform var(--motion-reveal) var(--motion-ease-out),
+    background-color var(--motion-slow) var(--motion-ease-out),
+    box-shadow var(--motion-slow) var(--motion-ease-out);
 }
 
 .home-distinction-item + .home-distinction-item {
-  border-top: 1px solid rgba(255, 250, 242, 0.12);
+  border-top: 1px solid rgba(255, 250, 242, 0.1);
+}
+
+.home-distinction-item:hover {
+  background-color: rgba(255, 250, 242, 0.035);
+  box-shadow: inset 0 1px 0 rgba(255, 250, 242, 0.08);
 }
 
 @media (min-width: 768px) {
   .home-distinction-item {
     min-height: 17rem;
-    padding: 1.4rem 1.15rem 1.45rem;
+    padding: 1.5rem 1.2rem 1.5rem 1.25rem;
   }
 
   .home-distinction-item + .home-distinction-item {
     border-top: 0;
-    border-left: 1px solid rgba(255, 250, 242, 0.12);
+    border-left: 1px solid rgba(255, 250, 242, 0.1);
   }
 }
 
 .home-distinction-item::before {
   content: "";
   position: absolute;
+  z-index: 2;
   top: 1.55rem;
   left: 1.25rem;
-  width: 0.68rem;
-  height: 0.68rem;
-  border: 1px solid rgba(255, 250, 242, 0.82);
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 1px solid rgba(255, 250, 242, 0.9);
   border-radius: 999px;
-  background: color-mix(in srgb, var(--copper) 72%, #fffaf2);
-  box-shadow: 0 0 0 0.32rem rgba(210, 154, 87, 0.12);
+  background: radial-gradient(
+    circle at 32% 28%,
+    #fff6e6,
+    color-mix(in srgb, var(--copper) 78%, var(--clay)) 78%
+  );
+  box-shadow:
+    0 0 0 0.3rem rgba(210, 154, 87, 0.12),
+    0 0 0.7rem rgba(210, 154, 87, 0.32);
+  transition:
+    box-shadow var(--motion-slow) var(--motion-ease-out),
+    transform var(--motion-slow) var(--motion-ease-out);
+}
+
+.home-distinction-item:hover::before {
+  box-shadow:
+    0 0 0 0.32rem rgba(210, 154, 87, 0.2),
+    0 0 1rem rgba(210, 154, 87, 0.5);
+  transform: scale(1.08);
+}
+
+/* Origin node — the defined start of scope. */
+.home-distinction-item:first-child::before {
+  background: radial-gradient(
+    circle at 32% 28%,
+    #fff6e6,
+    color-mix(in srgb, var(--copper) 88%, #fffaf2) 80%
+  );
+  box-shadow:
+    0 0 0 0.34rem rgba(210, 154, 87, 0.18),
+    0 0 0.95rem rgba(210, 154, 87, 0.46);
+}
+
+/* Limit node — bounded edge where authority returns to the owner. */
+.home-distinction-item:last-child::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 1.4rem;
+  left: 1.1rem;
+  width: 1rem;
+  height: 1rem;
+  border: 1px dashed rgba(210, 154, 87, 0.55);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+/* Desktop: drop the node + limit ring below the 01-04 labels so the copper
+   rail reads as a connector under the numbers, not a strike-through. Defined
+   after the base node/ring rules so it wins on source order; node, spine and
+   signal stay mutually aligned (centres ~2.9rem). */
+@media (min-width: 768px) {
+  .home-distinction-item::before {
+    top: 2.55rem;
+  }
+
+  .home-distinction-item:last-child::after {
+    top: 2.4rem;
+  }
 }
 
 .home-distinction-item__num {
   margin: 0;
-  padding-left: 1.4rem;
-  color: color-mix(in srgb, var(--copper) 72%, #fffaf2);
+  color: color-mix(in srgb, var(--copper) 74%, #fffaf2);
   font-family: var(--font-display);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 760;
-  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
   line-height: 1;
 }
 
 .home-distinction-item__title {
-  margin: 1.5rem 0 0;
+  margin: 1.4rem 0 0;
   color: #fffaf2;
   font-size: clamp(1rem, 1.2vw, 1.18rem);
   font-weight: 820;
@@ -4897,9 +5043,55 @@ textarea:focus {
 
 .home-distinction-item__body {
   margin: 0;
-  color: rgba(255, 250, 242, 0.73);
+  color: rgba(255, 250, 242, 0.74);
   font-size: 0.94rem;
   line-height: 1.62;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-distinction-chain::after {
+    animation: homeDistinctionSignalY 7s ease-in-out infinite;
+  }
+}
+
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .home-distinction-chain::after {
+    animation: homeDistinctionSignalX 7s ease-in-out infinite;
+  }
+}
+
+@keyframes homeDistinctionSignalY {
+  0% {
+    background-position: 0 130%;
+    opacity: 0;
+  }
+  14% {
+    opacity: 0.9;
+  }
+  86% {
+    opacity: 0.9;
+  }
+  100% {
+    background-position: 0 -30%;
+    opacity: 0;
+  }
+}
+
+@keyframes homeDistinctionSignalX {
+  0% {
+    background-position: 130% 0;
+    opacity: 0;
+  }
+  14% {
+    opacity: 0.85;
+  }
+  86% {
+    opacity: 0.85;
+  }
+  100% {
+    background-position: -30% 0;
+    opacity: 0;
+  }
 }
 
 
