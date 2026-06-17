@@ -16593,9 +16593,26 @@ textarea:focus {
 }
 
 /* pathway accent carried onto the band (same teal / copper / blue-violet logic) */
-.home-pathway-body .home-section--route:has(.home-process-panel[data-pathway="private-use-only"]) { --dossier-accent: #2f6f73; }
-.home-pathway-body .home-section--route:has(.home-process-panel[data-pathway="regular-guest-stays"]) { --dossier-accent: #b8664a; }
-.home-pathway-body .home-section--route:has(.home-process-panel[data-pathway="mixed-not-defined"]) { --dossier-accent: #4f5f94; }
+/* Three restrained variants of the same dossier band — same contrast level,
+   same depth/typography; only the surface temperature shifts per pathway. */
+.home-pathway-body .home-section--route:has(.home-process-panel[data-pathway="private-use-only"]) {
+  --dossier-accent: #2f6f73;
+  --dossier-base: #c6d0cc;   /* sea-stone / pale eucalyptus grey — cooler than guest, carries teal */
+  --dossier-deep: #b5c1bd;
+  --dossier-rule: rgba(39, 78, 76, 0.13);
+}
+.home-pathway-body .home-section--route:has(.home-process-panel[data-pathway="regular-guest-stays"]) {
+  --dossier-accent: #b8664a;
+  --dossier-base: #d9ccb4;   /* warm clay / sand — kept as the working guest band */
+  --dossier-deep: #ccbe9f;
+  --dossier-rule: rgba(92, 72, 46, 0.13);
+}
+.home-pathway-body .home-section--route:has(.home-process-panel[data-pathway="mixed-not-defined"]) {
+  --dossier-accent: #4f5f94;
+  --dossier-base: #cacbd8;   /* cool slate / violet-grey — administrative stone, carries blue-violet */
+  --dossier-deep: #b7b9c9;
+  --dossier-rule: rgba(58, 63, 101, 0.13);
+}
 
 /* controlled pathway accent line at the top edge + soft framing
    (replaces the old whitening radials so the band stays deep) */
@@ -16640,4 +16657,49 @@ textarea:focus {
   border-radius: 0;
   background: transparent;
   box-shadow: none;
+}
+
+/* 4. Static register discipline - local to this process register only.
+   It neutralizes old command-spine drift/pulse/scan behavior and the
+   generic reveal transitions so the dossier reads as printed notation. */
+.home-command-panel.home-process-panel,
+.home-command-panel.home-process-panel::before,
+.home-command-panel.home-process-panel::after,
+.home-command-panel.home-process-panel *,
+.home-command-panel.home-process-panel *::before,
+.home-command-panel.home-process-panel *::after {
+  animation: none;
+  animation-delay: 0s;
+  animation-duration: 0s;
+  animation-play-state: paused;
+  transition: none;
+}
+
+.home-command-panel.home-process-panel.reveal-rise,
+.home-command-panel.home-process-panel.reveal-rise.is-visible,
+.home-command-panel.home-process-panel .reveal-stagger > *,
+.home-command-panel.home-process-panel .reveal-stagger.is-visible > * {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+.home-command-panel.home-process-panel .home-command-spine__signal,
+.home-command-panel.home-process-panel .home-command-spine__channel::after,
+.home-command-panel.home-process-panel .home-command-spine__branch,
+.home-command-panel.home-process-panel .home-command-spine__node::before,
+.home-command-panel.home-process-panel .home-command-spine__node::after,
+.home-command-panel.home-process-panel .home-command-spine__node-face::before,
+.home-command-panel.home-process-panel .home-command-spine__node-face::after {
+  display: none;
+  content: none;
+}
+
+.home-command-panel.home-process-panel .home-command-system[data-pathway="private-use-only"] .home-command-spine__node[data-process-key="decisions"] .home-command-spine__node-face,
+.home-command-panel.home-process-panel .home-command-system[data-pathway="mixed-not-defined"] .home-command-spine__node[data-process-key="scope"] .home-command-spine__node-face,
+.home-command-panel.home-process-panel .home-command-system[data-pathway="regular-guest-stays"] .home-command-spine__channel::after {
+  animation: none;
+  animation-delay: 0s;
+  animation-duration: 0s;
+  animation-play-state: paused;
 }
