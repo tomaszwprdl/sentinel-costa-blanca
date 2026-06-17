@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "qa:serve": "next start --hostname 127.0.0.1 --port 3100",
+    "qa:capture": "node scripts/qa/capture-route.cjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

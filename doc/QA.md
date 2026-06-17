@@ -21,6 +21,53 @@ git diff --check
 
 ---
 
+# Hardened local visual QA (production server)
+
+One reliable path. Use this for every visual change — do **not** screenshot the dev server.
+
+**1. Build** (TLS-safe — no env var needed; `next.config.ts` sets `experimental.turbopackUseSystemTlsCerts`):
+
+```bash
+npm run build
+```
+
+**2. Serve the production build** on a fixed, known port:
+
+```bash
+npm run qa:serve            # next start --hostname 127.0.0.1 --port 3100
+```
+
+**3. Capture real pixels** with the repo tool (PowerShell examples; one capture per command):
+
+```bash
+npm run qa:capture -- --url=http://127.0.0.1:3100/pl?pathway=private-use-only --full --out=doc/screenshots/home.png
+npm run qa:capture -- --url=http://127.0.0.1:3100/pl?pathway=private-use-only --regionFrom=.page-final-cta --regionTo=footer --pad=200 --out=doc/screenshots/cta.png
+npm run qa:capture -- --url=http://127.0.0.1:3100/pl?pathway=private-use-only --mobile --width=390 --height=844 --dpr=2 --full --expect=.page-final-cta,footer --out=doc/screenshots/m390.png
+```
+
+**4. Stop the server** by its identified PID (never blanket-kill node):
+
+```powershell
+$p = (Get-NetTCPConnection -State Listen -LocalPort 3100).OwningProcess; taskkill /PID $p /T /F
+```
+
+**Pass criteria** — read the JSON report each capture prints/writes and require all of:
+
+- `overflowPx <= 0` (no horizontal overflow) — check at 390px mobile too
+- `consoleErrors` empty
+- `failedRequests` empty
+- `http4xx5xx` empty
+- the actual PNG is opened and looks correct — **never approve on computed style alone**
+
+**Requirements / notes:**
+
+- `qa:capture` needs **Node >= 22** (built-in global `WebSocket`); local toolchain Node is fine, Netlify's Node 20 is not — but the tool is local-only and never runs in CI.
+- It auto-detects installed Chrome, then Edge (full paths, not `PATH`). Override with `--chrome=<path>`.
+- It deliberately avoids network-idle (dev keeps an HMR socket open forever) and uses a fixed settle, so it never hangs.
+- Write captures under `doc/screenshots/` (already git-ignored) or the tool's `%TEMP%` default; never commit screenshots (see `WORKFLOW.md`).
+
+---
+
 # Visual / UI spot checks
 
 - [ ] 390px width — no horizontal scroll on changed pages

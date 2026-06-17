@@ -51,6 +51,14 @@ const BROWSER_CANDIDATES = [
 
 if (flag('help') || flag('h')) { console.log(fs.readFileSync(__filename, 'utf8').split('*/')[0]); process.exit(0); }
 
+// This tool drives Chrome over CDP using Node's built-in global WebSocket, which is
+// only available on Node >= 22. Fail fast with a clear message instead of a cryptic
+// "WebSocket is not defined" if run on an older runtime (e.g. Netlify's Node 20).
+if (typeof WebSocket === 'undefined') {
+  console.error(`ERROR: this QA tool requires Node >= 22 (global WebSocket). Current: ${process.version}. Run it with the local toolchain Node, not Node 20.`);
+  process.exit(3);
+}
+
 const URL_ = arg('url', 'http://127.0.0.1:3000/pl?pathway=private-use-only');
 const OUT = path.resolve(arg('out', path.join(os.tmpdir(), 'sentinel-qa', 'shot.png')));
 const REPORT = path.resolve(arg('report', OUT.replace(/\.png$/i, '') + '.report.json'));
