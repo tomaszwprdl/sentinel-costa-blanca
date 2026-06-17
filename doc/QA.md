@@ -61,7 +61,7 @@ $p = (Get-NetTCPConnection -State Listen -LocalPort 3100).OwningProcess; taskkil
 
 **Requirements / notes:**
 
-- `qa:capture` needs **Node >= 22** (built-in global `WebSocket`); local toolchain Node is fine, Netlify's Node 20 is not — but the tool is local-only and never runs in CI.
+- `qa:capture` uses the repo dev dependency `puppeteer-core` to drive an already-installed browser; it does **not** download Chrome.
 - It auto-detects installed Chrome, then Edge (full paths, not `PATH`). Override with `--chrome=<path>`.
 - It deliberately avoids network-idle (dev keeps an HMR socket open forever) and uses a fixed settle, so it never hangs.
 - Write captures under `doc/screenshots/` (already git-ignored) or the tool's `%TEMP%` default; never commit screenshots (see `WORKFLOW.md`).
