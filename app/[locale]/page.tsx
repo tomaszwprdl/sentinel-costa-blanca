@@ -23,11 +23,6 @@ const PATHWAY_POINT_COUNTS: Record<PathwayKey, number> = {
   'mixed-not-defined': 5,
 };
 
-const PACKAGE_PREVIEW = [
-  { marker: '01', title: 'level1Title', axis: 'axis1', purpose: 'level1Purpose' },
-  { marker: '02', title: 'level2Title', axis: 'axis2', purpose: 'level2Purpose' },
-  { marker: '03', title: 'level3Title', axis: 'axis3', purpose: 'level3Purpose' },
-] as const;
 const CREDIBILITY_KEYS = ['scope', 'documentation', 'decisions', 'responsibility'] as const;
 
 export default async function HomePage({
@@ -69,38 +64,7 @@ export default async function HomePage({
           <HomeContrastBlock />
         </Section>
 
-        {/* 5. ZAKRES PAKIETÓW — pełnowymiarowa drabina odpowiedzialności (vertical containment) */}
-        <Section tone="light" className="home-section home-section--scope !py-16 md:!py-24">
-          <div className="reveal-rise">
-            <p className="section-label">{t('levels.eyebrow')}</p>
-            <h2 className="h2-system mt-3 max-w-[26ch]">{t('levels.title')}</h2>
-            <p className="mt-3 max-w-[62ch] text-body">{t('levels.intro')}</p>
-          </div>
-
-          <div className="home-level-ladder reveal-stagger">
-            {PACKAGE_PREVIEW.map((item) => (
-              <article key={item.marker} className="home-level-ladder__row">
-                <span className="home-level-ladder__num" aria-hidden>{item.marker}</span>
-                <div className="home-level-ladder__head">
-                  <h3 className="home-level-ladder__title">{t(`levels.${item.title}`)}</h3>
-                  <p className="home-level-ladder__axis mb-0">{t(`levels.${item.axis}`)}</p>
-                </div>
-                <p className="home-level-ladder__purpose mb-0">{t(`levels.${item.purpose}`)}</p>
-              </article>
-            ))}
-          </div>
-
-          <div className="home-level-ladder__rule reveal-rise">
-            <p className="mb-0 max-w-[58ch] text-sm leading-relaxed text-body">
-              {t('levels.systemRule1')} {t('levels.systemRule2')} {t('levels.systemRule3')}
-            </p>
-            <Link href={`/${locale}/services#package-fit`} className="btn-secondary w-fit text-sm">
-              {t('levels.ctaCompare')}
-            </Link>
-          </div>
-        </Section>
-
-        {/* 6. CO WYRÓŻNIA SENTINEL — bloki deklaracji modelu, 2 kolumny, bez card/badge, oś centralna */}
+        {/* 5. CO WYRÓŻNIA SENTINEL — bloki deklaracji modelu, 2 kolumny, bez card/badge, oś centralna */}
         <Section tone="alt" className="home-section home-section--distinction !py-16 md:!py-20">
           <div className="max-w-[760px]">
             <p className="section-label">{t('distinction.eyebrow')}</p>
