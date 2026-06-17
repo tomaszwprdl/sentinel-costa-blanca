@@ -92,36 +92,40 @@ export default async function HomePage({
           </div>
         </Section>
 
-        <Section tone="light" className="home-section home-closing-section !pt-10 !pb-0">
-          <div className="page-final-cta reveal-rise overflow-hidden">
-            <div className="grid gap-0 lg:grid-cols-[minmax(0,0.68fr)_minmax(18rem,0.32fr)]">
-              <div className="page-final-cta__copy p-5 md:p-8">
-                <p className="section-label">{t('finalCta.eyebrow')}</p>
-                <h2 className="h2-system mt-3">{t('finalCta.title')}</h2>
-                <div className="mt-4 max-w-[62ch] space-y-3 text-lg leading-relaxed text-body">
-                  <p><PathwayCopy path="finalContext" /></p>
-                  <p>{t('finalCta.p2')}</p>
-                </div>
-              </div>
-              <div className="page-final-cta__panel p-5 md:p-8">
-                <div className="flex flex-col gap-3">
-                  <PathwayFinalCtaLink
-                    locale={locale}
-                    className="btn-primary btn-primary-inverse"
-                  >
-                    {t('finalCta.cta')}
-                  </PathwayFinalCtaLink>
-                  <Link
-                    href={`/${locale}/services#package-fit`}
-                    className="btn-secondary btn-secondary-on-dark"
-                  >
-                    {t('finalCta.secondaryCta')}
-                  </Link>
-                </div>
+        <section className="page-final-cta home-handoff-cta reveal-rise" aria-labelledby="home-handoff-cta-heading">
+          <div className="home-handoff-cta__media" aria-hidden />
+          <div className="home-handoff-cta__scrim" aria-hidden />
+          <span className="home-handoff-cta__edge home-handoff-cta__edge--top" aria-hidden />
+          <span className="home-handoff-cta__edge home-handoff-cta__edge--bottom" aria-hidden />
+          <div className="home-handoff-cta__inner">
+            <div className="home-handoff-cta__copy">
+              <p className="section-label">{t('finalCta.eyebrow')}</p>
+              <h2 id="home-handoff-cta-heading" className="home-handoff-cta__title">
+                {t('finalCta.title')}
+              </h2>
+              <div className="home-handoff-cta__body">
+                <p><PathwayCopy path="finalContext" /></p>
+                <p>{t('finalCta.p2')}</p>
               </div>
             </div>
+            <aside className="home-handoff-cta__dock" aria-label={t('finalCta.eyebrow')}>
+              <div className="home-handoff-cta__actions">
+                <PathwayFinalCtaLink
+                  locale={locale}
+                  className="btn-primary btn-primary-inverse"
+                >
+                  {t('finalCta.cta')}
+                </PathwayFinalCtaLink>
+                <Link
+                  href={`/${locale}/services#package-fit`}
+                  className="btn-secondary btn-secondary-on-dark"
+                >
+                  {t('finalCta.secondaryCta')}
+                </Link>
+              </div>
+            </aside>
           </div>
-        </Section>
+        </section>
         </div>
           </UsagePathwayLayer>
         </Suspense>

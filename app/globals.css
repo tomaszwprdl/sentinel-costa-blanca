@@ -11909,6 +11909,272 @@ textarea:focus {
   }
 }
 
+.page-final-cta.home-handoff-cta {
+  position: relative;
+  isolation: isolate;
+  display: block;
+  min-height: clamp(40rem, 62vw, 46rem);
+  margin: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: #071421;
+  box-shadow: none;
+  color: var(--authority-on-dark);
+  clip-path: polygon(0 4.35rem, 31% 5.1rem, 100% 0, 100% 100%, 0 100%);
+}
+
+.home-handoff-cta__media,
+.home-handoff-cta__scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.home-handoff-cta__media {
+  z-index: 0;
+  background-image: url("/images/home/home-final-cta-handoff-checklist.webp");
+  background-repeat: no-repeat;
+  background-position: calc(100% + 9rem) 34%;
+  background-size: auto 92%;
+  transform: scale(1);
+}
+
+.home-handoff-cta__scrim {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(5, 18, 32, 1) 0%, rgba(5, 18, 32, 0.99) 40%, rgba(5, 18, 32, 0.86) 64%, rgba(5, 18, 32, 0.28) 86%),
+    linear-gradient(180deg, rgba(255, 250, 242, 0.03) 0%, rgba(5, 18, 32, 0.08) 24%, rgba(5, 18, 32, 0.22) 66%, #071421 100%),
+    radial-gradient(34rem 18rem at 90% 72%, rgba(5, 18, 32, 0.7), transparent 74%);
+}
+
+.home-handoff-cta__edge {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  left: 0;
+  height: 2px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent 0%, rgba(238, 159, 104, 0.78) 16%, rgba(238, 159, 104, 0.92) 64%, transparent 100%);
+  box-shadow: 0 0 18px rgba(238, 159, 104, 0.22);
+}
+
+.home-handoff-cta__edge--top {
+  top: 4.25rem;
+  transform: skewY(-2.05deg);
+  transform-origin: right center;
+}
+
+.home-handoff-cta__edge--bottom {
+  bottom: 4.15rem;
+  width: 66%;
+}
+
+.home-handoff-cta__inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: min(100%, var(--container-max));
+  min-height: inherit;
+  min-width: 0;
+  margin-inline: auto;
+  padding: clamp(7rem, 10vw, 8.7rem) clamp(1.15rem, 4vw, 2rem) clamp(4rem, 7vw, 5rem);
+}
+
+.home-handoff-cta__copy {
+  align-self: center;
+  max-width: 35.5rem;
+  min-width: 0;
+}
+
+.home-handoff-cta__copy .section-label {
+  color: color-mix(in srgb, var(--copper) 70%, #fffaf2);
+}
+
+.home-handoff-cta__copy .section-label::before {
+  display: inline-block;
+  width: 1.6rem;
+  height: 2px;
+  margin-right: 0.9rem;
+  vertical-align: 0.25em;
+  background: currentColor;
+  content: "";
+}
+
+.home-handoff-cta__title {
+  margin: 1.25rem 0 0;
+  color: #fffaf2;
+  font-family: var(--font-display);
+  font-size: clamp(2.35rem, 4.5vw, 3.7rem);
+  font-weight: 780;
+  line-height: 1.02;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.home-handoff-cta__body {
+  display: grid;
+  gap: 1.15rem;
+  max-width: 34rem;
+  margin-top: 1.7rem;
+  color: color-mix(in srgb, var(--authority-on-dark) 91%, transparent);
+  font-size: clamp(1.05rem, 1.45vw, 1.22rem);
+  line-height: 1.55;
+}
+
+.home-handoff-cta__body p {
+  margin: 0;
+}
+
+.home-handoff-cta__dock {
+  position: relative;
+  align-self: end;
+  justify-self: end;
+  width: min(100%, 24.5rem);
+  min-width: 0;
+  margin-right: clamp(0rem, 1.2vw, 1rem);
+  margin-bottom: 0.85rem;
+  padding: clamp(1.1rem, 1.8vw, 1.55rem);
+  border: 1px solid rgba(238, 159, 104, 0.64);
+  background: linear-gradient(145deg, rgba(18, 47, 66, 0.93) 0%, rgba(7, 20, 33, 0.96) 100%);
+  box-shadow:
+    0 18px 46px rgba(2, 9, 16, 0.36),
+    inset 0 1px 0 rgba(255, 250, 242, 0.11);
+  clip-path: polygon(2rem 0, 100% 0, 100% 100%, 0 100%, 0 2rem);
+}
+
+.home-handoff-cta__dock::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, transparent 0 2.7rem, rgba(238, 159, 104, 0.7) 2.75rem, transparent 2.85rem),
+    radial-gradient(18rem 12rem at 15% 0%, rgba(47, 111, 115, 0.16), transparent 72%);
+  content: "";
+}
+
+.home-handoff-cta__actions {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+}
+
+.home-handoff-cta__actions .btn-primary,
+.home-handoff-cta__actions .btn-secondary {
+  width: 100%;
+  min-width: 0;
+  justify-content: center;
+  text-align: center;
+  white-space: normal;
+}
+
+.home-handoff-cta__actions .btn-primary {
+  border-color: color-mix(in srgb, var(--copper) 70%, #fffaf2);
+  background: linear-gradient(180deg, #f2b184 0%, #d98d5f 100%);
+  color: #071421;
+  box-shadow: 0 14px 30px rgba(8, 20, 32, 0.24);
+}
+
+.home-handoff-cta__actions .btn-primary:hover {
+  background: linear-gradient(180deg, #fac19a 0%, #e49a6b 100%);
+}
+
+.home-handoff-cta__actions .btn-secondary {
+  border-color: rgba(238, 159, 104, 0.72);
+  background: rgba(5, 18, 32, 0.42);
+  color: #fffaf2;
+}
+
+@media (min-width: 900px) {
+  .home-handoff-cta__inner {
+    grid-template-columns: minmax(0, 0.88fr) minmax(19rem, 0.54fr);
+    gap: clamp(3.25rem, 7vw, 6rem);
+    padding-left: clamp(0.25rem, 1vw, 0.75rem);
+  }
+
+  .home-handoff-cta__copy {
+    transform: translateX(clamp(-1.75rem, -1.6vw, -0.7rem));
+  }
+}
+
+@media (max-width: 899px) {
+  .page-final-cta.home-handoff-cta {
+    min-height: auto;
+    clip-path: polygon(0 2.2rem, 38% 2.8rem, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .home-handoff-cta__media {
+    background-position: 63% 42%;
+  }
+
+  .home-handoff-cta__scrim {
+    background:
+      linear-gradient(90deg, rgba(5, 18, 32, 0.99) 0%, rgba(5, 18, 32, 0.92) 48%, rgba(5, 18, 32, 0.48) 100%),
+      linear-gradient(180deg, rgba(5, 18, 32, 0.14) 0%, rgba(5, 18, 32, 0.78) 58%, #071421 100%);
+  }
+
+  .home-handoff-cta__edge--top {
+    top: 2.15rem;
+  }
+
+  .home-handoff-cta__edge--bottom {
+    bottom: 2.2rem;
+    width: 100%;
+  }
+
+  .home-handoff-cta__inner {
+    min-height: 43rem;
+    align-content: end;
+    gap: 1.5rem;
+    padding-top: 6rem;
+    padding-bottom: 3.8rem;
+  }
+
+  .home-handoff-cta__copy {
+    max-width: 38rem;
+  }
+
+  .home-handoff-cta__dock {
+    justify-self: stretch;
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 390px) {
+  .home-handoff-cta__media {
+    background-position: 66% 35%;
+    transform: scale(1.03);
+  }
+
+  .home-handoff-cta__scrim {
+    background:
+      linear-gradient(90deg, rgba(5, 18, 32, 0.99) 0%, rgba(5, 18, 32, 0.94) 58%, rgba(5, 18, 32, 0.72) 100%),
+      linear-gradient(180deg, rgba(5, 18, 32, 0.08) 0%, rgba(5, 18, 32, 0.78) 45%, #071421 100%);
+  }
+
+  .home-handoff-cta__inner {
+    min-height: 45rem;
+    padding: 5.2rem 1rem 3.25rem;
+  }
+
+  .home-handoff-cta__title {
+    font-size: 2.22rem;
+    line-height: 1.04;
+  }
+
+  .home-handoff-cta__body {
+    gap: 0.9rem;
+    margin-top: 1.25rem;
+    font-size: 0.98rem;
+  }
+
+  .home-handoff-cta__dock {
+    padding: 1rem;
+    clip-path: polygon(1.1rem 0, 100% 0, 100% 100%, 0 100%, 0 1.1rem);
+  }
+}
+
 .home-closing-section,
 .faq-closing-section,
 .contact-closing-section,
