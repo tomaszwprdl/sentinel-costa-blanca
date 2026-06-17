@@ -16157,3 +16157,411 @@ textarea:focus {
     margin-inline: -0.25rem;
   }
 }
+
+/* Homepage process: Field Manual Operating Register */
+.home-command-panel.home-process-panel {
+  --register-accent: #2f6f73;
+  --register-accent-soft: rgba(47, 111, 115, 0.14);
+  --register-rule: rgba(143, 120, 90, 0.26);
+  --register-ink: #10263f;
+  --register-muted: #5f6d73;
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.34fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(1.15rem, 2.8vw, 2rem);
+  overflow: hidden;
+  border: 1px solid var(--register-rule);
+  border-radius: 0.35rem;
+  background:
+    linear-gradient(90deg, rgba(16, 38, 63, 0.035) 0 1px, transparent 1px 100%) 0 0 / 4.2rem 100%,
+    linear-gradient(0deg, rgba(143, 120, 90, 0.08) 0 1px, transparent 1px 100%) 0 0 / 100% 3.1rem,
+    radial-gradient(34rem 20rem at 88% 2%, var(--register-accent-soft), transparent 72%),
+    linear-gradient(135deg, #fffaf2 0%, #f5eee2 100%);
+  box-shadow:
+    0 24px 58px rgba(72, 55, 35, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.home-command-panel.home-process-panel[data-pathway="private-use-only"] {
+  --register-accent: #2f6f73;
+  --register-accent-soft: rgba(47, 111, 115, 0.16);
+}
+
+.home-command-panel.home-process-panel[data-pathway="regular-guest-stays"] {
+  --register-accent: #b8664a;
+  --register-accent-soft: rgba(184, 102, 74, 0.18);
+}
+
+.home-command-panel.home-process-panel[data-pathway="mixed-not-defined"] {
+  --register-accent: #4f5f94;
+  --register-accent-soft: rgba(79, 95, 148, 0.17);
+}
+
+.home-command-panel.home-process-panel::before {
+  z-index: 0;
+  background:
+    linear-gradient(135deg, transparent 0 2.4rem, color-mix(in srgb, var(--register-accent) 42%, transparent) 2.45rem 2.52rem, transparent 2.56rem),
+    radial-gradient(18rem 11rem at 8% 10%, rgba(210, 154, 87, 0.11), transparent 72%);
+  background-size: auto;
+  opacity: 1;
+}
+
+.home-command-panel.home-process-panel::after {
+  display: block;
+  position: absolute;
+  right: clamp(1rem, 2.5vw, 2rem);
+  bottom: clamp(1rem, 2.2vw, 1.8rem);
+  z-index: 0;
+  width: min(18rem, 36%);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--register-accent) 54%, transparent));
+  content: "";
+  pointer-events: none;
+}
+
+.home-command-panel .home-process-posture {
+  position: relative;
+  z-index: 2;
+  align-self: start;
+  margin: 0;
+  padding: clamp(1rem, 2vw, 1.35rem) 0 0 clamp(0.85rem, 1.8vw, 1.15rem);
+  border: 0;
+  border-left: 2px solid color-mix(in srgb, var(--register-accent) 76%, var(--copper));
+  border-radius: 0;
+  background: transparent;
+  color: var(--register-ink);
+  box-shadow: none;
+  font-size: clamp(0.98rem, 1.15vw, 1.08rem);
+  font-weight: 650;
+  line-height: 1.7;
+}
+
+.home-command-panel .home-process-posture::before {
+  top: 0;
+  left: -0.42rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 2px solid var(--register-accent);
+  background: #fffaf2;
+  box-shadow: 0 0 0 0.35rem color-mix(in srgb, var(--register-accent) 12%, transparent);
+}
+
+.home-command-panel .home-process-posture::after {
+  top: auto;
+  right: auto;
+  bottom: -1.25rem;
+  left: -1px;
+  width: 5.5rem;
+  height: 1px;
+  background: color-mix(in srgb, var(--register-accent) 34%, transparent);
+}
+
+.home-command-system {
+  position: relative;
+  z-index: 2;
+  display: block;
+  min-height: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.home-command-system::before,
+.home-command-system::after {
+  display: none;
+}
+
+.home-property-trace {
+  inset: -1.5rem -4rem auto auto;
+  width: min(35rem, 48%);
+  height: 17rem;
+  color: var(--register-accent);
+  opacity: 0.08;
+  mask-image: linear-gradient(90deg, transparent, #000 18%, #000 78%, transparent);
+}
+
+.home-command-spine {
+  display: none;
+}
+
+.home-command-outputs {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-rows: none;
+  gap: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0.35rem 0 0.35rem clamp(1rem, 2.5vw, 1.75rem);
+  counter-reset: process-register;
+}
+
+.home-command-outputs::before {
+  position: absolute;
+  top: 0.8rem;
+  bottom: 0.8rem;
+  left: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--register-accent), color-mix(in srgb, var(--register-accent) 24%, transparent));
+  content: "";
+}
+
+.home-command-output {
+  position: relative;
+  display: grid;
+  grid-template-columns: clamp(4.4rem, 7vw, 6.2rem) minmax(0, 1fr);
+  gap: clamp(0.9rem, 2vw, 1.35rem);
+  align-items: start;
+  margin: 0;
+  min-height: 0;
+  padding: clamp(1.05rem, 2.2vw, 1.55rem) 0 clamp(1.05rem, 2.2vw, 1.55rem) clamp(0.9rem, 1.8vw, 1.2rem);
+  border: 0;
+  border-bottom: 1px solid var(--register-rule);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.home-command-output:last-child {
+  border-bottom: 0;
+}
+
+.home-command-output::before {
+  position: absolute;
+  top: clamp(1.35rem, 2.5vw, 1.85rem);
+  left: calc(clamp(1rem, 2.5vw, 1.75rem) * -1 - 0.28rem);
+  width: 0.68rem;
+  height: 0.68rem;
+  border: 2px solid var(--register-accent);
+  border-radius: 999px;
+  background: #fffaf2;
+  box-shadow: 0 0 0 0.32rem color-mix(in srgb, var(--register-accent) 11%, transparent);
+  content: "";
+}
+
+.home-command-output::after {
+  display: none;
+}
+
+.home-command-output:nth-child(2),
+.home-command-output:nth-child(3),
+.home-command-output:nth-child(4) {
+  margin-left: 0;
+}
+
+.home-command-output[data-emphasis="true"] {
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--register-accent) 8%, transparent), transparent 45%);
+}
+
+.home-command-output[data-emphasis="true"]::before {
+  background: var(--register-accent);
+  box-shadow:
+    0 0 0 0.34rem #fffaf2,
+    0 0 0 0.52rem color-mix(in srgb, var(--register-accent) 24%, transparent);
+}
+
+.home-command-output__num {
+  display: block;
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: color-mix(in srgb, var(--register-accent) 74%, var(--register-ink));
+  font-family: var(--font-display);
+  font-size: clamp(2.35rem, 5.2vw, 4.4rem);
+  font-weight: 760;
+  letter-spacing: 0;
+  line-height: 0.82;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+.home-command-output[data-emphasis="true"] .home-command-output__num {
+  border-color: transparent;
+  box-shadow: none;
+  color: var(--register-accent);
+}
+
+.home-command-output__label {
+  margin: 0 0 0.35rem;
+  color: color-mix(in srgb, var(--register-accent) 78%, var(--register-ink));
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.home-command-output__title {
+  margin: 0;
+  color: var(--register-ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.18rem, 2vw, 1.55rem);
+  font-weight: 760;
+  line-height: 1.12;
+}
+
+.home-command-output__body {
+  max-width: 58ch;
+  margin-top: 0.55rem;
+  color: var(--register-muted);
+  font-size: clamp(0.94rem, 1.05vw, 1rem);
+  line-height: 1.62;
+}
+
+@media (max-width: 1023px) {
+  .home-command-panel.home-process-panel {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.6rem;
+  }
+
+  .home-command-panel .home-process-posture {
+    max-width: 44rem;
+  }
+
+  .home-property-trace {
+    width: 80%;
+    height: 12rem;
+    opacity: 0.055;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-command-panel.home-process-panel {
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  .home-command-outputs {
+    padding-left: 1rem;
+  }
+
+  .home-command-output {
+    grid-template-columns: 3.35rem minmax(0, 1fr);
+    gap: 0.8rem;
+    padding: 1rem 0 1rem 0.9rem;
+  }
+
+  .home-command-output__num {
+    font-size: 2.35rem;
+  }
+
+  .home-command-output__title {
+    font-size: 1.12rem;
+  }
+
+  .home-command-output__body {
+    font-size: 0.91rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .home-command-panel.home-process-panel {
+    padding: 0.9rem;
+  }
+
+  .home-command-output {
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 0.7rem;
+    padding-left: 0.75rem;
+  }
+
+  .home-command-output__num {
+    font-size: 2.05rem;
+  }
+}
+
+.home-command-panel.home-process-panel[data-pathway="mixed-not-defined"] .home-command-system {
+  min-height: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.home-command-panel.home-process-panel[data-pathway="mixed-not-defined"] .home-command-output,
+.home-command-panel.home-process-panel[data-pathway="mixed-not-defined"] .home-command-output[data-process-key="scope"],
+.home-command-panel.home-process-panel[data-pathway="mixed-not-defined"] .home-command-output:not([data-process-key="scope"]) {
+  z-index: auto;
+  margin-left: 0;
+  border: 0;
+  border-bottom: 1px solid var(--register-rule);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.home-command-panel.home-process-panel[data-pathway="mixed-not-defined"] .home-command-output:last-child {
+  border-bottom: 0;
+}
+
+.home-command-panel.home-process-panel[data-pathway="mixed-not-defined"] .home-command-output[data-emphasis="true"] {
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--register-accent) 8%, transparent), transparent 45%);
+}
+
+.home-command-panel.home-process-panel[data-pathway="mixed-not-defined"] .home-command-output::before,
+.home-command-panel.home-process-panel[data-pathway="mixed-not-defined"] .home-command-output[data-process-key="scope"]::before {
+  top: clamp(1.35rem, 2.5vw, 1.85rem);
+  left: calc(clamp(1rem, 2.5vw, 1.75rem) * -1 - 0.28rem);
+  width: 0.68rem;
+  height: 0.68rem;
+  border: 2px solid var(--register-accent);
+  border-radius: 999px;
+  background: #fffaf2;
+  box-shadow: 0 0 0 0.32rem color-mix(in srgb, var(--register-accent) 11%, transparent);
+  content: "";
+}
+
+.home-command-panel.home-process-panel[data-pathway="mixed-not-defined"] .home-command-output[data-emphasis="true"]::before {
+  background: var(--register-accent);
+  box-shadow:
+    0 0 0 0.34rem #fffaf2,
+    0 0 0 0.52rem color-mix(in srgb, var(--register-accent) 24%, transparent);
+}
+
+.home-command-panel.home-process-panel[data-pathway="mixed-not-defined"] .home-command-output::after,
+.home-command-panel.home-process-panel[data-pathway="mixed-not-defined"] .home-command-output[data-process-key="scope"]::after,
+.home-command-panel.home-process-panel[data-pathway="mixed-not-defined"] .home-command-output:not([data-process-key="scope"])::after {
+  display: none;
+}
+
+.home-command-panel.home-process-panel[data-pathway="mixed-not-defined"] .home-command-output[data-process-key="scope"] .home-command-output__num,
+.home-command-panel.home-process-panel[data-pathway="mixed-not-defined"] .home-command-output__num {
+  display: block;
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: color-mix(in srgb, var(--register-accent) 74%, var(--register-ink));
+  font-family: var(--font-display);
+  font-size: clamp(2.35rem, 5.2vw, 4.4rem);
+  font-weight: 760;
+  letter-spacing: 0;
+  line-height: 0.82;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+.home-command-panel.home-process-panel[data-pathway="mixed-not-defined"] .home-command-output[data-emphasis="true"] .home-command-output__num {
+  color: var(--register-accent);
+}
+
+@media (max-width: 640px) {
+  .home-command-panel.home-process-panel[data-pathway="mixed-not-defined"] .home-command-output__num {
+    font-size: 2.35rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .home-command-panel.home-process-panel[data-pathway="mixed-not-defined"] .home-command-output__num {
+    font-size: 2.05rem;
+  }
+}
