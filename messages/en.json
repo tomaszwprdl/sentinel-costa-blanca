@@ -393,32 +393,32 @@
       },
       "slides": {
         "turnover": {
-          "title": "Guests do not judge the process. They judge what they see on entry.",
-          "body": "After a turnover, even a small issue — smell, dust, missing towels, or unfinished preparation — becomes a problem in the first minutes of the stay.",
-          "responseLead": "Sentinel treats turnover as a process, not improvisation.",
-          "responseBody": "Preparation, access, readiness, and visible risks are checked locally before the problem reaches the guest.",
-          "alt": "An apartment just after a guest stay, not yet reset for the next entry."
+          "title": "Guests judge the result, not the preparation process.",
+          "body": "They do not care who was meant to clean, place towels, or check the property. If the stay starts with gaps, the problem returns to the owner immediately.",
+          "responseLead": "Turnover has an agreed local structure.",
+          "responseBody": "Cleaning, preparation, and readiness checks can be coordinated before guest arrival, instead of depending on several people and urgent messages.",
+          "alt": "A bedroom mid-turnover: bed linen, towels, and items to prepare before the next stay."
         },
         "damage": {
-          "title": "Damage after a stay can disappear between messages.",
-          "body": "A crack, stain, missing item, or fault may only be noticed when the next guest is already inside the property.",
-          "responseLead": "Post-stay condition becomes a record.",
-          "responseBody": "Visible damage and deviations are documented, so decisions are not based on guesswork and late messages.",
-          "alt": "A small piece of damage in the property noticed after a guest stay."
+          "title": "Post-stay damage can disappear between messages.",
+          "body": "A stain, crack, or damaged item quickly becomes a dispute: when it happened, who saw it, and whether it can still be recorded before the next booking.",
+          "responseLead": "Post-stay condition is recorded.",
+          "responseBody": "Visible damage and changes in the property can be checked, photographed, and passed on for decision before the issue reaches the next stay.",
+          "alt": "A stain on the sofa and a mark on the wooden table in the living room after a guest stay."
         },
         "dispatcher": {
-          "title": "Without structure, the owner becomes the dispatcher of every turnover.",
-          "body": "Cleaning, entry, contractors, keys, guest questions — everything returns to you when it should be handled locally.",
-          "responseLead": "Sentinel coordinates the agreed local actions.",
-          "responseBody": "Instead of urgent calls, you have records, local execution, and a clear decision path between stays.",
-          "alt": "Keys and matters to coordinate between guest stays."
+          "title": "Between stays, the owner becomes the dispatcher.",
+          "body": "Keys, technician entry, cleaning, corrections, and confirmations start depending on you — even when you are far away and only have your phone.",
+          "responseLead": "Access and actions are agreed locally.",
+          "responseBody": "Keys, entries, technicians, and preparation can follow agreed rules, without fresh improvisation between every stay.",
+          "alt": "Keys, a phone, a door, and a technician's tool bag in the property entrance."
         },
-        "review": {
-          "title": "One weak arrival can cost more than cleaning.",
-          "body": "An unprepared property means complaints, refund pressure, weaker reviews, and stressful recovery after the fact.",
-          "responseLead": "Readiness is checked before it becomes a guest review.",
-          "responseBody": "Sentinel helps catch gaps and risks before arrival, so the turnover does not begin with a complaint.",
-          "alt": "An entrance that makes a weak first impression on a guest."
+        "boiler": {
+          "title": "A failure during the stay becomes your problem immediately.",
+          "body": "No hot water, a boiler error, or another basic fault does not wait. The guest expects a response, and the owner starts handling the situation remotely.",
+          "responseLead": "The report has a local point of response.",
+          "responseBody": "Sentinel can check the situation on site, confirm the scale of the problem, and activate the agreed path of action before the fault becomes a bigger guest conflict.",
+          "alt": "A boiler panel showing a pressure gauge and a red error message during a guest stay."
         }
       }
     },
@@ -435,33 +435,33 @@
         "action": "Action"
       },
       "slides": {
-        "wrongModel": {
-          "title": "The wrong service model points the whole system in the wrong direction.",
-          "body": "A private-use property and a guest-stay property carry different risks. Treat them the same and the mistakes appear only during operation.",
-          "responseLead": "We first classify how the property is actually used.",
-          "responseBody": "Sentinel helps separate private use, guest stays, and mixed use before the service scope is built on the wrong assumptions.",
-          "alt": "A property where owner belongings and guest items are mixed together."
+        "wrongStartingAssumption": {
+          "title": "The wrong starting assumption sets the wrong operating model.",
+          "body": "A property may begin as private-use and later receive guests. If the scope is chosen from an assumption, later needs become exceptions.",
+          "responseLead": "We first identify how the property is actually being used.",
+          "responseBody": "Sentinel separates private use, guest stays, and mixed use before scope, visit rhythm, and decision level are defined.",
+          "alt": "A bedroom prepared for both an owner stay and possible guest use."
         },
-        "adHoc": {
-          "title": "What is not agreed at the start returns later as chaos.",
-          "body": "Access, cleaning, documentation, decisions, and preparation start being added only after the problem has already appeared.",
-          "responseLead": "Scope is set before action, not after the first crisis.",
-          "responseBody": "We define what should be checked, documented, and handled locally before every issue becomes a separate improvisation.",
-          "alt": "A property set up ad hoc, with elements added without a plan."
+        "prematureGuestSetup": {
+          "title": "Guest-support structure built too early starts running by itself.",
+          "body": "Keys, towels, cleaning, and instructions appear before it is clear whether the property will actually operate around guest stays.",
+          "responseLead": "We do not set guest procedure before the model is classified.",
+          "responseBody": "First we check whether the property needs private-use, guest-stay, or mixed oversight. Only then do access, preparation, and documentation rules follow.",
+          "alt": "A hallway with keys, towels, cleaning supplies, and an instruction board."
         },
-        "conflict": {
-          "title": "Private stays and guest stays should not mix without rules.",
-          "body": "Towels, owner belongings, access, cleaning, and property condition start colliding when nobody has defined who uses the property and when.",
-          "responseLead": "Use rules are separated before rotation.",
-          "responseBody": "Sentinel helps define what belongs to the owner, what belongs to guests, and what preparation is required before each type of stay.",
-          "alt": "Owner belongings next to items prepared for guests."
+        "wrongScopeAssumption": {
+          "title": "A package chosen from a guess rarely fits reality.",
+          "body": "Too little scope leaves gaps; too much starts work the property does not yet need. The mismatch appears when the first use pattern changes.",
+          "responseLead": "Scope follows the classified model, not a default category.",
+          "responseBody": "Sentinel structures stay frequency, access, cleaning, decisions, and reporting, then points to the correct operational intensity.",
+          "alt": "A table with a tablet, notes, keys, and a property scope plan."
         },
-        "wrongPackage": {
-          "title": "A package chosen from assumptions rarely fits reality.",
-          "body": "If scope is chosen before the use model is clear, you pay for the wrong elements or discover missing ones too late.",
-          "responseLead": "First the model, then the scope.",
-          "responseBody": "Oversight is shaped by actual use, stay frequency, access, and decision level — not by a default online choice.",
-          "alt": "A property whose service scope does not match how it is actually used."
+        "adHocScopeCreep": {
+          "title": "Undefined scope quickly becomes a chain of exceptions.",
+          "body": "Small requests for access, cleaning, repair, or preparation get added one by one. After a while, nobody knows what was agreed.",
+          "responseLead": "The boundary between structure and one-off request is set in advance.",
+          "responseBody": "Sentinel records what belongs inside the service, what needs a separate decision, and when the owner must approve work outside scope.",
+          "alt": "A cupboard with keys, towels, cleaning supplies, and items added to property handling."
         }
       }
     },

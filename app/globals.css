@@ -4408,6 +4408,242 @@ textarea:focus {
   }
 }
 
+/* Regular guest stays — per-slide focal crops + a warmer clay/copper turnover
+   atmosphere. Scoped to [data-pathway='regular-guest-stays'] so private-use is untouched. */
+.home-risk-plane--risk .home-risk-figure[data-risk-slide='turnover'] .home-risk-figure__img {
+  object-position: 50% 55%;
+}
+
+.home-risk-plane--risk .home-risk-figure[data-risk-slide='damage'] .home-risk-figure__img {
+  object-position: 60% 72%;
+}
+
+.home-risk-plane--risk .home-risk-figure[data-risk-slide='dispatcher'] .home-risk-figure__img {
+  object-position: 48% 62%;
+}
+
+.home-risk-plane--risk .home-risk-figure[data-risk-slide='boiler'] .home-risk-figure__img {
+  object-position: 58% 46%;
+}
+
+/* Mixed / not defined - ambiguous operating-model risks, kept cooler and more
+   procedural than the guest-stay carousel. */
+.home-risk-plane--risk .home-risk-figure[data-risk-slide='wrongStartingAssumption'] .home-risk-figure__img {
+  object-position: 58% 58%;
+}
+
+.home-risk-plane--risk .home-risk-figure[data-risk-slide='prematureGuestSetup'] .home-risk-figure__img {
+  object-position: 48% 56%;
+}
+
+.home-risk-plane--risk .home-risk-figure[data-risk-slide='wrongScopeAssumption'] .home-risk-figure__img {
+  object-position: 58% 60%;
+}
+
+.home-risk-plane--risk .home-risk-figure[data-risk-slide='adHocScopeCreep'] .home-risk-figure__img {
+  object-position: 62% 54%;
+}
+
+.home-risk-stage[data-pathway='regular-guest-stays'] .home-risk-bubble--control {
+  background:
+    radial-gradient(16rem 12rem at 92% 4%, rgba(199, 120, 78, 0.38), transparent 68%),
+    radial-gradient(13rem 11rem at 0% 100%, rgba(118, 205, 193, 0.12), transparent 66%),
+    linear-gradient(145deg, #0a1826 0%, #15212d 54%, #0a1119 100%);
+  border-top-color: rgba(210, 154, 87, 0.26);
+}
+
+.home-risk-stage[data-pathway='regular-guest-stays'] .home-risk-bubble--control::before {
+  background:
+    linear-gradient(90deg, rgba(210, 154, 87, 0.09) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 250, 242, 0.05) 1px, transparent 1px);
+}
+
+.home-risk-stage[data-pathway='regular-guest-stays'] .home-risk-bubble--control::after {
+  background: linear-gradient(180deg, rgba(210, 154, 87, 0.22), transparent);
+}
+
+.home-risk-stage[data-pathway='regular-guest-stays'] .home-risk-control-aura {
+  border-color: rgba(210, 154, 87, 0.3);
+  background:
+    radial-gradient(circle, rgba(199, 120, 78, 0.22), transparent 62%),
+    conic-gradient(from 120deg, transparent, rgba(210, 154, 87, 0.36), transparent, rgba(118, 205, 193, 0.18), transparent);
+}
+
+.home-risk-stage[data-pathway='regular-guest-stays'] .home-risk-bubble--control .home-risk-bubble__tag {
+  color: rgba(233, 178, 124, 0.98);
+  text-shadow: 0 0 1rem rgba(210, 154, 87, 0.38);
+}
+
+.home-risk-stage[data-pathway='regular-guest-stays'] .home-risk-control-signal {
+  border-color: rgba(210, 154, 87, 0.32);
+  box-shadow: inset 0 0 0.85rem rgba(210, 154, 87, 0.16);
+}
+
+.home-risk-stage[data-pathway='regular-guest-stays'] .home-risk-control-signal::before {
+  background: linear-gradient(90deg, rgba(184, 102, 74, 0.95), rgba(210, 154, 87, 0.95));
+  box-shadow: 0 0 0.9rem rgba(210, 154, 87, 0.6);
+}
+
+.home-risk-stage[data-pathway='regular-guest-stays'] .home-risk-control-step__num {
+  border-color: rgba(210, 154, 87, 0.2);
+  color: rgba(226, 160, 98, 0.95);
+}
+
+.home-risk-stage[data-pathway='regular-guest-stays'] .home-risk-controls,
+.home-risk-stage[data-pathway='regular-guest-stays'] .home-risk-arrow {
+  border-color: rgba(210, 154, 87, 0.22);
+}
+
+.home-risk-stage[data-pathway='regular-guest-stays'] .home-risk-dot::before {
+  background: rgba(210, 154, 87, 0.22);
+}
+
+.home-risk-stage[data-pathway='regular-guest-stays'] .home-risk-dot[data-active='true']::before {
+  background: linear-gradient(90deg, rgba(184, 102, 74, 0.95), rgba(210, 154, 87, 0.9));
+  box-shadow: 0 0 0.65rem rgba(210, 154, 87, 0.26);
+}
+
+.home-risk-stage[data-pathway='regular-guest-stays'] .home-risk-bubble--risk .home-risk-bubble__tag {
+  color: color-mix(in srgb, var(--clay) 88%, #fffaf2);
+}
+
+@media (min-width: 900px) {
+  .home-risk-stage[data-pathway='regular-guest-stays'] .home-risk-bubble--control {
+    background:
+      radial-gradient(16rem 18rem at 100% 0%, rgba(199, 120, 78, 0.3), transparent 66%),
+      radial-gradient(14rem 16rem at 0% 100%, rgba(118, 205, 193, 0.12), transparent 70%),
+      linear-gradient(155deg, #0a1826 0%, #16222e 48%, #090f16 100%);
+    border-left-color: rgba(210, 154, 87, 0.26);
+    box-shadow:
+      -1rem 0 2.6rem rgba(10, 14, 22, 0.3),
+      inset 1px 0 rgba(255, 250, 242, 0.06),
+      inset 0 0 2.8rem rgba(210, 154, 87, 0.07);
+  }
+}
+
+/* Mixed / not defined - slate, graphite and muted amber control surface. */
+.home-risk-stage[data-pathway='mixed-not-defined'] {
+  background: linear-gradient(150deg, #07131f 0%, #142235 62%, #090f17 100%);
+}
+
+.home-risk-stage[data-pathway='mixed-not-defined'] .home-risk-bubble--risk {
+  background:
+    linear-gradient(150deg, rgba(13, 25, 39, 0.92), rgba(17, 24, 34, 0.9)),
+    rgba(8, 15, 24, 0.86);
+  border-color: rgba(214, 173, 106, 0.18);
+}
+
+.home-risk-stage[data-pathway='mixed-not-defined'] .home-risk-bubble--risk .home-risk-bubble__tag {
+  color: rgba(214, 173, 106, 0.96);
+}
+
+.home-risk-stage[data-pathway='mixed-not-defined'] .home-risk-bubble--control {
+  background:
+    radial-gradient(16rem 12rem at 92% 4%, rgba(214, 173, 106, 0.22), transparent 68%),
+    radial-gradient(13rem 11rem at 0% 100%, rgba(91, 106, 126, 0.22), transparent 66%),
+    linear-gradient(145deg, #07121d 0%, #121c2a 54%, #080d14 100%);
+  border-top-color: rgba(214, 173, 106, 0.2);
+}
+
+.home-risk-stage[data-pathway='mixed-not-defined'] .home-risk-bubble--control::before {
+  background:
+    linear-gradient(90deg, rgba(214, 173, 106, 0.07) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(226, 232, 240, 0.045) 1px, transparent 1px);
+}
+
+.home-risk-stage[data-pathway='mixed-not-defined'] .home-risk-bubble--control::after {
+  background: linear-gradient(180deg, rgba(214, 173, 106, 0.14), transparent);
+}
+
+.home-risk-stage[data-pathway='mixed-not-defined'] .home-risk-control-aura {
+  border-color: rgba(214, 173, 106, 0.22);
+  background:
+    radial-gradient(circle, rgba(214, 173, 106, 0.14), transparent 62%),
+    conic-gradient(from 120deg, transparent, rgba(214, 173, 106, 0.28), transparent, rgba(91, 106, 126, 0.24), transparent);
+  opacity: 0.62;
+}
+
+.home-risk-stage[data-pathway='mixed-not-defined'] .home-risk-bubble--control .home-risk-bubble__tag {
+  color: rgba(232, 190, 126, 0.98);
+  text-shadow: 0 0 1rem rgba(214, 173, 106, 0.26);
+}
+
+.home-risk-stage[data-pathway='mixed-not-defined'] .home-risk-control-signal {
+  border-color: rgba(214, 173, 106, 0.24);
+  box-shadow: inset 0 0 0.85rem rgba(214, 173, 106, 0.1);
+}
+
+.home-risk-stage[data-pathway='mixed-not-defined'] .home-risk-control-signal::before {
+  background: linear-gradient(90deg, rgba(119, 132, 152, 0.96), rgba(214, 173, 106, 0.92));
+  box-shadow: 0 0 0.8rem rgba(214, 173, 106, 0.42);
+}
+
+.home-risk-stage[data-pathway='mixed-not-defined'] .home-risk-bubble__response {
+  border-color: rgba(214, 173, 106, 0.24);
+  border-left-color: rgba(214, 173, 106, 0.78);
+  background:
+    radial-gradient(12rem 8rem at 88% 0%, rgba(214, 173, 106, 0.12), transparent 68%),
+    linear-gradient(130deg, rgba(226, 232, 240, 0.1), rgba(91, 106, 126, 0.12)),
+    rgba(8, 15, 24, 0.84);
+  box-shadow:
+    0 1.25rem 2.6rem rgba(3, 8, 14, 0.3),
+    0 0 1.8rem rgba(91, 106, 126, 0.1),
+    inset 0 1px rgba(255, 250, 242, 0.12);
+}
+
+.home-risk-stage[data-pathway='mixed-not-defined'] .home-risk-bubble__response::before {
+  background:
+    linear-gradient(90deg, rgba(214, 173, 106, 0.18), transparent 24%),
+    linear-gradient(180deg, rgba(226, 232, 240, 0.09), transparent 42%);
+}
+
+.home-risk-stage[data-pathway='mixed-not-defined'] .home-risk-bubble__response::after {
+  background: linear-gradient(115deg, transparent, rgba(214, 173, 106, 0.11), transparent);
+}
+
+.home-risk-stage[data-pathway='mixed-not-defined'] .home-risk-control-step__num {
+  border-color: rgba(214, 173, 106, 0.2);
+  color: rgba(232, 190, 126, 0.95);
+}
+
+.home-risk-stage[data-pathway='mixed-not-defined'] .home-risk-control-step::before {
+  background: linear-gradient(90deg, transparent, rgba(214, 173, 106, 0.12), transparent);
+}
+
+.home-risk-stage[data-pathway='mixed-not-defined'] .home-risk-controls,
+.home-risk-stage[data-pathway='mixed-not-defined'] .home-risk-arrow {
+  border-color: rgba(214, 173, 106, 0.2);
+}
+
+.home-risk-stage[data-pathway='mixed-not-defined'] .home-risk-dot::before {
+  background: rgba(214, 173, 106, 0.18);
+}
+
+.home-risk-stage[data-pathway='mixed-not-defined'] .home-risk-dot[data-active='true']::before {
+  background: linear-gradient(90deg, rgba(119, 132, 152, 0.95), rgba(214, 173, 106, 0.9));
+  box-shadow: 0 0 0.6rem rgba(214, 173, 106, 0.22);
+}
+
+@media (min-width: 900px) {
+  .home-risk-stage[data-pathway='mixed-not-defined'] .home-risk-bubble--control {
+    background:
+      radial-gradient(16rem 18rem at 100% 0%, rgba(214, 173, 106, 0.2), transparent 66%),
+      radial-gradient(14rem 16rem at 0% 100%, rgba(91, 106, 126, 0.18), transparent 70%),
+      linear-gradient(155deg, #07121d 0%, #121c2a 48%, #080d14 100%);
+    border-left-color: rgba(214, 173, 106, 0.22);
+    box-shadow:
+      -1rem 0 2.6rem rgba(8, 12, 18, 0.32),
+      inset 1px 0 rgba(255, 250, 242, 0.05),
+      inset 0 0 2.8rem rgba(214, 173, 106, 0.05);
+  }
+
+  .home-risk-stage[data-pathway='mixed-not-defined']::before {
+    background:
+      linear-gradient(90deg, rgba(7, 19, 31, 0.64) 0%, rgba(15, 23, 34, 0.28) 38%, transparent 74%),
+      linear-gradient(0deg, rgba(7, 19, 31, 0.62) 0%, transparent 42%);
+  }
+}
+
 /* Level ladder — three ascending responsibility rows (vertical containment) */
 .home-level-ladder {
   margin-top: 2.75rem;

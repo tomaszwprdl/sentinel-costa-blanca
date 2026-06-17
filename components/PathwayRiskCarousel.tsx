@@ -33,17 +33,17 @@ const PATHWAY_RISK: Record<PathwayKey, PathwayRiskConfig> = {
       { key: 'turnover', image: 'guest-risk-turnover-readiness.webp' },
       { key: 'damage', image: 'guest-risk-post-stay-damage.webp' },
       { key: 'dispatcher', image: 'guest-risk-owner-dispatcher.webp' },
-      { key: 'review', image: 'guest-risk-review-complaint.webp' },
+      { key: 'boiler', image: 'guest-risk-boiler-failure.webp' },
     ],
   },
   'mixed-not-defined': {
     namespace: 'home.mixedRisk',
     imageBase: '/images/home/mixed-not-defined',
     slides: [
-      { key: 'wrongModel', image: 'mixed-risk-wrong-model.webp' },
-      { key: 'adHoc', image: 'mixed-risk-ad-hoc-scope.webp' },
-      { key: 'conflict', image: 'mixed-risk-private-guest-conflict.webp' },
-      { key: 'wrongPackage', image: 'mixed-risk-wrong-package.webp' },
+      { key: 'wrongStartingAssumption', image: 'mixed-risk-wrong-starting-assumption.webp' },
+      { key: 'prematureGuestSetup', image: 'mixed-risk-premature-guest-setup.webp' },
+      { key: 'wrongScopeAssumption', image: 'mixed-risk-wrong-scope-assumption.webp' },
+      { key: 'adHocScopeCreep', image: 'mixed-risk-ad-hoc-scope-creep.webp' },
     ],
   },
 };
@@ -148,6 +148,7 @@ export default function PathwayRiskCarousel({ pathway }: { pathway: PathwayKey }
         className="home-risk-stage"
         data-transitioning={incoming !== null ? 'true' : undefined}
         data-active-slide={displaySlide.key}
+        data-pathway={pathway}
         role="group"
         aria-roledescription="carousel"
         aria-label={t('riskHeading')}

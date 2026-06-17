@@ -393,32 +393,32 @@
       },
       "slides": {
         "turnover": {
-          "title": "Gość nie ocenia procesu. Ocenia to, co widzi po wejściu.",
-          "body": "Po rotacji nawet drobiazg — zapach, kurz, brak ręczników albo niedomknięte przygotowanie — staje się problemem w pierwszych minutach pobytu.",
-          "responseLead": "Sentinel traktuje rotację jak proces, nie improwizację.",
-          "responseBody": "Przygotowanie, dostęp, gotowość i widoczne ryzyka są sprawdzane lokalnie, zanim problem trafi do gościa.",
-          "alt": "Mieszkanie tuż po pobycie gości, jeszcze nieprzygotowane do kolejnego wejścia."
+          "title": "Gość widzi efekt, nie proces przygotowania.",
+          "body": "Nie interesuje go, kto miał posprzątać, dowieźć ręczniki albo sprawdzić lokal. Jeśli pobyt zaczyna się od niedociągnięć, problem wraca do właściciela natychmiast.",
+          "responseLead": "Rotacja ma ustaloną lokalną strukturę.",
+          "responseBody": "Sprzątanie, przygotowanie i kontrola gotowości mogą być koordynowane przed przyjazdem gościa, zamiast zależeć od kilku osób i pilnych wiadomości.",
+          "alt": "Sypialnia w trakcie rotacji: pościel, ręczniki i rzeczy do przygotowania przed kolejnym pobytem."
         },
         "damage": {
-          "title": "Szkoda po pobycie łatwo znika między wiadomościami.",
-          "body": "Pęknięcie, plama, brakujący element albo usterka mogą zostać zauważone dopiero wtedy, gdy kolejny gość już jest w lokalu.",
+          "title": "Szkoda po pobycie może zniknąć między wiadomościami.",
+          "body": "Plama, pęknięcie albo uszkodzony element szybko stają się sporem: kiedy powstały, kto je zauważył i czy da się to jeszcze udokumentować przed kolejną rezerwacją.",
           "responseLead": "Stan po pobycie trafia do zapisu.",
-          "responseBody": "Widoczne szkody i odchylenia są dokumentowane, żeby decyzja nie opierała się na domysłach i spóźnionych wiadomościach.",
-          "alt": "Drobne uszkodzenie w lokalu zauważone po pobycie gości."
+          "responseBody": "Widoczne szkody i zmiany w lokalu mogą być sprawdzone, sfotografowane i przekazane do decyzji, zanim problem przejdzie na następny pobyt.",
+          "alt": "Plama na sofie i ślad na drewnianym stoliku w salonie po pobycie gości."
         },
         "dispatcher": {
-          "title": "Bez struktury właściciel staje się dyspozytorem każdej rotacji.",
-          "body": "Sprzątanie, wejście, technik, klucze, pytania gości — wszystko zaczyna wracać do Ciebie wtedy, gdy powinno działać lokalnie.",
-          "responseLead": "Sentinel przejmuje lokalną koordynację ustalonych działań.",
-          "responseBody": "Zamiast serii pilnych telefonów masz zapis, lokalne wykonanie i jasną ścieżkę decyzji między pobytami.",
-          "alt": "Klucze i sprawy do koordynacji między pobytami gości."
+          "title": "Między pobytami właściciel staje się dyspozytorem.",
+          "body": "Klucze, wejście technika, sprzątanie, poprawki i potwierdzenia zaczynają zależeć od Ciebie — nawet gdy jesteś daleko i masz tylko telefon.",
+          "responseLead": "Dostęp i działania są uzgodnione lokalnie.",
+          "responseBody": "Klucze, wejścia, technicy i przygotowanie mogą działać według ustalonych zasad, bez każdorazowego improwizowania między pobytami.",
+          "alt": "Klucze, telefon, drzwi i torba technika w wejściu do lokalu."
         },
-        "review": {
-          "title": "Jeden słaby przyjazd potrafi kosztować więcej niż sprzątanie.",
-          "body": "Nieprzygotowany lokal oznacza skargi, presję na zwrot, gorszą opinię i nerwowe ratowanie sytuacji po fakcie.",
-          "responseLead": "Gotowość lokalu jest sprawdzana zanim stanie się oceną gościa.",
-          "responseBody": "Sentinel pomaga wychwycić braki i ryzyka przed przyjazdem, żeby rotacja nie zaczynała się od reklamacji.",
-          "alt": "Wejście do lokalu, które robi słabe pierwsze wrażenie na gościu."
+        "boiler": {
+          "title": "Awaria w trakcie pobytu od razu staje się Twoim problemem.",
+          "body": "Brak ciepłej wody, błąd bojlera albo inna podstawowa usterka nie czeka. Gość oczekuje reakcji, a właściciel zaczyna gasić sytuację zdalnie.",
+          "responseLead": "Zgłoszenie ma lokalny punkt reakcji.",
+          "responseBody": "Sentinel może sprawdzić sytuację na miejscu, potwierdzić skalę problemu i uruchomić ustaloną ścieżkę działania, zanim awaria zmieni się w większy konflikt z gościem.",
+          "alt": "Panel bojlera z ciśnieniomierzem i czerwonym komunikatem błędu podczas pobytu gościa."
         }
       }
     },
@@ -435,33 +435,33 @@
         "action": "Działanie"
       },
       "slides": {
-        "wrongModel": {
-          "title": "Zły model obsługi ustawia cały system w złym kierunku.",
-          "body": "Lokal używany prywatnie i lokal z gośćmi mają inne ryzyka. Jeśli potraktujesz je tak samo, błędy pojawią się dopiero w działaniu.",
-          "responseLead": "Najpierw klasyfikujemy rzeczywisty sposób używania lokalu.",
-          "responseBody": "Sentinel pomaga oddzielić użytek prywatny, pobyty gości i model mieszany, zanim zakres usługi zostanie ustawiony na złych założeniach.",
-          "alt": "Lokal, w którym rzeczy właściciela i elementy dla gości są wymieszane."
+        "wrongStartingAssumption": {
+          "title": "Błędne założenie na starcie ustawia zły model obsługi.",
+          "body": "Lokal może zaczynać jako prywatny, a później przyjmować gości. Jeśli zakres zostanie wybrany z założenia, kolejne potrzeby stają się wyjątkami.",
+          "responseLead": "Najpierw rozpoznajemy faktyczny sposób używania lokalu.",
+          "responseBody": "Sentinel oddziela użytek prywatny, pobyty gości i model mieszany, zanim zostanie dobrany zakres, rytm kontroli i poziom decyzji.",
+          "alt": "Sypialnia przygotowana jednocześnie pod pobyt właściciela i możliwy pobyt gości."
         },
-        "adHoc": {
-          "title": "To, co nieustalone na początku, wraca później jako chaos.",
-          "body": "Dostęp, sprzątanie, dokumentacja, decyzje i przygotowanie lokalu zaczynają być dokładane dopiero wtedy, gdy problem już się pojawił.",
-          "responseLead": "Zakres powstaje przed działaniem, nie po pierwszym kryzysie.",
-          "responseBody": "Ustalamy, co ma być kontrolowane, dokumentowane i wykonywane lokalnie, zanim każda sprawa zacznie wymagać osobnej improwizacji.",
-          "alt": "Lokal urządzony prowizorycznie, z elementami dokładanymi bez planu."
+        "prematureGuestSetup": {
+          "title": "Struktura dla gości zbudowana za wcześnie zaczyna żyć własnym życiem.",
+          "body": "Klucze, ręczniki, sprzątanie i instrukcje pojawiają się, zanim wiadomo, czy lokal rzeczywiście będzie działał w rytmie pobytów gości.",
+          "responseLead": "Nie ustawiamy procedury pobytów gości przed klasyfikacją modelu.",
+          "responseBody": "Najpierw sprawdzamy, czy lokal wymaga obsługi prywatnej, pobytów gości albo mieszanej. Dopiero potem określamy dostęp, przygotowanie i dokumentację.",
+          "alt": "Korytarz z kluczami, ręcznikami, środkami sprzątania i tablicą z instrukcjami."
         },
-        "conflict": {
-          "title": "Prywatny pobyt i pobyt gości nie powinny mieszać się bez zasad.",
-          "body": "Ręczniki, rzeczy właściciela, dostęp, sprzątanie i stan lokalu szybko zaczynają kolidować, jeśli nie wiadomo, kto i kiedy używa mieszkania.",
-          "responseLead": "Zasady używania lokalu są rozdzielone przed rotacją.",
-          "responseBody": "Sentinel pomaga ustalić, co dotyczy właściciela, co dotyczy gości i jakie przygotowanie musi być wykonane przed każdym typem pobytu.",
-          "alt": "Rzeczy właściciela obok elementów przygotowanych dla gości."
+        "wrongScopeAssumption": {
+          "title": "Pakiet wybrany z domysłu rzadko pasuje do rzeczywistości.",
+          "body": "Zbyt niski zakres zostawia luki, a zbyt szeroki uruchamia elementy, których lokal jeszcze nie potrzebuje. Problem pojawia się dopiero przy pierwszej zmianie używania.",
+          "responseLead": "Zakres wynika z rozpoznanego modelu, nie z domyślnej kategorii.",
+          "responseBody": "Sentinel porządkuje częstotliwość pobytów, dostęp, sprzątanie, decyzje i raportowanie, a następnie wskazuje właściwą intensywność obsługi.",
+          "alt": "Stół z tabletem, notatkami, kluczami i planem zakresu obsługi lokalu."
         },
-        "wrongPackage": {
-          "title": "Pakiet wybrany z założenia rzadko pasuje do rzeczywistości.",
-          "body": "Jeśli zakres wybierasz zanim wiadomo, jak lokal będzie używany, płacisz za niepotrzebne elementy albo odkrywasz braki za późno.",
-          "responseLead": "Najpierw decyzja o modelu, potem zakres.",
-          "responseBody": "Dobór nadzoru wynika z używania lokalu, częstotliwości pobytów, dostępu i poziomu decyzji, a nie z domyślnego wyboru online.",
-          "alt": "Lokal, którego zakres obsługi nie pasuje do faktycznego sposobu używania."
+        "adHocScopeCreep": {
+          "title": "Nieustalony zakres szybko zmienia się w serię wyjątków.",
+          "body": "Drobne prośby o dostęp, sprzątanie, naprawę albo przygotowanie zaczynają być dokładane osobno. Po czasie nikt nie wie, co było uzgodnione.",
+          "responseLead": "Granica między strukturą a jednorazową prośbą jest ustalana wcześniej.",
+          "responseBody": "Sentinel zapisuje, co jest częścią obsługi, co wymaga osobnej decyzji i kiedy właściciel musi zatwierdzić działanie poza zakresem.",
+          "alt": "Szafka z kluczami, ręcznikami, środkami sprzątania i rzeczami dokładanymi do obsługi lokalu."
         }
       }
     },

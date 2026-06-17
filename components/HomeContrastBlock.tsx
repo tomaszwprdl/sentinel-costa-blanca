@@ -8,13 +8,11 @@ import PathwayRiskCarousel from '@/components/PathwayRiskCarousel';
 const CONTRAST_ITEMS = [1, 2, 3, 4] as const;
 const PROOF_STEPS = ['issue', 'evidence', 'decision', 'action'] as const;
 
-// A pathway only renders the risk carousel once its photography exists. Guest and
-// mixed pathways keep the old comparison band + procedure board until assets land —
-// see doc/image-prompts/. Flip to true after dropping the images into /public.
+// A pathway only renders the risk carousel once its photography exists.
 const CAROUSEL_READY: Record<PathwayKey, boolean> = {
   'private-use-only': true,
-  'regular-guest-stays': false,
-  'mixed-not-defined': false,
+  'regular-guest-stays': true,
+  'mixed-not-defined': true,
 };
 
 export default function HomeContrastBlock() {
