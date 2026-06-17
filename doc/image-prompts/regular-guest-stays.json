@@ -1,0 +1,52 @@
+{
+  "pathway": "regular-guest-stays",
+  "status": "pending-assets",
+  "purpose": "Left-plane risk/evidence images for the home 'Bez nas / Z nami' risk carousel (regular-guest-stays variant). Each image is the unmanaged-risk situation; the matching 'Z nami' answer is text only (no second photo).",
+  "destinationFolder": "/public/images/home/regular-guest-stays",
+  "format": "webp",
+  "targetWeightKb": "under 500",
+  "aspectRatio": "3:2 landscape (min 1800x1200); final crop tuned via CSS object-position",
+  "tone": "Realistic southern Costa Blanca / Torrevieja apartment. White walls, tile or terrazzo floor, persiana shutters, warm Mediterranean daylight, occasional terrace glimpse. Premium but understated, never luxury staging. Documentary realism, quiet restrained mood. Operational/turnover energy, slightly faster than the private-use set, but NOT cheerful Airbnb marketing.",
+  "sharedNegativePrompt": "people, faces, hands, body parts, text, lettering, numbers, watermark, logo, brand name, signage, UI, phone screen content, smiling hosts, real-estate-ad gloss, luxury glamour, HDR halos, oversaturation, fisheye, tilt-shift, cartoon, illustration, 3d render look, AI artifacts, distorted geometry, warped lines, duplicated objects, exaggerated disaster, flooding, fire, dramatic destruction, horror mold, generic cleaning-product stock photo",
+  "globalConstraints": [
+    "No people and no pets anywhere in frame.",
+    "No readable text, screens, brand marks or signage.",
+    "Coherent single-source natural lighting; believable shadows.",
+    "Damage and mess must read as realistic and recent, not catastrophic.",
+    "Same apartment vocabulary across all four so the set feels like one property."
+  ],
+  "images": [
+    {
+      "id": "turnover",
+      "filename": "guest-risk-turnover-readiness.webp",
+      "emotionalPurpose": "Guests judge what they see on entry. A not-yet-reset apartment becomes a problem in the first minutes.",
+      "prompt": "Interior photo of a small Costa Blanca holiday apartment immediately after guests have left and before it has been reset. Bed linen pulled back and crumpled, two used towels draped over a chair and the sofa arm, a couple of used drinking glasses on the coffee table, a cushion out of place, curtains half drawn. Warm late-morning light through persiana shutters. The room is not dirty, just clearly used and unprepared. Realistic, restrained, documentary.",
+      "recommendedObjectPosition": "center 45%",
+      "focalPoint": "the unmade bed / used towels in the mid-ground"
+    },
+    {
+      "id": "damage",
+      "filename": "guest-risk-post-stay-damage.webp",
+      "emotionalPurpose": "Damage after a stay disappears between messages and is found only when the next guest is already inside.",
+      "prompt": "Close, low-key interior photo of a small post-stay damage detail in a Costa Blanca apartment: a pale ring stain and a fine scratch on a wooden side table near a wall, soft natural daylight. Quiet, undramatic, evidential. The kind of small fault that is easy to miss and easy to dispute later. Shallow depth of field, realistic texture.",
+      "recommendedObjectPosition": "center 55%",
+      "focalPoint": "the stain and scratch detail"
+    },
+    {
+      "id": "dispatcher",
+      "filename": "guest-risk-owner-dispatcher.webp",
+      "emotionalPurpose": "Without local structure the owner becomes the remote dispatcher of every turnover: keys, cleaners, access, questions.",
+      "prompt": "Interior still life on a kitchen worktop in a Costa Blanca apartment: a small bunch of apartment keys with blank plain fob tags, a phone lying face-down, a folded cleaning cloth and a neutral spray bottle, a notepad with no readable writing. Implies coordination handled from a distance. Natural side light, calm composition, realistic, no branding.",
+      "recommendedObjectPosition": "center",
+      "focalPoint": "the keys and face-down phone cluster"
+    },
+    {
+      "id": "review",
+      "filename": "guest-risk-review-complaint.webp",
+      "emotionalPurpose": "One weak arrival costs more than cleaning: an unprepared property reads as a poor first impression.",
+      "prompt": "Interior photo of the entrance and living area of a Costa Blanca apartment that feels unprepared for arrival: bare surfaces, a single key left on an empty table, an open empty cupboard, flat cool light, nothing made ready, a slightly stale and unwelcoming atmosphere. Restrained and realistic, not staged, conveying a weak first impression without any mess or damage.",
+      "recommendedObjectPosition": "center 40%",
+      "focalPoint": "the bare unwelcoming entry table"
+    }
+  ]
+}
