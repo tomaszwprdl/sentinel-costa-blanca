@@ -16565,3 +16565,79 @@ textarea:focus {
     font-size: 2.05rem;
   }
 }
+
+/* ============================================================
+   Operational Dossier Band — homepage process section
+   Seats the Field Manual register on a warmer, darker
+   administrative surface so the section reads as a deliberate
+   feature band, not a pale card lost in the page.
+   Scope: homepage process section only — .home-section--route
+   is used solely by the "Jak działa system" Section.
+   ============================================================ */
+
+/* 1. Section band — warm taupe / aged-stone dossier surface.
+   Overrides the previous near-white field and its pale-whitening
+   inset glow so the light register panel clearly stands out. */
+.home-pathway-body .home-section--route {
+  --dossier-base: #d9ccb4;
+  --dossier-deep: #ccbe9f;
+  --dossier-rule: rgba(92, 72, 46, 0.13);
+  --dossier-accent: #2f6f73;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 2.85rem, var(--dossier-rule) 2.85rem 2.87rem),
+    linear-gradient(180deg, var(--dossier-deep) 0%, var(--dossier-base) 13%, var(--dossier-base) 87%, var(--dossier-deep) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 252, 245, 0.4),
+    inset 0 26px 48px rgba(52, 39, 22, 0.13),
+    inset 0 -28px 52px rgba(52, 39, 22, 0.11);
+}
+
+/* pathway accent carried onto the band (same teal / copper / blue-violet logic) */
+.home-pathway-body .home-section--route:has(.home-process-panel[data-pathway="private-use-only"]) { --dossier-accent: #2f6f73; }
+.home-pathway-body .home-section--route:has(.home-process-panel[data-pathway="regular-guest-stays"]) { --dossier-accent: #b8664a; }
+.home-pathway-body .home-section--route:has(.home-process-panel[data-pathway="mixed-not-defined"]) { --dossier-accent: #4f5f94; }
+
+/* controlled pathway accent line at the top edge + soft framing
+   (replaces the old whitening radials so the band stays deep) */
+.home-pathway-body .home-section--route:has(.home-process-panel)::before {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--dossier-accent) 62%, transparent) 0 0.16rem, transparent 0.16rem),
+    radial-gradient(48rem 18rem at 50% 0%, color-mix(in srgb, var(--dossier-accent) 15%, transparent), transparent 72%),
+    radial-gradient(72rem 34rem at 50% 118%, rgba(36, 27, 14, 0.14), transparent 70%);
+  opacity: 1;
+}
+
+/* fine procedural texture + faint edge vignette, kept restrained */
+.home-pathway-body .home-section--route::after {
+  background:
+    linear-gradient(90deg, rgba(36, 27, 14, 0.05), transparent 11%, transparent 89%, rgba(36, 27, 14, 0.05)),
+    repeating-linear-gradient(90deg, transparent 0 3.1rem, rgba(92, 72, 46, 0.05) 3.1rem 3.12rem);
+  background-size: auto, auto;
+  opacity: 0.7;
+}
+
+/* 2. Register panel — clearer edge + stronger-but-soft lift off the band.
+   Background (warm paper) intentionally left untouched. */
+.home-command-panel.home-process-panel {
+  border: 1px solid color-mix(in srgb, var(--register-accent) 24%, rgba(101, 82, 56, 0.52));
+  box-shadow:
+    0 1px 0 rgba(255, 253, 247, 0.55),
+    0 30px 62px rgba(42, 31, 16, 0.22),
+    0 12px 26px rgba(42, 31, 16, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* 3. Step 01 — replace the weak white square with a restrained scope
+   bracket (CSS linework only, in the pathway accent). */
+.home-command-panel .home-process-posture::before {
+  top: -0.05rem;
+  left: -0.6rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 0;
+  border-top: 2px solid var(--register-accent);
+  border-left: 2px solid var(--register-accent);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
