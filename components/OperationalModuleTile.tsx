@@ -34,7 +34,7 @@ function ModuleVisual({ visual }: { visual: NonNullable<OperationalModuleTilePro
               <path d="M104 124h152M150 84v116M206 84v116" />
               <path d="M92 218h176" />
               <path d="M130 232h100" />
-              <path d="M122 104h20M178 146h20M226 170h20" stroke="var(--accent)" opacity="0.86" />
+              <path d="M122 104h20M178 146h20M226 170h20" stroke="var(--svc-field, var(--support))" opacity="0.86" />
             </>
           )}
           {visual === 'access' && (
@@ -43,11 +43,11 @@ function ModuleVisual({ visual }: { visual: NonNullable<OperationalModuleTilePro
               <path d="M130 114h58M130 150h38" />
               <path d="M204 190l42 42M246 190l38 38" />
               <circle cx="250" cy="112" r="18" />
-              <path d="M268 112h44M292 112v24" stroke="var(--accent)" opacity="0.86" />
+              <path d="M268 112h44M292 112v24" stroke="var(--svc-field, var(--support))" opacity="0.86" />
             </>
           )}
         </g>
-        <g fill="var(--accent)" opacity="0.82">
+        <g fill="var(--svc-decision, var(--accent))" opacity="0.72">
           <circle cx="76" cy="58" r="8" />
           <circle cx="286" cy="214" r="8" />
         </g>

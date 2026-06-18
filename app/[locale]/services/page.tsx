@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
@@ -15,7 +14,6 @@ import ServiceBoundaryGrid from '@/components/ServiceBoundaryGrid';
 import OperationalModuleTile from '@/components/OperationalModuleTile';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import JourneyNav from '@/components/JourneyNav';
-import OperationalField from '@/components/graphics/OperationalField';
 
 type OperationalModule = {
   visual?: 'readiness' | 'seasonal' | 'access';
@@ -26,6 +24,11 @@ type OperationalModule = {
   body: string;
   items: string[];
   note?: string;
+};
+
+type DossierRecordRow = {
+  label: string;
+  value: string;
 };
 
 const NOT_INCLUDED_ITEM_KEYS = [
@@ -48,8 +51,9 @@ export default async function ServicesPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'services' });
-  const proofBadges = t.raw('redesign.hero.proofBadges') as string[];
   const headlineParts = t.raw('redesign.hero.headlineParts') as string[];
+  const heroRecordRows = t.raw('redesign.dossier.hero.recordRows') as DossierRecordRow[];
+  const heroChecklist = t.raw('redesign.dossier.hero.checklist') as string[];
   const journeyItems = [
     { id: 'situation', label: t('redesign.journey.situation') },
     { id: 'responsibility', label: t('redesign.journey.responsibility') },
@@ -92,7 +96,6 @@ export default async function ServicesPage({
       <HeaderClient />
       <main className="services-page min-h-screen">
         <Section tone="authority" className="section-primitive--first services-command-hero" id="qualification">
-          <OperationalField variant="cartography" />
           <span className="gfx-ruler" aria-hidden="true" />
           <GridFrame className="services-command-hero__grid items-center">
             <Region name="main" desktopSpan="half">
@@ -115,35 +118,36 @@ export default async function ServicesPage({
                     {t('redesign.hero.secondaryCta')}
                   </Link>
                 </div>
-                <div className="services-hero-proof" aria-label={t('redesign.hero.decisionQuestion')}>
-                  {proofBadges.map((badge) => (
-                    <span key={badge} className="services-hero-proof__badge" tabIndex={0}>
-                      {badge}
-                    </span>
-                  ))}
-                </div>
               </div>
             </Region>
             <Region name="support" tabletSpan="half" desktopSpan="half">
-              <figure className="services-hero-visual services-hero-visual--photo motion-panel-reveal" aria-hidden="true">
-                <div className="services-hero-visual__frame services-hero-visual__frame--photo gfx-evidence-frame">
-                  <div className="services-hero-visual__chrome">
+              <figure className="services-dossier-artifact motion-panel-reveal" aria-hidden="true">
+                <div className="services-dossier-artifact__header">
+                  <p>{t('redesign.dossier.hero.kicker')}</p>
+                  <strong>{t('redesign.dossier.hero.title')}</strong>
+                  <span>{t('redesign.dossier.hero.status')}</span>
+                </div>
+                <div className="services-dossier-artifact__body">
+                  <div className="services-dossier-record">
+                    {heroRecordRows.map((row) => (
+                      <div key={row.label} className="services-dossier-record__row">
+                        <span>{row.label}</span>
+                        <strong>{row.value}</strong>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="services-dossier-flow">
                     <span />
                     <span />
                     <span />
                   </div>
-                  <div className="services-hero-visual__media relative aspect-[4/3]">
-                    <Image
-                      src="/photos/sentinel-report-tablet-placeholder.png"
-                      alt=""
-                      fill
-                      sizes="(min-width: 1024px) 44vw, 100vw"
-                      className="services-hero-visual__image object-cover"
-                      priority
-                    />
-                    <span className="services-hero-visual__glow" aria-hidden="true" />
-                    <span className="services-hero-visual__scan" />
+                  <div className="services-dossier-checklist">
+                    <p>{t('redesign.dossier.hero.checklistTitle')}</p>
+                    {heroChecklist.map((item) => (
+                      <span key={item}>{item}</span>
+                    ))}
                   </div>
+                  <span className="services-dossier-artifact__stamp">{t('redesign.dossier.hero.stamp')}</span>
                 </div>
               </figure>
             </Region>
@@ -169,67 +173,74 @@ export default async function ServicesPage({
               <h2 className="h2-system mt-3">{t('redesign.modules.title')}</h2>
               <p className="mt-3 text-body">{t('redesign.modules.intro')}</p>
             </div>
-            <div className="services-cleaning-focus">
-              <div className="services-cleaning-focus__intro">
-                <p className="section-label">{t('redesign.modules.cleaning.eyebrow')}</p>
-                <h3>{t('redesign.modules.cleaning.title')}</h3>
-                <p>{t('redesign.modules.cleaning.intro')}</p>
-              </div>
-              <div className="services-cleaning-focus__grid">
-                {CLEANING_CAPABILITY_KEYS.map((key) => (
-                  <article key={key} className="services-cleaning-focus__item">
-                    <span aria-hidden="true" />
-                    <h4>{t(`redesign.modules.cleaning.items.${key}.title`)}</h4>
-                    <p>{t(`redesign.modules.cleaning.items.${key}.body`)}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
-            <div className="services-module-system">
-              <div className="services-module-stack__header">
-                <span>{t('redesign.modules.stackLabel')}</span>
-                <strong>{t('redesign.modules.stackTitle')}</strong>
-              </div>
-              {operationalModules.map((module) => (
-                <OperationalModuleTile key={module.title} {...module} />
-              ))}
-            </div>
-            <div className="services-module-guardrail">
-              <span>{t('redesign.modules.guardrailLabel')}</span>
-              <p>{t('redesign.modules.guardrailBody')}</p>
-            </div>
-            <div className="services-execution-inset" id="execution-only">
-              <div>
-                <p className="section-label">{t('executionOnly.microLabel')}</p>
-                <h3>{t('redesign.executionStrip.title')}</h3>
-                <p>{t('redesign.executionStrip.body')}</p>
-              </div>
-              <div className="services-execution-inset__grid">
-                <div className="services-execution-card services-execution-card--available">
-                  <h4 className="services-execution-card__title">{t('redesign.executionStrip.availableLabel')}</h4>
-                  <ul className="services-execution-list text-sm text-body">
-                    {EXECUTION_ONLY_AVAILABLE_KEYS.map((key) => (
-                      <li key={key}>{t(`executionOnly.availableItems.${key}`)}</li>
+            <div className="services-capability-console">
+              <div className="services-capability-console__primary">
+                <div className="services-cleaning-focus">
+                  <div className="services-cleaning-focus__intro">
+                    <p className="section-label">{t('redesign.modules.cleaning.eyebrow')}</p>
+                    <h3>{t('redesign.modules.cleaning.title')}</h3>
+                    <p>{t('redesign.modules.cleaning.intro')}</p>
+                  </div>
+                  <div className="services-cleaning-focus__grid">
+                    {CLEANING_CAPABILITY_KEYS.map((key) => (
+                      <article key={key} className="services-cleaning-focus__item">
+                        <span aria-hidden="true" />
+                        <h4>{t(`redesign.modules.cleaning.items.${key}.title`)}</h4>
+                        <p>{t(`redesign.modules.cleaning.items.${key}.body`)}</p>
+                      </article>
                     ))}
-                  </ul>
+                  </div>
                 </div>
-                <div className="services-execution-card services-execution-card--limits">
-                  <h4 className="services-execution-card__title">{t('redesign.executionStrip.limitsLabel')}</h4>
-                  <ul className="services-execution-list text-sm text-body">
-                    {EXECUTION_ONLY_LIMITATION_KEYS.map((key) => (
-                      <li key={key}>{t(`executionOnly.limitationsItems.${key}`)}</li>
-                    ))}
-                  </ul>
+                <div className="services-module-guardrail">
+                  <span>{t('redesign.modules.guardrailLabel')}</span>
+                  <p>{t('redesign.modules.guardrailBody')}</p>
                 </div>
+                <p className="services-partner-note">{t('redesign.modules.partnerNote')}</p>
               </div>
-              <div className="services-execution-inset__footer">
-                <p>{t('executionOnly.closing')}</p>
-                <Link href={`/${locale}/contact`} className="btn-secondary">
-                  {t('redesign.executionStrip.cta')}
-                </Link>
+
+              <div className="services-capability-console__secondary">
+                <div className="services-module-system">
+                  <div className="services-module-stack__header">
+                    <span>{t('redesign.modules.stackLabel')}</span>
+                    <strong>{t('redesign.modules.stackTitle')}</strong>
+                  </div>
+                  {operationalModules.map((module) => (
+                    <OperationalModuleTile key={module.title} {...module} />
+                  ))}
+                </div>
+                <div className="services-execution-inset" id="execution-only">
+                  <div>
+                    <p className="section-label">{t('executionOnly.microLabel')}</p>
+                    <h3>{t('redesign.executionStrip.title')}</h3>
+                    <p>{t('redesign.executionStrip.body')}</p>
+                  </div>
+                  <div className="services-execution-inset__grid">
+                    <div className="services-execution-card services-execution-card--available">
+                      <h4 className="services-execution-card__title">{t('redesign.executionStrip.availableLabel')}</h4>
+                      <ul className="services-execution-list text-sm text-body">
+                        {EXECUTION_ONLY_AVAILABLE_KEYS.map((key) => (
+                          <li key={key}>{t(`executionOnly.availableItems.${key}`)}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="services-execution-card services-execution-card--limits">
+                      <h4 className="services-execution-card__title">{t('redesign.executionStrip.limitsLabel')}</h4>
+                      <ul className="services-execution-list text-sm text-body">
+                        {EXECUTION_ONLY_LIMITATION_KEYS.map((key) => (
+                          <li key={key}>{t(`executionOnly.limitationsItems.${key}`)}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="services-execution-inset__footer">
+                    <p>{t('executionOnly.closing')}</p>
+                    <Link href={`/${locale}/contact`} className="btn-secondary">
+                      {t('redesign.executionStrip.cta')}
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
-            <p className="services-partner-note">{t('redesign.modules.partnerNote')}</p>
           </div>
         </Section>
 
@@ -315,6 +326,11 @@ export default async function ServicesPage({
                 <p className="mt-4 max-w-[62ch] text-lg leading-relaxed text-body">
                   {t('cta.subheadline')}
                 </p>
+                <div className="services-final-threshold" aria-hidden="true">
+                  <span />
+                  <span />
+                  <span />
+                </div>
               </div>
               <div className="services-final-cta__panel p-5 md:p-8">
                 <div className="flex flex-col gap-4">

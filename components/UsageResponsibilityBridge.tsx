@@ -32,6 +32,15 @@ export default function UsageResponsibilityBridge() {
         <p className="mt-3 mb-0 max-w-[62ch] text-body">{t('redesign.bridge.intro')}</p>
       </div>
 
+      <div className="services-pathway-spine" aria-hidden="true">
+        {PATHWAY_KEYS.map((key: PathwayKey, index) => (
+          <span key={key} data-active={key === activeKey} data-gated={key === 'mixed-not-defined'}>
+            <em>{String(index + 1).padStart(2, '0')}</em>
+            <strong>{tPathway(`${key}.title`)}</strong>
+          </span>
+        ))}
+      </div>
+
       <div className="services-router-board">
         <div className="services-router-board__choices" role="tablist" aria-label={t('redesign.scenario.promptLabel')}>
           {PATHWAY_KEYS.map((key: PathwayKey, index) => (

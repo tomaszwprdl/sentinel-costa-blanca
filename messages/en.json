@@ -655,6 +655,25 @@
           "3 levels"
         ]
       },
+      "dossier": {
+        "hero": {
+          "kicker": "Operational dossier",
+          "title": "Owner and property record",
+          "status": "Scope after review",
+          "stamp": "Sentinel / local",
+          "recordRows": [
+            { "label": "Situation", "value": "How the property is used" },
+            { "label": "Responsibility", "value": "Package, SLA, and decision threshold" },
+            { "label": "Execution", "value": "Access, readiness, documentation" }
+          ],
+          "checklistTitle": "Filed into the record",
+          "checklist": [
+            "visit report",
+            "access and readiness log",
+            "owner decision threshold"
+          ]
+        }
+      },
       "ladder": {
         "eyebrow": "Responsibility depth",
         "title": "The package defines how much responsibility Sentinel holds on site.",
