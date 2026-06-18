@@ -1560,14 +1560,110 @@
     "redesign": {
       "hero": {
         "eyebrow": "Process at a glance",
-        "headline": "From first contact to documented oversight",
+        "headline": "From first contact to report and decision",
         "lead": "The process does not start with an open task list. Property, access, scope, and reporting are confirmed first.",
         "primaryCta": "Start contact",
-        "secondaryCta": "View report example",
+        "secondaryCta": "View the sequence",
+        "registerKicker": "Procedure record",
+        "registerTitle": "Responsibility moves in order",
+        "registerStatus": "controlled sequence",
+        "registerStamp": "inside agreed scope",
+        "registerRows": [
+          { "label": "Before action", "value": "scope, access, and contact rules are established" },
+          { "label": "During visit", "value": "visible checks, entry record, and observations" },
+          { "label": "After visit", "value": "report, decision boundary, and action log" }
+        ],
         "facts": [
           { "label": "Start", "value": "qualification and access" },
           { "label": "Proof", "value": "report after visit" },
           { "label": "Boundary", "value": "decisions within limit" }
+        ]
+      },
+      "procedure": {
+        "eyebrow": "Procedure corridor",
+        "title": "Access, visit, report, decision, and action move through one controlled sequence.",
+        "intro": "The process is built so the owner can see what is established before action, what happens on site, what is recorded, and where a decision returns to the owner.",
+        "rulesEyebrow": "Operating rule",
+        "rulesTitle": "The sequence protects the scope.",
+        "rules": [
+          { "label": "Access", "value": "No entry happens without an agreed reason, access method, and record." },
+          { "label": "Visit", "value": "The visit follows the package rhythm or an agreed event." },
+          { "label": "Decision", "value": "Sentinel acts only inside the package and authority limit; above that, the owner approves." }
+        ],
+        "steps": [
+          {
+            "key": "setup",
+            "marker": "SET",
+            "title": "Scope is established before action.",
+            "body": "Property data, usage pattern, package, contact people, and communication rules are confirmed before Sentinel starts acting.",
+            "artifactTitle": "Setup note",
+            "artifactItems": ["Property fit", "Owner contact", "Package boundary"]
+          },
+          {
+            "key": "access",
+            "marker": "KEY",
+            "title": "Access is controlled.",
+            "body": "Keys, entry method, third-party access, and entry reasons are handled as part of the agreed scope.",
+            "artifactTitle": "Access note",
+            "artifactItems": ["Key custody", "Entry reason", "After-entry confirmation"]
+          },
+          {
+            "key": "visit",
+            "marker": "VIS",
+            "title": "The visit follows a checklist.",
+            "body": "Sentinel checks visible condition, access points, moisture or water signals, interior state, and agreed operational points.",
+            "artifactTitle": "Visit checklist",
+            "artifactItems": ["Access and security", "Water / moisture", "Interior condition"]
+          },
+          {
+            "key": "report",
+            "marker": "REP",
+            "title": "Observations become a report.",
+            "body": "Photos, notes, timing, condition, and next-step context are gathered into one owner-facing record.",
+            "artifactTitle": "Report excerpt",
+            "artifactItems": ["Summary", "Photo references", "Next action"]
+          },
+          {
+            "key": "decision",
+            "marker": "DEC",
+            "title": "Decision enters at the threshold.",
+            "body": "If the issue exceeds package scope, authority limit, or prior agreement, the decision returns to the owner.",
+            "artifactTitle": "Threshold record",
+            "artifactItems": ["Within limit", "Owner approval", "Outside scope"]
+          },
+          {
+            "key": "action",
+            "marker": "LOG",
+            "title": "Action is logged and continuity is kept.",
+            "body": "Closed items, pending approvals, access events, and rhythm changes remain in the operating record.",
+            "artifactTitle": "Action log",
+            "artifactItems": ["Closed", "Pending", "Next rhythm"]
+          }
+        ]
+      },
+      "evidence": {
+        "eyebrow": "Report and threshold",
+        "title": "The report is where observation becomes owner decision.",
+        "intro": "How It Works is not a promise of instant fixing. It is a controlled chain from on-site observation to documented responsibility.",
+        "reportLabel": "Evidence panel",
+        "thresholdLabel": "Decision threshold",
+        "panels": [
+          {
+            "title": "Sample visit record",
+            "rows": [
+              { "label": "Observed", "value": "Visible condition and relevant risk points." },
+              { "label": "Documented", "value": "Photos, notes, timing, and context." },
+              { "label": "Owner sees", "value": "What is closed, what is pending, and what requires approval." }
+            ]
+          },
+          {
+            "title": "Action boundary",
+            "rows": [
+              { "label": "Inside scope", "value": "Handled according to package rhythm and authority." },
+              { "label": "At threshold", "value": "Sentinel may act only inside the agreed limit." },
+              { "label": "Outside limit", "value": "Owner approval or separate agreement is required." }
+            ]
+          }
         ]
       },
       "timeline": {

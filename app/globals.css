@@ -18144,3 +18144,688 @@ textarea:focus {
     font-size: 0.86rem;
   }
 }
+
+/* How It Works dossier validation: procedure corridor, distinct from Services architecture. */
+.hiw-procedure-page {
+  --hiw-ink: #10263f;
+  --hiw-ink-deep: #071523;
+  --hiw-paper: #fffaf2;
+  --hiw-paper-strong: #fffdf8;
+  --hiw-stone: #f2eee6;
+  --hiw-rule: #d8cdbc;
+  --hiw-field: #2f6f73;
+  --hiw-decision: #b8664a;
+  --hiw-muted: #68767a;
+  background:
+    linear-gradient(180deg, var(--hiw-stone) 0%, var(--hiw-paper) 32%, var(--hiw-stone) 74%, var(--hiw-ink-deep) 100%);
+}
+
+.hiw-procedure-hero {
+  min-height: min(72svh, 700px);
+  background:
+    linear-gradient(90deg, rgba(255, 250, 242, 0.035) 0 1px, transparent 1px 100%) 0 0 / 4.5rem 100%,
+    radial-gradient(30rem 18rem at 86% 22%, rgba(47, 111, 115, 0.24), transparent 72%),
+    radial-gradient(24rem 14rem at 44% 100%, rgba(184, 102, 74, 0.13), transparent 72%),
+    linear-gradient(135deg, #071523 0%, #10263f 56%, #163b5c 100%);
+}
+
+.hiw-procedure-hero__grid {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hiw-procedure-hero__copy,
+.hiw-procedure-register,
+.hiw-procedure-shell,
+.hiw-evidence-shell,
+.hiw-action-log {
+  min-width: 0;
+}
+
+.hiw-procedure-register {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 250, 242, 0.22);
+  border-radius: 0.55rem;
+  background:
+    linear-gradient(90deg, rgba(16, 38, 63, 0.04) 0 1px, transparent 1px 100%) 0 0 / 3.2rem 100%,
+    linear-gradient(180deg, var(--hiw-paper-strong), var(--hiw-paper));
+  box-shadow:
+    0 24px 68px rgba(2, 12, 24, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  color: var(--hiw-ink);
+}
+
+.hiw-procedure-register__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.35rem 1rem;
+  border-bottom: 1px solid var(--hiw-rule);
+  padding: 1rem;
+}
+
+.hiw-procedure-register__header p,
+.hiw-procedure-register__header span,
+.hiw-procedure-register__row span,
+.hiw-procedure-mini-rail span,
+.hiw-report-excerpt__top span,
+.hiw-threshold-console__top span {
+  margin: 0;
+  color: var(--hiw-field);
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.09em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.hiw-procedure-register__header strong {
+  grid-column: 1;
+  color: var(--hiw-ink);
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.hiw-procedure-register__header span {
+  grid-row: 1 / span 2;
+  grid-column: 2;
+  align-self: start;
+  border: 1px solid color-mix(in srgb, var(--hiw-field) 40%, var(--hiw-rule));
+  border-radius: 999px;
+  padding: 0.35rem 0.55rem;
+}
+
+.hiw-procedure-register__body {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.hiw-procedure-register__rows {
+  display: grid;
+  border: 1px solid var(--hiw-rule);
+  border-radius: 0.45rem;
+  background: rgba(255, 255, 255, 0.32);
+}
+
+.hiw-procedure-register__row {
+  display: grid;
+  grid-template-columns: minmax(6.25rem, 0.34fr) minmax(0, 1fr);
+  gap: 0.8rem;
+  border-bottom: 1px solid var(--hiw-rule);
+  padding: 0.78rem 0.85rem;
+}
+
+.hiw-procedure-register__row:last-child {
+  border-bottom: 0;
+}
+
+.hiw-procedure-register__row strong {
+  min-width: 0;
+  color: var(--hiw-ink);
+  font-size: 0.92rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.hiw-procedure-mini-rail {
+  position: relative;
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0 0 0 0.95rem;
+  list-style: none;
+}
+
+.hiw-procedure-mini-rail::before {
+  position: absolute;
+  top: 0.8rem;
+  bottom: 0.8rem;
+  left: 0.24rem;
+  width: 1px;
+  background: color-mix(in srgb, var(--hiw-field) 38%, var(--hiw-rule));
+  content: "";
+}
+
+.hiw-procedure-mini-rail li {
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr);
+  gap: 0.6rem;
+  align-items: center;
+  min-width: 0;
+}
+
+.hiw-procedure-mini-rail strong {
+  min-width: 0;
+  color: var(--hiw-ink);
+  font-size: 0.86rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.hiw-procedure-register__stamp {
+  justify-self: end;
+  border: 1px solid color-mix(in srgb, var(--hiw-decision) 48%, transparent);
+  border-radius: 0.32rem;
+  color: color-mix(in srgb, var(--hiw-decision) 86%, var(--hiw-ink));
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  padding: 0.42rem 0.5rem;
+  text-transform: uppercase;
+  transform: rotate(-1.4deg);
+}
+
+.hiw-journey-nav .journey-nav__link {
+  border-radius: 0.35rem;
+}
+
+.hiw-procedure-section {
+  background:
+    radial-gradient(28rem 16rem at 14% 0%, rgba(255, 250, 242, 0.72), transparent 70%),
+    linear-gradient(180deg, var(--hiw-stone), var(--hiw-paper));
+}
+
+.hiw-procedure-shell {
+  border: 1px solid var(--hiw-rule);
+  border-radius: 0.55rem;
+  background:
+    linear-gradient(90deg, rgba(92, 72, 46, 0.035) 0 1px, transparent 1px 100%) 0 0 / 3.4rem 100%,
+    linear-gradient(180deg, var(--hiw-paper-strong), var(--hiw-paper));
+  box-shadow: 0 22px 60px rgba(16, 38, 63, 0.1);
+}
+
+.hiw-procedure-shell__intro,
+.hiw-evidence-shell__intro {
+  border-bottom: 1px solid var(--hiw-rule);
+  padding: 1rem;
+}
+
+.hiw-procedure-shell__grid {
+  display: grid;
+  gap: 0;
+}
+
+.hiw-procedure-corridor {
+  position: relative;
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hiw-procedure-corridor::before {
+  position: absolute;
+  top: 1.7rem;
+  bottom: 1.7rem;
+  left: 1.82rem;
+  width: 2px;
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, var(--hiw-field), color-mix(in srgb, var(--hiw-field) 54%, var(--hiw-decision)) 72%, var(--hiw-decision));
+  content: "";
+}
+
+.hiw-procedure-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 3.65rem minmax(0, 1fr);
+  gap: 0.85rem;
+  min-width: 0;
+  border-bottom: 1px solid var(--hiw-rule);
+  padding: 1rem;
+}
+
+.hiw-procedure-step:last-child {
+  border-bottom: 0;
+}
+
+.hiw-procedure-step__marker {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--hiw-field) 48%, var(--hiw-rule));
+  border-radius: 999px;
+  background: var(--hiw-paper);
+  box-shadow: 0 0 0 7px color-mix(in srgb, var(--hiw-paper) 88%, transparent);
+}
+
+.hiw-procedure-step__marker span {
+  color: var(--hiw-field);
+  font-size: 0.64rem;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+}
+
+.hiw-procedure-step[data-step-key="decision"] .hiw-procedure-step__marker,
+.hiw-procedure-step[data-step-key="action"] .hiw-procedure-step__marker {
+  border-color: color-mix(in srgb, var(--hiw-decision) 58%, var(--hiw-rule));
+}
+
+.hiw-procedure-step[data-step-key="decision"] .hiw-procedure-step__marker span,
+.hiw-procedure-step[data-step-key="action"] .hiw-procedure-step__marker span {
+  color: var(--hiw-decision);
+}
+
+.hiw-procedure-step__copy {
+  min-width: 0;
+}
+
+.hiw-procedure-step__copy p {
+  margin: 0 0 0.25rem;
+  color: var(--hiw-field);
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+}
+
+.hiw-procedure-step__copy h3 {
+  margin: 0;
+  color: var(--hiw-ink);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 950;
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+
+.hiw-procedure-step__copy span {
+  display: block;
+  margin-top: 0.42rem;
+  color: var(--hiw-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.hiw-procedure-step__artifact {
+  grid-column: 2;
+  min-width: 0;
+  border: 1px solid color-mix(in srgb, var(--hiw-rule) 74%, transparent);
+  border-radius: 0.45rem;
+  background: color-mix(in srgb, var(--hiw-stone) 56%, var(--hiw-paper));
+  padding: 0.78rem;
+}
+
+.hiw-procedure-step__artifact strong {
+  display: block;
+  color: var(--hiw-ink);
+  font-size: 0.82rem;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hiw-procedure-step__artifact ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.62rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hiw-procedure-step__artifact li {
+  min-width: 0;
+  border: 1px solid color-mix(in srgb, var(--hiw-rule) 78%, transparent);
+  border-radius: 999px;
+  background: rgba(255, 250, 242, 0.58);
+  color: var(--hiw-ink);
+  font-size: 0.74rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  padding: 0.3rem 0.52rem;
+}
+
+.hiw-procedure-rulebook {
+  border-top: 1px solid var(--hiw-rule);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--hiw-stone) 72%, white), color-mix(in srgb, var(--hiw-paper) 88%, white));
+  padding: 1rem;
+}
+
+.hiw-procedure-rulebook h3 {
+  margin: 0.4rem 0 1rem;
+  color: var(--hiw-ink);
+  font-size: 1.18rem;
+  font-weight: 950;
+  line-height: 1.12;
+}
+
+.hiw-procedure-rulebook__row {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0;
+  border-top: 1px solid var(--hiw-rule);
+  padding: 0.78rem 0;
+}
+
+.hiw-procedure-rulebook__row:last-child {
+  padding-bottom: 0;
+}
+
+.hiw-procedure-rulebook__row dt {
+  color: var(--hiw-field);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hiw-procedure-rulebook__row dd {
+  margin: 0;
+  color: var(--hiw-muted);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.hiw-evidence-section {
+  background:
+    radial-gradient(24rem 14rem at 10% 0%, rgba(47, 111, 115, 0.1), transparent 70%),
+    linear-gradient(180deg, var(--hiw-paper), var(--hiw-stone));
+}
+
+.hiw-evidence-shell {
+  border: 1px solid var(--hiw-rule);
+  border-radius: 0.55rem;
+  background: var(--hiw-paper);
+  box-shadow: 0 20px 54px rgba(16, 38, 63, 0.09);
+  overflow: hidden;
+}
+
+.hiw-evidence-grid {
+  display: grid;
+}
+
+.hiw-report-excerpt,
+.hiw-threshold-console {
+  min-width: 0;
+  padding: 1rem;
+}
+
+.hiw-report-excerpt {
+  background:
+    linear-gradient(90deg, rgba(92, 72, 46, 0.035) 0 1px, transparent 1px 100%) 0 0 / 3.2rem 100%,
+    var(--hiw-paper-strong);
+}
+
+.hiw-threshold-console {
+  border-top: 1px solid rgba(255, 250, 242, 0.16);
+  background:
+    linear-gradient(90deg, rgba(255, 250, 242, 0.04) 0 1px, transparent 1px 100%) 0 0 / 3.1rem 100%,
+    linear-gradient(145deg, var(--hiw-ink-deep), var(--hiw-ink));
+  color: var(--hiw-paper);
+}
+
+.hiw-report-excerpt__top,
+.hiw-threshold-console__top {
+  display: grid;
+  gap: 0.35rem;
+  border-bottom: 1px solid var(--hiw-rule);
+  padding-bottom: 0.85rem;
+}
+
+.hiw-threshold-console__top {
+  border-bottom-color: rgba(255, 250, 242, 0.16);
+}
+
+.hiw-report-excerpt__top strong,
+.hiw-threshold-console__top strong {
+  color: inherit;
+  font-size: 1.3rem;
+  font-weight: 950;
+  line-height: 1.12;
+}
+
+.hiw-report-excerpt__rows,
+.hiw-threshold-console__rows {
+  display: grid;
+}
+
+.hiw-report-excerpt__row,
+.hiw-threshold-console__row {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0;
+  border-bottom: 1px solid var(--hiw-rule);
+  padding: 0.9rem 0;
+}
+
+.hiw-report-excerpt__row:last-child,
+.hiw-threshold-console__row:last-child {
+  border-bottom: 0;
+}
+
+.hiw-report-excerpt__row span,
+.hiw-threshold-console__row dt {
+  color: var(--hiw-field);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hiw-report-excerpt__row p,
+.hiw-threshold-console__row dd {
+  margin: 0;
+  color: var(--hiw-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.hiw-threshold-console__row {
+  border-bottom-color: rgba(255, 250, 242, 0.14);
+}
+
+.hiw-threshold-console__row dt,
+.hiw-threshold-console__top span {
+  color: color-mix(in srgb, var(--hiw-decision) 72%, var(--hiw-paper));
+}
+
+.hiw-threshold-console__row dd {
+  color: color-mix(in srgb, var(--hiw-paper) 82%, transparent);
+}
+
+.hiw-threshold-console .hiw-decision-limits {
+  margin-top: 1rem;
+}
+
+.hiw-appendix-section {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--hiw-stone) 92%, var(--hiw-paper)), var(--hiw-stone));
+}
+
+.hiw-action-log {
+  display: grid;
+  gap: 1rem;
+  border: 1px solid var(--hiw-rule);
+  border-radius: 0.55rem;
+  background:
+    linear-gradient(90deg, rgba(92, 72, 46, 0.035) 0 1px, transparent 1px 100%) 0 0 / 3.3rem 100%,
+    var(--hiw-paper);
+  box-shadow: 0 18px 48px rgba(16, 38, 63, 0.08);
+  padding: 1rem;
+}
+
+.hiw-action-log__list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--hiw-rule);
+  border-radius: 0.45rem;
+  overflow: hidden;
+}
+
+.hiw-action-log__item {
+  min-width: 0;
+  border-bottom: 1px solid var(--hiw-rule);
+  background: color-mix(in srgb, var(--hiw-paper) 84%, white);
+  padding: 0.85rem;
+}
+
+.hiw-action-log__item:last-child {
+  border-bottom: 0;
+}
+
+.hiw-action-log__item h3 {
+  margin: 0 0 0.25rem;
+  color: var(--hiw-ink);
+  font-size: 0.96rem;
+  font-weight: 950;
+}
+
+.hiw-action-log__item p {
+  margin: 0;
+  color: var(--hiw-muted);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .hiw-procedure-hero__grid {
+    grid-template-columns: minmax(0, 0.95fr) minmax(20rem, 0.72fr);
+  }
+
+  .hiw-procedure-shell__intro,
+  .hiw-evidence-shell__intro {
+    padding: 1.25rem 1.35rem;
+  }
+
+  .hiw-procedure-shell__grid {
+    grid-template-columns: minmax(0, 0.68fr) minmax(18rem, 0.32fr);
+  }
+
+  .hiw-procedure-rulebook {
+    border-top: 0;
+    border-left: 1px solid var(--hiw-rule);
+    padding: 1.2rem;
+  }
+
+  .hiw-procedure-step {
+    grid-template-columns: 3.8rem minmax(0, 0.58fr) minmax(14rem, 0.42fr);
+    align-items: start;
+    padding: 1.1rem 1.2rem;
+  }
+
+  .hiw-procedure-step__artifact {
+    grid-column: 3;
+  }
+
+  .hiw-evidence-grid {
+    grid-template-columns: minmax(0, 0.58fr) minmax(18rem, 0.42fr);
+  }
+
+  .hiw-report-excerpt,
+  .hiw-threshold-console {
+    padding: 1.2rem;
+  }
+
+  .hiw-threshold-console {
+    border-top: 0;
+    border-left: 1px solid rgba(255, 250, 242, 0.16);
+  }
+
+  .hiw-action-log {
+    grid-template-columns: minmax(0, 0.36fr) minmax(0, 0.64fr);
+    align-items: start;
+    padding: 1.2rem;
+  }
+
+  .hiw-action-log__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hiw-action-log__item:nth-child(odd) {
+    border-right: 1px solid var(--hiw-rule);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hiw-procedure-hero.section-primitive--first {
+    padding-top: 4.5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .hiw-procedure-hero.section-primitive--first {
+    padding-top: 3rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .hiw-procedure-register__header {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hiw-procedure-register__header span {
+    grid-row: auto;
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .hiw-procedure-register__row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.25rem;
+  }
+
+  .hiw-procedure-corridor::before {
+    left: 1.72rem;
+  }
+
+  .hiw-procedure-step {
+    padding: 0.9rem;
+  }
+
+  .hiw-procedure-step__copy h3,
+  .hiw-report-excerpt__top strong,
+  .hiw-threshold-console__top strong {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 430px) {
+  .hiw-procedure-hero .hero-display {
+    max-width: 10.75ch;
+    font-size: 2.42rem;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .hiw-procedure-step {
+    grid-template-columns: 3.25rem minmax(0, 1fr);
+    gap: 0.65rem;
+  }
+
+  .hiw-procedure-step__marker {
+    width: 2.45rem;
+    height: 2.45rem;
+  }
+
+  .hiw-procedure-step__marker span {
+    font-size: 0.58rem;
+  }
+
+  .hiw-procedure-step__artifact {
+    grid-column: 1 / -1;
+  }
+
+  .hiw-procedure-corridor::before {
+    left: 1.35rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hiw-procedure-register,
+  .hiw-procedure-step,
+  .hiw-report-excerpt,
+  .hiw-threshold-console {
+    animation: none !important;
+    transition: none !important;
+  }
+}
