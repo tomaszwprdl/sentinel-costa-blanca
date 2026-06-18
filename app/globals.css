@@ -1135,7 +1135,7 @@ textarea:focus {
     align-self: stretch;
     min-height: 100%;
     margin-top: 0.75rem;
-    padding-top: 1.75rem;
+    padding-top: 2.15rem;
     padding-bottom: 2rem;
     background: none;
     border: none;
@@ -1144,13 +1144,13 @@ textarea:focus {
   }
 
   .visual-hero-shell .hero-copy-stack {
-    transform: translateY(24px) !important;
+    transform: translateY(34px) !important;
   }
 
   .hero-copy-stack {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 1.9rem;
   }
 
   .hero-copy-stack .hero-kicker {
@@ -1247,13 +1247,13 @@ textarea:focus {
 
 @media (min-width: 768px) {
   .hero-display {
-    font-size: 3.95rem;
+    font-size: 3.75rem;
   }
 }
 
 @media (min-width: 1180px) {
   .hero-display {
-    font-size: 4.3rem;
+    font-size: 4.05rem;
   }
 }
 
