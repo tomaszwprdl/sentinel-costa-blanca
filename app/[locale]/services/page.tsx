@@ -174,23 +174,40 @@ export default async function ServicesPage({
               <p className="mt-3 text-body">{t('redesign.modules.intro')}</p>
             </div>
             <div className="services-capability-console">
-              <div className="services-capability-console__primary">
-                <div className="services-cleaning-focus">
-                  <div className="services-cleaning-focus__intro">
-                    <p className="section-label">{t('redesign.modules.cleaning.eyebrow')}</p>
-                    <h3>{t('redesign.modules.cleaning.title')}</h3>
-                    <p>{t('redesign.modules.cleaning.intro')}</p>
+              <div className="services-capability-record">
+                <div className="services-capability-record__main">
+                  <div className="services-cleaning-focus">
+                    <div className="services-cleaning-focus__intro">
+                      <p className="section-label">{t('redesign.modules.cleaning.eyebrow')}</p>
+                      <h3>{t('redesign.modules.cleaning.title')}</h3>
+                      <p>{t('redesign.modules.cleaning.intro')}</p>
+                    </div>
+                    <div className="services-cleaning-focus__grid">
+                      {CLEANING_CAPABILITY_KEYS.map((key) => (
+                        <article key={key} className="services-cleaning-focus__item">
+                          <span aria-hidden="true" />
+                          <h4>{t(`redesign.modules.cleaning.items.${key}.title`)}</h4>
+                          <p>{t(`redesign.modules.cleaning.items.${key}.body`)}</p>
+                        </article>
+                      ))}
+                    </div>
                   </div>
-                  <div className="services-cleaning-focus__grid">
-                    {CLEANING_CAPABILITY_KEYS.map((key) => (
-                      <article key={key} className="services-cleaning-focus__item">
-                        <span aria-hidden="true" />
-                        <h4>{t(`redesign.modules.cleaning.items.${key}.title`)}</h4>
-                        <p>{t(`redesign.modules.cleaning.items.${key}.body`)}</p>
-                      </article>
+                </div>
+
+                <div className="services-capability-record__support">
+                  <div className="services-module-stack__header">
+                    <span>{t('redesign.modules.stackLabel')}</span>
+                    <strong>{t('redesign.modules.stackTitle')}</strong>
+                  </div>
+                  <div className="services-module-system">
+                    {operationalModules.map((module) => (
+                      <OperationalModuleTile key={module.title} {...module} />
                     ))}
                   </div>
                 </div>
+              </div>
+
+              <div className="services-capability-footnotes">
                 <div className="services-module-guardrail">
                   <span>{t('redesign.modules.guardrailLabel')}</span>
                   <p>{t('redesign.modules.guardrailBody')}</p>
@@ -198,46 +215,35 @@ export default async function ServicesPage({
                 <p className="services-partner-note">{t('redesign.modules.partnerNote')}</p>
               </div>
 
-              <div className="services-capability-console__secondary">
-                <div className="services-module-system">
-                  <div className="services-module-stack__header">
-                    <span>{t('redesign.modules.stackLabel')}</span>
-                    <strong>{t('redesign.modules.stackTitle')}</strong>
-                  </div>
-                  {operationalModules.map((module) => (
-                    <OperationalModuleTile key={module.title} {...module} />
-                  ))}
+              <div className="services-execution-inset services-execution-inset--subordinate" id="execution-only">
+                <div>
+                  <p className="section-label">{t('executionOnly.microLabel')}</p>
+                  <h3>{t('redesign.executionStrip.title')}</h3>
+                  <p>{t('redesign.executionStrip.body')}</p>
                 </div>
-                <div className="services-execution-inset" id="execution-only">
-                  <div>
-                    <p className="section-label">{t('executionOnly.microLabel')}</p>
-                    <h3>{t('redesign.executionStrip.title')}</h3>
-                    <p>{t('redesign.executionStrip.body')}</p>
+                <div className="services-execution-inset__grid">
+                  <div className="services-execution-card services-execution-card--available">
+                    <h4 className="services-execution-card__title">{t('redesign.executionStrip.availableLabel')}</h4>
+                    <ul className="services-execution-list text-sm text-body">
+                      {EXECUTION_ONLY_AVAILABLE_KEYS.map((key) => (
+                        <li key={key}>{t(`executionOnly.availableItems.${key}`)}</li>
+                      ))}
+                    </ul>
                   </div>
-                  <div className="services-execution-inset__grid">
-                    <div className="services-execution-card services-execution-card--available">
-                      <h4 className="services-execution-card__title">{t('redesign.executionStrip.availableLabel')}</h4>
-                      <ul className="services-execution-list text-sm text-body">
-                        {EXECUTION_ONLY_AVAILABLE_KEYS.map((key) => (
-                          <li key={key}>{t(`executionOnly.availableItems.${key}`)}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="services-execution-card services-execution-card--limits">
-                      <h4 className="services-execution-card__title">{t('redesign.executionStrip.limitsLabel')}</h4>
-                      <ul className="services-execution-list text-sm text-body">
-                        {EXECUTION_ONLY_LIMITATION_KEYS.map((key) => (
-                          <li key={key}>{t(`executionOnly.limitationsItems.${key}`)}</li>
-                        ))}
-                      </ul>
-                    </div>
+                  <div className="services-execution-card services-execution-card--limits">
+                    <h4 className="services-execution-card__title">{t('redesign.executionStrip.limitsLabel')}</h4>
+                    <ul className="services-execution-list text-sm text-body">
+                      {EXECUTION_ONLY_LIMITATION_KEYS.map((key) => (
+                        <li key={key}>{t(`executionOnly.limitationsItems.${key}`)}</li>
+                      ))}
+                    </ul>
                   </div>
-                  <div className="services-execution-inset__footer">
-                    <p>{t('executionOnly.closing')}</p>
-                    <Link href={`/${locale}/contact`} className="btn-secondary">
-                      {t('redesign.executionStrip.cta')}
-                    </Link>
-                  </div>
+                </div>
+                <div className="services-execution-inset__footer">
+                  <p>{t('executionOnly.closing')}</p>
+                  <Link href={`/${locale}/contact`} className="btn-secondary">
+                    {t('redesign.executionStrip.cta')}
+                  </Link>
                 </div>
               </div>
             </div>

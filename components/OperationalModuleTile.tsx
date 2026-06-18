@@ -74,7 +74,7 @@ export default function OperationalModuleTile({
 
   return (
     <article className={`operational-module-tile operational-module-tile--${mode} visual-card overflow-hidden ${image ? 'operational-module-tile--photo' : 'operational-module-tile--diagram'}`}>
-      {visual ? (
+      {visual && mode === 'featured' ? (
         <ModuleVisual visual={visual} />
       ) : image ? (
         <div

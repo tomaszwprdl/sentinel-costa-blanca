@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
-import EventResponseDiagram, { type EventResponseVariant } from '@/components/visuals/EventResponseDiagram';
 
 const EVENTS = [
   {
@@ -19,6 +18,8 @@ const EVENTS = [
     key: 'weekend',
   },
 ] as const;
+
+const RESPONSE_STEPS = ['observes', 'documents', 'owner'] as const;
 
 export default function WhatIfEventSimulator() {
   const t = useTranslations('services');
@@ -55,11 +56,18 @@ export default function WhatIfEventSimulator() {
         </div>
 
         <div className="services-event-simulator__stage">
-          <div key={active.key} className="services-event-diagram motion-panel-reveal">
-            <EventResponseDiagram
-              variant={active.key as EventResponseVariant}
-              className="rounded-none border-0 shadow-none"
-            />
+          <div key={active.key} className="services-event-diagram services-event-sequence motion-panel-reveal">
+            <div className="services-event-sequence__steps">
+              {RESPONSE_STEPS.map((key, index) => (
+                <div key={key} className="services-event-sequence__step">
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <strong>{t(`redesign.events.detailLabels.${key}`)}</strong>
+                </div>
+              ))}
+            </div>
+            <div className="services-event-sequence__threshold">
+              <span>{t('redesign.events.detailLabels.package')}</span>
+            </div>
           </div>
 
           <div key={`${active.key}-detail`} className="services-event-output motion-panel-reveal">
