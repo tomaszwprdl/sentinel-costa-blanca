@@ -319,9 +319,18 @@ export default async function ServicesPage({
               <div className="services-final-cta__panel p-5 md:p-8">
                 <div className="flex flex-col gap-4">
                   <div className="services-final-registry">
-                    <p>{t('framework.visitSchedulingTitle')}</p>
-                    <p>{t('framework.decisionLimitsTitle')}</p>
-                    <p>{t('framework.minCommitmentTitle')}</p>
+                    <div>
+                      <span>{t('framework.visitSchedulingTitle')}</span>
+                      <strong>{t('framework.visitSchedulingItems.scheduled')}</strong>
+                    </div>
+                    <div>
+                      <span>{t('framework.decisionLimitsTitle')}</span>
+                      <strong>{t('framework.decisionLimitsText')}</strong>
+                    </div>
+                    <div>
+                      <span>{t('framework.minCommitmentTitle')}</span>
+                      <strong>{t('framework.minCommitmentText')}</strong>
+                    </div>
                   </div>
                   <Link href={`/${locale}/contact`} className="btn-primary">
                     {t('cta.primaryButton')}

@@ -16094,25 +16094,35 @@ textarea:focus {
   gap: 0.65rem;
   border: 1px solid rgba(255, 250, 242, 0.16);
   border-radius: 1rem;
-  background:
-    linear-gradient(90deg, rgba(255, 250, 242, 0.08) 0 1px, transparent 1px 100%) 0 0 / 33.333% 100%,
-    rgba(255, 250, 242, 0.07);
+  background: rgba(255, 250, 242, 0.07);
   padding: 1rem;
 }
 
-.services-final-registry p {
+.services-final-registry div {
+  display: grid;
+  gap: 0.35rem;
   margin: 0;
   border-bottom: 1px solid rgba(255, 250, 242, 0.12);
   padding-bottom: 0.65rem;
+}
+
+.services-final-registry div:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.services-final-registry span {
   color: rgba(255, 250, 242, 0.82);
   font-size: 0.86rem;
   font-weight: 750;
   line-height: 1.45;
 }
 
-.services-final-registry p:last-child {
-  border-bottom: 0;
-  padding-bottom: 0;
+.services-final-registry strong {
+  color: var(--authority-on-dark);
+  font-size: 0.8rem;
+  font-weight: 550;
+  line-height: 1.5;
 }
 
 .hiw-section--local .hiw-chapter-header,
