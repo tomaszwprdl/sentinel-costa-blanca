@@ -774,16 +774,28 @@
         "eyebrow": "Operational layer",
         "title": "Operational services support the package. They do not create a fourth level.",
         "intro": "Cleaning, key holding, access support, and guest support are delivered within the agreed scope. They do not change Sentinel's responsibility level.",
+        "cleaning": {
+          "eyebrow": "Cleaning, readiness and stay support",
+          "title": "Cleaning is a core practical capability inside oversight.",
+          "intro": "Readiness cleaning, turnover cleaning support, and documented handover keep the property usable inside the agreed scope.",
+          "items": {
+            "readiness": { "title": "Readiness before arrival", "body": "Readiness cleaning supports owner or guest arrival where it is included or separately agreed." },
+            "turnover": { "title": "Turnover after guest use", "body": "Guest-use properties need cleaning and condition checks between stays, especially under Active Guest Use." },
+            "documentation": { "title": "Documented coordination", "body": "Cleaning is coordinated, checked, and recorded as part of the oversight chain." },
+            "boundary": { "title": "Not a cleaning-company offer", "body": "Standalone execution can be discussed separately, but package responsibility remains structured oversight." }
+          }
+        },
         "useWhen": "Scope function",
         "stackLabel": "Controlled capabilities",
         "stackTitle": "Access, movement, and seasonal readiness stay subordinate to the package.",
         "guardrailLabel": "Boundary",
         "guardrailBody": "A module can add execution capacity, but package responsibility, SLA, decision authority, and exclusions remain unchanged.",
         "moduleBodies": {
-          "rental": "Readiness, cleaning coordination, and guest entry handled as documented execution inside the agreed oversight scope.",
-          "access": "Keys, one-off entries, and transfer or vehicle support remain controlled functions inside the oversight system.",
+          "rental": "Readiness cleaning, turnover cleaning support, and guest entry handled as documented execution inside the agreed oversight scope.",
+          "access": "Keys, one-off entries, vehicle-rental support, or arrival logistics remain controlled coordination inside the oversight system.",
           "seasonal": "Opening, closing, property preparation, and additional checks are handled only where the scope allows it."
-        }
+        },
+        "partnerNote": "Where available and separately agreed, Sentinel may coordinate partner support with NowRent, including vehicle rental or arrival logistics."
       },
       "custody": {
         "eyebrow": "Access chain",
@@ -943,10 +955,10 @@
       "summary": {
         "visitsLabel": "Visits:",
         "visitsValue": "min. 1/month",
-        "accessLabel": "Access:",
-        "accessValue": "no",
+        "accessLabel": "Access coordination:",
+        "accessValue": "not standard",
         "decisionsLabel": "Emergency decisions:",
-        "decisionsValue": "limited"
+        "decisionsValue": "limited securing"
       }
     },
     "orange": {
@@ -980,11 +992,11 @@
       },
       "summary": {
         "visitsLabel": "Visits:",
-        "visitsValue": "min. 1/month",
-        "accessLabel": "Access:",
-        "accessValue": "yes",
+        "visitsValue": "min. 2/month",
+        "accessLabel": "Access coordination:",
+        "accessValue": "included",
         "decisionsLabel": "Emergency decisions:",
-        "decisionsValue": "per schedule"
+        "decisionsValue": "limit + approval"
       }
     },
     "red": {
@@ -1024,11 +1036,11 @@
       },
       "summary": {
         "visitsLabel": "Visits:",
-        "visitsValue": "min. 1/month",
-        "accessLabel": "Access:",
-        "accessValue": "yes",
+        "visitsValue": "min. 2/month",
+        "accessLabel": "Access coordination:",
+        "accessValue": "priority",
         "decisionsLabel": "Emergency decisions:",
-        "decisionsValue": "yes"
+        "decisionsValue": "agreed limit"
       }
     },
     "addons": {
@@ -1036,17 +1048,17 @@
       "title": "Operational modules (billed by use)",
       "intro": "Operational modules extend the scope of activity within an active package. They do not change the level of responsibility or decision limits.",
       "rental": {
-        "title": "Rental / Holiday Support",
+        "title": "Cleaning, readiness and stay support",
         "items": {
-          "preparation": "Property preparation coordination",
-          "cleaning": "Cleaning coordination",
-          "guests": "Guest arrival support"
+          "preparation": "Readiness cleaning before arrival",
+          "cleaning": "Turnover cleaning support",
+          "guests": "Documented guest-use handover"
         },
-        "notPM": "This is not full property management."
+        "notPM": "This is not a standalone cleaning-company or rental-management offer."
       },
       "transfers": {
-        "title": "Transfers & Vehicle Services",
-        "provider": "Provided through external partner."
+        "title": "Partner arrival logistics",
+        "provider": "NowRent support may be coordinated where available and separately agreed."
       },
       "seasonal": {
         "title": "Seasonal Services",
@@ -1175,6 +1187,16 @@
       "bedroomsLabel": "Number of independent sleeping rooms",
       "bedroomsHelper": "Rooms suitable for permanent overnight stay; affect complexity especially in guest mode.",
       "bedrooms": { "1": "1", "2": "2", "3": "3", "4p": "4+" },
+      "bathroomsLabel": "Bathrooms",
+      "bathroomsHelper": "Used for scope review and cleaning/readiness context. It does not change this estimate.",
+      "bathrooms": { "1": "1", "2": "2", "3": "3", "4p": "4+" },
+      "outdoorLabel": "Patio / terrace / outdoor area",
+      "outdoorHelper": "Context for readiness and coordination only; pricing logic is unchanged.",
+      "outdoorOptions": {
+        "none": "None",
+        "terrace": "Patio / terrace",
+        "large": "Large outdoor area"
+      },
       "groupScopeElements": "Operational scope elements (billed by use)",
       "groupScopeElementsAnchor": "They do not change jurisdiction scope. They concern operational delivery.",
       "scopeElements": {

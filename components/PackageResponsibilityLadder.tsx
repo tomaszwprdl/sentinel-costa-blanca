@@ -18,6 +18,7 @@ export default function PackageResponsibilityLadder() {
   const [activeLevel, setActiveLevel] = useState<PackageLevel>('extended');
   const active = PACKAGES.find((pkg) => pkg.levelKey === activeLevel) ?? PACKAGES[1];
   const activeSla = active.slaKey === 'sameDay' ? t('diagrams.sla.sameDay') : active.slaKey;
+  const panelId = 'services-package-responsibility-panel';
 
   return (
     <div className="services-ladder-band" id="responsibility">
@@ -35,9 +36,11 @@ export default function PackageResponsibilityLadder() {
           {PACKAGES.map((pkg) => (
             <button
               key={pkg.levelKey}
+              id={`services-package-tab-${pkg.levelKey}`}
               type="button"
               role="tab"
               aria-selected={pkg.levelKey === activeLevel}
+              aria-controls={panelId}
               data-active={pkg.levelKey === activeLevel}
               onClick={() => setActiveLevel(pkg.levelKey)}
               className={`services-responsibility-node services-responsibility-node--${pkg.levelKey}`}
@@ -55,9 +58,11 @@ export default function PackageResponsibilityLadder() {
         </div>
 
         <article
+          id={panelId}
           key={active.levelKey}
           className={`services-responsibility-reveal services-responsibility-reveal--${active.levelKey} motion-panel-reveal`}
           role="tabpanel"
+          aria-labelledby={`services-package-tab-${active.levelKey}`}
         >
           <div className="services-responsibility-reveal__header">
             <div>

@@ -35,6 +35,7 @@ export default function WhatIfEventSimulator() {
   const activePackage = PACKAGE_LEVELS.find((pkg) => pkg.key === activePackageKey) ?? PACKAGE_LEVELS[1];
   const detailKeys = ['observes', 'documents', 'owner', 'package'] as const;
   const packageSla = activePackage.sla === 'sameDay' ? t('diagrams.sla.sameDay') : activePackage.sla;
+  const packagePanelId = 'services-event-package-panel';
 
   return (
     <div className="services-event-simulator" id="event-simulator">
@@ -66,9 +67,11 @@ export default function WhatIfEventSimulator() {
             {PACKAGE_LEVELS.map((pkg) => (
               <button
                 key={pkg.key}
+                id={`services-event-package-tab-${pkg.key}`}
                 type="button"
                 role="tab"
                 aria-selected={pkg.key === activePackageKey}
+                aria-controls={packagePanelId}
                 data-active={pkg.key === activePackageKey}
                 onClick={() => setActivePackageKey(pkg.key)}
                 className={`services-event-package services-event-package--${pkg.tone}`}
@@ -110,7 +113,13 @@ export default function WhatIfEventSimulator() {
               ))}
             </div>
 
-            <div key={`${active.key}-${activePackage.key}`} className="services-event-tier-readout motion-panel-reveal">
+            <div
+              id={packagePanelId}
+              key={`${active.key}-${activePackage.key}`}
+              className="services-event-tier-readout motion-panel-reveal"
+              role="tabpanel"
+              aria-labelledby={`services-event-package-tab-${activePackage.key}`}
+            >
               <div>
                 <p>{t('redesign.ladder.eyebrow')}</p>
                 <strong>{t(`${activePackage.key}.title`)}</strong>

@@ -774,16 +774,28 @@
         "eyebrow": "Warstwa operacyjna",
         "title": "Usługi operacyjne uzupełniają pakiet. Nie tworzą czwartego poziomu.",
         "intro": "Sprzątanie, przechowywanie kluczy, obsługa wejść i wsparcie gości są realizowane w uzgodnionym zakresie. Nie zmieniają poziomu odpowiedzialności Sentinel.",
+        "cleaning": {
+          "eyebrow": "Sprzątanie, gotowość i obsługa pobytów",
+          "title": "Sprzątanie jest podstawową zdolnością praktyczną wewnątrz nadzoru.",
+          "intro": "Sprzątanie przed przyjazdem, sprzątanie między pobytami i udokumentowane przekazanie utrzymują lokal w uzgodnionym zakresie.",
+          "items": {
+            "readiness": { "title": "Gotowość przed przyjazdem", "body": "Sprzątanie przygotowawcze wspiera przyjazd właściciela lub gościa, jeśli jest w zakresie lub osobnym ustaleniu." },
+            "turnover": { "title": "Porządek po pobycie gości", "body": "Nieruchomości używane przez gości wymagają sprzątania i kontroli stanu między pobytami." },
+            "documentation": { "title": "Udokumentowana koordynacja", "body": "Sprzątanie jest koordynowane, sprawdzane i odnotowane jako część łańcucha nadzoru." },
+            "boundary": { "title": "Nie osobna firma sprzątająca", "body": "Pojedyncze wykonanie można uzgodnić osobno, ale odpowiedzialność pakietu pozostaje nadzorem strukturalnym." }
+          }
+        },
         "useWhen": "Funkcja zakresu",
         "stackLabel": "Kontrolowane zdolności",
         "stackTitle": "Dostęp, ruch i gotowość sezonowa pozostają podporządkowane pakietowi.",
         "guardrailLabel": "Granica",
         "guardrailBody": "Moduł może zwiększyć zdolność wykonania, ale odpowiedzialność pakietu, SLA, uprawnienia decyzyjne i wyłączenia pozostają bez zmian.",
         "moduleBodies": {
-          "rental": "Gotowość, koordynacja sprzątania i wejścia gości prowadzone jako udokumentowane wykonanie w uzgodnionym zakresie nadzoru.",
-          "access": "Klucze, jednorazowe wejścia oraz transfery lub wsparcie pojazdowe pozostają kontrolowanymi funkcjami w systemie nadzoru.",
+          "rental": "Sprzątanie przygotowawcze, sprzątanie między pobytami i wejścia gości prowadzone jako udokumentowane wykonanie w uzgodnionym zakresie nadzoru.",
+          "access": "Klucze, jednorazowe wejścia, wsparcie wynajmu auta lub logistyka przyjazdu pozostają kontrolowaną koordynacją w systemie nadzoru.",
           "seasonal": "Otwarcie, zamknięcie, przygotowanie lokalu i dodatkowe kontrole są prowadzone tylko tam, gdzie pozwala na to zakres."
-        }
+        },
+        "partnerNote": "W wybranych sytuacjach Sentinel może koordynować wsparcie partnerskie z NowRent, m.in. wynajem auta lub logistykę przyjazdu, jeśli jest to dostępne i uzgodnione osobno."
       },
       "custody": {
         "eyebrow": "Łańcuch dostępu",
@@ -943,10 +955,10 @@
       "summary": {
         "visitsLabel": "Wizyty:",
         "visitsValue": "min. 1/mies.",
-        "accessLabel": "Dostęp:",
-        "accessValue": "nie",
+        "accessLabel": "Koordynacja dostępu:",
+        "accessValue": "poza standardem",
         "decisionsLabel": "Decyzje awaryjne:",
-        "decisionsValue": "ograniczone"
+        "decisionsValue": "ograniczone zabezp."
       }
     },
     "orange": {
@@ -980,11 +992,11 @@
       },
       "summary": {
         "visitsLabel": "Wizyty:",
-        "visitsValue": "min. 1/mies.",
-        "accessLabel": "Dostęp:",
-        "accessValue": "tak",
+        "visitsValue": "min. 2/mies.",
+        "accessLabel": "Koordynacja dostępu:",
+        "accessValue": "w zakresie",
         "decisionsLabel": "Decyzje awaryjne:",
-        "decisionsValue": "wg harmonogramu"
+        "decisionsValue": "limit + zgoda"
       }
     },
     "red": {
@@ -1024,11 +1036,11 @@
       },
       "summary": {
         "visitsLabel": "Wizyty:",
-        "visitsValue": "min. 1/mies.",
-        "accessLabel": "Dostęp:",
-        "accessValue": "tak",
+        "visitsValue": "min. 2/mies.",
+        "accessLabel": "Koordynacja dostępu:",
+        "accessValue": "priorytet",
         "decisionsLabel": "Decyzje awaryjne:",
-        "decisionsValue": "tak"
+        "decisionsValue": "ustalony limit"
       }
     },
     "addons": {
@@ -1036,17 +1048,17 @@
       "title": "Moduły operacyjne (rozliczane według użycia)",
       "intro": "Moduły operacyjne rozszerzają zakres działań w ramach aktywnego pakietu. Nie zmieniają poziomu odpowiedzialności ani limitów decyzyjnych.",
       "rental": {
-        "title": "Wsparcie wynajmu / wakacji",
+        "title": "Sprzątanie, gotowość i obsługa pobytów",
         "items": {
-          "preparation": "Koordynacja przygotowania nieruchomości",
-          "cleaning": "Organizacja sprzątania",
-          "guests": "Wsparcie przy przyjazdach gości"
+          "preparation": "Sprzątanie przygotowawcze przed przyjazdem",
+          "cleaning": "Sprzątanie między pobytami",
+          "guests": "Udokumentowane przekazanie po użyciu gościnnym"
         },
-        "notPM": "Nie jest to zarządzanie najmem."
+        "notPM": "Nie jest to osobna firma sprzątająca ani zarządzanie najmem."
       },
       "transfers": {
-        "title": "Transfery i usługi pojazdowe",
-        "provider": "Realizowane przez partnera zewnętrznego."
+        "title": "Partnerska logistyka przyjazdu",
+        "provider": "Wsparcie NowRent może być koordynowane, jeśli jest dostępne i osobno uzgodnione."
       },
       "seasonal": {
         "title": "Usługi sezonowe",
@@ -1175,6 +1187,16 @@
       "bedroomsLabel": "Liczba niezależnych pokoi noclegowych",
       "bedroomsHelper": "Pomieszczenia umożliwiające stały nocleg; wpływają na złożoność szczególnie w trybie gościnnym.",
       "bedrooms": { "1": "1", "2": "2", "3": "3", "4p": "4+" },
+      "bathroomsLabel": "Łazienki",
+      "bathroomsHelper": "Kontekst do przeglądu zakresu i sprzątania/gotowości. Nie zmienia tej estymacji.",
+      "bathrooms": { "1": "1", "2": "2", "3": "3", "4p": "4+" },
+      "outdoorLabel": "Patio / taras / część zewnętrzna",
+      "outdoorHelper": "Kontekst gotowości i koordynacji. Logika ceny pozostaje bez zmian.",
+      "outdoorOptions": {
+        "none": "Brak",
+        "terrace": "Patio / taras",
+        "large": "Większa część zewnętrzna"
+      },
       "groupScopeElements": "Elementy zakresu operacyjnego (rozliczane według użycia)",
       "groupScopeElementsAnchor": "Nie zmieniają zakresu jurysdykcji. Dotyczą realizacji operacyjnej.",
       "scopeElements": {

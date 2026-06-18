@@ -22,6 +22,7 @@ export default function UsageResponsibilityBridge() {
   const [activeKey, setActiveKey] = useState<PathwayKey>('private-use-only');
   const activeIndex = PATHWAY_KEYS.indexOf(activeKey);
   const isGated = activeKey === 'mixed-not-defined';
+  const panelId = 'services-usage-pathway-panel';
 
   return (
     <div className="services-bridge-band" id="situation">
@@ -36,9 +37,11 @@ export default function UsageResponsibilityBridge() {
           {PATHWAY_KEYS.map((key: PathwayKey, index) => (
             <button
               key={key}
+              id={`services-usage-tab-${key}`}
               type="button"
               role="tab"
               aria-selected={key === activeKey}
+              aria-controls={panelId}
               data-active={key === activeKey}
               onClick={() => setActiveKey(key)}
               className="services-router-choice"
@@ -52,7 +55,12 @@ export default function UsageResponsibilityBridge() {
           ))}
         </div>
 
-        <article className="services-router-panel" role="tabpanel">
+        <article
+          id={panelId}
+          className="services-router-panel"
+          role="tabpanel"
+          aria-labelledby={`services-usage-tab-${activeKey}`}
+        >
           <div className="services-router-panel__content">
             <p className="services-router-panel__kicker">
               <span>{String(activeIndex + 1).padStart(2, '0')}</span>

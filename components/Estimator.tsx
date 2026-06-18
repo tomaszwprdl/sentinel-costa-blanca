@@ -19,9 +19,14 @@ import Section from '@/components/layout/Section';
 
 const PACKAGE_KEYS: PackageKey[] = ['structured_presence', 'active_oversight', 'extended_jurisdiction'];
 const BEDROOMS_KEYS: BedroomsKey[] = ['B1', 'B2', 'B3', 'B4P'];
+// Intake context only; these do not feed computeEstimate().
+const BATHROOMS_KEYS = ['B1', 'B2', 'B3', 'B4P'] as const;
+const OUTDOOR_KEYS = ['none', 'terrace', 'large'] as const;
 const ESTIMATOR_STEP_KEYS = ['jurisdiction', 'mode', 'parameters', 'scope'] as const;
 
 type EstimatorStepKey = (typeof ESTIMATOR_STEP_KEYS)[number];
+type BathroomsKey = (typeof BATHROOMS_KEYS)[number];
+type OutdoorKey = (typeof OUTDOOR_KEYS)[number];
 
 function formatRange(min: number, max: number): string {
   return `€${min}–€${max}`;
@@ -43,6 +48,8 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
   const [modeKey, setModeKey] = useState<ModeKey>('private_use');
   const [sqm, setSqm] = useState<number>(80);
   const [bedroomsKey, setBedroomsKey] = useState<BedroomsKey>('B2');
+  const [bathroomsKey, setBathroomsKey] = useState<BathroomsKey>('B1');
+  const [outdoorKey, setOutdoorKey] = useState<OutdoorKey>('none');
   const [scopeElements, setScopeElements] = useState<ScopeElementKey[]>([]);
   const [result, setResult] = useState<{ min: number; max: number } | null>(null);
   const [hasCalculated, setHasCalculated] = useState(false);
@@ -78,6 +85,12 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
   const handleBedroomsChange = (v: BedroomsKey) => {
     setBedroomsKey(v);
     collapseResult();
+  };
+  const handleBathroomsChange = (v: BathroomsKey) => {
+    setBathroomsKey(v);
+  };
+  const handleOutdoorChange = (v: OutdoorKey) => {
+    setOutdoorKey(v);
   };
   const handleScopeToggle = (k: ScopeElementKey) => {
     setScopeElements((prev) => (prev.includes(k) ? prev.filter((x) => x !== k) : [...prev, k]));
@@ -131,6 +144,14 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
       <div>
         <dt>{t('resultBedrooms')}</dt>
         <dd>{bedroomsKey === 'B4P' ? '4+' : bedroomsKey.slice(1)}</dd>
+      </div>
+      <div>
+        <dt>{t('bathroomsLabel')}</dt>
+        <dd>{bathroomsKey === 'B4P' ? '4+' : bathroomsKey.slice(1)}</dd>
+      </div>
+      <div>
+        <dt>{t('outdoorLabel')}</dt>
+        <dd>{t(`outdoorOptions.${outdoorKey}`)}</dd>
       </div>
       <div>
         <dt>{t('resultScopeElements')}</dt>
@@ -273,6 +294,42 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
                 ))}
               </div>
               <span>{t('bedroomsHelper')}</span>
+            </div>
+
+            <div className="estimator-bedroom-card">
+              <p>{t('bathroomsLabel')}</p>
+              <div className="estimator-bedroom-options" role="radiogroup" aria-label={t('bathroomsLabel')}>
+                {BATHROOMS_KEYS.map((k) => (
+                  <button
+                    key={k}
+                    type="button"
+                    aria-pressed={bathroomsKey === k}
+                    data-selected={bathroomsKey === k}
+                    onClick={() => handleBathroomsChange(k)}
+                  >
+                    {k === 'B4P' ? t('bathrooms.4p') : t(`bathrooms.${k.slice(1)}`)}
+                  </button>
+                ))}
+              </div>
+              <span>{t('bathroomsHelper')}</span>
+            </div>
+
+            <div className="estimator-bedroom-card">
+              <p>{t('outdoorLabel')}</p>
+              <div className="estimator-bedroom-options estimator-bedroom-options--outdoor" role="radiogroup" aria-label={t('outdoorLabel')}>
+                {OUTDOOR_KEYS.map((k) => (
+                  <button
+                    key={k}
+                    type="button"
+                    aria-pressed={outdoorKey === k}
+                    data-selected={outdoorKey === k}
+                    onClick={() => handleOutdoorChange(k)}
+                  >
+                    {t(`outdoorOptions.${k}`)}
+                  </button>
+                ))}
+              </div>
+              <span>{t('outdoorHelper')}</span>
             </div>
           </div>
         </div>

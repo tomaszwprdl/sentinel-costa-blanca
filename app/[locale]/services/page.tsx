@@ -41,6 +41,7 @@ const NOT_INCLUDED_ITEM_KEYS = [
 
 const EXECUTION_ONLY_AVAILABLE_KEYS = ['keyHolding', 'cleaning', 'oneTimeAccess', 'seasonalPrep'] as const;
 const EXECUTION_ONLY_LIMITATION_KEYS = ['noRegularChecks', 'noCyclicReporting', 'noEmergencySLA', 'noDecisionAuthority'] as const;
+const CLEANING_CAPABILITY_KEYS = ['readiness', 'turnover', 'documentation', 'boundary'] as const;
 
 export default async function ServicesPage({
   params,
@@ -114,9 +115,10 @@ export default async function ServicesPage({
               <div className="motion-entrance services-hero-copy max-w-[680px]">
                 <p className="services-hero-question">{t('redesign.hero.decisionQuestion')}</p>
                 <h1 className="hero-display services-hero-display services-hero-headline !text-[2.35rem] md:!text-[3.4rem] lg:!text-[3.8rem]">
-                  {headlineParts.map((part) => (
+                  {headlineParts.map((part, index) => (
                     <span key={part} className="services-hero-headline__part">
                       {part}
+                      {index < headlineParts.length - 1 ? ' ' : null}
                     </span>
                   ))}
                 </h1>
@@ -191,6 +193,22 @@ export default async function ServicesPage({
               <h2 className="h2-system mt-3">{t('redesign.modules.title')}</h2>
               <p className="mt-3 text-body">{t('redesign.modules.intro')}</p>
             </div>
+            <div className="services-cleaning-focus">
+              <div className="services-cleaning-focus__intro">
+                <p className="section-label">{t('redesign.modules.cleaning.eyebrow')}</p>
+                <h3>{t('redesign.modules.cleaning.title')}</h3>
+                <p>{t('redesign.modules.cleaning.intro')}</p>
+              </div>
+              <div className="services-cleaning-focus__grid">
+                {CLEANING_CAPABILITY_KEYS.map((key) => (
+                  <article key={key} className="services-cleaning-focus__item">
+                    <span aria-hidden="true" />
+                    <h4>{t(`redesign.modules.cleaning.items.${key}.title`)}</h4>
+                    <p>{t(`redesign.modules.cleaning.items.${key}.body`)}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
             <div className="services-module-system">
               <OperationalModuleTile {...operationalModules[0]} />
               <div className="services-module-stack">
@@ -216,6 +234,7 @@ export default async function ServicesPage({
               <span>{t('redesign.modules.guardrailLabel')}</span>
               <p>{t('redesign.modules.guardrailBody')}</p>
             </div>
+            <p className="services-partner-note">{t('redesign.modules.partnerNote')}</p>
           </div>
         </Section>
 
