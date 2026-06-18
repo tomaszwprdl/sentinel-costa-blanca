@@ -7401,6 +7401,7 @@ textarea:focus {
 #responsibility,
 #scope,
 #operational-modules,
+#execution-only,
 #estimator {
   scroll-margin-top: var(--scroll-anchor-offset);
 }
@@ -7408,7 +7409,7 @@ textarea:focus {
 .services-bridge-band,
 .services-ladder-band,
 .services-modules-band,
-.services-execution-strip,
+.services-execution-inset,
 .services-estimator-band {
   max-width: 100%;
 }
@@ -8657,7 +8658,7 @@ textarea:focus {
 .services-module-guardrail {
   display: grid;
   gap: 0.35rem;
-  margin-top: 1rem;
+  margin-top: 0.9rem;
   padding: 0.95rem 1rem;
 }
 
@@ -8892,24 +8893,43 @@ textarea:focus {
   background: color-mix(in srgb, var(--surface-card) 35%, var(--accent));
 }
 
-.services-execution-strip {
+.services-execution-inset {
+  display: grid;
+  gap: 1rem;
+  margin-top: 0.9rem;
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--line) 54%, var(--support));
-  border-radius: var(--site-radius-shell);
-  background: var(--site-surface-shell);
-  box-shadow:
-    var(--site-shadow-shell),
-    inset 0 1px 0 rgba(255, 253, 249, 0.88);
-  padding: 1.4rem;
+  border-radius: var(--site-radius-card);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--surface-light-alt) 72%, var(--surface-card)), var(--surface-card));
+  padding: 0.95rem;
 }
 
+.services-execution-inset h3 {
+  margin: 0.35rem 0 0.35rem;
+  color: var(--heading);
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  font-weight: 950;
+  line-height: 1.15;
+}
 
+.services-execution-inset p {
+  margin: 0;
+  color: var(--body);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.services-execution-inset__grid {
+  display: grid;
+  gap: 0.75rem;
+}
 
 .services-execution-card {
   border: 1px solid var(--structural-light);
-  border-radius: var(--site-radius-card);
+  border-radius: var(--site-radius-control);
   background: var(--surface-card);
-  padding: 1.1rem;
+  padding: 0.85rem;
 }
 
 .services-execution-card--available {
@@ -8941,10 +8961,17 @@ textarea:focus {
   color: var(--muted);
 }
 
-.services-execution-strip__footer {
-  margin-top: 1.25rem;
-  padding-top: 1rem;
+.services-execution-inset__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.85rem;
   border-top: 1px solid var(--structural-light);
+}
+
+.services-execution-inset__footer p {
+  color: var(--muted);
+  font-size: 0.84rem;
 }
 
 .services-final-cta {
@@ -9076,6 +9103,44 @@ textarea:focus {
 .services-estimator-band > * {
   position: relative;
   z-index: 1;
+}
+
+.services-estimator-context {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1rem;
+  border: 1px solid color-mix(in srgb, var(--line) 70%, var(--support));
+  border-radius: var(--site-radius-card);
+  background: color-mix(in srgb, var(--surface-card) 82%, var(--surface-light-alt));
+  padding: 0.85rem;
+}
+
+.services-estimator-context > p {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.services-estimator-context > div {
+  display: grid;
+  gap: 0.2rem;
+  border-top: 1px solid var(--structural-light);
+  padding-top: 0.65rem;
+}
+
+.services-estimator-context span {
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+
+.services-estimator-context strong {
+  color: var(--heading);
+  font-size: 0.9rem;
+  line-height: 1.35;
 }
 
 
@@ -9259,8 +9324,12 @@ textarea:focus {
   }
 
   .services-module-system {
-    grid-template-columns: minmax(0, 1.06fr) minmax(19rem, 0.94fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: stretch;
+  }
+
+  .services-module-stack__header {
+    grid-column: 1 / -1;
   }
 
   .services-cleaning-focus {
@@ -9288,6 +9357,15 @@ textarea:focus {
   .services-module-guardrail {
     grid-template-columns: minmax(7rem, 0.2fr) minmax(0, 0.8fr);
     align-items: center;
+  }
+
+  .services-execution-inset__grid,
+  .services-estimator-context {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .services-estimator-context > p {
+    grid-column: 1 / -1;
   }
 
   .services-modules-band,
@@ -10031,118 +10109,6 @@ textarea:focus {
   margin-top: 1.2rem;
 }
 
-.services-event-package-strip {
-  display: grid;
-  gap: 0.55rem;
-  border-top: 1px solid rgba(255, 250, 242, 0.18);
-  padding: 1rem 1.25rem 1.25rem;
-}
-
-.services-event-package {
-  display: grid;
-  grid-template-columns: 2rem minmax(0, 1fr);
-  gap: 0.65rem;
-  align-items: center;
-  border: 1px solid rgba(255, 250, 242, 0.2);
-  border-radius: var(--site-radius-control);
-  background: rgba(255, 250, 242, 0.06);
-  color: var(--authority-on-dark);
-  padding: 0.65rem;
-  text-align: left;
-  transition:
-    transform var(--motion-standard) var(--motion-ease-out),
-    background var(--motion-standard) var(--motion-ease-out),
-    border-color var(--motion-standard) var(--motion-ease-out);
-}
-
-.services-event-package:hover,
-.services-event-package:focus-visible,
-.services-event-package[data-active="true"] {
-  transform: translateY(-1px);
-  border-color: color-mix(in srgb, var(--accent) 58%, rgba(255, 250, 242, 0.2));
-  background: var(--surface-card);
-  color: var(--heading);
-}
-
-.services-event-package span {
-  display: inline-flex;
-  width: 1.8rem;
-  height: 1.8rem;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  background: rgba(255, 250, 242, 0.14);
-  font-size: 0.65rem;
-  font-weight: 950;
-}
-
-.services-event-package[data-active="true"] span {
-  background: var(--authority-bg);
-  color: var(--authority-on-dark);
-}
-
-.services-event-package strong {
-  color: inherit;
-  font-size: 0.88rem;
-  line-height: 1.2;
-}
-
-.services-event-tier-readout {
-  display: grid;
-  gap: 1rem;
-  margin-top: 1rem;
-  border: 1px solid color-mix(in srgb, var(--support) 36%, var(--line));
-  border-radius: var(--site-radius-card);
-  background: var(--site-surface-inset);
-  padding: 1rem;
-}
-
-.services-event-tier-readout p {
-  margin: 0 0 0.25rem;
-  color: var(--accent);
-  font-size: 0.68rem;
-  font-weight: 950;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.services-event-tier-readout strong {
-  color: var(--heading);
-  font-size: 1.2rem;
-}
-
-.services-event-tier-readout dl {
-  display: grid;
-  gap: 0.55rem;
-  margin: 0;
-}
-
-.services-event-tier-readout dl > div {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.8rem;
-  border-bottom: 1px solid var(--structural-light);
-  padding-bottom: 0.55rem;
-}
-
-.services-event-tier-readout dl > div:last-child {
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-
-.services-event-tier-readout dt {
-  color: var(--muted);
-  font-size: 0.78rem;
-}
-
-.services-event-tier-readout dd {
-  margin: 0;
-  color: var(--heading);
-  font-size: 0.82rem;
-  font-weight: 900;
-  text-align: right;
-}
-
 .estimator-configurator {
   position: relative;
   overflow: hidden;
@@ -10684,32 +10650,6 @@ textarea:focus {
     text-align: left;
   }
 
-  .services-event-tier-readout {
-    grid-template-columns: minmax(12rem, 0.3fr) minmax(0, 0.7fr);
-    align-items: center;
-  }
-
-  .services-event-tier-readout dl {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .services-event-tier-readout dl > div {
-    display: grid;
-    border-right: 1px solid var(--structural-light);
-    border-bottom: 0;
-    padding-right: 0.7rem;
-    padding-bottom: 0;
-  }
-
-  .services-event-tier-readout dl > div:last-child {
-    border-right: 0;
-    padding-right: 0;
-  }
-
-  .services-event-tier-readout dd {
-    text-align: left;
-  }
-
   .estimator-configurator {
     padding: 1.25rem;
   }
@@ -10778,8 +10718,12 @@ textarea:focus {
     justify-self: start;
   }
 
-  .services-event-package-strip {
-    padding-inline: 1rem;
+  .services-module-system .operational-module-tile--compact {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .services-module-system .operational-module-tile--compact .module-tile-visual {
+    display: none;
   }
 
   .estimator-configurator {
@@ -10812,7 +10756,6 @@ textarea:focus {
 @media (prefers-reduced-motion: reduce) {
   .services-router-choice,
   .services-responsibility-node,
-  .services-event-package,
   .estimator-stepper__item,
   .estimator-choice-card,
   .estimator-mode-card,

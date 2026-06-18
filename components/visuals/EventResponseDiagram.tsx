@@ -54,7 +54,7 @@ export default function EventResponseDiagram({
       className={`overflow-hidden rounded-2xl border border-structural-light bg-surface-card shadow-[0_14px_36px_rgba(16,38,63,0.1)] ${className}`}
       aria-hidden="true"
     >
-      <svg viewBox="0 0 720 420" className="h-full min-h-[220px] w-full">
+      <svg viewBox="0 0 720 420" width="720" height="420" className="block h-auto w-full">
         <rect x="0" y="0" width="720" height="420" fill="var(--surface-light-alt)" />
         <ellipse cx="360" cy="232" rx="226" ry="132" fill="var(--support)" opacity="0.08" />
         <ellipse cx="360" cy="232" rx="164" ry="96" fill="none" stroke="var(--support)" strokeWidth="3" strokeDasharray="8 10" opacity="0.42" />

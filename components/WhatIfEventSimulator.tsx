@@ -20,22 +20,12 @@ const EVENTS = [
   },
 ] as const;
 
-const PACKAGE_LEVELS = [
-  { key: 'green', marker: '01', tone: 'basic', sla: '48h' },
-  { key: 'orange', marker: '02', tone: 'extended', sla: '24h' },
-  { key: 'red', marker: '03', tone: 'full', sla: 'sameDay' },
-] as const;
-
 export default function WhatIfEventSimulator() {
   const t = useTranslations('services');
   const locale = useLocale();
   const [activeKey, setActiveKey] = useState<(typeof EVENTS)[number]['key']>('leak');
-  const [activePackageKey, setActivePackageKey] = useState<(typeof PACKAGE_LEVELS)[number]['key']>('orange');
   const active = EVENTS.find((event) => event.key === activeKey) ?? EVENTS[0];
-  const activePackage = PACKAGE_LEVELS.find((pkg) => pkg.key === activePackageKey) ?? PACKAGE_LEVELS[1];
   const detailKeys = ['observes', 'documents', 'owner', 'package'] as const;
-  const packageSla = activePackage.sla === 'sameDay' ? t('diagrams.sla.sameDay') : activePackage.sla;
-  const packagePanelId = 'services-event-package-panel';
 
   return (
     <div className="services-event-simulator" id="event-simulator">
@@ -59,25 +49,6 @@ export default function WhatIfEventSimulator() {
               >
                 <span aria-hidden="true" />
                 {t(`redesign.events.items.${event.key}.title`)}
-              </button>
-            ))}
-          </div>
-
-          <div className="services-event-package-strip" role="tablist" aria-label={t('redesign.ladder.eyebrow')}>
-            {PACKAGE_LEVELS.map((pkg) => (
-              <button
-                key={pkg.key}
-                id={`services-event-package-tab-${pkg.key}`}
-                type="button"
-                role="tab"
-                aria-selected={pkg.key === activePackageKey}
-                aria-controls={packagePanelId}
-                data-active={pkg.key === activePackageKey}
-                onClick={() => setActivePackageKey(pkg.key)}
-                className={`services-event-package services-event-package--${pkg.tone}`}
-              >
-                <span>{pkg.marker}</span>
-                <strong>{t(`${pkg.key}.title`)}</strong>
               </button>
             ))}
           </div>
@@ -111,33 +82,6 @@ export default function WhatIfEventSimulator() {
                   </p>
                 </div>
               ))}
-            </div>
-
-            <div
-              id={packagePanelId}
-              key={`${active.key}-${activePackage.key}`}
-              className="services-event-tier-readout motion-panel-reveal"
-              role="tabpanel"
-              aria-labelledby={`services-event-package-tab-${activePackage.key}`}
-            >
-              <div>
-                <p>{t('redesign.ladder.eyebrow')}</p>
-                <strong>{t(`${activePackage.key}.title`)}</strong>
-              </div>
-              <dl>
-                <div>
-                  <dt>{t('diagrams.sla.axisLabel')}</dt>
-                  <dd>{packageSla}</dd>
-                </div>
-                <div>
-                  <dt>{t(`${activePackage.key}.summary.accessLabel`)}</dt>
-                  <dd>{t(`${activePackage.key}.summary.accessValue`)}</dd>
-                </div>
-                <div>
-                  <dt>{t(`${activePackage.key}.summary.decisionsLabel`)}</dt>
-                  <dd>{t(`${activePackage.key}.summary.decisionsValue`)}</dd>
-                </div>
-              </dl>
             </div>
 
             <div className="services-event-output__actions mt-6 flex flex-col gap-3 sm:flex-row">

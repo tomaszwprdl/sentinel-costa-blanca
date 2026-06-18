@@ -16,13 +16,11 @@ import OperationalModuleTile from '@/components/OperationalModuleTile';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import JourneyNav from '@/components/JourneyNav';
 import OperationalField from '@/components/graphics/OperationalField';
-import AccessCustodyChain from '@/components/graphics/AccessCustodyChain';
 
 type OperationalModule = {
-  image?: string;
   visual?: 'readiness' | 'seasonal' | 'access';
   marker: string;
-  mode: 'featured' | 'compact';
+  mode: 'compact';
   label: string;
   title: string;
   body: string;
@@ -55,29 +53,15 @@ export default async function ServicesPage({
   const journeyItems = [
     { id: 'situation', label: t('redesign.journey.situation') },
     { id: 'responsibility', label: t('redesign.journey.responsibility') },
-    { id: 'scope', label: t('redesign.journey.scope') },
     { id: 'operational-modules', label: t('redesign.journey.modules') },
+    { id: 'scope', label: t('redesign.journey.scope') },
     { id: 'estimator', label: t('redesign.journey.estimator') },
   ];
 
   const operationalModules = [
     {
-      image: '/photos/sentinel-technician-access-placeholder.png',
-      marker: '01',
-      mode: 'featured',
-      label: t('redesign.modules.useWhen'),
-      title: t('addons.rental.title'),
-      body: t('redesign.modules.moduleBodies.rental'),
-      items: [
-        t('addons.rental.items.preparation'),
-        t('addons.rental.items.cleaning'),
-        t('addons.rental.items.guests'),
-      ],
-      note: t('addons.rental.notPM'),
-    },
-    {
       visual: 'access',
-      marker: '02',
+      marker: '01',
       mode: 'compact',
       label: t('redesign.modules.useWhen'),
       title: t('addons.transfers.title'),
@@ -90,7 +74,7 @@ export default async function ServicesPage({
     },
     {
       visual: 'seasonal',
-      marker: '03',
+      marker: '02',
       mode: 'compact',
       label: t('redesign.modules.useWhen'),
       title: t('addons.seasonal.title'),
@@ -101,7 +85,7 @@ export default async function ServicesPage({
         t('addons.seasonal.items.extraVisit'),
       ],
     },
-  ] satisfies [OperationalModule, OperationalModule, OperationalModule];
+  ] satisfies [OperationalModule, OperationalModule];
 
   return (
     <>
@@ -178,14 +162,6 @@ export default async function ServicesPage({
           </div>
         </Section>
 
-        <Section tone="alt" className="section-primitive--compact services-interface-section services-interface-section--event">
-          <WhatIfEventSimulator />
-        </Section>
-
-        <Section tone="alt" className="section-primitive--compact services-interface-section services-interface-section--boundary" id="scope">
-          <ServiceBoundaryGrid />
-        </Section>
-
         <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--modules" id="operational-modules">
           <div className="services-modules-band services-capability-theatre">
             <div className="mb-6 max-w-[760px]">
@@ -210,66 +186,59 @@ export default async function ServicesPage({
               </div>
             </div>
             <div className="services-module-system">
-              <OperationalModuleTile {...operationalModules[0]} />
-              <div className="services-module-stack">
-                <div className="services-module-stack__header">
-                  <span>{t('redesign.modules.stackLabel')}</span>
-                  <strong>{t('redesign.modules.stackTitle')}</strong>
-                </div>
-                {operationalModules.slice(1).map((module) => (
-                  <OperationalModuleTile key={module.title} {...module} />
-                ))}
+              <div className="services-module-stack__header">
+                <span>{t('redesign.modules.stackLabel')}</span>
+                <strong>{t('redesign.modules.stackTitle')}</strong>
               </div>
+              {operationalModules.map((module) => (
+                <OperationalModuleTile key={module.title} {...module} />
+              ))}
             </div>
-            <AccessCustodyChain
-              eyebrow={t('redesign.custody.eyebrow')}
-              title={t('redesign.custody.title')}
-              steps={['register', 'custody', 'access', 'confirm'].map((key) => ({
-                title: t(`redesign.custody.steps.${key}.title`),
-                body: t(`redesign.custody.steps.${key}.body`),
-              }))}
-              note={t('redesign.custody.note')}
-            />
             <div className="services-module-guardrail">
               <span>{t('redesign.modules.guardrailLabel')}</span>
               <p>{t('redesign.modules.guardrailBody')}</p>
+            </div>
+            <div className="services-execution-inset" id="execution-only">
+              <div>
+                <p className="section-label">{t('executionOnly.microLabel')}</p>
+                <h3>{t('redesign.executionStrip.title')}</h3>
+                <p>{t('redesign.executionStrip.body')}</p>
+              </div>
+              <div className="services-execution-inset__grid">
+                <div className="services-execution-card services-execution-card--available">
+                  <h4 className="services-execution-card__title">{t('redesign.executionStrip.availableLabel')}</h4>
+                  <ul className="services-execution-list text-sm text-body">
+                    {EXECUTION_ONLY_AVAILABLE_KEYS.map((key) => (
+                      <li key={key}>{t(`executionOnly.availableItems.${key}`)}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="services-execution-card services-execution-card--limits">
+                  <h4 className="services-execution-card__title">{t('redesign.executionStrip.limitsLabel')}</h4>
+                  <ul className="services-execution-list text-sm text-body">
+                    {EXECUTION_ONLY_LIMITATION_KEYS.map((key) => (
+                      <li key={key}>{t(`executionOnly.limitationsItems.${key}`)}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="services-execution-inset__footer">
+                <p>{t('executionOnly.closing')}</p>
+                <Link href={`/${locale}/contact`} className="btn-secondary">
+                  {t('redesign.executionStrip.cta')}
+                </Link>
+              </div>
             </div>
             <p className="services-partner-note">{t('redesign.modules.partnerNote')}</p>
           </div>
         </Section>
 
-        <Section tone="alt" className="section-primitive--compact services-interface-section services-interface-section--execution" id="execution-only">
-          <div className="services-execution-strip">
-            <div className="max-w-[760px]">
-              <p className="section-label">{t('executionOnly.microLabel')}</p>
-              <h2 className="h2-system mt-3">{t('redesign.executionStrip.title')}</h2>
-              <p className="mt-3 text-body">{t('redesign.executionStrip.body')}</p>
-            </div>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              <div className="services-execution-card services-execution-card--available">
-                <h3 className="services-execution-card__title">{t('redesign.executionStrip.availableLabel')}</h3>
-                <ul className="services-execution-list text-sm text-body">
-                  {EXECUTION_ONLY_AVAILABLE_KEYS.map((key) => (
-                    <li key={key}>{t(`executionOnly.availableItems.${key}`)}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="services-execution-card services-execution-card--limits">
-                <h3 className="services-execution-card__title">{t('redesign.executionStrip.limitsLabel')}</h3>
-                <ul className="services-execution-list text-sm text-body">
-                  {EXECUTION_ONLY_LIMITATION_KEYS.map((key) => (
-                    <li key={key}>{t(`executionOnly.limitationsItems.${key}`)}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="services-execution-strip__footer flex flex-col gap-3 sm:flex-row sm:items-center">
-              <p className="mb-0 flex-1 text-sm text-muted">{t('executionOnly.closing')}</p>
-              <Link href={`/${locale}/contact`} className="btn-secondary shrink-0">
-                {t('redesign.executionStrip.cta')}
-              </Link>
-            </div>
-          </div>
+        <Section tone="alt" className="section-primitive--compact services-interface-section services-interface-section--event">
+          <WhatIfEventSimulator />
+        </Section>
+
+        <Section tone="alt" className="section-primitive--compact services-interface-section services-interface-section--boundary" id="scope">
+          <ServiceBoundaryGrid />
         </Section>
 
         <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--estimator">
@@ -281,6 +250,21 @@ export default async function ServicesPage({
               <p className="mt-4 rounded-2xl border border-structural-light bg-surface-light-alt px-4 py-3 text-sm text-body">
                 {t('redesign.estimatorBand.transition')}
               </p>
+              <div className="services-estimator-context" aria-label={t('redesign.estimatorBand.contextTitle')}>
+                <p>{t('redesign.estimatorBand.contextTitle')}</p>
+                <div>
+                  <span>{t('redesign.estimatorBand.contextItems.bathrooms.label')}</span>
+                  <strong>{t('redesign.estimatorBand.contextItems.bathrooms.body')}</strong>
+                </div>
+                <div>
+                  <span>{t('redesign.estimatorBand.contextItems.outdoor.label')}</span>
+                  <strong>{t('redesign.estimatorBand.contextItems.outdoor.body')}</strong>
+                </div>
+                <div>
+                  <span>{t('redesign.estimatorBand.contextItems.logic.label')}</span>
+                  <strong>{t('redesign.estimatorBand.contextItems.logic.body')}</strong>
+                </div>
+              </div>
             </div>
             <div id="estimator">
               <Estimator embedded />
@@ -356,7 +340,7 @@ export default async function ServicesPage({
         primaryLabel={t('cta.primaryButton')}
         secondaryHref="#situation"
         secondaryLabel={t('redesign.hero.secondaryCta')}
-        suppressWhenVisible="#situation, #responsibility, #event-simulator, #scope, #operational-modules, #execution-only, #estimator"
+        suppressWhenVisible="#situation, #responsibility, #operational-modules, #event-simulator, #scope, #estimator"
       />
       <Footer />
     </>
