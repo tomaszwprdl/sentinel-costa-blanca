@@ -140,12 +140,17 @@ Keyholding and cleaning are permitted terms.
 
 They must be framed as operational capabilities inside a structured oversight system.
 
+Cleaning language may be direct and visible. Do not hide cleaning, readiness cleaning, or turnover cleaning in apologetic fine print when it is part of the actual operating capability.
+
 Allowed:
 
 - "Keyholding is handled within the agreed scope."
 - "Cleaning / readiness cleaning may be included according to usage pathway."
 - "Turnover cleaning support is available for Active Guest Use."
 - "Access coordination is documented."
+- "Cleaning is coordinated and documented within the agreed oversight scope."
+- "Readiness cleaning supports owner or guest arrival."
+- "Turnover cleaning support is especially relevant where guest use is active."
 
 Not allowed:
 
@@ -153,6 +158,9 @@ Not allowed:
 - "We take care of everything."
 - "Complete rental management."
 - "Holiday home care."
+- "Sterilise every property."
+- "Hotel-grade cleaning."
+- "Luxury handover."
 
 Operational capability copy must state scope, frequency, or condition where relevant.
 

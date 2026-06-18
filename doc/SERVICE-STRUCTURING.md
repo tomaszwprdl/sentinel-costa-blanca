@@ -36,9 +36,9 @@ Sentinel is not:
 - A property management platform  
 - A cleaning-company brand  
 
-Keyholding and cleaning are core operational capabilities when delivered inside Sentinel’s structured oversight system.
+Keyholding, cleaning, readiness cleaning, turnover cleaning, access coordination, and vendor coordination are core operational capabilities when delivered inside Sentinel’s structured oversight system.
 
-They must be presented as controlled practical functions, not as the public identity of the brand.
+They must be presented as visible controlled practical functions, not hidden in tiny print and not used as the public identity of the brand.
 
 All service structuring decisions must preserve this identity.
 
@@ -72,11 +72,14 @@ Practical local execution functions required to make oversight real.
 
 Includes:
 - Keyholding
-- Cleaning / cleaning coordination
+- Cleaning / readiness cleaning
+- Turnover cleaning support
 - Access coordination
 - Arrival readiness
-- Guest turnover support
+- Stay / guest-use readiness support
 - Vendor / technician coordination
+
+Layer 2 exists to make oversight executable. Cleaning is operational execution inside scope: readiness before arrival, turnover support where the property has guest use, documented handover, and coordination with the agreed package. It is not a standalone cleaning-company offer unless execution-only support is separately agreed.
 
 **Layer 3 — Execution-Only Support (Secondary / Subordinate)**  
 Execution-only services without structured oversight.
@@ -120,6 +123,7 @@ Core operational capabilities may be included or coordinated according to packag
 - Turnover cleaning support
 - Access coordination
 - Vendor / technician coordination
+- Partner coordination where separately agreed
 
 These capabilities do not replace package jurisdiction.
 
@@ -349,6 +353,16 @@ Sentinel:
 Legal compliance remains sole responsibility of property owner.
 
 Sentinel's role is limited to operational oversight.
+
+---
+
+## 10.1 Partner Coordination
+
+Partner support may be coordinated only where available, separately agreed, and subordinate to the oversight package or execution-only scope.
+
+NowRent may be referenced as a partner-coordination option for vehicle-rental support or arrival logistics. Do not present NowRent as visually equal to Sentinel. Do not imply guaranteed airport-transfer service or direct transport provision by Sentinel unless the legal and commercial setup is separately approved.
+
+Correct reference domain: `nowrent.eu`.
 
 ---
 

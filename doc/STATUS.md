@@ -18,6 +18,7 @@ Descriptive only. Does not define decisions or intent.
 | Visual composition rebuild | **Merged** (`e5fa7bb` baseline; graphic passes through `cef326b`) |
 | Canonical visual mode | **Active** — one art-directed atmosphere; no public theme toggle |
 | Current focus | Repo cleanup baseline and readiness audit; global visual iteration paused |
+| Active scoped refinement | Services doctrine/page refinement: cleaning capability visibility, package-summary corrections, property-intake context |
 | Site-polish phase | Closed (gate, pages, legal readability, contact sequencing) |
 | Documentation phase | Aligned for middle-page visual/narrative rebuild briefs |
 | Identity core | Locked (logo, descriptors, service model) |
@@ -47,6 +48,7 @@ Descriptive only. Does not define decisions or intent.
 # What is not done (launch work)
 
 - Repo cleanup baseline after rapid global visual passes.
+- Services scoped refinement: package-summary correction, visible cleaning/readiness capability, property-intake context, and restrained NowRent partner-coordination mention.
 - Future page-by-page visual/narrative improvements: anti-repetition restructuring, page-specific middle-section narratives, deploy catch-up (header spacing, mobile density, contact form comfort).
 - Contact form production email end-to-end verification (inbox receipt pending Owner confirmation).
 - Final commercial pricing / estimator matrix confirmation.

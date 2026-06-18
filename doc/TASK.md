@@ -8,11 +8,19 @@ This file does **not** define binding decisions (`DECISIONS.md` does).
 
 # Current phase
 
-**Launch-era: repo cleanup baseline + readiness audits**
+**Launch-era: Services refinement + repo cleanup baseline/readiness audits**
 
 The visual composition rebuild and unified canonical visual mode are **on `main`** (baseline `e5fa7bb`; graphic passes through `cef326b`; current live/main baseline `97997eb`). The old build-era sequential Task 1–8 model is **retired**. Build-era task and audit documents were removed from the active repository after documentation reset.
 
-**Current priority:** clean the repository into a stable baseline after rapid global visual passes. Global visual iteration is paused. Future improvements should be page-by-page, plan-first, and Owner-scoped.
+**Current priority:** complete the Owner-approved Services refinement, then continue cleaning the repository into a stable baseline after rapid global visual passes. Global visual iteration is paused. Future improvements should be page-by-page, plan-first, and Owner-scoped.
+
+Active Services scope:
+
+- Correct package-summary contract drift from the Services audit.
+- Make cleaning, readiness cleaning, and turnover cleaning visibly core practical capabilities inside oversight.
+- Add bathrooms and patio/terrace/outdoor area as property-intake/context parameters without changing estimator pricing logic.
+- Mention NowRent only as subordinate partner coordination where available and separately agreed.
+- Preserve package names/count, SLA meaning, emergency authority, estimator matrix, contact schema/API/payload, pathway slugs, legal substance, and noindex state.
 
 ---
 

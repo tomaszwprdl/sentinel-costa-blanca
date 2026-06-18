@@ -216,6 +216,8 @@ Pathways may change framing, examples, emphasis, estimator defaults, contact con
 - Public range display; no “starting from” anchors; no hidden pricing.
 - Mixed / not defined → classification-first, not invented pricing.
 - Final commercial ranges require Owner confirmation before public launch.
+- Approved property-intake/context parameters include area in m², bedrooms/rooms, bathrooms, and patio/terrace/outdoor-area presence.
+- Bathrooms and patio/terrace/outdoor-area are intake/context parameters only unless Owner separately approves estimator-matrix or pricing-logic changes.
 
 ---
 
@@ -244,7 +246,9 @@ Presentation may improve; substance may not drift silently.
 
 **Status:** LOCKED
 
-Keyholding and cleaning are core capabilities **inside** structured oversight — not separate brand identity.
+Keyholding, cleaning, readiness cleaning, turnover cleaning, access coordination, and vendor coordination are core capabilities **inside** structured oversight — not separate brand identity.
+
+Cleaning must be visible as practical execution capacity. It must not be hidden in tiny print or framed apologetically, and it must not reposition Sentinel as a cleaning-only, concierge, lifestyle, or rental-management brand.
 
 Execution-only layer remains subordinate (no SLA, no autonomous authority, no ongoing oversight implied).
 
