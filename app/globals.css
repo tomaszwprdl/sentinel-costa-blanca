@@ -18101,3 +18101,46 @@ textarea:focus {
     transition: none !important;
   }
 }
+
+/* Services estimator mobile hardening: long segmented labels must wrap cleanly. */
+.services-page .estimator-bedroom-options button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: auto;
+  min-height: 3rem;
+  padding: 0.62rem 0.5rem;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  text-align: center;
+  white-space: normal;
+}
+
+.services-page .estimator-bedroom-options--outdoor button {
+  justify-content: flex-start;
+  min-height: 3.15rem;
+  padding-inline: 0.72rem;
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  .services-page .estimator-bedroom-options--outdoor {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 430px) {
+  .services-page .estimator-bedroom-card {
+    padding: 0.85rem;
+  }
+
+  .services-page .estimator-bedroom-options {
+    gap: 0.4rem;
+  }
+
+  .services-page .estimator-bedroom-options--outdoor button {
+    min-height: 2.9rem;
+    font-size: 0.86rem;
+  }
+}
