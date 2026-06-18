@@ -9,7 +9,8 @@ Descriptive only. Does not define decisions or intent.
 | Field | Value |
 |-------|-------|
 | Project | Sentinel |
-| Latest main / website SHA | `97997eb` |
+| Local main HEAD | `b3fd918` (ahead of `origin/main` by 2; not pushed) |
+| Origin/main / live baseline | `b46a214` until push/deploy smoke |
 | Major graphic system pass | `38a4849` |
 | Middle-page visual proof pass | `cef326b` |
 | Launch-era governance baseline SHA | `6a0d0f7` |
@@ -17,8 +18,8 @@ Descriptive only. Does not define decisions or intent.
 | Website phase | Pre-live / soft-launch review ready |
 | Visual composition rebuild | **Merged** (`e5fa7bb` baseline; graphic passes through `cef326b`) |
 | Canonical visual mode | **Active** — one art-directed atmosphere; no public theme toggle |
-| Current focus | Repo cleanup baseline and readiness audit; global visual iteration paused |
-| Active scoped refinement | Services doctrine/page refinement: cleaning capability visibility, package-summary corrections, property-intake context |
+| Current focus | Push/deploy smoke for completed local Services refinement; repo cleanup/readiness continues; global visual iteration paused |
+| Completed local Services refinement | `40ede57` + `b3fd918` — doctrine + page implementation completed locally; QA passed; not pushed |
 | Site-polish phase | Closed (gate, pages, legal readability, contact sequencing) |
 | Documentation phase | Aligned for middle-page visual/narrative rebuild briefs |
 | Identity core | Locked (logo, descriptors, service model) |
@@ -40,6 +41,7 @@ Descriptive only. Does not define decisions or intent.
 - **Major graphic system pass** — jurisdiction rings, operational ledgers, proof modules, service-area motifs — `38a4849`.
 - **Middle-page visual proof pass** — additional proof bands and graphic language across middle sections — `cef326b`.
 - **Codex middle-page rebuild merged and deployed** — `97997eb`.
+- **Services doctrine/page refinement completed locally** — `40ede57` + `b3fd918`: package-summary contract drift corrected; cleaning/readiness/turnover cleaning visible inside oversight; bathrooms/patio context added without estimator pricing-logic changes; NowRent mention restrained; Services QA passed. Not pushed yet.
 - Heroes are materially stronger; middle sections still need page-specific visual/narrative differentiation (anti-repetition work pending Owner brief).
 - Build/lint passing on recent pushes.
 
@@ -48,7 +50,7 @@ Descriptive only. Does not define decisions or intent.
 # What is not done (launch work)
 
 - Repo cleanup baseline after rapid global visual passes.
-- Services scoped refinement: package-summary correction, visible cleaning/readiness capability, property-intake context, and restrained NowRent partner-coordination mention.
+- Push completed local Services commits and run deploy smoke when Owner approves.
 - Future page-by-page visual/narrative improvements: anti-repetition restructuring, page-specific middle-section narratives, deploy catch-up (header spacing, mobile density, contact form comfort).
 - Contact form production email end-to-end verification (inbox receipt pending Owner confirmation).
 - Final commercial pricing / estimator matrix confirmation.

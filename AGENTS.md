@@ -4,10 +4,13 @@ Entry point for AI coding agents in this repository.
 
 ## Current state
 
-- **Latest main / website SHA:** `97997eb` (Codex middle-page rebuild merge; prior graphic passes: `38a4849` major graphic system · `cef326b` middle-page visual proof)
+- **Local main HEAD:** `b3fd918` (ahead of `origin/main` by 2; not pushed)
+- **Origin/main / live baseline:** `b46a214` until push/deploy smoke
+- **Completed local Services commits:** `40ede57` (doctrine/docs) + `b3fd918` (page implementation/QA)
 - **Documentation governance SHA:** `6a0d0f7` (launch-era reset baseline)
-- **Phase:** Launch-era — visual composition rebuild **merged**; unified canonical visual mode **active**; global visual iteration paused; repo cleanup baseline + readiness audits
+- **Phase:** Launch-era — Services refinement completed locally; pending push/deploy smoke; global visual iteration paused; repo cleanup/readiness continues
 - **Visual:** One art-directed Sentinel atmosphere — dark authority bands, warm paper body, dark final CTA/footer; **no public theme toggle**
+- **State rule:** repo preflight overrides stale historical SHA fields in older docs; treat `97997eb` and similar older references as historical unless current git state confirms them.
 - Build-era task/audit docs were **removed** from the repo and are no longer active authority
 - Old “no visual experimentation” and dual-theme rules are **retired**
 - Future improvements should be page-by-page, plan-first, and Owner-scoped rather than another global transformation pass

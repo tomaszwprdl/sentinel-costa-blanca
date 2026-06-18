@@ -8,19 +8,24 @@ This file does **not** define binding decisions (`DECISIONS.md` does).
 
 # Current phase
 
-**Launch-era: Services refinement + repo cleanup baseline/readiness audits**
+**Launch-era: completed local Services refinement + pending push/smoke + readiness cleanup**
 
-The visual composition rebuild and unified canonical visual mode are **on `main`** (baseline `e5fa7bb`; graphic passes through `cef326b`; current live/main baseline `97997eb`). The old build-era sequential Task 1–8 model is **retired**. Build-era task and audit documents were removed from the active repository after documentation reset.
+The visual composition rebuild and unified canonical visual mode are **on `main`**. Local main is `b3fd918`, ahead of `origin/main` by 2 and not pushed. `origin/main` / live baseline remains `b46a214` until push/deploy smoke. Services refinement was completed locally in `40ede57` + `b3fd918`; QA passed. The old build-era sequential Task 1–8 model is **retired**. Build-era task and audit documents were removed from the active repository after documentation reset.
 
-**Current priority:** complete the Owner-approved Services refinement, then continue cleaning the repository into a stable baseline after rapid global visual passes. Global visual iteration is paused. Future improvements should be page-by-page, plan-first, and Owner-scoped.
+**Current priority:** push the completed local Services work when Owner approves, run deploy smoke, then continue cleaning the repository into a stable baseline after rapid global visual passes. Global visual iteration is paused. Future improvements should be page-by-page, plan-first, and Owner-scoped.
 
-Active Services scope:
+Completed local Services work (not pushed):
 
-- Correct package-summary contract drift from the Services audit.
-- Make cleaning, readiness cleaning, and turnover cleaning visibly core practical capabilities inside oversight.
-- Add bathrooms and patio/terrace/outdoor area as property-intake/context parameters without changing estimator pricing logic.
-- Mention NowRent only as subordinate partner coordination where available and separately agreed.
-- Preserve package names/count, SLA meaning, emergency authority, estimator matrix, contact schema/API/payload, pathway slugs, legal substance, and noindex state.
+- Package-summary contract drift from the Services audit corrected.
+- Cleaning, readiness cleaning, and turnover cleaning made visibly core practical capabilities inside oversight.
+- Bathrooms and patio/terrace/outdoor area added as property-intake/context parameters without changing estimator pricing logic.
+- NowRent mentioned only as subordinate partner coordination where available and separately agreed.
+- Package names/count, SLA meaning, emergency authority, estimator matrix, contact schema/API/payload, pathway slugs, legal substance, and noindex state preserved.
+
+Pending Services operations:
+
+- Push `40ede57` + `b3fd918` when Owner approves.
+- Run deploy smoke after push.
 
 ---
 

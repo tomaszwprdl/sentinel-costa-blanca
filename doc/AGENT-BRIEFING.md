@@ -8,18 +8,22 @@ Short briefing for Cursor, Codex, and Cloudie.
 
 - **Product:** Sentinel Costa Blanca — structured local owner representation (Torrevieja + ~50–70 km).
 - **Website:** Pre-live, soft-launch review ready. `noindex,nofollow` active.
-- **Phase:** Launch-era — repo cleanup baseline and readiness audits; global visual iteration paused.
-- **Latest main / website SHA:** `97997eb` (Codex middle-page rebuild merge; prior graphic passes through `38a4849` major graphic system + `cef326b` middle-page visual proof; composition rebuild baseline `e5fa7bb`).
+- **Phase:** Launch-era — Services refinement completed locally; pending push/deploy smoke; repo cleanup/readiness continues; global visual iteration paused.
+- **Local main HEAD:** `b3fd918` (ahead of `origin/main` by 2; not pushed).
+- **Origin/main / current live baseline:** `b46a214` until push/deploy smoke.
+- **Completed local Services commits:** `40ede57` (doctrine/docs) + `b3fd918` (page implementation/QA).
 - **Launch-era governance baseline SHA:** `6a0d0f7` (reset + alignment + root entry points).
 - **Optional cognitive audit tool added:** `96fef3e` (`COGNITIVE-PAGE-AUDIT.md`).
 
 **Visual composition rebuild is merged. The site uses one canonical Sentinel atmosphere — not a toggleable app skin.**
 
+Some older docs may still mention historical SHAs such as `97997eb`; repo preflight/local git state is the truth unless the Owner overrides.
+
 Canonical mode: dark cinematic hero / authority bands · warm paper body sections · dark final CTA / footer · controlled copper / sea / clay accents · **no public dark/light theme toggle**.
 
 Future visual work should **build on canonical mode**, not recreate dual themes. It should be page-by-page, plan-first, and Owner-scoped rather than another global transformation pass.
 
-**Current baseline issue:** recent global visual passes left useful page language, but also redundant motifs, stale artifacts, and dead code. The current task is to clean the repo into a stable baseline before future page-specific improvements. Owner-scoped page-specific rebuilds remain **allowed** later — including removing or demoting redundant modules.
+**Current baseline issue:** Services refinement is complete locally and QA-passed, but not pushed. The next operational step is Owner-approved push/deploy smoke, then readiness tasks: production email, pricing confirmation, legal/GDPR review, noindex decision, and repo cleanup. Owner-scoped page-specific rebuilds remain **allowed** later — including removing or demoting redundant modules.
 
 ---
 
@@ -106,12 +110,12 @@ Details: `WORKFLOW.md`
 
 # Current next phase
 
-1. Repo cleanup baseline and readiness audit.
-2. Future page-by-page improvement briefs — plan-first, Owner-scoped, anti-repetition aware.
-3. Post-deploy refinement candidates (header, mobile density, contact form comfort).
-4. Production contact email verification.
-5. Legal/entity/GDPR review.
-6. Final pricing confirmation.
-7. Remove noindex + deploy smoke test when approved.
+1. Push completed local Services commits and run deploy smoke when Owner approves.
+2. Production contact email verification.
+3. Final pricing confirmation.
+4. Legal/entity/GDPR review.
+5. Noindex decision and indexed-launch deploy smoke when approved.
+6. Repo cleanup baseline and readiness audit.
+7. Future page-by-page improvement briefs — plan-first, Owner-scoped, anti-repetition aware.
 
 Checklist: `LAUNCH-CHECKLIST.md`
