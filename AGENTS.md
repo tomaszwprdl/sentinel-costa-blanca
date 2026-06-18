@@ -4,11 +4,11 @@ Entry point for AI coding agents in this repository.
 
 ## Current state
 
-- **Local main HEAD:** `b3fd918` (ahead of `origin/main` by 2; not pushed)
+- **Local repo state:** unpushed local stack above `origin/main`; verify exact HEAD/ahead count with git preflight before work
 - **Origin/main / live baseline:** `b46a214` until push/deploy smoke
 - **Completed local Services commits:** `40ede57` (doctrine/docs) + `b3fd918` (page implementation/QA)
 - **Documentation governance SHA:** `6a0d0f7` (launch-era reset baseline)
-- **Phase:** Launch-era — Services refinement completed locally; pending push/deploy smoke; global visual iteration paused; repo cleanup/readiness continues
+- **Phase:** Launch-era — Services refinement completed locally; pending push/deploy smoke; readiness cleanup continues; global visual iteration paused
 - **Visual:** One art-directed Sentinel atmosphere — dark authority bands, warm paper body, dark final CTA/footer; **no public theme toggle**
 - **State rule:** repo preflight overrides stale historical SHA fields in older docs; treat `97997eb` and similar older references as historical unless current git state confirms them.
 - Build-era task/audit docs were **removed** from the repo and are no longer active authority
@@ -113,11 +113,7 @@ npm run build
 git diff --check
 ```
 
-If build fails on Google Fonts/TLS only:
-
-```bash
-NEXT_TURBOPACK_EXPERIMENTAL_USE_SYSTEM_TLS_CERTS=1 npm run build
-```
+Use `npm run build` normally. For hardened QA and current local build/TLS handling, defer to `doc/QA.md`.
 
 Fix errors caused by your change. Do not add dependencies without justification. Do not commit secrets.
 

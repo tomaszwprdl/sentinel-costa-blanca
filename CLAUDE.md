@@ -9,11 +9,13 @@
 5. `doc/WORKFLOW.md`
 6. `doc/VISUAL-FREEDOM-SPRINT.md` — for visual work
 
-**Current SHAs:** latest main / website `97997eb` · graphic passes `38a4849` / `cef326b` · documentation governance `6a0d0f7`
+**Current state:** local repo has an unpushed stack above `origin/main`; verify exact HEAD/ahead count with git preflight before work. `origin/main` / live baseline is `b46a214` until push/deploy smoke. Completed local Services commits: `40ede57` (doctrine/docs) + `b3fd918` (page implementation/QA). Documentation governance baseline: `6a0d0f7`.
+
+Older docs may mention historical SHAs such as `97997eb`; repo preflight/local git state is the truth unless the Owner overrides.
 
 Visual composition rebuild is **merged**. The site uses **one canonical Sentinel atmosphere** — dark cinematic authority bands, warm paper body, dark final CTA/footer — with **no public theme toggle**.
 
-Build-era visual restrictions and dual-theme work are retired. Current phase is **repo cleanup baseline and readiness audits**. Global visual iteration is paused; future improvements should be page-by-page, plan-first, and Owner-scoped. Visual work may still be bold when explicitly briefed, including page-specific middle-section rebuilds and removal of redundant proof modules. Build on canonical mode per `doc/VISUAL-FREEDOM-SPRINT.md`. Protected contracts remain intact.
+Build-era visual restrictions and dual-theme work are retired. Current phase is **Services refinement completed locally; pending push/deploy smoke; readiness cleanup continues**. Global visual iteration is paused; future improvements should be page-by-page, plan-first, and Owner-scoped. Visual work may still be bold when explicitly briefed, including page-specific middle-section rebuilds and removal of redundant proof modules. Build on canonical mode per `doc/VISUAL-FREEDOM-SPRINT.md`. Protected contracts remain intact.
 
 ## Project identity
 
@@ -80,11 +82,7 @@ npm run build
 git diff --check
 ```
 
-If build fails on Google Fonts/TLS only:
-
-```bash
-NEXT_TURBOPACK_EXPERIMENTAL_USE_SYSTEM_TLS_CERTS=1 npm run build
-```
+Use `npm run build` normally. For hardened QA and current local build/TLS handling, defer to `doc/QA.md`.
 
 For visual changes, also check:
 
