@@ -20290,3 +20290,222 @@ textarea:focus {
     transition: none !important;
   }
 }
+
+/* ============================================================
+   Pre-live harmony: Home + FAQ visual alignment
+   Small surface-level pass so legacy pages sit with the dossier family.
+   ============================================================ */
+
+.home-page,
+.faq-page {
+  --harmony-paper: #fffaf2;
+  --harmony-stone: #f2eee6;
+  background:
+    linear-gradient(90deg, rgba(16, 38, 63, 0.032) 1px, transparent 1px) 0 0 / 5.75rem 100%,
+    linear-gradient(180deg, var(--harmony-paper) 0%, var(--harmony-stone) 47%, var(--harmony-paper) 100%);
+}
+
+.visual-hero-shell {
+  border-color: rgba(91, 166, 158, 0.24);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 250, 242, 0.12),
+    0 40px 110px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(47, 111, 115, 0.08);
+}
+
+.visual-hero-shell .hero-kicker {
+  color: color-mix(in srgb, var(--authority-on-dark) 68%, var(--sage));
+}
+
+.visual-hero-shell .hero-kicker::before {
+  background: linear-gradient(90deg, var(--sage), color-mix(in srgb, var(--copper) 34%, transparent));
+}
+
+.diagnostic-panel--gate {
+  border-color: color-mix(in srgb, var(--support) 28%, rgba(255, 250, 242, 0.48));
+  border-radius: var(--site-radius-shell);
+  background:
+    linear-gradient(90deg, rgba(47, 111, 115, 0.045) 1px, transparent 1px) 0 0 / 3.6rem 100%,
+    linear-gradient(170deg, rgba(255, 253, 248, 0.99) 0%, rgba(248, 244, 237, 0.98) 58%, rgba(241, 247, 244, 0.96) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 28px 70px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(47, 111, 115, 0.08);
+}
+
+.diagnostic-panel--gate::before {
+  height: 4px;
+  background: linear-gradient(90deg, transparent 0%, rgba(91, 166, 158, 0.74) 18%, rgba(115, 139, 124, 0.44) 58%, rgba(184, 102, 74, 0.56) 86%, transparent 100%);
+  opacity: 1;
+}
+
+.diagnostic-panel--gate::after {
+  top: 4px;
+  height: 11px;
+  background:
+    repeating-linear-gradient(90deg, rgba(16, 38, 63, 0.12) 0 1px, transparent 1px 30px),
+    linear-gradient(180deg, rgba(47, 111, 115, 0.06), transparent);
+}
+
+.diagnostic-choice-card {
+  min-height: 136px;
+  border-color: color-mix(in srgb, var(--line) 62%, var(--support));
+  border-radius: var(--site-radius-control);
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--gate-accent, var(--support)) 5%, transparent), transparent 48%),
+    var(--site-surface-shell-cool);
+  box-shadow: var(--site-shadow-card);
+}
+
+.diagnostic-choice-card::after {
+  background:
+    linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.44) 42%, transparent 66%),
+    linear-gradient(135deg, transparent 0%, color-mix(in srgb, var(--gate-accent, var(--support)) 8%, transparent) 100%);
+}
+
+.diagnostic-choice-card:hover,
+.diagnostic-choice-card:focus-visible {
+  border-color: color-mix(in srgb, var(--gate-accent, var(--support)) 56%, var(--line));
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--gate-accent, var(--support)) 8%, transparent), transparent 52%),
+    var(--site-surface-shell-cool);
+  box-shadow: var(--site-shadow-hover);
+}
+
+.diagnostic-choice-card[aria-pressed="true"],
+.diagnostic-choice-card[aria-current="true"] {
+  border-color: color-mix(in srgb, var(--gate-accent, var(--support)) 64%, var(--line));
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--gate-accent, var(--support)) 12%, transparent), transparent 52%),
+    linear-gradient(165deg, rgba(255, 253, 249, 0.98), rgba(241, 247, 244, 0.96));
+  box-shadow:
+    var(--site-shadow-hover),
+    inset 4px 0 0 color-mix(in srgb, var(--gate-accent, var(--support)) 74%, transparent);
+}
+
+.diagnostic-choice-card[aria-current="true"]::before,
+.diagnostic-choice-card[aria-pressed="true"]::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.diagnostic-choice-grid:has(.diagnostic-choice-card[aria-current="true"]) .diagnostic-choice-card:not([aria-current="true"]),
+.diagnostic-choice-grid:has(.diagnostic-choice-card[aria-pressed="true"]) .diagnostic-choice-card:not([aria-pressed="true"]) {
+  opacity: 0.74;
+}
+
+.choice-arrow {
+  border-color: color-mix(in srgb, var(--gate-accent, var(--support)) 28%, transparent);
+  background: color-mix(in srgb, var(--gate-accent, var(--support)) 10%, var(--harmony-paper));
+  color: var(--gate-accent, var(--support));
+}
+
+.diagnostic-choice-card:hover .choice-arrow,
+.diagnostic-choice-card:focus-visible .choice-arrow,
+.diagnostic-choice-card[aria-pressed="true"] .choice-arrow,
+.diagnostic-choice-card[aria-current="true"] .choice-arrow {
+  border-color: color-mix(in srgb, var(--gate-accent, var(--support)) 70%, transparent);
+  background: var(--gate-accent, var(--support));
+  color: var(--harmony-paper);
+}
+
+.home-route-open__note,
+.home-route-open__lens {
+  border-left-color: color-mix(in srgb, var(--support) 58%, var(--line));
+}
+
+.home-route-open__lens {
+  border-radius: var(--site-radius-control);
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--support) 8%, transparent), transparent 62%),
+    var(--site-surface-shell-cool);
+  box-shadow:
+    var(--site-shadow-card),
+    inset 4px 0 0 color-mix(in srgb, var(--support) 16%, transparent);
+}
+
+.home-route-open__lens[data-pathway="regular-guest-stays"] {
+  border-left-color: color-mix(in srgb, var(--copper) 58%, var(--line));
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--copper) 9%, transparent), transparent 62%),
+    var(--site-surface-shell);
+}
+
+.home-route-open__lens[data-pathway="mixed-not-defined"] {
+  border-left-color: color-mix(in srgb, var(--support) 64%, var(--authority));
+}
+
+.home-contrast-band,
+.faq-shell,
+.faq-boundary-registry,
+.faq-assumption-ledger {
+  border: 1px solid color-mix(in srgb, var(--line) 60%, var(--support));
+  box-shadow: var(--site-shadow-shell);
+}
+
+.faq-boundary-registry__item,
+.faq-category-link,
+.faq-decision-strip__cell {
+  border-color: color-mix(in srgb, var(--line) 68%, var(--support));
+  background: var(--site-surface-shell-cool);
+}
+
+.faq-section-anchor-strip__link::before,
+.faq-quick-rail__num,
+.faq-quick-board__index {
+  color: color-mix(in srgb, var(--support) 80%, var(--authority));
+}
+
+.faq-shell__header,
+.faq-shell--quick .faq-shell__header--quick,
+.faq-shell--decision .faq-shell__header--decision {
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--support) 6%, transparent), transparent 48%),
+    var(--site-surface-shell-cool);
+}
+
+.faq-quick-rail {
+  border-top-color: color-mix(in srgb, var(--line) 58%, var(--support));
+}
+
+.faq-section-anchor-strip__link {
+  border-color: color-mix(in srgb, var(--line) 66%, var(--support));
+  background: color-mix(in srgb, var(--surface-card) 74%, var(--site-cool-field));
+}
+
+.faq-section-anchor-strip__link:hover {
+  border-color: color-mix(in srgb, var(--support) 52%, var(--line));
+  background: var(--site-surface-shell-cool);
+}
+
+.faq-page .faq-accordion__section-shell .disclosure-trigger,
+.faq-page .faq-accordion__answer-shell .disclosure-trigger {
+  background: var(--site-surface-shell-cool);
+}
+
+.faq-page .faq-accordion__section-shell .disclosure-content,
+.faq-page .faq-accordion__answer-shell .disclosure-content {
+  background: color-mix(in srgb, var(--site-cool-field) 58%, var(--harmony-paper));
+}
+
+.faq-section--final,
+.home-section--final {
+  background:
+    linear-gradient(90deg, rgba(255, 250, 242, 0.045) 1px, transparent 1px) 0 0 / 7rem 100%,
+    linear-gradient(180deg, #10263f 0%, #0f2438 72%, #0b1827 100%);
+}
+
+@media (max-width: 640px) {
+  .diagnostic-choice-card {
+    min-height: 0;
+    padding: 1rem;
+  }
+
+  .home-route-open__lens,
+  .home-contrast-band,
+  .faq-shell,
+  .faq-boundary-registry,
+  .faq-assumption-ledger {
+    border-radius: 1rem;
+  }
+}
