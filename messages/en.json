@@ -1451,10 +1451,17 @@
     "redesign": {
       "hero": {
         "eyebrow": "Qualified intake",
-        "headline": "Check whether Sentinel can cover your property.",
-        "lead": "Provide the property location, usage pattern, and expected support scope. Sentinel will confirm whether the property fits the service area and operating model.",
+        "headline": "Send property context before action.",
+        "lead": "Sentinel qualifies location, usage pattern, and expected scope first. The form opens an inquiry file; it does not start service automatically.",
         "primaryCta": "Go to form",
-        "secondaryCta": "Prepare information",
+        "secondaryCta": "What to prepare",
+        "artifactTitle": "Owner qualification file",
+        "artifactBadge": "For scope review",
+        "artifactRows": [
+          { "label": "Property data", "value": "location, type, access" },
+          { "label": "Scope to confirm", "value": "package, usage, need" },
+          { "label": "Before action", "value": "agreement and defined scope" }
+        ],
         "facts": [
           { "label": "Area", "value": "Torrevieja + 50-70 km" },
           { "label": "Inquiry response", "value": "24-48h" },
@@ -1465,6 +1472,25 @@
         "eyebrow": "Direct methods",
         "title": "Use these details for new-owner intake.",
         "note": "The public contact page is for initial inquiries and first assessment. Active operational requests use the channels provided during onboarding."
+      },
+      "dossier": {
+        "eyebrow": "Inquiry file",
+        "title": "Context first, then a scope decision.",
+        "intro": "Contact is for qualifying the property and owner expectations. Sentinel responds after checking the area, service model, and responsibility boundaries.",
+        "helpsTitle": "Information that helps qualification",
+        "notDecidedEyebrow": "Not decided by the form",
+        "notDecidedTitle": "The form does not start action.",
+        "notDecidedItems": [
+          { "title": "Service acceptance", "body": "Submitting an inquiry does not mean the property has been accepted for service." },
+          { "title": "Emergency response", "body": "The public form is not an emergency channel or an active-client operational line." },
+          { "title": "Package scope", "body": "Package level and responsibility are confirmed only after the context is reviewed." }
+        ],
+        "summaryItems": [
+          { "label": "Purpose", "value": "scope qualification" },
+          { "label": "Basis", "value": "property data" },
+          { "label": "Decision", "value": "after contact" }
+        ],
+        "fitTitle": "Qualification filters"
       },
       "prepare": {
         "eyebrow": "Before contact",
@@ -1516,8 +1542,8 @@
       },
       "form": {
         "eyebrow": "Inquiry form",
-        "title": "Submit the information required for qualification.",
-        "intro": "The fields below are grouped so Sentinel can assess the inquiry.",
+        "title": "Complete the property qualification file.",
+        "intro": "The functional fields are unchanged, but they are grouped in the review order: owner, property, usage, and boundary acknowledgment.",
         "ownerSection": "Owner details",
         "propertySection": "Property details",
         "serviceSection": "Expected usage and service need",
@@ -1528,12 +1554,12 @@
       "afterSubmit": {
         "eyebrow": "After submitting",
         "title": "What happens after the inquiry is sent",
-        "intro": "The next step is review, not automatic onboarding.",
+        "intro": "The next step is review, not automatic onboarding or field action.",
         "steps": [
-          { "marker": "01", "title": "Location check", "body": "Sentinel checks whether the property is inside the operating area." },
-          { "marker": "02", "title": "Scope review", "body": "The request is compared with package logic and operational boundaries." },
-          { "marker": "03", "title": "Next step if suitable", "body": "Sentinel may propose an inquiry assessment, package discussion, or onboarding path." },
-          { "marker": "04", "title": "Decline if unsuitable", "body": "If the request is outside area or scope, Sentinel may decline." }
+          { "marker": "01", "title": "Inquiry received", "body": "The form enters initial review as property and owner context." },
+          { "marker": "02", "title": "Scope checked", "body": "Sentinel compares location, usage pattern, and expectations with the service model." },
+          { "marker": "03", "title": "Contact and confirmation", "body": "If the inquiry fits, Sentinel contacts you to confirm the next step." },
+          { "marker": "04", "title": "Agreement before action", "body": "No action starts without confirmed scope, access, and terms." }
         ]
       },
       "confirmation": {
