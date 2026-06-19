@@ -151,6 +151,22 @@ function ContactInfoList({
   );
 }
 
+function ContactCautionList({ items }: { items: InfoCard[] }) {
+  return (
+    <div className="contact-caution-list">
+      {items.map((item) => (
+        <article key={item.title} className="contact-caution-list__item">
+          <span className="contact-caution-list__mark" aria-hidden="true">!</span>
+          <div>
+            <h4>{item.title}</h4>
+            <p>{item.body}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  );
+}
+
 function ContactPageInner() {
   const locale = useLocale();
   const searchParams = useSearchParams();
@@ -362,7 +378,7 @@ function ContactPageInner() {
           </div>
         </Section>
 
-        <Section tone="alt" id="intake-form" className="contact-section contact-dossier-intake-section">
+        <Section tone="alt" id="contact-intake" className="contact-section contact-dossier-intake-section">
           <div className="contact-intake-layout">
             <aside className="contact-intake-support">
               <div className="contact-support-panel contact-support-panel--primary">
@@ -380,7 +396,7 @@ function ContactPageInner() {
               <div className="contact-support-panel contact-support-panel--quiet">
                 <p className="section-label">{t('redesign.dossier.notDecidedEyebrow')}</p>
                 <h3>{t('redesign.dossier.notDecidedTitle')}</h3>
-                <ContactInfoList items={notDecidedItems} markerMode="number" />
+                <ContactCautionList items={notDecidedItems} />
               </div>
 
               <ContactMethodPanel
@@ -396,7 +412,7 @@ function ContactPageInner() {
               />
             </aside>
 
-            <div className="contact-form-file reveal-rise">
+            <div className="contact-form-file reveal-rise" id="intake-form">
               <span className="contact-intake-tab">{t('redesign.form.eyebrow')}</span>
               <div className="contact-intake-shell contact-form-dossier p-4 md:p-6">
                 <div className="contact-form-dossier__header">
