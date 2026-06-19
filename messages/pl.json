@@ -2816,10 +2816,18 @@
     "redesign": {
       "hero": {
         "eyebrow": "Sentinel Costa Blanca",
-        "headline": "Stworzony dla właścicieli, których nie ma na miejscu",
-        "lead": "Sentinel to reprezentacja właściciela na miejscu dla osób posiadających nieruchomość na południowym Costa Blanca. Model porządkuje lokalną obecność, dostęp, dokumentację i decyzje właściciela w określonym zakresie operacyjnym.",
+        "headline": "Lokalny operator dla właściciela poza miejscem.",
+        "lead": "Sentinel zapewnia reprezentację właściciela na miejscu na południowym Costa Blanca. Model porządkuje lokalną obecność, dostęp, dokumentację i decyzje właściciela w określonym zakresie operacyjnym.",
         "primaryCta": "Rozpocznij zapytanie",
         "secondaryCta": "Zobacz zakres usług",
+        "artifactBadge": "Obecność i granice",
+        "artifactTitle": "Rejestr operatora lokalnego",
+        "artifactRows": [
+          { "label": "Rola", "value": "reprezentacja właściciela na miejscu" },
+          { "label": "Obszar", "value": "Torrevieja + 50-70 km" },
+          { "label": "Działanie", "value": "kontrola, dostęp, dokumentacja" },
+          { "label": "Granica", "value": "pakiet, zgoda, limit decyzji" }
+        ],
         "facts": [
           { "label": "Obszar", "value": "Torrevieja + 50-70 km" },
           { "label": "Metoda", "value": "udokumentowane kontrole" },

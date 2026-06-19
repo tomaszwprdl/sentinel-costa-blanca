@@ -2816,10 +2816,18 @@
     "redesign": {
       "hero": {
         "eyebrow": "Sentinel Costa Blanca",
-        "headline": "Built for owners who are not on site",
-        "lead": "Sentinel is Structured Property Oversight for remote owners on the southern Costa Blanca. The model exists so local presence, access, documentation, and owner decisions are handled inside a defined operating scope.",
+        "headline": "A local operator for owners who are away.",
+        "lead": "Sentinel provides Structured Property Oversight for remote owners on the southern Costa Blanca. The model exists so local presence, access, documentation, and owner decisions are handled inside a defined operating scope.",
         "primaryCta": "Start an inquiry",
         "secondaryCta": "View service scope",
+        "artifactBadge": "Presence and boundaries",
+        "artifactTitle": "Local operator record",
+        "artifactRows": [
+          { "label": "Role", "value": "structured owner representation" },
+          { "label": "Area", "value": "Torrevieja + 50-70 km" },
+          { "label": "Work", "value": "checks, access, documentation" },
+          { "label": "Boundary", "value": "package, approval, decision limit" }
+        ],
         "facts": [
           { "label": "Area", "value": "Torrevieja + 50-70 km" },
           { "label": "Method", "value": "documented checks" },
