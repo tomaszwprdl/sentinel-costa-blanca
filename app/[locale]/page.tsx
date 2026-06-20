@@ -75,7 +75,7 @@ export default async function HomePage({
                 <PathwayCopy path="distinctionIntro" />
               </p>
             </div>
-            <div className="home-distinction-chain reveal-stagger">
+            <div className="home-distinction-chain">
               {MODEL_PROOF_KEYS.map((key, index) => (
                 <article key={key} className="home-distinction-item">
                   <p className="home-distinction-item__num" aria-hidden>
@@ -93,7 +93,7 @@ export default async function HomePage({
           </div>
         </Section>
 
-        <section className="page-final-cta home-handoff-cta reveal-rise" aria-labelledby="home-handoff-cta-heading">
+        <section className="page-final-cta home-handoff-cta" aria-labelledby="home-handoff-cta-heading">
           <div className="home-handoff-cta__media" aria-hidden />
           <div className="home-handoff-cta__scrim" aria-hidden />
           <span className="home-handoff-cta__edge home-handoff-cta__edge--top" aria-hidden />

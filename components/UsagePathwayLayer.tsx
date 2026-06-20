@@ -191,7 +191,7 @@ export function PathwayProcessPanel() {
   const selected = normalizePathwayParam(searchParams.get('pathway')) ?? 'private-use-only';
 
   return (
-    <div className="home-process-panel home-command-panel reveal-rise" data-pathway={selected}>
+    <div className="home-process-panel home-command-panel" data-pathway={selected}>
       <PathwayProcessPosture />
       <PathwayProcessRail />
     </div>
@@ -206,7 +206,7 @@ export function PathwayProcessRail() {
 
   return (
     <div
-      className="home-command-system reveal-stagger"
+      className="home-command-system"
       data-pathway={selected}
       aria-label={t('systemIntro.title')}
     >
