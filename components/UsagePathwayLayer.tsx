@@ -20,6 +20,9 @@ const PATHWAY_POINT_COUNTS: Record<PathwayKey, number> = {
   'mixed-not-defined': 5,
 };
 
+const GATE_EVIDENCE_ROW_KEYS = ['area', 'access', 'record', 'decision'] as const;
+const PATHWAY_EVIDENCE_ROW_KEYS = ['first', 'second', 'third'] as const;
+
 const PATHWAY_MEDIA: Record<PathwayKey, string> = {
   'private-use-only': '/photos/sentinel-apartment-entry-placeholder.png',
   'regular-guest-stays': '/photos/sentinel-cleaning-readiness-placeholder.png',
@@ -339,6 +342,8 @@ function DiagnosticGateIntro({
             <HeroFactChip label={tp('companyFacts.access.label')} value={tp('companyFacts.access.value')} />
           </div>
 
+          <GateEvidencePlate t={tp} />
+
           <a href="#usage-situation-gate" className="gate-scroll-cue inline-flex lg:hidden">
             <span>{tp('gateScrollCue')}</span>
           </a>
@@ -364,6 +369,27 @@ function HeroFactChip({ label, value }: { label: string; value: string }) {
       <span>{label}</span>
       <strong className="mt-1 block text-sm font-bold leading-snug">{value}</strong>
     </div>
+  );
+}
+
+function GateEvidencePlate({ t }: { t: ReturnType<typeof useTranslations<'home.pathway'>> }) {
+  return (
+    <aside className="gate-evidence-plate" aria-label={t('evidence.gate.title')}>
+      <div className="gate-evidence-plate__top">
+        <span>{t('evidence.gate.eyebrow')}</span>
+        <strong>{t('evidence.gate.title')}</strong>
+        <em>{t('evidence.gate.status')}</em>
+      </div>
+      <dl className="gate-evidence-plate__rows">
+        {GATE_EVIDENCE_ROW_KEYS.map((key) => (
+          <div key={key}>
+            <dt>{t(`evidence.gate.rows.${key}.label`)}</dt>
+            <dd>{t(`evidence.gate.rows.${key}.value`)}</dd>
+          </div>
+        ))}
+      </dl>
+      <p className="gate-evidence-plate__note">{t('evidence.gate.note')}</p>
+    </aside>
   );
 }
 
@@ -485,6 +511,7 @@ function PathwayHero({
         <aside className="pathway-hero__changes">
           <OperationalField variant={PATHWAY_FIELD[pathway]} className="pathway-hero__changes-field" />
           <p className="pathway-hero__changes-label">{t('changesLabel')}</p>
+          <PathwayEvidenceArtifact pathway={pathway} t={t} />
           <ul className="pathway-hero__changes-list">
             {Array.from({ length: PATHWAY_POINT_COUNTS[pathway] }, (_, i) => (
               <li key={i}>
@@ -495,6 +522,32 @@ function PathwayHero({
           </ul>
         </aside>
       </div>
+    </section>
+  );
+}
+
+function PathwayEvidenceArtifact({
+  pathway,
+  t,
+}: {
+  pathway: PathwayKey;
+  t: ReturnType<typeof useTranslations<'home.pathway'>>;
+}) {
+  return (
+    <section className="pathway-evidence-artifact" aria-label={t(`evidence.pathways.${pathway}.title`)}>
+      <div className="pathway-evidence-artifact__head">
+        <span>{t(`evidence.pathways.${pathway}.eyebrow`)}</span>
+        <strong>{t(`evidence.pathways.${pathway}.title`)}</strong>
+      </div>
+      <dl className="pathway-evidence-artifact__rows">
+        {PATHWAY_EVIDENCE_ROW_KEYS.map((key) => (
+          <div key={key}>
+            <dt>{t(`evidence.pathways.${pathway}.rows.${key}.label`)}</dt>
+            <dd>{t(`evidence.pathways.${pathway}.rows.${key}.value`)}</dd>
+          </div>
+        ))}
+      </dl>
+      <p className="pathway-evidence-artifact__note">{t(`evidence.pathways.${pathway}.note`)}</p>
     </section>
   );
 }

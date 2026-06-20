@@ -134,6 +134,52 @@
     "servicesCta": "Porównaj zakres usług",
     "meaningLabel": "Znaczenie operacyjne",
     "nextLabel": "Następny krok właściciela",
+      "evidence": {
+        "gate": {
+          "eyebrow": "Przykładowy obiekt operacyjny",
+          "title": "Fragment zapisu kontroli",
+          "status": "Próbka bez danych klienta",
+          "rows": {
+            "area": { "label": "Obszar", "value": "Torrevieja + 50-70 km" },
+            "access": { "label": "Dostęp", "value": "klucze i wejście według ustaleń" },
+            "record": { "label": "Zapis", "value": "kontrola, notatka, dokumentacja" },
+            "decision": { "label": "Decyzja", "value": "w limicie albo do właściciela" }
+          },
+          "note": "To wzór struktury zapisu. Nie przedstawia konkretnej nieruchomości ani rzeczywistego klienta."
+        },
+        "pathways": {
+          "private-use-only": {
+            "eyebrow": "Pierwszy zapis",
+            "title": "Kontrola pustego lokalu",
+            "rows": {
+              "first": { "label": "Sprawdzenie", "value": "wejście, wentylacja, woda / prąd" },
+              "second": { "label": "Gotowość", "value": "lista przed przyjazdem właściciela" },
+              "third": { "label": "Decyzja", "value": "działanie tylko w ustalonym zakresie" }
+            },
+            "note": "Przykładowy format kontroli między pobytami, bez danych lokalu."
+          },
+          "regular-guest-stays": {
+            "eyebrow": "Pierwszy zapis",
+            "title": "Lista gotowości przyjazdowej",
+            "rows": {
+              "first": { "label": "Wejście", "value": "klucze, sprzątanie, dostęp usługi" },
+              "second": { "label": "Gotowość", "value": "stan wejścia i podstawowe przygotowanie" },
+              "third": { "label": "Zapis", "value": "braki, zdjęcia referencyjne, następny krok" }
+            },
+            "note": "Przykładowy format rotacji. Nie jest raportem z realnego pobytu."
+          },
+          "mixed-not-defined": {
+            "eyebrow": "Pierwszy zapis",
+            "title": "Próg decyzji i zakresu",
+            "rows": {
+              "first": { "label": "Klasyfikacja", "value": "użytek prywatny, goście albo model mieszany" },
+              "second": { "label": "Próg", "value": "co mieści się w limicie i pakiecie" },
+              "third": { "label": "Zgoda", "value": "co wraca do właściciela przed działaniem" }
+            },
+            "note": "Przykład pomaga wybrać zakres po ocenie, bez zgadywania."
+          }
+        }
+      },
       "cards": {
         "private-use-only": {
           "title": "Tylko użytek prywatny",
@@ -2877,6 +2923,24 @@
           { "title": "Nieograniczoną usługą awaryjną", "body": "Reakcja i uprawnienia wynikają z pakietu oraz ustalonych limitów." },
           { "title": "Siecią nieformalnych przysług", "body": "Praca jest określona i zapisana, a nie improwizowana." }
         ]
+      },
+      "operator": {
+        "eyebrow": "Tożsamość operatora",
+        "title": "Sentinel Costa Blanca",
+        "status": "Powierzchnia identyfikacyjna bez danych klienta",
+        "rows": [
+          { "label": "Rola", "value": "reprezentacja właściciela na miejscu" },
+          { "label": "Obszar", "value": "Torrevieja + 50-70 km" },
+          { "label": "Metoda", "value": "kontrola, dostęp, raport" },
+          { "label": "Granica", "value": "pakiet, zgoda, limit decyzji" }
+        ],
+        "map": {
+          "title": "Fragment promienia operacyjnego",
+          "center": "Torrevieja",
+          "radius": "50-70 km",
+          "boundary": "granica obsługi",
+          "note": "Schemat pokazuje zasadę obszaru działania. To nie jest mapa turystyczna ani obietnica wyjątków poza promieniem."
+        }
       },
       "local": {
         "eyebrow": "Lokalny obszar działania",

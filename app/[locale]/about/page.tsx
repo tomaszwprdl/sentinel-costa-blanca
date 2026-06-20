@@ -117,6 +117,69 @@ function LocalEvidencePanel({ cards }: { cards: InfoCard[] }) {
   );
 }
 
+function OperatorProofSurface({
+  eyebrow,
+  title,
+  status,
+  rows,
+  mapTitle,
+  mapCenter,
+  mapRadius,
+  mapBoundary,
+  mapNote,
+}: {
+  eyebrow: string;
+  title: string;
+  status: string;
+  rows: Fact[];
+  mapTitle: string;
+  mapCenter: string;
+  mapRadius: string;
+  mapBoundary: string;
+  mapNote: string;
+}) {
+  return (
+    <aside className="about-operator-proof reveal-rise" aria-label={title}>
+      <div className="about-operator-proof__identity">
+        <span className="about-operator-proof__mark" aria-hidden />
+        <div>
+          <p className="section-label">{eyebrow}</p>
+          <h3>{title}</h3>
+          <span>{status}</span>
+        </div>
+      </div>
+
+      <dl className="about-operator-proof__rows">
+        {rows.map((row) => (
+          <div key={row.label}>
+            <dt>{row.label}</dt>
+            <dd>{row.value}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <figure className="about-radius-fragment" aria-label={mapTitle}>
+        <svg viewBox="0 0 420 250" aria-hidden="true" focusable="false">
+          <rect x="0" y="0" width="420" height="250" rx="18" />
+          <path d="M86 26 C126 38 158 58 196 58 C246 58 282 35 336 52 C372 64 388 92 390 128 C393 170 364 208 318 218 C274 228 240 206 204 196 C164 185 128 196 94 170 C58 142 52 88 86 26 Z" />
+          <path d="M270 28 C248 78 250 128 286 214" />
+          <circle cx="188" cy="138" r="76" />
+          <circle cx="188" cy="138" r="50" />
+          <circle cx="188" cy="138" r="7" />
+          <path d="M188 138 H264" />
+          <path d="M188 138 V62" />
+        </svg>
+        <figcaption>
+          <span>{mapCenter}</span>
+          <strong>{mapRadius}</strong>
+          <em>{mapBoundary}</em>
+        </figcaption>
+        <p>{mapNote}</p>
+      </figure>
+    </aside>
+  );
+}
+
 function CapabilityRegister({ items }: { items: MarkedItem[] }) {
   return (
     <div className="about-capability-register">
@@ -162,6 +225,7 @@ export default async function AboutPage({
   const isItems = t.raw('redesign.boundary.isItems') as InfoCard[];
   const isNotItems = t.raw('redesign.boundary.isNotItems') as InfoCard[];
   const localCards = t.raw('redesign.local.cards') as InfoCard[];
+  const operatorRows = t.raw('redesign.operator.rows') as Fact[];
   const capabilityItems = t.raw('redesign.capabilities.items') as MarkedItem[];
   const responsibilitySteps = t.raw('redesign.responsibility.steps') as MarkedItem[];
 
@@ -227,7 +291,20 @@ export default async function AboutPage({
               <p>{t('redesign.local.intro')}</p>
               <p className="about-local-layout__note">{t('redesign.local.note')}</p>
             </div>
-            <LocalEvidencePanel cards={localCards} />
+            <div className="about-local-layout__evidence-stack">
+              <OperatorProofSurface
+                eyebrow={t('redesign.operator.eyebrow')}
+                title={t('redesign.operator.title')}
+                status={t('redesign.operator.status')}
+                rows={operatorRows}
+                mapTitle={t('redesign.operator.map.title')}
+                mapCenter={t('redesign.operator.map.center')}
+                mapRadius={t('redesign.operator.map.radius')}
+                mapBoundary={t('redesign.operator.map.boundary')}
+                mapNote={t('redesign.operator.map.note')}
+              />
+              <LocalEvidencePanel cards={localCards} />
+            </div>
           </div>
         </Section>
 

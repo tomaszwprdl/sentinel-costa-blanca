@@ -24,6 +24,7 @@ const PATHWAY_POINT_COUNTS: Record<PathwayKey, number> = {
 };
 
 const MODEL_PROOF_KEYS = ['scope', 'presence', 'documentation', 'decisions'] as const;
+const GATE_EVIDENCE_ROW_KEYS = ['area', 'access', 'record', 'decision'] as const;
 
 export default async function HomePage({
   params
@@ -169,6 +170,8 @@ function UsagePathwayFallback({
                 <FallbackHeroFactChip label={t('pathway.companyFacts.documentation.label')} value={t('pathway.companyFacts.documentation.value')} />
                 <FallbackHeroFactChip label={t('pathway.companyFacts.access.label')} value={t('pathway.companyFacts.access.value')} />
               </div>
+
+              <FallbackGateEvidencePlate t={t} />
             </div>
 
             <div className="diagnostic-panel diagnostic-panel--gate">
@@ -237,6 +240,27 @@ function FallbackHeroFactChip({ label, value }: { label: string; value: string }
       <span>{label}</span>
       <strong className="mt-1 block text-sm font-bold leading-snug">{value}</strong>
     </div>
+  );
+}
+
+function FallbackGateEvidencePlate({ t }: { t: (key: string) => string }) {
+  return (
+    <aside className="gate-evidence-plate" aria-label={t('pathway.evidence.gate.title')}>
+      <div className="gate-evidence-plate__top">
+        <span>{t('pathway.evidence.gate.eyebrow')}</span>
+        <strong>{t('pathway.evidence.gate.title')}</strong>
+        <em>{t('pathway.evidence.gate.status')}</em>
+      </div>
+      <dl className="gate-evidence-plate__rows">
+        {GATE_EVIDENCE_ROW_KEYS.map((key) => (
+          <div key={key}>
+            <dt>{t(`pathway.evidence.gate.rows.${key}.label`)}</dt>
+            <dd>{t(`pathway.evidence.gate.rows.${key}.value`)}</dd>
+          </div>
+        ))}
+      </dl>
+      <p className="gate-evidence-plate__note">{t('pathway.evidence.gate.note')}</p>
+    </aside>
   );
 }
 

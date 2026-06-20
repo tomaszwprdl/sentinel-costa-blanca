@@ -134,6 +134,52 @@
     "servicesCta": "Compare service scope",
     "meaningLabel": "Operational meaning",
     "nextLabel": "Owner next step",
+      "evidence": {
+        "gate": {
+          "eyebrow": "Sample operating object",
+          "title": "Inspection record fragment",
+          "status": "Sample without client data",
+          "rows": {
+            "area": { "label": "Area", "value": "Torrevieja + 50-70 km" },
+            "access": { "label": "Access", "value": "keys and entry by agreement" },
+            "record": { "label": "Record", "value": "check, note, documentation" },
+            "decision": { "label": "Decision", "value": "within limit or back to owner" }
+          },
+          "note": "This is a sample record structure. It does not show a specific property or real client."
+        },
+        "pathways": {
+          "private-use-only": {
+            "eyebrow": "First record",
+            "title": "Empty-property check",
+            "rows": {
+              "first": { "label": "Check", "value": "entry, ventilation, water / power" },
+              "second": { "label": "Readiness", "value": "pre-arrival owner checklist" },
+              "third": { "label": "Decision", "value": "action only inside agreed scope" }
+            },
+            "note": "Sample format for checks between stays, without property data."
+          },
+          "regular-guest-stays": {
+            "eyebrow": "First record",
+            "title": "Arrival-readiness checklist",
+            "rows": {
+              "first": { "label": "Entry", "value": "keys, cleaning, service access" },
+              "second": { "label": "Readiness", "value": "entry condition and basic preparation" },
+              "third": { "label": "Record", "value": "gaps, reference photos, next step" }
+            },
+            "note": "Sample turnover format. It is not a report from a real stay."
+          },
+          "mixed-not-defined": {
+            "eyebrow": "First record",
+            "title": "Decision and scope threshold",
+            "rows": {
+              "first": { "label": "Classification", "value": "private use, guests, or mixed model" },
+              "second": { "label": "Threshold", "value": "what fits the limit and package" },
+              "third": { "label": "Approval", "value": "what returns to owner before action" }
+            },
+            "note": "The sample helps choose scope after assessment, without guessing."
+          }
+        }
+      },
       "cards": {
         "private-use-only": {
           "title": "Private Use Only",
@@ -2877,6 +2923,24 @@
           { "title": "Unlimited emergency service", "body": "Response and authority are defined by package and agreed limits." },
           { "title": "Informal favor network", "body": "Work is scoped and recorded rather than improvised." }
         ]
+      },
+      "operator": {
+        "eyebrow": "Operator identity",
+        "title": "Sentinel Costa Blanca",
+        "status": "Credential surface without client data",
+        "rows": [
+          { "label": "Role", "value": "local owner representation" },
+          { "label": "Area", "value": "Torrevieja + 50-70 km" },
+          { "label": "Method", "value": "checks, access, reporting" },
+          { "label": "Boundary", "value": "package, approval, decision limit" }
+        ],
+        "map": {
+          "title": "Operational radius fragment",
+          "center": "Torrevieja",
+          "radius": "50-70 km",
+          "boundary": "service boundary",
+          "note": "The schematic shows the operating-area rule. It is not a tourist map or a promise of exceptions beyond the radius."
+        }
       },
       "local": {
         "eyebrow": "Local operating area",
