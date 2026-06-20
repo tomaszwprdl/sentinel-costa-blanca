@@ -62,19 +62,19 @@
       "companyEyebrow": "Lokalna reprezentacja właściciela",
       "companyHeadline": "Lokalny nadzór, gdy nie ma Cię na miejscu.",
       "companyLine": "Sentinel działa lokalnie w imieniu właściciela: sprawdza stan, kontroluje dostęp i dokumentuje to, co dzieje się na miejscu.",
-      "companyProofLine": "Zakres działania, raport i dostęp są ustalone przed rozpoczęciem nadzoru.",
+      "companyProofLine": "Zakres, dostęp i zapis są ustalone przed rozpoczęciem nadzoru.",
       "companyFacts": {
         "area": {
-          "label": "OBSZAR DZIAŁANIA",
-          "value": "Ustalony promień"
+          "label": "ZAKRES",
+          "value": "Przed działaniem"
         },
         "documentation": {
-          "label": "DOKUMENTACJA",
-          "value": "Raport po wizycie"
+          "label": "ZAPIS",
+          "value": "Po wizycie"
         },
         "access": {
           "label": "DOSTĘP",
-          "value": "Klucze i wejścia"
+          "value": "Według ustaleń"
         }
       },
       "proof": {
@@ -136,16 +136,14 @@
     "nextLabel": "Następny krok właściciela",
       "evidence": {
         "gate": {
-          "eyebrow": "Przykładowy obiekt operacyjny",
-          "title": "Fragment zapisu kontroli",
-          "status": "Próbka bez danych klienta",
-          "rows": {
-            "area": { "label": "Obszar", "value": "Torrevieja + 50-70 km" },
-            "access": { "label": "Dostęp", "value": "klucze i wejście według ustaleń" },
-            "record": { "label": "Zapis", "value": "kontrola, notatka, dokumentacja" },
-            "decision": { "label": "Decyzja", "value": "w limicie albo do właściciela" }
-          },
-          "note": "To wzór struktury zapisu. Nie przedstawia konkretnej nieruchomości ani rzeczywistego klienta."
+          "eyebrow": "Wzór zapisu terenowego",
+          "title": "Wejście · zapis · decyzja",
+          "status": "bez danych klienta",
+          "marks": {
+            "access": "dostęp",
+            "record": "zapis",
+            "decision": "decyzja"
+          }
         },
         "pathways": {
           "private-use-only": {

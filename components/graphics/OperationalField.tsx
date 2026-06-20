@@ -202,9 +202,8 @@ function GateField() {
           <circle cx={cx} cy={cy} r="11" fill="none" stroke={PAPER} strokeOpacity="0.5" strokeWidth="1.2" />
         </g>
 
-        {/* radius annotation along the copper ring */}
+        {/* neutral datum line along the copper ring */}
         <line {...draw(3)} x1={cx} y1={cy} x2={cx + 186} y2={cy + 62} stroke={PAPER} strokeOpacity="0.34" strokeWidth="1.1" pathLength={1} />
-        <text className="gfx-fade" x={cx + 116} y={cy + 24} fontFamily={FONT} fontSize="11" fontWeight="800" letterSpacing="0.1em" fill={COPPER} fillOpacity="0.85">50–70 KM</text>
 
         {/* survey coordinates in the open top-left corner */}
         <g className="gfx-fade" fontFamily={FONT} fontSize="11" fontWeight="700" letterSpacing="0.1em" fill={PAPER} fillOpacity="0.4">

@@ -20,7 +20,7 @@ const PATHWAY_POINT_COUNTS: Record<PathwayKey, number> = {
   'mixed-not-defined': 5,
 };
 
-const GATE_EVIDENCE_ROW_KEYS = ['area', 'access', 'record', 'decision'] as const;
+const GATE_EVIDENCE_MARK_KEYS = ['access', 'record', 'decision'] as const;
 const PATHWAY_EVIDENCE_ROW_KEYS = ['first', 'second', 'third'] as const;
 
 const PATHWAY_MEDIA: Record<PathwayKey, string> = {
@@ -375,20 +375,22 @@ function HeroFactChip({ label, value }: { label: string; value: string }) {
 function GateEvidencePlate({ t }: { t: ReturnType<typeof useTranslations<'home.pathway'>> }) {
   return (
     <aside className="gate-evidence-plate" aria-label={t('evidence.gate.title')}>
-      <div className="gate-evidence-plate__top">
+      <div className="gate-evidence-plate__visual">
+        <span className="gate-evidence-plate__stamp">{t('evidence.gate.status')}</span>
+        <span className="gate-evidence-plate__bar gate-evidence-plate__bar--long" aria-hidden />
+        <span className="gate-evidence-plate__bar gate-evidence-plate__bar--short" aria-hidden />
+        <span className="gate-evidence-plate__node gate-evidence-plate__node--one" aria-hidden />
+        <span className="gate-evidence-plate__node gate-evidence-plate__node--two" aria-hidden />
+      </div>
+      <div className="gate-evidence-plate__copy">
         <span>{t('evidence.gate.eyebrow')}</span>
         <strong>{t('evidence.gate.title')}</strong>
-        <em>{t('evidence.gate.status')}</em>
+        <ul className="gate-evidence-plate__marks" aria-label={t('evidence.gate.eyebrow')}>
+          {GATE_EVIDENCE_MARK_KEYS.map((key) => (
+            <li key={key}>{t(`evidence.gate.marks.${key}`)}</li>
+          ))}
+        </ul>
       </div>
-      <dl className="gate-evidence-plate__rows">
-        {GATE_EVIDENCE_ROW_KEYS.map((key) => (
-          <div key={key}>
-            <dt>{t(`evidence.gate.rows.${key}.label`)}</dt>
-            <dd>{t(`evidence.gate.rows.${key}.value`)}</dd>
-          </div>
-        ))}
-      </dl>
-      <p className="gate-evidence-plate__note">{t('evidence.gate.note')}</p>
     </aside>
   );
 }

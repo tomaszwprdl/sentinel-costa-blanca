@@ -62,19 +62,19 @@
       "companyEyebrow": "Local owner representation",
       "companyHeadline": "Local oversight while you are away.",
       "companyLine": "Sentinel acts locally on behalf of the owner: checking condition, controlling access and documenting what happens on site.",
-      "companyProofLine": "Operating area, reporting, and access are defined before oversight begins.",
+      "companyProofLine": "Scope, access, and records are set before oversight begins.",
       "companyFacts": {
         "area": {
-          "label": "OPERATING AREA",
-          "value": "Defined radius"
+          "label": "SCOPE",
+          "value": "Before action"
         },
         "documentation": {
-          "label": "DOCUMENTATION",
-          "value": "Visit record"
+          "label": "RECORD",
+          "value": "After visit"
         },
         "access": {
           "label": "ACCESS",
-          "value": "Keys and entry"
+          "value": "By agreement"
         }
       },
       "proof": {
@@ -136,16 +136,14 @@
     "nextLabel": "Owner next step",
       "evidence": {
         "gate": {
-          "eyebrow": "Sample operating object",
-          "title": "Inspection record fragment",
-          "status": "Sample without client data",
-          "rows": {
-            "area": { "label": "Area", "value": "Torrevieja + 50-70 km" },
-            "access": { "label": "Access", "value": "keys and entry by agreement" },
-            "record": { "label": "Record", "value": "check, note, documentation" },
-            "decision": { "label": "Decision", "value": "within limit or back to owner" }
-          },
-          "note": "This is a sample record structure. It does not show a specific property or real client."
+          "eyebrow": "Field record sample",
+          "title": "Entry · record · decision",
+          "status": "no client data",
+          "marks": {
+            "access": "access",
+            "record": "record",
+            "decision": "decision"
+          }
         },
         "pathways": {
           "private-use-only": {
