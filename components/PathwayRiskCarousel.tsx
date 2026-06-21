@@ -174,6 +174,7 @@ export default function PathwayRiskCarousel({ pathway }: { pathway: PathwayKey }
                   src={`${config.imageBase}/${slide.image}`}
                   alt={t(`slides.${slide.key}.alt`)}
                   fill
+                  priority={i === 0}
                   sizes="(min-width: 900px) 76vw, 100vw"
                   className="home-risk-figure__img"
                 />

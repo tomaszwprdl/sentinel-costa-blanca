@@ -21144,3 +21144,179 @@ textarea:focus {
     border-radius: 1rem;
   }
 }
+
+/* Selected-pathway contrast: the "Bez nas / Z nami" module should read as a
+   deliberate proof moment, not an empty dark photo frame. */
+.home-risk-stage[data-pathway] {
+  --risk-control-width: clamp(360px, 30vw, 430px);
+  --risk-accent: rgba(118, 205, 193, 0.72);
+  --risk-accent-soft: rgba(118, 205, 193, 0.16);
+  --risk-warm: rgba(210, 154, 87, 0.5);
+  border: 1px solid rgba(255, 250, 242, 0.12);
+  background:
+    radial-gradient(34rem 22rem at 18% 84%, var(--risk-accent-soft), transparent 68%),
+    linear-gradient(150deg, #071827 0%, #10263f 58%, #07131f 100%);
+}
+
+.home-risk-stage[data-pathway="regular-guest-stays"] {
+  --risk-accent: rgba(210, 154, 87, 0.74);
+  --risk-accent-soft: rgba(210, 154, 87, 0.17);
+  --risk-warm: rgba(184, 102, 74, 0.56);
+}
+
+.home-risk-stage[data-pathway="mixed-not-defined"] {
+  --risk-accent: rgba(214, 173, 106, 0.7);
+  --risk-accent-soft: rgba(91, 106, 126, 0.2);
+  --risk-warm: rgba(214, 173, 106, 0.42);
+}
+
+.home-risk-imgwrap::before,
+.home-risk-imgwrap::after {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  content: "";
+}
+
+.home-risk-imgwrap::before {
+  background:
+    linear-gradient(90deg, rgba(5, 15, 26, 0.48) 0%, rgba(5, 15, 26, 0.16) 42%, rgba(5, 15, 26, 0.04) 72%),
+    linear-gradient(0deg, rgba(5, 15, 26, 0.58) 0%, transparent 38%, rgba(5, 15, 26, 0.18) 100%);
+}
+
+.home-risk-imgwrap::after {
+  background:
+    linear-gradient(90deg, rgba(255, 250, 242, 0.08) 1px, transparent 1px) 0 0 / 5.25rem 100%,
+    linear-gradient(0deg, var(--risk-accent-soft), transparent 36%),
+    radial-gradient(circle at 16% 78%, var(--risk-accent) 0 0.18rem, transparent 0.2rem),
+    radial-gradient(circle at 32% 78%, var(--risk-warm) 0 0.14rem, transparent 0.16rem),
+    radial-gradient(circle at 48% 78%, rgba(255, 250, 242, 0.46) 0 0.11rem, transparent 0.13rem);
+  opacity: 0.5;
+  mask-image: linear-gradient(180deg, transparent 12%, #000 44%, #000 100%);
+}
+
+.home-risk-plane--risk {
+  background:
+    radial-gradient(28rem 18rem at 24% 82%, var(--risk-accent-soft), transparent 68%),
+    #071827;
+}
+
+.home-risk-figure__img {
+  filter: saturate(1.05) contrast(1.06) brightness(0.96);
+  transform: scale(1.01);
+}
+
+.home-risk-bubble--risk {
+  border-left: 3px solid var(--risk-warm);
+  box-shadow:
+    0 1.4rem 3rem rgba(3, 10, 18, 0.22),
+    inset 0 1px rgba(255, 250, 242, 0.08);
+}
+
+.home-risk-bubble--control {
+  box-shadow:
+    inset 0 1px rgba(255, 250, 242, 0.1),
+    inset 0 -1px rgba(6, 18, 31, 0.72),
+    0 -1.2rem 2.8rem rgba(3, 10, 18, 0.14);
+}
+
+@media (min-width: 900px) {
+  .home-risk-stage[data-pathway] {
+    grid-template-columns: minmax(0, 1fr) var(--risk-control-width);
+    height: clamp(540px, 64vh, 680px);
+  }
+
+  .home-risk-stage[data-pathway]::before {
+    inset: 0 var(--risk-control-width) 0 0;
+    z-index: 2;
+    background:
+      linear-gradient(90deg, rgba(6, 18, 31, 0.54) 0%, rgba(6, 18, 31, 0.2) 34%, transparent 72%),
+      linear-gradient(0deg, rgba(6, 18, 31, 0.58) 0%, transparent 42%);
+  }
+
+  .home-risk-stage[data-pathway]::after {
+    position: absolute;
+    top: 0;
+    right: var(--risk-control-width);
+    bottom: 0;
+    z-index: 4;
+    width: 1px;
+    background:
+      linear-gradient(180deg, transparent, var(--risk-accent) 18%, var(--risk-warm) 50%, var(--risk-accent) 82%, transparent),
+      rgba(255, 250, 242, 0.12);
+    box-shadow:
+      -0.75rem 0 2rem rgba(6, 18, 31, 0.28),
+      0 0 1.35rem var(--risk-accent-soft);
+    pointer-events: none;
+    content: "";
+  }
+
+  .home-risk-plane--risk::before,
+  .home-risk-plane--risk::after {
+    position: absolute;
+    left: clamp(1.2rem, 2vw, 1.8rem);
+    right: clamp(1.2rem, 2vw, 1.8rem);
+    bottom: clamp(1rem, 2vw, 1.7rem);
+    z-index: 3;
+    pointer-events: none;
+    content: "";
+  }
+
+  .home-risk-plane--risk::before {
+    height: clamp(2.2rem, 4.2vh, 3rem);
+    border-radius: 999px;
+    background:
+      linear-gradient(90deg, transparent 0%, var(--risk-accent) 12%, transparent 13% 26%, var(--risk-warm) 27%, transparent 28% 50%, rgba(255, 250, 242, 0.36) 51%, transparent 52% 100%),
+      linear-gradient(180deg, transparent, rgba(6, 18, 31, 0.16));
+    opacity: 0.74;
+    mask-image: linear-gradient(90deg, transparent, #000 9%, #000 72%, transparent 90%);
+  }
+
+  .home-risk-plane--risk::after {
+    bottom: calc(clamp(1rem, 2vw, 1.7rem) + clamp(1.05rem, 2.2vh, 1.45rem));
+    height: 1px;
+    background:
+      radial-gradient(circle at 0% 50%, var(--risk-accent) 0 0.28rem, transparent 0.3rem),
+      radial-gradient(circle at 33% 50%, var(--risk-warm) 0 0.22rem, transparent 0.24rem),
+      radial-gradient(circle at 66% 50%, rgba(255, 250, 242, 0.5) 0 0.18rem, transparent 0.2rem),
+      linear-gradient(90deg, var(--risk-accent), rgba(255, 250, 242, 0.26), transparent 78%);
+    opacity: 0.86;
+  }
+
+  .home-risk-stage[data-pathway="regular-guest-stays"] .home-risk-plane--risk::before {
+    background:
+      repeating-linear-gradient(90deg, rgba(210, 154, 87, 0.34) 0 0.6rem, transparent 0.6rem 1.7rem),
+      linear-gradient(90deg, transparent, rgba(184, 102, 74, 0.26), transparent 72%);
+  }
+
+  .home-risk-stage[data-pathway="mixed-not-defined"] .home-risk-plane--risk::before {
+    background:
+      linear-gradient(90deg, transparent 0%, rgba(91, 106, 126, 0.44) 18%, transparent 19% 36%, rgba(214, 173, 106, 0.42) 37%, transparent 38% 64%, rgba(255, 250, 242, 0.26) 65%, transparent 66%),
+      linear-gradient(180deg, transparent, rgba(7, 15, 24, 0.16));
+  }
+
+  .home-risk-bubble--risk {
+    top: clamp(1.6rem, 2.6vw, 2.25rem);
+    left: clamp(1.6rem, 2.6vw, 2.25rem);
+    width: min(28rem, calc(78% - 3.7rem));
+    background:
+      linear-gradient(135deg, rgba(255, 250, 242, 0.08), transparent 52%),
+      rgba(7, 20, 34, 0.74);
+    border-color: rgba(255, 250, 242, 0.18);
+  }
+
+  .home-risk-bubble--control {
+    border-left-color: color-mix(in srgb, var(--risk-accent) 46%, rgba(255, 250, 242, 0.12));
+  }
+}
+
+@media (max-width: 899px) {
+  .home-risk-stage[data-pathway] {
+    border-radius: 1rem;
+  }
+
+  .home-risk-imgwrap::after {
+    opacity: 0.36;
+  }
+}
