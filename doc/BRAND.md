@@ -8,6 +8,8 @@ Sentinel may feel warmer, more tactile, more premium, and more visually attracti
 
 The website should feel like a **real local operating company**, not a policy document.
 
+Current post-Council v2 state: the live visual atmosphere is credible enough to keep. The next brand risk is not weak design; it is over-polished / synthetic trust leakage caused by missing real operator proof, buried price logic, repetitive defensive language, and repeated dossier/key/door motifs.
+
 ---
 
 ## 1. Core identity
@@ -81,10 +83,14 @@ The site uses **one art-directed Sentinel atmosphere** (merged on `main`) — no
 
 - Decoration without operational function
 - Fake proof, testimonial theater, lifestyle/concierge drift
+- Synthetic images treated as real evidence
+- Repeated keys, folders, dossiers, doors, and limits language after they stop clarifying the service
 
 Logo and wordmark rules remain strict (`LOGO-*.md`). Logo restrictions apply to the **logo asset**, not every background, card, or accent on the page.
 
 Direction: `VISUAL-FREEDOM-SPRINT.md`
+
+Current proof-layer images are allowed only as temporary shot-planning placeholders. They must not claim actual Sentinel work, real client property, real reports, real operator identity, or final operational evidence. Replacement with real photography remains a pre-promotion / indexed-launch goal where possible.
 
 ---
 

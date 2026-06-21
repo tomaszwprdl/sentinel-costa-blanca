@@ -57,6 +57,11 @@ Owner-facing pre-launch checklist. Not binding law — track completion here.
 - [ ] Mobile 390px overflow check
 - [ ] Pathway slugs and query preservation
 - [ ] Logo usage still compliant on key pages
+- [ ] Homepage gate still preserved unless Owner explicitly approved removal
+- [ ] Proof-layer images reviewed as temporary shot-planning placeholders, not real evidence claims
+- [ ] Real-photo replacement plan noted for synthetic proof-layer images before serious public promotion / indexed launch where possible
+- [ ] Operator proof level decided for Trust Spine Pilot: name+face, name/role without face, or role-only
+- [ ] Estimator / price cue visible enough for first-contact trust without changing pricing logic
 
 ---
 

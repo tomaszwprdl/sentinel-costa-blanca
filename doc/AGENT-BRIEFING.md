@@ -8,22 +8,24 @@ Short briefing for Cursor, Codex, and Cloudie.
 
 - **Product:** Sentinel Costa Blanca — structured local owner representation (Torrevieja + ~50–70 km).
 - **Website:** Pre-live, soft-launch review ready. `noindex,nofollow` active.
-- **Phase:** Launch-era — Services refinement completed locally; pending push/deploy smoke; repo cleanup/readiness continues; global visual iteration paused.
-- **Local main HEAD:** `b3fd918` (ahead of `origin/main` by 2; not pushed).
-- **Origin/main / current live baseline:** `b46a214` until push/deploy smoke.
-- **Completed local Services commits:** `40ede57` (doctrine/docs) + `b3fd918` (page implementation/QA).
+- **Phase:** Launch-era — proof-assets integration and selected-pathway contrast patch are live; broad visual iteration is stopped; next work is homepage trust-spine refinement only after Owner operator-proof decision.
+- **Current live/main baseline:** `e682b5b` (`fix: strengthen selected pathway contrast section`).
+- **Previous proof-assets integration:** `b9800ce` (`feat: integrate proof layer visual assets`).
+- **Latest QA state:** selected pathway routes checked clean: no console errors, hydration mismatch, failed requests, HTTP 4xx/5xx, or 390px overflow in latest capture pass.
 - **Launch-era governance baseline SHA:** `6a0d0f7` (reset + alignment + root entry points).
 - **Optional cognitive audit tool added:** `96fef3e` (`COGNITIVE-PAGE-AUDIT.md`).
 
 **Visual composition rebuild is merged. The site uses one canonical Sentinel atmosphere — not a toggleable app skin.**
 
-Some older docs may still mention historical SHAs such as `97997eb`; repo preflight/local git state is the truth unless the Owner overrides.
+Some older docs may still mention historical SHAs such as `b46a214`, `b3fd918`, or `97997eb`; repo preflight/local git state is the truth unless the Owner overrides.
 
 Canonical mode: dark cinematic hero / authority bands · warm paper body sections · dark final CTA / footer · controlled copper / sea / clay accents · **no public dark/light theme toggle**.
 
-Future visual work should **build on canonical mode**, not recreate dual themes. It should be page-by-page, plan-first, and Owner-scoped rather than another global transformation pass.
+Future visual work should **build on canonical mode**, not recreate dual themes. It should be homepage-first / page-by-page, plan-first, and Owner-scoped rather than another global transformation pass.
 
-**Current baseline issue:** Services refinement is complete locally and QA-passed, but not pushed. The next operational step is Owner-approved push/deploy smoke, then readiness tasks: production email, pricing confirmation, legal/GDPR review, noindex decision, and repo cleanup. Owner-scoped page-specific rebuilds remain **allowed** later — including removing or demoting redundant modules.
+**Current baseline issue:** Council v2 shifted the problem from weak visuals to trust spine: human proof, price/estimator visibility, copy density, and avoiding synthetic over-polish. The homepage gate stays intentional and protected; do not de-gate by default. The next recommended work is a homepage-only Trust Spine Pilot, pending Owner decision on how much operator proof can be shown now.
+
+**Proof image policy:** the current proof-layer photos are accepted as temporary synthetic shot-planning placeholders only. They may support placement, crop, atmosphere, and section fit, but must not claim actual Sentinel work, real client property, real reports, real operator identity, or final operational evidence. Replace with real photography before serious public promotion / indexed launch where possible.
 
 ---
 
@@ -110,12 +112,15 @@ Details: `WORKFLOW.md`
 
 # Current next phase
 
-1. Push completed local Services commits and run deploy smoke when Owner approves.
-2. Production contact email verification.
-3. Final pricing confirmation.
-4. Legal/entity/GDPR review.
-5. Noindex decision and indexed-launch deploy smoke when approved.
-6. Repo cleanup baseline and readiness audit.
-7. Future page-by-page improvement briefs — plan-first, Owner-scoped, anti-repetition aware.
+1. Owner decision: operator proof level for homepage Trust Spine Pilot.
+   - Recommended middle option: real name/role text cue now, no full-face portrait yet; real working/local photo later.
+   - Alternatives: real name + face/working photo, or role-only without name/face.
+2. Homepage Trust Spine Pilot only: make first contact feel more like a real local operator with visible cost logic while preserving the pathway choice.
+3. Reduce repeated scope/documentation/limits language where it weakens trust; do not soften into concierge, lifestyle, rental-management, or vague reassurance.
+4. Production contact email verification.
+5. Final pricing confirmation.
+6. Legal/entity/GDPR review.
+7. Noindex decision and indexed-launch deploy smoke when approved.
+8. Repo cleanup baseline and readiness audit.
 
 Checklist: `LAUNCH-CHECKLIST.md`

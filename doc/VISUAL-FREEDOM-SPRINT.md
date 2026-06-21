@@ -1,6 +1,6 @@
 # VISUAL-FREEDOM-SPRINT.md — SENTINEL
 
-**Status:** Active canonical visual system (executed on `main`; current live/main baseline `97997eb`; graphic passes `38a4849` / `cef326b`)
+**Status:** Active canonical visual system (executed on `main`; current live/main baseline `e682b5b`; proof-assets integration `b9800ce`; graphic passes `38a4849` / `cef326b`)
 **Scope:** Website execution only — not logo assets, not service contracts
 
 ---
@@ -24,7 +24,9 @@ Build-era visual restraint is retired. **Mature operational credibility remains 
 
 The site should feel like a **real local operating company**, not a policy document — and it may look premium, warm, tactile, and visually excellent while boundaries stay clear.
 
-**Current state:** heroes are materially stronger after the graphic passes. Global visual iteration is paused while the repo is cleaned into a stable baseline. Future improvements should be page-by-page, plan-first, and Owner-scoped, with page-specific visual narratives rather than another whole-site transformation pass.
+**Current state:** the live site is visually credible enough to keep live after proof-assets integration and the selected-pathway contrast patch. Visual atmosphere is now a strength. Broad visual iteration is stopped; the next priority is trust spine, human/operator proof, price cue visibility, and copy-density reduction. Future implementation should be homepage-only unless the Owner briefs otherwise.
+
+Council v2 interpretation: do **not** remove the homepage diagnostic gate by default. Keep the gate, but make the gate itself carry more trust before the click.
 
 ---
 
@@ -41,6 +43,8 @@ These motifs are useful when page-specific, but must not appear everywhere by de
 - Identical proof bands across pages
 
 **Agents may remove, demote, or replace** recently added modules when they create repetition or weaken page-specific storytelling. This is not a service doctrine change.
+
+Current repetition watch: repeated keys, folders, dossier surfaces, doors/corridors, documentation, limits, and "not concierge / not rental" language can become set-dressing if repeated beyond usefulness.
 
 ---
 
@@ -69,6 +73,22 @@ Each major page should carry its own visual argument in middle sections — not 
 
 Owner-scoped rebuilds of middle sections are **allowed and expected** when repetition or text-heaviness blocks clarity.
 
+Current strongest assets to protect:
+
+- Dark cinematic + warm-paper visual atmosphere.
+- Home "Bez nas / Z nami" risk carousel.
+- FAQ quick-answer cards and five-boundaries pattern.
+- About "is / is not" section.
+- Services responsibility ladder and situation-to-package bridge.
+
+Current weakest trust areas:
+
+- No named/visible real local operator.
+- Estimator/price cue is too buried.
+- PL copy sometimes splits between direct modern voice and older formal/AI-ish register.
+- Scope/documentation/limits language repeats past usefulness.
+- Synthetic proof-layer imagery is useful for placement but cannot become final evidence.
+
 ---
 
 # What stays protected
@@ -92,6 +112,8 @@ Future visual work may use:
 - Cinematic surfaces, depth, image-led composition, editorial treatment
 
 Do **not** recreate a dual global theme system unless the Owner explicitly asks.
+
+Do **not** generate more synthetic imagery for the next Trust Spine Pilot. Existing synthetic images are temporary shot-planning placeholders to be replaced with real photography where possible before serious public promotion / indexed launch.
 
 ---
 
@@ -132,8 +154,10 @@ The following are **live on `main`**, not pending:
 - Major graphic system pass — jurisdiction rings, ledgers, proof modules — `38a4849`
 - Middle-page visual proof pass — additional proof bands across pages — `cef326b`
 - Codex middle-page rebuild merge — `97997eb`
+- Proof-assets integration — `b9800ce`
+- Selected-pathway contrast strengthening — `e682b5b`
 
-Post-cleanup refinement and anti-repetition restructuring are normal next steps. Page-specific middle-section rebuilds are allowed when Owner briefs them.
+Next visual work is not another broad pass. The recommended next implementation is the homepage Trust Spine Pilot after Owner chooses the operator-proof level.
 
 ---
 

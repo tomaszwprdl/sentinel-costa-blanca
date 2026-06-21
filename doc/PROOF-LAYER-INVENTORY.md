@@ -1,8 +1,8 @@
 # PROOF-LAYER-INVENTORY.md - SENTINEL
 
-Source: Council v2 blind visual audit and Owner acceptance on 2026-06-20.
+Source: Council v2 blind visual audit, proof-assets acceptance, selected-pathway contrast patch, and Council v2 live perception audit.
 
-Purpose: inventory the current placeholder, image, and proof-object layer before implementation.
+Purpose: inventory the current live placeholder, image, and proof-object layer after implementation.
 
 This is a planning document only. It does not approve code changes, asset fabrication, contract edits, estimator edits, contact-form changes, pathway slug changes, legal edits, DNS, Netlify, or indexing.
 
@@ -13,22 +13,25 @@ This is a planning document only. It does not approve code changes, asset fabric
 Local git preflight on this pass reported:
 
 - Branch: `main`
-- `HEAD`: `9826937`
-- `origin/main`: `9826937`
-- Ahead/behind: `0/0`
-- Untracked local folders: `.codex/`, `tmp/`
+- Current live/main baseline: `e682b5b`
+- Proof-assets integration: `b9800ce`
+- Selected-pathway contrast patch: `e682b5b`
+- Expected untracked local items: `.codex/`, `tmp/`, `public/photos/hiw-field-note.webp`, `public/photos/services-scope-object.webp`
 
-Some active docs still mention an older local stack (`b3fd918` ahead of `origin/main`). Per repo rules, current git state overrides stale SHA fields.
+Older docs may still mention `b46a214`, `b3fd918`, or `97997eb` as current. Per repo rules, current git state overrides stale SHA fields; those are historical unless preflight proves otherwise.
 
 ---
 
 # 1. Council v2 Operating Rule
 
-The next trust gain is not a broad visual redesign. It is a proof-layer sprint:
+The next trust gain is not a broad visual redesign and not more synthetic image generation. It is a homepage-only Trust Spine Pilot after Owner chooses operator-proof level:
 
-- replace abstract explanation with controlled proof objects
 - keep the canonical Sentinel visual atmosphere
-- avoid fake proof, stock theater, lifestyle imagery, and AI-generated evidence
+- keep the homepage diagnostic gate unless Owner explicitly overrides it
+- make the gate itself carry more trust before the click
+- surface a real local/operator cue at the level Owner approves
+- surface estimator / cost logic earlier without changing pricing logic
+- reduce repeated scope/documentation/limits language
 - treat placeholders as asset slots, not final trust evidence
 
 Hard constraints for this inventory:
@@ -37,6 +40,7 @@ Hard constraints for this inventory:
 - Synthetic images must be realistic, local, operational, restrained, and physically recreatable later.
 - Synthetic images must be intended for one-for-one replacement by real photos before public/advertised use.
 - No image may claim to show actual Sentinel work, an actual client property, an actual operator, or an actual report unless it is real and approved.
+- Future audits should judge placement, repetition, crop, trust, and section fit. Do not lazily reject an accepted placeholder only because it is AI-generated; do reject it if it creates a proof claim, stock smell, repetition, or synthetic trust leak.
 - No fake personal data, addresses, license plates, WhatsApp screens, report data, or identifiable client interiors.
 - No tourism/luxury imagery.
 - No 3D tilt, parallax, rotating cards, or startup motion.
@@ -109,7 +113,7 @@ Risk:
 Decision:
 
 - Keep the gate behavior.
-- Add one concrete evidence object into the empty gate area.
+- Add trust before the click only in the homepage Trust Spine Pilot after Owner operator-proof decision.
 - Preferred replacement type: structured artifact, not photo.
 
 Recommended object:
@@ -117,9 +121,9 @@ Recommended object:
 - A compact "field record" plate combining: service radius, access/report/decision chain, and a redacted sample visit line.
 - Do not make it a marketing badge or decorative map.
 
-Priority:
+Status:
 
-- Phase 1.
+- Candidate for the homepage Trust Spine Pilot.
 
 ## Home - selected pathway hero
 
@@ -129,9 +133,9 @@ Files:
 
 Current proof/image slots:
 
-- `private-use-only`: `public/photos/sentinel-apartment-entry-placeholder.png`
-- `regular-guest-stays`: `public/photos/sentinel-cleaning-readiness-placeholder.png`
-- `mixed-not-defined`: `public/photos/sentinel-corridor-exterior-placeholder.png`
+- `private-use-only`: `public/photos/home-pathway-private-empty-check.webp`
+- `regular-guest-stays`: `public/photos/home-pathway-guest-readiness.webp`
+- `mixed-not-defined`: `public/photos/home-pathway-mixed-decision-threshold.webp`
 - Each selected pathway also shows a changes panel with an `OperationalField` schematic.
 
 Current proof job:
@@ -140,24 +144,24 @@ Current proof job:
 
 Risk:
 
-- The visible hero proof relies on files explicitly named `*-placeholder`.
-- The images look staged/photo-generated and therefore create the AI/stock smell Council v2 identified if treated as real evidence.
+- The visible hero media is accepted and stronger than the old placeholder files.
+- The images are still synthetic shot-planning placeholders and can create AI/stock smell if treated as real evidence.
 
 Decision:
 
 - Treat these as synthetic shot placeholders only.
-- Validate placement and composition, then recreate as real assets.
+- Placement and composition are accepted for now; recreate as real assets later where possible.
 - If the shot cannot be realistically recreated, replace it with a structured pathway-specific artifact.
 
-Required first-object swap:
+Future real-shot mapping:
 
 - `private-use-only`: empty-property check evidence.
 - `regular-guest-stays`: arrival/readiness checklist or before/after readiness detail.
 - `mixed-not-defined`: decision-threshold device.
 
-Priority:
+Status:
 
-- Phase 1.
+- Placement accepted for now; later real-shot replacement.
 
 ## Home - system/process panel
 
@@ -183,9 +187,9 @@ Decision:
 - Keep as support.
 - Do not let it substitute for the pathway-specific first proof object.
 
-Priority:
+Status:
 
-- Keep in Phase 1; revisit in Phase 2 only if page density is being cut.
+- Keep for now; revisit only if homepage Trust Spine Pilot needs density reduction.
 
 ## Home - contrast/risk carousel
 
@@ -211,14 +215,14 @@ Risk:
 
 Decision:
 
-- Validate placement and composition, then recreate as real operational details.
+- Placement and composition are accepted after `e682b5b`; recreate as real operational details later.
 - If a shot cannot be recreated honestly, convert it to an artifact-led incident plate.
 - If no viable shot plan exists, prefer the existing non-photo contrast fallback pattern or a new artifact carousel.
 
-Priority:
+Status:
 
-- Phase 1 for neutralization if the pathway hero is touched.
-- Phase 2 for richer real-asset replacement.
+- Strong live asset to protect.
+- Later real-asset replacement.
 
 ## Home - final CTA
 
@@ -229,7 +233,7 @@ Files:
 
 Current proof/image slots:
 
-- `public/images/home/home-final-cta-handoff-checklist.webp` is used as the background of `.home-handoff-cta__media`.
+- `public/photos/final-cta-handoff-checklist.webp` is used in `.home-handoff-cta__media`.
 
 Current proof job:
 
@@ -242,7 +246,7 @@ Risk:
 
 Decision:
 
-- Keep temporarily as non-evidence atmosphere if Phase 1 stays narrow.
+- Keep temporarily as non-evidence atmosphere.
 - Treat as a synthetic shot placeholder if it remains photo-like.
 - Replace later with a real checklist/report table detail or a drawn artifact.
 
@@ -265,6 +269,7 @@ Files:
 Current proof/image slots:
 
 - Hero dossier artifact (`services-dossier-artifact`).
+- `public/photos/services-operational-capability.webp` in the capability / cleaning-readiness area.
 - Usage responsibility bridge.
 - Package responsibility ladder.
 - Capability console and schematic module tiles.
@@ -283,8 +288,9 @@ Risk:
 
 Decision:
 
-- Do not start here for Phase 1 unless explicitly briefed.
-- Phase 2 should add one "scope ladder / what you actually get" object without changing package names, count, SLA, emergency authority, or estimator logic.
+- Do not start here unless explicitly briefed.
+- The current operational capability photo is accepted and should stay as-is unless separately briefed.
+- Later work may add one "scope ladder / what you actually get" object without changing package names, count, SLA, emergency authority, or estimator logic.
 
 Priority:
 
@@ -302,6 +308,7 @@ Current proof/image slots:
 
 - Hero procedure register.
 - Procedure corridor with per-step artifact cards.
+- `public/photos/hiw-visit-record.webp` in the procedure / visit-record area.
 - Report excerpt panel.
 - Threshold console.
 - Onboarding ledger.
@@ -318,7 +325,8 @@ Risk:
 
 Decision:
 
-- Phase 2 should replace or upgrade the report excerpt into a real or privacy-safe report/field-note artifact.
+- The inserted visit-record photo is accepted and should stay as-is unless separately briefed.
+- Later work may replace or upgrade the report excerpt into a real or privacy-safe report/field-note artifact.
 - Keep decision limits protected.
 
 Priority:
@@ -334,6 +342,8 @@ Files:
 Current proof/image slots:
 
 - Hero local-operator record.
+- `public/photos/about-operator-presence.webp` in the hero/operator record.
+- `public/photos/about-local-exterior.webp` in the local context area.
 - Operating gap board.
 - IS / IS-NOT boundary panel.
 - Local evidence text panel.
@@ -351,14 +361,15 @@ Risk:
 
 Decision:
 
-- Surface operator identity text-first in Phase 1.
+- About improved with operator-presence and local-exterior imagery; keep as-is unless separately briefed.
+- Homepage Trust Spine Pilot still needs an Owner decision on operator proof level.
 - Later add a real face, hands, partial presence, or credential surface if Owner approves assets.
 - Phase 2 can add a real operating-radius map or a privacy-safe local presence object.
 
-Priority:
+Status:
 
-- Phase 1 for text-first operator identity.
-- Phase 2 for real asset/map.
+- About stays as-is for the Trust Spine Pilot.
+- Later real asset/map if separately briefed.
 
 ## Contact
 
@@ -387,7 +398,7 @@ Risk:
 
 Decision:
 
-- Keep for Phase 1.
+- Keep for Trust Spine Pilot.
 - Do not alter contact form schema, API, or payload.
 
 Priority:
@@ -419,7 +430,7 @@ Risk:
 
 Decision:
 
-- Keep for Phase 1.
+- Keep for Trust Spine Pilot.
 - Later consolidate only if FAQ is separately briefed.
 
 Priority:
@@ -437,10 +448,14 @@ Logo files are excluded. They are identity assets, not proof assets.
 | Asset | Current use | Classification | Replacement decision |
 |---|---|---|---|
 | `public/photos/sentinel-costa-blanca-entry-hero.png` | Home unselected gate atmosphere | Atmosphere, not evidence | Keep temporarily; replace later with real local exterior/presence if available |
-| `public/photos/sentinel-apartment-entry-placeholder.png` | Home selected `private-use-only` hero | Synthetic shot placeholder - recreate later | Validate placement, then recreate as real empty-property/access asset |
-| `public/photos/sentinel-cleaning-readiness-placeholder.png` | Home selected `regular-guest-stays` hero | Synthetic shot placeholder - recreate later | Validate placement, then recreate as real readiness/checklist asset |
-| `public/photos/sentinel-corridor-exterior-placeholder.png` | Home selected `mixed-not-defined` hero | Synthetic shot placeholder - recreate later | Validate placement, then recreate as real corridor/access/classification asset |
-| `public/images/home/home-final-cta-handoff-checklist.webp` | Home final CTA background | Synthetic or atmospheric shot placeholder - recreate later | Keep temporarily; validate placement, then recreate as real checklist/report-table asset |
+| `public/photos/home-pathway-private-empty-check.webp` | Home selected `private-use-only` hero | Accepted synthetic shot-planning placeholder | Keep placement; recreate as real empty-property/access asset |
+| `public/photos/home-pathway-guest-readiness.webp` | Home selected `regular-guest-stays` hero | Accepted synthetic shot-planning placeholder | Keep placement; recreate as real readiness/checklist or turnover-prep asset |
+| `public/photos/home-pathway-mixed-decision-threshold.webp` | Home selected `mixed-not-defined` hero | Accepted synthetic shot-planning placeholder | Keep placement; recreate as real classification/decision-threshold asset |
+| `public/photos/final-cta-handoff-checklist.webp` | Home final CTA image | Accepted synthetic / atmospheric shot-planning placeholder | Keep temporarily; recreate as real checklist/report-table detail |
+| `public/photos/services-operational-capability.webp` | Services operational capability image | Accepted synthetic shot-planning placeholder | Keep; later recreate as real cleaning/access/readiness detail inside oversight |
+| `public/photos/hiw-visit-record.webp` | How It Works visit-record image | Accepted synthetic shot-planning placeholder | Keep; later recreate as real visit-record/corridor/checklist detail |
+| `public/photos/about-operator-presence.webp` | About operator-presence image | Accepted synthetic shot-planning placeholder; no fake face claim | Keep; later replace with real hands/working-surface/operator-presence detail |
+| `public/photos/about-local-exterior.webp` | About local exterior image | Accepted synthetic/local shot-planning placeholder | Keep; later replace with real local exterior/presence photo |
 | `public/images/home/private-use/private-risk-water-floor.webp` | Private pathway risk carousel | Synthetic shot placeholder - recreate later | Validate placement, then brief real maintenance/water observation recreation |
 | `public/images/home/private-use/private-risk-ac-moisture.webp` | Private pathway risk carousel | Synthetic shot placeholder - recreate later | Validate placement, then brief real AC/moisture detail recreation |
 | `public/images/home/private-use/private-risk-access-keys.webp` | Private pathway risk carousel | Synthetic shot placeholder - recreate later | Validate placement, then brief real key/access/custody recreation |
@@ -458,9 +473,15 @@ Logo files are excluded. They are identity assets, not proof assets.
 
 | Asset | Current use | Classification | Replacement decision |
 |---|---|---|---|
+| `public/photos/sentinel-apartment-entry-placeholder.png` | No live reference found | Historical synthetic shot placeholder | Superseded by `home-pathway-private-empty-check.webp`; do not promote as proof |
+| `public/photos/sentinel-cleaning-readiness-placeholder.png` | No live reference found | Historical synthetic shot placeholder | Superseded by `home-pathway-guest-readiness.webp`; do not promote as proof |
+| `public/photos/sentinel-corridor-exterior-placeholder.png` | No live reference found | Historical synthetic shot placeholder | Superseded by `home-pathway-mixed-decision-threshold.webp`; do not promote as proof |
 | `public/photos/sentinel-about-local-entry-placeholder.png` | No live reference found | Synthetic shot placeholder - recreate later | Do not promote as proof; use only if it has a real local exterior shot brief |
 | `public/photos/sentinel-report-tablet-placeholder.png` | No live reference found | Risky synthetic shot placeholder | Avoid fake dashboard/report UI; use only if reframed as a recreatable non-SaaS report surface |
 | `public/photos/sentinel-technician-access-placeholder.png` | No live reference found | Synthetic shot placeholder - recreate later | Do not promote as proof; use only if it has a real operator/partial-presence shot brief |
+| `public/photos/services-scope-object.webp` | Untracked / unused optional asset | Synthetic shot-planning candidate | Deliberately not integrated; avoid another folders/keys motif unless separately briefed |
+| `public/photos/hiw-field-note.webp` | Untracked / unused optional asset | Synthetic shot-planning candidate | Deliberately not integrated; field-note/paperwork rhythm would be repetitive for now |
+| `public/images/home/home-final-cta-handoff-checklist.webp` | No live reference found | Historical atmospheric shot placeholder | Superseded by `public/photos/final-cta-handoff-checklist.webp` |
 | `public/visuals/sentinel-process-report-preview.svg` | No live reference found | Dormant schematic artifact | Possible reference only; not a live proof slot |
 | `public/visuals/sentinel-contact-intake-path.svg` | No live reference found | Dormant schematic artifact | Possible reference only; not a live proof slot |
 
@@ -485,49 +506,42 @@ Decision:
 
 ---
 
-# 6. Phase 1 Implementation Queue
+# 6. Next Implementation Queue
 
-1. Fill the empty homepage gate with one evidence object.
+## Trust Spine Pilot - homepage only
 
-   Replacement type: structured artifact.
+Owner decision required before implementation:
 
-   Suggested content: redacted visit line, access/report/decision chain, and service-radius boundary in one compact field record.
+- A. real name + face/working photo
+- B. real name/role text cue, no full-face portrait yet (current recommendation)
+- C. role-only, no name/face
 
-2. Replace the first proof object after pathway selection.
+Allowed goals:
 
-   Replacement type: pathway-specific artifact unless real assets exist.
+1. Keep the diagnostic homepage gate and pathway choice.
+2. Make the gate itself carry more trust before the click.
+3. Add a restrained operator identity/proof cue at the approved level.
+4. Surface estimator / price logic earlier without changing estimator logic or commercial values.
+5. Reduce repeated scope/documentation/limits language where it weakens trust.
+6. Demote one decorative dossier/proof layer if needed.
 
-   Required mapping:
+Do not:
 
-   - Private: empty-property check evidence.
-   - Guest: arrival/readiness checklist or readiness detail.
-   - Mixed: decision-threshold device.
-
-3. Validate the live pathway synthetic shot placeholders.
-
-   Replacement type: temporary shot-planning media with a real-shot brief, artifact-led hero media, or real owned photos.
-
-   Minimum safe option: stop treating placeholder interiors as proof claims.
-
-4. Surface operator identity on About.
-
-   Replacement type: text-first operator/credential/local-presence block.
-
-   Later asset option: real face, hands, partial presence, or credential object.
-
-5. Leave protected contracts untouched.
-
-   Do not change: packages, SLA, emergency authority, estimator logic, contact schema/API/payload, legal substance, pathway slugs, noindex state, contact details, logo assets.
+- Remove the gate unless Owner explicitly approves.
+- Change pathway slugs, routing/query behavior, estimator logic, contact schema/API/payload, packages, SLA, emergency authority, legal substance, noindex state, contact details, or logo assets.
+- Generate more synthetic imagery for this phase.
+- Touch Services, How It Works, FAQ, About, or Contact unless separately briefed.
 
 ---
 
-# 7. Phase 2 Queue
+# 7. Later Queue
 
-1. How It Works: replace the generic report excerpt with a real or privacy-safe report/field-note artifact.
-2. About: add real operating-radius map and stronger operator credential surface.
-3. Services: add or upgrade one "scope ladder / what you actually get" evidence object.
-4. Home carousel: validate synthetic risk shots, then recreate as real operational details or convert to a fully artifact-led incident system.
-5. Final CTA: replace atmospheric handoff image with real checklist/report-table detail or a drawn artifact.
+1. Replace accepted synthetic proof-layer placeholders with real photography where possible.
+2. How It Works: replace the generic report excerpt with a real or privacy-safe report/field-note artifact.
+3. About: add stronger real operator credential/presence surface if Owner approves.
+4. Services: add or upgrade one "scope ladder / what you actually get" evidence object only if separately briefed.
+5. Home carousel: recreate synthetic risk shots as real operational details or convert to a fully artifact-led incident system.
+6. Final CTA: replace atmospheric handoff image with real checklist/report-table detail or a drawn artifact.
 
 ---
 
@@ -567,7 +581,7 @@ Privacy requirements:
 
 Recommended next Owner-scoped brief:
 
-> Implement Phase 1 of the Proof Layer Sprint: add a homepage gate evidence object, replace the first selected-pathway proof object with pathway-specific artifacts or synthetic shot placeholders that have real-shot briefs, validate visible placeholder photo placement without treating it as proof, and add a text-first operator identity surface on About. Do not change protected service contracts, estimator logic, contact schema/API, pathway slugs, legal substance, logo assets, or noindex state.
+> Implement the Trust Spine Pilot on the homepage only. Keep the diagnostic gate and pathway slugs. Add the approved level of operator identity/proof cue, surface estimator/price logic earlier without changing pricing logic, reduce repeated scope/documentation/limits language, and demote one decorative proof/dossier layer if needed. Do not generate more synthetic imagery. Do not touch Services, How It Works, FAQ, About, Contact, protected service contracts, estimator logic, contact schema/API, pathway slugs, legal substance, logo assets, footer contact, or noindex state.
 
 Pass/fail:
 
@@ -575,5 +589,6 @@ Pass/fail:
 - No contract changes.
 - No fabricated evidence claims.
 - No synthetic placeholder used as a final trust-proof claim.
+- Homepage gate preserved unless Owner explicitly approved removal.
 - 390px mobile has no horizontal overflow.
-- The first screen and first selected-pathway object show more than they explain.
+- The first screen feels more like a real local operator with visible cost logic before pathway selection.

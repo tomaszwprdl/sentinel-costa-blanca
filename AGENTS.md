@@ -4,16 +4,18 @@ Entry point for AI coding agents in this repository.
 
 ## Current state
 
-- **Local repo state:** unpushed local stack above `origin/main`; verify exact HEAD/ahead count with git preflight before work
-- **Origin/main / live baseline:** `b46a214` until push/deploy smoke
-- **Completed local Services commits:** `40ede57` (doctrine/docs) + `b3fd918` (page implementation/QA)
+- **Current live/main baseline:** `e682b5b` (`fix: strengthen selected pathway contrast section`)
+- **Previous proof-assets integration:** `b9800ce` (`feat: integrate proof layer visual assets`)
+- **Local repo state:** verify exact HEAD/ahead count with git preflight before work; expected untracked local items may include `.codex/`, `tmp/`, `public/photos/hiw-field-note.webp`, and `public/photos/services-scope-object.webp`
 - **Documentation governance SHA:** `6a0d0f7` (launch-era reset baseline)
-- **Phase:** Launch-era — Services refinement completed locally; pending push/deploy smoke; readiness cleanup continues; global visual iteration paused
+- **Phase:** Launch-era — live proof-assets and selected-pathway contrast are accepted; broad visual iteration is stopped; next work is the homepage Trust Spine Pilot only after Owner operator-proof decision
 - **Visual:** One art-directed Sentinel atmosphere — dark authority bands, warm paper body, dark final CTA/footer; **no public theme toggle**
-- **State rule:** repo preflight overrides stale historical SHA fields in older docs; treat `97997eb` and similar older references as historical unless current git state confirms them.
+- **State rule:** repo preflight overrides stale historical SHA fields in older docs; treat `b46a214`, `b3fd918`, `97997eb`, and similar older references as historical unless current git state confirms them.
 - Build-era task/audit docs were **removed** from the repo and are no longer active authority
 - Old “no visual experimentation” and dual-theme rules are **retired**
-- Future improvements should be page-by-page, plan-first, and Owner-scoped rather than another global transformation pass
+- Future improvements should be homepage-first / page-by-page, plan-first, and Owner-scoped rather than another global transformation pass
+- **Homepage gate correction:** do not remove or bypass the diagnostic gate unless the Owner explicitly overrides it. Current direction is: keep the gate, but make it carry more trust before the click.
+- **Proof image policy:** current AI/synthetic proof-layer images are accepted only as temporary shot-planning placeholders. They must not claim actual Sentinel work, real client property, real reports, real operator identity, or final operational evidence.
 
 ## Read first (in order)
 
@@ -76,7 +78,7 @@ Do not change DNS, Netlify production, or env unless explicitly instructed.
 
 Build on the **canonical visual mode** merged on `main`. Visual work may be bold when Owner-scoped — full-section, full-page, imagery, color, motion, generated assets, page-specific middle-section rebuilds, and removal/demotion of redundant proof modules — per `doc/VISUAL-FREEDOM-SPRINT.md`.
 
-Global visual iteration is paused while the repository is cleaned into a stable baseline. Do not start broad visual transformation work without a fresh Owner brief.
+Broad visual iteration is stopped. Do not start broad visual transformation work without a fresh Owner brief. The next recommended implementation is homepage-only Trust Spine Pilot after Owner chooses operator-proof level.
 
 **Scoped** means bounded by the approved brief — not “small visual changes only.” A scoped Owner-approved brief may still be a large page-section rebuild.
 

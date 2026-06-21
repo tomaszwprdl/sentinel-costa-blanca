@@ -52,6 +52,7 @@ Static assets including logo files.
 | `COPY-DISCIPLINE-CODEX.md` | Copy rules |
 | `EN-ADAPTATION-LAYER.md` | English adaptation |
 | `LAYOUT COMPOSITION.md` | Layout guidance |
+| `PROOF-LAYER-INVENTORY.md` | Proof/image slot inventory and synthetic placeholder policy |
 | `QA.md` | Technical QA checklist |
 | `REPO-MAP.md` | This file |
 | `LOGO-DIRECTION.md.md` | Logo concept protection |

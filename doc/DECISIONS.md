@@ -94,6 +94,8 @@ Full package: standard €300 per decision; optional €500 if agreed. Above lim
 
 **Excluded:** testimonials · lifestyle imagery · case-study storytelling · fake social proof
 
+**Synthetic / AI image rule:** current proof-layer photos may be used only as temporary shot-planning placeholders when they are realistic, operational, restrained, locally plausible, and physically recreatable. They must not be described as actual Sentinel work, real client property, real reports, real operator identity, or final operational evidence. Future reviews should judge placement, repetition, crop, trust, and section fit, while tracking replacement with real photography before serious public promotion / indexed launch where possible.
+
 ---
 
 # 9. Website Role
@@ -138,7 +140,7 @@ Polish primary. English structurally equal. PL/EN parity required.
 
 **Website visual execution is CONSTRAINED / EXPERIMENTAL, not LOCKED.**
 
-The visual composition rebuild is **merged on `main`** (baseline `e5fa7bb`; graphic passes through `cef326b`; current live/main baseline `97997eb`). Future work builds on the live canonical system — it does not revert to build-era restraint. Global visual iteration is currently paused; future improvements should be page-by-page, plan-first, and Owner-scoped.
+The visual composition rebuild is **merged on `main`** (baseline `e5fa7bb`; graphic passes through `cef326b`; proof-assets integration `b9800ce`; current live/main baseline `e682b5b`). Future work builds on the live canonical system — it does not revert to build-era restraint. Broad visual iteration is stopped; future improvements should be homepage-first / page-by-page, plan-first, and Owner-scoped.
 
 **Flexible (Owner-approved work):** color palette on pages · section or full-page composition · page rhythm · imagery · SVG/CSS visual systems · proof modules · card/panel treatment · warmth · contrast · atmosphere · motion · generated assets · anti-repetition restructuring · removal/demotion of redundant proof modules · page-specific middle-section narratives
 
@@ -203,6 +205,8 @@ Colors may evolve freely if coherent and accessible. WCAG AA for body text remai
 Canonical slugs: `private-use-only` · `regular-guest-stays` · `mixed-not-defined`
 
 Homepage: hard diagnostic gate; no default pathway; body sections only after selection.
+
+Council v2's "de-gate homepage" suggestion is not accepted as implementation direction. The accepted direction is: keep the diagnostic gate, but make the gate itself carry more trust before the click. Removing or bypassing the gate requires explicit Owner approval.
 
 Pathways may change framing, examples, emphasis, estimator defaults, contact context — not packages, SLA, emergency limits, legal boundaries, or identity.
 

@@ -73,11 +73,13 @@ $p = (Get-NetTCPConnection -State Listen -LocalPort 3100).OwningProcess; taskkil
 - [ ] 390px width — no horizontal scroll on changed pages
 - [ ] PL and EN routes for changed pages
 - [ ] Homepage gate still requires pathway before body sections
+- [ ] Homepage gate has not been removed or bypassed unless Owner explicitly approved it
 - [ ] Logo legible on changed headers/footers
 - [ ] Focus states still visible on interactive elements
 - [ ] `prefers-reduced-motion` — no essential meaning only in animation
 - [ ] **No public theme toggle** in header or mobile menu (unless Owner reintroduces it)
 - [ ] **Canonical visual mode** renders consistently — warm paper body, dark authority bands, dark footer; not a second global skin from OS dark preference
+- [ ] Synthetic proof-layer images are not presented as real Sentinel work, real client property, real reports, real operator identity, or final evidence
 
 ---
 

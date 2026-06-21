@@ -18,7 +18,7 @@ Guides:
 
 Does **not** lock page palette, imagery, card styling, or atmospheric treatment — see `VISUAL-FREEDOM-SPRINT.md`.
 
-Layout changes may be **bold** when Owner-scoped: full-section redesigns and full-page rhythm shifts are allowed if hierarchy, mobile sanity, and service boundaries remain intact. Global visual iteration is currently paused; future improvements should be page-by-page and plan-first.
+Layout changes may be **bold** when Owner-scoped: full-section redesigns and full-page rhythm shifts are allowed if hierarchy, mobile sanity, and service boundaries remain intact. Broad visual iteration is stopped; future implementation should be homepage-only unless the Owner briefs otherwise.
 
 ---
 
@@ -30,6 +30,7 @@ Layout changes may be **bold** when Owner-scoped: full-section redesigns and ful
 - **Section clarity** — each block should answer one operational question where possible
 - **PL/EN structural parity** — same section order and logic
 - **Gate behavior** — homepage body below diagnostic gate only after pathway selection
+- **Gate trust** — the gate should carry enough local/operator/cost logic before the click; do not solve trust by removing the gate unless Owner explicitly approves
 
 Conservative micro-polish is not the default expectation. **Clarity and impact** are.
 
@@ -65,6 +66,8 @@ First viewport:
 3. Required usage-situation choice before rest of homepage
 
 No default pathway on `/pl` or `/en` without pathway parameter.
+
+Current accepted interpretation: keep the diagnostic gate. The next homepage work should make the gate itself feel more locally real and commercially legible before the click, not de-gate the homepage.
 
 ---
 

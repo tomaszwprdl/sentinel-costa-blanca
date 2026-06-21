@@ -99,9 +99,11 @@ Details: `WORKFLOW.md` · `AGENT-BRIEFING.md`
 
 Build-era “no visual experimentation” rules and dual global theme work are **retired**.
 
-Visual composition rebuild is **merged** (baseline `e5fa7bb`; graphic passes through `cef326b`; current live/main baseline `97997eb`). The site uses **one canonical visual atmosphere** with **no public theme toggle** — per `DECISIONS.md` §12.3 and `VISUAL-FREEDOM-SPRINT.md`.
+Visual composition rebuild is **merged** (baseline `e5fa7bb`; graphic passes through `cef326b`; proof-assets integration `b9800ce`; current live/main baseline `e682b5b`). The site uses **one canonical visual atmosphere** with **no public theme toggle** — per `DECISIONS.md` §12.3 and `VISUAL-FREEDOM-SPRINT.md`.
 
-Global visual iteration is paused. Future visual work may be bold when Owner-scoped, but should be page-by-page and plan-first — including page-specific middle-section rebuilds and anti-repetition restructuring. Logo assets remain **LOCKED** per `LOGO-*.md`.
+Broad visual iteration is stopped. Future visual work may be bold when Owner-scoped, but the next recommended implementation is homepage-only Trust Spine Pilot after Owner chooses operator-proof level. Do not start another global transformation pass. Logo assets remain **LOCKED** per `LOGO-*.md`.
+
+Current synthetic proof-layer images are temporary shot-planning placeholders. They must not be represented as actual Sentinel work, real client property, real reports, real operator identity, or final evidence. Do not request new synthetic imagery for the Trust Spine Pilot unless the Owner explicitly reopens asset generation.
 
 ---
 

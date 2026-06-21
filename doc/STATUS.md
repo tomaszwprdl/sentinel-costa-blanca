@@ -9,8 +9,8 @@ Descriptive only. Does not define decisions or intent.
 | Field | Value |
 |-------|-------|
 | Project | Sentinel |
-| Local main HEAD | `b3fd918` (ahead of `origin/main` by 2; not pushed) |
-| Origin/main / live baseline | `b46a214` until push/deploy smoke |
+| Current live/main baseline | `e682b5b` (`fix: strengthen selected pathway contrast section`) |
+| Proof-assets integration | `b9800ce` (`feat: integrate proof layer visual assets`) |
 | Major graphic system pass | `38a4849` |
 | Middle-page visual proof pass | `cef326b` |
 | Launch-era governance baseline SHA | `6a0d0f7` |
@@ -18,12 +18,14 @@ Descriptive only. Does not define decisions or intent.
 | Website phase | Pre-live / soft-launch review ready |
 | Visual composition rebuild | **Merged** (`e5fa7bb` baseline; graphic passes through `cef326b`) |
 | Canonical visual mode | **Active** — one art-directed atmosphere; no public theme toggle |
-| Current focus | Push/deploy smoke for completed local Services refinement; repo cleanup/readiness continues; global visual iteration paused |
-| Completed local Services refinement | `40ede57` + `b3fd918` — doctrine + page implementation completed locally; QA passed; not pushed |
+| Current focus | Homepage Trust Spine Pilot planning; Owner decision needed on operator proof level |
+| Completed Services refinement | Live; protected package/SLA/emergency/estimator/contact/legal contracts preserved |
+| Proof-layer image status | Accepted as temporary synthetic shot-planning placeholders; replace with real photography before serious public promotion / indexed launch where possible |
+| Council v2 trust audit | Visual credibility accepted; next priority is trust spine, human/operator proof, price cue, and copy-density reduction |
 | Site-polish phase | Closed (gate, pages, legal readability, contact sequencing) |
-| Documentation phase | Aligned for middle-page visual/narrative rebuild briefs |
+| Documentation phase | Aligning to post-proof-assets trust-spine phase |
 | Identity core | Locked (logo, descriptors, service model) |
-| Website visuals | Canonical system per `VISUAL-FREEDOM-SPRINT.md`; bold page-specific rebuilds allowed when Owner-scoped |
+| Website visuals | Canonical system per `VISUAL-FREEDOM-SPRINT.md`; broad visual iteration stopped |
 | Indexing | `noindex,nofollow` still active |
 | Legal validation | Presentation improved; legal/entity/GDPR review still pending |
 
@@ -40,18 +42,21 @@ Descriptive only. Does not define decisions or intent.
 - **Unified canonical visual mode** — dark cinematic authority bands, warm paper body, dark final CTA/footer; theme toggle removed — `d7ab89e` / `e5fa7bb`.
 - **Major graphic system pass** — jurisdiction rings, operational ledgers, proof modules, service-area motifs — `38a4849`.
 - **Middle-page visual proof pass** — additional proof bands and graphic language across middle sections — `cef326b`.
-- **Codex middle-page rebuild merged and deployed** — `97997eb`.
-- **Services doctrine/page refinement completed locally** — `40ede57` + `b3fd918`: package-summary contract drift corrected; cleaning/readiness/turnover cleaning visible inside oversight; bathrooms/patio context added without estimator pricing-logic changes; NowRent mention restrained; Services QA passed. Not pushed yet.
-- Heroes are materially stronger; middle sections still need page-specific visual/narrative differentiation (anti-repetition work pending Owner brief).
-- Build/lint passing on recent pushes.
+- **Codex middle-page rebuild merged and deployed** — `97997eb` (historical baseline).
+- **Services doctrine/page refinement live** — package-summary contract drift corrected; cleaning/readiness/turnover cleaning visible inside oversight; bathrooms/patio context added without estimator pricing-logic changes; NowRent mention restrained.
+- **Proof-assets integration live** — `b9800ce`: selected homepage pathway media, final CTA image, Services capability photo, How It Works visit-record photo, and About local/operator imagery.
+- **Selected-pathway contrast patch live** — `e682b5b`: "Bez nas / Z nami" carousel strengthened across private, guest, and mixed pathway states.
+- Latest checked selected-pathway routes: no console errors, hydration mismatch, failed requests, HTTP 4xx/5xx, or 390px overflow.
+- Visual atmosphere is now a strength; next risk is over-polished/synthetic trust leak rather than weak visuals.
 
 ---
 
-# What is not done (launch work)
+# What is not done / next decisions
 
 - Repo cleanup baseline after rapid global visual passes.
-- Push completed local Services commits and run deploy smoke when Owner approves.
-- Future page-by-page visual/narrative improvements: anti-repetition restructuring, page-specific middle-section narratives, deploy catch-up (header spacing, mobile density, contact form comfort).
+- Owner decision on homepage operator proof level: real name + face/working photo; real name/role without face; or role-only.
+- Homepage Trust Spine Pilot: make the gate itself carry more trust before click, surface estimator/price logic earlier, reduce defensive repetition.
+- Real-photo replacement plan for accepted synthetic proof-layer placeholders.
 - Contact form production email end-to-end verification (inbox receipt pending Owner confirmation).
 - Final commercial pricing / estimator matrix confirmation.
 - Legal / entity / GDPR review for indexed public launch.
@@ -63,7 +68,9 @@ Descriptive only. Does not define decisions or intent.
 
 **Protected:** see `DECISIONS.md` — service model, packages, SLA meaning, pathways, estimator logic, contact details, legal substance, logo assets, noindex state.
 
-**Flexible:** website palette, composition, imagery, rhythm, proof modules, warmth, motion, generated assets, and page-specific visual passes when Owner-scoped — per `VISUAL-FREEDOM-SPRINT.md`. Global visual iteration is paused; future improvements should be page-by-page and plan-first. Build on canonical mode; do not recreate a dual theme system unless Owner explicitly asks. Agents may remove, demote, or replace recently added modules when they create repetition or weaken page-specific storytelling.
+**Flexible:** website palette, composition, imagery, rhythm, proof modules, warmth, motion, generated assets, and page-specific visual passes when Owner-scoped — per `VISUAL-FREEDOM-SPRINT.md`. Broad visual iteration is stopped; future implementation should be homepage-only unless Owner briefs otherwise. Build on canonical mode; do not recreate a dual theme system unless Owner explicitly asks. Agents may remove, demote, or replace modules when they create repetition or weaken trust.
+
+**Proof-layer caveat:** accepted synthetic images are temporary shot-planning placeholders, not real evidence. They must not be claimed as actual Sentinel work, real client property, real reports, real operator identity, or final operational proof.
 
 ---
 

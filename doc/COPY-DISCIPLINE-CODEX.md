@@ -48,6 +48,27 @@ Avoid:
 
 Clarity prevails over charm — warmth is fine when it aids clarity, not when it replaces structure.
 
+## 2.1 Post-Council Trust-Spine Copy Direction
+
+The next copy direction is more human, clearer, and less defensive while preserving procedural authority.
+
+Avoid:
+
+- Formal/legacy register drift in Polish, including inconsistent `Państwa`-style distance where the page otherwise uses direct owner-facing voice.
+- AI-ish nominalization overload: too many abstract nouns where a direct verb would be clearer.
+- English calques such as `pełzanie zakresu`; prefer natural Polish operational phrasing.
+- Repeating `scope / documentation / limits / not concierge / not rental` after the boundary is already clear.
+- Explaining the same proof claim in multiple adjacent modules.
+
+Prefer:
+
+- Direct owner-facing sentences.
+- Concrete local/operator cues where truthful and approved.
+- Visible cost/estimator logic without pressure copy.
+- One strong boundary statement instead of several defensive repetitions.
+
+Do not soften into concierge, lifestyle, rental-management, or vague reassurance language.
+
 ---
 
 # 3. Sentence Architecture Rules
