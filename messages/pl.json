@@ -902,7 +902,7 @@
         "contextTitle": "Kontekst nieruchomości przed kalkulacją",
         "contextItems": {
           "bathrooms": { "label": "Łazienki", "body": "Uwzględniane przy przeglądzie sprzątania/gotowości i planowaniu przekazania." },
-          "outdoor": { "label": "Patio / taras / część zewnętrzna", "body": "Widoczne jako kontekst gotowości i koordynacji zanim wizard o to zapyta." },
+          "outdoor": { "label": "Patio / taras / część zewnętrzna", "body": "Używane jako kontekst gotowości i koordynacji przed kalkulacją." },
           "logic": { "label": "Logika ceny", "body": "Te pola kontekstowe nie zmieniają matrycy estymatora." }
         }
       },
@@ -922,7 +922,7 @@
     },
     "diagrams": {
       "sla": {
-        "eyebrow": "Dyscyplina reakcji",
+        "eyebrow": "Czas reakcji",
         "axisLabel": "Pasmo reakcji",
         "sameDay": "w tym samym dniu"
       },
@@ -1346,8 +1346,8 @@
     },
     "intro": {
       "headline": "Kontakt z Sentinel",
-      "description": "Aby móc skutecznie Państwu służyć, wymagamy podstawowych informacji o Państwa nieruchomości i oczekiwanych potrzebach usługowych przed naszą pierwszą rozmową. Prosimy o wypełnienie formularza kontaktowego poniżej lub skorzystanie z podanych bezpośrednich metod kontaktu.",
-      "responseCommitment": "Wszystkie zapytania są odpowiadane w ciągu 24-48 godzin. Jeśli Państwa nieruchomość znajduje się w naszym obszarze obsługi, a Państwa potrzeby są zgodne z naszym modelem pakietowym, skontaktujemy się z Państwem w celu omówienia kolejnych kroków."
+      "description": "Aby skutecznie ocenić zapytanie, potrzebujemy podstawowych informacji o nieruchomości i oczekiwanym zakresie przed pierwszą rozmową. Wypełnij formularz kontaktowy poniżej albo skorzystaj z bezpośrednich metod kontaktu.",
+      "responseCommitment": "Na wszystkie zapytania odpowiadamy w ciągu 24-48 godzin. Jeśli nieruchomość znajduje się w naszym obszarze obsługi, a potrzeby pasują do modelu pakietowego, skontaktujemy się w sprawie kolejnych kroków."
     },
     "estimatorContext": {
       "title": "Kontekst kalkulacji",
@@ -1377,18 +1377,18 @@
       "sundayHolidays": "Niedziela/Święta: Tylko email (odpowiedzi w ciągu 48 godzin)",
       "prepareTitle": "Co przygotować przed kontaktem:",
       "prepareItems": {
-        "location": "Lokalizacja Państwa nieruchomości (miasto lub adres)",
+        "location": "Lokalizacja nieruchomości (miasto lub adres)",
         "propertyType": "Typ nieruchomości (apartament/dom/willa)",
         "expectedPackage": "Oczekiwany pakiet (Podstawowy/Rozszerzony/Pełny) lub \"potrzebuję konsultacji\"",
         "serviceNeeds": "Podstawowe potrzeby lub obawy dotyczące usług"
       },
       "emergencyTitle": "Kontakt awaryjny (tylko aktywni klienci):",
-      "emergencyText": "Kontakt awaryjny jest dostępny tylko dla aktywnych klientów Pakietu Pełnego. Jeśli są Państwo aktywnym klientem w sytuacji awaryjnej, proszę użyć dedykowanego numeru awaryjnego dostarczonego podczas wdrożenia."
+      "emergencyText": "Kontakt awaryjny jest dostępny tylko dla aktywnych klientów Pakietu Pełnego. Aktywny klient w sytuacji awaryjnej korzysta z dedykowanego numeru przekazanego podczas wdrożenia."
     },
     "form": {
       "title": "FORMULARZ KONTAKTOWY",
-      "requiredInfo": "Wymagane Informacje",
-      "yourDetails": "Państwa Dane:",
+      "requiredInfo": "Wymagane informacje",
+      "yourDetails": "Dane właściciela:",
       "fullName": "Imię i nazwisko",
       "emailAddress": "Adres e-mail",
       "phoneNumber": "Numer telefonu (z kodem kraju)",
@@ -1404,7 +1404,7 @@
         "english": "Angielski",
         "polish": "Polski"
       },
-      "propertyInfo": "Informacje o Nieruchomości:",
+      "propertyInfo": "Informacje o nieruchomości:",
       "propertyLocation": "Lokalizacja nieruchomości",
       "propertyLocationPlaceholder": "Miasto lub pełny adres",
       "propertyLocationHelp": "Obsługujemy nieruchomości w promieniu Torrevieja + 50-70km",
@@ -1421,7 +1421,7 @@
         "regular-guest-stays": "Regularne pobyty gości",
         "mixed-not-defined": "Model mieszany / jeszcze nieustalony"
       },
-      "serviceRequirements": "Wymagania Usługowe:",
+      "serviceRequirements": "Wymagania usługowe:",
       "expectedPackage": "Oczekiwany pakiet",
       "packages": {
         "green": "Pakiet Podstawowy",
@@ -1449,8 +1449,8 @@
     },
     "confirmation": {
       "title": "ZAPYTANIE WYSŁANE",
-      "thankYou": "Dziękujemy za Państwa zapytanie.",
-      "received": "Państwa żądanie zostało otrzymane i zostanie przejrzane w ciągu 24-48 godzin.",
+      "thankYou": "Dziękujemy za zapytanie.",
+      "received": "Zapytanie zostało otrzymane i zostanie sprawdzone w ciągu 24-48 godzin.",
       "nextStepsTitle": "Kolejne kroki:",
       "nextSteps": {
         "step1": "Dostaniesz automatyczny email potwierdzający na adres {email}",
@@ -1458,7 +1458,7 @@
         "step3": "Jeśli nieruchomość jest w naszym obszarze, a potrzeby pasują do modelu, odezwiemy się wybraną przez Ciebie metodą"
       },
       "outsideAreaTitle": "Co jeśli moja nieruchomość jest poza obszarem obsługi?",
-      "outsideAreaText": "Zostanie Państwo powiadomieni emailem. Nie możemy obsługiwać nieruchomości poza promieniem Torrevieja + 50-70km.",
+      "outsideAreaText": "Wyślemy powiadomienie e-mailem. Nie obsługujemy nieruchomości poza promieniem Torrevieja + 50-70km.",
       "noResponseTitle": "Co jeśli nie otrzymam odpowiedzi?",
       "noResponseText": "Sprawdź folder ze spamem. Jeśli w ciągu 48 godzin nie dostaniesz od nas wiadomości, napisz lub zadzwoń: {email} lub {phone}.",
       "referenceNumber": "Numer referencyjny:",
@@ -1467,7 +1467,7 @@
     "activeClients": {
       "title": "AKTYWNI KLIENCI",
       "subtitle": "Dla aktywnych klientów usług:",
-      "intro": "Jeśli są Państwo istniejącym klientem Sentinel, proszę użyć dedykowanych kanałów kontaktowych dostarczonych podczas wdrożenia:",
+      "intro": "Jeśli jesteś aktywnym klientem Sentinel, użyj dedykowanych kanałów kontaktowych przekazanych podczas wdrożenia:",
       "channels": {
         "operational": "Żądania operacyjne: Główna linia WhatsApp/telefon (dostarczona w dokumentacji wdrożeniowej)",
         "formal": "Zapytania formalne: Email: {email}",
@@ -1509,7 +1509,7 @@
         "concierge": "Usługach concierge 24/7 lub nieograniczonej pomocy osobistej",
         "construction": "Zarządzaniu projektem budowlanym/remontowym jako generalny wykonawca"
       },
-      "notAppropriate": "Jeśli Państwa potrzeby należą do tych kategorii, Sentinel nie jest odpowiednią usługą.",
+      "notAppropriate": "Jeśli potrzeby należą do tych kategorii, Sentinel nie jest odpowiednią usługą.",
       "proceedText": "W przypadku pakietowej opieki nad nieruchomością, kontroli, koordynacji dostępu i lokalnej reprezentacji w naszym obszarze obsługi, proszę przejść do formularza kontaktowego powyżej."
     },
     "redesign": {
@@ -1535,7 +1535,7 @@
       "method": {
         "eyebrow": "Metody kontaktu",
         "title": "Te dane służą do pierwszego zapytania właściciela.",
-        "note": "Ten formularz służy do nowych zapytań. Bieżące sprawy aktywnych klientów idą kanałami z wdrożenia."
+        "note": "Ten formularz służy do nowych zapytań. Bieżące sprawy aktywnych klientów trafiają do kanałów przekazanych przy wdrożeniu."
       },
       "dossier": {
         "eyebrow": "Twoje zapytanie",
@@ -2353,7 +2353,7 @@
       "title": "UWAGA DOTYCZĄCA POLITYKI",
       "intro": "Sentinel działa w oparciu o udokumentowane polityki i określony zakres.",
       "rules": {
-        "rule1": "Jeśli usługa nie jest wyraźnie wymieniona w Państwa pakiecie, nie jest wliczona.",
+        "rule1": "Jeśli usługa nie jest wyraźnie wymieniona w pakiecie, nie jest wliczona.",
         "rule2": "Sentinel nie dokonuje wyjątków, które są sprzeczne z udokumentowaną polityką.",
         "rule3": "Odpowiedzi poniżej odzwierciedlają zasady operacyjne, a nie negocjowalne preferencje."
       },
@@ -2366,7 +2366,7 @@
     "noResults": "Żadne pytanie nie pasuje do wyszukiwania.",
     "sections": {
       "serviceModel": {
-        "title": "Model Usługi i Pakiety",
+        "title": "Model usługi i pakiety",
         "description": "Pytania dotyczące struktury usług Sentinel, granic pakietów i tego, co jest/nie jest wliczone.",
         "questions": {
           "q1": {
@@ -2396,7 +2396,7 @@
         }
       },
       "operations": {
-        "title": "Operacje i Planowanie",
+        "title": "Operacje i planowanie",
         "description": "Pytania dotyczące czasu wizyt, koordynacji techników i okien operacyjnych.",
         "questions": {
           "q7": {
@@ -2410,7 +2410,7 @@
         }
       },
       "emergencies": {
-        "title": "Nagłe Wypadki i Uprawnienia Decyzyjne",
+        "title": "Nagłe wypadki i uprawnienia decyzyjne",
         "description": "Pytania dotyczące reagowania awaryjnego, uprawnień decyzyjnych i limitów finansowych.",
         "questions": {
           "q9": {
@@ -2432,7 +2432,7 @@
         }
       },
       "practical": {
-        "title": "Operacje Praktyczne",
+        "title": "Operacje praktyczne",
         "description": "Pytania dotyczące codziennych szczegółów usługi, częstotliwości wizyt i zmian pakietów.",
         "questions": {
           "q13": {
@@ -2462,8 +2462,8 @@
         }
       },
       "communication": {
-        "title": "Komunikacja i Polityki",
-        "description": "Pytania o to, jak skontaktować się z Sentinel, zmiany polityki i odmowę usługi.",
+        "title": "Komunikacja i zasady",
+        "description": "Pytania o kontakt z Sentinel, zmiany zasad i odmowę usługi.",
         "questions": {
           "q19": {
             "question": "Jak działa komunikacja?",
@@ -2488,8 +2488,8 @@
         }
       },
       "meta": {
-        "title": "Meta / Cel Zasad",
-        "description": "Pytania o to, gdzie te polityki mają zastosowanie i dlaczego ta dokumentacja istnieje.",
+        "title": "Cel zasad",
+        "description": "Pytania o to, gdzie te zasady mają zastosowanie i dlaczego ta dokumentacja istnieje.",
         "questions": {
           "q24": {
             "question": "Gdzie te polityki mają zastosowanie?",
@@ -2503,14 +2503,14 @@
       }
     },
   "notAnswered": {
-    "title": "Pytanie bez Odpowiedzi?",
-    "intro": "Jeśli na Państwa pytanie nie ma odpowiedzi powyżej, proszę skontaktować się bezpośrednio z Sentinel.",
+    "title": "Pytanie bez odpowiedzi?",
+    "intro": "Jeśli powyżej nie ma odpowiedzi na to pytanie, skontaktuj się bezpośrednio z Sentinel.",
     "important": "Ważne: Usługi nie udokumentowane w pakietach ani w tym FAQ nie są automatycznie dostępne. Wszystkie żądania poza udokumentowanym zakresem wymagają indywidualnej oceny i osobnego uzgodnienia.",
-    "footer": "Sentinel działa w określonym zakresie i udokumentowanych procedurach. Jeśli Państwa potrzeby wymagają znacznej personalizacji lub wykraczają poza model pakietowy, Sentinel może nie być odpowiednim dostawcą usług."
+    "footer": "Sentinel działa w określonym zakresie i udokumentowanych procedurach. Jeśli potrzeby wymagają znacznej personalizacji lub wykraczają poza model pakietowy, Sentinel może nie być odpowiednią usługą."
   },
   "redesign": {
     "hero": {
-      "eyebrow": "Prowadzące odpowiedzi",
+      "eyebrow": "Najważniejsze odpowiedzi",
       "headline": "Znajdź odpowiedź przed kontaktem z Sentinel",
       "lead": "FAQ dotyczy dopasowania usługi, zakresu, dostępu, raportów, limitów awaryjnych, kontekstu ceny i kanałów kontaktu. Ma wyjaśnić typowe wątpliwości bez zmiany modelu pakietowego.",
       "primaryCta": "Skontaktuj się z Sentinel",
@@ -2641,14 +2641,14 @@
           "description": "Ograniczenie obszaru obsługi do Torrevieja + 50-70km zapewnia realistyczne czasy reakcji i zrównoważoną jakość usług."
         }
       },
-      "practice": "Co to oznacza w praktyce: Jeśli usługa nie jest wyraźnie wymieniona w Państwa pakiecie, nie jest wliczona. To nie jest brak elastyczności—to podstawa niezawodnego, odpowiedzialnego świadczenia usług."
+      "practice": "Co to oznacza w praktyce: jeśli usługa nie jest wyraźnie wymieniona w pakiecie, nie jest wliczona. To nie jest brak elastyczności, tylko podstawa odpowiedzialnego świadczenia usług."
     },
     "geographic": {
       "title": "Granica Geograficzna: Uzasadnienie Operacyjne",
       "intro": "Sentinel obsługuje nieruchomości w Torrevieja i w przybliżonym promieniu 50-70km. To geograficzne ograniczenie jest stałe i dotyczy wszystkich klientów bez wyjątku.",
       "subtitle": "Dlaczego istnieją granice geograficzne:",
       "reasons": {
-        "responseTime": "Zobowiązania dotyczące czasu reakcji: Klienci Pakietu Pełnego otrzymują dyscyplinę reakcji tego samego dnia w określonych granicach decyzyjnych. Jest to możliwe tylko w zarządzalnej odległości.",
+        "responseTime": "Czas reakcji: w Pakiecie Pełnym obowiązuje reakcja w tym samym dniu w określonych granicach decyzyjnych. Jest to możliwe tylko w zarządzalnej odległości.",
         "visitFrequency": "Niezawodność częstotliwości wizyt: Regularne wizyty dwutygodniowe lub tygodniowe wymagają bliskości. Odległe nieruchomości tworzą konflikty w harmonogramie i degradację usługi.",
         "emergencyAccess": "Zdolność dostępu awaryjnego: Zabezpieczanie nieruchomości w przypadku aktywnych wycieków, złamanych zamków lub uszkodzeń pogodowych wymaga szybkiej fizycznej obecności.",
         "qualityControl": "Kontrola jakości: Lokalna obecność umożliwia zarządzanie relacjami ze sprzątaczkami, technikami i usługami miejskimi. Odległość niszczy te relacje operacyjne.",
@@ -2852,12 +2852,12 @@
     },
     "nextSteps": {
       "title": "Współpraca z Sentinel",
-      "intro": "Jeśli Państwa nieruchomość i wymagania usługowe spełniają kryteria operacyjne Sentinel:",
+      "intro": "Jeśli nieruchomość i wymagania usługowe spełniają kryteria operacyjne Sentinel:",
       "steps": {
         "step1": "Przejrzyj pakiety usług, aby zrozumieć zakres i granice",
-        "step2": "Zweryfikuj, czy lokalizacja Państwa nieruchomości mieści się w obszarze obsługi (Torrevieja + 50-70km)",
+        "step2": "Zweryfikuj, czy lokalizacja nieruchomości mieści się w obszarze obsługi (Torrevieja + 50-70km)",
         "step3": "Przejrzyj proces wdrożenia, aby zrozumieć wymagania i harmonogram",
-        "step4": "Skontaktuj się z Sentinel w celu oceny Państwa nieruchomości i wymagań usługowych"
+        "step4": "Skontaktuj się z Sentinel w celu oceny nieruchomości i wymagań usługowych"
       },
       "required": {
         "title": "Wymagane do usługi:",
@@ -2989,7 +2989,7 @@
       "responsibility": {
         "eyebrow": "Kontrola odpowiedzialności",
         "title": "Działanie wynika z ustaleń, zakresu, dokumentacji i zgody.",
-        "intro": "To jest dyscyplina operacyjna stojąca za usługą. Celowo jest mniej elastyczna niż nieformalna pomoc.",
+        "intro": "Tak działa usługa: najpierw ustalenia, potem wykonanie. Celowo jest mniej elastyczna niż nieformalna pomoc.",
         "steps": [
           { "marker": "01", "title": "Ustalenie przed działaniem", "body": "Dane nieruchomości, metoda dostępu, pakiet i zasady komunikacji są potwierdzane najpierw." },
           { "marker": "02", "title": "Zakres przed wykonaniem", "body": "Zadanie musi mieścić się w pakiecie albo uzgodnionym module, zanim Sentinel zacznie działać." },

@@ -902,7 +902,7 @@
         "contextTitle": "Property context captured before calculation",
         "contextItems": {
           "bathrooms": { "label": "Bathrooms", "body": "Captured for cleaning/readiness review and handover planning." },
-          "outdoor": { "label": "Patio / terrace / outdoor area", "body": "Previewed as readiness and coordination context before the wizard asks for it." },
+          "outdoor": { "label": "Patio / terrace / outdoor area", "body": "Used as readiness and coordination context before calculation." },
           "logic": { "label": "Pricing logic", "body": "These context fields do not change the estimator matrix." }
         }
       },
@@ -922,7 +922,7 @@
     },
     "diagrams": {
       "sla": {
-        "eyebrow": "Response discipline",
+        "eyebrow": "Response timing",
         "axisLabel": "Response band",
         "sameDay": "same-day"
       },
@@ -1346,8 +1346,8 @@
     },
     "intro": {
       "headline": "Contact Sentinel",
-      "description": "To ensure we can serve you effectively, we require basic information about your property and expected service needs before our first conversation. Please complete the contact form below or use the direct contact methods provided.",
-      "responseCommitment": "All inquiries are responded to within 24-48 hours. If your property is within our service area and your needs align with our package model, we will contact you to discuss next steps."
+      "description": "To review the inquiry effectively, we need basic information about the property and expected scope before the first conversation. Complete the contact form below or use the direct contact methods provided.",
+      "responseCommitment": "All inquiries are answered within 24-48 hours. If the property is within our service area and the needs fit the package model, we will contact you about next steps."
     },
     "estimatorContext": {
       "title": "Estimator context",
@@ -1535,7 +1535,7 @@
       "method": {
         "eyebrow": "Direct methods",
         "title": "Use these details for new-owner intake.",
-        "note": "This form is for new inquiries. Active clients' day-to-day requests go through their onboarding channels."
+        "note": "This form is for new inquiries. Active clients' day-to-day requests use the channels provided during onboarding."
       },
       "dossier": {
         "eyebrow": "Your inquiry",
@@ -2462,7 +2462,7 @@
         }
       },
       "communication": {
-        "title": "Communication & Policies",
+        "title": "Communication & Rules",
         "description": "Questions about how to contact Sentinel, policy changes, and service refusal.",
         "questions": {
           "q19": {
@@ -2488,7 +2488,7 @@
         }
       },
       "meta": {
-        "title": "Meta / Purpose of Rules",
+        "title": "Purpose of Rules",
         "description": "Questions about where these policies apply and why this documentation exists.",
         "questions": {
           "q24": {
@@ -2634,7 +2634,7 @@
         },
         "responsibility": {
           "title": "Defined responsibility protects both parties:",
-          "description": "Clear boundaries prevent scope creep, unrealistic expectations, and operational overreach."
+          "description": "Clear boundaries prevent uncontrolled scope, unrealistic expectations, and actions outside the agreed model."
         },
         "geographic": {
           "title": "Geographic focus enables accountability:",
@@ -2648,7 +2648,7 @@
       "intro": "Sentinel services properties within Torrevieja and approximately 50-70km radius. This geographic limitation is permanent and applies to all clients without exception.",
       "subtitle": "Why geographic boundaries exist:",
       "reasons": {
-        "responseTime": "Response time commitments: Full package clients receive same-day response discipline within defined decision boundaries. This is only sustainable within manageable distance.",
+        "responseTime": "Response timing: Full package includes same-day response within defined decision boundaries. This is only sustainable within manageable distance.",
         "visitFrequency": "Visit frequency reliability: Regular biweekly or weekly visits require proximity. Distant properties create scheduling conflicts and service degradation.",
         "emergencyAccess": "Emergency access capability: Property securing in case of active leaks, broken locks, or weather damage requires rapid physical presence.",
         "qualityControl": "Quality control: Local presence enables relationship management with cleaners, technicians, and municipal services. Distance erodes these operational relationships.",
@@ -2989,7 +2989,7 @@
       "responsibility": {
         "eyebrow": "Responsibility control",
         "title": "Action follows agreement, scope, documentation, and approval.",
-        "intro": "This is the operating discipline behind the service. It is intentionally less flexible than informal help.",
+        "intro": "This is how the service works: agreement first, execution second. It is intentionally less flexible than informal help.",
         "steps": [
           { "marker": "01", "title": "Agreement before action", "body": "Property data, access method, package, and communication rules are confirmed first." },
           { "marker": "02", "title": "Scope before execution", "body": "The task must fit the package or an agreed module before Sentinel acts." },
