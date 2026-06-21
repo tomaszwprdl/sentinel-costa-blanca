@@ -2944,21 +2944,20 @@
         ]
       },
       "operator": {
-        "eyebrow": "Tożsamość operatora",
-        "title": "Sentinel Costa Blanca",
-        "status": "Powierzchnia identyfikacyjna bez danych klienta",
+        "eyebrow": "Lokalny zespół",
+        "title": "Lokalny zespół operacyjny, nie anonimowa platforma.",
+        "status": "Lokalna obecność, jasne granice.",
+        "body": "Sentinel działa przez lokalny zespół obsługujący dostęp, kontrole, sprzątanie, dokumentację i koordynację spraw w nieruchomości. Zapytania prowadzi Tomasz jako punkt kontaktu, ale praca operacyjna nie opiera się na jednej osobie ani na przypadkowych przysługach.",
         "rows": [
-          { "label": "Rola", "value": "reprezentacja właściciela na miejscu" },
+          { "label": "Obsługa zapytań", "value": "Tomasz i zespół Sentinel" },
           { "label": "Obszar", "value": "Torrevieja + 50-70 km" },
-          { "label": "Metoda", "value": "kontrola, dostęp, raport" },
-          { "label": "Granica", "value": "pakiet, zgoda, limit decyzji" }
+          { "label": "Zakres", "value": "dostęp, kontrole, sprzątanie, raporty, koordynacja" },
+          { "label": "Model", "value": "pakiet, zakres, limity decyzji" },
+          { "label": "Dowód operacyjny", "value": "raport, zdjęcia, potwierdzenia po wizycie" }
         ],
-        "map": {
-          "title": "Fragment promienia operacyjnego",
-          "center": "Torrevieja",
-          "radius": "50-70 km",
-          "boundary": "granica obsługi",
-          "note": "Schemat pokazuje zasadę obszaru działania. To nie jest mapa turystyczna ani obietnica wyjątków poza promieniem."
+        "artifact": {
+          "alt": "Lokalny zespół Sentinel przed wejściem do budynku",
+          "caption": "Lokalny zespół Sentinel — Torrevieja i okolice."
         }
       },
       "local": {

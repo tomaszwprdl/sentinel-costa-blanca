@@ -2944,21 +2944,20 @@
         ]
       },
       "operator": {
-        "eyebrow": "Operator identity",
-        "title": "Sentinel Costa Blanca",
-        "status": "Credential surface without client data",
+        "eyebrow": "Local team",
+        "title": "A local operating team, not a faceless platform.",
+        "status": "Local presence, clear limits.",
+        "body": "Sentinel runs through a local team handling access, checks, cleaning, documentation, and coordination at the property. Tomasz leads inquiries as the point of contact, but the operational work does not rely on one person or on ad-hoc favours.",
         "rows": [
-          { "label": "Role", "value": "local owner representation" },
+          { "label": "Inquiry handling", "value": "Tomasz and the Sentinel team" },
           { "label": "Area", "value": "Torrevieja + 50-70 km" },
-          { "label": "Method", "value": "checks, access, reporting" },
-          { "label": "Boundary", "value": "package, approval, decision limit" }
+          { "label": "Scope", "value": "access, checks, cleaning, reports, coordination" },
+          { "label": "Model", "value": "package, scope, decision limits" },
+          { "label": "Operational proof", "value": "report, photos, post-visit confirmations" }
         ],
-        "map": {
-          "title": "Operational radius fragment",
-          "center": "Torrevieja",
-          "radius": "50-70 km",
-          "boundary": "service boundary",
-          "note": "The schematic shows the operating-area rule. It is not a tourist map or a promise of exceptions beyond the radius."
+        "artifact": {
+          "alt": "The local Sentinel team at a building entrance",
+          "caption": "The local Sentinel team — Torrevieja and nearby area."
         }
       },
       "local": {

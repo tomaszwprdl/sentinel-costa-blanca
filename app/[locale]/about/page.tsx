@@ -134,22 +134,18 @@ function OperatorProofSurface({
   eyebrow,
   title,
   status,
+  body,
   rows,
-  mapTitle,
-  mapCenter,
-  mapRadius,
-  mapBoundary,
-  mapNote,
+  artifactAlt,
+  artifactCaption,
 }: {
   eyebrow: string;
   title: string;
   status: string;
+  body: string;
   rows: Fact[];
-  mapTitle: string;
-  mapCenter: string;
-  mapRadius: string;
-  mapBoundary: string;
-  mapNote: string;
+  artifactAlt: string;
+  artifactCaption: string;
 }) {
   return (
     <aside className="about-operator-proof reveal-rise" aria-label={title}>
@@ -162,6 +158,8 @@ function OperatorProofSurface({
         </div>
       </div>
 
+      <p className="about-operator-proof__body">{body}</p>
+
       <dl className="about-operator-proof__rows">
         {rows.map((row) => (
           <div key={row.label}>
@@ -171,23 +169,17 @@ function OperatorProofSurface({
         ))}
       </dl>
 
-      <figure className="about-radius-fragment" aria-label={mapTitle}>
-        <svg viewBox="0 0 420 250" aria-hidden="true" focusable="false">
-          <rect x="0" y="0" width="420" height="250" rx="18" />
-          <path d="M86 26 C126 38 158 58 196 58 C246 58 282 35 336 52 C372 64 388 92 390 128 C393 170 364 208 318 218 C274 228 240 206 204 196 C164 185 128 196 94 170 C58 142 52 88 86 26 Z" />
-          <path d="M270 28 C248 78 250 128 286 214" />
-          <circle cx="188" cy="138" r="76" />
-          <circle cx="188" cy="138" r="50" />
-          <circle cx="188" cy="138" r="7" />
-          <path d="M188 138 H264" />
-          <path d="M188 138 V62" />
-        </svg>
-        <figcaption>
-          <span>{mapCenter}</span>
-          <strong>{mapRadius}</strong>
-          <em>{mapBoundary}</em>
-        </figcaption>
-        <p>{mapNote}</p>
+      <figure className="about-operator-proof__photo">
+        <Image
+          src="/photos/sentinel-team.webp"
+          alt={artifactAlt}
+          width={3996}
+          height={2997}
+          sizes="(min-width: 1024px) 40vw, 100vw"
+          className="about-operator-proof__photo-image"
+          loading="eager"
+        />
+        <figcaption>{artifactCaption}</figcaption>
       </figure>
     </aside>
   );
@@ -320,12 +312,10 @@ export default async function AboutPage({
                 eyebrow={t('redesign.operator.eyebrow')}
                 title={t('redesign.operator.title')}
                 status={t('redesign.operator.status')}
+                body={t('redesign.operator.body')}
                 rows={operatorRows}
-                mapTitle={t('redesign.operator.map.title')}
-                mapCenter={t('redesign.operator.map.center')}
-                mapRadius={t('redesign.operator.map.radius')}
-                mapBoundary={t('redesign.operator.map.boundary')}
-                mapNote={t('redesign.operator.map.note')}
+                artifactAlt={t('redesign.operator.artifact.alt')}
+                artifactCaption={t('redesign.operator.artifact.caption')}
               />
               <LocalEvidencePanel cards={localCards} />
             </div>

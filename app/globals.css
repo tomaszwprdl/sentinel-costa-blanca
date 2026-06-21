@@ -20034,12 +20034,10 @@ textarea:focus {
 }
 
 .about-local-context-photo {
-  min-height: clamp(14rem, 28vw, 20rem);
-  margin: 1.25rem 0 0;
-  border-radius: var(--site-radius-shell);
-  box-shadow:
-    var(--site-shadow-shell),
-    inset 0 1px 0 rgba(255, 253, 249, 0.68);
+  min-height: clamp(8rem, 15vw, 11rem);
+  margin: 1.5rem 0 0;
+  border-radius: var(--site-radius-card);
+  box-shadow: inset 0 1px 0 rgba(255, 253, 249, 0.55);
 }
 
 .about-local-record__photo::after,
@@ -20386,25 +20384,33 @@ textarea:focus {
   line-height: 1.35;
 }
 
+.about-operator-proof__body {
+  margin: 0;
+  border-bottom: 1px solid var(--structural-light);
+  padding: 1.05rem 1.15rem;
+  color: var(--about-ink);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
 .about-operator-proof__rows {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   margin: 0;
   border-bottom: 1px solid var(--structural-light);
 }
 
 .about-operator-proof__rows div {
+  display: grid;
+  grid-template-columns: minmax(7.5rem, auto) minmax(0, 1fr);
+  gap: 0.35rem 1rem;
+  align-items: baseline;
   min-width: 0;
-  border-right: 1px solid var(--structural-light);
   border-bottom: 1px solid var(--structural-light);
-  padding: 0.85rem 1rem;
+  padding: 0.7rem 1.15rem;
 }
 
-.about-operator-proof__rows div:nth-child(2n) {
-  border-right: 0;
-}
-
-.about-operator-proof__rows div:nth-last-child(-n + 2) {
+.about-operator-proof__rows div:last-child {
   border-bottom: 0;
 }
 
@@ -20417,11 +20423,32 @@ textarea:focus {
 }
 
 .about-operator-proof__rows dd {
-  margin: 0.28rem 0 0;
+  margin: 0;
   color: var(--about-ink);
   font-size: 0.9rem;
   font-weight: 800;
   line-height: 1.35;
+}
+
+.about-operator-proof__photo {
+  margin: 0;
+  padding: 1.1rem 1.15rem 1.2rem;
+}
+
+.about-operator-proof__photo-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--structural-light);
+  border-radius: var(--site-radius-card);
+}
+
+.about-operator-proof__photo figcaption {
+  margin: 0.7rem 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .about-radius-fragment {
@@ -20783,18 +20810,13 @@ textarea:focus {
     margin-top: 0;
   }
 
-  .about-operator-proof__identity,
-  .about-operator-proof__rows {
+  .about-operator-proof__identity {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .about-operator-proof__rows div,
-  .about-operator-proof__rows div:nth-child(2n) {
-    border-right: 0;
-  }
-
-  .about-operator-proof__rows div:nth-last-child(-n + 2) {
-    border-bottom: 1px solid var(--structural-light);
+  .about-operator-proof__rows div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.2rem;
   }
 
   .about-operator-proof__rows div:last-child {
