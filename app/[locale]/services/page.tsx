@@ -119,6 +119,15 @@ export default async function ServicesPage({
                     {t('redesign.hero.secondaryCta')}
                   </Link>
                 </div>
+                <p className="services-hero-estimator-cue mt-4 max-w-[36rem] text-sm leading-relaxed text-authority-on-dark/75">
+                  {t('redesign.hero.estimatorCue.text')}{' '}
+                  <Link
+                    href="#estimator"
+                    className="services-hero-estimator-cue__link font-black text-authority-on-dark underline decoration-authority-on-dark/35 underline-offset-4 transition hover:decoration-authority-on-dark"
+                  >
+                    {t('redesign.hero.estimatorCue.link')}
+                  </Link>
+                </p>
               </div>
             </Region>
             <Region name="support" tabletSpan="half" desktopSpan="half">
@@ -269,7 +278,7 @@ export default async function ServicesPage({
           <ServiceBoundaryGrid />
         </Section>
 
-        <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--estimator">
+        <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--estimator" id="estimator">
           <div className="services-estimator-band">
             <div className="mb-6 max-w-[760px]">
               <p className="section-label">{t('redesign.estimatorBand.eyebrow')}</p>
@@ -294,7 +303,7 @@ export default async function ServicesPage({
                 </div>
               </div>
             </div>
-            <div id="estimator">
+            <div>
               <Estimator embedded />
             </div>
           </div>

@@ -708,6 +708,10 @@
         ],
         "lead": "Define how the property is used. Sentinel aligns visits, access, reporting, and local decision boundaries.",
         "secondaryCta": "Start with situation",
+        "estimatorCue": {
+          "text": "Want a quick orientation on the monthly range?",
+          "link": "Jump to the estimator."
+        },
         "proofBadges": [
           "Report after visit",
           "Scope after review",

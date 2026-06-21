@@ -708,6 +708,10 @@
         ],
         "lead": "Określ, jak nieruchomość jest używana. Sentinel dobierze zakres wizyt, dostępu, raportowania i decyzji lokalnych.",
         "secondaryCta": "Zacznij od sytuacji",
+        "estimatorCue": {
+          "text": "Chcesz szybko sprawdzić orientacyjny zakres miesięczny?",
+          "link": "Przejdź do estymatora."
+        },
         "proofBadges": [
           "Raport po wizycie",
           "Zakres po kwalifikacji",
