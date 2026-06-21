@@ -25,7 +25,6 @@ const PATHWAY_POINT_COUNTS: Record<PathwayKey, number> = {
 };
 
 const MODEL_PROOF_KEYS = ['scope', 'presence', 'documentation', 'decisions'] as const;
-const GATE_EVIDENCE_MARK_KEYS = ['access', 'record', 'decision'] as const;
 
 export default async function HomePage({
   params
@@ -170,9 +169,6 @@ function UsagePathwayFallback({
                 <p className="hero-kicker">{t('pathway.companyEyebrow')}</p>
                 <h1 className="hero-display">{t('pathway.companyHeadline')}</h1>
                 <p className="hero-lead">{t('pathway.companyLine')}</p>
-                <p className="hero-proof-line max-w-xl text-sm leading-relaxed text-authority-on-dark/70">
-                  {t('pathway.companyProofLine')}
-                </p>
               </div>
 
               <div className="hero-fact-grid">
@@ -181,7 +177,7 @@ function UsagePathwayFallback({
                 <FallbackHeroFactChip label={t('pathway.companyFacts.access.label')} value={t('pathway.companyFacts.access.value')} />
               </div>
 
-              <FallbackGateEvidencePlate t={t} />
+              <FallbackGateOperatorCue t={t} locale={locale} />
             </div>
 
             <div className="diagnostic-panel diagnostic-panel--gate">
@@ -253,25 +249,43 @@ function FallbackHeroFactChip({ label, value }: { label: string; value: string }
   );
 }
 
-function FallbackGateEvidencePlate({ t }: { t: (key: string) => string }) {
+function FallbackGateOperatorCue({
+  t,
+  locale,
+}: {
+  t: (key: string) => string;
+  locale: string;
+}) {
   return (
-    <aside className="gate-evidence-plate" aria-label={t('pathway.evidence.gate.title')}>
-      <div className="gate-evidence-plate__visual">
-        <span className="gate-evidence-plate__stamp">{t('pathway.evidence.gate.status')}</span>
-        <span className="gate-evidence-plate__bar gate-evidence-plate__bar--long" aria-hidden />
-        <span className="gate-evidence-plate__bar gate-evidence-plate__bar--short" aria-hidden />
-        <span className="gate-evidence-plate__node gate-evidence-plate__node--one" aria-hidden />
-        <span className="gate-evidence-plate__node gate-evidence-plate__node--two" aria-hidden />
+    <aside className="gate-operator-cue" aria-label={t('pathway.operatorCue.eyebrow')}>
+      <div className="gate-operator-cue__identity">
+        <span className="gate-operator-cue__pin" aria-hidden>
+          <svg viewBox="0 0 24 24" fill="none" focusable="false">
+            <path
+              d="M12 2.4c-3.5 0-6.3 2.8-6.3 6.3 0 4.7 6.3 12.9 6.3 12.9s6.3-8.2 6.3-12.9c0-3.5-2.8-6.3-6.3-6.3Z"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            />
+            <circle cx="12" cy="8.6" r="2.3" fill="currentColor" />
+          </svg>
+        </span>
+        <div className="gate-operator-cue__id-copy">
+          <span className="gate-operator-cue__eyebrow">{t('pathway.operatorCue.eyebrow')}</span>
+          <strong className="gate-operator-cue__name">{t('pathway.operatorCue.name')}</strong>
+          <span className="gate-operator-cue__role">{t('pathway.operatorCue.role')}</span>
+        </div>
       </div>
-      <div className="gate-evidence-plate__copy">
-        <span>{t('pathway.evidence.gate.eyebrow')}</span>
-        <strong>{t('pathway.evidence.gate.title')}</strong>
-        <ul className="gate-evidence-plate__marks" aria-label={t('pathway.evidence.gate.eyebrow')}>
-          {GATE_EVIDENCE_MARK_KEYS.map((key) => (
-            <li key={key}>{t(`pathway.evidence.gate.marks.${key}`)}</li>
-          ))}
-        </ul>
-      </div>
+      <p className="gate-operator-cue__presence">{t('pathway.operatorCue.presence')}</p>
+      <Link href={`/${locale}/services#estimator`} className="gate-operator-cue__price">
+        <span className="gate-operator-cue__price-label">{t('pathway.operatorCue.priceLabel')}</span>
+        <span className="gate-operator-cue__price-text">{t('pathway.operatorCue.priceText')}</span>
+        <span className="gate-operator-cue__price-link">
+          {t('pathway.operatorCue.priceLink')}
+          <span className="choice-arrow" aria-hidden>
+            -&gt;
+          </span>
+        </span>
+      </Link>
     </aside>
   );
 }

@@ -77,6 +77,15 @@
           "value": "Według ustaleń"
         }
       },
+      "operatorCue": {
+        "eyebrow": "Twój lokalny operator",
+        "name": "Tomasz",
+        "role": "Lokalny operator Sentinel — Torrevieja i okolice",
+        "presence": "Na miejscu sprawdza stan, pilnuje dostępu i działa w ustalonym zakresie.",
+        "priceLabel": "Orientacyjny koszt",
+        "priceText": "Miesięczny zakres zależny od metrażu i zakresu obsługi.",
+        "priceLink": "Otwórz estymator"
+      },
       "mediaAlt": {
         "private-use-only": "Operacyjne zdjęcie zastępcze kluczy i notatnika przygotowanych do kontroli pustego lokalu",
         "regular-guest-stays": "Operacyjne zdjęcie zastępcze przygotowanej sypialni z kluczami i folderem gotowości",

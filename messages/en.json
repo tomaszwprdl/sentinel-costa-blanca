@@ -77,6 +77,15 @@
           "value": "By agreement"
         }
       },
+      "operatorCue": {
+        "eyebrow": "Your local operator",
+        "name": "Tomasz",
+        "role": "Local Sentinel operator — Torrevieja and nearby area",
+        "presence": "On site, checks condition, controls access, and acts within the agreed scope.",
+        "priceLabel": "Indicative cost",
+        "priceText": "Monthly range depends on size and scope of oversight.",
+        "priceLink": "Open the estimator"
+      },
       "mediaAlt": {
         "private-use-only": "Operational placeholder photo of keys and a notebook prepared for an empty-property check",
         "regular-guest-stays": "Operational placeholder photo of a prepared bedroom with keys and a readiness folder",

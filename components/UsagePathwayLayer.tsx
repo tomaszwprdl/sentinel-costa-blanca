@@ -20,7 +20,6 @@ const PATHWAY_POINT_COUNTS: Record<PathwayKey, number> = {
   'mixed-not-defined': 5,
 };
 
-const GATE_EVIDENCE_MARK_KEYS = ['access', 'record', 'decision'] as const;
 const PATHWAY_EVIDENCE_ROW_KEYS = ['first', 'second', 'third'] as const;
 
 const PATHWAY_MEDIA: Record<PathwayKey, string> = {
@@ -91,7 +90,7 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
     <>
       {showFullGate && (
         <Section tone="authority" className="visual-hero-section">
-          <DiagnosticGateIntro tp={tp}>
+          <DiagnosticGateIntro tp={tp} locale={locale}>
             <DiagnosticChoiceBlock
               selected={activeSelection}
               isChanging={isChanging}
@@ -318,9 +317,11 @@ export function PathwayFinalCtaLink({
 
 function DiagnosticGateIntro({
   tp,
+  locale,
   children,
 }: {
   tp: ReturnType<typeof useTranslations<'home.pathway'>>;
+  locale: string;
   children: ReactNode;
 }) {
   return (
@@ -331,9 +332,6 @@ function DiagnosticGateIntro({
             <p className="hero-kicker">{tp('companyEyebrow')}</p>
             <h1 className="hero-display">{tp('companyHeadline')}</h1>
             <p className="hero-lead">{tp('companyLine')}</p>
-            <p className="hero-proof-line hidden max-w-xl text-sm leading-relaxed text-authority-on-dark/70 sm:block">
-              {tp('companyProofLine')}
-            </p>
           </div>
 
           <div className="hero-fact-grid">
@@ -342,7 +340,7 @@ function DiagnosticGateIntro({
             <HeroFactChip label={tp('companyFacts.access.label')} value={tp('companyFacts.access.value')} />
           </div>
 
-          <GateEvidencePlate t={tp} />
+          <GateOperatorCue t={tp} locale={locale} />
 
           <a href="#usage-situation-gate" className="gate-scroll-cue inline-flex lg:hidden">
             <span>{tp('gateScrollCue')}</span>
@@ -372,25 +370,43 @@ function HeroFactChip({ label, value }: { label: string; value: string }) {
   );
 }
 
-function GateEvidencePlate({ t }: { t: ReturnType<typeof useTranslations<'home.pathway'>> }) {
+function GateOperatorCue({
+  t,
+  locale,
+}: {
+  t: ReturnType<typeof useTranslations<'home.pathway'>>;
+  locale: string;
+}) {
   return (
-    <aside className="gate-evidence-plate" aria-label={t('evidence.gate.title')}>
-      <div className="gate-evidence-plate__visual">
-        <span className="gate-evidence-plate__stamp">{t('evidence.gate.status')}</span>
-        <span className="gate-evidence-plate__bar gate-evidence-plate__bar--long" aria-hidden />
-        <span className="gate-evidence-plate__bar gate-evidence-plate__bar--short" aria-hidden />
-        <span className="gate-evidence-plate__node gate-evidence-plate__node--one" aria-hidden />
-        <span className="gate-evidence-plate__node gate-evidence-plate__node--two" aria-hidden />
+    <aside className="gate-operator-cue" aria-label={t('operatorCue.eyebrow')}>
+      <div className="gate-operator-cue__identity">
+        <span className="gate-operator-cue__pin" aria-hidden>
+          <svg viewBox="0 0 24 24" fill="none" focusable="false">
+            <path
+              d="M12 2.4c-3.5 0-6.3 2.8-6.3 6.3 0 4.7 6.3 12.9 6.3 12.9s6.3-8.2 6.3-12.9c0-3.5-2.8-6.3-6.3-6.3Z"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            />
+            <circle cx="12" cy="8.6" r="2.3" fill="currentColor" />
+          </svg>
+        </span>
+        <div className="gate-operator-cue__id-copy">
+          <span className="gate-operator-cue__eyebrow">{t('operatorCue.eyebrow')}</span>
+          <strong className="gate-operator-cue__name">{t('operatorCue.name')}</strong>
+          <span className="gate-operator-cue__role">{t('operatorCue.role')}</span>
+        </div>
       </div>
-      <div className="gate-evidence-plate__copy">
-        <span>{t('evidence.gate.eyebrow')}</span>
-        <strong>{t('evidence.gate.title')}</strong>
-        <ul className="gate-evidence-plate__marks" aria-label={t('evidence.gate.eyebrow')}>
-          {GATE_EVIDENCE_MARK_KEYS.map((key) => (
-            <li key={key}>{t(`evidence.gate.marks.${key}`)}</li>
-          ))}
-        </ul>
-      </div>
+      <p className="gate-operator-cue__presence">{t('operatorCue.presence')}</p>
+      <Link href={`/${locale}/services#estimator`} className="gate-operator-cue__price">
+        <span className="gate-operator-cue__price-label">{t('operatorCue.priceLabel')}</span>
+        <span className="gate-operator-cue__price-text">{t('operatorCue.priceText')}</span>
+        <span className="gate-operator-cue__price-link">
+          {t('operatorCue.priceLink')}
+          <span className="choice-arrow" aria-hidden>
+            -&gt;
+          </span>
+        </span>
+      </Link>
     </aside>
   );
 }

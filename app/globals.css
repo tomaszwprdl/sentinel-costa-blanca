@@ -1208,10 +1208,12 @@ textarea:focus {
   color: color-mix(in srgb, var(--authority-on-dark) 70%, var(--copper));
 }
 
-.gate-evidence-plate {
-  display: grid;
-  grid-template-columns: minmax(7.75rem, 0.38fr) minmax(0, 0.62fr);
-  gap: 0.8rem;
+/* Gate operator cue — trust-spine pilot: real local-operator identity + early
+   cost orientation replaces the former decorative evidence plate in the pre-click gate. */
+.gate-operator-cue {
+  display: flex;
+  flex-direction: column;
+  gap: 0.72rem;
   width: min(100%, 31rem);
   margin-top: 1rem;
   border: 1px solid rgba(255, 250, 242, 0.18);
@@ -1219,109 +1221,41 @@ textarea:focus {
   background: linear-gradient(165deg, rgba(255, 250, 242, 0.11), rgba(255, 250, 242, 0.035));
   color: var(--authority-on-dark);
   box-shadow: inset 0 1px 0 rgba(255, 250, 242, 0.12);
-  padding: 0.72rem;
+  padding: 0.95rem 1rem;
 }
 
-.gate-evidence-plate__visual {
-  position: relative;
-  min-height: 6.35rem;
-  overflow: hidden;
-  border: 1px solid rgba(255, 250, 242, 0.14);
-  border-radius: 0.58rem;
-  background:
-    linear-gradient(90deg, rgba(255, 250, 242, 0.055) 1px, transparent 1px) 0 0 / 2.1rem 100%,
-    linear-gradient(180deg, rgba(7, 21, 36, 0.18), rgba(7, 21, 36, 0.06));
+.gate-operator-cue__identity {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
 }
 
-.gate-evidence-plate__visual::before,
-.gate-evidence-plate__visual::after {
-  position: absolute;
-  content: "";
-}
-
-.gate-evidence-plate__visual::before {
-  right: -1.6rem;
-  bottom: -1.8rem;
-  width: 6.4rem;
-  height: 6.4rem;
-  border: 1px solid rgba(210, 154, 87, 0.38);
-  border-radius: 999px;
-}
-
-.gate-evidence-plate__visual::after {
-  left: 1.05rem;
-  right: 1.2rem;
-  bottom: 1.32rem;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(255, 250, 242, 0.16), rgba(210, 154, 87, 0.58), rgba(255, 250, 242, 0.12));
-}
-
-.gate-evidence-plate__stamp {
-  position: absolute;
-  top: 0.55rem;
-  left: 0.58rem;
-  z-index: 1;
+.gate-operator-cue__pin {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
   border: 1px solid rgba(210, 154, 87, 0.42);
-  border-radius: 999px;
-  color: color-mix(in srgb, var(--authority-on-dark) 66%, var(--copper));
-  font-size: 0.54rem;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-  line-height: 1;
-  padding: 0.32rem 0.46rem;
-  text-transform: uppercase;
+  border-radius: 0.6rem;
+  color: var(--copper);
+  background: linear-gradient(165deg, rgba(210, 154, 87, 0.16), rgba(210, 154, 87, 0.05));
 }
 
-.gate-evidence-plate__bar {
-  position: absolute;
-  left: 0.75rem;
-  height: 0.42rem;
-  border-radius: 999px;
-  background: rgba(255, 250, 242, 0.16);
+.gate-operator-cue__pin svg {
+  width: 1.15rem;
+  height: 1.15rem;
 }
 
-.gate-evidence-plate__bar--long {
-  top: 3rem;
-  width: 58%;
-}
-
-.gate-evidence-plate__bar--short {
-  top: 4.05rem;
-  width: 38%;
-}
-
-.gate-evidence-plate__node {
-  position: absolute;
-  z-index: 1;
-  width: 0.72rem;
-  height: 0.72rem;
-  border: 2px solid rgba(255, 250, 242, 0.78);
-  border-radius: 999px;
-  background: var(--copper);
-  box-shadow: 0 0 0 5px rgba(210, 154, 87, 0.12);
-}
-
-.gate-evidence-plate__node--one {
-  right: 2.9rem;
-  bottom: 1rem;
-}
-
-.gate-evidence-plate__node--two {
-  right: 1.1rem;
-  bottom: 2.72rem;
-  background: var(--support);
-  box-shadow: 0 0 0 5px rgba(47, 111, 115, 0.16);
-}
-
-.gate-evidence-plate__copy {
+.gate-operator-cue__id-copy {
   display: flex;
   min-width: 0;
   flex-direction: column;
-  justify-content: center;
-  gap: 0.46rem;
+  gap: 0.18rem;
 }
 
-.gate-evidence-plate__copy > span {
+.gate-operator-cue__eyebrow {
   color: color-mix(in srgb, var(--authority-on-dark) 58%, var(--copper));
   font-size: 0.58rem;
   font-weight: 900;
@@ -1329,83 +1263,88 @@ textarea:focus {
   text-transform: uppercase;
 }
 
-.gate-evidence-plate__copy strong {
+.gate-operator-cue__name {
   color: var(--authority-on-dark);
-  font-size: 1rem;
-  line-height: 1.18;
-}
-
-.gate-evidence-plate__marks {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.gate-evidence-plate__marks li {
-  border: 1px solid rgba(255, 250, 242, 0.14);
-  border-radius: 999px;
-  color: rgba(255, 250, 242, 0.72);
-  font-size: 0.62rem;
+  font-size: 1.02rem;
   font-weight: 800;
-  line-height: 1;
-  padding: 0.34rem 0.48rem;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.gate-operator-cue__role {
+  color: color-mix(in srgb, var(--authority-on-dark) 76%, transparent);
+  font-size: 0.74rem;
+  line-height: 1.32;
+}
+
+.gate-operator-cue__presence {
+  margin: 0;
+  color: color-mix(in srgb, var(--authority-on-dark) 82%, transparent);
+  font-size: 0.8rem;
+  line-height: 1.42;
+}
+
+.gate-operator-cue__price {
+  display: grid;
+  gap: 0.12rem;
+  margin-top: 0.1rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid rgba(255, 250, 242, 0.14);
+  color: var(--authority-on-dark);
+  text-decoration: none;
+}
+
+.gate-operator-cue__price-label {
+  color: color-mix(in srgb, var(--authority-on-dark) 58%, var(--copper));
+  font-size: 0.56rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
+.gate-operator-cue__price-text {
+  color: color-mix(in srgb, var(--authority-on-dark) 80%, transparent);
+  font-size: 0.78rem;
+  line-height: 1.34;
+}
+
+.gate-operator-cue__price-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
+  margin-top: 0.18rem;
+  color: color-mix(in srgb, var(--authority-on-dark) 72%, var(--copper));
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.gate-operator-cue__price .choice-arrow {
+  transition: transform 0.18s ease;
+}
+
+.gate-operator-cue__price:hover .gate-operator-cue__price-link,
+.gate-operator-cue__price:focus-visible .gate-operator-cue__price-link {
+  color: var(--copper);
+}
+
+.gate-operator-cue__price:hover .choice-arrow {
+  transform: translateX(3px);
+}
+
 @media (max-width: 899px) {
-  .gate-evidence-plate {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.58rem;
+  .gate-operator-cue {
     margin-top: 0.72rem;
-    padding: 0.62rem;
+    gap: 0.6rem;
+    padding: 0.8rem 0.85rem;
   }
 
-  .gate-evidence-plate__visual {
-    min-height: 4.55rem;
+  .gate-operator-cue__name {
+    font-size: 0.94rem;
   }
 
-  .gate-evidence-plate__stamp {
-    font-size: 0.5rem;
-  }
-
-  .gate-evidence-plate__bar--long {
-    top: 2.45rem;
-    width: 52%;
-  }
-
-  .gate-evidence-plate__bar--short {
-    top: 3.25rem;
-    width: 34%;
-  }
-
-  .gate-evidence-plate__node--one {
-    right: 2.35rem;
-    bottom: 0.9rem;
-  }
-
-  .gate-evidence-plate__node--two {
-    right: 0.95rem;
-    bottom: 2.22rem;
-  }
-
-  .gate-evidence-plate__copy {
-    gap: 0.34rem;
-  }
-
-  .gate-evidence-plate__copy > span {
-    font-size: 0.54rem;
-  }
-
-  .gate-evidence-plate__copy strong {
-    font-size: 0.88rem;
-  }
-
-  .gate-evidence-plate__marks li {
-    font-size: 0.56rem;
-    padding: 0.3rem 0.42rem;
+  .gate-operator-cue__presence {
+    font-size: 0.76rem;
   }
 }
 
