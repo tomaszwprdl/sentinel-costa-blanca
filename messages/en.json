@@ -2367,27 +2367,27 @@
         "questions": {
           "q1": {
             "question": "What exactly is Sentinel?",
-            "answer": "Sentinel is a local property representation service operating on package-based contracts with defined scope. Services include physical presence, inspection, coordination, and reporting within explicitly defined package boundaries—not concierge or unlimited assistance. Review Services page for complete package specifications; if your needs don't align with package structure, Sentinel may not be appropriate."
+            "answer": "Sentinel is local owner representation: on-site presence, checks, coordination, and reports inside a defined package. It is not concierge, rental management, or open-ended help. If you need steady, clear structure in the service area, the model may fit."
           },
           "q2": {
             "question": "Can I order a single visit without a package?",
-            "answer": "No. Sentinel operates exclusively on monthly package basis to ensure service continuity and operational accountability. If you need one-time assistance, contact a local contractor or agency; Sentinel can only engage after onboarding under a monthly package."
+            "answer": "No. Sentinel works through a monthly package because context, access, and continuity matter. For a single visit, a local contractor is usually the better fit; Sentinel starts after package onboarding."
           },
           "q3": {
             "question": "What if I need something not in my package?",
-            "answer": "Services outside your package are quoted separately and require written approval before execution. Sentinel does not perform \"small favors\" or undocumented services; all work outside package scope must be formally arranged and priced. Contact Sentinel with specific request; you will receive quote and can approve, decline, or upgrade package if recurring need exists."
+            "answer": "We can assess it separately. Work outside the package needs a clear request, quote, and approval before it is done. If the need repeats, a different package or add-on may fit better."
           },
           "q4": {
             "question": "Can you let in a cleaner or technician if I have Basic package?",
-            "answer": "No. Basic package does not include third-party access coordination; this requires Extended or Full package. Upgrade to Extended package for access coordination, or arrange access yourself and maintain Basic for inspection-only service."
+            "answer": "Not in Basic. Cleaner, technician, or other third-party access coordination requires Extended or Full. With Basic, the owner arranges access separately."
           },
           "q5": {
             "question": "What exactly is an \"access event\"?",
-            "answer": "Every opening and closing of the property for a third party counts as one access event, regardless of duration. Access event includes travel, unlocking, supervision, securing, and brief report—whether visit lasts 15 minutes or 3 hours. Extended includes 2 events/month; additional events are billed separately. Full includes fair-use access (reasonable operational frequency)."
+            "answer": "It is one controlled entry for a third party: travel, opening, presence or supervision, securing the property, and a short record. Visit length does not change the classification. Extended includes 2 access events per month; extra events are billed separately. Full works on reasonable operational use."
           },
           "q6": {
             "question": "Can I ask for entry \"just for a moment\"?",
-            "answer": "No—brief visits still count as access events. Duration does not affect access event classification; operational cost (travel, coordination, securing) is identical regardless of time on-site. Plan access needs appropriately within package allocation, or move to Extended or Full package for fair-use access without strict monthly limits."
+            "answer": "That still counts as an access event. Even a brief entry requires travel, coordination, opening, and securing the property. If this will happen often, choose a package with the right access scope."
           }
         }
       },
@@ -2397,11 +2397,11 @@
         "questions": {
           "q7": {
             "question": "What if a technician arrives \"between 9 AM and 2 PM\"?",
-            "answer": "Sentinel operates within time windows, not fixed appointments. Long on-site waiting for technicians is not included in Basic or Extended packages; Full package includes on-site presence during service visits. Basic/Extended clients coordinate technician timing themselves; Full clients receive on-site supervision as part of package."
+            "answer": "A long technician window needs to be planned in advance. Basic and Extended do not include hours of waiting on site. Full can include presence during service visits when it fits the agreed scope."
           },
           "q8": {
             "question": "Do you react immediately to every request?",
-            "answer": "No—response time depends on package SLA (Service Level Agreement). SLA defines reaction and decision time, not guaranteed resolution time; Basic acknowledges within 48h, Extended within 24h, Full follows same-day response discipline. Review package SLA commitments on Services page; external factors (technician availability, parts) affect actual resolution beyond Sentinel's control."
+            "answer": "No. SLA defines response and decision time: 48h, 24h, or same day depending on package. It does not guarantee repair time, because parts, contractors, and availability are not fully controlled by Sentinel."
           }
         }
       },
@@ -2411,19 +2411,19 @@
         "questions": {
           "q9": {
             "question": "What is considered an emergency?",
-            "answer": "Events causing or threatening immediate material damage, property loss, or safety hazard. Emergencies include active leaks, broken security, fire damage, gas leaks, electrical hazards—NOT WiFi issues, comfort problems, or guest complaints. Full package includes emergency response; Basic/Extended receive emergency action only after owner approval or if property securing is immediately necessary (€300 limit)."
+            "answer": "An emergency is an event that threatens property damage, loss, or safety: active leak, broken security, gas, electrical issue, fire damage. WiFi, guest comfort, and minor defects are not emergencies. Response depends on package scope and decision limits."
           },
           "q10": {
             "question": "What happens in emergency if I don't answer phone?",
-            "answer": "Sentinel takes property-securing action up to €300 limit if owner is unreachable and threat is immediate. All packages include limited emergency securing authority when immediate property threat exists and owner contact fails; all actions documented and reported. Provide reliable emergency contact information during onboarding; Full package clients receive immediate action within approved decision limit (€300-500)."
+            "answer": "If the threat is immediate and the owner cannot be reached, Sentinel may secure the property up to the €300 limit and document the action. In Full, action follows the agreed decision limit, normally €300 and optionally €500."
           },
           "q11": {
             "question": "What is the decision limit in Full package?",
-            "answer": "Standard limit is €300 per single decision; optional increase to €500 can be specified during onboarding. Limit applies per individual decision (not cumulative monthly); decisions above limit require owner approval before action. Specify preferred limit during onboarding; Sentinel will not exceed approved limit without explicit permission."
+            "answer": "The standard limit is €300 per single decision. During onboarding, it can be set at €500. Anything above the limit needs owner approval before action."
           },
           "q12": {
             "question": "Do you take financial responsibility for damages?",
-            "answer": "No. Sentinel coordinates and represents but does not provide insurance-level liability or guarantee prevention of all incidents. Property owners must maintain adequate insurance coverage; Sentinel's accountability is limited to service delivery within package scope."
+            "answer": "No. Sentinel coordinates action and represents the owner within agreed scope, but it does not replace insurance or guarantee that every incident will be prevented. The owner must keep suitable property insurance."
           }
         }
       },
@@ -2433,27 +2433,27 @@
         "questions": {
           "q13": {
             "question": "Can you store valuables?",
-            "answer": "Short-term storage is possible after specific arrangement; Sentinel does not assume liability for undeclared valuables. Safe storage available for documented items only; Sentinel is not responsible for valuables not explicitly declared and logged. Discuss specific storage needs during onboarding; ensure adequate insurance coverage for stored items."
+            "answer": "Only by clear agreement and with items logged. Sentinel does not take responsibility for valuables that were not declared. High-value items should have their own insurance."
           },
           "q14": {
             "question": "Can you take care of animals?",
-            "answer": "Short-term animal care is possible after advance arrangement; regular pet care is not part of any package. Occasional brief animal supervision can be arranged separately; Sentinel does not provide ongoing pet care services. Contact Sentinel with specific needs; permanent pet care requires separate local arrangement."
+            "answer": "Occasionally, if agreed in advance. Regular animal care is not part of Sentinel packages and usually needs a separate local service."
           },
           "q15": {
             "question": "Do you check utility meters?",
-            "answer": "Yes—Basic includes visual check or reading as agreed during onboarding; Extended/Full include reading and photos. Meter inspection method is specified during onboarding; format and frequency depend on package and property access. Confirm meter inspection preferences during onboarding; photos available if meters are accessible."
+            "answer": "Yes, if the meters are accessible. In Basic, the scope is agreed during onboarding; Extended and Full can include readings and photos. Format depends on package and property layout."
           },
           "q16": {
             "question": "Can I have only one visit per month?",
-            "answer": "Standard is 2 visits/month; less frequent visits require individual arrangement and may affect service scope. Reduced visit frequency increases risk and may limit Sentinel's accountability; any deviation from standard schedule must be explicitly agreed. Discuss reduced frequency during onboarding; understand that longer intervals between visits reduce early problem detection."
+            "answer": "The standard rhythm is 2 visits per month. A lower frequency can be discussed, but it increases time between checks and may limit accountability. It must be clearly agreed."
           },
           "q17": {
             "question": "Can I change my package during cooperation?",
-            "answer": "Yes—package changes are possible at any time upon mutual agreement. Changes require written confirmation of new package terms and take effect from agreed date (typically next billing period). Contact Sentinel to discuss package upgrade/downgrade; new terms documented before change activation."
+            "answer": "Yes, by mutual agreement. The new package and change date are confirmed in writing, usually from the next billing period."
           },
           "q18": {
             "question": "Do you support properties with regular guest stays?",
-            "answer": "Not as primary service—rental support is available only as add-on module to existing package. Sentinel does not provide full property management, guest communication, or booking services; rental support covers only property preparation and post-departure inspection. Review Rental/Holiday Support add-on module on Services page; requires base package (Basic, Extended, or Full) plus separate arrangement."
+            "answer": "Only inside an agreed module, not as rental management. Sentinel can cover preparation, access, cleaning, or post-departure checks. Bookings, pricing, guest communication, and running the rental business stay outside scope."
           }
         }
       },
@@ -2463,23 +2463,23 @@
         "questions": {
           "q19": {
             "question": "How does communication work?",
-            "answer": "Operational communication via dedicated phone/WhatsApp; formal documentation via email. Sentinel maintains separate channels for prospects (general contact) and active clients (dedicated operational line); no communication through personal team numbers. Use contact form or general number for initial inquiry; active clients receive dedicated contact information during onboarding."
+            "answer": "New inquiries use the form, email, or general number. Active clients receive a separate operational channel, usually phone/WhatsApp, while formal arrangements stay on email. We do not work through private team numbers."
           },
           "q20": {
             "question": "Can you refuse cooperation?",
-            "answer": "Yes—Sentinel reserves right to decline service or terminate cooperation. Sentinel may refuse service if property is outside service area, expectations don't align with package model, or operational fit is not viable. Qualification occurs before onboarding; Sentinel evaluates property location, service needs, and client expectations before accepting engagement."
+            "answer": "Yes. Sentinel may decline if the property is outside the area, expectations do not fit the package model, or service would not be workable. This check happens before onboarding."
           },
           "q21": {
             "question": "Can prices and terms change?",
-            "answer": "Yes, but changes are communicated in advance and apply from next billing period (not retroactively). Sentinel may adjust pricing or terms with advance notice; existing clients receive notification before changes take effect. Changes do not affect current billing period; clients can accept new terms or terminate service at end of current period."
+            "answer": "Yes. Changes are announced in advance and do not apply retroactively. They start from the next billing period, and the client can accept the new terms or end service after the current period."
           },
           "q22": {
             "question": "What if something isn't described in the documentation?",
-            "answer": "If not explicitly listed, it's not included in the package. Services, procedures, and commitments exist only as documented; undocumented services require separate arrangement and approval. Legal and regulatory compliance for the property remains the sole responsibility of the owner. Contact Sentinel with specific request; anything outside documented package scope will be quoted separately."
+            "answer": "If something is not listed, it is not automatically in the package. You can ask about it, but it needs separate review, approval, and pricing. Legal and regulatory compliance remains with the owner."
           },
           "q23": {
             "question": "Why are there so many rules?",
-            "answer": "Rules protect both parties by defining scope, preventing disputes, and enabling accountability. Documentation ensures service delivery doesn't depend on individual interpretation or goodwill; clear boundaries enable reliable, professional service. Review Services and How It Works pages to understand operational framework; rules exist to support long-term service quality."
+            "answer": "Because clear scope protects service quality. The owner knows what to expect, and Sentinel can work consistently and responsibly. The rules are there to prevent misunderstandings, not to make contact harder."
           }
         }
       },
@@ -2489,11 +2489,11 @@
         "questions": {
           "q24": {
             "question": "Where do these policies apply?",
-            "answer": "Policies apply to all Sentinel operations: website, communications, service agreements, and client relations. No verbal agreements or informal exceptions override documented policies; all service terms must be explicitly agreed and documented. Acceptance of documented policies is required for service activation; disagreement with policies means Sentinel is not appropriate service provider."
+            "answer": "They apply to the website, conversations, offers, agreements, and ongoing cooperation. Verbal exceptions do not replace agreed terms. If someone does not accept these rules, Sentinel is probably not the right service."
           },
           "q25": {
             "question": "What is the purpose of this FAQ document?",
-            "answer": "This document prevents misunderstandings, clarifies boundaries, establishes shared reference point, and protects both parties. FAQ serves as operational policy reference and dispute resolution tool; answers are consistent with service terms and package specifications. Use this FAQ as first resource for questions; contact Sentinel if your specific situation is not addressed."
+            "answer": "The FAQ explains quickly how Sentinel works and where the service boundaries are. It does not replace the agreement or individual qualification. If your situation does not match an answer, describe it in the inquiry."
           }
         }
       }
@@ -2569,7 +2569,7 @@
       "intro": "These assumptions create most category drift.",
       "items": [
         { "assumption": "Keyholding alone means full oversight", "boundary": "Keyholding is only an access capability. Oversight requires package scope and reporting." },
-        { "assumption": "SLA means resolution within the stated time", "boundary": "SLA is response and decision discipline. Parts, contractors, and external availability can affect resolution." },
+        { "assumption": "SLA means resolution within the stated time", "boundary": "SLA sets response and decision timing. Parts, contractors, and availability can delay the actual fix." },
         { "assumption": "Cleaner coordination means rental management", "boundary": "Cleaning or readiness can sit inside scope. Booking and rental business management do not." },
         { "assumption": "Emergency support is public and on demand", "boundary": "Emergency channels exist for eligible active clients under agreed package terms." },
         { "assumption": "Out-of-area can be accepted for higher price", "boundary": "The service boundary is operational, not a price negotiation." }

@@ -2367,27 +2367,27 @@
         "questions": {
           "q1": {
             "question": "Czym dokładnie jest Sentinel?",
-            "answer": "Sentinel to lokalna usługa reprezentacji nieruchomości działająca na podstawie umów pakietowych z określonym zakresem. Usługi obejmują fizyczną obecność, kontrolę, koordynację i raportowanie w ramach wyraźnie określonych granic pakietów—nie usługi concierge ani nieograniczoną pomoc. Przejrzyj stronę Usługi w celu uzyskania pełnych specyfikacji pakietów; jeśli Państwa potrzeby nie są zgodne ze strukturą pakietu, Sentinel może nie być odpowiedni."
+            "answer": "Sentinel to lokalna reprezentacja właściciela: obecność na miejscu, kontrola, koordynacja i raporty w określonym pakiecie. To nie concierge, zarządzanie wynajmem ani otwarta pomoc do wszystkiego. Jeśli potrzebujesz stałej, jasnej struktury w obszarze działania, model może pasować."
           },
           "q2": {
             "question": "Czy mogę zamówić pojedynczą wizytę bez pakietu?",
-            "answer": "Nie. Sentinel działa wyłącznie na podstawie pakietu miesięcznego w celu zapewnienia ciągłości usługi i odpowiedzialności operacyjnej. Jeśli potrzebują Państwo jednorazowej pomocy, proszę skontaktować się z lokalnym wykonawcą lub agencją; Sentinel może zaangażować się dopiero po wdrożeniu w ramach pakietu miesięcznego."
+            "answer": "Nie. Sentinel działa w miesięcznym pakiecie, bo wtedy ma kontekst, dostęp i odpowiedzialność za ciągłość. Do pojedynczej wizyty lepiej pasuje lokalny wykonawca; Sentinel zaczyna pracę po wdrożeniu do pakietu."
           },
           "q3": {
             "question": "Co jeśli potrzebuję czegoś, co nie jest w moim pakiecie?",
-            "answer": "Usługi poza Państwa pakietem są wyceniane osobno i wymagają pisemnej zgody przed wykonaniem. Sentinel nie wykonuje \"małych przysług\" ani nieudokumentowanych usług; wszystkie prace poza zakresem pakietu muszą być formalnie uzgodnione i wycenione. Skontaktuj się z Sentinel z konkretnym żądaniem; otrzymają Państwo wycenę i mogą ją zatwierdzić, odrzucić lub ulepszyć pakiet, jeśli istnieje powtarzająca się potrzeba."
+            "answer": "Możemy to ocenić osobno. Praca poza pakietem wymaga opisu, wyceny i zgody przed wykonaniem. Jeśli potrzeba wraca regularnie, lepsze może być przejście na inny pakiet lub osobny moduł."
           },
           "q4": {
             "question": "Czy możecie wpuścić sprzątaczkę lub technika, jeśli mam Pakiet Podstawowy?",
-            "answer": "Nie. Pakiet Podstawowy nie obejmuje koordynacji dostępu osób trzecich; wymaga to Pakietu Rozszerzonego lub Pełnego. Uaktualnij do Pakietu Rozszerzonego w celu koordynacji dostępu lub zorganizuj dostęp samodzielnie i zachowaj Podstawowy tylko do kontroli."
+            "answer": "Nie w Podstawowym. Koordynacja dostępu dla sprzątaczki, technika lub innej osoby trzeciej wymaga Rozszerzonego albo Pełnego. Przy Podstawowym dostęp organizuje właściciel."
           },
           "q5": {
             "question": "Czym dokładnie jest \"zdarzenie dostępu\"?",
-            "answer": "Każde otwarcie i zamknięcie nieruchomości dla osoby trzeciej liczy się jako jedno zdarzenie dostępu, niezależnie od czasu trwania. Zdarzenie dostępu obejmuje podróż, odblokowywanie, nadzór, zabezpieczanie i krótki raport—niezależnie od tego, czy wizyta trwa 15 minut, czy 3 godziny. Pakiet Rozszerzony obejmuje 2 zdarzenia/miesiąc; dodatkowe zdarzenia są rozliczane osobno. Pakiet Pełny obejmuje dostęp w rozsądnym zakresie (rozsądna częstotliwość operacyjna)."
+            "answer": "To jedno kontrolowane wejście dla osoby trzeciej: dojazd, otwarcie, obecność lub nadzór, zamknięcie i krótki zapis. Czas wizyty nie zmienia klasyfikacji. Rozszerzony obejmuje 2 takie zdarzenia miesięcznie; kolejne są rozliczane osobno. Pełny działa w rozsądnym zakresie operacyjnym."
           },
           "q6": {
             "question": "Czy mogę poprosić o wejście \"tylko na chwilę\"?",
-            "answer": "Nie—krótkie wizyty nadal liczą się jako zdarzenia dostępu. Czas trwania nie wpływa na klasyfikację zdarzenia dostępu; koszt operacyjny (podróż, koordynacja, zabezpieczanie) jest identyczny niezależnie od czasu spędzonego na miejscu. Zaplanuj potrzeby dostępu odpowiednio w ramach alokacji pakietu lub przejdź na Pakiet Rozszerzony lub Pełny w celu dostępu w rozsądnym zakresie bez ścisłych limitów miesięcznych."
+            "answer": "Takie wejście nadal liczy się jako zdarzenie dostępu. Nawet krótka wizyta wymaga dojazdu, koordynacji, otwarcia i zabezpieczenia lokalu. Jeśli takich wejść będzie więcej, warto dobrać pakiet z odpowiednim zakresem dostępu."
           }
         }
       },
@@ -2397,11 +2397,11 @@
         "questions": {
           "q7": {
             "question": "Co jeśli technik przyjedzie \"między 9 a 14\"?",
-            "answer": "Sentinel działa w oknach czasowych, a nie w ustalonych terminach. Długie oczekiwanie na miejscu na techników nie jest wliczone w pakiety Podstawowy lub Rozszerzony; Pakiet Pełny obejmuje obecność na miejscu podczas wizyt serwisowych. Klienci Podstawowy/Rozszerzony koordynują czas technika samodzielnie; klienci Pełny otrzymują nadzór na miejscu w ramach pakietu."
+            "answer": "Długie okno technika trzeba zaplanować wcześniej. W Podstawowym i Rozszerzonym nie obejmuje ono wielogodzinnego czekania na miejscu. Pełny może obejmować obecność podczas wizyty serwisowej, jeśli mieści się w ustalonym zakresie."
           },
           "q8": {
             "question": "Czy reagujecie natychmiast na każde żądanie?",
-            "answer": "Nie—czas reakcji zależy od SLA pakietu (Umowa Poziomu Usług). SLA określa czas reakcji i decyzji, a nie gwarantowany czas rozwiązania; Podstawowy potwierdza w ciągu 48h, Rozszerzony w ciągu 24h, Pełny działa w dyscyplinie reakcji tego samego dnia. Przejrzyj zobowiązania SLA pakietu na stronie Usługi; czynniki zewnętrzne (dostępność technika, części) wpływają na faktyczne rozwiązanie poza kontrolą Sentinel."
+            "answer": "Nie. SLA określa czas reakcji i decyzji: 48h, 24h albo ten sam dzień zależnie od pakietu. Nie gwarantuje czasu naprawy, bo części, technicy i dostępność są poza pełną kontrolą Sentinel."
           }
         }
       },
@@ -2411,19 +2411,19 @@
         "questions": {
           "q9": {
             "question": "Co jest uważane za nagły wypadek?",
-            "answer": "Zdarzenia powodujące lub grożące natychmiastowymi szkodami materialnymi, utratą mienia lub zagrożeniem bezpieczeństwa. Nagłe wypadki obejmują aktywne wycieki, uszkodzone zabezpieczenia, uszkodzenia pożarowe, wycieki gazu, zagrożenia elektryczne—NIE problemy z WiFi, problemy z komfortem lub skargi gości. Pakiet Pełny obejmuje reakcję awaryjną; Podstawowy/Rozszerzony otrzymują działanie awaryjne tylko po zatwierdzeniu właściciela lub jeśli zabezpieczenie nieruchomości jest natychmiast konieczne (limit 300€)."
+            "answer": "Awaria to zdarzenie, które grozi szkodą w nieruchomości, utratą mienia albo ryzykiem bezpieczeństwa: aktywny wyciek, uszkodzone zabezpieczenie, gaz, prąd, pożar. WiFi, komfort gościa i drobne usterki nie są awarią. Reakcja zależy od pakietu i limitów decyzji."
           },
           "q10": {
             "question": "Co się dzieje w nagłym wypadku, jeśli nie odbieram telefonu?",
-            "answer": "Sentinel podejmuje działania zabezpieczające nieruchomość do limitu 300€, jeśli właściciel jest nieosiągalny, a zagrożenie jest natychmiastowe. Wszystkie pakiety obejmują ograniczone uprawnienia do zabezpieczania awaryjnego, gdy istnieje bezpośrednie zagrożenie dla nieruchomości, a kontakt z właścicielem się nie udaje; wszystkie działania są udokumentowane i zgłoszone. Podaj niezawodne informacje kontaktowe w nagłych wypadkach podczas wdrożenia; klienci Pakietu Pełnego otrzymują natychmiastowe działanie w ramach zatwierdzonego limitu decyzji (300-500€)."
+            "answer": "Jeśli zagrożenie jest natychmiastowe, a właściciel nie odbiera, Sentinel może zabezpieczyć nieruchomość do limitu 300€ i wszystko udokumentować. W Pełnym działanie odbywa się w uzgodnionym limicie decyzji, standardowo 300€, opcjonalnie 500€."
           },
           "q11": {
             "question": "Jaki jest limit decyzji w Pakiecie Pełnym?",
-            "answer": "Standardowy limit to 300€ na pojedynczą decyzję; opcjonalny wzrost do 500€ może zostać określony podczas wdrożenia. Limit dotyczy pojedynczej decyzji (nie skumulowanej miesięcznej); decyzje powyżej limitu wymagają zgody właściciela przed działaniem. Określ preferowany limit podczas wdrożenia; Sentinel nie przekroczy zatwierdzonego limitu bez wyraźnego pozwolenia."
+            "answer": "Standardowo 300€ na pojedynczą decyzję. Przy wdrożeniu można uzgodnić 500€. Wszystko powyżej limitu wymaga zgody właściciela przed działaniem."
           },
           "q12": {
             "question": "Czy bierzecie odpowiedzialność finansową za szkody?",
-            "answer": "Nie. Sentinel koordynuje i reprezentuje, ale nie zapewnia odpowiedzialności na poziomie ubezpieczenia ani nie gwarantuje zapobiegania wszystkim incydentom. Właściciele nieruchomości muszą utrzymywać odpowiednie ubezpieczenie; odpowiedzialność Sentinel ogranicza się do świadczenia usług w ramach zakresu pakietu."
+            "answer": "Nie. Sentinel koordynuje działania i reprezentuje właściciela w ustalonym zakresie, ale nie zastępuje ubezpieczenia i nie gwarantuje, że każdy incydent zostanie powstrzymany. Właściciel musi mieć właściwe ubezpieczenie nieruchomości."
           }
         }
       },
@@ -2433,27 +2433,27 @@
         "questions": {
           "q13": {
             "question": "Czy możecie przechowywać kosztowności?",
-            "answer": "Krótkoterminowe przechowywanie jest możliwe po konkretnym uzgodnieniu; Sentinel nie przyjmuje odpowiedzialności za niezadeklarowane kosztowności. Bezpieczne przechowywanie dostępne tylko dla udokumentowanych przedmiotów; Sentinel nie ponosi odpowiedzialności za kosztowności, które nie zostały wyraźnie zadeklarowane i zarejestrowane. Omów konkretne potrzeby przechowywania podczas wdrożenia; zapewnij odpowiednie ubezpieczenie dla przechowywanych przedmiotów."
+            "answer": "Tylko po jasnym uzgodnieniu i wpisaniu przedmiotów do ewidencji. Sentinel nie przejmuje odpowiedzialności za kosztowności, które nie zostały zgłoszone. Cenne rzeczy powinny mieć własne ubezpieczenie."
           },
           "q14": {
             "question": "Czy możecie opiekować się zwierzętami?",
-            "answer": "Krótkoterminowa obsługa zwierząt jest możliwa po wcześniejszym uzgodnieniu; regularna obsługa zwierząt nie jest częścią żadnego pakietu. Okazjonalny krótki nadzór nad zwierzętami może być uzgodniony osobno; Sentinel nie świadczy usług bieżącej obsługi zwierząt. Skontaktuj się z Sentinel w sprawie konkretnych potrzeb; stała obsługa zwierząt wymaga osobnego lokalnego uzgodnienia."
+            "answer": "Okazjonalnie, po wcześniejszym uzgodnieniu. Stała opieka nad zwierzętami nie jest częścią pakietów Sentinel i zwykle wymaga osobnej lokalnej usługi."
           },
           "q15": {
             "question": "Czy sprawdzacie liczniki mediów?",
-            "answer": "Tak—Pakiet Podstawowy obejmuje kontrolę wzrokową lub odczyt według ustaleń podczas wdrożenia; Rozszerzony/Pełny obejmują odczyt i zdjęcia. Metoda kontroli licznika jest określona podczas wdrożenia; format i częstotliwość zależą od pakietu i dostępu do nieruchomości. Potwierdź preferencje kontroli licznika podczas wdrożenia; zdjęcia dostępne, jeśli liczniki są dostępne."
+            "answer": "Tak, jeśli dostęp do liczników jest możliwy. W Podstawowym zakres ustala się przy wdrożeniu; Rozszerzony i Pełny mogą obejmować odczyt oraz zdjęcia. Format zależy od pakietu i układu nieruchomości."
           },
           "q16": {
             "question": "Czy mogę mieć tylko jedną wizytę w miesiącu?",
-            "answer": "Standard to 2 wizyty/miesiąc; rzadsze wizyty wymagają indywidualnego uzgodnienia i mogą wpłynąć na zakres usług. Zmniejszona częstotliwość wizyt zwiększa ryzyko i może ograniczyć odpowiedzialność Sentinel; wszelkie odstępstwa od standardowego harmonogramu muszą być wyraźnie uzgodnione. Omów zmniejszoną częstotliwość podczas wdrożenia; zrozum, że dłuższe odstępy między wizytami zmniejszają wczesne wykrywanie problemów."
+            "answer": "Standard to 2 wizyty miesięcznie. Rzadszy rytm można omówić, ale zwiększa odstęp między kontrolami i może ograniczyć zakres odpowiedzialności. Taka zmiana musi być jasno uzgodniona."
           },
           "q17": {
             "question": "Czy mogę zmienić pakiet podczas współpracy?",
-            "answer": "Tak—zmiany pakietu są możliwe w dowolnym momencie po wzajemnej zgodzie. Zmiany wymagają pisemnego potwierdzenia nowych warunków pakietu i wchodzą w życie od uzgodnionej daty (zazwyczaj następny okres rozliczeniowy). Skontaktuj się z Sentinel w celu omówienia uaktualnienia/obniżenia pakietu; nowe warunki udokumentowane przed aktywacją zmiany."
+            "answer": "Tak, po wspólnym uzgodnieniu. Nowy pakiet i data zmiany są potwierdzane pisemnie, zwykle od kolejnego okresu rozliczeniowego."
           },
           "q18": {
             "question": "Czy obsługujecie nieruchomości z regularnymi pobytami gości?",
-            "answer": "Nie jako główna usługa—wsparcie wynajmu jest dostępne tylko jako moduł dodatkowy do istniejącego pakietu. Sentinel nie zapewnia pełnego zarządzania nieruchomością, komunikacji z gośćmi ani usług rezerwacyjnych; wsparcie wynajmu obejmuje tylko przygotowanie nieruchomości i kontrolę po wyjeździe. Przejrzyj moduł dodatkowy Wsparcie Wynajmu / Wakacji na stronie Usługi; wymaga pakietu podstawowego (Podstawowy, Rozszerzony lub Pełny) plus osobne uzgodnienie."
+            "answer": "Tylko w uzgodnionym module, nie jako zarządzanie wynajmem. Sentinel może obsłużyć przygotowanie, dostęp, sprzątanie lub kontrolę po wyjeździe. Rezerwacje, ceny, komunikacja z gośćmi i prowadzenie wynajmu zostają poza zakresem."
           }
         }
       },
@@ -2463,23 +2463,23 @@
         "questions": {
           "q19": {
             "question": "Jak działa komunikacja?",
-            "answer": "Komunikacja operacyjna przez dedykowany telefon/WhatsApp; formalna dokumentacja przez email. Sentinel utrzymuje osobne kanały dla potencjalnych klientów (kontakt ogólny) i aktywnych klientów (dedykowana linia operacyjna); brak komunikacji przez osobiste numery członków zespołu. Użyj formularza kontaktowego lub ogólnego numeru dla wstępnego zapytania; aktywni klienci otrzymują dedykowane informacje kontaktowe podczas wdrożenia."
+            "answer": "Nowe zapytania idą przez formularz, e-mail lub numer ogólny. Aktywni klienci dostają osobny kanał operacyjny, zwykle telefon/WhatsApp, a formalne ustalenia trafiają na e-mail. Nie pracujemy przez prywatne numery zespołu."
           },
           "q20": {
             "question": "Czy możecie odmówić współpracy?",
-            "answer": "Tak—Sentinel zastrzega sobie prawo do odmowy usługi lub rozwiązania współpracy. Sentinel może odmówić usługi, jeśli nieruchomość znajduje się poza obszarem obsługi, oczekiwania nie są zgodne z modelem pakietowym lub dopasowanie operacyjne nie jest wykonalne. Kwalifikacja następuje przed wdrożeniem; Sentinel ocenia lokalizację nieruchomości, potrzeby usługowe i oczekiwania klienta przed zaakceptowaniem zaangażowania."
+            "answer": "Tak. Sentinel może odmówić, jeśli nieruchomość jest poza obszarem, oczekiwania nie pasują do modelu pakietowego albo obsługa nie byłaby wykonalna. Ocena odbywa się przed wdrożeniem."
           },
           "q21": {
             "question": "Czy ceny i warunki mogą się zmieniać?",
-            "answer": "Tak, ale zmiany są komunikowane z wyprzedzeniem i mają zastosowanie od następnego okresu rozliczeniowego (nie wstecz). Sentinel może dostosować ceny lub warunki z wcześniejszym powiadomieniem; istniejący klienci otrzymują powiadomienie przed wejściem zmian w życie. Zmiany nie wpływają na obecny okres rozliczeniowy; klienci mogą zaakceptować nowe warunki lub rozwiązać usługę na koniec obecnego okresu."
+            "answer": "Tak. Zmiany są zapowiadane wcześniej i nie działają wstecz. Obowiązują od kolejnego okresu rozliczeniowego, a klient może zaakceptować nowe warunki albo zakończyć usługę po bieżącym okresie."
           },
           "q22": {
             "question": "Co jeśli coś nie jest opisane w dokumentacji?",
-            "answer": "Jeśli nie jest wyraźnie wymienione, nie jest wliczone w pakiet. Usługi, procedury i zobowiązania istnieją tylko jako udokumentowane; nieudokumentowane usługi wymagają osobnego uzgodnienia i zatwierdzenia. Zgodność prawna i regulacyjna nieruchomości pozostaje wyłączną odpowiedzialnością właściciela. Skontaktuj się z Sentinel z konkretnym żądaniem; wszystko poza udokumentowanym zakresem pakietu będzie wycenione osobno."
+            "answer": "Jeśli coś nie jest wymienione, nie jest automatycznie w pakiecie. Można o to zapytać, ale potrzebna będzie osobna ocena, zgoda i wycena. Zgodność prawna nieruchomości pozostaje po stronie właściciela."
           },
           "q23": {
             "question": "Dlaczego jest tak wiele zasad?",
-            "answer": "Zasady chronią obie strony poprzez określenie zakresu, zapobieganie sporom i umożliwienie odpowiedzialności. Dokumentacja zapewnia, że świadczenie usług nie zależy od indywidualnej interpretacji lub dobrej woli; wyraźne granice umożliwiają niezawodną, profesjonalną usługę. Przejrzyj strony Usługi i Jak to działa, aby zrozumieć ramy operacyjne; zasady istnieją, aby wspierać długoterminową jakość usług."
+            "answer": "Bo jasny zakres chroni jakość usługi. Właściciel wie, czego może oczekiwać, a Sentinel może działać powtarzalnie i odpowiedzialnie. To nie ma utrudniać kontaktu, tylko zapobiegać nieporozumieniom."
           }
         }
       },
@@ -2489,11 +2489,11 @@
         "questions": {
           "q24": {
             "question": "Gdzie te polityki mają zastosowanie?",
-            "answer": "Polityki mają zastosowanie do wszystkich operacji Sentinel: strony internetowej, komunikacji, umów serwisowych i relacji z klientami. Żadne ustne umowy ani nieformalne wyjątki nie zastępują udokumentowanych polityk; wszystkie warunki usługi muszą być wyraźnie uzgodnione i udokumentowane. Akceptacja udokumentowanych polityk jest wymagana do aktywacji usługi; niezgoda z politykami oznacza, że Sentinel nie jest odpowiednim dostawcą usług."
+            "answer": "Do strony, rozmów, ofert, umów i bieżącej współpracy. Ustne wyjątki nie zastępują uzgodnionych warunków. Jeśli ktoś nie akceptuje tych zasad, Sentinel prawdopodobnie nie jest właściwą usługą."
           },
           "q25": {
             "question": "Jaki jest cel tego dokumentu FAQ?",
-            "answer": "Ten dokument zapobiega nieporozumieniom, wyjaśnia granice, ustanawia wspólny punkt odniesienia i chroni obie strony. FAQ służy jako odniesienie do polityki operacyjnej i narzędzie rozwiązywania sporów; odpowiedzi są zgodne z warunkami usługi i specyfikacjami pakietów. Użyj tego FAQ jako pierwszego źródła pytań; skontaktuj się z Sentinel, jeśli Twoja konkretna sytuacja nie jest omówiona."
+            "answer": "FAQ ma szybko wyjaśnić, jak działa Sentinel i gdzie są granice usługi. Nie zastępuje umowy ani indywidualnej kwalifikacji. Jeśli sytuacja nie pasuje do odpowiedzi, najlepiej opisać ją w zapytaniu."
           }
         }
       }
@@ -2569,7 +2569,7 @@
       "intro": "Te założenia najczęściej przesuwają usługę w złą kategorię.",
       "items": [
         { "assumption": "Same klucze oznaczają pełny nadzór", "boundary": "Przechowywanie kluczy to tylko zdolność dostępu. Nadzór wymaga zakresu pakietu i raportowania." },
-        { "assumption": "SLA oznacza rozwiązanie w podanym czasie", "boundary": "SLA to dyscyplina reakcji i decyzji. Części, wykonawcy i dostępność zewnętrzna mogą wpływać na rozwiązanie." },
+        { "assumption": "SLA oznacza rozwiązanie w podanym czasie", "boundary": "SLA określa czas reakcji i decyzji. Części, wykonawcy i dostępność mogą wydłużyć samo rozwiązanie." },
         { "assumption": "Koordynacja sprzątania oznacza zarządzanie wynajmem", "boundary": "Sprzątanie albo gotowość lokalu mogą być w zakresie. Rezerwacje i zarządzanie biznesem wynajmu nie są w zakresie." },
         { "assumption": "Wsparcie awaryjne jest publiczne i na żądanie", "boundary": "Kanały awaryjne istnieją dla uprawnionych aktywnych klientów zgodnie z warunkami pakietu." },
         { "assumption": "Poza obszarem można dopłacić", "boundary": "Granica obszaru jest operacyjna, a nie negocjowana ceną." }
