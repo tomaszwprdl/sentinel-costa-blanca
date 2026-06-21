@@ -1385,12 +1385,12 @@
       "title": "FORMULARZ KONTAKTOWY",
       "requiredInfo": "Wymagane Informacje",
       "yourDetails": "Państwa Dane:",
-      "fullName": "Imię i Nazwisko",
-      "emailAddress": "Adres Email",
-      "phoneNumber": "Numer Telefonu (z kodem kraju)",
+      "fullName": "Imię i nazwisko",
+      "emailAddress": "Adres e-mail",
+      "phoneNumber": "Numer telefonu (z kodem kraju)",
       "phonePlaceholder": "+34 …",
-      "preferredContact": "Preferowana Metoda Kontaktu",
-      "preferredLanguage": "Preferowany Język",
+      "preferredContact": "Preferowana metoda kontaktu",
+      "preferredLanguage": "Preferowany język",
       "contactMethods": {
         "email": "Email",
         "whatsapp": "WhatsApp",
@@ -1401,10 +1401,10 @@
         "polish": "Polski"
       },
       "propertyInfo": "Informacje o Nieruchomości:",
-      "propertyLocation": "Lokalizacja Nieruchomości",
+      "propertyLocation": "Lokalizacja nieruchomości",
       "propertyLocationPlaceholder": "Miasto lub pełny adres",
       "propertyLocationHelp": "Obsługujemy nieruchomości w promieniu Torrevieja + 50-70km",
-      "propertyType": "Typ Nieruchomości",
+      "propertyType": "Typ nieruchomości",
       "propertyTypes": {
         "apartment": "Apartament",
         "house": "Dom",
@@ -1418,27 +1418,27 @@
         "mixed-not-defined": "Model mieszany / jeszcze nieustalony"
       },
       "serviceRequirements": "Wymagania Usługowe:",
-      "expectedPackage": "Oczekiwany Pakiet",
+      "expectedPackage": "Oczekiwany pakiet",
       "packages": {
         "green": "Pakiet Podstawowy",
         "orange": "Pakiet Rozszerzony",
         "red": "Pakiet Pełny",
         "consultation": "Nie jestem pewien - potrzebuję konsultacji"
       },
-      "accessFrequency": "Oczekiwana Częstotliwość Dostępu (jeśli Rozszerzony lub Pełny)",
+      "accessFrequency": "Oczekiwana częstotliwość dostępu (jeśli Rozszerzony lub Pełny)",
       "accessFrequencies": {
         "oneToTwo": "1-2 razy w miesiącu",
         "threeToFive": "3-5 razy w miesiącu",
         "moreThanFive": "Więcej niż 5 razy w miesiącu",
         "seasonal": "Różnie w zależności od sezonu"
       },
-      "primaryNeeds": "Główne Potrzeby Usługowe",
-      "primaryNeedsPlaceholder": "Krótki opis czego Państwo potrzebują od Sentinel (opcjonalne)",
+      "primaryNeeds": "Główne potrzeby usługowe",
+      "primaryNeedsPlaceholder": "Krótko opisz, czego potrzebujesz (opcjonalnie)",
       "selectPlaceholder": "Wybierz...",
       "optionalLabel": "opcjonalnie",
       "maxCharacters": "Maksymalnie 500 znaków",
-      "acknowledgment": "Rozumiem, że Sentinel działa w oparciu o model usługi pakietowej. Usługi nie zawarte w wybranym pakiecie są organizowane i wyceniane osobno.",
-      "submitButton": "Wyślij Zapytanie",
+      "acknowledgment": "Rozumiem, że Sentinel działa w modelu pakietowym. Usługi poza wybranym pakietem są organizowane i wyceniane osobno.",
+      "submitButton": "Wyślij zapytanie",
       "requiredField": "Pole wymagane",
       "submitError": "Nie udało się wysłać zapytania.",
       "submitErrorGeneric": "Wystąpił błąd podczas wysyłania zapytania. Spróbuj ponownie."
@@ -1449,14 +1449,14 @@
       "received": "Państwa żądanie zostało otrzymane i zostanie przejrzane w ciągu 24-48 godzin.",
       "nextStepsTitle": "Kolejne kroki:",
       "nextSteps": {
-        "step1": "Otrzymają Państwo automatyczny email potwierdzający na adres {email}",
-        "step2": "Sentinel przejrzy lokalizację Państwa nieruchomości i wymagania usługowe",
-        "step3": "Jeśli Państwa nieruchomość znajduje się w naszym obszarze obsługi, a Państwa potrzeby są zgodne z naszym modelem usługi, skontaktujemy się z Państwem preferowaną metodą w celu omówienia wdrożenia"
+        "step1": "Dostaniesz automatyczny email potwierdzający na adres {email}",
+        "step2": "Sprawdzimy lokalizację i potrzeby Twojej nieruchomości",
+        "step3": "Jeśli nieruchomość jest w naszym obszarze, a potrzeby pasują do modelu, odezwiemy się wybraną przez Ciebie metodą"
       },
       "outsideAreaTitle": "Co jeśli moja nieruchomość jest poza obszarem obsługi?",
       "outsideAreaText": "Zostanie Państwo powiadomieni emailem. Nie możemy obsługiwać nieruchomości poza promieniem Torrevieja + 50-70km.",
       "noResponseTitle": "Co jeśli nie otrzymam odpowiedzi?",
-      "noResponseText": "Proszę sprawdzić folder ze spamem. Jeśli nie otrzymają Państwo żadnej komunikacji w ciągu 48 godzin, proszę skontaktować się bezpośrednio pod adresem {email} lub {phone}.",
+      "noResponseText": "Sprawdź folder ze spamem. Jeśli w ciągu 48 godzin nie dostaniesz od nas wiadomości, napisz lub zadzwoń: {email} lub {phone}.",
       "referenceNumber": "Numer referencyjny:",
       "returnToHome": "Powrót do strony głównej"
     },
@@ -1510,13 +1510,13 @@
     },
     "redesign": {
       "hero": {
-        "eyebrow": "Kwalifikacja zapytania",
-        "headline": "Przekaż kontekst nieruchomości przed działaniem.",
-        "lead": "Sentinel najpierw kwalifikuje lokalizację, sposób używania i oczekiwany zakres. Formularz otwiera plik zapytania, nie uruchamia usługi automatycznie.",
+        "eyebrow": "Zapytanie wstępne",
+        "headline": "Powiedz nam, jaką nieruchomość i sytuację sprawdzamy.",
+        "lead": "Wyślij zapytanie bez zobowiązań. Sprawdzimy lokalizację, sposób używania i zakres — i odezwiemy się z następnym krokiem.",
         "primaryCta": "Przejdź do formularza",
         "secondaryCta": "Co przygotować",
-        "artifactTitle": "Plik kwalifikacji właściciela",
-        "artifactBadge": "Do oceny zakresu",
+        "artifactTitle": "Co sprawdzamy w zapytaniu",
+        "artifactBadge": "Zanim odpowiemy",
         "artifactRows": [
           { "label": "Dane nieruchomości", "value": "lokalizacja, typ, dostęp" },
           { "label": "Zakres do potwierdzenia", "value": "pakiet, używanie, potrzeba" },
@@ -1531,13 +1531,13 @@
       "method": {
         "eyebrow": "Metody kontaktu",
         "title": "Te dane służą do pierwszego zapytania właściciela.",
-        "note": "Strona kontaktowa służy do wstępnych zapytań i przeglądu zakresu. Aktywne sprawy operacyjne są prowadzone kanałami przekazanymi podczas wdrożenia."
+        "note": "Ten formularz służy do nowych zapytań. Bieżące sprawy aktywnych klientów idą kanałami z wdrożenia."
       },
       "dossier": {
-        "eyebrow": "Plik zapytania",
-        "title": "Najpierw kontekst, potem decyzja o zakresie.",
-        "intro": "Kontakt służy do kwalifikacji nieruchomości i oczekiwań właściciela. Sentinel odpowiada po sprawdzeniu obszaru, modelu usługi i granic odpowiedzialności.",
-        "helpsTitle": "Informacje, które pomagają w kwalifikacji",
+        "eyebrow": "Twoje zapytanie",
+        "title": "Zbieramy tylko to, co pomaga ocenić sprawę.",
+        "intro": "Im jaśniejszy kontekst nieruchomości i sytuacji, tym szybciej odpowiemy, czy i jak możemy pomóc.",
+        "helpsTitle": "Co warto mieć pod ręką",
         "notDecidedEyebrow": "Nie rozstrzyga formularz",
         "notDecidedTitle": "Formularz nie uruchamia działania.",
         "notDecidedItems": [
@@ -1577,15 +1577,15 @@
         ]
       },
       "fit": {
-        "eyebrow": "Obszar i dopasowanie",
-        "title": "Pierwszym filtrem jest lokalizacja, potem zakres.",
-        "intro": "Sentinel obsługuje Torrevieja i około 50-70 km wokół miasta. Zapytania spoza promienia są odrzucane zamiast rozciągane na słabą obsługę.",
+        "eyebrow": "Zanim wyślesz",
+        "title": "Zanim wyślesz — trzy rzeczy, które warto wiedzieć.",
+        "intro": "Działamy w jasnych granicach. To pomaga nam szybciej odpowiedzieć.",
         "cards": [
-          { "title": "W obszarze", "body": "Nieruchomość może zostać rozpatrzona na etapie wstępnej oceny zapytania." },
-          { "title": "Poza obszarem", "body": "Nie ma wyjątku, dopłaty ani tymczasowej obsługi poza zasięgiem." },
-          { "title": "W zakresie", "body": "Zapytanie musi mieścić się w logice pakietu albo uzgodnionego modułu operacyjnego." }
+          { "title": "Obszar", "body": "Torrevieja i okolica, około 50-70 km. Poza tym obszarem nie zadziałamy." },
+          { "title": "Model", "body": "Pracujemy w miesięcznym pakiecie — nie dorywczo i nie jako concierge." },
+          { "title": "Kanał", "body": "To formularz nowego zapytania. Aktywni klienci mają osobne kanały; to nie jest linia awaryjna." }
         ],
-        "note": "Dopasowanie lokalizacji nie oznacza automatycznej akceptacji. Zakres, dostęp i oczekiwania są oceniane osobno."
+        "note": "Zgłoszenie z naszego obszaru to dobry początek — zakres i szczegóły ustalamy po kontakcie."
       },
       "unsuitable": {
         "eyebrow": "Poza dopasowaniem",
@@ -1602,24 +1602,23 @@
       },
       "form": {
         "eyebrow": "Formularz zapytania",
-        "title": "Uzupełnij plik kwalifikacji nieruchomości.",
-        "intro": "Pola zostają bez zmian funkcjonalnych, ale są pogrupowane według kolejności oceny: właściciel, nieruchomość, używanie i potwierdzenie granic.",
+        "title": "Uzupełnij zapytanie",
+        "intro": "Kilka pól o Tobie, nieruchomości i sposobie używania. Zwykle zajmuje minutę.",
         "ownerSection": "Dane właściciela",
         "propertySection": "Dane nieruchomości",
-        "serviceSection": "Sposób używania i potrzeba usługi",
+        "serviceSection": "Sposób używania i potrzeby",
         "consentSection": "Potwierdzenie zakresu",
-        "submitNote": "Wysłanie formularza nie oznacza automatycznej akceptacji ani reakcji awaryjnej.",
+        "submitNote": "To zapytanie, nie zlecenie — najpierw je przeczytamy i odpowiemy. Nie jest to kanał awaryjny.",
         "submitFollowUp": "Po wysłaniu Sentinel sprawdzi lokalizację, zakres i kolejny możliwy krok."
       },
       "afterSubmit": {
         "eyebrow": "Po wysłaniu",
         "title": "Co dzieje się po wysłaniu zapytania",
-        "intro": "Następnym etapem jest przegląd, nie automatyczne wdrożenie ani działanie w terenie.",
+        "intro": "Krótko, czego się spodziewać po wysłaniu:",
         "steps": [
-          { "marker": "01", "title": "Zapytanie przyjęte", "body": "Formularz trafia do wstępnego przeglądu jako kontekst nieruchomości i właściciela." },
-          { "marker": "02", "title": "Zakres sprawdzony", "body": "Sentinel porównuje lokalizację, sposób używania i oczekiwania z modelem usługi." },
-          { "marker": "03", "title": "Kontakt i potwierdzenie", "body": "Jeżeli zapytanie pasuje, Sentinel kontaktuje się w celu potwierdzenia kolejnego kroku." },
-          { "marker": "04", "title": "Uzgodnienie przed działaniem", "body": "Żadne działanie nie startuje bez potwierdzonego zakresu, dostępu i warunków." }
+          { "marker": "01", "title": "Czytamy zapytanie", "body": "Sprawdzamy nieruchomość i sytuację, którą opisujesz." },
+          { "marker": "02", "title": "Potwierdzamy dopasowanie", "body": "Sprawdzamy obszar, zakres i czy możemy pomóc w tym modelu." },
+          { "marker": "03", "title": "Proponujemy następny krok", "body": "Jeśli pasuje, odzywamy się i mówimy, co dalej." }
         ]
       },
       "confirmation": {
@@ -1628,8 +1627,8 @@
         "body": "Sentinel sprawdzi lokalizację i dopasowanie usługi przed zaproponowaniem kolejnego kroku."
       },
       "finalCta": {
-        "title": "Sprawdź model usługi przed wysłaniem.",
-        "intro": "Jeżeli zapytanie nadal jest niepewne, strony Usługi i Jak to działa wyjaśniają pakiety, zasady dostępu, dokumentację i granice decyzji."
+        "title": "Chcesz najpierw zobaczyć, jak działamy?",
+        "intro": "Strony Usługi i Jak to działa pokazują pakiety, dostęp, dokumentację i granice decyzji. Możesz też po prostu wysłać zapytanie — odpowiemy."
       }
     }
   },

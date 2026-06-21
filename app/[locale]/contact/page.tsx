@@ -151,22 +151,6 @@ function ContactInfoList({
   );
 }
 
-function ContactCautionList({ items }: { items: InfoCard[] }) {
-  return (
-    <div className="contact-caution-list">
-      {items.map((item) => (
-        <article key={item.title} className="contact-caution-list__item">
-          <span className="contact-caution-list__mark" aria-hidden="true">!</span>
-          <div>
-            <h4>{item.title}</h4>
-            <p>{item.body}</p>
-          </div>
-        </article>
-      ))}
-    </div>
-  );
-}
-
 function ContactPageInner() {
   const locale = useLocale();
   const searchParams = useSearchParams();
@@ -180,10 +164,7 @@ function ContactPageInner() {
   const preparationItems = t.raw('redesign.prepare.items') as MarkedItem[];
   const routeCards = t.raw('redesign.routes.cards') as Required<MarkedItem>[];
   const fitCards = t.raw('redesign.fit.cards') as InfoCard[];
-  const unsuitableItems = t.raw('redesign.unsuitable.items') as InfoCard[];
   const nextSteps = t.raw('redesign.afterSubmit.steps') as MarkedItem[];
-  const notDecidedItems = t.raw('redesign.dossier.notDecidedItems') as InfoCard[];
-  const summaryItems = t.raw('redesign.dossier.summaryItems') as Fact[];
 
   const estimatorPrefill = useMemo(() => {
     const package_ = searchParams.get('est_package');
@@ -393,12 +374,6 @@ function ContactPageInner() {
                 <ContactInfoList items={preparationItems.slice(0, 5)} />
               </div>
 
-              <div className="contact-support-panel contact-support-panel--quiet">
-                <p className="section-label">{t('redesign.dossier.notDecidedEyebrow')}</p>
-                <h3>{t('redesign.dossier.notDecidedTitle')}</h3>
-                <ContactCautionList items={notDecidedItems} />
-              </div>
-
               <ContactMethodPanel
                 eyebrow={t('directContact.subtitle')}
                 title={t('directContact.title')}
@@ -421,14 +396,6 @@ function ContactPageInner() {
                     <h2 className="h2-system">{t('redesign.form.title')}</h2>
                     <p className="mt-3 mb-0 text-body">{t('redesign.form.intro')}</p>
                   </div>
-                  <dl className="contact-form-dossier__summary">
-                    {summaryItems.map((item) => (
-                      <div key={item.label}>
-                        <dt>{item.label}</dt>
-                        <dd>{item.value}</dd>
-                      </div>
-                    ))}
-                  </dl>
                 </div>
 
                 {pathwayKey && (
@@ -743,26 +710,9 @@ function ContactPageInner() {
               <p>{t('redesign.fit.intro')}</p>
             </div>
 
-            <div className="contact-boundary-grid">
-              <div className="contact-support-panel">
-                <h3>{t('redesign.dossier.fitTitle')}</h3>
-                <ContactInfoList items={fitCards} markerMode="number" />
-                <p className="contact-support-panel__note">{t('redesign.fit.note')}</p>
-              </div>
-
-              <div className="contact-support-panel">
-                <h3>{t('redesign.routes.title')}</h3>
-                <ContactInfoList items={routeCards} />
-              </div>
-            </div>
-
-            <div className="contact-unsuitable-shell">
-              <div>
-                <p className="section-label">{t('redesign.unsuitable.eyebrow')}</p>
-                <h3>{t('redesign.unsuitable.title')}</h3>
-                <p>{t('redesign.unsuitable.intro')}</p>
-              </div>
-              <ContactInfoList items={unsuitableItems} markerMode="number" />
+            <div className="contact-support-panel contact-boundary-panel">
+              <ContactInfoList items={fitCards} markerMode="number" />
+              <p className="contact-support-panel__note">{t('redesign.fit.note')}</p>
             </div>
           </div>
         </Section>

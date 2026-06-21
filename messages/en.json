@@ -1433,7 +1433,7 @@
         "seasonal": "Varies seasonally"
       },
       "primaryNeeds": "Primary Service Needs",
-      "primaryNeedsPlaceholder": "Brief description of what you need from Sentinel (optional)",
+      "primaryNeedsPlaceholder": "Briefly, what you need (optional)",
       "selectPlaceholder": "Select...",
       "optionalLabel": "optional",
       "maxCharacters": "Maximum 500 characters",
@@ -1450,8 +1450,8 @@
       "nextStepsTitle": "Next steps:",
       "nextSteps": {
         "step1": "You will receive an automatic confirmation email at {email}",
-        "step2": "Sentinel will review your property location and service requirements",
-        "step3": "If your property is within our service area and your needs align with our service model, we will contact you via your preferred method to discuss onboarding"
+        "step2": "We'll review your property's location and needs",
+        "step3": "If your property is in our area and your needs fit the model, we'll reach out via your preferred method"
       },
       "outsideAreaTitle": "What if my property is outside the service area?",
       "outsideAreaText": "You will be notified via email. We cannot service properties beyond Torrevieja + 50-70km radius.",
@@ -1510,13 +1510,13 @@
     },
     "redesign": {
       "hero": {
-        "eyebrow": "Qualified intake",
-        "headline": "Send property context before action.",
-        "lead": "Sentinel qualifies location, usage pattern, and expected scope first. The form opens an inquiry file; it does not start service automatically.",
+        "eyebrow": "Initial inquiry",
+        "headline": "Tell us what property and situation we're checking.",
+        "lead": "Send a no-obligation inquiry. We'll check the location, how the property is used, and the scope — and come back to you with the next step.",
         "primaryCta": "Go to form",
         "secondaryCta": "What to prepare",
-        "artifactTitle": "Owner qualification file",
-        "artifactBadge": "For scope review",
+        "artifactTitle": "What we check in an inquiry",
+        "artifactBadge": "Before we reply",
         "artifactRows": [
           { "label": "Property data", "value": "location, type, access" },
           { "label": "Scope to confirm", "value": "package, usage, need" },
@@ -1531,13 +1531,13 @@
       "method": {
         "eyebrow": "Direct methods",
         "title": "Use these details for new-owner intake.",
-        "note": "The public contact page is for initial inquiries and first assessment. Active operational requests use the channels provided during onboarding."
+        "note": "This form is for new inquiries. Active clients' day-to-day requests go through their onboarding channels."
       },
       "dossier": {
-        "eyebrow": "Inquiry file",
-        "title": "Context first, then a scope decision.",
-        "intro": "Contact is for qualifying the property and owner expectations. Sentinel responds after checking the area, service model, and responsibility boundaries.",
-        "helpsTitle": "Information that helps qualification",
+        "eyebrow": "Your inquiry",
+        "title": "We only ask for what helps us assess the request.",
+        "intro": "The clearer the property and situation, the faster we can tell you whether and how we can help.",
+        "helpsTitle": "Helpful to have ready",
         "notDecidedEyebrow": "Not decided by the form",
         "notDecidedTitle": "The form does not start action.",
         "notDecidedItems": [
@@ -1577,15 +1577,15 @@
         ]
       },
       "fit": {
-        "eyebrow": "Service area and fit",
-        "title": "The first filter is location, then scope.",
-        "intro": "Sentinel serves Torrevieja and approximately 50-70 km around it. Requests outside the radius are declined rather than stretched into weak coverage.",
+        "eyebrow": "Before you send",
+        "title": "Before you send — three things worth knowing.",
+        "intro": "We work within clear limits. It helps us reply faster.",
         "cards": [
-          { "title": "Inside area", "body": "The property can be considered for initial inquiry review." },
-          { "title": "Outside area", "body": "No exception, premium override, or temporary coverage is offered." },
-          { "title": "Inside scope", "body": "The request must fit package logic or an agreed operational module." }
+          { "title": "Area", "body": "Torrevieja and nearby, about 50-70 km. Outside that, we can't help." },
+          { "title": "Model", "body": "We work on a monthly package — not one-off, and not concierge." },
+          { "title": "Channel", "body": "This is a new-inquiry form. Active clients have separate channels; it isn't an emergency line." }
         ],
-        "note": "Location fit does not guarantee acceptance. Scope, access, and expectations are reviewed separately."
+        "note": "An in-area inquiry is a good start — we settle scope and details after we talk."
       },
       "unsuitable": {
         "eyebrow": "Not suitable",
@@ -1602,24 +1602,23 @@
       },
       "form": {
         "eyebrow": "Inquiry form",
-        "title": "Complete the property qualification file.",
-        "intro": "The functional fields are unchanged, but they are grouped in the review order: owner, property, usage, and boundary acknowledgment.",
+        "title": "Complete your inquiry",
+        "intro": "A few fields about you, the property, and how it's used. Usually takes a minute.",
         "ownerSection": "Owner details",
         "propertySection": "Property details",
-        "serviceSection": "Expected usage and service need",
+        "serviceSection": "Usage and needs",
         "consentSection": "Scope acknowledgment",
-        "submitNote": "Submitting the form does not imply automatic acceptance or emergency response.",
+        "submitNote": "This is an inquiry, not an order — we read it first and reply. It isn't an emergency channel.",
         "submitFollowUp": "After submission, Sentinel checks the location, scope, and next possible step."
       },
       "afterSubmit": {
         "eyebrow": "After submitting",
         "title": "What happens after the inquiry is sent",
-        "intro": "The next step is review, not automatic onboarding or field action.",
+        "intro": "Briefly, what to expect after you send:",
         "steps": [
-          { "marker": "01", "title": "Inquiry received", "body": "The form enters initial review as property and owner context." },
-          { "marker": "02", "title": "Scope checked", "body": "Sentinel compares location, usage pattern, and expectations with the service model." },
-          { "marker": "03", "title": "Contact and confirmation", "body": "If the inquiry fits, Sentinel contacts you to confirm the next step." },
-          { "marker": "04", "title": "Agreement before action", "body": "No action starts without confirmed scope, access, and terms." }
+          { "marker": "01", "title": "We read your inquiry", "body": "We look at the property and situation you describe." },
+          { "marker": "02", "title": "We confirm the fit", "body": "We check the area, the scope, and whether we can help in this model." },
+          { "marker": "03", "title": "We propose the next step", "body": "If it fits, we get back to you with what happens next." }
         ]
       },
       "confirmation": {
@@ -1628,8 +1627,8 @@
         "body": "Sentinel will check location and service fit before proposing any next step."
       },
       "finalCta": {
-        "title": "Review the service model before submitting.",
-        "intro": "If the request is still uncertain, Services and How It Works explain the package levels, access rules, documentation, and decision boundaries."
+        "title": "Want to see how it works first?",
+        "intro": "Services and How It Works show the packages, access, documentation, and decision limits. Or just send your inquiry — we'll reply."
       }
     }
   },

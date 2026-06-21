@@ -19265,8 +19265,7 @@ textarea:focus {
   padding: 1rem 1.45rem 1rem 1.85rem;
 }
 
-.contact-record-artifact__rows dt,
-.contact-form-dossier__summary dt {
+.contact-record-artifact__rows dt {
   color: var(--muted);
   font-size: 0.68rem;
   font-weight: 900;
@@ -19274,8 +19273,7 @@ textarea:focus {
   text-transform: uppercase;
 }
 
-.contact-record-artifact__rows dd,
-.contact-form-dossier__summary dd {
+.contact-record-artifact__rows dd {
   margin: 0;
   color: var(--contact-ink);
   font-size: 0.95rem;
@@ -19495,25 +19493,6 @@ textarea:focus {
   gap: 1rem;
   border-bottom: 1px solid color-mix(in srgb, var(--line) 68%, var(--contact-teal));
   padding-bottom: 1.4rem;
-}
-
-.contact-form-dossier__summary {
-  display: grid;
-  gap: 0;
-  margin: 0;
-  border: 1px solid color-mix(in srgb, var(--line) 62%, var(--contact-teal));
-  border-radius: var(--site-radius-card);
-  background: color-mix(in srgb, var(--contact-paper) 72%, var(--surface-card));
-  overflow: hidden;
-}
-
-.contact-form-dossier__summary div {
-  border-bottom: 1px solid var(--structural-light);
-  padding: 0.85rem 1rem;
-}
-
-.contact-form-dossier__summary div:last-child {
-  border-bottom: 0;
 }
 
 .contact-context-card {
@@ -19784,24 +19763,6 @@ textarea:focus {
 }
 
 @media (min-width: 768px) {
-  .contact-form-dossier__header {
-    grid-template-columns: minmax(0, 0.62fr) minmax(16rem, 0.38fr);
-    align-items: start;
-  }
-
-  .contact-form-dossier__summary {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .contact-form-dossier__summary div {
-    border-right: 1px solid var(--structural-light);
-    border-bottom: 0;
-  }
-
-  .contact-form-dossier__summary div:last-child {
-    border-right: 0;
-  }
-
   .contact-submit-row {
     grid-template-columns: minmax(0, 1fr) auto;
   }
