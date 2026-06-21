@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
@@ -182,6 +183,16 @@ export default async function ServicesPage({
                       <h3>{t('redesign.modules.cleaning.title')}</h3>
                       <p>{t('redesign.modules.cleaning.intro')}</p>
                     </div>
+                    <figure className="services-proof-photo services-proof-photo--capability">
+                      <Image
+                        src="/photos/services-operational-capability.webp"
+                        alt={t('redesign.modules.capabilityImageAlt')}
+                        fill
+                        sizes="(min-width: 1024px) 38vw, 100vw"
+                        className="services-proof-photo__image"
+                        loading="eager"
+                      />
+                    </figure>
                     <div className="services-cleaning-focus__grid">
                       {CLEANING_CAPABILITY_KEYS.map((key) => (
                         <article key={key} className="services-cleaning-focus__item">

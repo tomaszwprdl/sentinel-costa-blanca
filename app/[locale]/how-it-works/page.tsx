@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
@@ -133,6 +134,16 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
               </ol>
 
               <aside className="hiw-procedure-rulebook" aria-label={t('redesign.procedure.rulesTitle')}>
+                <figure className="hiw-proof-photo hiw-proof-photo--visit-record">
+                  <Image
+                    src="/photos/hiw-visit-record.webp"
+                    alt={t('redesign.procedure.visitRecordImageAlt')}
+                    fill
+                    sizes="(min-width: 768px) 32vw, 100vw"
+                    className="hiw-proof-photo__image"
+                    loading="eager"
+                  />
+                </figure>
                 <p className="section-label">{t('redesign.procedure.rulesEyebrow')}</p>
                 <h3>{t('redesign.procedure.rulesTitle')}</h3>
                 <div>

@@ -24,9 +24,9 @@ const GATE_EVIDENCE_MARK_KEYS = ['access', 'record', 'decision'] as const;
 const PATHWAY_EVIDENCE_ROW_KEYS = ['first', 'second', 'third'] as const;
 
 const PATHWAY_MEDIA: Record<PathwayKey, string> = {
-  'private-use-only': '/photos/sentinel-apartment-entry-placeholder.png',
-  'regular-guest-stays': '/photos/sentinel-cleaning-readiness-placeholder.png',
-  'mixed-not-defined': '/photos/sentinel-corridor-exterior-placeholder.png',
+  'private-use-only': '/photos/home-pathway-private-empty-check.webp',
+  'regular-guest-stays': '/photos/home-pathway-guest-readiness.webp',
+  'mixed-not-defined': '/photos/home-pathway-mixed-decision-threshold.webp',
 };
 
 // Each pathway carries its own operational geometry on the selected hero
@@ -461,13 +461,13 @@ function PathwayHero({
 
   return (
     <section className="pathway-hero motion-panel-reveal" data-pathway={pathway}>
-      <div className="pathway-hero__media" aria-hidden>
+      <div className="pathway-hero__media">
         <Image
           src={PATHWAY_MEDIA[pathway]}
-          alt=""
+          alt={t(`mediaAlt.${pathway}`)}
           fill
           sizes="100vw"
-          className="object-cover"
+          className="pathway-hero__image object-cover"
           priority
         />
       </div>

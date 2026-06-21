@@ -6,6 +6,7 @@ import UsagePathwayLayer, {
   PathwayProcessPanel,
 } from '@/components/UsagePathwayLayer';
 import HeroGateFrame from '@/components/HeroGateFrame';
+import Image from 'next/image';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
@@ -94,7 +95,16 @@ export default async function HomePage({
         </Section>
 
         <section className="page-final-cta home-handoff-cta" aria-labelledby="home-handoff-cta-heading">
-          <div className="home-handoff-cta__media" aria-hidden />
+          <div className="home-handoff-cta__media">
+            <Image
+              src="/photos/final-cta-handoff-checklist.webp"
+              alt={t('finalCta.mediaAlt')}
+              fill
+              sizes="100vw"
+              className="home-handoff-cta__image"
+              loading="eager"
+            />
+          </div>
           <div className="home-handoff-cta__scrim" aria-hidden />
           <span className="home-handoff-cta__edge home-handoff-cta__edge--top" aria-hidden />
           <span className="home-handoff-cta__edge home-handoff-cta__edge--bottom" aria-hidden />

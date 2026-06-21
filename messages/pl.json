@@ -77,6 +77,11 @@
           "value": "Według ustaleń"
         }
       },
+      "mediaAlt": {
+        "private-use-only": "Operacyjne zdjęcie zastępcze kluczy i notatnika przygotowanych do kontroli pustego lokalu",
+        "regular-guest-stays": "Operacyjne zdjęcie zastępcze przygotowanej sypialni z kluczami i folderem gotowości",
+        "mixed-not-defined": "Operacyjne zdjęcie zastępcze kluczy, kart i folderu używanych do klasyfikacji zakresu"
+      },
       "proof": {
         "eyebrow": "Dowód działania",
         "title": "Lokalna obecność, udokumentowany stan, kontrolowany dostęp.",
@@ -661,7 +666,8 @@
       "p1": "Zarządzanie reaktywne opiera się na reagowaniu. System opiera się na stałej kontroli.",
       "p2": "Sentinel pomaga utrzymać lokalny porządek działań: zakres, dokumentację, dostęp i decyzje w określonych granicach.",
       "cta": "Rozpocznij zapytanie",
-      "secondaryCta": "Zobacz pakiety"
+      "secondaryCta": "Zobacz pakiety",
+      "mediaAlt": "Operacyjne zdjęcie zastępcze listy przekazania, kluczy i notatnika na stole"
     }
   },
   "services": {
@@ -837,6 +843,7 @@
         "eyebrow": "Warstwa operacyjna",
         "title": "Sprzątanie, dostęp i gotowość są zdolnościami operacyjnymi wewnątrz pakietu.",
         "intro": "Pakiet pozostaje źródłem uprawnień. Sprzątanie/gotowość, przechowywanie kluczy, obsługa wejść i przygotowanie sezonowe są realizowane tylko w uzgodnionym zakresie nadzoru.",
+        "capabilityImageAlt": "Operacyjne zdjęcie zastępcze kluczy, notatnika i ściereczki przygotowanych do zadania dostępu lub gotowości",
         "cleaning": {
           "eyebrow": "Sprzątanie, gotowość i obsługa pobytów",
           "title": "Sprzątanie jest podstawową zdolnością praktyczną wewnątrz nadzoru.",
@@ -1653,6 +1660,7 @@
         "eyebrow": "Korytarz procedury",
         "title": "Dostęp, wizyta, raport, decyzja i działanie przechodzą przez jedną kontrolowaną sekwencję.",
         "intro": "Proces pokazuje właścicielowi, co jest ustalone przed działaniem, co dzieje się na miejscu, co zostaje zapisane i gdzie decyzja wraca do właściciela.",
+        "visitRecordImageAlt": "Operacyjne zdjęcie zastępcze przygotowania zapisu wizyty przy drzwiach mieszkania",
         "rulesEyebrow": "Zasada operacyjna",
         "rulesTitle": "Sekwencja chroni zakres.",
         "rules": [
@@ -2864,6 +2872,7 @@
         "lead": "Sentinel zapewnia reprezentację właściciela na miejscu na południowym Costa Blanca. Model porządkuje lokalną obecność, dostęp, dokumentację i decyzje właściciela w określonym zakresie operacyjnym.",
         "primaryCta": "Rozpocznij zapytanie",
         "secondaryCta": "Zobacz zakres usług",
+        "operatorImageAlt": "Operacyjne zdjęcie zastępcze kluczy i notatnika przygotowywanych do lokalnej reprezentacji właściciela",
         "artifactBadge": "Obecność i granice",
         "artifactTitle": "Rejestr operatora lokalnego",
         "artifactRows": [
@@ -2949,7 +2958,8 @@
           { "title": "Relacje lokalne", "body": "Sprzątanie, technicy i koordynacja dostępu działają lepiej w znanym obszarze." },
           { "title": "Odmowa poza obszarem", "body": "Nieruchomości poza zasięgiem są odrzucane zamiast włączane w słabą obsługę." }
         ],
-        "note": "Ta granica chroni jakość usługi dla nieruchomości znajdujących się w obszarze działania."
+        "note": "Ta granica chroni jakość usługi dla nieruchomości znajdujących się w obszarze działania.",
+        "exteriorImageAlt": "Operacyjne zdjęcie zastępcze lokalnego wejścia do budynku i zewnętrznej strefy dostępu"
       },
       "capabilities": {
         "eyebrow": "Zdolność bez przesady",

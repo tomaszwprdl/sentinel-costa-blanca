@@ -77,6 +77,11 @@
           "value": "By agreement"
         }
       },
+      "mediaAlt": {
+        "private-use-only": "Operational placeholder photo of keys and a notebook prepared for an empty-property check",
+        "regular-guest-stays": "Operational placeholder photo of a prepared bedroom with keys and a readiness folder",
+        "mixed-not-defined": "Operational placeholder photo of keys, cards, and a folder used to classify service scope"
+      },
       "proof": {
         "eyebrow": "Operating proof",
         "title": "Local presence, documented condition, controlled access.",
@@ -661,7 +666,8 @@
       "p1": "Reactive management is based on reacting. The system is based on steady control.",
       "p2": "Sentinel helps keep local operations structured: scope, documentation, access, and decisions within defined limits.",
       "cta": "Start an inquiry",
-      "secondaryCta": "View packages"
+      "secondaryCta": "View packages",
+      "mediaAlt": "Operational placeholder photo of a handoff checklist, keys, and a notebook on a table"
     }
   },
   "services": {
@@ -837,6 +843,7 @@
         "eyebrow": "Operational layer",
         "title": "Cleaning, access, and readiness are operational assets inside the package.",
         "intro": "The package remains the authority. Cleaning/readiness, key custody, access support, and seasonal preparation are delivered only inside the agreed oversight scope.",
+        "capabilityImageAlt": "Operational placeholder photo of keys, a notebook, and cleaning cloth prepared for an access or readiness task",
         "cleaning": {
           "eyebrow": "Cleaning, readiness and stay support",
           "title": "Cleaning is a core practical capability inside oversight.",
@@ -1653,6 +1660,7 @@
         "eyebrow": "Procedure corridor",
         "title": "Access, visit, report, decision, and action move through one controlled sequence.",
         "intro": "The process is built so the owner can see what is established before action, what happens on site, what is recorded, and where a decision returns to the owner.",
+        "visitRecordImageAlt": "Operational placeholder photo of a visit record setup outside an apartment door",
         "rulesEyebrow": "Operating rule",
         "rulesTitle": "The sequence protects the scope.",
         "rules": [
@@ -2864,6 +2872,7 @@
         "lead": "Sentinel provides Structured Property Oversight for remote owners on the southern Costa Blanca. The model exists so local presence, access, documentation, and owner decisions are handled inside a defined operating scope.",
         "primaryCta": "Start an inquiry",
         "secondaryCta": "View service scope",
+        "operatorImageAlt": "Operational placeholder photo of keys and a notebook being prepared for local owner representation",
         "artifactBadge": "Presence and boundaries",
         "artifactTitle": "Local operator record",
         "artifactRows": [
@@ -2949,7 +2958,8 @@
           { "title": "Local relationships", "body": "Cleaners, technicians, and access coordination work better inside a known area." },
           { "title": "Service refusal", "body": "Out-of-area properties are declined instead of being absorbed into weak coverage." }
         ],
-        "note": "The boundary protects service quality for properties inside the operating area."
+        "note": "The boundary protects service quality for properties inside the operating area.",
+        "exteriorImageAlt": "Operational placeholder photo of a local apartment entrance and exterior access area"
       },
       "capabilities": {
         "eyebrow": "Capability without exaggeration",

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
@@ -24,11 +25,13 @@ const DETAIL_KEYS = ['model', 'area', 'accountability'] as const;
 function LocalOperatorRecord({
   badge,
   title,
+  imageAlt,
   rows,
   facts,
 }: {
   badge: string;
   title: string;
+  imageAlt: string;
   rows: Fact[];
   facts: Fact[];
 }) {
@@ -38,6 +41,16 @@ function LocalOperatorRecord({
         <p className="section-label">{badge}</p>
         <h2>{title}</h2>
       </div>
+      <figure className="about-local-record__photo">
+        <Image
+          src="/photos/about-operator-presence.webp"
+          alt={imageAlt}
+          fill
+          sizes="(min-width: 1024px) 42vw, 100vw"
+          className="about-proof-photo__image"
+          loading="eager"
+        />
+      </figure>
       <dl className="about-local-record__rows">
         {rows.map((row) => (
           <div key={row.label}>
@@ -254,6 +267,7 @@ export default async function AboutPage({
               title={t('redesign.hero.artifactTitle')}
               rows={heroRows}
               facts={heroFacts}
+              imageAlt={t('redesign.hero.operatorImageAlt')}
             />
           </div>
         </Section>
@@ -290,6 +304,16 @@ export default async function AboutPage({
               <h2 className="h2-system">{t('redesign.local.title')}</h2>
               <p>{t('redesign.local.intro')}</p>
               <p className="about-local-layout__note">{t('redesign.local.note')}</p>
+              <figure className="about-local-context-photo">
+                <Image
+                  src="/photos/about-local-exterior.webp"
+                  alt={t('redesign.local.exteriorImageAlt')}
+                  fill
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  className="about-proof-photo__image"
+                  loading="eager"
+                />
+              </figure>
             </div>
             <div className="about-local-layout__evidence-stack">
               <OperatorProofSurface
