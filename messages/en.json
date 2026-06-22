@@ -862,10 +862,10 @@
           "title": "Cleaning is part of oversight, not a separate service.",
           "intro": "Arrival readiness, order between stays, and report record — within the agreed package scope.",
           "items": {
-            "readiness": { "title": "Readiness before arrival", "body": "Property prep before owner or guest visit — within agreed scope." },
-            "turnover": { "title": "Turnover after guest use", "body": "Cleaning and condition check between stays." },
-            "documentation": { "title": "Documented coordination", "body": "Coordination, check, and record in the report." },
-            "boundary": { "title": "Not a cleaning-company offer", "body": "Single jobs can be agreed separately — oversight and responsibility stay in the package." }
+            "readiness": { "title": "Readiness before arrival", "body": "Property prep before owner or guest visit — within agreed scope.", "summary": { "primary": { "label": "Action", "text": "entry, basic order, and readiness are checked." }, "secondary": { "label": "Result", "text": "simple issues do not sit unnoticed until arrival." } }, "imageAlt": "Prepared bedroom with towels, keys, and a readiness folder." },
+            "turnover": { "title": "Turnover after guest use", "body": "Cleaning and condition check between stays.", "summary": { "primary": { "label": "Action", "text": "post-stay order and a fast condition read." }, "secondary": { "label": "Result", "text": "the next stay starts from a known property state." } }, "imageAlt": "Bedroom after guest use with towels and cleaning equipment." },
+            "documentation": { "title": "Documented coordination", "body": "Coordination, check, and record in the report.", "summary": { "primary": { "label": "Action", "text": "photos, note, and completion confirmation." }, "secondary": { "label": "Result", "text": "the owner sees what was done and what needs a decision." } }, "imageAlt": "Notebook, keys, and documentation prepared on a property table." },
+            "boundary": { "title": "Not a cleaning-company offer", "body": "Single jobs can be agreed separately — oversight and responsibility stay in the package.", "summary": { "primary": { "label": "Action", "text": "cleaning only within the agreed scope." }, "secondary": { "label": "Boundary", "text": "no standing cleaning service outside the package." } }, "imageAlt": "Keys, scope folders, and documentation binder on a property table." }
           }
         },
         "useWhen": "Scope function",

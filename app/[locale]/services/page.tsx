@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
@@ -15,6 +14,7 @@ import ServiceBoundaryGrid from '@/components/ServiceBoundaryGrid';
 import OperationalModuleTile from '@/components/OperationalModuleTile';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import JourneyNav from '@/components/JourneyNav';
+import CleaningAccordion from '@/components/CleaningAccordion';
 
 type OperationalModule = {
   visual?: 'readiness' | 'seasonal' | 'access';
@@ -45,6 +45,25 @@ const EXECUTION_ONLY_AVAILABLE_KEYS = ['keyHolding', 'cleaning', 'oneTimeAccess'
 const EXECUTION_ONLY_LIMITATION_KEYS = ['noRegularChecks', 'noCyclicReporting', 'noEmergencySLA', 'noDecisionAuthority'] as const;
 const CLEANING_CAPABILITY_KEYS = ['readiness', 'turnover', 'documentation', 'boundary'] as const;
 
+const CLEANING_STORY_IMAGES: Record<(typeof CLEANING_CAPABILITY_KEYS)[number], { src: string; focus: string }> = {
+  readiness: {
+    src: '/photos/home-pathway-guest-readiness.webp',
+    focus: '52% 54%',
+  },
+  turnover: {
+    src: '/images/home/regular-guest-stays/guest-risk-turnover-readiness.webp',
+    focus: '48% 58%',
+  },
+  documentation: {
+    src: '/photos/hiw-field-note.webp',
+    focus: '54% 58%',
+  },
+  boundary: {
+    src: '/photos/services-scope-object.webp',
+    focus: '48% 58%',
+  },
+};
+
 export default async function ServicesPage({
   params,
 }: {
@@ -56,6 +75,25 @@ export default async function ServicesPage({
   const heroRecordRows = t.raw('redesign.dossier.hero.recordRows') as DossierRecordRow[];
   const heroChecklist = t.raw('redesign.dossier.hero.checklist') as string[];
   const qualificationSteps = t.raw('redesign.executionStrip.gateSteps') as string[];
+  const cleaningItems = CLEANING_CAPABILITY_KEYS.map((key, index) => ({
+    id: key,
+    marker: String(index + 1).padStart(2, '0'),
+    title: t(`redesign.modules.cleaning.items.${key}.title`),
+    body: t(`redesign.modules.cleaning.items.${key}.body`),
+    summaryLines: [
+      {
+        label: t(`redesign.modules.cleaning.items.${key}.summary.primary.label`),
+        text: t(`redesign.modules.cleaning.items.${key}.summary.primary.text`),
+      },
+      {
+        label: t(`redesign.modules.cleaning.items.${key}.summary.secondary.label`),
+        text: t(`redesign.modules.cleaning.items.${key}.summary.secondary.text`),
+      },
+    ],
+    imageSrc: CLEANING_STORY_IMAGES[key].src,
+    imageAlt: t(`redesign.modules.cleaning.items.${key}.imageAlt`),
+    focus: CLEANING_STORY_IMAGES[key].focus,
+  }));
   const journeyItems = [
     { id: 'situation', label: t('redesign.journey.situation') },
     { id: 'responsibility', label: t('redesign.journey.responsibility') },
@@ -187,32 +225,12 @@ export default async function ServicesPage({
             <div className="services-capability-console">
               <div className="services-capability-record">
                 <div className="services-capability-record__main">
-                  <div className="services-cleaning-focus">
-                    <div className="services-cleaning-focus__intro">
-                      <p className="section-label">{t('redesign.modules.cleaning.eyebrow')}</p>
-                      <h3>{t('redesign.modules.cleaning.title')}</h3>
-                      <p>{t('redesign.modules.cleaning.intro')}</p>
-                    </div>
-                    <figure className="services-proof-photo services-proof-photo--capability">
-                      <Image
-                        src="/photos/services-operational-capability.webp"
-                        alt={t('redesign.modules.capabilityImageAlt')}
-                        fill
-                        sizes="(min-width: 1024px) 38vw, 100vw"
-                        className="services-proof-photo__image"
-                        loading="eager"
-                      />
-                    </figure>
-                    <div className="services-cleaning-focus__grid">
-                      {CLEANING_CAPABILITY_KEYS.map((key) => (
-                        <article key={key} className="services-cleaning-focus__item">
-                          <span aria-hidden="true" />
-                          <h4>{t(`redesign.modules.cleaning.items.${key}.title`)}</h4>
-                          <p>{t(`redesign.modules.cleaning.items.${key}.body`)}</p>
-                        </article>
-                      ))}
-                    </div>
-                  </div>
+                  <CleaningAccordion
+                    eyebrow={t('redesign.modules.cleaning.eyebrow')}
+                    title={t('redesign.modules.cleaning.title')}
+                    intro={t('redesign.modules.cleaning.intro')}
+                    items={cleaningItems}
+                  />
                 </div>
 
                 <div className="services-capability-record__support">

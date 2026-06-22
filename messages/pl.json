@@ -862,10 +862,10 @@
           "title": "Sprzątanie jest częścią nadzoru, nie osobną usługą.",
           "intro": "Gotowość przed przyjazdem, porządek między pobytami i zapis w ustalonym zakresie pakietu.",
           "items": {
-            "readiness": { "title": "Gotowość przed przyjazdem", "body": "Przygotowanie lokalu przed wizytą właściciela lub gości — w ustalonym zakresie." },
-            "turnover": { "title": "Porządek po pobycie gości", "body": "Sprzątanie i kontrola stanu między pobytami." },
-            "documentation": { "title": "Udokumentowana koordynacja", "body": "Koordynacja, kontrola i zapis w raporcie." },
-            "boundary": { "title": "Nie osobna firma sprzątająca", "body": "Pojedyncze wykonanie można uzgodnić osobno — nadzór i odpowiedzialność zostają w pakiecie." }
+            "readiness": { "title": "Gotowość przed przyjazdem", "body": "Przygotowanie lokalu przed wizytą właściciela lub gości — w ustalonym zakresie.", "summary": { "primary": { "label": "Działanie", "text": "sprawdzenie wejścia, podstawowego porządku i gotowości." }, "secondary": { "label": "Wynik", "text": "lokal nie czeka na właściciela z prostym problemem." } }, "imageAlt": "Przygotowana sypialnia z ręcznikami, kluczami i folderem gotowości." },
+            "turnover": { "title": "Porządek po pobycie gości", "body": "Sprzątanie i kontrola stanu między pobytami.", "summary": { "primary": { "label": "Działanie", "text": "porządek po pobycie i szybka ocena stanu." }, "secondary": { "label": "Wynik", "text": "następny pobyt zaczyna się od znanego stanu lokalu." } }, "imageAlt": "Sypialnia po pobycie gości z ręcznikami i sprzętem sprzątającym." },
+            "documentation": { "title": "Udokumentowana koordynacja", "body": "Koordynacja, kontrola i zapis w raporcie.", "summary": { "primary": { "label": "Działanie", "text": "zdjęcia, notatka i potwierdzenie wykonania." }, "secondary": { "label": "Wynik", "text": "właściciel widzi, co zrobiono i co wymaga decyzji." } }, "imageAlt": "Notatnik, klucze i dokumentacja przygotowane na stole w lokalu." },
+            "boundary": { "title": "Nie osobna firma sprzątająca", "body": "Pojedyncze wykonanie można uzgodnić osobno — nadzór i odpowiedzialność zostają w pakiecie.", "summary": { "primary": { "label": "Działanie", "text": "sprzątanie tylko w ramach ustalonego zakresu." }, "secondary": { "label": "Granica", "text": "bez stałej usługi sprzątania poza pakietem." } }, "imageAlt": "Klucze, foldery zakresu i segregator dokumentacji na stole w lokalu." }
           }
         },
         "useWhen": "Funkcja zakresu",
