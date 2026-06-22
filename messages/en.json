@@ -855,30 +855,30 @@
       "modules": {
         "eyebrow": "Operational layer",
         "title": "Cleaning, access, and readiness are operational assets inside the package.",
-        "intro": "The package remains the authority. Cleaning/readiness, key custody, access support, and seasonal preparation are delivered only inside the agreed oversight scope.",
-        "capabilityImageAlt": "Operational placeholder photo of keys, a notebook, and cleaning cloth prepared for an access or readiness task",
+        "intro": "The package remains the authority. Cleaning, access, and seasonal readiness operate only inside the agreed oversight scope.",
+        "capabilityImageAlt": "Keys, notebook, and cleaning cloth prepared for an access or readiness task",
         "cleaning": {
-          "eyebrow": "Cleaning, readiness and stay support",
-          "title": "Cleaning is a core practical capability inside oversight.",
-          "intro": "Readiness cleaning, turnover cleaning support, and documented handover keep the property usable inside the agreed scope.",
+          "eyebrow": "Cleaning and readiness",
+          "title": "Cleaning is part of oversight, not a separate service.",
+          "intro": "Arrival readiness, order between stays, and report record — within the agreed package scope.",
           "items": {
-            "readiness": { "title": "Readiness before arrival", "body": "Readiness cleaning supports owner or guest arrival where it is included or separately agreed." },
-            "turnover": { "title": "Turnover after guest use", "body": "Guest-use properties need cleaning and condition checks between stays, especially under Active Guest Use." },
-            "documentation": { "title": "Documented coordination", "body": "Cleaning is coordinated, checked, and recorded as part of the oversight chain." },
-            "boundary": { "title": "Not a cleaning-company offer", "body": "Standalone execution can be discussed separately, but package responsibility remains structured oversight." }
+            "readiness": { "title": "Readiness before arrival", "body": "Property prep before owner or guest visit — within agreed scope." },
+            "turnover": { "title": "Turnover after guest use", "body": "Cleaning and condition check between stays." },
+            "documentation": { "title": "Documented coordination", "body": "Coordination, check, and record in the report." },
+            "boundary": { "title": "Not a cleaning-company offer", "body": "Single jobs can be agreed separately — oversight and responsibility stay in the package." }
           }
         },
         "useWhen": "Scope function",
         "stackLabel": "Controlled capabilities",
-        "stackTitle": "Access and seasonal readiness stay subordinate to the package.",
+        "stackTitle": "Access and seasonal readiness operate within the package.",
         "guardrailLabel": "Boundary",
-        "guardrailBody": "A module can add execution capacity, but package responsibility, SLA, decision authority, and exclusions remain unchanged.",
+        "guardrailBody": "A module can add execution, but package responsibility, SLA, decisions, and exclusions stay unchanged.",
         "moduleBodies": {
           "rental": "Readiness cleaning, turnover cleaning support, and guest entry handled as documented execution inside the agreed oversight scope.",
-          "access": "Key custody, one-off entries, arrival logistics, and partner handoff remain controlled coordination inside the oversight system.",
-          "seasonal": "Opening, closing, property preparation, and additional checks are handled only where the scope allows it."
+          "access": "Keys, one-off entries, and partner logistics — controlled coordination inside oversight.",
+          "seasonal": "Opening, closing, and extra checks — only where scope allows."
         },
-        "partnerNote": "Where available and separately agreed, Sentinel may coordinate partner support with NowRent, including vehicle rental or arrival logistics."
+        "partnerNote": "Sentinel may coordinate NowRent support — e.g. car hire or arrival logistics — where available and separately agreed."
       },
       "custody": {
         "eyebrow": "Access chain",
@@ -907,10 +907,15 @@
         }
       },
       "executionStrip": {
-        "title": "Limited single actions remain an exception.",
-        "body": "They can be arranged after prior agreement, but without scheduled checks, cyclic reporting, SLA, or decision authority.",
-        "availableLabel": "Available after agreement",
+        "thresholdLabel": "Outside the package model",
+        "sideLabel": "Outside package",
+        "title": "Single actions are an exception, not the service model.",
+        "body": "They can be agreed after qualification, but without ongoing oversight, cyclic reporting, SLA, or decision authority.",
+        "availableLabel": "Possible after agreement",
         "limitsLabel": "What it does not include",
+        "gateLabel": "Qualification first",
+        "gateNote": "Does not replace an oversight package.",
+        "gateSteps": ["Brief", "Review", "Decision"],
         "cta": "Ask about limited scope"
       },
       "details": {
@@ -1147,7 +1152,7 @@
       },
       "transfers": {
         "title": "Partner arrival logistics",
-        "provider": "Partner support may be coordinated where available and separately agreed."
+        "provider": "Partner coordination — where available and separately agreed."
       },
       "seasonal": {
         "title": "Seasonal Services",
@@ -1167,16 +1172,16 @@
         "keyHolding": "Key holding",
         "cleaning": "Cleaning coordination",
         "oneTimeAccess": "One-off access coordination",
-        "seasonalPrep": "Seasonal property preparation"
+        "seasonalPrep": "Seasonal property prep"
       },
       "limitationsTitle": "Limitations:",
       "limitationsItems": {
-        "noRegularChecks": "No regular inspections",
-        "noCyclicReporting": "No cyclic reporting",
-        "noEmergencySLA": "No emergency response under SLA",
-        "noDecisionAuthority": "No decision authority"
+        "noRegularChecks": "Ongoing oversight",
+        "noCyclicReporting": "Cyclic reporting",
+        "noEmergencySLA": "Emergency response under SLA",
+        "noDecisionAuthority": "Decision authority"
       },
-      "closing": "This does not replace an oversight package. It covers individual tasks only."
+      "closing": "Does not replace an oversight package — individual tasks only."
     },
     "notIncluded": {
       "title": "Services Not Provided",

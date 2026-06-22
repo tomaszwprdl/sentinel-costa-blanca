@@ -855,30 +855,30 @@
       "modules": {
         "eyebrow": "Warstwa operacyjna",
         "title": "Sprzątanie, dostęp i gotowość są zdolnościami operacyjnymi wewnątrz pakietu.",
-        "intro": "Pakiet pozostaje źródłem uprawnień. Sprzątanie/gotowość, przechowywanie kluczy, obsługa wejść i przygotowanie sezonowe są realizowane tylko w uzgodnionym zakresie nadzoru.",
-        "capabilityImageAlt": "Operacyjne zdjęcie zastępcze kluczy, notatnika i ściereczki przygotowanych do zadania dostępu lub gotowości",
+        "intro": "Pakiet pozostaje źródłem uprawnień. Sprzątanie, dostęp i gotowość sezonowa — tylko w uzgodnionym zakresie nadzoru.",
+        "capabilityImageAlt": "Klucze, notatnik i ściereczka przygotowane do zadania dostępu lub gotowości",
         "cleaning": {
-          "eyebrow": "Sprzątanie, gotowość i obsługa pobytów",
-          "title": "Sprzątanie jest podstawową zdolnością praktyczną wewnątrz nadzoru.",
-          "intro": "Sprzątanie przed przyjazdem, sprzątanie między pobytami i udokumentowane przekazanie utrzymują lokal w uzgodnionym zakresie.",
+          "eyebrow": "Sprzątanie i gotowość",
+          "title": "Sprzątanie jest częścią nadzoru, nie osobną usługą.",
+          "intro": "Gotowość przed przyjazdem, porządek między pobytami i zapis w ustalonym zakresie pakietu.",
           "items": {
-            "readiness": { "title": "Gotowość przed przyjazdem", "body": "Sprzątanie przygotowawcze wspiera przyjazd właściciela lub gościa, jeśli jest w zakresie lub osobnym ustaleniu." },
-            "turnover": { "title": "Porządek po pobycie gości", "body": "Nieruchomości używane przez gości wymagają sprzątania i kontroli stanu między pobytami." },
-            "documentation": { "title": "Udokumentowana koordynacja", "body": "Sprzątanie jest koordynowane, sprawdzane i odnotowane jako część łańcucha nadzoru." },
-            "boundary": { "title": "Nie osobna firma sprzątająca", "body": "Pojedyncze wykonanie można uzgodnić osobno, ale odpowiedzialność pakietu pozostaje nadzorem strukturalnym." }
+            "readiness": { "title": "Gotowość przed przyjazdem", "body": "Przygotowanie lokalu przed wizytą właściciela lub gości — w ustalonym zakresie." },
+            "turnover": { "title": "Porządek po pobycie gości", "body": "Sprzątanie i kontrola stanu między pobytami." },
+            "documentation": { "title": "Udokumentowana koordynacja", "body": "Koordynacja, kontrola i zapis w raporcie." },
+            "boundary": { "title": "Nie osobna firma sprzątająca", "body": "Pojedyncze wykonanie można uzgodnić osobno — nadzór i odpowiedzialność zostają w pakiecie." }
           }
         },
         "useWhen": "Funkcja zakresu",
         "stackLabel": "Kontrolowane zdolności",
-        "stackTitle": "Dostęp i gotowość sezonowa pozostają podporządkowane pakietowi.",
+        "stackTitle": "Dostęp i gotowość sezonowa działają w ramach pakietu.",
         "guardrailLabel": "Granica",
-        "guardrailBody": "Moduł może zwiększyć zdolność wykonania, ale odpowiedzialność pakietu, SLA, uprawnienia decyzyjne i wyłączenia pozostają bez zmian.",
+        "guardrailBody": "Moduł może zwiększyć wykonanie, ale odpowiedzialność pakietu, SLA, decyzje i wyłączenia pozostają bez zmian.",
         "moduleBodies": {
           "rental": "Sprzątanie przygotowawcze, sprzątanie między pobytami i wejścia gości prowadzone jako udokumentowane wykonanie w uzgodnionym zakresie nadzoru.",
-          "access": "Przechowywanie kluczy, jednorazowe wejścia, logistyka przyjazdu i przekazanie partnerskie pozostają kontrolowaną koordynacją w systemie nadzoru.",
-          "seasonal": "Otwarcie, zamknięcie, przygotowanie lokalu i dodatkowe kontrole są prowadzone tylko tam, gdzie pozwala na to zakres."
+          "access": "Klucze, jednorazowe wejścia i logistyka partnerska — kontrolowana koordynacja w nadzorze.",
+          "seasonal": "Otwarcie, zamknięcie i dodatkowe kontrole — tylko tam, gdzie pozwala zakres."
         },
-        "partnerNote": "W wybranych sytuacjach Sentinel może koordynować wsparcie partnerskie z NowRent, m.in. wynajem auta lub logistykę przyjazdu, jeśli jest to dostępne i uzgodnione osobno."
+        "partnerNote": "Sentinel może koordynować wsparcie NowRent — np. wynajem auta lub logistykę przyjazdu — jeśli dostępne i osobno uzgodnione."
       },
       "custody": {
         "eyebrow": "Łańcuch dostępu",
@@ -907,10 +907,15 @@
         }
       },
       "executionStrip": {
-        "title": "Pojedyncze czynności pozostają wyjątkiem.",
-        "body": "Można je uzgodnić wcześniej, ale bez stałych kontroli, raportowania cyklicznego, SLA ani uprawnień decyzyjnych.",
+        "thresholdLabel": "Poza modelem pakietowym",
+        "sideLabel": "Poza pakietem",
+        "title": "Pojedyncze czynności są wyjątkiem, nie modelem usługi.",
+        "body": "Można je uzgodnić po kwalifikacji, ale bez stałego nadzoru, raportów cyklicznych, SLA ani uprawnień decyzyjnych.",
         "availableLabel": "Możliwe po uzgodnieniu",
         "limitsLabel": "Czego nie obejmuje",
+        "gateLabel": "Najpierw kwalifikacja",
+        "gateNote": "Nie zastępuje pakietu nadzoru.",
+        "gateSteps": ["Opis", "Ocena", "Decyzja"],
         "cta": "Zapytaj o ograniczony zakres"
       },
       "details": {
@@ -1147,7 +1152,7 @@
       },
       "transfers": {
         "title": "Partnerska logistyka przyjazdu",
-        "provider": "Wsparcie partnerskie może być koordynowane, jeśli jest dostępne i osobno uzgodnione."
+        "provider": "Koordynacja partnerska — jeśli dostępna i osobno uzgodniona."
       },
       "seasonal": {
         "title": "Usługi sezonowe",
@@ -1167,16 +1172,16 @@
         "keyHolding": "Przechowywanie kluczy",
         "cleaning": "Organizacja sprzątania",
         "oneTimeAccess": "Jednorazowa koordynacja dostępu",
-        "seasonalPrep": "Sezonowe przygotowanie nieruchomości"
+        "seasonalPrep": "Sezonowe przygotowanie lokalu"
       },
       "limitationsTitle": "Ograniczenia:",
       "limitationsItems": {
-        "noRegularChecks": "Brak regularnych kontroli",
-        "noCyclicReporting": "Brak raportowania cyklicznego",
-        "noEmergencySLA": "Brak reakcji awaryjnej w ramach SLA",
-        "noDecisionAuthority": "Brak uprawnień decyzyjnych"
+        "noRegularChecks": "Stały nadzór",
+        "noCyclicReporting": "Raportowanie cykliczne",
+        "noEmergencySLA": "Reakcja awaryjna w ramach SLA",
+        "noDecisionAuthority": "Uprawnienia decyzyjne"
       },
-      "closing": "Ten model nie zastępuje pakietu nadzoru. Dotyczy tylko pojedynczych czynności."
+      "closing": "Nie zastępuje pakietu nadzoru — tylko pojedyncze czynności."
     },
     "notIncluded": {
       "title": "Usługi nieobjęte żadnym pakietem",

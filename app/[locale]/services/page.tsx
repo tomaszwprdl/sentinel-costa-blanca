@@ -55,6 +55,7 @@ export default async function ServicesPage({
   const headlineParts = t.raw('redesign.hero.headlineParts') as string[];
   const heroRecordRows = t.raw('redesign.dossier.hero.recordRows') as DossierRecordRow[];
   const heroChecklist = t.raw('redesign.dossier.hero.checklist') as string[];
+  const qualificationSteps = t.raw('redesign.executionStrip.gateSteps') as string[];
   const journeyItems = [
     { id: 'situation', label: t('redesign.journey.situation') },
     { id: 'responsibility', label: t('redesign.journey.responsibility') },
@@ -235,35 +236,67 @@ export default async function ServicesPage({
                 <p className="services-partner-note">{t('redesign.modules.partnerNote')}</p>
               </div>
 
-              <div className="services-execution-inset services-execution-inset--subordinate" id="execution-only">
-                <div>
-                  <p className="section-label">{t('executionOnly.microLabel')}</p>
-                  <h3>{t('redesign.executionStrip.title')}</h3>
-                  <p>{t('redesign.executionStrip.body')}</p>
-                </div>
-                <div className="services-execution-inset__grid">
-                  <div className="services-execution-card services-execution-card--available">
-                    <h4 className="services-execution-card__title">{t('redesign.executionStrip.availableLabel')}</h4>
-                    <ul className="services-execution-list text-sm text-body">
-                      {EXECUTION_ONLY_AVAILABLE_KEYS.map((key) => (
-                        <li key={key}>{t(`executionOnly.availableItems.${key}`)}</li>
-                      ))}
-                    </ul>
+              <div className="services-checkpoint" id="execution-only">
+                <p className="services-checkpoint__marker">
+                  <svg
+                    className="services-checkpoint__marker-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path
+                      d="M12 2.9 L21.5 20.5 H2.5 Z"
+                      fill="currentColor"
+                      stroke="currentColor"
+                      strokeWidth="1.1"
+                      strokeLinejoin="round"
+                    />
+                    <path d="M12 8.8 V13.9" stroke="#0f2238" strokeWidth="2.1" strokeLinecap="round" />
+                    <circle cx="12" cy="17" r="1.2" fill="#0f2238" />
+                  </svg>
+                  {t('redesign.executionStrip.thresholdLabel')}
+                </p>
+
+                <div className="services-checkpoint__body">
+                  <div className="services-checkpoint__request">
+                    <p className="services-checkpoint__label">{t('executionOnly.microLabel')}</p>
+                    <h3 className="services-checkpoint__title">{t('redesign.executionStrip.title')}</h3>
+                    <p className="services-checkpoint__rule">{t('redesign.executionStrip.body')}</p>
+
+                    <div className="services-checkpoint__possible">
+                      <h4 className="services-checkpoint__list-title">{t('redesign.executionStrip.availableLabel')}</h4>
+                      <ul className="services-checkpoint__list services-checkpoint__list--possible">
+                        {EXECUTION_ONLY_AVAILABLE_KEYS.map((key) => (
+                          <li key={key}>{t(`executionOnly.availableItems.${key}`)}</li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                  <div className="services-execution-card services-execution-card--limits">
-                    <h4 className="services-execution-card__title">{t('redesign.executionStrip.limitsLabel')}</h4>
-                    <ul className="services-execution-list text-sm text-body">
+
+                  <div className="services-checkpoint__gate">
+                    <p className="services-checkpoint__gate-label">{t('redesign.executionStrip.gateLabel')}</p>
+                    <ol className="services-checkpoint__sequence">
+                      {qualificationSteps.map((step) => (
+                        <li key={step}>{step}</li>
+                      ))}
+                    </ol>
+                    <p className="services-checkpoint__gate-note">{t('redesign.executionStrip.gateNote')}</p>
+                    <Link href={`/${locale}/contact`} className="btn-primary services-checkpoint__cta">
+                      {t('redesign.executionStrip.cta')}
+                    </Link>
+                  </div>
+
+                  <div className="services-checkpoint__lockout">
+                    <h4 className="services-checkpoint__list-title services-checkpoint__list-title--lockout">
+                      {t('redesign.executionStrip.limitsLabel')}
+                    </h4>
+                    <ul className="services-checkpoint__list services-checkpoint__list--lockout">
                       {EXECUTION_ONLY_LIMITATION_KEYS.map((key) => (
                         <li key={key}>{t(`executionOnly.limitationsItems.${key}`)}</li>
                       ))}
                     </ul>
                   </div>
-                </div>
-                <div className="services-execution-inset__footer">
-                  <p>{t('executionOnly.closing')}</p>
-                  <Link href={`/${locale}/contact`} className="btn-secondary">
-                    {t('redesign.executionStrip.cta')}
-                  </Link>
                 </div>
               </div>
             </div>
