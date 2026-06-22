@@ -142,7 +142,7 @@ Polish primary. English structurally equal. PL/EN parity required.
 
 **Website visual execution is CONSTRAINED / EXPERIMENTAL, not LOCKED.**
 
-The visual composition rebuild is **merged on `main`** (baseline `e5fa7bb`; graphic passes through `cef326b`; proof-assets integration `b9800ce`; current live/main baseline `e682b5b`). Future work builds on the live canonical system — it does not revert to build-era restraint. Broad visual iteration is stopped; future improvements should be homepage-first / page-by-page, plan-first, and Owner-scoped.
+The visual composition rebuild is **merged on `main`** (baseline `e5fa7bb`; graphic passes through `cef326b`; proof-assets integration `b9800ce`; selected-pathway contrast `e682b5b`; current live/main baseline `01b2624`). Future work builds on the live canonical system — it does not revert to build-era restraint. Broad visual iteration is stopped; next work is page-by-page micro polish starting with the homepage, plan-first, and Owner-scoped.
 
 **Flexible (Owner-approved work):** color palette on pages · section or full-page composition · page rhythm · imagery · SVG/CSS visual systems · proof modules · card/panel treatment · warmth · contrast · atmosphere · motion · generated assets · anti-repetition restructuring · removal/demotion of redundant proof modules · page-specific middle-section narratives
 

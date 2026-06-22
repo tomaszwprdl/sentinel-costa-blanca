@@ -8,9 +8,10 @@ Short briefing for Cursor, Codex, and Cloudie.
 
 - **Product:** Sentinel Costa Blanca — structured local owner representation (Torrevieja + ~50–70 km).
 - **Website:** Pre-live, soft-launch review ready. `noindex,nofollow` active.
-- **Phase:** Launch-era — proof-assets integration and selected-pathway contrast patch are live; broad visual iteration is stopped; Owner has approved restrained public operator proof for Aleksy Gugała.
-- **Current live/main baseline:** `e682b5b` (`fix: strengthen selected pathway contrast section`).
+- **Phase:** Launch-era — Trust Spine Pilot delivered; broad visual iteration is stopped; next work is page-by-page micro polish starting with the homepage.
+- **Current live/main baseline:** `01b2624` (`refactor: improve mobile homepage gate`).
 - **Previous proof-assets integration:** `b9800ce` (`feat: integrate proof layer visual assets`).
+- **Selected-pathway contrast (historical):** `e682b5b` (`fix: strengthen selected pathway contrast section`).
 - **Latest QA state:** selected pathway routes checked clean: no console errors, hydration mismatch, failed requests, HTTP 4xx/5xx, or 390px overflow in latest capture pass.
 - **Launch-era governance baseline SHA:** `6a0d0f7` (reset + alignment + root entry points).
 - **Optional cognitive audit tool added:** `96fef3e` (`COGNITIVE-PAGE-AUDIT.md`).
@@ -23,7 +24,7 @@ Canonical mode: dark cinematic hero / authority bands · warm paper body section
 
 Future visual work should **build on canonical mode**, not recreate dual themes. It should be homepage-first / page-by-page, plan-first, and Owner-scoped rather than another global transformation pass.
 
-**Current baseline issue:** Council v2 shifted the problem from weak visuals to trust spine: human proof, price/estimator visibility, copy density, and avoiding synthetic over-polish. The homepage gate stays intentional and protected; do not de-gate by default. Owner-approved operator proof may show Aleksy Gugała by real name, role, and selected public photo, using restrained "one of the operational team members shown publicly" language.
+**Current baseline:** Trust Spine Pilot is delivered on the homepage gate. Operator proof (Aleksy Gugała), verified €80/mo price cue, estimator/cost-logic link, and mobile scroll affordance are live through `01b2624`. The homepage gate stays intentional and protected; do not de-gate by default. During homepage polish, protect gate internals: `#usage-situation-gate` · `gate-scroll-cue` · `scroll-mt-28` · mobile-only cue to the pathway selector.
 
 **Proof image policy:** the current proof-layer photos are accepted as temporary synthetic shot-planning placeholders only. They may support placement, crop, atmosphere, and section fit, but must not claim actual Sentinel work, real client property, real reports, real operator identity, or final operational evidence. Replace with real photography before serious public promotion / indexed launch where possible.
 
@@ -112,13 +113,14 @@ Details: `WORKFLOW.md`
 
 # Current next phase
 
-1. Finish/verify Phase 1B operator proof: short Aleksy Gugała cue in the homepage gate; longer public-operator explanation on About.
-2. Continue trust-spine work only when Owner-scoped; preserve the diagnostic gate and pathway choice.
+1. Page-by-page micro polish, starting with the homepage — Owner-scoped briefs only.
+2. Preserve the diagnostic gate and pathway choice; protect gate internals during homepage polish.
 3. Reduce repeated scope/documentation/limits language where it weakens trust; do not soften into concierge, lifestyle, rental-management, or vague reassurance.
 4. Production contact email verification.
 5. Final pricing confirmation.
 6. Legal/entity/GDPR review.
 7. Noindex decision and indexed-launch deploy smoke when approved.
 8. Repo cleanup baseline and readiness audit.
+9. Real-photo replacement for accepted synthetic proof-layer placeholders.
 
 Checklist: `LAUNCH-CHECKLIST.md`

@@ -9,13 +9,15 @@
 5. `doc/WORKFLOW.md`
 6. `doc/VISUAL-FREEDOM-SPRINT.md` — for visual work
 
-**Current state:** live/main baseline is `e682b5b` (`fix: strengthen selected pathway contrast section`), following proof-assets integration `b9800ce`. Verify exact HEAD/ahead count with git preflight before work. Documentation governance baseline: `6a0d0f7`.
+**Current state:** live/main baseline is `01b2624` (`refactor: improve mobile homepage gate`), following proof-assets integration `b9800ce` and selected-pathway contrast `e682b5b` (historical). Verify exact HEAD/ahead count with git preflight before work. Documentation governance baseline: `6a0d0f7`.
 
 Older docs may mention historical SHAs such as `b46a214`, `b3fd918`, or `97997eb`; repo preflight/local git state is the truth unless the Owner overrides.
 
 Visual composition rebuild is **merged**. The site uses **one canonical Sentinel atmosphere** — dark cinematic authority bands, warm paper body, dark final CTA/footer — with **no public theme toggle**.
 
-Build-era visual restrictions and dual-theme work are retired. Current phase is **post-proof-assets / post-selected-pathway contrast**, with the live site accepted as visually credible enough to keep live. Broad visual iteration is stopped. The next recommended implementation is a **homepage-only Trust Spine Pilot**, pending Owner decision on operator-proof level. Visual work may still be bold when explicitly briefed, but do not start another global visual transformation pass. Build on canonical mode per `doc/VISUAL-FREEDOM-SPRINT.md`. Protected contracts remain intact.
+Build-era visual restrictions and dual-theme work are retired. Current phase is **post-trust-spine**, with the live site accepted as visually credible enough to keep live. Broad visual iteration is stopped. Next work is **page-by-page micro polish, starting with the homepage**. Visual work may still be bold when explicitly briefed, but do not start another global visual transformation pass. Build on canonical mode per `doc/VISUAL-FREEDOM-SPRINT.md`. Protected contracts remain intact.
+
+Homepage gate: Trust Spine Pilot delivered (operator proof, €80/mo price cue, estimator link, mobile scroll affordance). Refine the gate; do not remove, bypass, or de-gate unless Owner explicitly approves. Protect during polish: `#usage-situation-gate` · `gate-scroll-cue` · `scroll-mt-28` · mobile-only pathway-selector cue.
 
 Current proof-layer images are accepted only as temporary synthetic shot-planning placeholders. They must not be described as actual Sentinel work, real client property, real reports, real operator identity, or final operational evidence. Future audits should judge placement, crop, repetition, trust, and section fit; replacement with real photography remains the goal before serious public promotion or indexed launch where possible.
 

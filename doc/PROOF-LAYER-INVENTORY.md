@@ -13,9 +13,10 @@ This is a planning document only. It does not approve code changes, asset fabric
 Local git preflight on this pass reported:
 
 - Branch: `main`
-- Current live/main baseline: `e682b5b`
+- Current live/main baseline: `01b2624` (`refactor: improve mobile homepage gate`)
 - Proof-assets integration: `b9800ce`
-- Selected-pathway contrast patch: `e682b5b`
+- Selected-pathway contrast patch: `e682b5b` (historical milestone)
+- Homepage Trust Spine Pilot: **delivered** through `01b2624`
 - Expected ignored local items may include `.codex/` and `tmp/`. `public/photos/hiw-field-note.webp` and `public/photos/services-scope-object.webp` are tracked production assets used by the Services accordion; do not delete them while referenced.
 
 Older docs may still mention `b46a214`, `b3fd918`, or `97997eb` as current. Per repo rules, current git state overrides stale SHA fields; those are historical unless preflight proves otherwise.
@@ -24,14 +25,17 @@ Older docs may still mention `b46a214`, `b3fd918`, or `97997eb` as current. Per 
 
 # 1. Council v2 Operating Rule
 
-The next trust gain is not a broad visual redesign and not more synthetic image generation. It is a homepage-only Trust Spine Pilot after Owner chooses operator-proof level:
+The next trust gain is not a broad visual redesign and not more synthetic image generation. Homepage Trust Spine Pilot is **delivered**. Next work is page-by-page micro polish, starting with the homepage.
+
+Delivered on the homepage gate (protect during polish):
 
 - keep the canonical Sentinel visual atmosphere
 - keep the homepage diagnostic gate unless Owner explicitly overrides it
-- make the gate itself carry more trust before the click
-- surface a real local/operator cue at the level Owner approves
-- surface estimator / cost logic earlier without changing pricing logic
-- reduce repeated scope/documentation/limits language
+- operator cue / public operator proof (Aleksy Gugała)
+- verified €80/mo minimum price cue
+- estimator / cost-logic link without changing pricing logic
+- mobile scroll affordance: `#usage-situation-gate` · `gate-scroll-cue` · `scroll-mt-28` · mobile-only pathway-selector cue
+- reduced repeated scope/documentation/limits language where implemented
 - treat placeholders as asset slots, not final trust evidence
 
 Hard constraints for this inventory:
@@ -99,31 +103,26 @@ Files:
 Current proof/image slots:
 
 - `public/photos/sentinel-costa-blanca-entry-hero.png` is used as full-screen atmosphere behind the diagnostic gate.
-- The first desktop viewport has diagnostic cards and fact chips, but no concrete evidence object.
+- Operator proof cue (Aleksy Gugała), verified €80/mo minimum price cue, and estimator/cost-logic link are live on the gate.
+- Mobile scroll affordance: `#usage-situation-gate` · `gate-scroll-cue` · `scroll-mt-28` · mobile-only pathway-selector cue (`01b2624`).
 
 Current proof job:
 
-- Establish seriousness and route the owner into one of three usage pathways.
+- Establish seriousness, surface operator and cost logic before pathway selection, and route the owner into one of three usage pathways.
 
 Risk:
 
-- The page can feel unfinished on desktop before pathway selection.
-- The background image reads as atmosphere, not proof.
+- Background image still reads as atmosphere, not proof.
+- Gate internals must not be broken during homepage micro polish.
 
 Decision:
 
-- Keep the gate behavior.
-- Add trust before the click only in the homepage Trust Spine Pilot after Owner operator-proof decision.
-- Preferred replacement type: structured artifact, not photo.
-
-Recommended object:
-
-- A compact "field record" plate combining: service radius, access/report/decision chain, and a redacted sample visit line.
-- Do not make it a marketing badge or decorative map.
+- Keep the gate behavior and delivered trust cues.
+- Protect gate internals during homepage polish; refine only when Owner-scoped.
 
 Status:
 
-- Candidate for the homepage Trust Spine Pilot.
+- Trust Spine Pilot delivered. Candidate for homepage micro polish only with Owner brief.
 
 ## Home - selected pathway hero
 
@@ -189,7 +188,7 @@ Decision:
 
 Status:
 
-- Keep for now; revisit only if homepage Trust Spine Pilot needs density reduction.
+- Keep for now; revisit only if homepage micro polish needs density reduction.
 
 ## Home - contrast/risk carousel
 
@@ -369,7 +368,7 @@ Decision:
 
 Status:
 
-- About stays as-is for the Trust Spine Pilot.
+- About stays as-is unless separately briefed.
 - Later real asset/map if separately briefed.
 
 ## Contact
@@ -399,7 +398,7 @@ Risk:
 
 Decision:
 
-- Keep for Trust Spine Pilot.
+- Keep unless separately briefed.
 - Do not alter contact form schema, API, or payload.
 
 Priority:
@@ -431,7 +430,7 @@ Risk:
 
 Decision:
 
-- Keep for Trust Spine Pilot.
+- Keep unless separately briefed.
 - Later consolidate only if FAQ is separately briefed.
 
 Priority:
@@ -511,28 +510,24 @@ Decision:
 
 # 6. Next Implementation Queue
 
-## Trust Spine Pilot - homepage only
+## Homepage micro polish — Owner-scoped
 
-Owner decision required before implementation:
-
-- A. real name + face/working photo
-- B. real name/role text cue, no full-face portrait yet (current recommendation)
-- C. role-only, no name/face
+Trust Spine Pilot is **delivered**. Next homepage work is micro polish only, with Owner brief.
 
 Allowed goals:
 
 1. Keep the diagnostic homepage gate and pathway choice.
-2. Make the gate itself carry more trust before the click.
-3. Add a restrained operator identity/proof cue at the approved level.
-4. Surface estimator / price logic earlier without changing estimator logic or commercial values.
-5. Reduce repeated scope/documentation/limits language where it weakens trust.
-6. Demote one decorative dossier/proof layer if needed.
+2. Refine gate and post-gate sections without removing delivered trust cues.
+3. Protect gate internals: `#usage-situation-gate` · `gate-scroll-cue` · `scroll-mt-28` · mobile-only pathway-selector cue.
+4. Reduce repeated scope/documentation/limits language where it still weakens trust.
+5. Demote decorative proof/dossier layers if needed.
 
 Do not:
 
 - Remove the gate unless Owner explicitly approves.
+- Break or remove gate internals listed above.
 - Change pathway slugs, routing/query behavior, estimator logic, contact schema/API/payload, packages, SLA, emergency authority, legal substance, noindex state, contact details, or logo assets.
-- Generate more synthetic imagery for this phase.
+- Generate more synthetic imagery unless Owner reopens asset generation.
 - Touch Services, How It Works, FAQ, About, or Contact unless separately briefed.
 
 ---
@@ -584,7 +579,7 @@ Privacy requirements:
 
 Recommended next Owner-scoped brief:
 
-> Implement the Trust Spine Pilot on the homepage only. Keep the diagnostic gate and pathway slugs. Add the approved level of operator identity/proof cue, surface estimator/price logic earlier without changing pricing logic, reduce repeated scope/documentation/limits language, and demote one decorative proof/dossier layer if needed. Do not generate more synthetic imagery. Do not touch Services, How It Works, FAQ, About, Contact, protected service contracts, estimator logic, contact schema/API, pathway slugs, legal substance, logo assets, footer contact, or noindex state.
+> Homepage micro polish only. Trust Spine Pilot is delivered — preserve the diagnostic gate, operator proof cue, €80/mo price cue, estimator link, and mobile gate internals (`#usage-situation-gate`, `gate-scroll-cue`, `scroll-mt-28`, mobile-only pathway-selector cue). Refine selected homepage sections per golden question. Do not generate more synthetic imagery. Do not touch Services, How It Works, FAQ, About, Contact, protected service contracts, estimator logic, contact schema/API, pathway slugs, legal substance, logo assets, footer contact, or noindex state.
 
 Pass/fail:
 
@@ -592,6 +587,6 @@ Pass/fail:
 - No contract changes.
 - No fabricated evidence claims.
 - No synthetic placeholder used as a final trust-proof claim.
-- Homepage gate preserved unless Owner explicitly approved removal.
+- Homepage gate and gate internals preserved unless Owner explicitly approved removal.
 - 390px mobile has no horizontal overflow.
-- The first screen feels more like a real local operator with visible cost logic before pathway selection.
+- Delivered trust cues remain visible before pathway selection.
