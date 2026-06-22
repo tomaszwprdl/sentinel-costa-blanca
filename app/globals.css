@@ -1226,8 +1226,20 @@ textarea:focus {
 
 .gate-operator-cue__identity {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.7rem;
+}
+
+.gate-operator-cue__photo {
+  display: block;
+  flex-shrink: 0;
+  width: 2.55rem;
+  height: 2.55rem;
+  border: 1px solid rgba(210, 154, 87, 0.5);
+  border-radius: 0.62rem;
+  object-fit: cover;
+  object-position: 50% 42%;
+  box-shadow: 0 0 0 1px rgba(255, 250, 242, 0.08), 0 0.65rem 1.4rem rgba(0, 0, 0, 0.18);
 }
 
 .gate-operator-cue__pin {
@@ -20938,9 +20950,12 @@ textarea:focus {
 .about-operator-proof__photo-image {
   display: block;
   width: 100%;
+  aspect-ratio: 4 / 5;
   height: auto;
   border: 1px solid var(--structural-light);
   border-radius: var(--site-radius-card);
+  object-fit: cover;
+  object-position: 50% 42%;
 }
 
 .about-operator-proof__photo figcaption {

@@ -8,7 +8,7 @@ Short briefing for Cursor, Codex, and Cloudie.
 
 - **Product:** Sentinel Costa Blanca — structured local owner representation (Torrevieja + ~50–70 km).
 - **Website:** Pre-live, soft-launch review ready. `noindex,nofollow` active.
-- **Phase:** Launch-era — proof-assets integration and selected-pathway contrast patch are live; broad visual iteration is stopped; next work is homepage trust-spine refinement only after Owner operator-proof decision.
+- **Phase:** Launch-era — proof-assets integration and selected-pathway contrast patch are live; broad visual iteration is stopped; Owner has approved restrained public operator proof for Aleksy Gugała.
 - **Current live/main baseline:** `e682b5b` (`fix: strengthen selected pathway contrast section`).
 - **Previous proof-assets integration:** `b9800ce` (`feat: integrate proof layer visual assets`).
 - **Latest QA state:** selected pathway routes checked clean: no console errors, hydration mismatch, failed requests, HTTP 4xx/5xx, or 390px overflow in latest capture pass.
@@ -23,7 +23,7 @@ Canonical mode: dark cinematic hero / authority bands · warm paper body section
 
 Future visual work should **build on canonical mode**, not recreate dual themes. It should be homepage-first / page-by-page, plan-first, and Owner-scoped rather than another global transformation pass.
 
-**Current baseline issue:** Council v2 shifted the problem from weak visuals to trust spine: human proof, price/estimator visibility, copy density, and avoiding synthetic over-polish. The homepage gate stays intentional and protected; do not de-gate by default. The next recommended work is a homepage-only Trust Spine Pilot, pending Owner decision on how much operator proof can be shown now.
+**Current baseline issue:** Council v2 shifted the problem from weak visuals to trust spine: human proof, price/estimator visibility, copy density, and avoiding synthetic over-polish. The homepage gate stays intentional and protected; do not de-gate by default. Owner-approved operator proof may show Aleksy Gugała by real name, role, and selected public photo, using restrained "one of the operational team members shown publicly" language.
 
 **Proof image policy:** the current proof-layer photos are accepted as temporary synthetic shot-planning placeholders only. They may support placement, crop, atmosphere, and section fit, but must not claim actual Sentinel work, real client property, real reports, real operator identity, or final operational evidence. Replace with real photography before serious public promotion / indexed launch where possible.
 
@@ -112,10 +112,8 @@ Details: `WORKFLOW.md`
 
 # Current next phase
 
-1. Owner decision: operator proof level for homepage Trust Spine Pilot.
-   - Recommended middle option: real name/role text cue now, no full-face portrait yet; real working/local photo later.
-   - Alternatives: real name + face/working photo, or role-only without name/face.
-2. Homepage Trust Spine Pilot only: make first contact feel more like a real local operator with visible cost logic while preserving the pathway choice.
+1. Finish/verify Phase 1B operator proof: short Aleksy Gugała cue in the homepage gate; longer public-operator explanation on About.
+2. Continue trust-spine work only when Owner-scoped; preserve the diagnostic gate and pathway choice.
 3. Reduce repeated scope/documentation/limits language where it weakens trust; do not soften into concierge, lifestyle, rental-management, or vague reassurance.
 4. Production contact email verification.
 5. Final pricing confirmation.

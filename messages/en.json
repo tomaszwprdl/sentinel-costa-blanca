@@ -78,10 +78,11 @@
         }
       },
       "operatorCue": {
-        "eyebrow": "Your local operator",
-        "name": "Tomasz",
-        "role": "Local Sentinel operator — Torrevieja and nearby area",
-        "presence": "On site, checks condition, controls access, and acts within the agreed scope.",
+        "eyebrow": "Local operator",
+        "name": "Aleksy Gugała",
+        "role": "Local Sentinel Operator",
+        "photoAlt": "Aleksy Gugała, Local Sentinel Operator",
+        "presence": "One of the operational team members shown publicly.",
         "priceLabel": "Indicative cost",
         "priceText": "Indicative: from approx. €80/month for the simplest scope. The exact range depends on property size and usage mode.",
         "priceLink": "Open the estimator"
@@ -2949,20 +2950,20 @@
         ]
       },
       "operator": {
-        "eyebrow": "Local team",
-        "title": "A local operating team, not a faceless platform.",
-        "status": "Local presence, clear limits.",
-        "body": "Sentinel runs through a local team handling access, checks, cleaning, documentation, and coordination at the property. Tomasz leads inquiries as the point of contact, but the operational work does not rely on one person or on ad-hoc favours.",
+        "eyebrow": "Local operator",
+        "title": "Aleksy Gugała",
+        "status": "Local Sentinel Operator on the Costa Blanca",
+        "body": "One of the Sentinel operational team members shown publicly. Responsible for owner contact, local visits, documentation, and decision escalation within the agreed scope. Not every person working with Sentinel is shown on the website. Selected team members are presented publicly so owners can see that the system is backed by a real local team.",
         "rows": [
-          { "label": "Inquiry handling", "value": "Tomasz and the Sentinel team" },
+          { "label": "Person", "value": "Aleksy Gugała" },
+          { "label": "Role", "value": "Local Sentinel Operator" },
           { "label": "Area", "value": "Torrevieja + 50-70 km" },
-          { "label": "Scope", "value": "access, checks, cleaning, reports, coordination" },
-          { "label": "Model", "value": "package, scope, decision limits" },
-          { "label": "Operational proof", "value": "report, photos, post-visit confirmations" }
+          { "label": "Work scope", "value": "owner contact, local visits, documentation, decision escalation" },
+          { "label": "Boundary", "value": "agreed scope and decision limits" }
         ],
         "artifact": {
-          "alt": "The local Sentinel team at a building entrance",
-          "caption": "The local Sentinel team — Torrevieja and nearby area."
+          "alt": "Aleksy Gugała, Local Sentinel Operator shown publicly",
+          "caption": "Aleksy Gugała — Local Sentinel Operator on the Costa Blanca."
         }
       },
       "local": {

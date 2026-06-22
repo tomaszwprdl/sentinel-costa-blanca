@@ -171,10 +171,10 @@ function OperatorProofSurface({
 
       <figure className="about-operator-proof__photo">
         <Image
-          src="/photos/sentinel-team.webp"
+          src="/photos/aleksy-gugala-operator.jpg"
           alt={artifactAlt}
-          width={3996}
-          height={2997}
+          width={875}
+          height={1280}
           sizes="(min-width: 1024px) 40vw, 100vw"
           className="about-operator-proof__photo-image"
           loading="eager"

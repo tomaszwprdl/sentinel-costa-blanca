@@ -78,10 +78,11 @@
         }
       },
       "operatorCue": {
-        "eyebrow": "Twój lokalny operator",
-        "name": "Tomasz",
-        "role": "Lokalny operator Sentinel — Torrevieja i okolice",
-        "presence": "Na miejscu sprawdza stan, pilnuje dostępu i działa w ustalonym zakresie.",
+        "eyebrow": "Lokalny operator",
+        "name": "Aleksy Gugała",
+        "role": "Lokalny operator Sentinel",
+        "photoAlt": "Aleksy Gugała, lokalny operator Sentinel",
+        "presence": "Jeden z publicznie pokazanych członków zespołu operacyjnego.",
         "priceLabel": "Orientacyjny koszt",
         "priceText": "Orientacyjnie: od ok. 80 €/mies. dla najprostszego zakresu. Dokładny przedział zależy od metrażu i sposobu użycia.",
         "priceLink": "Otwórz estymator"
@@ -2949,20 +2950,20 @@
         ]
       },
       "operator": {
-        "eyebrow": "Lokalny zespół",
-        "title": "Lokalny zespół operacyjny, nie anonimowa platforma.",
-        "status": "Lokalna obecność, jasne granice.",
-        "body": "Sentinel działa przez lokalny zespół obsługujący dostęp, kontrole, sprzątanie, dokumentację i koordynację spraw w nieruchomości. Zapytania prowadzi Tomasz jako punkt kontaktu, ale praca operacyjna nie opiera się na jednej osobie ani na przypadkowych przysługach.",
+        "eyebrow": "Lokalny operator",
+        "title": "Aleksy Gugała",
+        "status": "Lokalny operator Sentinel na Costa Blanca",
+        "body": "Jeden z członków zespołu operacyjnego Sentinel widocznych publicznie. Odpowiada za kontakt z właścicielem, wizyty lokalne, dokumentację i eskalację decyzji w ramach ustalonego zakresu. Nie każda osoba współpracująca z Sentinel jest pokazywana na stronie. Publicznie pokazujemy wybrane osoby, aby właściciel widział, że za systemem stoi realny lokalny zespół.",
         "rows": [
-          { "label": "Obsługa zapytań", "value": "Tomasz i zespół Sentinel" },
+          { "label": "Osoba", "value": "Aleksy Gugała" },
+          { "label": "Rola", "value": "lokalny operator Sentinel" },
           { "label": "Obszar", "value": "Torrevieja + 50-70 km" },
-          { "label": "Zakres", "value": "dostęp, kontrole, sprzątanie, raporty, koordynacja" },
-          { "label": "Model", "value": "pakiet, zakres, limity decyzji" },
-          { "label": "Dowód operacyjny", "value": "raport, zdjęcia, potwierdzenia po wizycie" }
+          { "label": "Zakres pracy", "value": "kontakt, wizyty, dokumentacja, eskalacja decyzji" },
+          { "label": "Granica", "value": "ustalony zakres i limity decyzji" }
         ],
         "artifact": {
-          "alt": "Lokalny zespół Sentinel przed wejściem do budynku",
-          "caption": "Lokalny zespół Sentinel — Torrevieja i okolice."
+          "alt": "Aleksy Gugała, lokalny operator Sentinel pokazany publicznie",
+          "caption": "Aleksy Gugała — lokalny operator Sentinel na Costa Blanca."
         }
       },
       "local": {

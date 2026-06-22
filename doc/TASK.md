@@ -14,11 +14,7 @@ The current live/main baseline is `e682b5b` (`fix: strengthen selected pathway c
 
 **Current priority:** do not start another broad visual pass. The site is visually credible enough to keep live. Council v2 shifted the next problem to trust spine: real human/operator proof, earlier price/estimator cue, copy density, and avoiding over-polished synthetic feel.
 
-Next recommended implementation is **Trust Spine Pilot — homepage only**, pending Owner decision on operator proof level:
-
-- Option A: real name + face/working photo.
-- Option B: real name/role text cue, no full-face portrait yet. Current Creative Director recommendation.
-- Option C: role-only, no name/face.
+Owner decision accepted for Phase 1B operator proof: show Aleksy Gugała by real name, role, and selected public photo, using restrained "one of the operational team members shown publicly" language. Homepage gate gets only the short cue; About carries the longer explanation. Do not imply fake scale.
 
 Pilot goals:
 

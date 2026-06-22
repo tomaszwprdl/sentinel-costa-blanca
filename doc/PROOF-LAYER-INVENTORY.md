@@ -343,7 +343,7 @@ Current proof/image slots:
 
 - Hero local-operator record.
 - `public/photos/about-operator-presence.webp` in the hero/operator record.
-- `public/photos/sentinel-team.webp` in the operator proof panel.
+- `public/photos/aleksy-gugala-operator.jpg` in the operator proof panel.
 - `public/photos/about-local-exterior.webp` in the local context area.
 - Operating gap board.
 - IS / IS-NOT boundary panel.
@@ -357,14 +357,14 @@ Current proof job:
 
 Risk:
 
-- It has an operator record, but not a named human/operator identity.
-- No face, credential, real local presence, or real operating-radius map.
+- It now has an Owner-approved named public operator identity for Aleksy Gugała.
+- The public operator photo is identity/team proof only, not field-work, client-property, or final operational evidence.
 
 Decision:
 
-- About improved with operator-presence and local-exterior imagery; keep as-is unless separately briefed.
-- Homepage Trust Spine Pilot still needs an Owner decision on operator proof level.
-- Later add a real face, hands, partial presence, or credential surface if Owner approves assets.
+- About improved with operator-presence/local-exterior imagery and an Owner-approved public operator photo; keep as-is unless separately briefed.
+- Homepage gate uses the short Aleksy Gugała operator cue; do not expand it into the full About copy.
+- Later replace other synthetic proof placeholders with real hands, working-surface, credential, or local-presence assets if Owner approves assets.
 - Phase 2 can add a real operating-radius map or a privacy-safe local presence object.
 
 Status:
@@ -456,7 +456,8 @@ Logo files are excluded. They are identity assets, not proof assets.
 | `public/photos/services-operational-capability.webp` | No live source reference found | Previous Services capability placeholder | Probably unused; do not delete without Owner review |
 | `public/photos/hiw-visit-record.webp` | How It Works visit-record image | Accepted synthetic shot-planning placeholder | Keep; later recreate as real visit-record/corridor/checklist detail |
 | `public/photos/about-operator-presence.webp` | About operator-presence image | Accepted synthetic shot-planning placeholder; no fake face claim | Keep; later replace with real hands/working-surface/operator-presence detail |
-| `public/photos/sentinel-team.webp` | About operator proof panel image | Tracked production asset | Keep while referenced; verify proof status with Owner before treating as final operational evidence |
+| `public/photos/aleksy-gugala-operator.jpg` | About operator proof panel image | Owner-approved public operator identity photo | Keep as identity/team proof only; do not treat as client-property or field-work evidence |
+| `public/photos/sentinel-team.webp` | No live source reference found | Previous About operator proof asset | Probably unused; do not delete without Owner review |
 | `public/photos/about-local-exterior.webp` | About local exterior image | Accepted synthetic/local shot-planning placeholder | Keep; later replace with real local exterior/presence photo |
 | `public/images/home/private-use/private-risk-water-floor.webp` | Private pathway risk carousel | Synthetic shot placeholder - recreate later | Validate placement, then brief real maintenance/water observation recreation |
 | `public/images/home/private-use/private-risk-ac-moisture.webp` | Private pathway risk carousel | Synthetic shot placeholder - recreate later | Validate placement, then brief real AC/moisture detail recreation |

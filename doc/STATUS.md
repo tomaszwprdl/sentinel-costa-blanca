@@ -18,9 +18,9 @@ Descriptive only. Does not define decisions or intent.
 | Website phase | Pre-live / soft-launch review ready |
 | Visual composition rebuild | **Merged** (`e5fa7bb` baseline; graphic passes through `cef326b`) |
 | Canonical visual mode | **Active** — one art-directed atmosphere; no public theme toggle |
-| Current focus | Homepage Trust Spine Pilot planning; Owner decision needed on operator proof level |
+| Current focus | Phase 1B operator proof local patch; next trust-spine work remains Owner-scoped |
 | Completed Services refinement | Live; protected package/SLA/emergency/estimator/contact/legal contracts preserved |
-| Proof-layer image status | Accepted as temporary synthetic shot-planning placeholders; replace with real photography before serious public promotion / indexed launch where possible |
+| Proof-layer image status | Synthetic placeholders remain temporary; About now uses an Owner-approved public operator identity photo for Aleksy Gugała, not operational/client-property evidence |
 | Council v2 trust audit | Visual credibility accepted; next priority is trust spine, human/operator proof, price cue, and copy-density reduction |
 | Site-polish phase | Closed (gate, pages, legal readability, contact sequencing) |
 | Documentation phase | Aligning to post-proof-assets trust-spine phase |
@@ -54,7 +54,7 @@ Descriptive only. Does not define decisions or intent.
 # What is not done / next decisions
 
 - Repo cleanup baseline after rapid global visual passes.
-- Owner decision on homepage operator proof level: real name + face/working photo; real name/role without face; or role-only.
+- Operator proof level accepted: Aleksy Gugała may be shown by real name, role, and selected public photo with restrained team wording.
 - Homepage Trust Spine Pilot: make the gate itself carry more trust before click, surface estimator/price logic earlier, reduce defensive repetition.
 - Real-photo replacement plan for accepted synthetic proof-layer placeholders.
 - Contact form production email end-to-end verification (inbox receipt pending Owner confirmation).

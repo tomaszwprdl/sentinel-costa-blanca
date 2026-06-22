@@ -96,6 +96,8 @@ Full package: standard €300 per decision; optional €500 if agreed. Above lim
 
 **Synthetic / AI image rule:** current proof-layer photos may be used only as temporary shot-planning placeholders when they are realistic, operational, restrained, locally plausible, and physically recreatable. They must not be described as actual Sentinel work, real client property, real reports, real operator identity, or final operational evidence. Future reviews should judge placement, repetition, crop, trust, and section fit, while tracking replacement with real photography before serious public promotion / indexed launch where possible.
 
+**Owner-approved operator identity cue:** a real local operator may be shown by name, role, and selected photo when that person has agreed to be visible publicly. Current public operator: Aleksy Gugała, Local Sentinel Operator on the Costa Blanca. Use restrained team language ("one of the operational team members shown publicly"); do not imply fake scale, publicize every collaborator, or treat identity proof as client-property/field-work evidence.
+
 ---
 
 # 9. Website Role

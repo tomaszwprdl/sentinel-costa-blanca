@@ -229,16 +229,14 @@ function FallbackGateOperatorCue({
   return (
     <aside className="gate-operator-cue" aria-label={t('pathway.operatorCue.eyebrow')}>
       <div className="gate-operator-cue__identity">
-        <span className="gate-operator-cue__pin" aria-hidden>
-          <svg viewBox="0 0 24 24" fill="none" focusable="false">
-            <path
-              d="M12 2.4c-3.5 0-6.3 2.8-6.3 6.3 0 4.7 6.3 12.9 6.3 12.9s6.3-8.2 6.3-12.9c0-3.5-2.8-6.3-6.3-6.3Z"
-              stroke="currentColor"
-              strokeWidth="1.5"
-            />
-            <circle cx="12" cy="8.6" r="2.3" fill="currentColor" />
-          </svg>
-        </span>
+        <Image
+          src="/photos/aleksy-gugala-operator.jpg"
+          alt={t('pathway.operatorCue.photoAlt')}
+          width={96}
+          height={96}
+          sizes="44px"
+          className="gate-operator-cue__photo"
+        />
         <div className="gate-operator-cue__id-copy">
           <span className="gate-operator-cue__eyebrow">{t('pathway.operatorCue.eyebrow')}</span>
           <strong className="gate-operator-cue__name">{t('pathway.operatorCue.name')}</strong>
