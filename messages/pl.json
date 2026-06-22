@@ -2492,7 +2492,7 @@
         "questions": {
           "q19": {
             "question": "Jak działa komunikacja?",
-            "answer": "Nowe zapytania idą przez formularz, e-mail lub numer ogólny. Aktywni klienci dostają osobny kanał operacyjny, zwykle telefon/WhatsApp, a formalne ustalenia trafiają na e-mail. Nie pracujemy przez prywatne numery zespołu."
+            "answer": "Nowe zapytania idą przez formularz, e-mail lub numer ogólny. Aktywni klienci dostają osobny kanał operacyjny, zwykle telefon/WhatsApp, a formalne ustalenia trafiają na e-mail. Formularz publiczny nie jest linią awaryjną; nie pracujemy przez prywatne numery zespołu."
           },
           "q20": {
             "question": "Czy możecie odmówić współpracy?",
@@ -2575,22 +2575,10 @@
         { "id": "cat-contact-channels", "targetId": "communication", "title": "Kanały kontaktu", "body": "Nowe zapytania, aktywni klienci, odmowa i zasady." }
       ]
     },
-    "boundary": {
-      "eyebrow": "Granice działania",
-      "title": "Pięć granic odpowiada na wiele pytań.",
-      "intro": "Większość wątpliwości FAQ wynika z jednej z tych zasad działania.",
-      "items": [
-        { "label": "Obszar", "value": "Torrevieja + 50-70 km. Bez wyjątku poza promieniem." },
-        { "label": "Pakiety", "value": "Usługi działają przez zakres pakietu, a nie otwarte listy zadań." },
-        { "label": "SLA", "value": "SLA określa reakcję i decyzję, nie gwarantowane rozwiązanie." },
-        { "label": "Poza zakresem", "value": "Wszystko poza pakietem wymaga osobnego uzgodnienia i zgody." },
-        { "label": "Kontakt publiczny", "value": "Formularz publiczny nie jest linią awaryjną." }
-      ]
-    },
     "details": {
       "eyebrow": "Szczegółowe odpowiedzi",
       "title": "FAQ pogrupowane według obszarów działania.",
-      "intro": "Szczegółowe odpowiedzi są pogrupowane według dopasowania usługi, dostępu, awarii, operacji, komunikacji i granic zasad."
+      "intro": "Szczegółowe odpowiedzi są pogrupowane według dopasowania usługi, dostępu, awarii, operacji, komunikacji i warunków dopasowania."
     },
     "assumptions": {
       "eyebrow": "Częste błędne założenia",
@@ -2914,12 +2902,12 @@
         "artifactTitle": "Rejestr operatora lokalnego",
         "artifactRows": [
           { "label": "Rola", "value": "reprezentacja właściciela na miejscu" },
-          { "label": "Obszar", "value": "Torrevieja + 50-70 km" },
+          { "label": "Obszar", "value": "południowe Costa Blanca" },
           { "label": "Działanie", "value": "kontrola, dostęp, dokumentacja" },
           { "label": "Granica", "value": "pakiet, zgoda, limit decyzji" }
         ],
         "facts": [
-          { "label": "Obszar", "value": "Torrevieja + 50-70 km" },
+          { "label": "Lokalnie", "value": "południowe Costa Blanca" },
           { "label": "Metoda", "value": "udokumentowane kontrole" },
           { "label": "Granica", "value": "określony zakres" }
         ]
@@ -2972,11 +2960,11 @@
         "eyebrow": "Lokalny operator",
         "title": "Aleksy Gugała",
         "status": "Lokalny operator Sentinel na Costa Blanca",
-        "body": "Jeden z członków zespołu operacyjnego Sentinel widocznych publicznie. Odpowiada za kontakt z właścicielem, wizyty lokalne, dokumentację i eskalację decyzji w ramach ustalonego zakresu. Nie każda osoba współpracująca z Sentinel jest pokazywana na stronie. Publicznie pokazujemy wybrane osoby, aby właściciel widział, że za systemem stoi realny lokalny zespół.",
+        "body": "Aleksy jest publicznie pokazanym operatorem lokalnym Sentinel. Zakres, dostęp i komunikacja są prowadzone w ramach ustalonego procesu, nie jako nieformalna przysługa jednej osoby. Odpowiada za kontakt z właścicielem, wizyty lokalne, dokumentację i eskalację decyzji w ramach ustalonego zakresu. Nie każda osoba współpracująca z Sentinel jest pokazywana na stronie.",
         "rows": [
           { "label": "Osoba", "value": "Aleksy Gugała" },
           { "label": "Rola", "value": "lokalny operator Sentinel" },
-          { "label": "Obszar", "value": "Torrevieja + 50-70 km" },
+          { "label": "Obszar", "value": "południowe Costa Blanca" },
           { "label": "Zakres pracy", "value": "kontakt, wizyty, dokumentacja, eskalacja decyzji" },
           { "label": "Granica", "value": "ustalony zakres i limity decyzji" }
         ],
@@ -2987,8 +2975,8 @@
       },
       "local": {
         "eyebrow": "Lokalny obszar działania",
-        "title": "Granica 50-70 km jest zasadą operacyjną, nie hasłem marketingowym.",
-        "intro": "Sentinel obsługuje Torrevieja i okoliczny obszar południowego Costa Blanca, bo fizyczna obecność musi pozostać realistyczna.",
+        "title": "Torrevieja + 50-70 km to zasada operacyjna, nie hasło marketingowe.",
+        "intro": "Sentinel obsługuje ten lokalny obszar południowego Costa Blanca, bo fizyczna obecność musi pozostać realistyczna.",
         "cards": [
           { "title": "Dyscyplina dojazdu", "body": "Rytm wizyt i reakcja na zdarzenia zależą od odległości, którą da się obsłużyć." },
           { "title": "Relacje lokalne", "body": "Sprzątanie, technicy i koordynacja dostępu działają lepiej w znanym obszarze." },
@@ -3022,28 +3010,6 @@
           { "marker": "04", "title": "Zgoda właściciela powyżej limitów", "body": "Decyzje finansowe lub operacyjne poza uprawnieniami wracają do właściciela." }
         ],
         "note": "Dlatego Sentinel może być użyteczny komercyjnie bez składania nieokreślonej obietnicy zarządzania nieruchomością."
-      },
-      "details": {
-        "eyebrow": "Szczegółowe granice",
-        "title": "Dodatkowe granice usługi.",
-        "intro": "Szczegóły modelu pakietowego, obszaru działania i odpowiedzialności są dostępne przed podjęciem decyzji.",
-        "items": {
-          "model": {
-            "title": "Model pakietowy",
-            "explainer": "Dlaczego usługa jest uporządkowana zamiast elastyczna.",
-            "body": "Jeżeli usługa nie jest wyraźnie wymieniona w pakiecie albo uzgodnionym module, nie jest wliczona. Chroni to jasność zakresu, ceny i odpowiedzialności."
-          },
-          "area": {
-            "title": "Granica geograficzna",
-            "explainer": "Dlaczego Torrevieja + 50-70 km jest stałą zasadą.",
-            "body": "Nieruchomości poza obszarem działania nie są obsługiwane jako wyjątki. Czas reakcji, rytm wizyt i lokalna koordynacja zależą od realistycznej odległości."
-          },
-          "accountability": {
-            "title": "Określona odpowiedzialność",
-            "explainer": "Co sprawia, że odpowiedzialność jest egzekwowalna.",
-            "body": "Odpowiedzialność jest egzekwowalna, ponieważ zakres jest określony, procedury są udokumentowane, raporty są przekazywane, a decyzje powyżej limitów wymagają zgody właściciela."
-          }
-        }
       },
       "cta": {
         "title": "Sprawdź, czy sposób działania Sentinel pasuje do Twojej nieruchomości.",

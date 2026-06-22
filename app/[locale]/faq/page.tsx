@@ -6,7 +6,6 @@ import { useLocale, useTranslations } from 'next-intl';
 import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
 import Section from '@/components/layout/Section';
-import FAQBoundaryPanel from '@/components/FAQBoundaryPanel';
 import FAQDecisionPanel from '@/components/FAQDecisionPanel';
 import FAQGroupedAccordion, { type FAQGroup } from '@/components/FAQGroupedAccordion';
 import FAQQuickAnswerCards from '@/components/FAQQuickAnswerCards';
@@ -25,11 +24,6 @@ type QuickAnswerSource = {
   title: string;
   answer: string;
   href: string;
-};
-
-type BoundaryItem = {
-  label: string;
-  value: string;
 };
 
 type AssumptionItem = {
@@ -54,7 +48,6 @@ export default function FAQPage() {
     ...item,
     linkLabel: t('redesign.quick.linkLabel'),
   }));
-  const boundaryItems = t.raw('redesign.boundary.items') as BoundaryItem[];
   const assumptionItems = t.raw('redesign.assumptions.items') as AssumptionItem[];
 
   const decisionItems = [
@@ -240,15 +233,6 @@ export default function FAQPage() {
                 />
               </div>
             )}
-          />
-        </Section>
-
-        <Section tone="alt" className="faq-section faq-section--boundary">
-          <FAQBoundaryPanel
-            eyebrow={t('redesign.boundary.eyebrow')}
-            title={t('redesign.boundary.title')}
-            intro={t('redesign.boundary.intro')}
-            items={boundaryItems}
           />
         </Section>
 

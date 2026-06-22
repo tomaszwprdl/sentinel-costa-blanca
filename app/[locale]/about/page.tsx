@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
-import DisclosureBlock from '@/components/DisclosureBlock';
 import Section from '@/components/layout/Section';
 
 type Fact = {
@@ -19,8 +18,6 @@ type InfoCard = {
 type MarkedItem = InfoCard & {
   marker: string;
 };
-
-const DETAIL_KEYS = ['model', 'area', 'accountability'] as const;
 
 function LocalOperatorRecord({
   badge,
@@ -342,29 +339,6 @@ export default async function AboutPage({
               <p className="about-capability-layout__note">{t('redesign.capabilities.note')}</p>
             </div>
             <CapabilityRegister items={capabilityItems} />
-          </div>
-        </Section>
-
-        <Section tone="alt" className="about-operator-section about-operator-section--details">
-          <div className="about-operator-intro about-operator-intro--wide">
-            <div>
-              <p className="section-label">{t('redesign.details.eyebrow')}</p>
-              <h2 className="h2-system">{t('redesign.details.title')}</h2>
-            </div>
-            <p>{t('redesign.details.intro')}</p>
-          </div>
-          <div className="about-detail-grid reveal-stagger">
-            {DETAIL_KEYS.map((key) => (
-              <DisclosureBlock
-                key={key}
-                label={t(`redesign.details.items.${key}.title`)}
-                explainer={t(`redesign.details.items.${key}.explainer`)}
-              >
-                <p className="mb-0 text-sm leading-relaxed text-body">
-                  {t(`redesign.details.items.${key}.body`)}
-                </p>
-              </DisclosureBlock>
-            ))}
           </div>
         </Section>
 
