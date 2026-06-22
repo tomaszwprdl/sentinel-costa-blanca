@@ -218,6 +218,7 @@ Pathways may change framing, examples, emphasis, estimator defaults, contact con
 
 - Logic in `lib/estimatorMatrix.ts` — do not change without Owner approval.
 - Public range display; no “starting from” anchors; no hidden pricing.
+- Owner-approved exception: a restrained early minimum-price cue may be shown only when it reflects the verified absolute estimator minimum and points users toward the estimator for the actual range. Current verified minimum: approximately €80/month. This does not change estimator logic, package pricing, or final commercial ranges.
 - Mixed / not defined → classification-first, not invented pricing.
 - Final commercial ranges require Owner confirmation before public launch.
 - Approved property-intake/context parameters include area in m², bedrooms/rooms, bathrooms, and patio/terrace/outdoor-area presence.

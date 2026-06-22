@@ -83,7 +83,7 @@
         "role": "Lokalny operator Sentinel — Torrevieja i okolice",
         "presence": "Na miejscu sprawdza stan, pilnuje dostępu i działa w ustalonym zakresie.",
         "priceLabel": "Orientacyjny koszt",
-        "priceText": "Miesięczny zakres zależny od metrażu i zakresu obsługi.",
+        "priceText": "Orientacyjnie: od ok. 80 €/mies. dla najprostszego zakresu. Dokładny przedział zależy od metrażu i sposobu użycia.",
         "priceLink": "Otwórz estymator"
       },
       "mediaAlt": {
@@ -709,7 +709,7 @@
         "lead": "Określ, jak nieruchomość jest używana. Sentinel dobierze zakres wizyt, dostępu, raportowania i decyzji lokalnych.",
         "secondaryCta": "Zacznij od sytuacji",
         "estimatorCue": {
-          "text": "Chcesz szybko sprawdzić orientacyjny zakres miesięczny?",
+          "text": "Orientacyjnie: od ok. 80 €/mies. dla najprostszego zakresu. Dokładny przedział zależy od metrażu i sposobu użycia.",
           "link": "Przejdź do estymatora."
         },
         "proofBadges": [

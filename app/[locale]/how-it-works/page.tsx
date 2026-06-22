@@ -3,9 +3,7 @@ import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
-import DisclosureBlock from '@/components/DisclosureBlock';
 import Section from '@/components/layout/Section';
-import ProcessDetailChapters from '@/components/ProcessDetailChapters';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import JourneyNav from '@/components/JourneyNav';
 import ReportDecisionLimits from '@/components/how-it-works/ReportDecisionLimits';
@@ -29,7 +27,6 @@ type EvidencePanel = {
   rows: RecordRow[];
 };
 
-const FAQ_KEYS = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7'] as const;
 const RHYTHM_KEYS = ['visits', 'reports', 'access', 'changes'] as const;
 
 export default async function HowItWorksPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -45,7 +42,6 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
     { id: 'process-start', label: t('redesign.hero.eyebrow') },
     { id: 'procedure-corridor', label: t('redesign.procedure.eyebrow') },
     { id: 'report-decision', label: t('redesign.evidence.eyebrow') },
-    { id: 'onboarding-detail', label: t('redesign.details.eyebrow') },
     { id: 'process-handoff', label: t('cta.eyebrow') },
   ];
 
@@ -202,15 +198,6 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
           </div>
         </Section>
 
-        <Section tone="light" id="onboarding-detail" className="section-primitive--compact hiw-section--ledger hiw-appendix-section">
-          <div className="hiw-ledger-intro">
-            <p className="section-label">{t('redesign.details.eyebrow')}</p>
-            <h2 className="h2-system mt-3">{t('redesign.details.title')}</h2>
-            <p className="mt-3 max-w-[62ch] text-body">{t('redesign.details.intro')}</p>
-          </div>
-          <ProcessDetailChapters t={t} />
-        </Section>
-
         <Section tone="alt" className="section-primitive--compact hiw-interface-section hiw-section--support">
           <div className="hiw-action-log">
             <div>
@@ -225,50 +212,6 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div className="hiw-support-disclosures">
-            <DisclosureBlock label={t('changes.title')} explainer={t('changes.packageChangesIntro')}>
-              <div className="space-y-5">
-                <div>
-                  <h3 className="text-base font-black text-heading">{t('changes.packageChangesTitle')}</h3>
-                  <ul className="ml-4 list-disc space-y-2 text-sm text-body">
-                    <li>{t('changes.packageChangesItems.request')}</li>
-                    <li>{t('changes.packageChangesItems.terms')}</li>
-                    <li>{t('changes.packageChangesItems.effective')}</li>
-                    <li>{t('changes.packageChangesItems.retroactive')}</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-base font-black text-heading">{t('changes.additionsTitle')}</h3>
-                  <ul className="ml-4 list-disc space-y-2 text-sm text-body">
-                    <li>{t('changes.additionsItems.quoted')}</li>
-                    <li>{t('changes.additionsItems.added')}</li>
-                    <li>{t('changes.additionsItems.noAlter')}</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-base font-black text-heading">{t('changes.clientTerminationTitle')}</h3>
-                  <ul className="ml-4 list-disc space-y-2 text-sm text-body">
-                    <li>{t('changes.clientTerminationItems.effective')}</li>
-                    <li>{t('changes.clientTerminationItems.finalVisit')}</li>
-                    <li>{t('changes.clientTerminationItems.keysReturned')}</li>
-                    <li>{t('changes.clientTerminationItems.finalReport')}</li>
-                  </ul>
-                </div>
-              </div>
-            </DisclosureBlock>
-
-            <DisclosureBlock label={t('redesign.faq.title')} explainer={t('redesign.faq.eyebrow')}>
-              <dl className="hiw-faq-list">
-                {FAQ_KEYS.map((key) => (
-                  <div key={key} className="hiw-faq-list__item">
-                    <dt className="hiw-faq-list__question">{t(`faq.questions.${key}.question`)}</dt>
-                    <dd className="hiw-faq-list__answer">{t(`faq.questions.${key}.answer`)}</dd>
-                  </div>
-                ))}
-              </dl>
-            </DisclosureBlock>
           </div>
         </Section>
 
@@ -296,7 +239,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
         primaryLabel={tCommon('nav.contact')}
         secondaryHref="#procedure-corridor"
         secondaryLabel={t('redesign.procedure.eyebrow')}
-        suppressWhenVisible="footer,.hiw-handoff,.hiw-section--support,#report-decision,#onboarding-detail"
+        suppressWhenVisible="footer,.hiw-handoff,.hiw-section--support,#report-decision"
       />
       <Footer />
     </>

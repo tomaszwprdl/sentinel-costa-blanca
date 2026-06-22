@@ -163,7 +163,6 @@ function ContactPageInner() {
   const heroRows = t.raw('redesign.hero.artifactRows') as Fact[];
   const preparationItems = t.raw('redesign.prepare.items') as MarkedItem[];
   const routeCards = t.raw('redesign.routes.cards') as Required<MarkedItem>[];
-  const fitCards = t.raw('redesign.fit.cards') as InfoCard[];
   const nextSteps = t.raw('redesign.afterSubmit.steps') as MarkedItem[];
 
   const estimatorPrefill = useMemo(() => {
@@ -698,21 +697,6 @@ function ContactPageInner() {
                   <p>{step.body}</p>
                 </article>
               ))}
-            </div>
-          </div>
-        </Section>
-
-        <Section tone="alt" className="contact-section contact-boundary-section">
-          <div className="contact-boundary-layout">
-            <div className="contact-section-heading">
-              <p className="section-label">{t('redesign.fit.eyebrow')}</p>
-              <h2 className="h2-system">{t('redesign.fit.title')}</h2>
-              <p>{t('redesign.fit.intro')}</p>
-            </div>
-
-            <div className="contact-support-panel contact-boundary-panel">
-              <ContactInfoList items={fitCards} markerMode="number" />
-              <p className="contact-support-panel__note">{t('redesign.fit.note')}</p>
             </div>
           </div>
         </Section>

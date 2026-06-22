@@ -24,8 +24,6 @@ const PATHWAY_POINT_COUNTS: Record<PathwayKey, number> = {
   'mixed-not-defined': 5,
 };
 
-const MODEL_PROOF_KEYS = ['scope', 'presence', 'documentation', 'decisions'] as const;
-
 export default async function HomePage({
   params
 }: {
@@ -63,34 +61,6 @@ export default async function HomePage({
         {/* 4. BEZ NAS / Z NAMI — private-use risk carousel; split band for the other pathways */}
         <Section tone="alt" className="home-section home-section--contrast !py-16 md:!py-24">
           <HomeContrastBlock />
-        </Section>
-
-        {/* 5. DLACZEGO MODEL DZIAŁA — zamknięty łańcuch odpowiedzialności */}
-        <Section tone="alt" className="home-section home-section--distinction !py-16 md:!py-20">
-          <div className="home-distinction-layout">
-            <div className="home-distinction-header">
-              <p className="section-label">{t('distinction.eyebrow')}</p>
-              <h2 className="h2-system mt-3">{t('distinction.title')}</h2>
-              <p className="mt-4 text-body leading-relaxed">
-                <PathwayCopy path="distinctionIntro" />
-              </p>
-            </div>
-            <div className="home-distinction-chain">
-              {MODEL_PROOF_KEYS.map((key, index) => (
-                <article key={key} className="home-distinction-item">
-                  <p className="home-distinction-item__num" aria-hidden>
-                    {String(index + 1).padStart(2, '0')}
-                  </p>
-                  <h3 className="home-distinction-item__title">
-                    {t(`distinction.cards.${key}.title`)}
-                  </h3>
-                  <p className="home-distinction-item__body mb-0">
-                    {t(`distinction.cards.${key}.body`)}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
         </Section>
 
         <section className="page-final-cta home-handoff-cta" aria-labelledby="home-handoff-cta-heading">

@@ -83,7 +83,7 @@
         "role": "Local Sentinel operator — Torrevieja and nearby area",
         "presence": "On site, checks condition, controls access, and acts within the agreed scope.",
         "priceLabel": "Indicative cost",
-        "priceText": "Monthly range depends on size and scope of oversight.",
+        "priceText": "Indicative: from approx. €80/month for the simplest scope. The exact range depends on property size and usage mode.",
         "priceLink": "Open the estimator"
       },
       "mediaAlt": {
@@ -709,7 +709,7 @@
         "lead": "Define how the property is used. Sentinel aligns visits, access, reporting, and local decision boundaries.",
         "secondaryCta": "Start with situation",
         "estimatorCue": {
-          "text": "Want a quick orientation on the monthly range?",
+          "text": "Indicative: from approx. €80/month for the simplest scope. The exact range depends on property size and usage mode.",
           "link": "Jump to the estimator."
         },
         "proofBadges": [
