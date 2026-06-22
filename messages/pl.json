@@ -60,7 +60,7 @@
     },
     "pathway": {
       "companyEyebrow": "Lokalna reprezentacja właściciela",
-      "companyHeadline": "Lokalny nadzór, gdy nie ma Cię na miejscu.",
+      "companyHeadline": "Masz nieruchomość tutaj, ale mieszkasz gdzie indziej? Sentinel jest lokalnym operatorem po Twojej stronie.",
       "companyLine": "Sentinel działa lokalnie w imieniu właściciela: sprawdza stan, kontroluje dostęp i dokumentuje to, co dzieje się na miejscu.",
       "companyProofLine": "Zakres, dostęp i zapis są ustalone przed rozpoczęciem nadzoru.",
       "companyFacts": {
@@ -136,7 +136,7 @@
       },
       "selectorTitle": "Wybierz sposób używania nieruchomości",
       "selectorInstruction": "Od tego zależy zakres lokalnego nadzoru.",
-      "gateInstruction": "Wybierz sytuację, żeby zobaczyć właściwy zakres nadzoru.",
+      "gateInstruction": "Nie wiesz, który wariant pasuje? Wybierz model mieszany albo porozmawiaj z Aleksym.",
       "gateScrollCue": "Przejdź do wyboru sytuacji używania",
       "chooseModel": "Wybierz ten model",
       "selectedSituationLabel": "Wybrana sytuacja:",
@@ -693,6 +693,7 @@
     },
     "redesign": {
       "journey": {
+        "overview": "Co dostajesz",
         "situation": "Sytuacja",
         "responsibility": "Odpowiedzialność",
         "scope": "Zakres",
@@ -707,8 +708,8 @@
           "Dobierz zakres nadzoru",
           "do sposobu używania nieruchomości."
         ],
-        "lead": "Określ, jak nieruchomość jest używana. Sentinel dobierze zakres wizyt, dostępu, raportowania i decyzji lokalnych.",
-        "secondaryCta": "Zacznij od sytuacji",
+        "lead": "Najpierw zobaczysz, co realnie obejmuje nadzór. Potem porównasz pakiety, sprawdzisz orientacyjny przedział i dopiero na końcu granice wykonania.",
+        "secondaryCta": "Zobacz, co obejmuje",
         "estimatorCue": {
           "text": "Orientacyjnie: od ok. 80 €/mies. dla najprostszego zakresu. Dokładny przedział zależy od metrażu i sposobu użycia.",
           "link": "Przejdź do estymatora."
@@ -738,13 +739,24 @@
           ]
         }
       },
+      "skim": {
+        "eyebrow": "Co dostajesz",
+        "title": "Cztery rzeczy powinny być jasne od pierwszego czytania.",
+        "intro": "Wiesz z góry, co zostanie sprawdzone, kto podejmuje decyzję i kiedy potrzebna jest Twoja zgoda.",
+        "items": {
+          "inspections": { "label": "Kontrole / raporty", "title": "Stan jest sprawdzany i zapisany.", "body": "Po uzgodnionych wizytach dostajesz materiał o tym, co było widoczne na miejscu." },
+          "access": { "label": "Klucze / dostęp", "title": "Wejścia mają zasady.", "body": "Wejście właściciela, technika, sprzątania lub partnera odbywa się według ustalonego modelu." },
+          "decisions": { "label": "Decyzje", "title": "Działanie zostawia ślad.", "body": "Raport pokazuje, co sprawdzono, co wykonano i co wymaga kolejnego kroku." },
+          "approval": { "label": "Zgoda właściciela", "title": "Powyżej limitu decyzja wraca do Ciebie.", "body": "Sentinel działa w limicie pakietu; większy koszt lub zmiana zakresu wymaga zatwierdzenia." }
+        }
+      },
       "ladder": {
         "eyebrow": "Poziom odpowiedzialności",
-        "title": "Pakiet określa, ile odpowiedzialności Sentinel przejmuje na miejscu.",
-        "intro": "Różnica między pakietami dotyczy wizyt, dostępu, koordynacji i możliwości działania w ustalonym limicie.",
-        "bridgeLine": "",
+        "title": "Pakiet określa poziom odpowiedzialności, nie listę przysług.",
+        "intro": "Pakiety różnią rytm wizyt, koordynację dostępu, priorytet i limit decyzji. To drabina odpowiedzialności, nie otwarty katalog zadań.",
+        "bridgeLine": "Najpierw sposób używania nieruchomości, potem poziom odpowiedzialności.",
         "detailCta": "Zobacz pełny zakres",
-        "simulatorCta": "Zobacz zdarzenia",
+        "estimatorCta": "Przejdź do estymatora",
         "responsibilityLabel": "Główna odpowiedzialność",
         "depthLabel": "Zakres działania",
         "basic": {
@@ -837,43 +849,45 @@
       "boundary": {
         "eyebrow": "Granice usługi",
         "title": "Sentinel działa lokalnie, ale tylko w ustalonym zakresie.",
-        "intro": "Działamy lokalnie w ustalonym obszarze i uzgodnionym zakresie. Bez nieograniczonej dostępności.",
+        "intro": "To jest kanoniczna granica usługi: Sentinel nie jest concierge, agencją najmu ani pełnym zarządzaniem nieruchomością. Wiesz z góry, co zostanie sprawdzone, kto podejmuje decyzję i kiedy potrzebna jest Twoja zgoda.",
+        "eligibility": "Kwalifikacja lokalizacji: Torrevieja + promień 50–70 km.",
         "doesTitle": "W uzgodnionym zakresie",
         "doesNotTitle": "Poza uzgodnionym zakresem",
         "does": {
-          "oversight": { "title": "Lokalny nadzór", "body": "Zaplanowane kontrole stanu i zapis tego, co widać na miejscu." },
-          "access": { "title": "Kontrolowany dostęp", "body": "Przechowywanie lub prowadzenie kluczy zgodnie z ustaleniami i pakietem." },
-          "documentation": { "title": "Dokumentacja zdarzeń", "body": "Raporty, zdjęcia, notatki i informacja o wymaganej decyzji." },
-          "coordination": { "title": "Koordynacja operacyjna", "body": "Kontakt z technikiem, sprzątaniem lub wykonawcą w uzgodnionym zakresie." }
+          "oversight": { "title": "Lokalny nadzór", "body": "Zaplanowane kontrole stanu i zapis tego, co było widoczne na miejscu." },
+          "access": { "title": "Kontrolowany dostęp", "body": "Klucze, wejścia i obecność osób trzecich prowadzone według uzgodnionych zasad." },
+          "documentation": { "title": "Dokumentacja decyzji", "body": "Raporty pokazują stan, wykonane działania i punkty wymagające decyzji właściciela." },
+          "coordination": { "title": "Koordynacja operacyjna", "body": "Kontakt z technikiem, sprzątaniem lub wykonawcą, gdy mieści się w ustaleniach." }
         },
         "doesNot": {
-          "rentalAgency": { "title": "Agencja najmu", "body": "Sentinel nie prowadzi rezerwacji, cen, licencji ani komunikacji platformowej." },
-          "concierge": { "title": "Concierge", "body": "Brak usług lifestyle, nieograniczonych przysług i zadań bez zakresu." },
+          "bookings": { "title": "Rezerwacje i platformy", "body": "Sentinel nie prowadzi cen, licencji, ogłoszeń ani komunikacji z platformami." },
+          "administration": { "title": "Cała administracja lokalu", "body": "Model nie przejmuje finansów, sporów, dokumentów ani decyzji właścicielskich." },
+          "lifestyleTasks": { "title": "Zadania osobiste i lifestyle", "body": "Brak nieograniczonych przysług i zadań bez ustalonej odpowiedzialności." },
           "unlimitedEmergency": { "title": "Nieograniczony wykonawca awaryjny", "body": "Decyzje i koszty mają limity; naprawy zależą od dostępnych wykonawców." },
           "undefinedTasks": { "title": "Nieopisane zadania", "body": "To, czego nie ma w pakiecie lub ustaleniu, wymaga oddzielnej zgody." }
         }
       },
       "modules": {
         "eyebrow": "Warstwa operacyjna",
-        "title": "Sprzątanie, dostęp i gotowość są zdolnościami operacyjnymi wewnątrz pakietu.",
-        "intro": "Pakiet pozostaje źródłem uprawnień. Sprzątanie, dostęp i gotowość sezonowa — tylko w uzgodnionym zakresie nadzoru.",
+        "title": "Właściciel widzi gotowość, dostęp i decyzje w jednym zapisie.",
+        "intro": "Sprzątanie gotowości, dostęp, sezonowe przygotowanie i partnerzy są widoczne jako wynik nadzoru: co jest gotowe, kto wszedł i co wymaga decyzji.",
         "capabilityImageAlt": "Klucze, notatnik i ściereczka przygotowane do zadania dostępu lub gotowości",
         "cleaning": {
           "eyebrow": "Sprzątanie i gotowość",
-          "title": "Sprzątanie jest częścią nadzoru, nie osobną usługą.",
-          "intro": "Gotowość przed przyjazdem, porządek między pobytami i zapis w ustalonym zakresie pakietu.",
+          "title": "Gotowość nie kończy się na kontroli.",
+          "intro": "Przed przyjazdem lub między pobytami liczy się widoczny stan, porządek i zapis wykonania.",
           "items": {
             "readiness": { "title": "Gotowość przed przyjazdem", "body": "Przygotowanie lokalu przed wizytą właściciela lub gości — w ustalonym zakresie.", "summary": { "primary": { "label": "Działanie", "text": "sprawdzenie wejścia, podstawowego porządku i gotowości." }, "secondary": { "label": "Wynik", "text": "lokal nie czeka na właściciela z prostym problemem." } }, "imageAlt": "Przygotowana sypialnia z ręcznikami, kluczami i folderem gotowości." },
             "turnover": { "title": "Porządek po pobycie gości", "body": "Sprzątanie i kontrola stanu między pobytami.", "summary": { "primary": { "label": "Działanie", "text": "porządek po pobycie i szybka ocena stanu." }, "secondary": { "label": "Wynik", "text": "następny pobyt zaczyna się od znanego stanu lokalu." } }, "imageAlt": "Sypialnia po pobycie gości z ręcznikami i sprzętem sprzątającym." },
             "documentation": { "title": "Udokumentowana koordynacja", "body": "Koordynacja, kontrola i zapis w raporcie.", "summary": { "primary": { "label": "Działanie", "text": "zdjęcia, notatka i potwierdzenie wykonania." }, "secondary": { "label": "Wynik", "text": "właściciel widzi, co zrobiono i co wymaga decyzji." } }, "imageAlt": "Notatnik, klucze i dokumentacja przygotowane na stole w lokalu." },
-            "boundary": { "title": "Nie osobna firma sprzątająca", "body": "Pojedyncze wykonanie można uzgodnić osobno — nadzór i odpowiedzialność zostają w pakiecie.", "summary": { "primary": { "label": "Działanie", "text": "sprzątanie tylko w ramach ustalonego zakresu." }, "secondary": { "label": "Granica", "text": "bez stałej usługi sprzątania poza pakietem." } }, "imageAlt": "Klucze, foldery zakresu i segregator dokumentacji na stole w lokalu." }
+            "boundary": { "title": "Granica sprzątania", "body": "Pojedyncze wykonanie można uzgodnić osobno; stały nadzór i odpowiedzialność pozostają w pakiecie.", "summary": { "primary": { "label": "Działanie", "text": "porządek i gotowość tylko w ustalonym modelu." }, "secondary": { "label": "Wynik", "text": "właściciel widzi usługę jako część nadzoru, nie jako osobny abonament." } }, "imageAlt": "Klucze, foldery zakresu i segregator dokumentacji na stole w lokalu." }
           }
         },
         "useWhen": "Funkcja zakresu",
         "stackLabel": "Kontrolowane zdolności",
         "stackTitle": "Dostęp i gotowość sezonowa działają w ramach pakietu.",
-        "guardrailLabel": "Granica",
-        "guardrailBody": "Moduł może zwiększyć wykonanie, ale odpowiedzialność pakietu, SLA, decyzje i wyłączenia pozostają bez zmian.",
+        "guardrailLabel": "Zasada",
+        "guardrailBody": "Zdolność operacyjna odpowiada na konkretną sytuację; nie zmienia SLA, limitów ani wyłączeń pakietu.",
         "moduleBodies": {
           "rental": "Sprzątanie przygotowawcze, sprzątanie między pobytami i wejścia gości prowadzone jako udokumentowane wykonanie w uzgodnionym zakresie nadzoru.",
           "access": "Klucze, jednorazowe wejścia i logistyka partnerska — kontrolowana koordynacja w nadzorze.",
@@ -897,9 +911,9 @@
       },
       "estimatorBand": {
         "eyebrow": "Orientacyjny zakres miesięczny",
-        "title": "Określ orientacyjny miesięczny zakres nadzoru.",
-        "intro": "Wybierz pakiet, sposób użytkowania i podstawowe parametry lokalu. Wynik pokazuje orientacyjny miesięczny zakres do potwierdzenia.",
-        "transition": "To orientacyjne narzędzie. Ostateczny zakres potwierdzamy po weryfikacji.",
+        "title": "Sprawdź orientacyjny przedział zanim wyślesz zapytanie.",
+        "intro": "Wybierz pakiet, sposób używania i podstawowe parametry lokalu. Wynik pomaga ustawić rozmowę bez zgadywania ceny.",
+        "transition": "To narzędzie orientacyjne. Nie zatwierdza usługi ani nie zmienia matrycy estymatora.",
         "contextTitle": "Kontekst nieruchomości przed kalkulacją",
         "contextItems": {
           "bathrooms": { "label": "Łazienki", "body": "Uwzględniane przy przeglądzie sprzątania/gotowości i planowaniu przekazania." },
@@ -911,7 +925,7 @@
         "thresholdLabel": "Poza modelem pakietowym",
         "sideLabel": "Poza pakietem",
         "title": "Pojedyncze czynności są wyjątkiem, nie modelem usługi.",
-        "body": "Można je uzgodnić po kwalifikacji, ale bez stałego nadzoru, raportów cyklicznych, SLA ani uprawnień decyzyjnych.",
+        "body": "Można je uzgodnić po kwalifikacji; właściciel nie dostaje wtedy cyklicznych wizyt, raportów, SLA ani lokalnej decyzji.",
         "availableLabel": "Możliwe po uzgodnieniu",
         "limitsLabel": "Czego nie obejmuje",
         "gateLabel": "Najpierw kwalifikacja",
@@ -921,9 +935,14 @@
       },
       "details": {
         "frameworkLabel": "Ramy usługi i minimalny okres",
-        "frameworkExplainer": "Harmonogram wizyt, limity decyzji, komunikacja i rozliczenie pozostają dostępne bez dominowania strony.",
+        "frameworkExplainer": "Szczegóły są tu, w jednej sekcji granic, zamiast powtarzać je w całej stronie.",
         "notIncludedLabel": "Pełna lista wyłączeń",
-        "notIncludedExplainer": "Wyłączenia są częścią granicy odpowiedzialności, nie osobną ofertą."
+        "notIncludedExplainer": "Wyłączenia są częścią tej samej granicy odpowiedzialności."
+      },
+      "finalRegistry": {
+        "review": { "label": "Kwalifikacja", "body": "Najpierw lokalizacja i sposób używania." },
+        "scope": { "label": "Zakres", "body": "Wiesz, co będzie sprawdzane i kiedy potrzebna jest zgoda." },
+        "next": { "label": "Następny krok", "body": "Wyślij kontekst nieruchomości do krótkiej oceny." }
       }
     },
     "diagrams": {
@@ -1190,7 +1209,7 @@
       "items": {
         "noGuaranteeFixes": "Gwarancji usunięcia wszystkich usterek",
         "contractorResponsibility": "Odpowiedzialności za pracę firm zewnętrznych",
-        "concierge": "Usług concierge",
+        "concierge": "Otwartej pomocy osobistej lub zadań lifestyle",
         "construction": "Wykonywania prac budowlanych",
         "outsideArea": "Obsługi poza ustalonym obszarem działania",
         "operationalWithoutScope": "Usług operacyjnych bez wcześniejszego uzgodnienia zakresu"

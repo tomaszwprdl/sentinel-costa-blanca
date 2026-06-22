@@ -121,8 +121,8 @@ export default function PackageResponsibilityLadder() {
             <Link href="#scope" className="btn-primary">
               {t('redesign.ladder.detailCta')}
             </Link>
-            <Link href="#event-simulator" className="btn-secondary">
-              {t('redesign.ladder.simulatorCta')}
+            <Link href="#estimator" className="btn-secondary">
+              {t('redesign.ladder.estimatorCta')}
             </Link>
           </div>
         </article>

@@ -8393,6 +8393,7 @@ textarea:focus {
 }
 
 .services-bridge-band,
+.services-skim-strip,
 .services-ladder-band,
 .services-modules-band,
 .services-estimator-band {
@@ -8430,6 +8431,107 @@ textarea:focus {
   mask-image: radial-gradient(20rem 14rem at 28% 24%, black 6%, transparent 78%);
   opacity: 0.42;
   content: "";
+}
+
+.services-skim-strip {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid color-mix(in srgb, var(--line) 56%, var(--support));
+  border-radius: var(--site-radius-shell);
+  background: var(--site-surface-shell);
+  box-shadow:
+    var(--site-shadow-shell),
+    inset 0 1px 0 rgba(255, 253, 249, 0.88);
+}
+
+.services-skim-strip::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(18rem 11rem at 12% 0%, rgba(210, 154, 87, 0.09), transparent 72%),
+    radial-gradient(16rem 10rem at 88% 100%, rgba(47, 111, 115, 0.07), transparent 74%);
+  content: "";
+}
+
+.services-skim-strip > * {
+  position: relative;
+  z-index: 1;
+}
+
+.services-skim-strip__header {
+  display: grid;
+  gap: 1rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 72%, var(--support));
+  background:
+    linear-gradient(90deg, rgba(230, 238, 235, 0.9), rgba(255, 252, 246, 0.72));
+  padding: 1.1rem;
+}
+
+.services-skim-strip__header > p {
+  margin: 0;
+  max-width: 54rem;
+  color: var(--body);
+  font-size: clamp(1rem, 1.45vw, 1.18rem);
+  line-height: 1.55;
+}
+
+.services-skim-strip__items {
+  display: grid;
+  gap: 0;
+}
+
+.services-skim-item {
+  display: grid;
+  gap: 0.55rem;
+  min-width: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 74%, transparent);
+  padding: 1rem;
+}
+
+.services-skim-item:last-child {
+  border-bottom: 0;
+}
+
+.services-skim-item__marker {
+  display: inline-flex;
+  width: 2.2rem;
+  height: 2.2rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--support) 38%, var(--line));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--support) 11%, var(--surface-card));
+  color: var(--support);
+  font-size: 0.68rem;
+  font-weight: 950;
+}
+
+.services-skim-item p {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.services-skim-item h3 {
+  margin: 0;
+  color: var(--heading);
+  font-size: clamp(1.06rem, 1.5vw, 1.25rem);
+  font-weight: 950;
+  line-height: 1.15;
+}
+
+.services-skim-item small {
+  display: block;
+  color: var(--body);
+  font-size: 0.88rem;
+  line-height: 1.5;
 }
 
 .services-event-simulator {
@@ -8653,6 +8755,31 @@ textarea:focus {
   background:
     linear-gradient(90deg, rgba(230, 238, 235, 0.9), rgba(255, 252, 246, 0.7));
   padding: 1.1rem;
+}
+
+.services-boundary-eligibility {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  margin: 1rem 0 0;
+  border: 1px solid color-mix(in srgb, var(--support) 34%, var(--line));
+  border-radius: var(--site-radius-control);
+  background: color-mix(in srgb, var(--surface-card) 78%, var(--surface-light-alt));
+  color: color-mix(in srgb, var(--heading) 84%, var(--support));
+  font-size: 0.84rem;
+  font-weight: 900;
+  line-height: 1.35;
+  padding: 0.72rem 0.85rem;
+}
+
+.services-boundary-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.services-boundary-details {
+  display: grid;
+  gap: 1rem;
 }
 
 .services-boundary-dual {
@@ -9267,6 +9394,31 @@ textarea:focus {
 }
 
 @media (min-width: 1024px) {
+  .services-skim-strip__header {
+    grid-template-columns: minmax(0, 0.58fr) minmax(20rem, 0.42fr);
+    align-items: end;
+  }
+
+  .services-skim-strip__items {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .services-skim-item {
+    min-height: 14.5rem;
+    border-right: 1px solid color-mix(in srgb, var(--line) 74%, transparent);
+    border-bottom: 0;
+    padding: 1.2rem;
+  }
+
+  .services-skim-item:last-child {
+    border-right: 0;
+  }
+
+  .services-boundary-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
   .services-final-cta__panel {
     border-top: 0;
     border-left: 1px solid rgba(255, 250, 242, 0.16);
@@ -9516,6 +9668,26 @@ textarea:focus {
     padding: 1.2rem;
   }
 
+  .services-skim-strip__header {
+    padding: 1.35rem 1.6rem;
+  }
+
+  .services-skim-strip__items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .services-skim-item {
+    padding: 1.15rem 1.2rem;
+  }
+
+  .services-skim-item:nth-child(odd) {
+    border-right: 1px solid color-mix(in srgb, var(--line) 74%, transparent);
+  }
+
+  .services-skim-item:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+
   .services-event-simulator__grid {
     grid-template-columns: minmax(18rem, 0.34fr) minmax(0, 0.66fr);
   }
@@ -9638,6 +9810,31 @@ textarea:focus {
   .services-hero-visual__frame {
     transform: scale(1.03);
     transform-origin: center right;
+  }
+
+  .services-skim-strip__header {
+    grid-template-columns: minmax(0, 0.58fr) minmax(20rem, 0.42fr);
+    align-items: end;
+  }
+
+  .services-skim-strip__items {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .services-skim-item {
+    min-height: 14.5rem;
+    border-right: 1px solid color-mix(in srgb, var(--line) 74%, transparent);
+    border-bottom: 0;
+    padding: 1.2rem;
+  }
+
+  .services-skim-item:last-child {
+    border-right: 0;
+  }
+
+  .services-boundary-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
   }
 
   .services-modules-band {
@@ -17350,6 +17547,7 @@ textarea:focus {
 }
 
 .services-router-board,
+.services-skim-strip,
 .services-modules-band,
 .services-boundary-panel,
 .services-estimator-band {
@@ -17364,6 +17562,26 @@ textarea:focus {
 .services-router-board__choices {
   background:
     linear-gradient(180deg, var(--svc-stone) 0%, color-mix(in srgb, var(--svc-stone) 72%, var(--svc-paper)) 100%);
+}
+
+.services-skim-strip__header {
+  background:
+    linear-gradient(180deg, var(--svc-stone) 0%, color-mix(in srgb, var(--svc-paper) 72%, var(--svc-stone)) 100%);
+}
+
+.services-skim-item {
+  border-color: var(--svc-rule);
+}
+
+.services-skim-item__marker {
+  border-color: color-mix(in srgb, var(--svc-field) 45%, var(--svc-rule));
+  background: color-mix(in srgb, var(--svc-field) 12%, var(--svc-paper));
+  color: var(--svc-field);
+}
+
+.services-skim-item p,
+.services-boundary-eligibility {
+  color: var(--svc-field);
 }
 
 .services-router-choice {

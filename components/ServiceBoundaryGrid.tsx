@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 
 const DOES_KEYS = ['oversight', 'access', 'documentation', 'coordination'] as const;
-const DOES_NOT_KEYS = ['rentalAgency', 'concierge', 'unlimitedEmergency', 'undefinedTasks'] as const;
+const DOES_NOT_KEYS = ['bookings', 'administration', 'lifestyleTasks', 'unlimitedEmergency', 'undefinedTasks'] as const;
 
 export default function ServiceBoundaryGrid() {
   const t = useTranslations('services');
@@ -14,6 +14,7 @@ export default function ServiceBoundaryGrid() {
         <p className="section-label">{t('redesign.boundary.eyebrow')}</p>
         <h2 className="h2-system mt-3">{t('redesign.boundary.title')}</h2>
         <p className="mt-3 max-w-[62ch] text-body">{t('redesign.boundary.intro')}</p>
+        <p className="services-boundary-eligibility">{t('redesign.boundary.eligibility')}</p>
       </div>
 
       <div className="services-boundary-dual">

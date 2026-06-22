@@ -60,7 +60,7 @@
     },
     "pathway": {
       "companyEyebrow": "Local owner representation",
-      "companyHeadline": "Local oversight while you are away.",
+      "companyHeadline": "Own a place here but live abroad? Sentinel is your local operator on the ground.",
       "companyLine": "Sentinel acts locally on behalf of the owner: checking condition, controlling access and documenting what happens on site.",
       "companyProofLine": "Scope, access, and records are set before oversight begins.",
       "companyFacts": {
@@ -136,7 +136,7 @@
       },
       "selectorTitle": "Choose how the property is used",
       "selectorInstruction": "This defines the local oversight structure.",
-      "gateInstruction": "Choose the situation to see the relevant oversight structure.",
+      "gateInstruction": "Not sure which fits? Start with Mixed / Undetermined, or talk to Aleksy.",
       "gateScrollCue": "Continue to usage situation selection",
       "chooseModel": "Choose this model",
       "selectedSituationLabel": "Selected situation:",
@@ -693,6 +693,7 @@
     },
     "redesign": {
       "journey": {
+        "overview": "What you get",
         "situation": "Situation",
         "responsibility": "Responsibility",
         "scope": "Scope",
@@ -707,8 +708,8 @@
           "Match the oversight scope",
           "to how the property is used."
         ],
-        "lead": "Define how the property is used. Sentinel aligns visits, access, reporting, and local decision boundaries.",
-        "secondaryCta": "Start with situation",
+        "lead": "Start with what oversight actually includes. Then compare packages, check the indicative range, and review execution boundaries.",
+        "secondaryCta": "See what you get",
         "estimatorCue": {
           "text": "Indicative: from approx. €80/month for the simplest scope. The exact range depends on property size and usage mode.",
           "link": "Jump to the estimator."
@@ -738,13 +739,24 @@
           ]
         }
       },
+      "skim": {
+        "eyebrow": "What you get",
+        "title": "Four things should be clear on the first read.",
+        "intro": "You know what will be checked, who decides, and when your approval is required.",
+        "items": {
+          "inspections": { "label": "Inspections / reports", "title": "Condition is checked and recorded.", "body": "After agreed visits, you receive material showing what was visible on site." },
+          "access": { "label": "Keys / access", "title": "Entries follow rules.", "body": "Owner, technician, cleaning, or partner entry follows the agreed operating model." },
+          "decisions": { "label": "Decisions", "title": "Action leaves a record.", "body": "The report shows what was checked, what was done, and what needs the next step." },
+          "approval": { "label": "Owner approval", "title": "Above the limit, the decision returns to you.", "body": "Sentinel acts inside the package limit; higher cost or scope change requires approval." }
+        }
+      },
       "ladder": {
         "eyebrow": "Responsibility depth",
-        "title": "The package defines how much responsibility Sentinel holds on site.",
-        "intro": "Packages differ by visits, access coordination, operational coordination, and action within an agreed limit.",
-        "bridgeLine": "",
+        "title": "The package defines responsibility level, not a list of favors.",
+        "intro": "Packages differ by visit rhythm, access coordination, priority, and decision limit. This is a responsibility ladder, not an open task catalogue.",
+        "bridgeLine": "Usage pattern first, responsibility level second.",
         "detailCta": "View full scope",
-        "simulatorCta": "View events",
+        "estimatorCta": "Open estimator",
         "responsibilityLabel": "Primary responsibility",
         "depthLabel": "Operating depth",
         "basic": {
@@ -837,43 +849,45 @@
       "boundary": {
         "eyebrow": "Service boundaries",
         "title": "Sentinel acts locally, but only inside the agreed scope.",
-        "intro": "We operate locally within a fixed area and agreed scope. Not with unlimited availability.",
+        "intro": "This is the canonical service boundary: Sentinel is not concierge, rental management, or full property management. You know what will be checked, who decides, and when your approval is required.",
+        "eligibility": "Location eligibility: Torrevieja + 50–70 km radius.",
         "doesTitle": "Inside agreed scope",
         "doesNotTitle": "Outside agreed scope",
         "does": {
-          "oversight": { "title": "Local oversight", "body": "Scheduled condition checks and a record of what is visible on site." },
-          "access": { "title": "Controlled access", "body": "Keyholding or access handling according to the agreement and package." },
-          "documentation": { "title": "Event documentation", "body": "Reports, photos, notes, and indication of required owner decision." },
-          "coordination": { "title": "Operational coordination", "body": "Contact with technician, cleaning, or contractor inside the agreed scope." }
+          "oversight": { "title": "Local oversight", "body": "Scheduled condition checks and a record of what was visible on site." },
+          "access": { "title": "Controlled access", "body": "Keys, entries, and third-party presence handled by agreed rules." },
+          "documentation": { "title": "Decision documentation", "body": "Reports show condition, completed actions, and points requiring owner decision." },
+          "coordination": { "title": "Operational coordination", "body": "Contact with technician, cleaning, or contractor when it fits the agreement." }
         },
         "doesNot": {
-          "rentalAgency": { "title": "Rental agency", "body": "Sentinel does not handle bookings, pricing, licensing, or platform communication." },
-          "concierge": { "title": "Concierge", "body": "No lifestyle services, unlimited favors, or tasks without defined scope." },
+          "bookings": { "title": "Bookings and platforms", "body": "Sentinel does not handle pricing, licensing, listings, or platform communication." },
+          "administration": { "title": "Whole-property administration", "body": "The model does not take over finances, disputes, documents, or owner decisions." },
+          "lifestyleTasks": { "title": "Personal and lifestyle tasks", "body": "No unlimited favors or tasks without defined responsibility." },
           "unlimitedEmergency": { "title": "Unlimited emergency contractor", "body": "Decisions and costs have limits; repairs depend on available contractors." },
           "undefinedTasks": { "title": "Undefined tasks", "body": "Anything outside the package or agreement requires separate approval." }
         }
       },
       "modules": {
         "eyebrow": "Operational layer",
-        "title": "Cleaning, access, and readiness are operational assets inside the package.",
-        "intro": "The package remains the authority. Cleaning, access, and seasonal readiness operate only inside the agreed oversight scope.",
+        "title": "The owner sees readiness, access, and decisions in one record.",
+        "intro": "Readiness cleaning, access, seasonal preparation, and partners appear as oversight outcomes: what is ready, who entered, and what needs a decision.",
         "capabilityImageAlt": "Keys, notebook, and cleaning cloth prepared for an access or readiness task",
         "cleaning": {
           "eyebrow": "Cleaning and readiness",
-          "title": "Cleaning is part of oversight, not a separate service.",
-          "intro": "Arrival readiness, order between stays, and report record — within the agreed package scope.",
+          "title": "Readiness does not stop at inspection.",
+          "intro": "Before arrival or between stays, visible condition, order, and completion records matter.",
           "items": {
             "readiness": { "title": "Readiness before arrival", "body": "Property prep before owner or guest visit — within agreed scope.", "summary": { "primary": { "label": "Action", "text": "entry, basic order, and readiness are checked." }, "secondary": { "label": "Result", "text": "simple issues do not sit unnoticed until arrival." } }, "imageAlt": "Prepared bedroom with towels, keys, and a readiness folder." },
             "turnover": { "title": "Turnover after guest use", "body": "Cleaning and condition check between stays.", "summary": { "primary": { "label": "Action", "text": "post-stay order and a fast condition read." }, "secondary": { "label": "Result", "text": "the next stay starts from a known property state." } }, "imageAlt": "Bedroom after guest use with towels and cleaning equipment." },
             "documentation": { "title": "Documented coordination", "body": "Coordination, check, and record in the report.", "summary": { "primary": { "label": "Action", "text": "photos, note, and completion confirmation." }, "secondary": { "label": "Result", "text": "the owner sees what was done and what needs a decision." } }, "imageAlt": "Notebook, keys, and documentation prepared on a property table." },
-            "boundary": { "title": "Not a cleaning-company offer", "body": "Single jobs can be agreed separately — oversight and responsibility stay in the package.", "summary": { "primary": { "label": "Action", "text": "cleaning only within the agreed scope." }, "secondary": { "label": "Boundary", "text": "no standing cleaning service outside the package." } }, "imageAlt": "Keys, scope folders, and documentation binder on a property table." }
+            "boundary": { "title": "Cleaning boundary", "body": "Single jobs can be agreed separately; ongoing oversight and responsibility stay in the package.", "summary": { "primary": { "label": "Action", "text": "order and readiness only within the agreed model." }, "secondary": { "label": "Result", "text": "the owner sees cleaning as part of oversight, not a separate subscription." } }, "imageAlt": "Keys, scope folders, and documentation binder on a property table." }
           }
         },
         "useWhen": "Scope function",
         "stackLabel": "Controlled capabilities",
         "stackTitle": "Access and seasonal readiness operate within the package.",
-        "guardrailLabel": "Boundary",
-        "guardrailBody": "A module can add execution, but package responsibility, SLA, decisions, and exclusions stay unchanged.",
+        "guardrailLabel": "Rule",
+        "guardrailBody": "An operational capability answers a specific situation; it does not change package SLA, limits, or exclusions.",
         "moduleBodies": {
           "rental": "Readiness cleaning, turnover cleaning support, and guest entry handled as documented execution inside the agreed oversight scope.",
           "access": "Keys, one-off entries, and partner logistics — controlled coordination inside oversight.",
@@ -897,9 +911,9 @@
       },
       "estimatorBand": {
         "eyebrow": "Indicative monthly range",
-        "title": "Determine the estimated monthly oversight range.",
-        "intro": "Select the package, usage pattern, and basic property parameters. The result shows an estimated monthly range to be confirmed.",
-        "transition": "This is an orientation tool. Final scope is confirmed after review.",
+        "title": "Check the indicative range before sending an inquiry.",
+        "intro": "Select the package, usage pattern, and basic property parameters. The result frames the conversation without guessing price.",
+        "transition": "This is an orientation tool. It does not approve service or change the estimator matrix.",
         "contextTitle": "Property context captured before calculation",
         "contextItems": {
           "bathrooms": { "label": "Bathrooms", "body": "Captured for cleaning/readiness review and handover planning." },
@@ -911,7 +925,7 @@
         "thresholdLabel": "Outside the package model",
         "sideLabel": "Outside package",
         "title": "Single actions are an exception, not the service model.",
-        "body": "They can be agreed after qualification, but without ongoing oversight, cyclic reporting, SLA, or decision authority.",
+        "body": "They can be agreed after qualification; the owner does not receive cyclic visits, reports, SLA, or local decision authority.",
         "availableLabel": "Possible after agreement",
         "limitsLabel": "What it does not include",
         "gateLabel": "Qualification first",
@@ -921,9 +935,14 @@
       },
       "details": {
         "frameworkLabel": "Service frame and minimum term",
-        "frameworkExplainer": "Visit scheduling, decision limits, communication, and billing stay available without dominating the page.",
+        "frameworkExplainer": "The details live here, in one boundary section, instead of repeating across the page.",
         "notIncludedLabel": "Full exclusion list",
-        "notIncludedExplainer": "Exclusions are part of the responsibility boundary, not a separate offer."
+        "notIncludedExplainer": "Exclusions belong to the same responsibility boundary."
+      },
+      "finalRegistry": {
+        "review": { "label": "Review", "body": "Location and usage pattern first." },
+        "scope": { "label": "Scope", "body": "You know what will be checked and when approval is required." },
+        "next": { "label": "Next step", "body": "Send the property context for a short review." }
       }
     },
     "diagrams": {
@@ -1190,7 +1209,7 @@
       "items": {
         "noGuaranteeFixes": "Insurance guarantees",
         "contractorResponsibility": "Responsibility for third-party contractor outcomes",
-        "concierge": "Concierge services",
+        "concierge": "Open-ended personal help or lifestyle tasks",
         "construction": "Construction work execution",
         "outsideArea": "Services outside the defined service area",
         "operationalWithoutScope": "Operational services without prior agreement of scope"

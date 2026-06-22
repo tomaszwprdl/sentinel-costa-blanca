@@ -8,8 +8,6 @@ import GridFrame from '@/components/layout/GridFrame';
 import Region from '@/components/layout/Region';
 import Estimator from '@/components/Estimator';
 import PackageResponsibilityLadder from '@/components/PackageResponsibilityLadder';
-import UsageResponsibilityBridge from '@/components/UsageResponsibilityBridge';
-import WhatIfEventSimulator from '@/components/WhatIfEventSimulator';
 import ServiceBoundaryGrid from '@/components/ServiceBoundaryGrid';
 import OperationalModuleTile from '@/components/OperationalModuleTile';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
@@ -44,6 +42,7 @@ const NOT_INCLUDED_ITEM_KEYS = [
 const EXECUTION_ONLY_AVAILABLE_KEYS = ['keyHolding', 'cleaning', 'oneTimeAccess', 'seasonalPrep'] as const;
 const EXECUTION_ONLY_LIMITATION_KEYS = ['noRegularChecks', 'noCyclicReporting', 'noEmergencySLA', 'noDecisionAuthority'] as const;
 const CLEANING_CAPABILITY_KEYS = ['readiness', 'turnover', 'documentation', 'boundary'] as const;
+const SKIM_ITEM_KEYS = ['inspections', 'access', 'decisions', 'approval'] as const;
 
 const CLEANING_STORY_IMAGES: Record<(typeof CLEANING_CAPABILITY_KEYS)[number], { src: string; focus: string }> = {
   readiness: {
@@ -95,11 +94,11 @@ export default async function ServicesPage({
     focus: CLEANING_STORY_IMAGES[key].focus,
   }));
   const journeyItems = [
-    { id: 'situation', label: t('redesign.journey.situation') },
+    { id: 'what-you-get', label: t('redesign.journey.overview') },
     { id: 'responsibility', label: t('redesign.journey.responsibility') },
-    { id: 'operational-modules', label: t('redesign.journey.modules') },
-    { id: 'scope', label: t('redesign.journey.scope') },
     { id: 'estimator', label: t('redesign.journey.estimator') },
+    { id: 'scope', label: t('redesign.journey.scope') },
+    { id: 'operational-modules', label: t('redesign.journey.modules') },
   ];
 
   const operationalModules = [
@@ -154,7 +153,7 @@ export default async function ServicesPage({
                   <Link href={`/${locale}/contact`} className="btn-primary services-hero-cta services-hero-cta--primary">
                     {t('cta.primaryButton')}
                   </Link>
-                  <Link href="#situation" className="btn-secondary btn-secondary-on-dark services-hero-cta services-hero-cta--secondary">
+                  <Link href="#what-you-get" className="btn-secondary btn-secondary-on-dark services-hero-cta services-hero-cta--secondary">
                     {t('redesign.hero.secondaryCta')}
                   </Link>
                 </div>
@@ -205,13 +204,98 @@ export default async function ServicesPage({
 
         <JourneyNav items={journeyItems} ariaLabel={t('redesign.hero.headline')} className="services-journey-nav" />
 
-        <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--bridge services-bridge-entry">
-          <UsageResponsibilityBridge />
+        <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--skim" id="what-you-get">
+          <div className="services-skim-strip">
+            <div className="services-skim-strip__header">
+              <div>
+                <p className="section-label">{t('redesign.skim.eyebrow')}</p>
+                <h2 className="h2-system mt-3">{t('redesign.skim.title')}</h2>
+              </div>
+              <p>{t('redesign.skim.intro')}</p>
+            </div>
+            <div className="services-skim-strip__items">
+              {SKIM_ITEM_KEYS.map((key, index) => (
+                <article key={key} className="services-skim-item">
+                  <span className="services-skim-item__marker">{String(index + 1).padStart(2, '0')}</span>
+                  <p>{t(`redesign.skim.items.${key}.label`)}</p>
+                  <h3>{t(`redesign.skim.items.${key}.title`)}</h3>
+                  <small>{t(`redesign.skim.items.${key}.body`)}</small>
+                </article>
+              ))}
+            </div>
+          </div>
         </Section>
 
         <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--responsibility">
           <div className="services-responsibility-stage">
             <PackageResponsibilityLadder />
+          </div>
+        </Section>
+
+        <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--estimator" id="estimator">
+          <div className="services-estimator-band">
+            <div className="mb-6 max-w-[760px]">
+              <p className="section-label">{t('redesign.estimatorBand.eyebrow')}</p>
+              <h2 className="h2-system mt-3">{t('redesign.estimatorBand.title')}</h2>
+              <p className="mt-3 text-body">{t('redesign.estimatorBand.intro')}</p>
+              <p className="mt-4 rounded-2xl border border-structural-light bg-surface-light-alt px-4 py-3 text-sm text-body">
+                {t('redesign.estimatorBand.transition')}
+              </p>
+              <div className="services-estimator-context" aria-label={t('redesign.estimatorBand.contextTitle')}>
+                <p>{t('redesign.estimatorBand.contextTitle')}</p>
+                <div>
+                  <span>{t('redesign.estimatorBand.contextItems.bathrooms.label')}</span>
+                  <strong>{t('redesign.estimatorBand.contextItems.bathrooms.body')}</strong>
+                </div>
+                <div>
+                  <span>{t('redesign.estimatorBand.contextItems.outdoor.label')}</span>
+                  <strong>{t('redesign.estimatorBand.contextItems.outdoor.body')}</strong>
+                </div>
+                <div>
+                  <span>{t('redesign.estimatorBand.contextItems.logic.label')}</span>
+                  <strong>{t('redesign.estimatorBand.contextItems.logic.body')}</strong>
+                </div>
+              </div>
+            </div>
+            <div>
+              <Estimator embedded />
+            </div>
+          </div>
+        </Section>
+
+        <Section tone="alt" className="section-primitive--compact services-interface-section services-interface-section--boundary" id="scope">
+          <div className="services-boundary-stack">
+            <ServiceBoundaryGrid />
+            <div className="services-boundary-details">
+              <DisclosureBlock label={t('redesign.details.frameworkLabel')} explainer={t('redesign.details.frameworkExplainer')}>
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-base font-black text-heading">{t('framework.visitSchedulingTitle')}</h3>
+                    <ul className="ml-4 list-disc space-y-2 text-sm text-body">
+                      <li>{t('framework.visitSchedulingItems.scheduled')}</li>
+                      <li>{t('framework.visitSchedulingItems.additional')}</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-base font-black text-heading">{t('framework.decisionLimitsTitle')}</h3>
+                    <p className="mb-0 text-sm text-body">{t('framework.decisionLimitsText')}</p>
+                  </div>
+                  <div>
+                    <h3 className="text-base font-black text-heading">{t('framework.minCommitmentTitle')}</h3>
+                    <p className="mb-0 text-sm text-body">{t('framework.minCommitmentText')}</p>
+                  </div>
+                </div>
+              </DisclosureBlock>
+
+              <DisclosureBlock label={t('redesign.details.notIncludedLabel')} explainer={t('redesign.details.notIncludedExplainer')}>
+                <p className="text-sm text-body">{t('notIncluded.intro')}</p>
+                <ul className="ml-4 list-disc space-y-2 text-sm text-body">
+                  {NOT_INCLUDED_ITEM_KEYS.map((key) => (
+                    <li key={key}>{t(`notIncluded.items.${key}`)}</li>
+                  ))}
+                </ul>
+              </DisclosureBlock>
+            </div>
           </div>
         </Section>
 
@@ -321,79 +405,6 @@ export default async function ServicesPage({
           </div>
         </Section>
 
-        <Section tone="alt" className="section-primitive--compact services-interface-section services-interface-section--event">
-          <WhatIfEventSimulator />
-        </Section>
-
-        <Section tone="alt" className="section-primitive--compact services-interface-section services-interface-section--boundary" id="scope">
-          <ServiceBoundaryGrid />
-        </Section>
-
-        <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--estimator" id="estimator">
-          <div className="services-estimator-band">
-            <div className="mb-6 max-w-[760px]">
-              <p className="section-label">{t('redesign.estimatorBand.eyebrow')}</p>
-              <h2 className="h2-system mt-3">{t('redesign.estimatorBand.title')}</h2>
-              <p className="mt-3 text-body">{t('redesign.estimatorBand.intro')}</p>
-              <p className="mt-4 rounded-2xl border border-structural-light bg-surface-light-alt px-4 py-3 text-sm text-body">
-                {t('redesign.estimatorBand.transition')}
-              </p>
-              <div className="services-estimator-context" aria-label={t('redesign.estimatorBand.contextTitle')}>
-                <p>{t('redesign.estimatorBand.contextTitle')}</p>
-                <div>
-                  <span>{t('redesign.estimatorBand.contextItems.bathrooms.label')}</span>
-                  <strong>{t('redesign.estimatorBand.contextItems.bathrooms.body')}</strong>
-                </div>
-                <div>
-                  <span>{t('redesign.estimatorBand.contextItems.outdoor.label')}</span>
-                  <strong>{t('redesign.estimatorBand.contextItems.outdoor.body')}</strong>
-                </div>
-                <div>
-                  <span>{t('redesign.estimatorBand.contextItems.logic.label')}</span>
-                  <strong>{t('redesign.estimatorBand.contextItems.logic.body')}</strong>
-                </div>
-              </div>
-            </div>
-            <div>
-              <Estimator embedded />
-            </div>
-          </div>
-        </Section>
-
-        <Section tone="alt" className="section-primitive--compact">
-          <div className="grid gap-4 lg:grid-cols-2 lg:gap-5">
-            <DisclosureBlock label={t('redesign.details.frameworkLabel')} explainer={t('redesign.details.frameworkExplainer')}>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-base font-black text-heading">{t('framework.visitSchedulingTitle')}</h3>
-                  <ul className="ml-4 list-disc space-y-2 text-sm text-body">
-                    <li>{t('framework.visitSchedulingItems.scheduled')}</li>
-                    <li>{t('framework.visitSchedulingItems.additional')}</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-base font-black text-heading">{t('framework.decisionLimitsTitle')}</h3>
-                  <p className="mb-0 text-sm text-body">{t('framework.decisionLimitsText')}</p>
-                </div>
-                <div>
-                  <h3 className="text-base font-black text-heading">{t('framework.minCommitmentTitle')}</h3>
-                  <p className="mb-0 text-sm text-body">{t('framework.minCommitmentText')}</p>
-                </div>
-              </div>
-            </DisclosureBlock>
-
-            <DisclosureBlock label={t('redesign.details.notIncludedLabel')} explainer={t('redesign.details.notIncludedExplainer')}>
-              <p className="text-sm text-body">{t('notIncluded.intro')}</p>
-              <ul className="ml-4 list-disc space-y-2 text-sm text-body">
-                {NOT_INCLUDED_ITEM_KEYS.map((key) => (
-                  <li key={key}>{t(`notIncluded.items.${key}`)}</li>
-                ))}
-              </ul>
-              <p className="mb-0 mt-4 text-sm text-muted">{t('notIncluded.areaNote')}</p>
-            </DisclosureBlock>
-          </div>
-        </Section>
-
         <Section tone="light" className="services-closing-section !pt-10">
           <div className="services-final-cta services-final-cta--no-map overflow-hidden">
             <div className="grid gap-0 lg:grid-cols-[minmax(0,0.68fr)_minmax(18rem,0.32fr)]">
@@ -413,16 +424,16 @@ export default async function ServicesPage({
                 <div className="flex flex-col gap-4">
                   <div className="services-final-registry">
                     <div>
-                      <span>{t('framework.visitSchedulingTitle')}</span>
-                      <strong>{t('framework.visitSchedulingItems.scheduled')}</strong>
+                      <span>{t('redesign.finalRegistry.review.label')}</span>
+                      <strong>{t('redesign.finalRegistry.review.body')}</strong>
                     </div>
                     <div>
-                      <span>{t('framework.decisionLimitsTitle')}</span>
-                      <strong>{t('framework.decisionLimitsText')}</strong>
+                      <span>{t('redesign.finalRegistry.scope.label')}</span>
+                      <strong>{t('redesign.finalRegistry.scope.body')}</strong>
                     </div>
                     <div>
-                      <span>{t('framework.minCommitmentTitle')}</span>
-                      <strong>{t('framework.minCommitmentText')}</strong>
+                      <span>{t('redesign.finalRegistry.next.label')}</span>
+                      <strong>{t('redesign.finalRegistry.next.body')}</strong>
                     </div>
                   </div>
                   <Link href={`/${locale}/contact`} className="btn-primary">
@@ -440,9 +451,9 @@ export default async function ServicesPage({
       <MobileStickyCTA
         primaryHref={`/${locale}/contact`}
         primaryLabel={t('cta.primaryButton')}
-        secondaryHref="#situation"
+        secondaryHref="#what-you-get"
         secondaryLabel={t('redesign.hero.secondaryCta')}
-        suppressWhenVisible="#situation, #responsibility, #operational-modules, #event-simulator, #scope, #estimator"
+        suppressWhenVisible="#what-you-get, #responsibility, #estimator, #scope, #operational-modules"
       />
       <Footer />
     </>
