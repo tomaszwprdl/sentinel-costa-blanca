@@ -52,6 +52,10 @@ node_modules/
 node_modules/
 .next/
 
+# Local agent / QA artifacts
+.codex/
+tmp/
+
 # local agent / IDE artifacts
 .claude/
 

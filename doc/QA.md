@@ -9,6 +9,8 @@ For git/commit rules see `WORKFLOW.md`.
 
 # Pre-commit (code changes)
 
+On Windows, use `npm.cmd` instead of plain `npm`; PowerShell may block `npm.ps1`.
+
 ```bash
 npm run lint
 npm run build
@@ -23,27 +25,34 @@ git diff --check
 
 # Hardened local visual QA (production server)
 
+On Windows, run these commands as `npm.cmd ...` from the repo root.
+
 One reliable path. Use this for every visual change — do **not** screenshot the dev server.
 
 **1. Build** (TLS-safe — no env var needed; `next.config.ts` sets `experimental.turbopackUseSystemTlsCerts`):
 
-```bash
-npm run build
+```cmd
+npm.cmd run build
 ```
 
-**2. Serve the production build** on a fixed, known port:
+**2. Serve the production build** on a fixed, known port in a normal foreground terminal:
 
-```bash
-npm run qa:serve            # next start --hostname 127.0.0.1 --port 3100
+```cmd
+cd /d C:\Users\Tomus\Desktop\guardian
+npm.cmd run qa:serve
 ```
 
-**3. Capture real pixels** with the repo tool (PowerShell examples; one capture per command):
+Do not use hidden or detached Codex background server launches on Windows.
 
-```bash
-npm run qa:capture -- --url=http://127.0.0.1:3100/pl?pathway=private-use-only --full --out=doc/screenshots/home.png
-npm run qa:capture -- --url=http://127.0.0.1:3100/pl?pathway=private-use-only --regionFrom=.page-final-cta --regionTo=footer --pad=200 --out=doc/screenshots/cta.png
-npm run qa:capture -- --url=http://127.0.0.1:3100/pl?pathway=private-use-only --mobile --width=390 --height=844 --dpr=2 --full --expect=.page-final-cta,footer --out=doc/screenshots/m390.png
+**3. Capture real pixels** with the repo-owned tool as the primary visual QA path (PowerShell examples; one capture per command):
+
+```cmd
+npm.cmd run qa:capture -- --url=http://127.0.0.1:3100/pl/services --full --out=doc/screenshots/pl-services.png --expect=#operational-modules
+npm.cmd run qa:capture -- --url=http://127.0.0.1:3100/pl?pathway=private-use-only --regionFrom=.page-final-cta --regionTo=footer --pad=200 --out=doc/screenshots/cta.png
+npm.cmd run qa:capture -- --url=http://127.0.0.1:3100/pl?pathway=private-use-only --mobile --width=390 --height=844 --dpr=2 --full --expect=.page-final-cta,footer --out=doc/screenshots/m390.png
 ```
+
+Codex browser/MCP is optional. If it fails, report the tooling failure instead of spending time on server workarounds.
 
 **4. Stop the server** by its identified PID (never blanket-kill node):
 
