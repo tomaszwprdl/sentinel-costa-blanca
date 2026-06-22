@@ -40,17 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .netlify/
-.env
-.env.local
-.env.production
-node_modules/
-.next/
-.netlify/
-.env
-.env.local
-.env.production
-node_modules/
-.next/
 
 # Local agent / QA artifacts
 .codex/

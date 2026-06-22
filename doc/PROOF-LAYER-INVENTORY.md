@@ -16,7 +16,7 @@ Local git preflight on this pass reported:
 - Current live/main baseline: `e682b5b`
 - Proof-assets integration: `b9800ce`
 - Selected-pathway contrast patch: `e682b5b`
-- Expected untracked local items: `.codex/`, `tmp/`, `public/photos/hiw-field-note.webp`, `public/photos/services-scope-object.webp`
+- Expected ignored local items may include `.codex/` and `tmp/`. `public/photos/hiw-field-note.webp` and `public/photos/services-scope-object.webp` are tracked production assets used by the Services accordion; do not delete them while referenced.
 
 Older docs may still mention `b46a214`, `b3fd918`, or `97997eb` as current. Per repo rules, current git state overrides stale SHA fields; those are historical unless preflight proves otherwise.
 
@@ -269,7 +269,7 @@ Files:
 Current proof/image slots:
 
 - Hero dossier artifact (`services-dossier-artifact`).
-- `public/photos/services-operational-capability.webp` in the capability / cleaning-readiness area.
+- Cleaning accordion images: `public/photos/home-pathway-guest-readiness.webp`, `public/images/home/regular-guest-stays/guest-risk-turnover-readiness.webp`, `public/photos/hiw-field-note.webp`, and `public/photos/services-scope-object.webp`.
 - Usage responsibility bridge.
 - Package responsibility ladder.
 - Capability console and schematic module tiles.
@@ -343,6 +343,7 @@ Current proof/image slots:
 
 - Hero local-operator record.
 - `public/photos/about-operator-presence.webp` in the hero/operator record.
+- `public/photos/sentinel-team.webp` in the operator proof panel.
 - `public/photos/about-local-exterior.webp` in the local context area.
 - Operating gap board.
 - IS / IS-NOT boundary panel.
@@ -452,9 +453,10 @@ Logo files are excluded. They are identity assets, not proof assets.
 | `public/photos/home-pathway-guest-readiness.webp` | Home selected `regular-guest-stays` hero | Accepted synthetic shot-planning placeholder | Keep placement; recreate as real readiness/checklist or turnover-prep asset |
 | `public/photos/home-pathway-mixed-decision-threshold.webp` | Home selected `mixed-not-defined` hero | Accepted synthetic shot-planning placeholder | Keep placement; recreate as real classification/decision-threshold asset |
 | `public/photos/final-cta-handoff-checklist.webp` | Home final CTA image | Accepted synthetic / atmospheric shot-planning placeholder | Keep temporarily; recreate as real checklist/report-table detail |
-| `public/photos/services-operational-capability.webp` | Services operational capability image | Accepted synthetic shot-planning placeholder | Keep; later recreate as real cleaning/access/readiness detail inside oversight |
+| `public/photos/services-operational-capability.webp` | No live source reference found | Previous Services capability placeholder | Probably unused; do not delete without Owner review |
 | `public/photos/hiw-visit-record.webp` | How It Works visit-record image | Accepted synthetic shot-planning placeholder | Keep; later recreate as real visit-record/corridor/checklist detail |
 | `public/photos/about-operator-presence.webp` | About operator-presence image | Accepted synthetic shot-planning placeholder; no fake face claim | Keep; later replace with real hands/working-surface/operator-presence detail |
+| `public/photos/sentinel-team.webp` | About operator proof panel image | Tracked production asset | Keep while referenced; verify proof status with Owner before treating as final operational evidence |
 | `public/photos/about-local-exterior.webp` | About local exterior image | Accepted synthetic/local shot-planning placeholder | Keep; later replace with real local exterior/presence photo |
 | `public/images/home/private-use/private-risk-water-floor.webp` | Private pathway risk carousel | Synthetic shot placeholder - recreate later | Validate placement, then brief real maintenance/water observation recreation |
 | `public/images/home/private-use/private-risk-ac-moisture.webp` | Private pathway risk carousel | Synthetic shot placeholder - recreate later | Validate placement, then brief real AC/moisture detail recreation |
@@ -479,8 +481,8 @@ Logo files are excluded. They are identity assets, not proof assets.
 | `public/photos/sentinel-about-local-entry-placeholder.png` | No live reference found | Synthetic shot placeholder - recreate later | Do not promote as proof; use only if it has a real local exterior shot brief |
 | `public/photos/sentinel-report-tablet-placeholder.png` | No live reference found | Risky synthetic shot placeholder | Avoid fake dashboard/report UI; use only if reframed as a recreatable non-SaaS report surface |
 | `public/photos/sentinel-technician-access-placeholder.png` | No live reference found | Synthetic shot placeholder - recreate later | Do not promote as proof; use only if it has a real operator/partial-presence shot brief |
-| `public/photos/services-scope-object.webp` | Untracked / unused optional asset | Synthetic shot-planning candidate | Deliberately not integrated; avoid another folders/keys motif unless separately briefed |
-| `public/photos/hiw-field-note.webp` | Untracked / unused optional asset | Synthetic shot-planning candidate | Deliberately not integrated; field-note/paperwork rhythm would be repetitive for now |
+| `public/photos/services-scope-object.webp` | Services cleaning accordion boundary image | Tracked production asset; synthetic shot-planning placeholder | Keep while referenced by the Services accordion; replace later with real scope/boundary photography if available |
+| `public/photos/hiw-field-note.webp` | Services cleaning accordion documentation image | Tracked production asset; synthetic shot-planning placeholder | Keep while referenced by the Services accordion; replace later with real field-note/report detail if available |
 | `public/images/home/home-final-cta-handoff-checklist.webp` | No live reference found | Historical atmospheric shot placeholder | Superseded by `public/photos/final-cta-handoff-checklist.webp` |
 | `public/visuals/sentinel-process-report-preview.svg` | No live reference found | Dormant schematic artifact | Possible reference only; not a live proof slot |
 | `public/visuals/sentinel-contact-intake-path.svg` | No live reference found | Dormant schematic artifact | Possible reference only; not a live proof slot |
