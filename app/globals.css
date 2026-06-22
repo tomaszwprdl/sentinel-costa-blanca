@@ -1435,6 +1435,65 @@ textarea:focus {
 }
 
 @media (max-width: 640px) {
+  .gate-operator-cue {
+    gap: 0.36rem;
+    margin-top: 0.48rem;
+    padding: 0.58rem 0.64rem;
+    border-radius: 0.68rem;
+  }
+
+  .gate-operator-cue__identity {
+    gap: 0.52rem;
+  }
+
+  .gate-operator-cue__photo {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.48rem;
+  }
+
+  .gate-operator-cue__eyebrow {
+    font-size: 0.5rem;
+  }
+
+  .gate-operator-cue__name {
+    font-size: 0.84rem;
+  }
+
+  .gate-operator-cue__role {
+    font-size: 0.64rem;
+    line-height: 1.18;
+  }
+
+  .gate-operator-cue__presence {
+    font-size: 0.66rem;
+    line-height: 1.22;
+  }
+
+  .gate-operator-cue__price {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 0.5rem;
+    padding-top: 0.42rem;
+  }
+
+  .gate-operator-cue__price-label {
+    grid-column: 1 / -1;
+    font-size: 0.5rem;
+  }
+
+  .gate-operator-cue__price-text {
+    font-size: 0.66rem;
+    line-height: 1.24;
+  }
+
+  .gate-operator-cue__price-link {
+    gap: 0.24rem;
+    margin-top: 0;
+    font-size: 0.64rem;
+    white-space: nowrap;
+  }
+
   .hero-display {
     max-width: 12.8ch;
     font-size: 2.48rem;
@@ -1447,6 +1506,18 @@ textarea:focus {
   .hero-fact-grid {
     gap: 0.55rem;
     margin-top: 1.2rem;
+  }
+
+  .home-page .visual-hero-shell .hero-display {
+    max-width: min(100%, 19.5ch);
+    font-size: 1.92rem;
+    letter-spacing: 0;
+    line-height: 1.02;
+  }
+
+  .home-page .visual-hero-shell .hero-kicker {
+    margin-bottom: 0.55rem;
+    font-size: 0.64rem;
   }
 }
 
@@ -2070,8 +2141,8 @@ textarea:focus {
 @media (max-width: 899px) {
   .visual-hero-section {
     min-height: auto;
-    padding-top: 0.85rem;
-    padding-bottom: 1rem;
+    padding-top: 0.45rem;
+    padding-bottom: 0.75rem;
   }
 
   .visual-hero-gate-stack {
@@ -2178,31 +2249,30 @@ textarea:focus {
   }
 
   .visual-hero-content {
-    gap: 0.65rem;
-    padding: 0.75rem;
+    gap: 0.48rem;
+    padding: 0.58rem;
   }
 
   .visual-hero-shell .hero-copy-panel {
-    padding: 0.75rem 0.75rem 0.15rem;
+    padding: 0.58rem 0.62rem 0.05rem;
     background: none;
     border: none;
     border-radius: 0;
     box-shadow: none;
   }
 
-  .hero-copy-stack {
-    gap: 0.9rem;
+  .home-page .visual-hero-shell .hero-copy-stack {
+    gap: 0.55rem;
   }
 
-  .hero-lead {
-    margin-top: 0.85rem !important;
-    font-size: 0.98rem;
+  .home-page .visual-hero-shell .hero-lead {
+    margin-top: 0.35rem !important;
+    font-size: 0.82rem;
+    line-height: 1.28;
   }
 
-  .hero-fact-grid {
-    margin-top: 0.85rem;
-    gap: 0.4rem;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .home-page .visual-hero-shell .hero-fact-grid {
+    display: none;
   }
 
   .hero-fact strong {
@@ -2214,20 +2284,31 @@ textarea:focus {
   }
 
   .gate-scroll-cue {
-    margin-top: 0.65rem !important;
-    font-size: 0.72rem;
+    margin-top: 0.28rem !important;
+    min-height: 1.5rem;
+    font-size: 0.64rem;
   }
 
   .diagnostic-panel--gate {
-    padding: 1.1rem 1rem 0.95rem !important;
+    padding: 0.82rem 0.78rem 0.78rem !important;
   }
 
   .diagnostic-panel .section-label {
     font-size: 0.68rem;
   }
 
-  .diagnostic-panel h2 {
-    font-size: 1.35rem;
+  .diagnostic-panel--gate h2 {
+    font-size: 1rem;
+  }
+
+  .diagnostic-panel--gate > p {
+    margin-top: 0.28rem !important;
+    font-size: 0.72rem;
+    line-height: 1.24;
+  }
+
+  .diagnostic-panel--gate > .mt-5 {
+    margin-top: 0.46rem !important;
   }
 }
 
@@ -21788,7 +21869,33 @@ textarea:focus {
 @media (max-width: 640px) {
   .diagnostic-choice-card {
     min-height: 0;
-    padding: 1rem;
+    padding: 0.62rem 0.68rem;
+  }
+
+  .diagnostic-choice-grid {
+    gap: 0.5rem;
+  }
+
+  .diagnostic-choice-card__title {
+    font-size: 0.8rem;
+  }
+
+  .diagnostic-choice-card__body {
+    margin-top: 0.26rem;
+    font-size: 0.68rem;
+    line-height: 1.22;
+  }
+
+  .diagnostic-choice-card__footer {
+    gap: 0.5rem;
+    margin-top: 0.42rem;
+    padding-top: 0.42rem;
+    font-size: 0.64rem;
+  }
+
+  .choice-arrow {
+    width: 1.55rem;
+    height: 1.55rem;
   }
 
   .home-route-open__lens,

@@ -84,7 +84,7 @@
         "photoAlt": "Aleksy Gugała, lokalny operator Sentinel",
         "presence": "Jeden z publicznie pokazanych członków zespołu operacyjnego.",
         "priceLabel": "Orientacyjny koszt",
-        "priceText": "Orientacyjnie: od ok. 80 €/mies. dla najprostszego zakresu. Dokładny przedział zależy od metrażu i sposobu użycia.",
+        "priceText": "Od ok. 80 €/mies. dla najprostszego zakresu; dokładny przedział sprawdzisz w estymatorze.",
         "priceLink": "Otwórz estymator"
       },
       "mediaAlt": {
@@ -137,7 +137,7 @@
       "selectorTitle": "Wybierz sposób używania nieruchomości",
       "selectorInstruction": "Od tego zależy zakres lokalnego nadzoru.",
       "gateInstruction": "Nie wiesz, który wariant pasuje? Wybierz model mieszany albo porozmawiaj z Aleksym.",
-      "gateScrollCue": "Przejdź do wyboru sytuacji używania",
+      "gateScrollCue": "Wybierz sytuację poniżej",
       "chooseModel": "Wybierz ten model",
       "selectedSituationLabel": "Wybrana sytuacja:",
       "changeSituation": "Zmień sytuację",

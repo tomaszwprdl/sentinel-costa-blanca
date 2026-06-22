@@ -148,9 +148,13 @@ function UsagePathwayFallback({
               </div>
 
               <FallbackGateOperatorCue t={t} locale={locale} />
+
+              <a href="#usage-situation-gate" className="gate-scroll-cue inline-flex lg:hidden">
+                <span>{t('pathway.gateScrollCue')}</span>
+              </a>
             </div>
 
-            <div className="diagnostic-panel diagnostic-panel--gate">
+            <div id="usage-situation-gate" className="diagnostic-panel diagnostic-panel--gate scroll-mt-28">
               <h2 className="text-2xl leading-tight md:text-3xl">
                 {t('pathway.selectorTitle')}
               </h2>

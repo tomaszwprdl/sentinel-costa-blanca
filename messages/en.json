@@ -84,7 +84,7 @@
         "photoAlt": "Aleksy Gugała, Local Sentinel Operator",
         "presence": "One of the operational team members shown publicly.",
         "priceLabel": "Indicative cost",
-        "priceText": "Indicative: from approx. €80/month for the simplest scope. The exact range depends on property size and usage mode.",
+        "priceText": "From approx. €80/month for the simplest scope; check the exact range in the estimator.",
         "priceLink": "Open the estimator"
       },
       "mediaAlt": {
@@ -137,7 +137,7 @@
       "selectorTitle": "Choose how the property is used",
       "selectorInstruction": "This defines the local oversight structure.",
       "gateInstruction": "Not sure which fits? Start with Mixed / Undetermined, or talk to Aleksy.",
-      "gateScrollCue": "Continue to usage situation selection",
+      "gateScrollCue": "Choose your situation below",
       "chooseModel": "Choose this model",
       "selectedSituationLabel": "Selected situation:",
       "changeSituation": "Change situation",
