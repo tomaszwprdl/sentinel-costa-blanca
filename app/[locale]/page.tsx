@@ -137,7 +137,13 @@ function UsagePathwayFallback({
             <div className="hero-copy-panel">
               <div className="hero-copy-stack">
                 <p className="hero-kicker">{t('pathway.companyEyebrow')}</p>
-                <h1 className="hero-display">{t('pathway.companyHeadline')}</h1>
+                <h1 className="hero-display hero-gate-title">
+                  <span className="hero-gate-title__question">{t('pathway.companyHeadlineQuestion')}</span>
+                  <span className="hero-gate-title__answer">
+                    <span className="hero-gate-title__answer-brand">{t('pathway.companyHeadlineAnswerBrand')}</span>
+                    {t('pathway.companyHeadlineAnswerRest')}
+                  </span>
+                </h1>
                 <p className="hero-lead">{t('pathway.companyLine')}</p>
               </div>
 
@@ -250,7 +256,13 @@ function FallbackGateOperatorCue({
       <p className="gate-operator-cue__presence">{t('pathway.operatorCue.presence')}</p>
       <Link href={`/${locale}/services#estimator`} className="gate-operator-cue__price">
         <span className="gate-operator-cue__price-label">{t('pathway.operatorCue.priceLabel')}</span>
-        <span className="gate-operator-cue__price-text">{t('pathway.operatorCue.priceText')}</span>
+        <span className="gate-operator-cue__price-text">
+          <span className="gate-cost-line">
+            <span className="gate-cost-lead">{t('pathway.operatorCue.priceTextLead')}</span>
+            <span className="gate-cost-amount">{t('pathway.operatorCue.priceTextAmount')}</span>
+          </span>
+          <span className="gate-cost-detail">{t('pathway.operatorCue.priceTextTail')}</span>
+        </span>
         <span className="gate-operator-cue__price-link">
           {t('pathway.operatorCue.priceLink')}
           <span className="choice-arrow" aria-hidden>

@@ -1097,7 +1097,7 @@ textarea:focus {
   }
 
   .visual-hero-content {
-    grid-template-columns: minmax(0, 0.9fr) minmax(20rem, 0.72fr);
+    grid-template-columns: minmax(0, 1fr) minmax(19rem, 0.64fr);
     align-items: stretch;
     min-height: 620px;
     padding: 2rem 2rem 2.25rem;
@@ -1127,16 +1127,22 @@ textarea:focus {
     mask-composite: subtract;
   }
 
+  /* Left authority column: headline cluster sits at the top, operator proof anchors the base */
   .visual-hero-shell .hero-copy-panel {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 1.5rem;
     flex: 1;
     align-self: stretch;
     min-height: 100%;
-    margin-top: 0.75rem;
-    padding-top: 2.15rem;
-    padding-bottom: 2rem;
+    margin-top: 0;
+    /* Drop the upper text cluster deliberately so the panel top reads as calm
+       atmosphere; operator card stays anchored via margin-top:auto below.
+       Offset stays within the left column's stretch headroom so the card
+       does not move and the selector column is unchanged. */
+    padding-top: 14.2rem;
+    padding-bottom: 2.4rem;
     background: none;
     border: none;
     border-radius: 0;
@@ -1144,25 +1150,95 @@ textarea:focus {
   }
 
   .visual-hero-shell .hero-copy-stack {
-    transform: translateY(34px) !important;
+    transform: none !important;
+    gap: 1.15rem;
   }
 
-  .hero-copy-stack {
+  /* Two-part editorial headline — question opens, answer concludes */
+  .visual-hero-shell .hero-display.hero-gate-title {
     display: flex;
     flex-direction: column;
-    gap: 1.9rem;
+    gap: 0.85rem;
+    max-width: none;
   }
 
-  .hero-copy-stack .hero-kicker {
-    margin-bottom: 0;
+  .visual-hero-shell .hero-gate-title__question {
+    display: block;
+    max-width: 17ch;
+    font-size: clamp(2.55rem, 1.7rem + 2.3vw, 3.45rem);
+    font-weight: 640;
+    line-height: 1.04;
+    letter-spacing: -0.02em;
   }
 
-  .visual-hero-shell .hero-copy-panel .hero-fact-grid {
-    margin-top: 0.55rem;
+  .visual-hero-shell .hero-gate-title__answer {
+    display: block;
+    max-width: 20ch;
+    margin-top: 2.5rem;
+    font-size: clamp(1.6rem, 1.2rem + 1.05vw, 2.12rem);
+    font-weight: 560;
+    line-height: 1.16;
+    letter-spacing: -0.01em;
+    color: color-mix(in srgb, var(--authority-on-dark) 80%, var(--copper));
+  }
+
+  .visual-hero-shell .hero-gate-title__answer-brand {
+    color: color-mix(in srgb, var(--copper) 62%, var(--authority-on-dark));
+  }
+
+  .visual-hero-shell .hero-copy-stack .hero-gate-title + .hero-lead {
+    margin-top: 1.125rem;
+  }
+
+  .visual-hero-shell .hero-lead {
+    max-width: 36rem;
+    font-size: 1.1rem;
+    line-height: 1.45;
+  }
+
+  /* Operator proof card anchors the bottom of the authority column */
+  .visual-hero-shell .gate-operator-cue {
+    margin-top: auto;
+    width: min(100%, 33rem);
+    padding: 1.05rem 1.15rem;
+  }
+
+  .visual-hero-shell .gate-operator-cue__photo {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .visual-hero-shell .gate-operator-cue__name {
+    font-size: 1.08rem;
   }
 
   .diagnostic-panel--gate {
-    align-self: end;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1.75rem 1.7rem 1.6rem;
+  }
+
+  .diagnostic-panel--gate > p.mt-3 {
+    margin-top: 0.6rem !important;
+  }
+
+  .diagnostic-panel--gate > .mt-5 {
+    margin-top: 1.1rem !important;
+  }
+
+  .diagnostic-panel--gate > p.mt-4 {
+    margin-top: 0.95rem !important;
+  }
+
+  .diagnostic-panel--gate .diagnostic-choice-grid {
+    gap: 0.8rem;
+  }
+
+  .diagnostic-panel--gate .diagnostic-choice-card {
+    min-height: 132px;
+    padding: 1.05rem 1.15rem;
   }
 }
 
@@ -1191,6 +1267,44 @@ textarea:focus {
   opacity: 1;
   color: var(--authority-on-dark);
   text-shadow: 0 1px 2px rgba(7, 21, 36, 0.6), 0 6px 28px rgba(7, 21, 36, 0.42);
+}
+
+.visual-hero-shell .hero-display.hero-gate-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  max-width: none;
+  line-height: 1.08;
+}
+
+.visual-hero-shell .hero-gate-title__question,
+.visual-hero-shell .hero-gate-title__answer {
+  display: block;
+}
+
+.visual-hero-shell .hero-gate-title__question {
+  max-width: 18ch;
+  font-size: clamp(2.1rem, 1.4rem + 2.6vw, 3rem);
+  font-weight: 640;
+  line-height: 1.06;
+  letter-spacing: -0.018em;
+}
+
+.visual-hero-shell .hero-gate-title__answer {
+  max-width: 22ch;
+  margin-top: 2.5rem;
+  font-size: clamp(1.45rem, 1.05rem + 1.4vw, 1.95rem);
+  font-weight: 560;
+  line-height: 1.18;
+  color: color-mix(in srgb, var(--authority-on-dark) 80%, var(--copper));
+}
+
+.visual-hero-shell .hero-gate-title__answer-brand {
+  color: color-mix(in srgb, var(--copper) 62%, var(--authority-on-dark));
+}
+
+.visual-hero-shell .hero-copy-stack .hero-gate-title + .hero-lead {
+  margin-top: 0.5rem;
 }
 
 .visual-hero-shell .hero-lead {
@@ -1315,9 +1429,37 @@ textarea:focus {
 }
 
 .gate-operator-cue__price-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.38rem;
   color: color-mix(in srgb, var(--authority-on-dark) 80%, transparent);
   font-size: 0.78rem;
   line-height: 1.34;
+}
+
+.gate-cost-line {
+  display: block;
+  line-height: 1.12;
+}
+
+.gate-cost-lead {
+  color: color-mix(in srgb, var(--authority-on-dark) 68%, transparent);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.gate-cost-amount {
+  color: color-mix(in srgb, var(--copper) 82%, #fffaf2);
+  font-size: clamp(1.25rem, 1.05rem + 0.4vw, 1.4rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.gate-cost-detail {
+  color: color-mix(in srgb, var(--authority-on-dark) 74%, transparent);
+  font-size: 0.74rem;
+  line-height: 1.36;
 }
 
 .gate-operator-cue__price-link {
@@ -1434,6 +1576,12 @@ textarea:focus {
   }
 }
 
+/* Pre-click gate: fact chips demoted everywhere — the operator proof card is the single
+   trust anchor on the left, so the chips no longer read as illegible decorative pills. */
+.visual-hero-shell .hero-fact-grid {
+  display: none;
+}
+
 @media (max-width: 640px) {
   .gate-operator-cue {
     gap: 0.36rem;
@@ -1483,8 +1631,23 @@ textarea:focus {
   }
 
   .gate-operator-cue__price-text {
+    gap: 0.28rem;
     font-size: 0.66rem;
     line-height: 1.24;
+  }
+
+  .gate-cost-lead {
+    font-size: 0.6rem;
+  }
+
+  .gate-cost-amount {
+    font-size: 1.22rem;
+    letter-spacing: 0.015em;
+  }
+
+  .gate-cost-detail {
+    font-size: 0.64rem;
+    line-height: 1.3;
   }
 
   .gate-operator-cue__price-link {
@@ -1508,11 +1671,29 @@ textarea:focus {
     margin-top: 1.2rem;
   }
 
-  .home-page .visual-hero-shell .hero-display {
-    max-width: min(100%, 19.5ch);
-    font-size: 1.92rem;
-    letter-spacing: 0;
-    line-height: 1.02;
+  .home-page .visual-hero-shell .hero-display.hero-gate-title {
+    max-width: none;
+    line-height: 1.1;
+    gap: 0.4rem;
+  }
+
+  .home-page .visual-hero-shell .hero-gate-title__question {
+    max-width: min(100%, 22ch);
+    font-size: clamp(1.85rem, 1.25rem + 3vw, 2.25rem);
+    font-weight: 640;
+    line-height: 1.08;
+  }
+
+  .home-page .visual-hero-shell .hero-gate-title__answer {
+    max-width: min(100%, 24ch);
+    margin-top: 2.5rem;
+    font-size: clamp(1.3rem, 1rem + 1.8vw, 1.55rem);
+    font-weight: 560;
+    line-height: 1.2;
+  }
+
+  .home-page .visual-hero-shell .hero-copy-stack .hero-gate-title + .hero-lead {
+    margin-top: 0.5rem;
   }
 
   .home-page .visual-hero-shell .hero-kicker {
@@ -2254,7 +2435,8 @@ textarea:focus {
   }
 
   .visual-hero-shell .hero-copy-panel {
-    padding: 0.58rem 0.62rem 0.05rem;
+    /* Lower the upper text cluster off the panel top edge on mobile */
+    padding: 2.6rem 0.62rem 0.05rem;
     background: none;
     border: none;
     border-radius: 0;
@@ -3043,6 +3225,28 @@ textarea:focus {
   background:
     radial-gradient(32rem 18rem at 88% 18%, rgba(47, 111, 115, 0.07), transparent 72%),
     linear-gradient(180deg, var(--surface-light) 0%, var(--site-page-stone) 54%, var(--surface-light) 100%);
+}
+
+/* Unselected homepage — soften hero-to-footer threshold without adding a new section */
+main.home-page:not(:has(.home-pathway-body)) .visual-hero-section {
+  padding-bottom: clamp(2.85rem, 4.8vw, 4rem);
+}
+
+main.home-page:not(:has(.home-pathway-body))::after {
+  display: block;
+  height: 2.75rem;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--site-page-stone) 72%, transparent) 0%,
+    rgba(11, 24, 39, 0.42) 42%,
+    rgba(11, 24, 39, 0.92) 100%
+  );
+  content: "";
+  pointer-events: none;
+}
+
+main.home-page:not(:has(.home-pathway-body)) + .site-footer {
+  border-top-color: rgba(255, 250, 242, 0.06);
 }
 
 .home-section {

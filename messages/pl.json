@@ -60,8 +60,10 @@
     },
     "pathway": {
       "companyEyebrow": "Lokalna reprezentacja właściciela",
-      "companyHeadline": "Masz nieruchomość tutaj, ale mieszkasz gdzie indziej? Sentinel jest lokalnym operatorem po Twojej stronie.",
-      "companyLine": "Sentinel działa lokalnie w imieniu właściciela: sprawdza stan, kontroluje dostęp i dokumentuje to, co dzieje się na miejscu.",
+      "companyHeadlineQuestion": "Masz nieruchomość na Costa Blanca, ale mieszkasz gdzie indziej?",
+      "companyHeadlineAnswerBrand": "Sentinel",
+      "companyHeadlineAnswerRest": " jest lokalnym operatorem po Twojej stronie.",
+      "companyLine": "Działamy w imieniu właściciela: sprawdzamy stan, kontrolujemy dostęp i dokumentujemy sytuację na miejscu.",
       "companyProofLine": "Zakres, dostęp i zapis są ustalone przed rozpoczęciem nadzoru.",
       "companyFacts": {
         "area": {
@@ -82,9 +84,11 @@
         "name": "Aleksy Gugała",
         "role": "Lokalny operator Sentinel",
         "photoAlt": "Aleksy Gugała, lokalny operator Sentinel",
-        "presence": "Jeden z publicznie pokazanych członków zespołu operacyjnego.",
+        "presence": "Lokalny członek zespołu operacyjnego Sentinel.",
         "priceLabel": "Orientacyjny koszt",
-        "priceText": "Od ok. 80 €/mies. dla najprostszego zakresu; dokładny przedział sprawdzisz w estymatorze.",
+        "priceTextLead": "Od ok. ",
+        "priceTextAmount": "80 €/mies.",
+        "priceTextTail": "dla najprostszego zakresu; dokładny przedział sprawdzisz w estymatorze.",
         "priceLink": "Otwórz estymator"
       },
       "mediaAlt": {

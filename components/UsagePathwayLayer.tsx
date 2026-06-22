@@ -330,7 +330,13 @@ function DiagnosticGateIntro({
         <div className="hero-copy-panel motion-entrance">
           <div className="hero-copy-stack">
             <p className="hero-kicker">{tp('companyEyebrow')}</p>
-            <h1 className="hero-display">{tp('companyHeadline')}</h1>
+            <h1 className="hero-display hero-gate-title">
+              <span className="hero-gate-title__question">{tp('companyHeadlineQuestion')}</span>
+              <span className="hero-gate-title__answer">
+                <span className="hero-gate-title__answer-brand">{tp('companyHeadlineAnswerBrand')}</span>
+                {tp('companyHeadlineAnswerRest')}
+              </span>
+            </h1>
             <p className="hero-lead">{tp('companyLine')}</p>
           </div>
 
@@ -397,7 +403,13 @@ function GateOperatorCue({
       <p className="gate-operator-cue__presence">{t('operatorCue.presence')}</p>
       <Link href={`/${locale}/services#estimator`} className="gate-operator-cue__price">
         <span className="gate-operator-cue__price-label">{t('operatorCue.priceLabel')}</span>
-        <span className="gate-operator-cue__price-text">{t('operatorCue.priceText')}</span>
+        <span className="gate-operator-cue__price-text">
+          <span className="gate-cost-line">
+            <span className="gate-cost-lead">{t('operatorCue.priceTextLead')}</span>
+            <span className="gate-cost-amount">{t('operatorCue.priceTextAmount')}</span>
+          </span>
+          <span className="gate-cost-detail">{t('operatorCue.priceTextTail')}</span>
+        </span>
         <span className="gate-operator-cue__price-link">
           {t('operatorCue.priceLink')}
           <span className="choice-arrow" aria-hidden>

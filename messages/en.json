@@ -60,8 +60,10 @@
     },
     "pathway": {
       "companyEyebrow": "Local owner representation",
-      "companyHeadline": "Own a place here but live abroad? Sentinel is your local operator on the ground.",
-      "companyLine": "Sentinel acts locally on behalf of the owner: checking condition, controlling access and documenting what happens on site.",
+      "companyHeadlineQuestion": "Own a property on the Costa Blanca but live elsewhere?",
+      "companyHeadlineAnswerBrand": "Sentinel",
+      "companyHeadlineAnswerRest": " is your local operator on the ground.",
+      "companyLine": "We act on the owner's behalf: checking condition, controlling access, and documenting what happens on site.",
       "companyProofLine": "Scope, access, and records are set before oversight begins.",
       "companyFacts": {
         "area": {
@@ -82,9 +84,11 @@
         "name": "Aleksy Gugała",
         "role": "Local Sentinel Operator",
         "photoAlt": "Aleksy Gugała, Local Sentinel Operator",
-        "presence": "One of the operational team members shown publicly.",
+        "presence": "Local member of the Sentinel operations team.",
         "priceLabel": "Indicative cost",
-        "priceText": "From approx. €80/month for the simplest scope; check the exact range in the estimator.",
+        "priceTextLead": "From approx. ",
+        "priceTextAmount": "€80/mo",
+        "priceTextTail": "for the simplest scope; check the exact range in the estimator.",
         "priceLink": "Open the estimator"
       },
       "mediaAlt": {
