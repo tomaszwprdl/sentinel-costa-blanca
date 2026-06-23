@@ -17735,6 +17735,94 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   color: var(--svc-field);
 }
 
+/* Responsibility principle — two-column editorial panel above the package console. */
+.services-responsibility-principle {
+  display: grid;
+  gap: 1.15rem 1.75rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--svc-rule);
+  border-radius: var(--svc-radius);
+  background:
+    linear-gradient(90deg, rgba(92, 72, 46, 0.04) 0 1px, transparent 1px 100%) 0 0 / 3.4rem 100%,
+    linear-gradient(180deg, var(--svc-paper-strong), var(--svc-paper));
+  box-shadow: var(--svc-shadow);
+  padding: 1.2rem 1.25rem 1.3rem 1.45rem;
+}
+
+.services-responsibility-principle__lead {
+  min-width: 0;
+}
+
+.services-responsibility-principle__lead .h2-system {
+  max-width: 16ch;
+  line-height: 1.08;
+}
+
+.services-responsibility-principle__body {
+  display: grid;
+  gap: 0.85rem;
+  min-width: 0;
+  align-content: start;
+}
+
+.services-responsibility-principle__kicker {
+  margin: 0;
+  color: color-mix(in srgb, var(--svc-field) 78%, var(--svc-ink));
+  font-size: 0.86rem;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.services-responsibility-principle__intro {
+  margin: 0;
+  max-width: 38rem;
+  color: var(--svc-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.services-responsibility-principle__cues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.6rem;
+  margin: 0.15rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.services-responsibility-principle__cues li {
+  border: 1px solid color-mix(in srgb, var(--svc-field) 30%, var(--svc-rule));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--svc-field) 7%, var(--svc-paper));
+  padding: 0.34rem 0.68rem;
+  color: color-mix(in srgb, var(--svc-field) 82%, var(--svc-ink));
+  font-size: 0.67rem;
+  font-weight: 850;
+  letter-spacing: 0.07em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .services-responsibility-principle {
+    grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr);
+    align-items: start;
+    gap: 1.5rem 2.25rem;
+    margin-bottom: 1.5rem;
+    padding: 1.45rem 1.6rem 1.55rem 1.85rem;
+  }
+
+  .services-responsibility-principle__lead .h2-system {
+    max-width: 11ch;
+  }
+}
+
+@media (max-width: 767px) {
+  .services-responsibility-principle__lead .h2-system {
+    max-width: none;
+  }
+}
+
 /* "Co dostajesz" outcomes — records settling into place, then a quiet loop.
    Reuses MotionObserver (.is-visible) and the global prefers-reduced-motion
    reset: header/cards are neutralized via .motion-reveal/.reveal-stagger, and

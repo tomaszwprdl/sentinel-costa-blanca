@@ -19,16 +19,24 @@ export default function PackageResponsibilityLadder() {
   const active = PACKAGES.find((pkg) => pkg.levelKey === activeLevel) ?? PACKAGES[1];
   const activeSla = active.slaKey === 'sameDay' ? t('diagrams.sla.sameDay') : active.slaKey;
   const panelId = 'services-package-responsibility-panel';
+  const cueLabels = t.raw('redesign.ladder.cueLabels') as string[];
 
   return (
     <div className="services-ladder-band" id="responsibility">
-      <div className="mb-8 max-w-[760px]">
-        <p className="section-label">{t('redesign.ladder.eyebrow')}</p>
-        {t('redesign.ladder.bridgeLine') ? (
-          <p className="mt-2 text-sm font-semibold text-support">{t('redesign.ladder.bridgeLine')}</p>
-        ) : null}
-        <h2 className="h2-system mt-3">{t('redesign.ladder.title')}</h2>
-        <p className="mt-3 text-body">{t('redesign.ladder.intro')}</p>
+      <div className="services-responsibility-principle motion-reveal">
+        <div className="services-responsibility-principle__lead">
+          <p className="section-label">{t('redesign.ladder.eyebrow')}</p>
+          <h2 className="h2-system mt-3">{t('redesign.ladder.title')}</h2>
+        </div>
+        <div className="services-responsibility-principle__body">
+          <p className="services-responsibility-principle__kicker">{t('redesign.ladder.bridgeLine')}</p>
+          <p className="services-responsibility-principle__intro">{t('redesign.ladder.intro')}</p>
+          <ul className="services-responsibility-principle__cues" aria-label={t('redesign.ladder.eyebrow')}>
+            {cueLabels.map((label) => (
+              <li key={label}>{label}</li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       <div className="services-authority-scale services-responsibility-console">

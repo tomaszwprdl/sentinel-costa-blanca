@@ -748,9 +748,10 @@
       },
       "ladder": {
         "eyebrow": "Poziom odpowiedzialności",
-        "title": "Pakiet określa poziom odpowiedzialności, nie listę przysług.",
-        "intro": "Pakiety różnią rytm wizyt, koordynację dostępu, priorytet i limit decyzji. To drabina odpowiedzialności, nie otwarty katalog zadań.",
-        "bridgeLine": "Najpierw sposób używania nieruchomości, potem poziom odpowiedzialności.",
+        "title": "Pakiet określa, za co Sentinel odpowiada.",
+        "intro": "Pakiety różnią się rytmem wizyt, koordynacją dostępu, priorytetem i limitem decyzji. To sposób ustalenia odpowiedzialności, nie luźna lista zadań.",
+        "bridgeLine": "Najpierw ustalamy, jak nieruchomość jest używana. Dopiero potem dobieramy poziom obsługi.",
+        "cueLabels": ["Rytm wizyt", "Dostęp", "Limit decyzji"],
         "detailCta": "Zobacz pełny zakres",
         "estimatorCta": "Przejdź do estymatora",
         "responsibilityLabel": "Główna odpowiedzialność",
