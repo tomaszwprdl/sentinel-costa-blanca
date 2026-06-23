@@ -22932,3 +22932,43 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
     min-height: clamp(12rem, 50vw, 18rem);
   }
 }
+
+/* Hero composition rhythm: vary which side leads by page role so the set is not
+   a uniform text-left / object-right grid. Services + FAQ keep text-left
+   (analytical read / fast scan); How It Works, About, and Contact lead with
+   their page-specific object on the left. The flip is desktop-only — below the
+   breakpoint each hero keeps document order (heading first) and stacks. */
+
+/* How It Works — the procedure register leads from the left. */
+@media (min-width: 768px) {
+  .hiw-procedure-hero__grid {
+    grid-template-columns: minmax(20rem, 0.78fr) minmax(0, 0.92fr);
+  }
+
+  .hiw-procedure-hero__grid > .hiw-procedure-register {
+    order: -1;
+  }
+}
+
+/* About — the local/operator proof card leads from the left (image-led). */
+@media (min-width: 1024px) {
+  .about-operator-hero__grid {
+    grid-template-columns: minmax(22rem, 0.47fr) minmax(0, 0.53fr);
+  }
+
+  .about-operator-hero__grid > .about-local-record {
+    order: -1;
+  }
+}
+
+/* Contact — the warm intake record leads from the left, copy to the right.
+   The success-state hero keeps its original order. */
+@media (min-width: 1024px) {
+  .contact-hero-grid:not(.contact-hero-grid--success) {
+    grid-template-columns: minmax(22rem, 0.44fr) minmax(0, 0.56fr);
+  }
+
+  .contact-hero-grid:not(.contact-hero-grid--success) > .contact-record-artifact {
+    order: -1;
+  }
+}
