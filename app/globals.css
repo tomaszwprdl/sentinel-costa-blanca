@@ -20196,6 +20196,10 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 .contact-page {
   --contact-paper: #fffaf2;
   --contact-stone: #f2eee6;
+  --contact-plaster: #e7dfd1;
+  --contact-sage-wash: #e9f0ea;
+  --contact-clay-wash: #f3e4d7;
+  --contact-ivory: #fff8eb;
   --contact-ink: #10263f;
   --contact-teal: #2f6f73;
   --contact-sage: #738b7c;
@@ -20367,8 +20371,10 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 
 .contact-dossier-intake-section {
   background:
-    linear-gradient(90deg, color-mix(in srgb, var(--contact-teal) 7%, transparent) 1px, transparent 1px) 0 0 / 6rem 100%,
-    linear-gradient(180deg, var(--contact-stone), var(--contact-paper));
+    radial-gradient(54rem 34rem at 86% 8%, color-mix(in srgb, var(--contact-sage) 30%, transparent), transparent 68%),
+    radial-gradient(42rem 30rem at 8% 36%, color-mix(in srgb, var(--contact-copper) 18%, transparent), transparent 70%),
+    linear-gradient(90deg, color-mix(in srgb, var(--contact-teal) 8%, transparent) 1px, transparent 1px) 0 0 / 6rem 100%,
+    linear-gradient(180deg, #d4cbbb 0%, #ded8cc 52%, #eadccb 100%);
 }
 
 .contact-intake-layout {
@@ -20386,18 +20392,23 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 .contact-method-panel {
   position: relative;
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--line) 64%, var(--contact-teal));
+  border: 1px solid color-mix(in srgb, var(--contact-sage) 38%, var(--line));
   border-radius: var(--site-radius-card);
-  background: var(--site-surface-shell-cool);
-  box-shadow: var(--site-shadow-card);
+  background:
+    linear-gradient(145deg, rgba(255, 253, 249, 0.78), rgba(236, 242, 236, 0.86)),
+    var(--contact-sage-wash);
+  box-shadow:
+    0 16px 38px rgba(63, 75, 68, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
   padding: 1.25rem;
 }
 
 .contact-support-panel--primary {
-  border-color: color-mix(in srgb, var(--contact-teal) 42%, var(--line));
+  border-color: color-mix(in srgb, var(--contact-teal) 48%, var(--line));
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--contact-teal) 10%, transparent), transparent 48%),
-    var(--contact-paper);
+    linear-gradient(135deg, color-mix(in srgb, var(--contact-teal) 12%, transparent), transparent 54%),
+    linear-gradient(180deg, rgba(255, 253, 249, 0.86), rgba(233, 240, 234, 0.92)),
+    var(--contact-sage-wash);
 }
 
 .contact-support-panel--quiet {
@@ -20435,14 +20446,14 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   display: grid;
   gap: 0;
   margin-top: 1rem;
-  border-top: 1px solid var(--structural-light);
+  border-top: 1px solid color-mix(in srgb, var(--contact-sage) 38%, var(--line));
 }
 
 .contact-info-list__item {
   display: grid;
   grid-template-columns: 2.65rem minmax(0, 1fr);
   gap: 0.8rem;
-  border-bottom: 1px solid var(--structural-light);
+  border-bottom: 1px solid color-mix(in srgb, var(--contact-sage) 38%, var(--line));
   padding: 0.9rem 0;
 }
 
@@ -20522,8 +20533,20 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .contact-form-file {
+  position: relative;
   min-width: 0;
   scroll-margin-top: var(--scroll-anchor-offset);
+}
+
+.contact-form-file::before {
+  position: absolute;
+  inset: 1.1rem -0.85rem -1.15rem 0.85rem;
+  z-index: 0;
+  border: 1px solid color-mix(in srgb, var(--contact-sage) 32%, transparent);
+  border-radius: var(--site-radius-shell);
+  background: color-mix(in srgb, var(--contact-sage) 14%, var(--contact-clay-wash));
+  content: "";
+  pointer-events: none;
 }
 
 .contact-form-file.reveal-rise {
@@ -20532,14 +20555,17 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .contact-form-dossier {
+  position: relative;
   isolation: isolate;
-  border: 1px solid color-mix(in srgb, var(--line) 62%, var(--contact-teal));
+  z-index: 1;
+  border: 1px solid color-mix(in srgb, var(--contact-teal) 45%, var(--line));
   border-radius: var(--site-radius-shell);
   background:
-    linear-gradient(180deg, rgba(255, 253, 249, 0.98), rgba(255, 255, 255, 0.96) 52%, rgba(248, 244, 237, 0.96)),
-    var(--contact-paper);
+    linear-gradient(180deg, var(--contact-ivory), #fffdf8 54%, color-mix(in srgb, var(--contact-ivory) 82%, var(--contact-stone))),
+    var(--contact-ivory);
   box-shadow:
-    0 22px 52px rgba(16, 38, 63, 0.1),
+    0 26px 64px rgba(52, 65, 57, 0.18),
+    0 8px 22px rgba(184, 102, 74, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.82);
 }
 
@@ -20614,15 +20640,36 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 .contact-form-section,
 .contact-consent-panel {
   position: relative;
+  overflow: hidden;
   border: 0;
   border-radius: var(--site-radius-card);
   background:
-    linear-gradient(180deg, rgba(255, 253, 249, 0.94), rgba(255, 255, 255, 0.9)),
-    color-mix(in srgb, var(--surface-card) 90%, var(--contact-paper));
+    linear-gradient(180deg, color-mix(in srgb, var(--contact-stone) 42%, #fffdf8), color-mix(in srgb, var(--contact-stone) 66%, #fffdf8)),
+    var(--contact-stone);
   box-shadow:
-    inset 0 0 0 1px color-mix(in srgb, var(--line) 70%, var(--contact-teal)),
-    0 10px 28px rgba(16, 38, 63, 0.045);
+    inset 0 0 0 1px color-mix(in srgb, var(--contact-sage) 36%, var(--line)),
+    0 10px 28px rgba(52, 65, 57, 0.055);
   padding: clamp(1.15rem, 2vw, 1.45rem);
+}
+
+.contact-form-section::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0.22rem;
+  background: linear-gradient(180deg, var(--contact-teal), color-mix(in srgb, var(--contact-copper) 74%, var(--contact-teal)));
+  content: "";
+}
+
+.contact-form-fields .contact-form-section:nth-of-type(2) {
+  background:
+    linear-gradient(180deg, rgba(255, 253, 249, 0.9), rgba(238, 244, 238, 0.96)),
+    var(--contact-sage-wash);
+}
+
+.contact-form-fields .contact-form-section:nth-of-type(3) {
+  background:
+    linear-gradient(180deg, rgba(255, 253, 249, 0.9), rgba(249, 239, 229, 0.96)),
+    var(--contact-clay-wash);
 }
 
 .contact-form-section legend,
@@ -20642,8 +20689,9 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 .contact-intake-shell .form-section__label,
 .contact-intake-shell .notice-panel .form-section__label {
   flex: 0 0 auto;
-  border-color: color-mix(in srgb, var(--contact-teal) 42%, var(--line));
+  border-color: color-mix(in srgb, var(--contact-teal) 58%, var(--line));
   background: var(--contact-teal);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--contact-teal) 22%, transparent);
   margin: 0;
 }
 
@@ -20673,10 +20721,12 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .contact-form-dossier .form-control {
-  border-color: color-mix(in srgb, var(--line) 76%, var(--contact-copper));
+  border-color: color-mix(in srgb, var(--contact-copper) 42%, var(--line));
   border-radius: 0.75rem;
-  background: rgba(255, 253, 249, 0.98);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  background: #fffdf8;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.86),
+    0 1px 0 rgba(255, 255, 255, 0.55);
   min-height: 3.05rem;
 }
 
@@ -20695,8 +20745,8 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 .contact-consent-panel {
   border-left: 4px solid var(--contact-copper);
   background:
-    linear-gradient(180deg, color-mix(in srgb, var(--contact-stone) 58%, var(--surface-card)), rgba(255, 253, 249, 0.92)),
-    var(--surface-card);
+    linear-gradient(180deg, color-mix(in srgb, var(--contact-sage-wash) 62%, var(--surface-card)), color-mix(in srgb, var(--contact-ivory) 88%, var(--surface-card))),
+    var(--contact-sage-wash);
 }
 
 .contact-consent-panel__check {
@@ -20937,6 +20987,10 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   .contact-hero-actions .btn-primary,
   .contact-hero-actions .btn-secondary {
     width: 100%;
+  }
+
+  .contact-form-file::before {
+    inset: 0.8rem 0.25rem -0.75rem;
   }
 
   .contact-record-artifact,
