@@ -707,10 +707,10 @@
       "hero": {
         "eyebrow": "Model nadzoru",
         "decisionQuestion": "Co ustala model usługi?",
-        "headline": "Dobierz zakres nadzoru do sposobu używania nieruchomości.",
+        "headline": "Dobierz zakres obsługi do tego, jak naprawdę korzystasz z nieruchomości.",
         "headlineParts": [
-          "Dobierz zakres nadzoru",
-          "do sposobu używania nieruchomości."
+          "Dobierz zakres obsługi",
+          "do tego, jak naprawdę korzystasz z nieruchomości."
         ],
         "lead": "Najpierw zobaczysz, co realnie obejmuje nadzór. Potem porównasz pakiety, sprawdzisz orientacyjny przedział i dopiero na końcu granice wykonania.",
         "secondaryCta": "Zobacz, co obejmuje",

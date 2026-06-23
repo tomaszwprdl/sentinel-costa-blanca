@@ -707,10 +707,10 @@
       "hero": {
         "eyebrow": "Oversight model",
         "decisionQuestion": "What decides the service model?",
-        "headline": "Match the oversight scope to how the property is used.",
+        "headline": "Choose a service scope that matches how you actually use the property.",
         "headlineParts": [
-          "Match the oversight scope",
-          "to how the property is used."
+          "Choose a service scope",
+          "that matches how you actually use the property."
         ],
         "lead": "Start with what oversight actually includes. Then compare packages, check the indicative range, and review execution boundaries.",
         "secondaryCta": "See what you get",
