@@ -22752,15 +22752,15 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 
 .about-operator-hero {
   background:
-    radial-gradient(30rem 24rem at 78% 32%, rgba(115, 139, 124, 0.34), transparent 68%),
-    radial-gradient(26rem 16rem at 18% 100%, rgba(184, 102, 74, 0.12), transparent 72%),
+    radial-gradient(30rem 24rem at 22% 32%, rgba(115, 139, 124, 0.34), transparent 68%),
+    radial-gradient(26rem 16rem at 82% 100%, rgba(184, 102, 74, 0.12), transparent 72%),
     linear-gradient(90deg, rgba(255, 250, 242, 0.035) 1px, transparent 1px) 0 0 / 8rem 100%,
-    linear-gradient(135deg, #06131f 0%, #10263f 50%, #173a3b 100%);
+    linear-gradient(225deg, #06131f 0%, #10263f 50%, #173a3b 100%);
 }
 
 .about-operator-hero::before {
   background:
-    linear-gradient(90deg, transparent 0 54%, rgba(255, 250, 242, 0.09) 54% 100%),
+    linear-gradient(90deg, rgba(255, 250, 242, 0.09) 0 46%, transparent 46% 100%),
     linear-gradient(180deg, rgba(255, 250, 242, 0.065), transparent 40%);
 }
 
