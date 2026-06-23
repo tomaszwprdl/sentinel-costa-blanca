@@ -24,19 +24,21 @@ export default function PackageResponsibilityLadder() {
   return (
     <div className="services-ladder-band" id="responsibility">
       <div className="services-responsibility-principle motion-reveal">
-        <div className="services-responsibility-principle__lead">
-          <p className="section-label">{t('redesign.ladder.eyebrow')}</p>
-          <h2 className="h2-system mt-3">{t('redesign.ladder.title')}</h2>
+        <div className="services-responsibility-principle__content">
+          <div className="services-responsibility-principle__lead">
+            <p className="section-label">{t('redesign.ladder.eyebrow')}</p>
+            <h2 className="h2-system mt-3">{t('redesign.ladder.title')}</h2>
+          </div>
+          <div className="services-responsibility-principle__body">
+            <p className="services-responsibility-principle__kicker">{t('redesign.ladder.bridgeLine')}</p>
+            <p className="services-responsibility-principle__intro">{t('redesign.ladder.intro')}</p>
+          </div>
         </div>
-        <div className="services-responsibility-principle__body">
-          <p className="services-responsibility-principle__kicker">{t('redesign.ladder.bridgeLine')}</p>
-          <p className="services-responsibility-principle__intro">{t('redesign.ladder.intro')}</p>
-          <ul className="services-responsibility-principle__cues" aria-label={t('redesign.ladder.eyebrow')}>
-            {cueLabels.map((label) => (
-              <li key={label}>{label}</li>
-            ))}
-          </ul>
-        </div>
+        <ul className="services-responsibility-principle__cues" aria-label={t('redesign.ladder.eyebrow')}>
+          {cueLabels.map((label) => (
+            <li key={label}>{label}</li>
+          ))}
+        </ul>
       </div>
 
       <div className="services-authority-scale services-responsibility-console">
