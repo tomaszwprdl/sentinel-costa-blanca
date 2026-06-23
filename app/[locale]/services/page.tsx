@@ -25,11 +25,6 @@ type OperationalModule = {
   note?: string;
 };
 
-type DossierRecordRow = {
-  label: string;
-  value: string;
-};
-
 const NOT_INCLUDED_ITEM_KEYS = [
   'noGuaranteeFixes',
   'contractorResponsibility',
@@ -63,6 +58,29 @@ const CLEANING_STORY_IMAGES: Record<(typeof CLEANING_CAPABILITY_KEYS)[number], {
   },
 };
 
+// Service-map node icons, in the order of redesign.siteMap.nodes:
+// activity · access (key) · readiness (check) · documentation · agreed scope.
+const SITE_MAP_NODE_ICONS = [
+  <path key="activity" d="M3 12h3.3l1.9-5.4 3.5 10.8 1.9-5.4H21" />,
+  <g key="access">
+    <circle cx="8.6" cy="8.6" r="3.3" />
+    <path d="M11 11 19 19M16 18l2.2-2.2" />
+  </g>,
+  <g key="ready">
+    <circle cx="12" cy="12" r="8.4" />
+    <path d="M8.2 12.4 11 15.1 16 9.5" />
+  </g>,
+  <g key="document">
+    <path d="M13.4 3H7v18h10V7.6z" />
+    <path d="M13.4 3v4.6H18M9.6 12.4h4.8M9.6 15.8h4.8" />
+  </g>,
+  <g key="scope">
+    <path d="M5 8.2h14M5 15.8h14" />
+    <circle cx="9.4" cy="8.2" r="1.7" />
+    <circle cx="14.6" cy="15.8" r="1.7" />
+  </g>,
+];
+
 export default async function ServicesPage({
   params,
 }: {
@@ -71,8 +89,7 @@ export default async function ServicesPage({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'services' });
   const headlineParts = t.raw('redesign.hero.headlineParts') as string[];
-  const heroRecordRows = t.raw('redesign.dossier.hero.recordRows') as DossierRecordRow[];
-  const heroChecklist = t.raw('redesign.dossier.hero.checklist') as string[];
+  const siteMapNodes = t.raw('redesign.siteMap.nodes') as string[];
   const qualificationSteps = t.raw('redesign.executionStrip.gateSteps') as string[];
   const cleaningItems = CLEANING_CAPABILITY_KEYS.map((key, index) => ({
     id: key,
@@ -169,33 +186,58 @@ export default async function ServicesPage({
               </div>
             </Region>
             <Region name="support" tabletSpan="half" desktopSpan="half">
-              <figure className="services-dossier-artifact motion-panel-reveal" aria-hidden="true">
-                <div className="services-dossier-artifact__header">
-                  <p>{t('redesign.dossier.hero.kicker')}</p>
-                  <strong>{t('redesign.dossier.hero.title')}</strong>
-                  <span>{t('redesign.dossier.hero.status')}</span>
-                </div>
-                <div className="services-dossier-artifact__body">
-                  <div className="services-dossier-record">
-                    {heroRecordRows.map((row) => (
-                      <div key={row.label} className="services-dossier-record__row">
-                        <span>{row.label}</span>
-                        <strong>{row.value}</strong>
-                      </div>
-                    ))}
+              <figure className="services-site-map motion-panel-reveal" aria-hidden="true">
+                <p className="services-site-map__title">{t('redesign.siteMap.title')}</p>
+                <div className="services-site-map__field">
+                  <svg
+                    className="services-site-map__links"
+                    viewBox="0 0 100 100"
+                    preserveAspectRatio="none"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <line x1="50" y1="50" x2="24" y2="13" />
+                    <line x1="50" y1="50" x2="76" y2="13" />
+                    <line x1="50" y1="50" x2="24" y2="80" />
+                    <line x1="50" y1="50" x2="76" y2="80" />
+                    <line x1="50" y1="50" x2="50" y2="93" />
+                  </svg>
+                  <div className="services-site-map__core">
+                    <svg
+                      className="services-site-map__core-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={1.6}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M4 11 12 4.5 20 11" />
+                      <path d="M6.2 9.6V19.5h11.6V9.6" />
+                    </svg>
+                    <span>{t('redesign.siteMap.center')}</span>
                   </div>
-                  <div className="services-dossier-flow">
-                    <span />
-                    <span />
-                    <span />
-                  </div>
-                  <div className="services-dossier-checklist">
-                    <p>{t('redesign.dossier.hero.checklistTitle')}</p>
-                    {heroChecklist.map((item) => (
-                      <span key={item}>{item}</span>
-                    ))}
-                  </div>
-                  <span className="services-dossier-artifact__stamp">{t('redesign.dossier.hero.stamp')}</span>
+                  {siteMapNodes.map((label, index) => (
+                    <div key={label} className={`services-site-map__node services-site-map__node--${index + 1}`}>
+                      <span className="services-site-map__node-icon">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={1.6}
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          {SITE_MAP_NODE_ICONS[index]}
+                        </svg>
+                      </span>
+                      <span className="services-site-map__node-label">{label}</span>
+                    </div>
+                  ))}
                 </div>
               </figure>
             </Region>

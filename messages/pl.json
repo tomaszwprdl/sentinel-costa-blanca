@@ -743,6 +743,17 @@
           ]
         }
       },
+      "siteMap": {
+        "title": "Co Sentinel pilnuje na miejscu",
+        "center": "Lokal pod nadzorem",
+        "nodes": [
+          "Co dzieje się w lokalu",
+          "Kto ma dostęp",
+          "Czy lokal jest gotowy",
+          "Co zostaje udokumentowane",
+          "Co robimy w uzgodnionym zakresie"
+        ]
+      },
       "skim": {
         "eyebrow": "Co dostajesz",
         "title": "Cztery rzeczy powinny być jasne od pierwszego czytania.",

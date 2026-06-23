@@ -743,6 +743,17 @@
           ]
         }
       },
+      "siteMap": {
+        "title": "What Sentinel watches on site",
+        "center": "Property under oversight",
+        "nodes": [
+          "What happens in the property",
+          "Who has access",
+          "Whether it is ready",
+          "What gets documented",
+          "What we do within the agreed scope"
+        ]
+      },
       "skim": {
         "eyebrow": "What you get",
         "title": "Four things should be clear on the first read.",
