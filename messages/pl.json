@@ -216,8 +216,8 @@
       },
       "detail": {
       "private-use-only": {
-        "priority": "Regularna lokalna obecność, kontrola ryzyk pustego lokalu, klucze pod kontrolą i przygotowanie przed przyjazdem właściciela.",
-        "meaning": "Zakres koncentruje się na stanie lokalu między pobytami, dostępie i przygotowaniu przed przyjazdem.",
+        "priority": "To wariant dla właścicieli, którzy korzystają z mieszkania prywatnie: między Twoimi pobytami sprawdzamy jego stan, kontrolujemy dostęp i pomagamy przygotować lokal na Twój przyjazd.",
+        "meaning": "Między Twoimi pobytami skupiamy się na tym, co zwykle umyka zdalnemu właścicielowi: stanie lokalu, dostępie i gotowości mieszkania przed przyjazdem.",
         "next": "Sprawdź pakiety, a następnie potwierdź, jaki rytm kontroli i przygotowania jest potrzebny.",
         "point1": "Przecieki, wilgoć, zapach i wentylacja",
         "point2": "Widoczne kontrole wody, prądu i stanu bojlera",

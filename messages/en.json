@@ -216,8 +216,8 @@
       },
       "detail": {
       "private-use-only": {
-        "priority": "Regular local presence, visible dormant-property checks, controlled access, and readiness before owner arrival.",
-        "meaning": "Scope focuses on property condition between visits, controlled access, and readiness before arrival.",
+        "priority": "This option is for owners who use the property privately: between your stays, we check its condition, control access, and help prepare it for your arrival.",
+        "meaning": "Between your stays, we focus on what remote owners usually cannot see: the property’s condition, access, and readiness before arrival.",
         "next": "Review the package levels, then confirm the inspection and readiness rhythm the property requires.",
         "point1": "Leaks, moisture, smell, and ventilation",
         "point2": "Visible water, electricity, and boiler condition checks",
