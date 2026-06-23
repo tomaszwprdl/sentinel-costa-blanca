@@ -17735,18 +17735,26 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   color: var(--svc-field);
 }
 
-/* "Co dostajesz" outcomes — records settling into place.
+/* "Co dostajesz" outcomes — records settling into place, then a quiet loop.
    Reuses MotionObserver (.is-visible) and the global prefers-reduced-motion
    reset: header/cards are neutralized via .motion-reveal/.reveal-stagger, and
-   the marker settle collapses under the universal animation-duration reset. */
+   marker/rail loops collapse under the universal animation-duration reset. */
 
-/* Header (eyebrow + heading + subline) arrives as one soft unit — subtle fade +
-   ~14px rise — via base .motion-reveal on the header element (no override needed). */
+.services-skim-strip__header.motion-reveal {
+  transition:
+    opacity 680ms var(--motion-ease-out),
+    transform 680ms var(--motion-ease-out),
+    border-color var(--motion-standard) var(--motion-ease-out),
+    box-shadow var(--motion-standard) var(--motion-ease-out);
+}
 
-/* Four cards: full fade-in, ~12px rise, calm left-to-right stagger (~100ms/card). */
+/* Four cards: full fade-in, ~12px rise, calm left-to-right stagger. */
 .services-skim-strip__items.reveal-stagger > * {
   opacity: 0;
   transform: translateY(12px);
+  transition:
+    opacity 680ms var(--motion-ease-out),
+    transform 680ms var(--motion-ease-out);
 }
 
 .services-skim-strip__items.reveal-stagger.is-visible > * {
@@ -17759,53 +17767,94 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .services-skim-strip__items.reveal-stagger.is-visible > :nth-child(2) {
-  transition-delay: 100ms;
+  transition-delay: 140ms;
 }
 
 .services-skim-strip__items.reveal-stagger.is-visible > :nth-child(3) {
-  transition-delay: 200ms;
+  transition-delay: 280ms;
 }
 
 .services-skim-strip__items.reveal-stagger.is-visible > :nth-child(4) {
-  transition-delay: 300ms;
+  transition-delay: 420ms;
 }
 
-/* Number marker: one-time "settle" just after each card lands — a brief accent
-   border-brighten + faint ring that returns to rest. No scale, no loop. */
-.services-skim-strip__items.reveal-stagger.is-visible .services-skim-item__marker {
-  animation: skim-marker-settle 0.62s var(--motion-ease-out);
-}
-
-.services-skim-strip__items.reveal-stagger.is-visible > :nth-child(1) .services-skim-item__marker {
-  animation-delay: 0.42s;
-}
-
-.services-skim-strip__items.reveal-stagger.is-visible > :nth-child(2) .services-skim-item__marker {
-  animation-delay: 0.52s;
-}
-
-.services-skim-strip__items.reveal-stagger.is-visible > :nth-child(3) .services-skim-item__marker {
-  animation-delay: 0.62s;
-}
-
-.services-skim-strip__items.reveal-stagger.is-visible > :nth-child(4) .services-skim-item__marker {
-  animation-delay: 0.72s;
-}
-
-@keyframes skim-marker-settle {
-  0% {
-    border-color: color-mix(in srgb, var(--skim-accent) 55%, var(--svc-rule));
-    box-shadow: 0 0 0 0 transparent;
-  }
-
-  45% {
-    border-color: color-mix(in srgb, var(--skim-accent) 85%, var(--svc-rule));
-    box-shadow: 0 0 0 4px color-mix(in srgb, var(--skim-accent) 12%, transparent);
-  }
-
+@keyframes services-skim-marker-pulse {
+  0%,
   100% {
     border-color: color-mix(in srgb, var(--skim-accent) 55%, var(--svc-rule));
+    background: color-mix(in srgb, var(--skim-accent) 13%, var(--svc-paper));
     box-shadow: 0 0 0 0 transparent;
+    opacity: 1;
+  }
+
+  50% {
+    border-color: color-mix(in srgb, var(--skim-accent) 80%, var(--svc-rule));
+    background: color-mix(in srgb, var(--skim-accent) 18%, var(--svc-paper));
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--skim-accent) 9%, transparent);
+    opacity: 0.93;
+  }
+}
+
+@keyframes services-skim-rail-drift {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(200%);
+  }
+}
+
+/* Quiet operational rail — a faint highlight drifting along the header/items
+   divider. Very low opacity, slow (~11s), single-direction loop: no bounce, no
+   flash, no glow. Sits on the existing divider; pseudo stays out of grid flow,
+   and the strip's overflow:hidden clips it (no horizontal overflow). */
+.services-skim-strip__items {
+  position: relative;
+}
+
+.services-skim-strip__items::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 42%;
+  height: 1px;
+  pointer-events: none;
+  opacity: 0.5;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--svc-field) 22%, transparent) 46%,
+    color-mix(in srgb, var(--svc-field) 30%, transparent) 54%,
+    transparent 100%
+  );
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .services-skim-strip__items.reveal-stagger.is-visible .services-skim-item__marker {
+    animation: services-skim-marker-pulse 8s ease-in-out infinite;
+  }
+
+  .services-skim-strip__items.reveal-stagger.is-visible > :nth-child(1) .services-skim-item__marker {
+    animation-delay: 0s;
+  }
+
+  .services-skim-strip__items.reveal-stagger.is-visible > :nth-child(2) .services-skim-item__marker {
+    animation-delay: 1.4s;
+  }
+
+  .services-skim-strip__items.reveal-stagger.is-visible > :nth-child(3) .services-skim-item__marker {
+    animation-delay: 2.8s;
+  }
+
+  .services-skim-strip__items.reveal-stagger.is-visible > :nth-child(4) .services-skim-item__marker {
+    animation-delay: 4.2s;
+  }
+
+  .services-skim-strip__items::before {
+    animation: services-skim-rail-drift 11s linear infinite;
   }
 }
 
@@ -17837,42 +17886,14 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   }
 }
 
-/* Quiet operational rail — a faint highlight drifting along the header/items
-   divider. Very low opacity, slow (~11s), single-direction loop: no bounce, no
-   flash, no glow. Sits on the existing divider; pseudo stays out of grid flow,
-   and the strip's overflow:hidden clips it (no horizontal overflow). */
-.services-skim-strip__items::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  width: 50%;
-  height: 1px;
-  pointer-events: none;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    color-mix(in srgb, var(--svc-field) 40%, transparent) 50%,
-    transparent 100%
-  );
-  animation: skim-rail-drift 11s linear infinite;
-}
-
-@keyframes skim-rail-drift {
-  from {
-    transform: translateX(-100%);
-  }
-
-  to {
-    transform: translateX(200%);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .services-skim-strip__items::before {
-    animation: none;
+    animation: none !important;
     opacity: 0;
+  }
+
+  .services-skim-strip__items.reveal-stagger.is-visible .services-skim-item__marker {
+    animation: none !important;
   }
 }
 
