@@ -737,13 +737,13 @@
       },
       "skim": {
         "eyebrow": "Co dostajesz",
-        "title": "Cztery rzeczy powinny być jasne od pierwszego czytania.",
-        "intro": "Wiesz z góry, co zostanie sprawdzone, kto podejmuje decyzję i kiedy potrzebna jest Twoja zgoda.",
+        "title": "Cztery rzeczy są jasne od początku.",
+        "intro": "Wiesz, co sprawdzamy, kto ma dostęp, co zostaje zapisane i kiedy decyzja wraca do Ciebie.",
         "items": {
-          "inspections": { "label": "Kontrole / raporty", "title": "Stan jest sprawdzany i zapisany.", "body": "Po uzgodnionych wizytach dostajesz materiał o tym, co było widoczne na miejscu." },
-          "access": { "label": "Klucze / dostęp", "title": "Wejścia mają zasady.", "body": "Wejście właściciela, technika, sprzątania lub partnera odbywa się według ustalonego modelu." },
-          "decisions": { "label": "Decyzje", "title": "Działanie zostawia ślad.", "body": "Raport pokazuje, co sprawdzono, co wykonano i co wymaga kolejnego kroku." },
-          "approval": { "label": "Zgoda właściciela", "title": "Powyżej limitu decyzja wraca do Ciebie.", "body": "Sentinel działa w limicie pakietu; większy koszt lub zmiana zakresu wymaga zatwierdzenia." }
+          "inspections": { "label": "KONTROLE / RAPORTY", "title": "Stan lokalu jest sprawdzany i zapisany.", "body": "Po uzgodnionej wizycie dostajesz zapis tego, co było widoczne na miejscu." },
+          "access": { "label": "KLUCZE / DOSTĘP", "title": "Dostęp nie jest przypadkowy.", "body": "Wejście właściciela, technika, sprzątania lub partnera odbywa się według ustalonych zasad." },
+          "decisions": { "label": "DECYZJE", "title": "Każde działanie zostawia ślad.", "body": "Raport pokazuje, co sprawdzono, co wykonano i co wymaga kolejnego kroku." },
+          "approval": { "label": "ZGODA WŁAŚCICIELA", "title": "Powyżej limitu decyzja wraca do Ciebie.", "body": "Sentinel działa w ustalonym zakresie. Większy koszt albo zmiana zakresu wymaga Twojej zgody." }
         }
       },
       "ladder": {

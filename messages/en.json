@@ -737,13 +737,13 @@
       },
       "skim": {
         "eyebrow": "What you get",
-        "title": "Four things should be clear on the first read.",
-        "intro": "You know what will be checked, who decides, and when your approval is required.",
+        "title": "Four things are clear from the start.",
+        "intro": "You know what we check, who has access, what gets recorded, and when a decision comes back to you.",
         "items": {
-          "inspections": { "label": "Inspections / reports", "title": "Condition is checked and recorded.", "body": "After agreed visits, you receive material showing what was visible on site." },
-          "access": { "label": "Keys / access", "title": "Entries follow rules.", "body": "Owner, technician, cleaning, or partner entry follows the agreed operating model." },
-          "decisions": { "label": "Decisions", "title": "Action leaves a record.", "body": "The report shows what was checked, what was done, and what needs the next step." },
-          "approval": { "label": "Owner approval", "title": "Above the limit, the decision returns to you.", "body": "Sentinel acts inside the package limit; higher cost or scope change requires approval." }
+          "inspections": { "label": "CHECKS / REPORTS", "title": "The property's condition is checked and recorded.", "body": "After an agreed visit, you receive a record of what was visible on site." },
+          "access": { "label": "KEYS / ACCESS", "title": "Access is not accidental.", "body": "Owner, technician, cleaner, or partner entry follows agreed rules." },
+          "decisions": { "label": "DECISIONS", "title": "Every action leaves a record.", "body": "The report shows what was checked, what was done, and what needs the next step." },
+          "approval": { "label": "OWNER APPROVAL", "title": "Above the limit, the decision comes back to you.", "body": "Sentinel acts within the agreed scope. A higher cost or a scope change requires your approval." }
         }
       },
       "ladder": {
