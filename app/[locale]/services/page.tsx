@@ -140,7 +140,7 @@ export default async function ServicesPage({
             <Region name="main" desktopSpan="half">
               <div className="motion-entrance services-hero-copy max-w-[680px]">
                 <p className="services-hero-question">{t('redesign.hero.decisionQuestion')}</p>
-                <h1 className="hero-display services-hero-display services-hero-headline !text-[2.35rem] md:!text-[3.4rem] lg:!text-[3.8rem]">
+                <h1 className="hero-display services-hero-display services-hero-headline !text-[2.35rem] md:!text-[3rem] lg:!text-[3.2rem]">
                   {headlineParts.map((part, index) => (
                     <span key={part} className="services-hero-headline__part">
                       {part}
