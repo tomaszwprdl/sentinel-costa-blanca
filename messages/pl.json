@@ -758,7 +758,7 @@
         "depthLabel": "Zakres działania",
         "basic": {
           "responsibility": "Kontrola i sprawdzenia. Udokumentowane wizyty. Właściciel zatrzymuje większość decyzji.",
-          "fit": "Gdy głównym zadaniem jest stała obecność na miejscu i zapis stanu bez regularnej koordynacji dostępu."
+          "fit": "Gdy głównym zadaniem jest regularna obecność na miejscu i zapis stanu bez regularnej koordynacji dostępu."
         },
         "extended": {
           "responsibility": "Kontrola + dostęp. Koordynacja techników, sprzątania i wejść. Aktywniejsze prowadzenie operacji.",

@@ -758,7 +758,7 @@
         "depthLabel": "Operating depth",
         "basic": {
           "responsibility": "Control and checks. Documented visits. The owner keeps most decisions.",
-          "fit": "When the main need is scheduled presence on site and a condition record without regular access coordination."
+          "fit": "When the main need is regular local presence and a condition record without regular access coordination."
         },
         "extended": {
           "responsibility": "Control + access. Technician, cleaning, and entry coordination. More active operational handling.",
