@@ -387,11 +387,10 @@ function ContactPageInner() {
             </aside>
 
             <div className="contact-form-file reveal-rise" id="intake-form">
-              <span className="contact-intake-tab">{t('redesign.form.eyebrow')}</span>
               <div className="contact-intake-shell contact-form-dossier p-4 md:p-6">
                 <div className="contact-form-dossier__header">
                   <div>
-                    <p className="section-label">{t('redesign.form.eyebrow')}</p>
+                    <p className="section-label contact-form-dossier__eyebrow">{t('redesign.form.eyebrow')}</p>
                     <h2 className="h2-system">{t('redesign.form.title')}</h2>
                     <p className="mt-3 mb-0 text-body">{t('redesign.form.intro')}</p>
                   </div>
@@ -426,8 +425,10 @@ function ContactPageInner() {
 
                 <form onSubmit={handleSubmit(onSubmit)} className="contact-form-fields">
                   <fieldset className="form-section contact-form-section">
-                    <span className="form-section__label">01</span>
-                    <legend>{t('redesign.form.ownerSection')}</legend>
+                    <legend>
+                      <span className="form-section__label" aria-hidden="true">01</span>
+                      <span>{t('redesign.form.ownerSection')}</span>
+                    </legend>
                     <div className="grid gap-5 md:grid-cols-2">
                       <div>
                         <label htmlFor="fullName" className="contact-field-label">
@@ -515,8 +516,10 @@ function ContactPageInner() {
                   </fieldset>
 
                   <fieldset className="form-section contact-form-section">
-                    <span className="form-section__label">02</span>
-                    <legend>{t('redesign.form.propertySection')}</legend>
+                    <legend>
+                      <span className="form-section__label" aria-hidden="true">02</span>
+                      <span>{t('redesign.form.propertySection')}</span>
+                    </legend>
                     <div className="space-y-5">
                       <div>
                         <label htmlFor="propertyLocation" className="contact-field-label">
@@ -583,8 +586,10 @@ function ContactPageInner() {
                   </fieldset>
 
                   <fieldset className="form-section contact-form-section">
-                    <span className="form-section__label">03</span>
-                    <legend>{t('redesign.form.serviceSection')}</legend>
+                    <legend>
+                      <span className="form-section__label" aria-hidden="true">03</span>
+                      <span>{t('redesign.form.serviceSection')}</span>
+                    </legend>
                     <div className="space-y-5">
                       <div>
                         <label htmlFor="expectedPackage" className="contact-field-label">
@@ -649,8 +654,10 @@ function ContactPageInner() {
                   </fieldset>
 
                   <fieldset className="notice-panel contact-consent-panel">
-                    <span className="form-section__label">04</span>
-                    <legend>{t('redesign.form.consentSection')}</legend>
+                    <legend>
+                      <span className="form-section__label" aria-hidden="true">04</span>
+                      <span>{t('redesign.form.consentSection')}</span>
+                    </legend>
                     <div className="contact-consent-panel__check">
                       <input
                         type="checkbox"
