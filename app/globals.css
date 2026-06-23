@@ -17780,18 +17780,18 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 
 @keyframes services-skim-marker-pulse {
   0%,
+  70%,
   100% {
     border-color: color-mix(in srgb, var(--skim-accent) 55%, var(--svc-rule));
     background: color-mix(in srgb, var(--skim-accent) 13%, var(--svc-paper));
     box-shadow: 0 0 0 0 transparent;
-    opacity: 1;
   }
 
-  50% {
-    border-color: color-mix(in srgb, var(--skim-accent) 80%, var(--svc-rule));
-    background: color-mix(in srgb, var(--skim-accent) 18%, var(--svc-paper));
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--skim-accent) 9%, transparent);
-    opacity: 0.93;
+  12%,
+  22% {
+    border-color: color-mix(in srgb, var(--skim-accent) 90%, var(--svc-rule));
+    background: color-mix(in srgb, var(--skim-accent) 24%, var(--svc-paper));
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--skim-accent) 28%, transparent);
   }
 }
 
@@ -17822,12 +17822,12 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   width: 42%;
   height: 1px;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.62;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    color-mix(in srgb, var(--svc-field) 22%, transparent) 46%,
-    color-mix(in srgb, var(--svc-field) 30%, transparent) 54%,
+    color-mix(in srgb, var(--svc-field) 30%, transparent) 46%,
+    color-mix(in srgb, var(--svc-field) 42%, transparent) 54%,
     transparent 100%
   );
 }
@@ -17835,6 +17835,7 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 @media (prefers-reduced-motion: no-preference) {
   .services-skim-strip__items.reveal-stagger.is-visible .services-skim-item__marker {
     animation: services-skim-marker-pulse 8s ease-in-out infinite;
+    transition: none;
   }
 
   .services-skim-strip__items.reveal-stagger.is-visible > :nth-child(1) .services-skim-item__marker {
@@ -17842,15 +17843,15 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   }
 
   .services-skim-strip__items.reveal-stagger.is-visible > :nth-child(2) .services-skim-item__marker {
-    animation-delay: 1.4s;
+    animation-delay: 1.5s;
   }
 
   .services-skim-strip__items.reveal-stagger.is-visible > :nth-child(3) .services-skim-item__marker {
-    animation-delay: 2.8s;
+    animation-delay: 3s;
   }
 
   .services-skim-strip__items.reveal-stagger.is-visible > :nth-child(4) .services-skim-item__marker {
-    animation-delay: 4.2s;
+    animation-delay: 4.5s;
   }
 
   .services-skim-strip__items::before {
@@ -17872,6 +17873,10 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 
   .services-skim-item__marker {
     transition: border-color var(--motion-standard) var(--motion-ease-out);
+  }
+
+  .services-skim-strip__items.reveal-stagger.is-visible .services-skim-item__marker {
+    transition: none;
   }
 
   .services-skim-item:hover,
