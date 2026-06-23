@@ -724,25 +724,6 @@
           "3 poziomy"
         ]
       },
-      "dossier": {
-        "hero": {
-          "kicker": "Akta operacyjne",
-          "title": "Rejestr właściciela i lokalu",
-          "status": "Zakres po kwalifikacji",
-          "stamp": "Sentinel / lokalnie",
-          "recordRows": [
-            { "label": "Sytuacja", "value": "Sposób używania nieruchomości" },
-            { "label": "Odpowiedzialność", "value": "Pakiet, SLA i próg decyzji" },
-            { "label": "Wykonanie", "value": "Dostęp, gotowość, dokumentacja" }
-          ],
-          "checklistTitle": "Co trafia do akt",
-          "checklist": [
-            "raport po wizycie",
-            "log dostępu i gotowości",
-            "próg decyzji właściciela"
-          ]
-        }
-      },
       "siteMap": {
         "title": "Co Sentinel pilnuje na miejscu",
         "center": "Lokal pod nadzorem",
