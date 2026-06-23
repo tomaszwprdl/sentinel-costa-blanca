@@ -248,14 +248,14 @@ export default async function ServicesPage({
 
         <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--skim" id="what-you-get">
           <div className="services-skim-strip">
-            <div className="services-skim-strip__header">
+            <div className="services-skim-strip__header motion-reveal">
               <div>
                 <p className="section-label">{t('redesign.skim.eyebrow')}</p>
                 <h2 className="h2-system mt-3">{t('redesign.skim.title')}</h2>
               </div>
               <p>{t('redesign.skim.intro')}</p>
             </div>
-            <div className="services-skim-strip__items">
+            <div className="services-skim-strip__items reveal-stagger">
               {SKIM_ITEM_KEYS.map((key, index) => (
                 <article key={key} className="services-skim-item">
                   <span className="services-skim-item__marker">{String(index + 1).padStart(2, '0')}</span>

@@ -17718,6 +17718,107 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   color: var(--svc-field);
 }
 
+/* "Co dostajesz" outcomes — records settling into place.
+   Reuses MotionObserver (.is-visible) and the global prefers-reduced-motion
+   reset: header/cards are neutralized via .motion-reveal/.reveal-stagger, and
+   the marker settle collapses under the universal animation-duration reset. */
+
+/* Header (eyebrow + heading + subline) arrives as one soft unit — subtle fade +
+   ~14px rise — via base .motion-reveal on the header element (no override needed). */
+
+/* Four cards: full fade-in, ~12px rise, calm left-to-right stagger (~100ms/card). */
+.services-skim-strip__items.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.services-skim-strip__items.reveal-stagger.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.services-skim-strip__items.reveal-stagger.is-visible > :nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.services-skim-strip__items.reveal-stagger.is-visible > :nth-child(2) {
+  transition-delay: 100ms;
+}
+
+.services-skim-strip__items.reveal-stagger.is-visible > :nth-child(3) {
+  transition-delay: 200ms;
+}
+
+.services-skim-strip__items.reveal-stagger.is-visible > :nth-child(4) {
+  transition-delay: 300ms;
+}
+
+/* Number marker: one-time "settle" just after each card lands — a brief teal
+   border-brighten + faint ring that returns to rest. No scale, no loop. */
+.services-skim-strip__items.reveal-stagger.is-visible .services-skim-item__marker {
+  animation: skim-marker-settle 0.62s var(--motion-ease-out);
+}
+
+.services-skim-strip__items.reveal-stagger.is-visible > :nth-child(1) .services-skim-item__marker {
+  animation-delay: 0.42s;
+}
+
+.services-skim-strip__items.reveal-stagger.is-visible > :nth-child(2) .services-skim-item__marker {
+  animation-delay: 0.52s;
+}
+
+.services-skim-strip__items.reveal-stagger.is-visible > :nth-child(3) .services-skim-item__marker {
+  animation-delay: 0.62s;
+}
+
+.services-skim-strip__items.reveal-stagger.is-visible > :nth-child(4) .services-skim-item__marker {
+  animation-delay: 0.72s;
+}
+
+@keyframes skim-marker-settle {
+  0% {
+    border-color: color-mix(in srgb, var(--svc-field) 45%, var(--svc-rule));
+    box-shadow: 0 0 0 0 transparent;
+  }
+
+  45% {
+    border-color: color-mix(in srgb, var(--svc-field) 82%, var(--svc-rule));
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--svc-field) 12%, transparent);
+  }
+
+  100% {
+    border-color: color-mix(in srgb, var(--svc-field) 45%, var(--svc-rule));
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+/* Desktop pointer hover/focus: faint teal wash + divider/marker brighten.
+   No transform or shadow lift — the flush grid keeps alignment, no layout shift. */
+@media (hover: hover) and (pointer: fine) {
+  .services-skim-item {
+    transition:
+      opacity var(--motion-reveal) var(--motion-ease-out),
+      transform var(--motion-reveal) var(--motion-ease-out),
+      background-color var(--motion-standard) var(--motion-ease-out),
+      border-color var(--motion-standard) var(--motion-ease-out);
+  }
+
+  .services-skim-item__marker {
+    transition: border-color var(--motion-standard) var(--motion-ease-out);
+  }
+
+  .services-skim-item:hover,
+  .services-skim-item:focus-within {
+    background-color: color-mix(in srgb, var(--svc-field) 5%, transparent);
+    border-color: color-mix(in srgb, var(--svc-field) 26%, var(--svc-rule));
+  }
+
+  .services-skim-item:hover .services-skim-item__marker,
+  .services-skim-item:focus-within .services-skim-item__marker {
+    border-color: color-mix(in srgb, var(--svc-field) 70%, var(--svc-rule));
+  }
+}
+
 .services-router-choice {
   border-radius: 0.45rem;
 }
