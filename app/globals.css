@@ -17704,13 +17704,30 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .services-skim-item {
+  --skim-accent: var(--svc-field);
   border-color: var(--svc-rule);
 }
 
+/* Per-marker accent tints (within Sentinel palette; subtle, not gamified).
+   Cards and dividers stay neutral — only the marker ring/fill/number carry the
+   tint: 01 teal · 02 muted sage · 03 warm copper · 04 deep blue-teal. */
+.services-skim-item:nth-child(2) {
+  --skim-accent: var(--svc-field-muted);
+}
+
+.services-skim-item:nth-child(3) {
+  --skim-accent: var(--svc-copper);
+}
+
+.services-skim-item:nth-child(4) {
+  --skim-accent: color-mix(in srgb, var(--svc-field) 55%, var(--navy));
+}
+
 .services-skim-item__marker {
-  border-color: color-mix(in srgb, var(--svc-field) 45%, var(--svc-rule));
-  background: color-mix(in srgb, var(--svc-field) 12%, var(--svc-paper));
-  color: var(--svc-field);
+  border-color: color-mix(in srgb, var(--skim-accent) 55%, var(--svc-rule));
+  background: color-mix(in srgb, var(--skim-accent) 13%, var(--svc-paper));
+  /* 55/45 toward ink keeps each accent legible (AA) — copper is the tight case. */
+  color: color-mix(in srgb, var(--skim-accent) 55%, var(--svc-ink));
 }
 
 .services-skim-item p,
@@ -17753,7 +17770,7 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   transition-delay: 300ms;
 }
 
-/* Number marker: one-time "settle" just after each card lands — a brief teal
+/* Number marker: one-time "settle" just after each card lands — a brief accent
    border-brighten + faint ring that returns to rest. No scale, no loop. */
 .services-skim-strip__items.reveal-stagger.is-visible .services-skim-item__marker {
   animation: skim-marker-settle 0.62s var(--motion-ease-out);
@@ -17777,23 +17794,24 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 
 @keyframes skim-marker-settle {
   0% {
-    border-color: color-mix(in srgb, var(--svc-field) 45%, var(--svc-rule));
+    border-color: color-mix(in srgb, var(--skim-accent) 55%, var(--svc-rule));
     box-shadow: 0 0 0 0 transparent;
   }
 
   45% {
-    border-color: color-mix(in srgb, var(--svc-field) 82%, var(--svc-rule));
-    box-shadow: 0 0 0 4px color-mix(in srgb, var(--svc-field) 12%, transparent);
+    border-color: color-mix(in srgb, var(--skim-accent) 85%, var(--svc-rule));
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--skim-accent) 12%, transparent);
   }
 
   100% {
-    border-color: color-mix(in srgb, var(--svc-field) 45%, var(--svc-rule));
+    border-color: color-mix(in srgb, var(--skim-accent) 55%, var(--svc-rule));
     box-shadow: 0 0 0 0 transparent;
   }
 }
 
-/* Desktop pointer hover/focus: faint teal wash + divider/marker brighten.
-   No transform or shadow lift — the flush grid keeps alignment, no layout shift. */
+/* Desktop pointer hover/focus: faint (neutral) teal wash on the card; the marker
+   brightens in its own accent. No transform or shadow lift — flush grid keeps
+   alignment, no layout shift. */
 @media (hover: hover) and (pointer: fine) {
   .services-skim-item {
     transition:
@@ -17815,7 +17833,46 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 
   .services-skim-item:hover .services-skim-item__marker,
   .services-skim-item:focus-within .services-skim-item__marker {
-    border-color: color-mix(in srgb, var(--svc-field) 70%, var(--svc-rule));
+    border-color: color-mix(in srgb, var(--skim-accent) 78%, var(--svc-rule));
+  }
+}
+
+/* Quiet operational rail — a faint highlight drifting along the header/items
+   divider. Very low opacity, slow (~11s), single-direction loop: no bounce, no
+   flash, no glow. Sits on the existing divider; pseudo stays out of grid flow,
+   and the strip's overflow:hidden clips it (no horizontal overflow). */
+.services-skim-strip__items::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 50%;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--svc-field) 40%, transparent) 50%,
+    transparent 100%
+  );
+  animation: skim-rail-drift 11s linear infinite;
+}
+
+@keyframes skim-rail-drift {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(200%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-skim-strip__items::before {
+    animation: none;
+    opacity: 0;
   }
 }
 
