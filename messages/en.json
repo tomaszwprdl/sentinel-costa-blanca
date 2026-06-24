@@ -846,8 +846,8 @@
       },
       "boundary": {
         "eyebrow": "Service boundaries",
-        "title": "Sentinel acts locally, but only inside the agreed scope.",
-        "intro": "This is the canonical service boundary: Sentinel is not concierge, rental management, or full property management. You know what will be checked, who decides, and when your approval is required.",
+        "title": "What sits inside the agreed scope.",
+        "intro": "This section defines the practical operating boundary: what we check, what we coordinate, when we report, and which actions require separate agreement or owner approval.",
         "eligibility": "Location eligibility: Torrevieja + 50–70 km radius.",
         "doesTitle": "Inside agreed scope",
         "doesNotTitle": "Outside agreed scope",
@@ -858,11 +858,11 @@
           "coordination": { "title": "Operational coordination", "body": "Contact with technician, cleaning, or contractor when it fits the agreement." }
         },
         "doesNot": {
-          "bookings": { "title": "Bookings and platforms", "body": "Sentinel does not handle pricing, licensing, listings, or platform communication." },
-          "administration": { "title": "Whole-property administration", "body": "The model does not take over finances, disputes, documents, or owner decisions." },
-          "lifestyleTasks": { "title": "Personal and lifestyle tasks", "body": "No unlimited favors or tasks without defined responsibility." },
-          "unlimitedEmergency": { "title": "Unlimited emergency contractor", "body": "Decisions and costs have limits; repairs depend on available contractors." },
-          "undefinedTasks": { "title": "Undefined tasks", "body": "Anything outside the package or agreement requires separate approval." }
+          "bookings": { "title": "Bookings and platforms", "body": "Pricing, licensing, listings, and platform communication require separate agreement." },
+          "administration": { "title": "Financial or owner administration", "body": "Finances, disputes, owner documents, and decisions outside the agreed model require separate agreement." },
+          "lifestyleTasks": { "title": "Personal and lifestyle tasks", "body": "Personal errands and tasks without defined responsibility are outside the current operating scope." },
+          "unlimitedEmergency": { "title": "Unlimited emergency work", "body": "Emergency work and costs have package limits; action beyond the limit requires owner approval." },
+          "undefinedTasks": { "title": "Tasks outside the agreement", "body": "Work outside the package or current agreement requires separate approval before execution." }
         }
       },
       "modules": {
@@ -942,9 +942,9 @@
       },
       "details": {
         "frameworkLabel": "Service frame and minimum term",
-        "frameworkExplainer": "The details live here, in one boundary section, instead of repeating across the page.",
+        "frameworkExplainer": "Minimum term and visit rules — part of the operating agreement.",
         "notIncludedLabel": "Full exclusion list",
-        "notIncludedExplainer": "Exclusions belong to the same responsibility boundary."
+        "notIncludedExplainer": "Exclusions apply within the agreed operating scope."
       },
       "finalRegistry": {
         "review": { "label": "Review", "body": "Location and usage pattern first." },
@@ -2948,22 +2948,22 @@
       "boundary": {
         "eyebrow": "Category clarity",
         "title": "What Sentinel is, and what it is not.",
-        "intro": "The service is easier to trust when the category is clear. Sentinel is not positioned as flexible household help or rental operations.",
+        "intro": "Sentinel is the owner's local operating layer: on-site presence, documentation, coordination, and decision control when the owner is not at the property. It does not replace the owner, a rental agency, a concierge, or a contractor.",
         "isTitle": "Sentinel is",
         "isNotTitle": "Sentinel is not",
         "isItems": [
-          { "title": "Local oversight", "body": "Physical presence for agreed checks, access, and events." },
-          { "title": "Owner representation", "body": "A structured local layer acting inside the owner's confirmed scope." },
-          { "title": "Documentation", "body": "Reports, notes, photos, and confirmations after relevant activity." },
-          { "title": "Access coordination", "body": "Controlled entry for visits, technicians, cleaning, or agreed modules." },
-          { "title": "Structured escalation", "body": "Clear owner approval points when authority or scope is exceeded." }
+          { "title": "On-site owner presence", "body": "A local person checks condition, access, and events — but acts within agreed limits." },
+          { "title": "A system of records and confirmations", "body": "Condition, actions, and decisions are documented instead of relying on loose arrangements." },
+          { "title": "Decision control", "body": "The owner keeps authority where scope, cost, or responsibility require it." },
+          { "title": "Coordination within agreed limits", "body": "Technicians, cleaning, and access are coordinated when they fit the agreed scope." },
+          { "title": "Escalation beyond scope", "body": "When a matter exceeds the package, limit, or authority, it returns to the owner for a decision." }
         ],
         "isNotItems": [
-          { "title": "Concierge", "body": "No open-ended errands, lifestyle tasks, or open-ended personal help." },
-          { "title": "Rental agency", "body": "No booking platform role or rental-business management." },
-          { "title": "General contractor", "body": "No construction execution or guarantee of third-party work quality." },
-          { "title": "Unlimited emergency service", "body": "Response and authority are defined by package and agreed limits." },
-          { "title": "Informal favor network", "body": "Work is scoped and recorded rather than improvised." }
+          { "title": "Concierge", "body": "Personal errands and open-ended tasks are not part of the service." },
+          { "title": "Rental agency", "body": "Bookings, pricing, licensing, and platform communication are not handled by Sentinel." },
+          { "title": "General contractor", "body": "Construction work and third-party contractor quality are not taken on by Sentinel." },
+          { "title": "Unlimited emergency service", "body": "Response follows the package, agreed limits, and contractor availability." },
+          { "title": "Informal favor network", "body": "Every action has scope, a record, and defined responsibility." }
         ]
       },
       "operator": {

@@ -846,8 +846,8 @@
       },
       "boundary": {
         "eyebrow": "Granice usługi",
-        "title": "Sentinel działa lokalnie, ale tylko w ustalonym zakresie.",
-        "intro": "To jest kanoniczna granica usługi: Sentinel nie jest concierge, agencją najmu ani pełnym zarządzaniem nieruchomością. Wiesz z góry, co zostanie sprawdzone, kto podejmuje decyzję i kiedy potrzebna jest Twoja zgoda.",
+        "title": "Co mieści się w ustalonym zakresie.",
+        "intro": "Ta część określa praktyczne granice obsługi: co sprawdzamy, co koordynujemy, kiedy raportujemy i które działania wymagają osobnego ustalenia albo zgody właściciela.",
         "eligibility": "Kwalifikacja lokalizacji: Torrevieja + promień 50–70 km.",
         "doesTitle": "W uzgodnionym zakresie",
         "doesNotTitle": "Poza uzgodnionym zakresem",
@@ -858,11 +858,11 @@
           "coordination": { "title": "Koordynacja operacyjna", "body": "Kontakt z technikiem, sprzątaniem lub wykonawcą, gdy mieści się w ustaleniach." }
         },
         "doesNot": {
-          "bookings": { "title": "Rezerwacje i platformy", "body": "Sentinel nie prowadzi cen, licencji, ogłoszeń ani komunikacji z platformami." },
-          "administration": { "title": "Cała administracja lokalu", "body": "Model nie przejmuje finansów, sporów, dokumentów ani decyzji właścicielskich." },
-          "lifestyleTasks": { "title": "Zadania osobiste i lifestyle", "body": "Brak nieograniczonych przysług i zadań bez ustalonej odpowiedzialności." },
-          "unlimitedEmergency": { "title": "Nieograniczony wykonawca awaryjny", "body": "Decyzje i koszty mają limity; naprawy zależą od dostępnych wykonawców." },
-          "undefinedTasks": { "title": "Nieopisane zadania", "body": "To, czego nie ma w pakiecie lub ustaleniu, wymaga oddzielnej zgody." }
+          "bookings": { "title": "Rezerwacje i platformy", "body": "Ceny, licencje, ogłoszenia i komunikacja z platformami wymagają osobnego ustalenia." },
+          "administration": { "title": "Administracja finansowa lub właścicielska", "body": "Finanse, spory, dokumenty właścicielskie i decyzje poza ustalonym modelem wymagają osobnego ustalenia." },
+          "lifestyleTasks": { "title": "Zadania osobiste i lifestyle", "body": "Sprawy osobiste i zadania bez ustalonej odpowiedzialności nie wchodzą w bieżący zakres obsługi." },
+          "unlimitedEmergency": { "title": "Nieograniczone prace awaryjne", "body": "Prace awaryjne i koszty mają limity pakietu; działania poza limitem wymagają zgody właściciela." },
+          "undefinedTasks": { "title": "Zadania poza ustaleniem", "body": "Czynności spoza pakietu lub bieżącego ustalenia wymagają osobnej zgody przed wykonaniem." }
         }
       },
       "modules": {
@@ -942,9 +942,9 @@
       },
       "details": {
         "frameworkLabel": "Ramy usługi i minimalny okres",
-        "frameworkExplainer": "Szczegóły są tu, w jednej sekcji granic, zamiast powtarzać je w całej stronie.",
+        "frameworkExplainer": "Minimalny okres i zasady wizyt — element operacyjnej umowy.",
         "notIncludedLabel": "Pełna lista wyłączeń",
-        "notIncludedExplainer": "Wyłączenia są częścią tej samej granicy odpowiedzialności."
+        "notIncludedExplainer": "Wyłączenia obowiązują w ustalonym zakresie obsługi."
       },
       "finalRegistry": {
         "review": { "label": "Kwalifikacja", "body": "Najpierw lokalizacja i sposób używania." },
@@ -2948,22 +2948,22 @@
       "boundary": {
         "eyebrow": "Jasność kategorii",
         "title": "Czym Sentinel jest, a czym nie jest.",
-        "intro": "Usługa jest łatwiejsza do oceny, gdy jej kategoria jest jasna. Sentinel nie jest elastyczną pomocą domową ani obsługą wynajmu.",
+        "intro": "Sentinel jest lokalną warstwą operacyjną właściciela: obecnością na miejscu, dokumentacją, koordynacją i kontrolą decyzji, gdy właściciel nie jest przy nieruchomości. Nie zastępuje właściciela, agencji wynajmu, concierge ani wykonawcy prac.",
         "isTitle": "Sentinel jest",
         "isNotTitle": "Sentinel nie jest",
         "isItems": [
-          { "title": "Lokalnym nadzorem", "body": "Fizyczna obecność przy uzgodnionych kontrolach, wejściach i zdarzeniach." },
-          { "title": "Reprezentacją właściciela", "body": "Lokalna warstwa działania w zakresie potwierdzonym przez właściciela." },
-          { "title": "Dokumentacją", "body": "Raporty, notatki, zdjęcia i potwierdzenia po istotnych działaniach." },
-          { "title": "Koordynacją dostępu", "body": "Kontrolowane wejście przy wizytach, technikach, sprzątaniu albo uzgodnionych modułach." },
-          { "title": "Strukturalną eskalacją", "body": "Jasne punkty zgody właściciela, gdy przekroczony jest zakres lub limit uprawnień." }
+          { "title": "Obecnością właściciela na miejscu", "body": "Lokalna osoba sprawdza stan, dostęp i zdarzenia, ale działa w ustalonych granicach." },
+          { "title": "Systemem zapisu i potwierdzeń", "body": "Stan, działania i decyzje są dokumentowane, zamiast opierać się na luźnych ustaleniach." },
+          { "title": "Kontrolą decyzji", "body": "Właściciel zachowuje decyzję tam, gdzie zakres, koszt albo odpowiedzialność tego wymagają." },
+          { "title": "Koordynacją w granicach ustaleń", "body": "Technicy, sprzątanie i dostęp są koordynowane wtedy, gdy mieszczą się w uzgodnionym zakresie." },
+          { "title": "Eskalacją poza zakresem", "body": "Gdy sprawa przekracza pakiet, limit lub uprawnienia, wraca do właściciela do decyzji." }
         ],
         "isNotItems": [
-          { "title": "Concierge", "body": "Bez otwartych zadań, spraw osobistych i nieokreślonej pomocy." },
-          { "title": "Agencją wynajmu", "body": "Bez roli platformy rezerwacyjnej i bez zarządzania biznesem wynajmu." },
-          { "title": "Generalnym wykonawcą", "body": "Bez wykonywania prac budowlanych i bez gwarancji jakości pracy wykonawców zewnętrznych." },
-          { "title": "Nieograniczoną usługą awaryjną", "body": "Reakcja i uprawnienia wynikają z pakietu oraz ustalonych limitów." },
-          { "title": "Siecią nieformalnych przysług", "body": "Praca jest określona i zapisana, a nie improwizowana." }
+          { "title": "Concierge", "body": "Sprawy osobiste i otwarte zadania nie są częścią usługi." },
+          { "title": "Agencją wynajmu", "body": "Rezerwacje, ceny, licencje i komunikacja z platformami nie są prowadzone przez Sentinel." },
+          { "title": "Generalnym wykonawcą", "body": "Prace budowlane i jakość wykonawców zewnętrznych nie są przejmowane przez Sentinel." },
+          { "title": "Nieograniczoną usługą awaryjną", "body": "Reakcja wynika z pakietu, ustalonych limitów i dostępności wykonawców." },
+          { "title": "Siecią nieformalnych przysług", "body": "Każde działanie ma zakres, zapis i odpowiedzialność." }
         ]
       },
       "operator": {

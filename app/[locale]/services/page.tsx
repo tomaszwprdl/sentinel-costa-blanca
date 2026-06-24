@@ -312,10 +312,10 @@ export default async function ServicesPage({
         </Section>
 
         <Section tone="alt" className="section-primitive--compact services-interface-section services-interface-section--boundary" id="scope">
-          <div className="services-boundary-stack">
+          <div className="services-boundary-contract">
             <ServiceBoundaryGrid />
             <div className="services-boundary-details">
-              <DisclosureBlock label={t('redesign.details.frameworkLabel')} explainer={t('redesign.details.frameworkExplainer')}>
+              <DisclosureBlock className="services-boundary-note" label={t('redesign.details.frameworkLabel')} explainer={t('redesign.details.frameworkExplainer')}>
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-base font-black text-heading">{t('framework.visitSchedulingTitle')}</h3>
@@ -335,7 +335,7 @@ export default async function ServicesPage({
                 </div>
               </DisclosureBlock>
 
-              <DisclosureBlock label={t('redesign.details.notIncludedLabel')} explainer={t('redesign.details.notIncludedExplainer')}>
+              <DisclosureBlock className="services-boundary-note" label={t('redesign.details.notIncludedLabel')} explainer={t('redesign.details.notIncludedExplainer')}>
                 <p className="text-sm text-body">{t('notIncluded.intro')}</p>
                 <ul className="ml-4 list-disc space-y-2 text-sm text-body">
                   {NOT_INCLUDED_ITEM_KEYS.map((key) => (

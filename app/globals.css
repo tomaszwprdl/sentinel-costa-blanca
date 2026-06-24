@@ -18571,6 +18571,233 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   background: color-mix(in srgb, var(--svc-rule) 64%, white);
 }
 
+/* Services boundary contract: institutional scope panel, not marketing card. */
+.services-page .services-boundary-contract {
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--svc-ink) 16%, var(--svc-rule));
+  border-radius: var(--svc-radius);
+  background: color-mix(in srgb, var(--svc-paper) 90%, var(--svc-stone));
+  box-shadow: 0 16px 38px -26px rgba(16, 38, 63, 0.2);
+}
+
+.services-page .services-boundary-contract .services-boundary-panel {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.services-page .services-boundary-contract .services-boundary-panel::before {
+  display: none;
+}
+
+.services-page .services-boundary-contract .services-boundary-panel__header {
+  border-bottom: 1px solid color-mix(in srgb, var(--svc-ink) 14%, var(--svc-rule));
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--svc-stone-deep) 86%, var(--svc-ink)) 0%, color-mix(in srgb, var(--svc-stone) 92%, var(--svc-ink)) 100%);
+  padding: 0.95rem 1.05rem;
+}
+
+.services-page .services-boundary-contract .services-boundary-panel__header .section-label {
+  color: color-mix(in srgb, var(--svc-field) 76%, var(--svc-paper));
+}
+
+.services-page .services-boundary-contract .services-boundary-panel__header .h2-system {
+  color: var(--svc-ink);
+  font-size: clamp(1.42rem, 2.35vw, 1.95rem);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+.services-page .services-boundary-contract .services-boundary-panel__header .text-body {
+  margin-top: 0.6rem !important;
+  color: color-mix(in srgb, var(--svc-ink) 80%, var(--svc-muted));
+  font-size: 0.9rem;
+  line-height: 1.48;
+}
+
+.services-page .services-boundary-contract .services-boundary-eligibility {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0.7rem 0 0;
+  border: 0;
+  border-left: 3px solid var(--svc-field);
+  border-radius: 0;
+  background: color-mix(in srgb, var(--svc-field) 7%, transparent);
+  color: color-mix(in srgb, var(--svc-ink) 86%, var(--svc-field));
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+  padding: 0.5rem 0.62rem;
+  text-transform: uppercase;
+}
+
+.services-page .services-boundary-contract .services-boundary-column {
+  padding: 0.85rem 0.95rem 0.95rem;
+}
+
+.services-page .services-boundary-contract .services-boundary-column__heading {
+  gap: 0.65rem;
+  margin-bottom: 0.7rem;
+}
+
+.services-page .services-boundary-contract .services-boundary-column__heading > span {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.2rem;
+  font-size: 0.64rem;
+}
+
+.services-page .services-boundary-contract .services-boundary-column__heading h3 {
+  font-size: clamp(1.05rem, 1.7vw, 1.28rem);
+  font-weight: 950;
+  line-height: 1.12;
+}
+
+.services-page .services-boundary-contract .services-boundary-column--inside {
+  border-bottom: 1px solid color-mix(in srgb, var(--svc-field) 34%, var(--svc-rule));
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--svc-field) 8%, var(--svc-paper)) 0%, var(--svc-paper) 100%);
+}
+
+.services-page .services-boundary-contract .services-boundary-column--inside .services-boundary-column__heading > span {
+  border-color: color-mix(in srgb, var(--svc-field) 52%, var(--svc-rule));
+  background: color-mix(in srgb, var(--svc-field) 16%, var(--svc-paper));
+  color: color-mix(in srgb, var(--svc-field) 88%, var(--svc-ink));
+}
+
+.services-page .services-boundary-contract .services-boundary-column--outside {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--svc-muted) 14%, var(--svc-stone)) 0%, color-mix(in srgb, var(--svc-stone) 90%, var(--svc-paper)) 100%);
+  box-shadow: inset 0 1px 0 rgba(16, 38, 63, 0.05);
+}
+
+.services-page .services-boundary-contract .services-boundary-column--outside .services-boundary-column__heading > span {
+  border-color: color-mix(in srgb, var(--svc-muted) 34%, var(--svc-rule));
+  background: color-mix(in srgb, var(--svc-muted) 12%, var(--svc-paper));
+  color: color-mix(in srgb, var(--svc-ink) 62%, var(--svc-muted));
+}
+
+.services-page .services-boundary-contract .services-boundary-list {
+  gap: 0.45rem;
+}
+
+.services-page .services-boundary-contract .services-boundary-item {
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  gap: 0.55rem;
+  border-radius: 0.35rem;
+  padding: 0.58rem 0.62rem;
+}
+
+.services-page .services-boundary-contract .services-boundary-item > span {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 0.15rem;
+  font-size: 0.72rem;
+}
+
+.services-page .services-boundary-contract .services-boundary-column--inside .services-boundary-item {
+  border-color: color-mix(in srgb, var(--svc-field) 28%, var(--svc-rule));
+  background: color-mix(in srgb, var(--svc-paper) 88%, white);
+}
+
+.services-page .services-boundary-contract .services-boundary-column--inside .services-boundary-item > span {
+  background: color-mix(in srgb, var(--svc-field) 18%, white);
+  color: color-mix(in srgb, var(--svc-field) 88%, var(--svc-ink));
+}
+
+.services-page .services-boundary-contract .services-boundary-column--outside .services-boundary-item {
+  border-color: color-mix(in srgb, var(--svc-muted) 30%, var(--svc-rule));
+  background: color-mix(in srgb, var(--svc-stone) 72%, var(--svc-paper));
+}
+
+.services-page .services-boundary-contract .services-boundary-column--outside .services-boundary-item > span {
+  background: color-mix(in srgb, var(--svc-muted) 16%, var(--svc-paper));
+  color: color-mix(in srgb, var(--svc-ink) 58%, var(--svc-muted));
+}
+
+.services-page .services-boundary-contract .services-boundary-column--outside .services-boundary-item p {
+  color: color-mix(in srgb, var(--svc-ink) 70%, var(--svc-muted));
+}
+
+.services-page .services-boundary-contract .services-boundary-item p {
+  margin-bottom: 0.12rem;
+  font-size: 0.88rem;
+  line-height: 1.22;
+}
+
+.services-page .services-boundary-contract .services-boundary-item small {
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.services-page .services-boundary-contract .services-boundary-details {
+  gap: 0;
+  border-top: 1px solid color-mix(in srgb, var(--svc-ink) 12%, var(--svc-rule));
+  background: color-mix(in srgb, var(--svc-stone) 58%, var(--svc-paper));
+}
+
+.services-page .services-boundary-contract .services-boundary-note.disclosure-shell {
+  overflow: hidden;
+  border: 0;
+  border-top: 1px solid color-mix(in srgb, var(--svc-rule) 90%, transparent);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.services-page .services-boundary-contract .services-boundary-details .services-boundary-note:first-child {
+  border-top: 0;
+}
+
+.services-page .services-boundary-contract .services-boundary-note .disclosure-trigger {
+  padding: 0.78rem 0.95rem;
+  background: transparent;
+}
+
+.services-page .services-boundary-contract .services-boundary-note .disclosure-trigger__title {
+  color: var(--svc-ink);
+  font-size: 0.92rem;
+  font-weight: 900;
+}
+
+.services-page .services-boundary-contract .services-boundary-note .disclosure-trigger__summary {
+  color: color-mix(in srgb, var(--svc-ink) 68%, var(--svc-muted));
+  font-size: 0.8rem;
+}
+
+.services-page .services-boundary-contract .services-boundary-note .disclosure-content {
+  padding: 0 0.95rem 0.85rem;
+}
+
+@media (min-width: 768px) {
+  .services-page .services-boundary-contract .services-boundary-panel__header {
+    padding: 1.05rem 1.25rem;
+  }
+
+  .services-page .services-boundary-contract .services-boundary-column {
+    padding: 0.95rem 1.05rem 1.05rem;
+  }
+
+  .services-page .services-boundary-contract .services-boundary-column--inside {
+    border-right: 1px solid color-mix(in srgb, var(--svc-field) 34%, var(--svc-rule));
+    border-bottom: 0;
+  }
+
+  .services-page .services-boundary-contract .services-boundary-column--outside {
+    box-shadow: inset 14px 0 24px -22px rgba(16, 38, 63, 0.22);
+  }
+}
+
+@media (max-width: 767px) {
+  .services-page .services-boundary-contract .services-boundary-column--inside {
+    border-right: 0;
+  }
+}
+
 .services-estimator-band {
   background:
     linear-gradient(90deg, rgba(92, 72, 46, 0.045) 0 1px, transparent 1px 100%) 0 0 / 3.8rem 100%,
