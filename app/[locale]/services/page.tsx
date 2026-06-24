@@ -38,7 +38,6 @@ const EXECUTION_ONLY_AVAILABLE_KEYS = ['keyHolding', 'cleaning', 'oneTimeAccess'
 const EXECUTION_ONLY_LIMITATION_KEYS = ['noRegularChecks', 'noCyclicReporting', 'noEmergencySLA', 'noDecisionAuthority'] as const;
 const CLEANING_CAPABILITY_KEYS = ['readiness', 'turnover', 'documentation', 'boundary'] as const;
 const SKIM_ITEM_KEYS = ['inspections', 'access', 'decisions', 'approval'] as const;
-const ESTIMATOR_INPUT_KEYS = ['package', 'usage', 'property'] as const;
 
 const CLEANING_STORY_IMAGES: Record<(typeof CLEANING_CAPABILITY_KEYS)[number], { src: string; focus: string }> = {
   readiness: {
@@ -92,7 +91,6 @@ export default async function ServicesPage({
   const headlineParts = t.raw('redesign.hero.headlineParts') as string[];
   const siteMapNodes = t.raw('redesign.siteMap.nodes') as string[];
   const qualificationSteps = t.raw('redesign.executionStrip.gateSteps') as string[];
-  const estimatorAlsoItems = t.raw('redesign.estimatorBand.alsoItems') as string[];
   const cleaningItems = CLEANING_CAPABILITY_KEYS.map((key, index) => ({
     id: key,
     marker: String(index + 1).padStart(2, '0'),
@@ -278,36 +276,28 @@ export default async function ServicesPage({
 
         <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--estimator" id="estimator">
           <div className="services-estimator-band">
-            <div className="services-estimator-stage mb-6">
+            <div className="mb-6 max-w-[760px]">
               <p className="section-label">{t('redesign.estimatorBand.eyebrow')}</p>
               <h2 className="h2-system mt-3">{t('redesign.estimatorBand.title')}</h2>
               <p className="mt-3 text-body">{t('redesign.estimatorBand.intro')}</p>
-              <div className="services-estimator-inputs">
-                <p className="services-estimator-inputs__title">{t('redesign.estimatorBand.inputsTitle')}</p>
-                <ul className="services-estimator-inputs__list">
-                  {ESTIMATOR_INPUT_KEYS.map((key) => (
-                    <li key={key} className="services-estimator-input-card">
-                      <span className="services-estimator-input-card__label">
-                        {t(`redesign.estimatorBand.inputs.${key}.label`)}
-                      </span>
-                      <span className="services-estimator-input-card__body">
-                        {t(`redesign.estimatorBand.inputs.${key}.body`)}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="services-estimator-also">
-                  <span className="services-estimator-also__label">{t('redesign.estimatorBand.alsoLabel')}</span>
-                  <span className="services-estimator-also__chips">
-                    {estimatorAlsoItems.map((item) => (
-                      <span key={item} className="services-estimator-also__chip">
-                        {item}
-                      </span>
-                    ))}
-                  </span>
+              <p className="mt-4 rounded-2xl border border-structural-light bg-surface-light-alt px-4 py-3 text-sm text-body">
+                {t('redesign.estimatorBand.transition')}
+              </p>
+              <div className="services-estimator-context" aria-label={t('redesign.estimatorBand.contextTitle')}>
+                <p>{t('redesign.estimatorBand.contextTitle')}</p>
+                <div>
+                  <span>{t('redesign.estimatorBand.contextItems.bathrooms.label')}</span>
+                  <strong>{t('redesign.estimatorBand.contextItems.bathrooms.body')}</strong>
+                </div>
+                <div>
+                  <span>{t('redesign.estimatorBand.contextItems.outdoor.label')}</span>
+                  <strong>{t('redesign.estimatorBand.contextItems.outdoor.body')}</strong>
+                </div>
+                <div>
+                  <span>{t('redesign.estimatorBand.contextItems.logic.label')}</span>
+                  <strong>{t('redesign.estimatorBand.contextItems.logic.body')}</strong>
                 </div>
               </div>
-              <p className="services-estimator-note">{t('redesign.estimatorBand.note')}</p>
             </div>
             <div>
               <Estimator embedded />

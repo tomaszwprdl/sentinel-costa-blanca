@@ -909,17 +909,15 @@
       },
       "estimatorBand": {
         "eyebrow": "Indicative monthly range",
-        "title": "Check an approximate range before sending an inquiry.",
-        "intro": "Choose the package, usage model, and basic property parameters. The result helps start the conversation without guessing the price.",
-        "inputsTitle": "What you set in the estimator",
-        "inputs": {
-          "package": { "label": "Package", "body": "Defines the responsibility level." },
-          "usage": { "label": "Usage model", "body": "Private use, guests, or mixed model." },
-          "property": { "label": "Property parameters", "body": "Size, rooms, and basic context." }
-        },
-        "alsoLabel": "The estimator also accounts for",
-        "alsoItems": ["Bathrooms", "Patio / outdoor area"],
-        "note": "This is an orientation tool. It does not approve a service or change the estimator matrix."
+        "title": "Check the indicative range before sending an inquiry.",
+        "intro": "Select the package, usage pattern, and basic property parameters. The result frames the conversation without guessing price.",
+        "transition": "This is an orientation tool. It does not approve service or change the estimator matrix.",
+        "contextTitle": "Property context captured before calculation",
+        "contextItems": {
+          "bathrooms": { "label": "Bathrooms", "body": "Captured for cleaning/readiness review and handover planning." },
+          "outdoor": { "label": "Patio / terrace / outdoor area", "body": "Used as readiness and coordination context before calculation." },
+          "logic": { "label": "Pricing logic", "body": "These context fields do not change the estimator matrix." }
+        }
       },
       "executionStrip": {
         "thresholdLabel": "Outside the package model",

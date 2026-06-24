@@ -909,17 +909,15 @@
       },
       "estimatorBand": {
         "eyebrow": "Orientacyjny zakres miesięczny",
-        "title": "Sprawdź orientacyjny przedział przed zapytaniem.",
-        "intro": "Wybierz pakiet, sposób używania i podstawowe parametry lokalu. Wynik pomaga rozpocząć rozmowę bez zgadywania ceny.",
-        "inputsTitle": "Co ustawiasz w estymatorze",
-        "inputs": {
-          "package": { "label": "Pakiet", "body": "Określa poziom odpowiedzialności." },
-          "usage": { "label": "Sposób używania", "body": "Prywatnie, goście albo model mieszany." },
-          "property": { "label": "Parametry lokalu", "body": "Metraż, pokoje i podstawowy kontekst." }
-        },
-        "alsoLabel": "Estymator uwzględnia też",
-        "alsoItems": ["Łazienki", "Patio / część zewnętrzna"],
-        "note": "To narzędzie orientacyjne. Nie zatwierdza usługi ani nie zmienia matrycy estymatora."
+        "title": "Sprawdź orientacyjny przedział zanim wyślesz zapytanie.",
+        "intro": "Wybierz pakiet, sposób używania i podstawowe parametry lokalu. Wynik pomaga ustawić rozmowę bez zgadywania ceny.",
+        "transition": "To narzędzie orientacyjne. Nie zatwierdza usługi ani nie zmienia matrycy estymatora.",
+        "contextTitle": "Kontekst nieruchomości przed kalkulacją",
+        "contextItems": {
+          "bathrooms": { "label": "Łazienki", "body": "Uwzględniane przy przeglądzie sprzątania/gotowości i planowaniu przekazania." },
+          "outdoor": { "label": "Patio / taras / część zewnętrzna", "body": "Używane jako kontekst gotowości i koordynacji przed kalkulacją." },
+          "logic": { "label": "Logika ceny", "body": "Te pola kontekstowe nie zmieniają matrycy estymatora." }
+        }
       },
       "executionStrip": {
         "thresholdLabel": "Poza modelem pakietowym",

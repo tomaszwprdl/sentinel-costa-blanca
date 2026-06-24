@@ -9821,112 +9821,42 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   z-index: 1;
 }
 
-/* Estimator staging — a calculation entry panel (not a PDF/table).
-   Warm institutional surface, subtle field-slot cards, a demoted "also covers"
-   chip row, and a quiet orientation note. No animation. */
-.services-estimator-stage {
-  max-width: 760px;
+.services-estimator-context {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1rem;
+  border: 1px solid color-mix(in srgb, var(--line) 70%, var(--support));
+  border-radius: var(--site-radius-card);
+  background: color-mix(in srgb, var(--surface-card) 82%, var(--surface-light-alt));
+  padding: 0.85rem;
 }
 
-.services-estimator-inputs {
-  margin-top: 1.4rem;
-  border: 1px solid var(--svc-rule);
-  border-radius: var(--svc-radius);
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--svc-stone) 50%, var(--svc-paper)) 0%,
-    var(--svc-paper) 100%
-  );
-  padding: 1rem;
-}
-
-.services-estimator-inputs__title {
-  margin: 0 0 0.85rem;
-  color: var(--svc-field);
+.services-estimator-context > p {
+  margin: 0;
+  color: var(--accent);
   font-size: 0.68rem;
   font-weight: 950;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.services-estimator-inputs__list {
+.services-estimator-context > div {
   display: grid;
-  gap: 0.6rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.services-estimator-input-card {
-  display: flex;
-  flex-direction: column;
   gap: 0.2rem;
-  border: 1px solid color-mix(in srgb, var(--svc-rule) 85%, transparent);
-  border-left: 2px solid color-mix(in srgb, var(--svc-field) 55%, var(--svc-rule));
-  border-radius: 0 calc(var(--svc-radius) - 0.1rem) calc(var(--svc-radius) - 0.1rem) 0;
-  background: var(--svc-paper);
-  padding: 0.7rem 0.85rem;
+  border-top: 1px solid var(--structural-light);
+  padding-top: 0.65rem;
 }
 
-.services-estimator-input-card__label {
-  color: var(--svc-ink);
-  font-size: 0.92rem;
-  font-weight: 900;
-  line-height: 1.2;
-}
-
-.services-estimator-input-card__body {
-  color: var(--svc-muted);
-  font-size: 0.8rem;
-  line-height: 1.4;
-}
-
-.services-estimator-also {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem 0.65rem;
-  margin-top: 0.9rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid color-mix(in srgb, var(--svc-rule) 70%, transparent);
-}
-
-.services-estimator-also__label {
-  color: var(--svc-muted);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.03em;
-}
-
-.services-estimator-also__chips {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.services-estimator-also__chip {
-  border: 1px solid color-mix(in srgb, var(--svc-field) 28%, var(--svc-rule));
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--svc-field) 7%, var(--svc-paper));
-  padding: 0.22rem 0.62rem;
-  color: var(--svc-field);
+.services-estimator-context span {
+  color: var(--muted);
   font-size: 0.74rem;
-  font-weight: 800;
+  font-weight: 900;
 }
 
-.services-estimator-note {
-  margin: 0.95rem 0 0;
-  padding-left: 0.8rem;
-  border-left: 2px solid color-mix(in srgb, var(--svc-field) 32%, var(--svc-rule));
-  color: var(--svc-muted);
-  font-size: 0.8rem;
-  line-height: 1.45;
-}
-
-@media (min-width: 768px) {
-  .services-estimator-inputs__list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+.services-estimator-context strong {
+  color: var(--heading);
+  font-size: 0.9rem;
+  line-height: 1.35;
 }
 
 
@@ -10165,8 +10095,13 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
     align-items: center;
   }
 
-  .services-execution-inset__grid {
+  .services-execution-inset__grid,
+  .services-estimator-context {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .services-estimator-context > p {
+    grid-column: 1 / -1;
   }
 
   .services-modules-band,
@@ -18406,6 +18341,17 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
     linear-gradient(180deg, var(--svc-stone) 0%, var(--svc-paper) 28%, var(--svc-paper) 100%);
 }
 
+.services-estimator-context {
+  border-color: var(--svc-rule);
+  border-radius: var(--svc-radius);
+  background: color-mix(in srgb, var(--svc-paper) 78%, white);
+}
+
+.services-estimator-context p,
+.services-estimator-context span {
+  color: var(--svc-field);
+}
+
 .estimator-embedded-shell,
 .estimator-configurator {
   border-color: var(--svc-rule);
@@ -18599,6 +18545,7 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
     font-size: 1.65rem;
   }
 
+  .services-estimator-context,
   .services-execution-inset__grid {
     grid-template-columns: minmax(0, 1fr);
   }
