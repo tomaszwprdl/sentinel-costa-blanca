@@ -8555,12 +8555,15 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 
 /* HIW journey nav wraps on mobile; default anchor offset is too small for hash navigation */
 @media (max-width: 767px) {
+  html:has(.services-page),
+  .services-page,
   html:has(.hiw-page),
   .hiw-page {
     --journey-nav-height: 10.375rem;
     --scroll-anchor-offset: calc(var(--header-offset) + var(--journey-nav-height) + 0.75rem);
   }
 
+  html:has(.services-page),
   html:has(.hiw-page) {
     scroll-padding-top: var(--scroll-anchor-offset);
   }
@@ -8710,6 +8713,29 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 .services-journey-nav .journey-nav__link[aria-current="true"] .journey-nav__marker {
   color: inherit;
   opacity: 0.75;
+}
+
+@media (max-width: 430px) {
+  .services-journey-nav .journey-nav__track {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow-x: clip;
+  }
+
+  .services-journey-nav .journey-nav__track::before {
+    display: none;
+  }
+
+  .services-journey-nav .journey-nav__link {
+    min-width: 0;
+    width: 100%;
+    white-space: normal;
+  }
+
+  .services-journey-nav .journey-nav__link > span:last-child {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
 }
 
 .services-bridge-band,
@@ -9795,6 +9821,8 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 
 .services-estimator-band {
   position: relative;
+  display: grid;
+  gap: 1rem;
   overflow: visible;
   isolation: isolate;
   border: 0;
@@ -9821,101 +9849,19 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   z-index: 1;
 }
 
-/* Estimator staging — a calculation entry panel (not a PDF/table).
-   Warm institutional surface, subtle field-slot cards, a demoted "also covers"
-   chip row, and a quiet orientation note. No animation. */
+/* Estimator staging: dark checkpoint copy plus a non-result range ticket. */
 .services-estimator-stage {
-  max-width: 760px;
-}
-
-.services-estimator-inputs {
-  margin-top: 1.4rem;
-  border: 1px solid var(--svc-rule);
-  border-radius: var(--svc-radius);
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--svc-stone) 50%, var(--svc-paper)) 0%,
-    var(--svc-paper) 100%
-  );
-  padding: 1rem;
-}
-
-.services-estimator-inputs__title {
-  margin: 0 0 0.85rem;
-  color: var(--svc-field);
-  font-size: 0.68rem;
-  font-weight: 950;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.services-estimator-inputs__list {
   display: grid;
-  gap: 0.6rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  gap: 1.5rem;
 }
 
-.services-estimator-input-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  border: 1px solid color-mix(in srgb, var(--svc-rule) 85%, transparent);
-  border-left: 2px solid color-mix(in srgb, var(--svc-field) 55%, var(--svc-rule));
-  border-radius: 0 calc(var(--svc-radius) - 0.1rem) calc(var(--svc-radius) - 0.1rem) 0;
-  background: var(--svc-paper);
-  padding: 0.7rem 0.85rem;
-}
-
-.services-estimator-input-card__label {
-  color: var(--svc-ink);
-  font-size: 0.92rem;
-  font-weight: 900;
-  line-height: 1.2;
-}
-
-.services-estimator-input-card__body {
-  color: var(--svc-muted);
-  font-size: 0.8rem;
-  line-height: 1.4;
-}
-
-.services-estimator-also {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem 0.65rem;
-  margin-top: 0.9rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid color-mix(in srgb, var(--svc-rule) 70%, transparent);
-}
-
-.services-estimator-also__label {
-  color: var(--svc-muted);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.03em;
-}
-
-.services-estimator-also__chips {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.services-estimator-also__chip {
-  border: 1px solid color-mix(in srgb, var(--svc-field) 28%, var(--svc-rule));
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--svc-field) 7%, var(--svc-paper));
-  padding: 0.22rem 0.62rem;
-  color: var(--svc-field);
-  font-size: 0.74rem;
-  font-weight: 800;
+.services-estimator-stage__copy {
+  min-width: 0;
 }
 
 .services-estimator-note {
-  margin: 0.95rem 0 0;
+  margin: 1.15rem 0 0;
+  max-width: 44ch;
   padding-left: 0.8rem;
   border-left: 2px solid color-mix(in srgb, var(--svc-field) 32%, var(--svc-rule));
   color: var(--svc-muted);
@@ -9923,13 +9869,168 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   line-height: 1.45;
 }
 
+.services-estimator-ticket {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  border: 1px solid var(--svc-rule);
+  border-radius: var(--svc-radius);
+  background: linear-gradient(
+    180deg,
+    var(--svc-paper-strong) 0%,
+    color-mix(in srgb, var(--svc-stone) 30%, var(--svc-paper)) 100%
+  );
+  box-shadow:
+    var(--svc-shadow),
+    inset 0 1px 0 rgba(255, 253, 247, 0.75);
+  padding: 1.15rem;
+}
+
+.services-estimator-ticket__header {
+  margin: 0;
+  color: var(--svc-field);
+  font-size: 0.64rem;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.services-estimator-ticket__range {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.services-estimator-ticket__cap {
+  flex: none;
+  color: var(--svc-muted);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.services-estimator-ticket__bar {
+  position: relative;
+  flex: 1 1 auto;
+  height: 0.7rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--svc-stone) 72%, var(--svc-paper));
+  box-shadow: inset 0 1px 2px rgba(44, 34, 20, 0.13);
+}
+
+.services-estimator-ticket__bar-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 16%;
+  right: 18%;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--svc-field) 22%, transparent),
+    color-mix(in srgb, var(--svc-field) 52%, transparent) 48%,
+    color-mix(in srgb, var(--svc-copper) 38%, transparent)
+  );
+}
+
+.services-estimator-ticket__caption {
+  margin: -0.25rem 0 0;
+  color: var(--svc-muted);
+  font-size: 0.74rem;
+  font-style: italic;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.services-estimator-ticket__tiles {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.services-estimator-tile {
+  border: 1px solid color-mix(in srgb, var(--svc-rule) 85%, transparent);
+  border-left: 2px solid color-mix(in srgb, var(--svc-field) 52%, var(--svc-rule));
+  border-radius: 0 0.4rem 0.4rem 0;
+  background: var(--svc-paper);
+  padding: 0.55rem 0.75rem;
+}
+
+.services-estimator-tile__label {
+  margin: 0;
+  color: var(--svc-ink);
+  font-size: 0.9rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.services-estimator-tile__body {
+  margin: 0.15rem 0 0;
+  color: var(--svc-muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.services-estimator-ticket__result {
+  margin: 0;
+  color: var(--svc-muted);
+  font-size: 0.74rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
 @media (min-width: 768px) {
-  .services-estimator-inputs__list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .services-estimator-stage {
+    grid-template-columns: minmax(0, 1fr) minmax(19rem, 0.82fr);
+    gap: 2.25rem;
+    align-items: start;
   }
 }
 
+.services-page .services-estimator-band--checkpoint {
+  border: 1px solid color-mix(in srgb, var(--svc-copper) 18%, #1b1e18);
+  background-color: #23271f;
+  background-image:
+    linear-gradient(118deg, rgba(19, 22, 17, 0.92) 0%, rgba(27, 33, 27, 0.72) 52%, rgba(46, 37, 24, 0.8) 100%),
+    url("/images/estimator-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 250, 242, 0.05),
+    0 30px 64px -36px rgba(0, 0, 0, 0.55);
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
 
+.services-page .services-estimator-band--checkpoint::before {
+  display: none;
+}
+
+.services-estimator-band--checkpoint .services-estimator-stage__copy .section-label {
+  color: color-mix(in srgb, var(--svc-copper) 76%, #fffaf2);
+}
+
+.services-estimator-band--checkpoint .services-estimator-stage__copy .h2-system {
+  color: #fbf6ec;
+}
+
+.services-estimator-band--checkpoint .services-estimator-stage__copy .text-body {
+  color: rgba(251, 246, 236, 0.82);
+}
+
+.services-estimator-band--checkpoint .services-estimator-note {
+  border-left-color: color-mix(in srgb, var(--svc-copper) 58%, transparent);
+  color: rgba(251, 246, 236, 0.68);
+}
+
+.services-estimator-band--checkpoint .services-estimator-ticket {
+  box-shadow:
+    0 26px 54px -26px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 253, 247, 0.8);
+}
 
 .estimator-control-panel {
   border: 0;
@@ -10953,33 +11054,40 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   padding: 1rem;
 }
 
-.estimator-configurator__intro {
-  border-left: 3px solid color-mix(in srgb, var(--accent) 72%, var(--line));
-  padding-left: 1rem;
-}
-
 .estimator-configurator__grid {
   display: grid;
   min-width: 0;
-  gap: 1rem;
+  grid-template-areas:
+    "steps"
+    "control"
+    "output"
+    "actions";
+  gap: 0.9rem;
 }
 
 .estimator-stepper {
+  grid-area: steps;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.55rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.35rem;
+  border: 1px solid var(--structural-light);
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--surface-light-alt) 76%, var(--surface-card));
+  padding: 0.35rem;
 }
 
 .estimator-stepper__item {
   display: grid;
   min-width: 0;
-  grid-template-columns: 2rem minmax(0, 1fr);
-  gap: 0.65rem;
-  align-items: center;
+  min-height: 4.65rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.42rem;
+  align-content: start;
+  justify-items: start;
   border: 1px solid var(--structural-light);
-  border-radius: 0.9rem;
-  background: var(--surface-card);
-  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--surface-card) 62%, transparent);
+  padding: 0.55rem;
   text-align: left;
   transition:
     transform var(--motion-standard) var(--motion-ease-out),
@@ -11022,8 +11130,9 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 .estimator-stepper__item strong {
   min-width: 0;
   color: inherit;
-  font-size: 0.8rem;
-  line-height: 1.2;
+  font-size: 0.68rem;
+  line-height: 1.18;
+  overflow-wrap: anywhere;
 }
 
 .estimator-configurator__control,
@@ -11036,7 +11145,13 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .estimator-configurator__control {
+  grid-area: control;
   overflow: hidden;
+}
+
+.estimator-configurator__output {
+  grid-area: output;
+  min-width: 0;
 }
 
 .estimator-control-scene {
@@ -11295,14 +11410,15 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .estimator-configurator__footer {
+  grid-area: actions;
   display: flex;
   justify-content: space-between;
   gap: 0.75rem;
-  border-top: 1px solid var(--structural-light);
-  padding: 1rem;
+  padding: 0.1rem 0 0;
 }
 
-.estimator-configurator__footer .btn-secondary:disabled {
+.estimator-configurator__footer .btn-secondary:disabled,
+.estimator-configurator__footer .btn-primary:disabled {
   cursor: not-allowed;
   opacity: 0.45;
 }
@@ -11335,6 +11451,15 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   line-height: 1;
 }
 
+.estimator-ledger-state {
+  display: block;
+  max-width: 15rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
 .estimator-live-panel > p {
   margin: 0;
   color: var(--muted);
@@ -11349,9 +11474,10 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .estimator-live-summary > div {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: minmax(6.5rem, 0.55fr) minmax(0, 1fr);
+  gap: 0.8rem;
+  align-items: baseline;
   border-bottom: 1px solid var(--structural-light);
   padding-bottom: 0.55rem;
 }
@@ -11372,6 +11498,17 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   font-size: 0.82rem;
   font-weight: 900;
   text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.estimator-live-summary dd[data-empty="true"] {
+  color: color-mix(in srgb, var(--muted) 70%, var(--surface-card));
+  font-weight: 850;
+}
+
+.estimator-live-panel[data-has-result="true"] {
+  border-color: color-mix(in srgb, var(--accent) 48%, var(--structural-light));
+  box-shadow: 0 22px 54px rgba(184, 102, 74, 0.14);
 }
 
 .estimator-live-panel__pending {
@@ -11488,6 +11625,19 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
     padding: 1.25rem;
   }
 
+  .estimator-stepper__item {
+    min-height: 3.55rem;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    align-content: center;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.7rem;
+  }
+
+  .estimator-stepper__item strong {
+    font-size: 0.78rem;
+  }
+
   .estimator-option-grid--packages {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -11504,17 +11654,26 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 
 @media (min-width: 1024px) {
   .estimator-configurator__grid {
-    grid-template-columns: 14rem minmax(24rem, 1fr) minmax(18rem, 19rem);
+    grid-template-areas:
+      "steps steps"
+      "control output"
+      "actions output";
+    grid-template-columns: minmax(0, 1.5fr) minmax(18rem, 0.58fr);
     align-items: start;
+    gap: 1.1rem;
   }
 
   .estimator-stepper {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .estimator-configurator__output {
     position: sticky;
     top: 6rem;
+  }
+
+  .estimator-configurator__footer {
+    align-self: start;
   }
 
   .services-router-panel__content {
@@ -11565,11 +11724,23 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   }
 
   .estimator-stepper {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .estimator-stepper__item {
-    min-height: 3.35rem;
+    min-height: 4.25rem;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+    align-items: start;
+    justify-items: start;
+    gap: 0.42rem;
+  }
+
+  .estimator-stepper__item strong {
+    font-size: 0.72rem;
+    hyphens: auto;
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   .estimator-configurator__footer {
@@ -18415,10 +18586,6 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
     linear-gradient(180deg, var(--svc-paper-strong), var(--svc-paper));
 }
 
-.estimator-configurator__intro {
-  border-left-color: var(--svc-field);
-}
-
 .estimator-stepper__item,
 .estimator-choice-card,
 .estimator-mode-card,
@@ -18603,8 +18770,7 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .estimator-bedroom-options button,
-  .estimator-stepper__item strong,
+  .estimator-bedroom-options:not(.estimator-bedroom-options--outdoor) button,
   .services-event-switch,
   .services-router-choice__copy strong,
   .services-pathway-spine strong {
@@ -19592,8 +19758,43 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   }
 }
 
+/* Services estimator: patio/outdoor field spans full parameter row; options stay readable. */
+.services-page .estimator-parameter-grid {
+  container-type: inline-size;
+  container-name: estimator-params;
+}
+
+.services-page .estimator-parameter-grid > .estimator-bedroom-card--outdoor {
+  grid-column: 1 / -1;
+}
+
+.services-page .estimator-bedroom-options--outdoor {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@container estimator-params (min-width: 38rem) {
+  .services-page .estimator-bedroom-options--outdoor {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.services-page .estimator-bedroom-options--outdoor button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.65rem 0.85rem;
+  line-height: 1.2;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  text-align: center;
+  white-space: normal;
+}
+
 /* Services estimator mobile hardening: long segmented labels must wrap cleanly. */
-.services-page .estimator-bedroom-options button {
+.services-page .estimator-bedroom-options:not(.estimator-bedroom-options--outdoor) button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -19605,19 +19806,6 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   overflow-wrap: anywhere;
   text-align: center;
   white-space: normal;
-}
-
-.services-page .estimator-bedroom-options--outdoor button {
-  justify-content: flex-start;
-  min-height: 3.15rem;
-  padding-inline: 0.72rem;
-  text-align: left;
-}
-
-@media (max-width: 767px) {
-  .services-page .estimator-bedroom-options--outdoor {
-    grid-template-columns: minmax(0, 1fr);
-  }
 }
 
 @media (max-width: 430px) {

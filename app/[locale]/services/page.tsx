@@ -92,7 +92,6 @@ export default async function ServicesPage({
   const headlineParts = t.raw('redesign.hero.headlineParts') as string[];
   const siteMapNodes = t.raw('redesign.siteMap.nodes') as string[];
   const qualificationSteps = t.raw('redesign.executionStrip.gateSteps') as string[];
-  const estimatorAlsoItems = t.raw('redesign.estimatorBand.alsoItems') as string[];
   const cleaningItems = CLEANING_CAPABILITY_KEYS.map((key, index) => ({
     id: key,
     marker: String(index + 1).padStart(2, '0'),
@@ -277,37 +276,34 @@ export default async function ServicesPage({
         </Section>
 
         <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--estimator" id="estimator">
-          <div className="services-estimator-band">
+          <div className="services-estimator-band services-estimator-band--checkpoint">
             <div className="services-estimator-stage mb-6">
-              <p className="section-label">{t('redesign.estimatorBand.eyebrow')}</p>
-              <h2 className="h2-system mt-3">{t('redesign.estimatorBand.title')}</h2>
-              <p className="mt-3 text-body">{t('redesign.estimatorBand.intro')}</p>
-              <div className="services-estimator-inputs">
-                <p className="services-estimator-inputs__title">{t('redesign.estimatorBand.inputsTitle')}</p>
-                <ul className="services-estimator-inputs__list">
+              <div className="services-estimator-stage__copy">
+                <p className="section-label">{t('redesign.estimatorBand.eyebrow')}</p>
+                <h2 className="h2-system mt-3">{t('redesign.estimatorBand.title')}</h2>
+                <p className="mt-3 text-body">{t('redesign.estimatorBand.intro')}</p>
+                <p className="services-estimator-note">{t('redesign.estimatorBand.note')}</p>
+              </div>
+              <div className="services-estimator-ticket">
+                <p className="services-estimator-ticket__header">{t('redesign.estimatorBand.preview.header')}</p>
+                <div className="services-estimator-ticket__range" aria-hidden="true">
+                  <span className="services-estimator-ticket__cap">{t('redesign.estimatorBand.preview.from')}</span>
+                  <span className="services-estimator-ticket__bar">
+                    <span className="services-estimator-ticket__bar-fill" />
+                  </span>
+                  <span className="services-estimator-ticket__cap">{t('redesign.estimatorBand.preview.to')}</span>
+                </div>
+                <p className="services-estimator-ticket__caption">{t('redesign.estimatorBand.preview.rangeCaption')}</p>
+                <ul className="services-estimator-ticket__tiles">
                   {ESTIMATOR_INPUT_KEYS.map((key) => (
-                    <li key={key} className="services-estimator-input-card">
-                      <span className="services-estimator-input-card__label">
-                        {t(`redesign.estimatorBand.inputs.${key}.label`)}
-                      </span>
-                      <span className="services-estimator-input-card__body">
-                        {t(`redesign.estimatorBand.inputs.${key}.body`)}
-                      </span>
+                    <li key={key} className="services-estimator-tile">
+                      <p className="services-estimator-tile__label">{t(`redesign.estimatorBand.inputs.${key}.label`)}</p>
+                      <p className="services-estimator-tile__body">{t(`redesign.estimatorBand.inputs.${key}.body`)}</p>
                     </li>
                   ))}
                 </ul>
-                <div className="services-estimator-also">
-                  <span className="services-estimator-also__label">{t('redesign.estimatorBand.alsoLabel')}</span>
-                  <span className="services-estimator-also__chips">
-                    {estimatorAlsoItems.map((item) => (
-                      <span key={item} className="services-estimator-also__chip">
-                        {item}
-                      </span>
-                    ))}
-                  </span>
-                </div>
+                <p className="services-estimator-ticket__result">{t('redesign.estimatorBand.preview.resultNote')}</p>
               </div>
-              <p className="services-estimator-note">{t('redesign.estimatorBand.note')}</p>
             </div>
             <div>
               <Estimator embedded />

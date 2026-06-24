@@ -44,23 +44,28 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
   const locale = useLocale();
   const t = useTranslations('services.estimator');
   const [activeStep, setActiveStep] = useState<EstimatorStepKey>('jurisdiction');
-  const [packageKey, setPackageKey] = useState<PackageKey>('structured_presence');
-  const [modeKey, setModeKey] = useState<ModeKey>('private_use');
-  const [sqm, setSqm] = useState<number>(80);
-  const [bedroomsKey, setBedroomsKey] = useState<BedroomsKey>('B2');
-  const [bathroomsKey, setBathroomsKey] = useState<BathroomsKey>('B1');
-  const [outdoorKey, setOutdoorKey] = useState<OutdoorKey>('none');
+  const [packageKey, setPackageKey] = useState<PackageKey | null>(null);
+  const [modeKey, setModeKey] = useState<ModeKey | null>(null);
+  const [sqmInput, setSqmInput] = useState('');
+  const [bedroomsKey, setBedroomsKey] = useState<BedroomsKey | null>(null);
+  const [bathroomsKey, setBathroomsKey] = useState<BathroomsKey | null>(null);
+  const [outdoorKey, setOutdoorKey] = useState<OutdoorKey | null>(null);
   const [scopeElements, setScopeElements] = useState<ScopeElementKey[]>([]);
+  const [scopeTouched, setScopeTouched] = useState(false);
   const [result, setResult] = useState<{ min: number; max: number } | null>(null);
   const [hasCalculated, setHasCalculated] = useState(false);
   const [hasCalculatedOnce, setHasCalculatedOnce] = useState(false);
 
-  const clampedSqm = Math.max(SQM_INPUT_MIN, Math.min(SQM_INPUT_MAX, Math.round(sqm)));
-  const sizeKey: SizeKey = getSizeKeyFromSqm(clampedSqm);
+  const parsedSqm = sqmInput.trim() === '' ? Number.NaN : Number(sqmInput);
+  const sqmValue = Number.isFinite(parsedSqm) ? Math.round(parsedSqm) : null;
+  const clampedSqm = sqmValue === null ? null : Math.max(SQM_INPUT_MIN, Math.min(SQM_INPUT_MAX, sqmValue));
+  const sizeKey: SizeKey | null = clampedSqm === null ? null : getSizeKeyFromSqm(clampedSqm);
+  const requiredInputsComplete = Boolean(packageKey && modeKey && clampedSqm !== null && bedroomsKey && bathroomsKey && outdoorKey);
   const showCompatibilityNote = packageKey === 'structured_presence' && modeKey === 'active_guest';
-  const showSqmMinValidation = sqm < SQM_INPUT_MIN && Number.isFinite(sqm);
-  const showSqmMaxValidation = sqm > SQM_INPUT_MAX;
+  const showSqmMinValidation = sqmValue !== null && sqmValue < SQM_INPUT_MIN;
+  const showSqmMaxValidation = sqmValue !== null && sqmValue > SQM_INPUT_MAX;
   const activeStepIndex = ESTIMATOR_STEP_KEYS.indexOf(activeStep);
+  const sqmStepBase = clampedSqm ?? 80;
 
   const collapseResult = useCallback(() => {
     if (hasCalculated) {
@@ -77,9 +82,8 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
     setModeKey(v);
     collapseResult();
   };
-  const handleSqmChange = (v: number) => {
-    const num = Number.isFinite(v) ? Math.round(v) : SQM_INPUT_MIN;
-    setSqm(num);
+  const handleSqmChange = (v: number | string) => {
+    setSqmInput(typeof v === 'number' ? String(Math.round(v)) : v);
     collapseResult();
   };
   const handleBedroomsChange = (v: BedroomsKey) => {
@@ -93,11 +97,16 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
     setOutdoorKey(v);
   };
   const handleScopeToggle = (k: ScopeElementKey) => {
+    setScopeTouched(true);
     setScopeElements((prev) => (prev.includes(k) ? prev.filter((x) => x !== k) : [...prev, k]));
     collapseResult();
   };
 
   const handleCalculate = () => {
+    if (!requiredInputsComplete || !packageKey || !modeKey || !sizeKey || !bedroomsKey || clampedSqm === null) {
+      return;
+    }
+    setScopeTouched(true);
     const r = computeEstimate(packageKey, modeKey, sizeKey, bedroomsKey, sortScopeElements(scopeElements));
     setResult(r);
     setHasCalculated(true);
@@ -105,7 +114,7 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
   };
 
   const scopeSerialized = sortScopeElements(scopeElements).join(',');
-  const contactPayload = result
+  const contactPayload = result && packageKey && modeKey && sizeKey && clampedSqm !== null && bedroomsKey
     ? new URLSearchParams({
         est_package: packageKey,
         est_mode: modeKey,
@@ -118,7 +127,14 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
     : null;
 
   const showParamsChangedCue = hasCalculatedOnce && !result;
-  const gateMessage = showParamsChangedCue ? t('paramsChangedCue') : hasCalculated && result ? t('gateAfter') : t('gateBefore');
+  const hasVisibleResult = Boolean(result && hasCalculated);
+  const gateMessage = showParamsChangedCue
+    ? t('paramsChangedCue')
+    : hasVisibleResult
+      ? t('gateAfter')
+      : requiredInputsComplete
+        ? t('gateReady')
+        : t('gateBefore');
 
   const stepTitles: Record<EstimatorStepKey, string> = {
     jurisdiction: t('stepJurisdiction'),
@@ -127,40 +143,34 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
     scope: t('stepScope'),
   };
 
+  const emptyValue = t('wizard.emptyValue');
+  const formatCount = (key: BedroomsKey | BathroomsKey | null) => {
+    if (!key) return null;
+    return key === 'B4P' ? '4+' : key.slice(1);
+  };
+  const scopeSummary = scopeTouched
+    ? scopeElements.length > 0
+      ? sortScopeElements(scopeElements).map((k) => t(`scopeElements.${k}`)).join(', ')
+      : t('wizard.scopeNone')
+    : null;
+  const ledgerRows = [
+    { label: t('resultJurisdiction'), value: packageKey ? t(`packages.${packageKey}`) : null },
+    { label: t('resultMode'), value: modeKey ? (modeKey === 'private_use' ? t('modePrivateUse') : t('modeActiveGuest')) : null },
+    { label: t('resultArea'), value: clampedSqm === null ? null : `${clampedSqm} m²` },
+    { label: t('resultBedrooms'), value: formatCount(bedroomsKey) },
+    { label: t('bathroomsLabel'), value: formatCount(bathroomsKey) },
+    { label: t('outdoorLabel'), value: outdoorKey ? t(`outdoorOptions.${outdoorKey}`) : null },
+    { label: t('resultScopeElements'), value: scopeSummary },
+  ];
+
   const liveStructureSummary = (
     <dl className="estimator-live-summary">
-      <div>
-        <dt>{t('resultJurisdiction')}</dt>
-        <dd>{t(`packages.${packageKey}`)}</dd>
-      </div>
-      <div>
-        <dt>{t('resultMode')}</dt>
-        <dd>{modeKey === 'private_use' ? t('modePrivateUse') : t('modeActiveGuest')}</dd>
-      </div>
-      <div>
-        <dt>{t('resultArea')}</dt>
-        <dd>{clampedSqm} m²</dd>
-      </div>
-      <div>
-        <dt>{t('resultBedrooms')}</dt>
-        <dd>{bedroomsKey === 'B4P' ? '4+' : bedroomsKey.slice(1)}</dd>
-      </div>
-      <div>
-        <dt>{t('bathroomsLabel')}</dt>
-        <dd>{bathroomsKey === 'B4P' ? '4+' : bathroomsKey.slice(1)}</dd>
-      </div>
-      <div>
-        <dt>{t('outdoorLabel')}</dt>
-        <dd>{t(`outdoorOptions.${outdoorKey}`)}</dd>
-      </div>
-      <div>
-        <dt>{t('resultScopeElements')}</dt>
-        <dd>
-          {scopeElements.length > 0
-            ? sortScopeElements(scopeElements).map((k) => t(`scopeElements.${k}`)).join(', ')
-            : t('wizard.scopeNone')}
-        </dd>
-      </div>
+      {ledgerRows.map((row) => (
+        <div key={row.label}>
+          <dt>{row.label}</dt>
+          <dd data-empty={row.value ? undefined : 'true'}>{row.value ?? emptyValue}</dd>
+        </div>
+      ))}
     </dl>
   );
 
@@ -255,23 +265,20 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
             <div className="estimator-quantity-card">
               <label htmlFor="estimator-sqm">{t('sizeLabel')}</label>
               <div className="estimator-quantity-control">
-                <button type="button" onClick={() => handleSqmChange(clampedSqm - 10)} aria-label="-10 m²">-</button>
+                <button type="button" onClick={() => handleSqmChange(sqmStepBase - 10)} aria-label="-10 m²">-</button>
                 <input
                   id="estimator-sqm"
                   type="number"
                   min={SQM_INPUT_MIN}
                   max={SQM_INPUT_MAX}
-                  value={sqm}
-                  onChange={(e) => {
-                    const raw = e.target.value;
-                    if (raw === '') handleSqmChange(SQM_INPUT_MIN);
-                    else handleSqmChange(Number(raw));
-                  }}
+                  value={sqmInput}
+                  placeholder={t('sizePlaceholder')}
+                  onChange={(e) => handleSqmChange(e.target.value)}
                   className="estimator-quantity-input"
                   required
                   aria-required="true"
                 />
-                <button type="button" onClick={() => handleSqmChange(clampedSqm + 10)} aria-label="+10 m²">+</button>
+                <button type="button" onClick={() => handleSqmChange(sqmStepBase + 10)} aria-label="+10 m²">+</button>
               </div>
               <p>{t('sizeHelper')}</p>
               {showSqmMinValidation && <p role="alert">{t('sqmValidationMin')}</p>}
@@ -314,7 +321,7 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
               <span>{t('bathroomsHelper')}</span>
             </div>
 
-            <div className="estimator-bedroom-card">
+            <div className="estimator-bedroom-card estimator-bedroom-card--outdoor">
               <p>{t('outdoorLabel')}</p>
               <div className="estimator-bedroom-options estimator-bedroom-options--outdoor" role="radiogroup" aria-label={t('outdoorLabel')}>
                 {OUTDOOR_KEYS.map((k) => (
@@ -365,14 +372,18 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
   })();
 
   const outputPanel = (
-    <div className="estimator-live-panel">
+    <div className="estimator-live-panel" data-complete={requiredInputsComplete} data-has-result={hasVisibleResult}>
       <div className="estimator-live-panel__top">
         <p>{t('wizard.outputTitle')}</p>
-        <strong>{result && hasCalculated ? formatRange(result.min, result.max) : t('wizard.pendingRange')}</strong>
+        {result && hasCalculated ? (
+          <strong>{formatRange(result.min, result.max)}</strong>
+        ) : (
+          <span className="estimator-ledger-state">{t('wizard.pendingRange')}</span>
+        )}
       </div>
       <p className={showParamsChangedCue ? 'params-changed-cue' : ''} role="status">{gateMessage}</p>
       {liveStructureSummary}
-      {result && hasCalculated ? (
+      {hasVisibleResult && result ? (
         <div className="estimator-result-output">
           <p>{t('rangeWordingHeading')}</p>
           <ul>
@@ -395,14 +406,6 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
           <span>{t('reasonPriceAfterCalculate')}</span>
         </div>
       )}
-      <button
-        type="button"
-        onClick={handleCalculate}
-        className="btn-primary estimator-generate-button"
-        aria-label={hasCalculated ? t('recalculate') : t('calculate')}
-      >
-        {hasCalculated ? t('recalculate') : t('calculate')}
-      </button>
     </div>
   );
 
@@ -413,10 +416,6 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
           <p className="section-label">{t('groupJurisdiction')}</p>
           <h2 className="h2-system mt-2">{t('heading')}</h2>
         </div>
-      )}
-
-      {embedded && (
-        <p className="estimator-configurator__intro mb-6 max-w-3xl text-sm text-body">{t('orientationIntro')}</p>
       )}
 
       <div className="estimator-configurator__grid">
@@ -438,26 +437,26 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
 
         <section className="estimator-configurator__control" aria-live="polite">
           {activeControl}
-
-          <div className="estimator-configurator__footer">
-            <button type="button" onClick={goToPrevious} className="btn-secondary" disabled={activeStepIndex === 0}>
-              {t('wizard.previous')}
-            </button>
-            {activeStepIndex < ESTIMATOR_STEP_KEYS.length - 1 ? (
-              <button type="button" onClick={goToNext} className="btn-primary">
-                {t('wizard.next')}
-              </button>
-            ) : (
-              <button type="button" onClick={handleCalculate} className="btn-primary">
-                {hasCalculated ? t('recalculate') : t('calculate')}
-              </button>
-            )}
-          </div>
         </section>
 
         <aside className="estimator-configurator__output">
           {outputPanel}
         </aside>
+
+        <div className="estimator-configurator__footer">
+          <button type="button" onClick={goToPrevious} className="btn-secondary" disabled={activeStepIndex === 0}>
+            {t('wizard.previous')}
+          </button>
+          {activeStepIndex < ESTIMATOR_STEP_KEYS.length - 1 ? (
+            <button type="button" onClick={goToNext} className="btn-primary">
+              {t('wizard.next')}
+            </button>
+          ) : (
+            <button type="button" onClick={handleCalculate} className="btn-primary" disabled={!requiredInputsComplete}>
+              {hasCalculated ? t('recalculate') : t('calculate')}
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
