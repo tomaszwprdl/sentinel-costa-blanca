@@ -909,15 +909,24 @@
       },
       "estimatorBand": {
         "eyebrow": "Orientacyjny zakres miesięczny",
-        "title": "Sprawdź orientacyjny przedział zanim wyślesz zapytanie.",
-        "intro": "Wybierz pakiet, sposób używania i podstawowe parametry lokalu. Wynik pomaga ustawić rozmowę bez zgadywania ceny.",
-        "transition": "To narzędzie orientacyjne. Nie zatwierdza usługi ani nie zmienia matrycy estymatora.",
-        "contextTitle": "Kontekst nieruchomości przed kalkulacją",
-        "contextItems": {
-          "bathrooms": { "label": "Łazienki", "body": "Uwzględniane przy przeglądzie sprzątania/gotowości i planowaniu przekazania." },
-          "outdoor": { "label": "Patio / taras / część zewnętrzna", "body": "Używane jako kontekst gotowości i koordynacji przed kalkulacją." },
-          "logic": { "label": "Logika ceny", "body": "Te pola kontekstowe nie zmieniają matrycy estymatora." }
-        }
+        "title": "Sprawdź przedział zanim wyślesz zapytanie.",
+        "intro": "Wybierz pakiet, sposób używania i podstawowe parametry lokalu. Estymator pokaże orientacyjny zakres rozmowy.",
+        "inputsTitle": "Co ustawiasz w estymatorze",
+        "preview": {
+          "header": "Przedział po ustawieniu danych",
+          "from": "od",
+          "to": "do",
+          "rangeCaption": "orientacyjny zakres miesięczny",
+          "resultNote": "Wynik pojawi się po wypełnieniu estymatora."
+        },
+        "inputs": {
+          "package": { "label": "Pakiet", "body": "Określa poziom odpowiedzialności." },
+          "usage": { "label": "Sposób używania", "body": "Prywatnie, goście albo model mieszany." },
+          "property": { "label": "Parametry lokalu", "body": "Metraż, pokoje i podstawowy kontekst." }
+        },
+        "alsoLabel": "Estymator uwzględnia też",
+        "alsoItems": ["Łazienki", "Patio / część zewnętrzna"],
+        "note": "To narzędzie orientacyjne. Nie zatwierdza usługi ani nie zmienia matrycy estymatora."
       },
       "executionStrip": {
         "thresholdLabel": "Poza modelem pakietowym",
@@ -1296,6 +1305,7 @@
       "groupParameters": "Parametry nieruchomości",
       "groupParametersAnchor": "Parametry wpływają na zakres operacyjny i złożoność koordynacji.",
       "sizeLabel": "Metraż nieruchomości (m²)",
+      "sizePlaceholder": "np. 70",
       "sizeHelper": "Powierzchnia całkowita lokalu (bez balkonów i tarasów).",
       "bedroomsLabel": "Liczba niezależnych pokoi noclegowych",
       "bedroomsHelper": "Pomieszczenia umożliwiające stały nocleg; wpływają na złożoność szczególnie w trybie gościnnym.",
@@ -1336,6 +1346,7 @@
       "modeWhatGuest3": "Większa komunikacja i obsługa zdarzeń.",
       "scopeElementBilledByUse": "Rozliczane według użycia.",
       "gateBefore": "Zakres pojawi się po ustaleniu parametrów.",
+      "gateReady": "Wybory są kompletne. Ustal zakres, aby pokazać widełki.",
       "gateAfter": "Zakres ustalony dla powyższych parametrów.",
       "sqmValidationMin": "Minimalny metraż: 20 m².",
       "sqmValidationMax": "W przypadku nieruchomości powyżej 1000 m² prosimy o kontakt bezpośredni.",

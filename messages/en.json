@@ -909,15 +909,24 @@
       },
       "estimatorBand": {
         "eyebrow": "Indicative monthly range",
-        "title": "Check the indicative range before sending an inquiry.",
-        "intro": "Select the package, usage pattern, and basic property parameters. The result frames the conversation without guessing price.",
-        "transition": "This is an orientation tool. It does not approve service or change the estimator matrix.",
-        "contextTitle": "Property context captured before calculation",
-        "contextItems": {
-          "bathrooms": { "label": "Bathrooms", "body": "Captured for cleaning/readiness review and handover planning." },
-          "outdoor": { "label": "Patio / terrace / outdoor area", "body": "Used as readiness and coordination context before calculation." },
-          "logic": { "label": "Pricing logic", "body": "These context fields do not change the estimator matrix." }
-        }
+        "title": "Check the range before sending an inquiry.",
+        "intro": "Choose the package, usage model, and basic property parameters. The estimator shows an approximate range for the conversation.",
+        "inputsTitle": "What you set in the estimator",
+        "preview": {
+          "header": "Range after setting the details",
+          "from": "from",
+          "to": "to",
+          "rangeCaption": "approximate monthly range",
+          "resultNote": "The result appears after completing the estimator."
+        },
+        "inputs": {
+          "package": { "label": "Package", "body": "Defines the responsibility level." },
+          "usage": { "label": "Usage model", "body": "Private use, guests, or mixed model." },
+          "property": { "label": "Property parameters", "body": "Size, rooms, and basic context." }
+        },
+        "alsoLabel": "The estimator also accounts for",
+        "alsoItems": ["Bathrooms", "Patio / outdoor area"],
+        "note": "This is an orientation tool. It does not approve a service or change the estimator matrix."
       },
       "executionStrip": {
         "thresholdLabel": "Outside the package model",
@@ -1296,6 +1305,7 @@
       "groupParameters": "Property parameters",
       "groupParametersAnchor": "Parameters affect operational scope and coordination complexity.",
       "sizeLabel": "Property area (m²)",
+      "sizePlaceholder": "e.g. 70",
       "sizeHelper": "Total floor area of the unit (excluding balconies and terraces).",
       "bedroomsLabel": "Number of independent sleeping rooms",
       "bedroomsHelper": "Rooms suitable for permanent overnight stay; affect complexity especially in guest mode.",
@@ -1336,6 +1346,7 @@
       "modeWhatGuest3": "Higher communication and event handling.",
       "scopeElementBilledByUse": "Billed by use.",
       "gateBefore": "Range will appear after parameters are set.",
+      "gateReady": "Selections are complete. Determine range to show the bracket.",
       "gateAfter": "Range set for the parameters above.",
       "sqmValidationMin": "Minimum area: 20 m².",
       "sqmValidationMax": "For properties over 1000 m² please contact us directly.",

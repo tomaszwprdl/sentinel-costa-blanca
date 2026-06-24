@@ -38,6 +38,7 @@ const EXECUTION_ONLY_AVAILABLE_KEYS = ['keyHolding', 'cleaning', 'oneTimeAccess'
 const EXECUTION_ONLY_LIMITATION_KEYS = ['noRegularChecks', 'noCyclicReporting', 'noEmergencySLA', 'noDecisionAuthority'] as const;
 const CLEANING_CAPABILITY_KEYS = ['readiness', 'turnover', 'documentation', 'boundary'] as const;
 const SKIM_ITEM_KEYS = ['inspections', 'access', 'decisions', 'approval'] as const;
+const ESTIMATOR_INPUT_KEYS = ['package', 'usage', 'property'] as const;
 
 const CLEANING_STORY_IMAGES: Record<(typeof CLEANING_CAPABILITY_KEYS)[number], { src: string; focus: string }> = {
   readiness: {
@@ -275,28 +276,33 @@ export default async function ServicesPage({
         </Section>
 
         <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--estimator" id="estimator">
-          <div className="services-estimator-band">
-            <div className="mb-6 max-w-[760px]">
-              <p className="section-label">{t('redesign.estimatorBand.eyebrow')}</p>
-              <h2 className="h2-system mt-3">{t('redesign.estimatorBand.title')}</h2>
-              <p className="mt-3 text-body">{t('redesign.estimatorBand.intro')}</p>
-              <p className="mt-4 rounded-2xl border border-structural-light bg-surface-light-alt px-4 py-3 text-sm text-body">
-                {t('redesign.estimatorBand.transition')}
-              </p>
-              <div className="services-estimator-context" aria-label={t('redesign.estimatorBand.contextTitle')}>
-                <p>{t('redesign.estimatorBand.contextTitle')}</p>
-                <div>
-                  <span>{t('redesign.estimatorBand.contextItems.bathrooms.label')}</span>
-                  <strong>{t('redesign.estimatorBand.contextItems.bathrooms.body')}</strong>
+          <div className="services-estimator-band services-estimator-band--checkpoint">
+            <div className="services-estimator-stage mb-6">
+              <div className="services-estimator-stage__copy">
+                <p className="section-label">{t('redesign.estimatorBand.eyebrow')}</p>
+                <h2 className="h2-system mt-3">{t('redesign.estimatorBand.title')}</h2>
+                <p className="mt-3 text-body">{t('redesign.estimatorBand.intro')}</p>
+                <p className="services-estimator-note">{t('redesign.estimatorBand.note')}</p>
+              </div>
+              <div className="services-estimator-ticket">
+                <p className="services-estimator-ticket__header">{t('redesign.estimatorBand.preview.header')}</p>
+                <div className="services-estimator-ticket__range" aria-hidden="true">
+                  <span className="services-estimator-ticket__cap">{t('redesign.estimatorBand.preview.from')}</span>
+                  <span className="services-estimator-ticket__bar">
+                    <span className="services-estimator-ticket__bar-fill" />
+                  </span>
+                  <span className="services-estimator-ticket__cap">{t('redesign.estimatorBand.preview.to')}</span>
                 </div>
-                <div>
-                  <span>{t('redesign.estimatorBand.contextItems.outdoor.label')}</span>
-                  <strong>{t('redesign.estimatorBand.contextItems.outdoor.body')}</strong>
-                </div>
-                <div>
-                  <span>{t('redesign.estimatorBand.contextItems.logic.label')}</span>
-                  <strong>{t('redesign.estimatorBand.contextItems.logic.body')}</strong>
-                </div>
+                <p className="services-estimator-ticket__caption">{t('redesign.estimatorBand.preview.rangeCaption')}</p>
+                <ul className="services-estimator-ticket__tiles">
+                  {ESTIMATOR_INPUT_KEYS.map((key) => (
+                    <li key={key} className="services-estimator-tile">
+                      <p className="services-estimator-tile__label">{t(`redesign.estimatorBand.inputs.${key}.label`)}</p>
+                      <p className="services-estimator-tile__body">{t(`redesign.estimatorBand.inputs.${key}.body`)}</p>
+                    </li>
+                  ))}
+                </ul>
+                <p className="services-estimator-ticket__result">{t('redesign.estimatorBand.preview.resultNote')}</p>
               </div>
             </div>
             <div>
