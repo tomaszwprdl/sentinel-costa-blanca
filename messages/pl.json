@@ -1262,7 +1262,8 @@
         "pendingRange": "Do ustalenia",
         "previous": "Wstecz",
         "next": "Następny krok",
-        "scopeNone": "Brak dodatkowych elementów"
+        "scopeNone": "Brak dodatkowych elementów",
+        "emptyValue": "—"
       },
       "stepJurisdiction": "1. Poziom odpowiedzialności",
       "stepMode": "2. Intensywność użytkowania",

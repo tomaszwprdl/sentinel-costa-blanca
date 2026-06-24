@@ -1262,7 +1262,8 @@
         "pendingRange": "Pending",
         "previous": "Back",
         "next": "Next step",
-        "scopeNone": "No additional elements"
+        "scopeNone": "No additional elements",
+        "emptyValue": "—"
       },
       "stepJurisdiction": "1. Responsibility level",
       "stepMode": "2. Usage intensity",
