@@ -754,6 +754,7 @@
         "cueLabels": ["Rytm wizyt", "Dostęp i koordynacja", "Limit decyzji"],
         "detailCta": "Zobacz pełny zakres",
         "estimatorCta": "Przejdź do estymatora",
+        "costNote": "Koszt zależy od pakietu, metrażu i sposobu używania nieruchomości. Dokładny przedział pokaże estymator.",
         "responsibilityLabel": "Główna odpowiedzialność",
         "depthLabel": "Zakres działania",
         "basic": {

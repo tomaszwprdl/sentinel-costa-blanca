@@ -10870,6 +10870,14 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   margin-top: 1.2rem;
 }
 
+.services-responsibility-reveal__cost-note {
+  margin: 0.8rem 0 0;
+  max-width: 36rem;
+  color: color-mix(in srgb, var(--svc-muted) 88%, var(--svc-field));
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
 .estimator-configurator {
   position: relative;
   overflow: hidden;

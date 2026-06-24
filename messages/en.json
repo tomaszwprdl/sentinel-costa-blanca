@@ -754,6 +754,7 @@
         "cueLabels": ["Visit rhythm", "Access & coordination", "Decision limit"],
         "detailCta": "View full scope",
         "estimatorCta": "Open estimator",
+        "costNote": "Cost depends on package, property size, and how the property is used. The estimator shows the exact range.",
         "responsibilityLabel": "Primary responsibility",
         "depthLabel": "Operating depth",
         "basic": {

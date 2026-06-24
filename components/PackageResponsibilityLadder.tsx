@@ -135,6 +135,7 @@ export default function PackageResponsibilityLadder() {
               {t('redesign.ladder.estimatorCta')}
             </Link>
           </div>
+          <p className="services-responsibility-reveal__cost-note">{t('redesign.ladder.costNote')}</p>
         </article>
       </div>
     </div>
