@@ -8,13 +8,23 @@ const DOES_NOT_KEYS = ['bookings', 'administration', 'lifestyleTasks', 'unlimite
 export default function ServiceBoundaryGrid() {
   const t = useTranslations('services');
 
+  // Render the location qualification as a recorded "label: value" field
+  // without altering copy: split on the first colon, preserving the full string.
+  const eligibility = t('redesign.boundary.eligibility');
+  const eligColon = eligibility.indexOf(':');
+  const eligLabel = eligColon > -1 ? eligibility.slice(0, eligColon).trim() : '';
+  const eligValue = eligColon > -1 ? eligibility.slice(eligColon + 1).trim() : eligibility.trim();
+
   return (
     <div className="services-boundary-panel services-scope-subband">
       <div className="services-boundary-panel__header">
         <p className="section-label">{t('redesign.boundary.eyebrow')}</p>
         <h2 className="h2-system mt-3">{t('redesign.boundary.title')}</h2>
         <p className="mt-3 max-w-[62ch] text-body">{t('redesign.boundary.intro')}</p>
-        <p className="services-boundary-eligibility">{t('redesign.boundary.eligibility')}</p>
+        <p className="services-boundary-eligibility">
+          {eligLabel && <span className="services-boundary-eligibility__label">{eligLabel}</span>}
+          <span className="services-boundary-eligibility__value">{eligValue}</span>
+        </p>
       </div>
 
       <div className="services-boundary-dual">
