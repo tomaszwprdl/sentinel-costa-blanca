@@ -10,9 +10,9 @@ This file does **not** define binding decisions (`DECISIONS.md` does).
 
 **Launch-era: post-trust-spine · page-by-page micro polish**
 
-The current live/main baseline is `01b2624` (`refactor: improve mobile homepage gate`), following proof-assets integration `b9800ce` and selected-pathway contrast patch `e682b5b` (historical milestone). The visual composition rebuild, proof-layer images, Services refinement, selected-pathway contrast patch, and **Homepage Trust Spine Pilot** are live. The old build-era sequential Task 1–8 model is **retired**. Build-era task and audit documents were removed from the active repository after documentation reset.
+The current live/main baseline is `69b0d02` (`refine: rebuild operational layer as output record`), following Services boundary polish `a7d37f7`, Cursor protocol `2172b0f`, and homepage Trust Spine Pilot `01b2624` (historical milestone). The visual composition rebuild, proof-layer images, Services page polish (estimator, boundary, operational layer, About split), selected-pathway contrast patch, and **Homepage Trust Spine Pilot** are live. The old build-era sequential Task 1–8 model is **retired**. Build-era task and audit documents were removed from the active repository after documentation reset.
 
-**Current priority:** do not start another broad visual pass. The site is visually credible enough to keep live. Trust Spine Pilot goals are delivered on the homepage gate. Next work is **page-by-page micro polish, starting with the homepage**, Owner-scoped and plan-first.
+**Current priority:** do not start another broad visual pass. The site is visually credible enough to keep live. Services page core sections are accepted and locked. Next work is **page-by-page micro polish** (homepage first), Owner-scoped and plan-first.
 
 **Homepage gate (delivered):** operator cue / public operator proof (Aleksy Gugała) · verified €80/mo minimum price cue · estimator/cost-logic link · mobile scroll affordance from `01b2624`.
 
@@ -20,6 +20,8 @@ The current live/main baseline is `01b2624` (`refactor: improve mobile homepage 
 
 Recently completed live work:
 
+- **Services page polish (accepted, locked):** dark checkpoint estimator shell · horizontal step rail · live result/ledger · patio/outdoor readability · translation contract repair · Services boundary as Ruled Scope Register (`a7d37f7`) · About category-clarity split from Services scope (`c0c060b`) · Operational Layer rebuilt as output record — Gotowość · Dostęp · Koordynacja · Decyzja (`69b0d02`). Execution-only checkpoint left in older dark form; Gate 2 compact/restyle attempts rejected.
+- **Cursor operating protocol:** `doc/CURSOR.md` active (`2172b0f`).
 - Homepage Trust Spine Pilot: gate trust before click, operator proof cue, early price/estimator cue, defensive repetition reduction, mobile gate scroll affordance — through `01b2624`.
 - Services doctrine/page refinement: package-summary drift corrected; cleaning/readiness/turnover cleaning visible inside oversight; bathrooms/patio context added without estimator pricing-logic changes; NowRent mention restrained.
 - Proof-assets integration: homepage pathway media, final CTA, Services, How It Works, and About gained temporary proof-layer imagery.
@@ -33,6 +35,7 @@ Recently completed live work:
 | Document | Role |
 |----------|------|
 | `DECISIONS.md` | Protected contracts |
+| `CURSOR.md` | Cursor operating protocol |
 | `VISUAL-FREEDOM-SPRINT.md` | Current canonical visual system |
 | `AGENT-BRIEFING.md` | Agent routing and rules |
 | `WORKFLOW.md` | Git, build, commit discipline |
@@ -54,6 +57,20 @@ Recently completed live work:
 9. One agent modifies code at a time.
 10. **Scoped** means bounded by the approved brief — not “small visual changes only.” A scoped Owner-approved brief may still be a large page-section rebuild. Git discipline remains: small, reviewable commits; no `git add .`; no screenshots/artifacts in commits.
 11. PL/EN parity for user-facing strings (`messages/pl.json`, `messages/en.json`).
+12. **Services page locks:** estimator shell/lower UI, Services boundary (Ruled Scope Register), Operational Layer output record, and About category-clarity split are accepted and protected unless explicitly scoped. Do not touch estimator logic, matrix, package meaning, SLA, emergency authority, or contact payload unless Owner approves.
+13. **Gate 2 (open):** execution-only exception checkpoint is a separate future task. Compact/light-strip restyle attempts were rejected; keep the current dark checkpoint until a separately approved Gate 2 brief. Limits must stay attached: no ongoing oversight · no cyclic reporting · no emergency SLA · no decision authority.
+
+---
+
+# Services page — accepted state (locked)
+
+| Section | Accepted treatment | Do not reintroduce |
+|---------|-------------------|-------------------|
+| Estimator | Dark checkpoint shell · step rail · live ledger · patio/outdoor readable | Pricing-logic changes · lower-UI redesign without scope |
+| Services boundary | Ruled Scope Register — in-scope · separate agreement · minimum/exclusions · local area | Dark split panel · central empty spine · approval-gate gadget · rotated labels |
+| About category clarity | `Sentinel jest` / `Sentinel nie jest` — principles left · exclusions right | Duplicating detailed Services scope on About |
+| Operational Layer | Four outputs: Gotowość · Dostęp · Koordynacja · Decyzja | CleaningAccordion theatre · autoplay · photos · action/result micro-lines · capability tile stack · NowRent promo inside section |
+| Execution-only | Older dark checkpoint after Operational Layer — untouched in Gate 1 | Compact strip variants (Gate 2 not accepted) |
 
 ---
 
@@ -82,6 +99,8 @@ Recently completed live work:
 - Concierge or rental-management positioning
 - Reintroducing public dark/light theme toggle or dual global theme system
 - Removing or bypassing the homepage diagnostic gate
+- Gate 2 execution-only restyle without separate scoped brief (compact/light-strip attempts rejected)
+- Services estimator/boundary/operational-layer change without explicit scoped brief
 
 ---
 

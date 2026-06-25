@@ -4,12 +4,14 @@ Entry point for AI coding agents in this repository.
 
 ## Current state
 
-- **Current live/main baseline:** `01b2624` (`refactor: improve mobile homepage gate`)
+- **Current live/main baseline:** `69b0d02` (`refine: rebuild operational layer as output record`)
+- **Services boundary polish:** `a7d37f7` · **Cursor protocol:** `2172b0f` (`doc/CURSOR.md`)
+- **Homepage Trust Spine Pilot (historical):** `01b2624` (`refactor: improve mobile homepage gate`)
 - **Previous proof-assets integration:** `b9800ce` (`feat: integrate proof layer visual assets`)
 - **Selected-pathway contrast (historical):** `e682b5b` (`fix: strengthen selected pathway contrast section`)
 - **Local repo state:** verify exact HEAD/ahead count with git preflight before work; expected untracked local items may include `.codex/`, `tmp/`
 - **Documentation governance SHA:** `6a0d0f7` (launch-era reset baseline)
-- **Phase:** Launch-era — Trust Spine Pilot delivered; broad visual iteration is stopped; next work is page-by-page micro polish starting with the homepage
+- **Phase:** Launch-era — Trust Spine Pilot delivered; Services page core sections accepted and locked; broad visual iteration stopped; next work is page-by-page micro polish (homepage first)
 - **Visual:** One art-directed Sentinel atmosphere — dark authority bands, warm paper body, dark final CTA/footer; **no public theme toggle**
 - **State rule:** repo preflight overrides stale historical SHA fields in older docs; treat `b46a214`, `b3fd918`, `97997eb`, and similar older references as historical unless current git state confirms them.
 - Build-era task/audit docs were **removed** from the repo and are no longer active authority

@@ -121,6 +121,7 @@ git branch backup/pre-services-boundary-polish-c0c060b main
 
 When the task affects site direction, visual language, service meaning, or launch safety, consult the relevant docs before editing:
 
+* `doc/CURSOR.md` — when acting as Cursor
 * `doc/DECISIONS.md`
 * `doc/STATUS.md`
 * `doc/TASK.md`
@@ -358,8 +359,10 @@ Cursor should judge visual work against the actual purpose of the section.
 
 Examples:
 
-* Estimator should feel like a controlled decision tool, not a generic form.
-* Services boundary should feel like an operational scope register, not a marketing card.
+* Estimator should feel like a controlled decision tool, not a generic form. **Services estimator shell is locked** unless explicitly scoped.
+* Services boundary should feel like an operational scope register, not a marketing card. **Ruled Scope Register treatment is accepted.**
+* Operational Layer should read as on-site output record (Gotowość · Dostęp · Koordynacja · Decyzja), not accordion/photo theatre.
+* Execution-only checkpoint is a separate exception surface; compact strip variants were rejected (Gate 2 open).
 * About category clarity should explain what Sentinel is and is not, not duplicate Services.
 * Contact should feel like a structured inquiry, not a lead trap.
 * Homepage should establish authority quickly, not decorate.

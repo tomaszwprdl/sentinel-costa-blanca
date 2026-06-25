@@ -89,6 +89,7 @@ $p = (Get-NetTCPConnection -State Listen -LocalPort 3100).OwningProcess; taskkil
 - [ ] **No public theme toggle** in header or mobile menu (unless Owner reintroduces it)
 - [ ] **Canonical visual mode** renders consistently — warm paper body, dark authority bands, dark footer; not a second global skin from OS dark preference
 - [ ] Synthetic proof-layer images are not presented as real Sentinel work, real client property, real reports, real operator identity, or final evidence
+- [ ] **Services page (if touched):** estimator checkpoint shell intact · step rail and live ledger visible · patio/outdoor options readable · boundary reads as Ruled Scope Register · Operational Layer shows four outputs only · execution-only limits still attached · no compact execution-only strip unless Gate 2 explicitly approved
 
 ---
 

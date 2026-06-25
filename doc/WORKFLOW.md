@@ -9,7 +9,8 @@ Execution rules for code changes.
 1. `git status` — working tree clean or changes understood.
 2. Confirm current branch and HEAD.
 3. Read `DECISIONS.md` for anything in scope.
-4. Confirm task brief scope (section, golden question if given).
+4. Cursor agents: read `doc/CURSOR.md` when implementing scoped changes.
+5. Confirm task brief scope (section, golden question if given).
 
 ---
 

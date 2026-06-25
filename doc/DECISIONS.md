@@ -142,7 +142,7 @@ Polish primary. English structurally equal. PL/EN parity required.
 
 **Website visual execution is CONSTRAINED / EXPERIMENTAL, not LOCKED.**
 
-The visual composition rebuild is **merged on `main`** (baseline `e5fa7bb`; graphic passes through `cef326b`; proof-assets integration `b9800ce`; selected-pathway contrast `e682b5b`; current live/main baseline `01b2624`). Future work builds on the live canonical system — it does not revert to build-era restraint. Broad visual iteration is stopped; next work is page-by-page micro polish starting with the homepage, plan-first, and Owner-scoped.
+The visual composition rebuild is **merged on `main`** (baseline `e5fa7bb`; graphic passes through `cef326b`; proof-assets integration `b9800ce`; selected-pathway contrast `e682b5b`; homepage Trust Spine Pilot `01b2624`; Services page polish through `69b0d02`; current live/main baseline `69b0d02`). Future work builds on the live canonical system — it does not revert to build-era restraint. Broad visual iteration is stopped; next work is page-by-page micro polish, plan-first, and Owner-scoped.
 
 **Flexible (Owner-approved work):** color palette on pages · section or full-page composition · page rhythm · imagery · SVG/CSS visual systems · proof modules · card/panel treatment · warmth · contrast · atmosphere · motion · generated assets · anti-repetition restructuring · removal/demotion of redundant proof modules · page-specific middle-section narratives
 
@@ -258,6 +258,14 @@ Keyholding, cleaning, readiness cleaning, turnover cleaning, access coordination
 Cleaning must be visible as practical execution capacity. It must not be hidden in tiny print or framed apologetically, and it must not reposition Sentinel as a cleaning-only, concierge, lifestyle, or rental-management brand.
 
 Execution-only layer remains subordinate (no SLA, no autonomous authority, no ongoing oversight implied).
+
+**Services page presentation (accepted through `69b0d02`):**
+
+- Estimator UI shell, step rail, and live ledger — locked unless explicitly scoped. Estimator logic, matrix, package meaning, and translation keys remain protected.
+- Services boundary — **Ruled Scope Register** visual treatment locked (`a7d37f7`). Owns operational scope: in-scope work · separate agreement · minimum period/exclusions · local area qualification. Do not reintroduce dark split panel, central empty spine, approval-gate gadget, or rotated labels.
+- About category clarity — owns identity (`Sentinel jest` / `Sentinel nie jest`); must not duplicate detailed Services scope.
+- Operational Layer — four on-site outputs locked: Gotowość · Dostęp · Koordynacja · Decyzja (`69b0d02`). Purpose: show what local oversight produces as a visible record. Rejected overload: CleaningAccordion theatre, autoplay, photos, action/result micro-lines, right capability tile stack, NowRent/partner promo inside this section.
+- Execution-only checkpoint — remains in older dark checkpoint form after Operational Layer. Gate 1 left it untouched. Gate 2 compact/restyle attempts rejected; future work is a separate scoped task. Limits must stay visible: no ongoing oversight · no cyclic reporting · no emergency SLA · no decision authority. Must not read as a full alternative package.
 
 ---
 

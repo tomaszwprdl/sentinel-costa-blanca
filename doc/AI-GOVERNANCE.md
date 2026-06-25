@@ -99,7 +99,7 @@ Details: `WORKFLOW.md` · `AGENT-BRIEFING.md`
 
 Build-era “no visual experimentation” rules and dual global theme work are **retired**.
 
-Visual composition rebuild is **merged** (baseline `e5fa7bb`; graphic passes through `cef326b`; proof-assets integration `b9800ce`; selected-pathway contrast `e682b5b`; current live/main baseline `01b2624`). The site uses **one canonical visual atmosphere** with **no public theme toggle** — per `DECISIONS.md` §12.3 and `VISUAL-FREEDOM-SPRINT.md`.
+Visual composition rebuild is **merged** (baseline `e5fa7bb`; graphic passes through `cef326b`; proof-assets integration `b9800ce`; selected-pathway contrast `e682b5b`; homepage Trust Spine Pilot `01b2624`; Services page polish through `69b0d02`; current live/main baseline `69b0d02`). The site uses **one canonical visual atmosphere** with **no public theme toggle** — per `DECISIONS.md` §12.3 and `VISUAL-FREEDOM-SPRINT.md`.
 
 Broad visual iteration is stopped. Future visual work may be bold when Owner-scoped, but the next recommended implementation is **page-by-page micro polish, starting with the homepage**. Do not start another global transformation pass. Logo assets remain **LOCKED** per `LOGO-*.md`.
 

@@ -1,6 +1,6 @@
 # VISUAL-FREEDOM-SPRINT.md — SENTINEL
 
-**Status:** Active canonical visual system (executed on `main`; current live/main baseline `01b2624`; proof-assets integration `b9800ce`; selected-pathway contrast `e682b5b`; graphic passes `38a4849` / `cef326b`)
+**Status:** Active canonical visual system (executed on `main`; current live/main baseline `69b0d02`; Services boundary `a7d37f7`; proof-assets integration `b9800ce`; selected-pathway contrast `e682b5b`; graphic passes `38a4849` / `cef326b`)
 **Scope:** Website execution only — not logo assets, not service contracts
 
 ---
@@ -24,7 +24,9 @@ Build-era visual restraint is retired. **Mature operational credibility remains 
 
 The site should feel like a **real local operating company**, not a policy document — and it may look premium, warm, tactile, and visually excellent while boundaries stay clear.
 
-**Current state:** the live site is visually credible enough to keep live after proof-assets integration, selected-pathway contrast patch, and Homepage Trust Spine Pilot delivery through `01b2624`. Visual atmosphere is now a strength. Broad visual iteration is stopped; next work is page-by-page micro polish starting with the homepage.
+**Current state:** the live site is visually credible enough to keep live after proof-assets integration, selected-pathway contrast patch, Homepage Trust Spine Pilot (`01b2624`), and Services page polish through `69b0d02`. Visual atmosphere is now a strength. Broad visual iteration is stopped; next work is page-by-page micro polish (homepage first).
+
+**Services page (accepted):** estimator dark checkpoint shell · Ruled Scope Register boundary · Operational Layer output record · About category-clarity split. Execution-only checkpoint unchanged; Gate 2 compact/restyle rejected. Do not rework these sections without explicit scope.
 
 Council v2 interpretation: do **not** remove the homepage diagnostic gate by default. Trust Spine Pilot delivered operator proof, price cue, estimator link, and mobile scroll affordance on the gate. Refine the gate; protect `#usage-situation-gate` · `gate-scroll-cue` · `scroll-mt-28` · mobile-only pathway-selector cue during homepage polish.
 
@@ -156,6 +158,7 @@ The following are **live on `main`**, not pending:
 - Proof-assets integration — `b9800ce`
 - Selected-pathway contrast strengthening — `e682b5b` (historical milestone)
 - Homepage Trust Spine Pilot — operator proof, price cue, estimator link, mobile gate scroll affordance — through `01b2624`
+- Services page polish — estimator checkpoint shell · Ruled Scope Register boundary · Operational Layer output record — through `69b0d02`
 
 Next visual work is not another broad pass. The recommended next implementation is **page-by-page micro polish, starting with the homepage**. Protect gate internals during homepage work: `#usage-situation-gate` · `gate-scroll-cue` · `scroll-mt-28` · mobile-only pathway-selector cue.
 

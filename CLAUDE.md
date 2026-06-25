@@ -9,13 +9,13 @@
 5. `doc/WORKFLOW.md`
 6. `doc/VISUAL-FREEDOM-SPRINT.md` — for visual work
 
-**Current state:** live/main baseline is `01b2624` (`refactor: improve mobile homepage gate`), following proof-assets integration `b9800ce` and selected-pathway contrast `e682b5b` (historical). Verify exact HEAD/ahead count with git preflight before work. Documentation governance baseline: `6a0d0f7`.
+**Current state:** live/main baseline is `69b0d02` (`refine: rebuild operational layer as output record`), following Services boundary polish `a7d37f7`, Cursor protocol `2172b0f`, homepage Trust Spine Pilot `01b2624` (historical), proof-assets integration `b9800ce`, and selected-pathway contrast `e682b5b` (historical). Verify exact HEAD/ahead count with git preflight before work. Documentation governance baseline: `6a0d0f7`.
 
 Older docs may mention historical SHAs such as `b46a214`, `b3fd918`, or `97997eb`; repo preflight/local git state is the truth unless the Owner overrides.
 
 Visual composition rebuild is **merged**. The site uses **one canonical Sentinel atmosphere** — dark cinematic authority bands, warm paper body, dark final CTA/footer — with **no public theme toggle**.
 
-Build-era visual restrictions and dual-theme work are retired. Current phase is **post-trust-spine**, with the live site accepted as visually credible enough to keep live. Broad visual iteration is stopped. Next work is **page-by-page micro polish, starting with the homepage**. Visual work may still be bold when explicitly briefed, but do not start another global visual transformation pass. Build on canonical mode per `doc/VISUAL-FREEDOM-SPRINT.md`. Protected contracts remain intact.
+Build-era visual restrictions and dual-theme work are retired. Current phase is **post-trust-spine / post-services-polish**, with the live site accepted as visually credible enough to keep live. Broad visual iteration is stopped. Next work is **page-by-page micro polish, starting with the homepage**. Services estimator, boundary register, and operational output record are locked unless explicitly scoped. Gate 2 execution-only restyle is unresolved. Visual work may still be bold when explicitly briefed, but do not start another global visual transformation pass. Build on canonical mode per `doc/VISUAL-FREEDOM-SPRINT.md`. Protected contracts remain intact. Cursor agents follow `doc/CURSOR.md`.
 
 Homepage gate: Trust Spine Pilot delivered (operator proof, €80/mo price cue, estimator link, mobile scroll affordance). Refine the gate; do not remove, bypass, or de-gate unless Owner explicitly approves. Protect during polish: `#usage-situation-gate` · `gate-scroll-cue` · `scroll-mt-28` · mobile-only pathway-selector cue.
 

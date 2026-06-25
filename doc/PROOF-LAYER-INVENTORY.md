@@ -13,11 +13,13 @@ This is a planning document only. It does not approve code changes, asset fabric
 Local git preflight on this pass reported:
 
 - Branch: `main`
-- Current live/main baseline: `01b2624` (`refactor: improve mobile homepage gate`)
+- Current live/main baseline: `69b0d02` (`refine: rebuild operational layer as output record`)
+- Services boundary polish: `a7d37f7`
+- Cursor operating protocol: `2172b0f`
+- Homepage Trust Spine Pilot: **delivered** through `01b2624` (historical milestone)
 - Proof-assets integration: `b9800ce`
 - Selected-pathway contrast patch: `e682b5b` (historical milestone)
-- Homepage Trust Spine Pilot: **delivered** through `01b2624`
-- Expected ignored local items may include `.codex/` and `tmp/`. `public/photos/hiw-field-note.webp` and `public/photos/services-scope-object.webp` are tracked production assets used by the Services accordion; do not delete them while referenced.
+- Expected ignored local items may include `.codex/` and `tmp/`.
 
 Older docs may still mention `b46a214`, `b3fd918`, or `97997eb` as current. Per repo rules, current git state overrides stale SHA fields; those are historical unless preflight proves otherwise.
 
@@ -258,42 +260,40 @@ Priority:
 Files:
 
 - `app/[locale]/services/page.tsx`
-- `components/OperationalModuleTile.tsx`
-- `components/UsageResponsibilityBridge.tsx`
-- `components/PackageResponsibilityLadder.tsx`
-- `components/WhatIfEventSimulator.tsx`
 - `components/ServiceBoundaryGrid.tsx`
+- `components/PackageResponsibilityLadder.tsx`
+- `components/UsageResponsibilityBridge.tsx`
+- `components/WhatIfEventSimulator.tsx`
 - `components/Estimator.tsx`
 
 Current proof/image slots:
 
 - Hero dossier artifact (`services-dossier-artifact`).
-- Cleaning accordion images: `public/photos/home-pathway-guest-readiness.webp`, `public/images/home/regular-guest-stays/guest-risk-turnover-readiness.webp`, `public/photos/hiw-field-note.webp`, and `public/photos/services-scope-object.webp`.
-- Usage responsibility bridge.
-- Package responsibility ladder.
-- Capability console and schematic module tiles.
-- Event simulator.
-- Boundary grid.
-- Estimator.
+- Package responsibility ladder and usage responsibility bridge.
+- Dark checkpoint estimator shell with step rail and live ledger panel.
+- Services boundary — **Ruled Scope Register** (`ServiceBoundaryGrid`).
+- Operational Layer — four output records: Gotowość · Dostęp · Koordynacja · Decyzja.
+- Execution-only checkpoint — older dark checkpoint form after Operational Layer (Gate 2 unresolved).
 
 Current proof job:
 
-- Explain package jurisdiction, capabilities inside oversight, and estimator fit.
+- Explain package jurisdiction, operational scope, on-site outputs, estimator fit, and execution-only limits.
 
 Risk:
 
-- Strong structure, but still mostly system UI and explanation.
-- High contract sensitivity.
+- High contract sensitivity on estimator, boundary, and execution-only limits.
+- Operational Layer must not drift back into accordion/photo theatre.
 
 Decision:
 
-- Do not start here unless explicitly briefed.
-- The current operational capability photo is accepted and should stay as-is unless separately briefed.
-- Later work may add one "scope ladder / what you actually get" object without changing package names, count, SLA, emergency authority, or estimator logic.
+- **Accepted and locked** through `69b0d02` unless explicitly scoped.
+- Do not touch estimator logic/matrix, package count, SLA, emergency authority, or contact payload.
+- Do not reintroduce CleaningAccordion theatre, autoplay, photos, or compact execution-only strip (Gate 2 rejected).
+- Later work may add evidence objects only with separate Owner brief and without changing protected contracts.
 
 Priority:
 
-- Phase 2.
+- Keep unless separately briefed. Gate 2 execution-only is a separate future task.
 
 ## How It Works
 
@@ -481,8 +481,8 @@ Logo files are excluded. They are identity assets, not proof assets.
 | `public/photos/sentinel-about-local-entry-placeholder.png` | No live reference found | Synthetic shot placeholder - recreate later | Do not promote as proof; use only if it has a real local exterior shot brief |
 | `public/photos/sentinel-report-tablet-placeholder.png` | No live reference found | Risky synthetic shot placeholder | Avoid fake dashboard/report UI; use only if reframed as a recreatable non-SaaS report surface |
 | `public/photos/sentinel-technician-access-placeholder.png` | No live reference found | Synthetic shot placeholder - recreate later | Do not promote as proof; use only if it has a real operator/partial-presence shot brief |
-| `public/photos/services-scope-object.webp` | Services cleaning accordion boundary image | Tracked production asset; synthetic shot-planning placeholder | Keep while referenced by the Services accordion; replace later with real scope/boundary photography if available |
-| `public/photos/hiw-field-note.webp` | Services cleaning accordion documentation image | Tracked production asset; synthetic shot-planning placeholder | Keep while referenced by the Services accordion; replace later with real field-note/report detail if available |
+| `public/photos/services-scope-object.webp` | No live reference found in current Services page | Tracked asset; synthetic shot-planning placeholder | Dormant after Operational Layer rebuild; do not delete without Owner review |
+| `public/photos/hiw-field-note.webp` | No live reference found in current Services page | Tracked asset; synthetic shot-planning placeholder | Dormant after Operational Layer rebuild; do not delete without Owner review |
 | `public/images/home/home-final-cta-handoff-checklist.webp` | No live reference found | Historical atmospheric shot placeholder | Superseded by `public/photos/final-cta-handoff-checklist.webp` |
 | `public/visuals/sentinel-process-report-preview.svg` | No live reference found | Dormant schematic artifact | Possible reference only; not a live proof slot |
 | `public/visuals/sentinel-contact-intake-path.svg` | No live reference found | Dormant schematic artifact | Possible reference only; not a live proof slot |
@@ -537,7 +537,7 @@ Do not:
 1. Replace accepted synthetic proof-layer placeholders with real photography where possible.
 2. How It Works: replace the generic report excerpt with a real or privacy-safe report/field-note artifact.
 3. About: add stronger real operator credential/presence surface if Owner approves.
-4. Services: add or upgrade one "scope ladder / what you actually get" evidence object only if separately briefed.
+4. Services: Gate 2 execution-only checkpoint only if separately briefed; do not alter accepted estimator, boundary register, or operational outputs without scope: add or upgrade one "scope ladder / what you actually get" evidence object only if separately briefed.
 5. Home carousel: recreate synthetic risk shots as real operational details or convert to a fully artifact-led incident system.
 6. Final CTA: replace atmospheric handoff image with real checklist/report-table detail or a drawn artifact.
 

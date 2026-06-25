@@ -43,6 +43,7 @@ Static assets including logo files.
 | `STATUS.md` | Current snapshot |
 | `TASK.md` | Phase and scope |
 | `AGENT-BRIEFING.md` | Agent quick briefing |
+| `CURSOR.md` | Cursor operating protocol |
 | `WORKFLOW.md` | Git/build discipline |
 | `LAUNCH-CHECKLIST.md` | Owner launch checklist |
 | `VISUAL-FREEDOM-SPRINT.md` | Canonical visual system (composition rebuild merged) |

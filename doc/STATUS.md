@@ -9,7 +9,10 @@ Descriptive only. Does not define decisions or intent.
 | Field | Value |
 |-------|-------|
 | Project | Sentinel |
-| Current live/main baseline | `01b2624` (`refactor: improve mobile homepage gate`) |
+| Current live/main baseline | `69b0d02` (`refine: rebuild operational layer as output record`) |
+| Services boundary polish | `a7d37f7` (`refine: render services boundary as ruled scope register`) |
+| Cursor operating protocol | `2172b0f` (`docs: add cursor operating protocol`) |
+| Homepage Trust Spine Pilot | `01b2624` (historical milestone) |
 | Proof-assets integration | `b9800ce` (`feat: integrate proof layer visual assets`) |
 | Major graphic system pass | `38a4849` |
 | Middle-page visual proof pass | `cef326b` |
@@ -18,8 +21,9 @@ Descriptive only. Does not define decisions or intent.
 | Website phase | Pre-live / soft-launch review ready |
 | Visual composition rebuild | **Merged** (`e5fa7bb` baseline; graphic passes through `cef326b`) |
 | Canonical visual mode | **Active** — one art-directed atmosphere; no public theme toggle |
-| Current focus | Page-by-page micro polish, starting with the homepage |
-| Completed Services refinement | Live; protected package/SLA/emergency/estimator/contact/legal contracts preserved |
+| Current focus | Page-by-page micro polish; Services page core sections accepted and locked |
+| Services page accepted state | Estimator shell · Ruled Scope Register boundary · Operational Layer output record · About category-clarity split — through `69b0d02` |
+| Gate 2 (open) | Execution-only exception checkpoint — compact/restyle attempts rejected; old dark checkpoint remains |
 | Proof-layer image status | Synthetic placeholders remain temporary; About now uses an Owner-approved public operator identity photo for Aleksy Gugała, not operational/client-property evidence |
 | Council v2 trust audit | Visual credibility accepted; Trust Spine Pilot delivered on homepage gate |
 | Site-polish phase | Closed (gate, pages, legal readability, contact sequencing) |
@@ -47,6 +51,13 @@ Descriptive only. Does not define decisions or intent.
 - **Proof-assets integration live** — `b9800ce`: selected homepage pathway media, final CTA image, Services capability photo, How It Works visit-record photo, and About local/operator imagery.
 - **Selected-pathway contrast patch live** — `e682b5b` (historical milestone): "Bez nas / Z nami" carousel strengthened across private, guest, and mixed pathway states.
 - **Homepage Trust Spine Pilot delivered** — through `01b2624`: gate carries operator cue (Aleksy Gugała public operator proof), verified €80/mo minimum price cue, estimator/cost-logic link, and mobile scroll affordance (`#usage-situation-gate`, `gate-scroll-cue`, `scroll-mt-28`, mobile-only pathway-selector cue). Diagnostic gate preserved.
+- **Services page polish accepted** — through `69b0d02`:
+  - Estimator: dark checkpoint shell restored; horizontal step rail; live result/ledger panel; patio/outdoor layout readable; translation contract repaired. Lower estimator UI protected.
+  - Services boundary: copy split from About category clarity; visual treatment accepted as **Ruled Scope Register** (`a7d37f7`) — operating file for in-scope work, separate agreement, minimum period/exclusions, local area qualification.
+  - About category clarity: owns identity (`Sentinel jest` / `Sentinel nie jest`); left = operating principles, right = category exclusions; does not duplicate detailed Services scope (`c0c060b`).
+  - Operational Layer: rebuilt as **output record** with four outputs — Gotowość · Dostęp · Koordynacja · Decyzja (`69b0d02`). Shows what local oversight produces on site.
+  - Execution-only checkpoint: deliberately left in older dark checkpoint form after Gate 1; not restyled or compacted.
+- **Cursor operating protocol** — `doc/CURSOR.md` active from `2172b0f`.
 - Latest checked selected-pathway routes: no console errors, hydration mismatch, failed requests, HTTP 4xx/5xx, or 390px overflow.
 - Visual atmosphere is now a strength; next risk is over-polished/synthetic trust leak rather than weak visuals.
 
@@ -56,6 +67,7 @@ Descriptive only. Does not define decisions or intent.
 
 - Repo cleanup baseline after rapid global visual passes.
 - Homepage micro polish (Owner-scoped; gate internals protected — see `TASK.md`).
+- Gate 2: execution-only exception checkpoint — separate scoped task; compact/light-strip restyle attempts rejected.
 - Real-photo replacement plan for accepted synthetic proof-layer placeholders.
 - Contact form production email end-to-end verification (inbox receipt pending Owner confirmation).
 - Final commercial pricing / estimator matrix confirmation.
@@ -67,6 +79,10 @@ Descriptive only. Does not define decisions or intent.
 # Protected vs flexible
 
 **Protected:** see `DECISIONS.md` — service model, packages, SLA meaning, pathways, estimator logic, contact details, legal substance, logo assets, noindex state.
+
+**Services page locked (unless explicitly scoped):** estimator shell and lower UI · estimator logic/matrix/translation keys · Services boundary (Ruled Scope Register) · Operational Layer output record · About category-clarity split · package/SLA/emergency/contact contracts.
+
+**Rejected on Services (do not reintroduce):** dark split boundary panel · central empty spine · approval-gate gadget · rotated labels · CleaningAccordion theatre in Operational Layer · autoplay/photos/action-result micro-lines in Operational Layer · compact execution-only strip (Gate 2 not accepted).
 
 **Flexible:** website palette, composition, imagery, rhythm, proof modules, warmth, motion, generated assets, and page-specific visual passes when Owner-scoped — per `VISUAL-FREEDOM-SPRINT.md`. Broad visual iteration is stopped; next work is page-by-page micro polish starting with the homepage. Build on canonical mode; do not recreate a dual theme system unless Owner explicitly asks. Agents may remove, demote, or replace modules when they create repetition or weaken trust.
 

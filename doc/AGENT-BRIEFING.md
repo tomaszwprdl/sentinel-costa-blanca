@@ -8,8 +8,11 @@ Short briefing for Cursor, Codex, and Cloudie.
 
 - **Product:** Sentinel Costa Blanca — structured local owner representation (Torrevieja + ~50–70 km).
 - **Website:** Pre-live, soft-launch review ready. `noindex,nofollow` active.
-- **Phase:** Launch-era — Trust Spine Pilot delivered; broad visual iteration is stopped; next work is page-by-page micro polish starting with the homepage.
-- **Current live/main baseline:** `01b2624` (`refactor: improve mobile homepage gate`).
+- **Phase:** Launch-era — Trust Spine Pilot delivered; Services page core sections accepted and locked; broad visual iteration stopped; next work is page-by-page micro polish (homepage first).
+- **Current live/main baseline:** `69b0d02` (`refine: rebuild operational layer as output record`).
+- **Services boundary polish:** `a7d37f7` (`refine: render services boundary as ruled scope register`).
+- **Cursor operating protocol:** `2172b0f` (`docs: add cursor operating protocol`); active doc: `doc/CURSOR.md`.
+- **Homepage Trust Spine Pilot (historical):** `01b2624` (`refactor: improve mobile homepage gate`).
 - **Previous proof-assets integration:** `b9800ce` (`feat: integrate proof layer visual assets`).
 - **Selected-pathway contrast (historical):** `e682b5b` (`fix: strengthen selected pathway contrast section`).
 - **Latest QA state:** selected pathway routes checked clean: no console errors, hydration mismatch, failed requests, HTTP 4xx/5xx, or 390px overflow in latest capture pass.
@@ -24,7 +27,9 @@ Canonical mode: dark cinematic hero / authority bands · warm paper body section
 
 Future visual work should **build on canonical mode**, not recreate dual themes. It should be homepage-first / page-by-page, plan-first, and Owner-scoped rather than another global transformation pass.
 
-**Current baseline:** Trust Spine Pilot is delivered on the homepage gate. Operator proof (Aleksy Gugała), verified €80/mo price cue, estimator/cost-logic link, and mobile scroll affordance are live through `01b2624`. The homepage gate stays intentional and protected; do not de-gate by default. During homepage polish, protect gate internals: `#usage-situation-gate` · `gate-scroll-cue` · `scroll-mt-28` · mobile-only cue to the pathway selector.
+**Current baseline:** Trust Spine Pilot is delivered on the homepage gate through `01b2624`. Services page polish is accepted through `69b0d02`: dark checkpoint estimator · Ruled Scope Register boundary · Operational Layer output record (Gotowość · Dostęp · Koordynacja · Decyzja) · About category-clarity split. Execution-only checkpoint remains in older dark form; Gate 2 compact/restyle is unresolved. The homepage gate stays intentional and protected; do not de-gate by default. During homepage polish, protect gate internals: `#usage-situation-gate` · `gate-scroll-cue` · `scroll-mt-28` · mobile-only cue to the pathway selector.
+
+**Cursor agents:** follow `doc/CURSOR.md` — scoped implementation only; preflight · protected areas · validation · no push unless told.
 
 **Proof image policy:** the current proof-layer photos are accepted as temporary synthetic shot-planning placeholders only. They may support placement, crop, atmosphere, and section fit, but must not claim actual Sentinel work, real client property, real reports, real operator identity, or final operational evidence. Replace with real photography before serious public promotion / indexed launch where possible.
 
@@ -79,7 +84,7 @@ Layout: `LAYOUT COMPOSITION.md` (guidance, not blocker)
 |------|----------------|
 | **Owner** | Final authority, approvals, launch, legal, pricing |
 | **Creative Director** | Visual direction and scoped visual briefs |
-| **Cursor** | Scoped implementation in repo |
+| **Cursor** | Scoped implementation in repo — protocol: `doc/CURSOR.md` |
 | **Cloudie** | Deployment, DNS, Netlify, production risk |
 | **Codex** | Deeper refactors, audits, multi-file work |
 
@@ -115,12 +120,14 @@ Details: `WORKFLOW.md`
 
 1. Page-by-page micro polish, starting with the homepage — Owner-scoped briefs only.
 2. Preserve the diagnostic gate and pathway choice; protect gate internals during homepage polish.
-3. Reduce repeated scope/documentation/limits language where it weakens trust; do not soften into concierge, lifestyle, rental-management, or vague reassurance.
-4. Production contact email verification.
-5. Final pricing confirmation.
-6. Legal/entity/GDPR review.
-7. Noindex decision and indexed-launch deploy smoke when approved.
-8. Repo cleanup baseline and readiness audit.
-9. Real-photo replacement for accepted synthetic proof-layer placeholders.
+3. **Gate 2 (open):** execution-only exception checkpoint — separate scoped task; compact/light-strip attempts rejected.
+4. Do not touch accepted Services sections (estimator shell, boundary register, operational outputs) unless explicitly scoped.
+5. Reduce repeated scope/documentation/limits language where it weakens trust; do not soften into concierge, lifestyle, rental-management, or vague reassurance.
+6. Production contact email verification.
+7. Final pricing confirmation.
+8. Legal/entity/GDPR review.
+9. Noindex decision and indexed-launch deploy smoke when approved.
+10. Repo cleanup baseline and readiness audit.
+11. Real-photo replacement for accepted synthetic proof-layer placeholders.
 
 Checklist: `LAUNCH-CHECKLIST.md`
