@@ -9,21 +9,8 @@ import Region from '@/components/layout/Region';
 import Estimator from '@/components/Estimator';
 import PackageResponsibilityLadder from '@/components/PackageResponsibilityLadder';
 import ServiceBoundaryGrid from '@/components/ServiceBoundaryGrid';
-import OperationalModuleTile from '@/components/OperationalModuleTile';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import JourneyNav from '@/components/JourneyNav';
-import CleaningAccordion from '@/components/CleaningAccordion';
-
-type OperationalModule = {
-  visual?: 'readiness' | 'seasonal' | 'access';
-  marker: string;
-  mode: 'compact';
-  label: string;
-  title: string;
-  body: string;
-  items: string[];
-  note?: string;
-};
 
 const NOT_INCLUDED_ITEM_KEYS = [
   'noGuaranteeFixes',
@@ -36,28 +23,9 @@ const NOT_INCLUDED_ITEM_KEYS = [
 
 const EXECUTION_ONLY_AVAILABLE_KEYS = ['keyHolding', 'cleaning', 'oneTimeAccess', 'seasonalPrep'] as const;
 const EXECUTION_ONLY_LIMITATION_KEYS = ['noRegularChecks', 'noCyclicReporting', 'noEmergencySLA', 'noDecisionAuthority'] as const;
-const CLEANING_CAPABILITY_KEYS = ['readiness', 'turnover', 'documentation', 'boundary'] as const;
+const OPERATIONAL_OUTPUT_KEYS = ['readiness', 'access', 'coordination', 'decision'] as const;
 const SKIM_ITEM_KEYS = ['inspections', 'access', 'decisions', 'approval'] as const;
 const ESTIMATOR_INPUT_KEYS = ['package', 'usage', 'property'] as const;
-
-const CLEANING_STORY_IMAGES: Record<(typeof CLEANING_CAPABILITY_KEYS)[number], { src: string; focus: string }> = {
-  readiness: {
-    src: '/photos/home-pathway-guest-readiness.webp',
-    focus: '52% 54%',
-  },
-  turnover: {
-    src: '/images/home/regular-guest-stays/guest-risk-turnover-readiness.webp',
-    focus: '48% 58%',
-  },
-  documentation: {
-    src: '/photos/hiw-field-note.webp',
-    focus: '54% 58%',
-  },
-  boundary: {
-    src: '/photos/services-scope-object.webp',
-    focus: '48% 58%',
-  },
-};
 
 // Service-map node icons, in the order of redesign.siteMap.nodes:
 // activity · access (key) · readiness (check) · documentation · agreed scope.
@@ -92,25 +60,6 @@ export default async function ServicesPage({
   const headlineParts = t.raw('redesign.hero.headlineParts') as string[];
   const siteMapNodes = t.raw('redesign.siteMap.nodes') as string[];
   const qualificationSteps = t.raw('redesign.executionStrip.gateSteps') as string[];
-  const cleaningItems = CLEANING_CAPABILITY_KEYS.map((key, index) => ({
-    id: key,
-    marker: String(index + 1).padStart(2, '0'),
-    title: t(`redesign.modules.cleaning.items.${key}.title`),
-    body: t(`redesign.modules.cleaning.items.${key}.body`),
-    summaryLines: [
-      {
-        label: t(`redesign.modules.cleaning.items.${key}.summary.primary.label`),
-        text: t(`redesign.modules.cleaning.items.${key}.summary.primary.text`),
-      },
-      {
-        label: t(`redesign.modules.cleaning.items.${key}.summary.secondary.label`),
-        text: t(`redesign.modules.cleaning.items.${key}.summary.secondary.text`),
-      },
-    ],
-    imageSrc: CLEANING_STORY_IMAGES[key].src,
-    imageAlt: t(`redesign.modules.cleaning.items.${key}.imageAlt`),
-    focus: CLEANING_STORY_IMAGES[key].focus,
-  }));
   const journeyItems = [
     { id: 'what-you-get', label: t('redesign.journey.overview') },
     { id: 'responsibility', label: t('redesign.journey.responsibility') },
@@ -118,35 +67,6 @@ export default async function ServicesPage({
     { id: 'scope', label: t('redesign.journey.scope') },
     { id: 'operational-modules', label: t('redesign.journey.modules') },
   ];
-
-  const operationalModules = [
-    {
-      visual: 'access',
-      marker: '01',
-      mode: 'compact',
-      label: t('redesign.modules.useWhen'),
-      title: t('addons.transfers.title'),
-      body: t('redesign.modules.moduleBodies.access'),
-      items: [
-        t('executionOnly.availableItems.keyHolding'),
-        t('executionOnly.availableItems.oneTimeAccess'),
-        t('addons.transfers.provider'),
-      ],
-    },
-    {
-      visual: 'seasonal',
-      marker: '02',
-      mode: 'compact',
-      label: t('redesign.modules.useWhen'),
-      title: t('addons.seasonal.title'),
-      body: t('redesign.modules.moduleBodies.seasonal'),
-      items: [
-        t('addons.seasonal.items.openingClosing'),
-        t('addons.seasonal.items.preparation'),
-        t('addons.seasonal.items.extraVisit'),
-      ],
-    },
-  ] satisfies [OperationalModule, OperationalModule];
 
   return (
     <>
@@ -349,41 +269,27 @@ export default async function ServicesPage({
 
         <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--modules" id="operational-modules">
           <div className="services-modules-band services-capability-theatre">
-            <div className="mb-6 max-w-[760px]">
-              <p className="section-label">{t('redesign.modules.eyebrow')}</p>
-              <h2 className="h2-system mt-3">{t('redesign.modules.title')}</h2>
-              <p className="mt-3 text-body">{t('redesign.modules.intro')}</p>
-            </div>
             <div className="services-capability-console">
-              <div className="services-capability-record">
-                <div className="services-capability-record__main">
-                  <CleaningAccordion
-                    eyebrow={t('redesign.modules.cleaning.eyebrow')}
-                    title={t('redesign.modules.cleaning.title')}
-                    intro={t('redesign.modules.cleaning.intro')}
-                    items={cleaningItems}
-                  />
+              <div className="services-operational-record">
+                <div className="services-operational-record__header">
+                  <p className="section-label">{t('redesign.modules.eyebrow')}</p>
+                  <h2 className="h2-system mt-3">{t('redesign.modules.title')}</h2>
+                  <p className="services-operational-record__intro mt-3">{t('redesign.modules.intro')}</p>
                 </div>
-
-                <div className="services-capability-record__support">
-                  <div className="services-module-stack__header">
-                    <span>{t('redesign.modules.stackLabel')}</span>
-                    <strong>{t('redesign.modules.stackTitle')}</strong>
-                  </div>
-                  <div className="services-module-system">
-                    {operationalModules.map((module) => (
-                      <OperationalModuleTile key={module.title} {...module} />
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="services-capability-footnotes">
-                <div className="services-module-guardrail">
-                  <span>{t('redesign.modules.guardrailLabel')}</span>
-                  <p>{t('redesign.modules.guardrailBody')}</p>
-                </div>
-                <p className="services-partner-note">{t('redesign.modules.partnerNote')}</p>
+                <ol className="services-operational-outputs">
+                  {OPERATIONAL_OUTPUT_KEYS.map((key, index) => (
+                    <li key={key} className="services-operational-output">
+                      <span className="services-operational-output__marker" aria-hidden="true">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <div className="services-operational-output__text">
+                        <h3>{t(`redesign.modules.outputs.${key}.title`)}</h3>
+                        <p>{t(`redesign.modules.outputs.${key}.body`)}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+                <p className="services-operational-guardrail">{t('redesign.modules.guardrailBody')}</p>
               </div>
 
               <div className="services-checkpoint" id="execution-only">

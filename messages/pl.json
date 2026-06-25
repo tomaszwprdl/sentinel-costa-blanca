@@ -868,7 +868,13 @@
       "modules": {
         "eyebrow": "Warstwa operacyjna",
         "title": "Właściciel widzi gotowość, dostęp i decyzje w jednym zapisie.",
-        "intro": "Sprzątanie gotowości, dostęp, sezonowe przygotowanie i partnerzy są widoczne jako wynik nadzoru: co jest gotowe, kto wszedł i co wymaga decyzji.",
+        "intro": "Nadzór zamienia praktyczne działania na zapis: co jest gotowe, kto wszedł, co zostało skoordynowane i co wymaga decyzji właściciela.",
+        "outputs": {
+          "readiness": { "title": "Gotowość", "body": "Stan lokalu przed przyjazdem lub po pobycie gości jest sprawdzany i zapisywany w ustalonym zakresie." },
+          "access": { "title": "Dostęp", "body": "Klucze, wejścia i obecność osób trzecich są koordynowane według uzgodnionych zasad." },
+          "coordination": { "title": "Koordynacja", "body": "Sprzątanie, technicy, przygotowanie sezonowe i działania partnerów są prowadzone tylko wtedy, gdy mieszczą się w zakresie." },
+          "decision": { "title": "Decyzja", "body": "Sprawy poza zakresem, limitem lub uprawnieniem wracają do właściciela przed działaniem." }
+        },
         "capabilityImageAlt": "Klucze, notatnik i ściereczka przygotowane do zadania dostępu lub gotowości",
         "cleaning": {
           "eyebrow": "Sprzątanie i gotowość",
@@ -885,7 +891,7 @@
         "stackLabel": "Kontrolowane zdolności",
         "stackTitle": "Dostęp i gotowość sezonowa działają w ramach pakietu.",
         "guardrailLabel": "Zasada",
-        "guardrailBody": "Zdolność operacyjna odpowiada na konkretną sytuację; nie zmienia SLA, limitów ani wyłączeń pakietu.",
+        "guardrailBody": "Zdolności operacyjne działają w ramach pakietu. Nie zmieniają SLA, limitów ani wyłączeń.",
         "moduleBodies": {
           "rental": "Sprzątanie przygotowawcze, sprzątanie między pobytami i wejścia gości prowadzone jako udokumentowane wykonanie w uzgodnionym zakresie nadzoru.",
           "access": "Klucze, jednorazowe wejścia i logistyka partnerska — kontrolowana koordynacja w nadzorze.",

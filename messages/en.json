@@ -868,7 +868,13 @@
       "modules": {
         "eyebrow": "Operational layer",
         "title": "The owner sees readiness, access, and decisions in one record.",
-        "intro": "Readiness cleaning, access, seasonal preparation, and partners appear as oversight outcomes: what is ready, who entered, and what needs a decision.",
+        "intro": "Oversight turns practical work into a record: what is ready, who entered, what was coordinated, and what requires the owner's decision.",
+        "outputs": {
+          "readiness": { "title": "Readiness", "body": "The condition of the property before arrival or after a guest stay is checked and recorded within the agreed scope." },
+          "access": { "title": "Access", "body": "Keys, entries, and third-party presence are coordinated under the agreed access rules." },
+          "coordination": { "title": "Coordination", "body": "Cleaning, technicians, seasonal preparation, and partner actions are carried out only where they fit the agreed scope." },
+          "decision": { "title": "Decision", "body": "Anything beyond scope, limit, or authority returns to the owner before action." }
+        },
         "capabilityImageAlt": "Keys, notebook, and cleaning cloth prepared for an access or readiness task",
         "cleaning": {
           "eyebrow": "Cleaning and readiness",
@@ -885,7 +891,7 @@
         "stackLabel": "Controlled capabilities",
         "stackTitle": "Access and seasonal readiness operate within the package.",
         "guardrailLabel": "Rule",
-        "guardrailBody": "An operational capability answers a specific situation; it does not change package SLA, limits, or exclusions.",
+        "guardrailBody": "Operational capabilities work within the package. They do not change the SLA, limits, or exclusions.",
         "moduleBodies": {
           "rental": "Readiness cleaning, turnover cleaning support, and guest entry handled as documented execution inside the agreed oversight scope.",
           "access": "Keys, one-off entries, and partner logistics — controlled coordination inside oversight.",
