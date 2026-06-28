@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
 import Section from '@/components/layout/Section';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import JourneyNav from '@/components/JourneyNav';
+import ProcedureJourney from '@/components/how-it-works/ProcedureJourney';
 import ReportDecisionLimits from '@/components/how-it-works/ReportDecisionLimits';
 
 type RecordRow = {
@@ -15,7 +15,6 @@ type RecordRow = {
 
 type ProcedureStep = {
   key: string;
-  marker: string;
   title: string;
   body: string;
   artifactTitle: string;
@@ -84,7 +83,6 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
                 <ol className="hiw-procedure-mini-rail" aria-label={t('redesign.procedure.title')}>
                   {procedureSteps.slice(1, 6).map((step) => (
                     <li key={step.key}>
-                      <span>{step.marker}</span>
                       <strong>{step.title}</strong>
                     </li>
                   ))}
@@ -98,61 +96,16 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
         <JourneyNav items={journeyItems} ariaLabel={t('redesign.hero.headline')} className="hiw-journey-nav" />
 
         <Section tone="light" id="procedure-corridor" className="section-primitive--compact hiw-interface-section hiw-procedure-section">
-          <div className="hiw-procedure-shell">
-            <div className="hiw-procedure-shell__intro">
-              <p className="section-label">{t('redesign.procedure.eyebrow')}</p>
-              <h2 className="h2-system mt-3">{t('redesign.procedure.title')}</h2>
-              <p className="mt-3 max-w-[62ch] text-body">{t('redesign.procedure.intro')}</p>
-            </div>
-
-            <div className="hiw-procedure-shell__grid">
-              <ol className="hiw-procedure-corridor">
-                {procedureSteps.map((step, index) => (
-                  <li key={step.key} className="hiw-procedure-step" data-step-key={step.key}>
-                    <div className="hiw-procedure-step__marker" aria-hidden="true">
-                      <span>{step.marker}</span>
-                    </div>
-                    <div className="hiw-procedure-step__copy">
-                      <p>{String(index + 1).padStart(2, '0')}</p>
-                      <h3>{step.title}</h3>
-                      <span>{step.body}</span>
-                    </div>
-                    <aside className="hiw-procedure-step__artifact" aria-label={step.artifactTitle}>
-                      <strong>{step.artifactTitle}</strong>
-                      <ul>
-                        {step.artifactItems.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
-                    </aside>
-                  </li>
-                ))}
-              </ol>
-
-              <aside className="hiw-procedure-rulebook" aria-label={t('redesign.procedure.rulesTitle')}>
-                <figure className="hiw-proof-photo hiw-proof-photo--visit-record">
-                  <Image
-                    src="/photos/hiw-visit-record.webp"
-                    alt={t('redesign.procedure.visitRecordImageAlt')}
-                    fill
-                    sizes="(min-width: 768px) 32vw, 100vw"
-                    className="hiw-proof-photo__image"
-                    loading="eager"
-                  />
-                </figure>
-                <p className="section-label">{t('redesign.procedure.rulesEyebrow')}</p>
-                <h3>{t('redesign.procedure.rulesTitle')}</h3>
-                <div>
-                  {procedureRules.map((rule) => (
-                    <dl key={rule.label} className="hiw-procedure-rulebook__row">
-                      <dt>{rule.label}</dt>
-                      <dd>{rule.value}</dd>
-                    </dl>
-                  ))}
-                </div>
-              </aside>
-            </div>
-          </div>
+          <ProcedureJourney
+            eyebrow={t('redesign.procedure.eyebrow')}
+            title={t('redesign.procedure.title')}
+            intro={t('redesign.procedure.intro')}
+            ruleEyebrow={t('redesign.procedure.rulesEyebrow')}
+            ruleTitle={t('redesign.procedure.rulesTitle')}
+            rules={procedureRules}
+            steps={procedureSteps}
+            visitRecordImageAlt={t('redesign.procedure.visitRecordImageAlt')}
+          />
         </Section>
 
         <Section tone="alt" id="report-decision" className="section-primitive--compact hiw-interface-section hiw-evidence-section">

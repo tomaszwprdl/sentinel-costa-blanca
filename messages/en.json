@@ -1710,12 +1710,12 @@
         ]
       },
       "procedure": {
-        "eyebrow": "Procedure corridor",
-        "title": "Access, visit, report, decision, and action move through one controlled sequence.",
-        "intro": "The process is built so the owner can see what is established before action, what happens on site, what is recorded, and where a decision returns to the owner.",
+        "eyebrow": "Operational path",
+        "title": "From access to action — one controlled path.",
+        "intro": "Each stage follows the previous one: scope, access, visit, record, decision, and execution. The journey shows where Sentinel acts within scope and where the decision returns to the owner.",
         "visitRecordImageAlt": "Operational placeholder photo of a visit record setup outside an apartment door",
         "rulesEyebrow": "Operating rule",
-        "rulesTitle": "The sequence protects the scope.",
+        "rulesTitle": "No action happens without a record.",
         "rules": [
           { "label": "Access", "value": "No entry happens without an agreed reason, access method, and record." },
           { "label": "Visit", "value": "The visit follows the package rhythm or an agreed event." },
@@ -1724,48 +1724,48 @@
         "steps": [
           {
             "key": "setup",
-            "marker": "SET",
-            "title": "Scope is established before action.",
+            "marker": "01",
+            "title": "Scope defined",
             "body": "Property data, usage pattern, package, contact people, and communication rules are confirmed before Sentinel starts acting.",
             "artifactTitle": "Setup note",
             "artifactItems": ["Property fit", "Owner contact", "Package boundary"]
           },
           {
             "key": "access",
-            "marker": "KEY",
-            "title": "Access is controlled.",
+            "marker": "02",
+            "title": "Controlled access",
             "body": "Keys, entry method, third-party access, and entry reasons are handled as part of the agreed scope.",
             "artifactTitle": "Access note",
             "artifactItems": ["Key custody", "Entry reason", "After-entry confirmation"]
           },
           {
             "key": "visit",
-            "marker": "VIS",
-            "title": "The visit follows a checklist.",
+            "marker": "03",
+            "title": "On-site visit",
             "body": "Sentinel checks visible condition, access points, moisture or water signals, interior state, and agreed operational points.",
             "artifactTitle": "Visit checklist",
             "artifactItems": ["Access and security", "Water / moisture", "Interior condition"]
           },
           {
             "key": "report",
-            "marker": "REP",
-            "title": "Observations become a report.",
+            "marker": "04",
+            "title": "Report and record",
             "body": "Photos, notes, timing, condition, and next-step context are gathered into one owner-facing record.",
             "artifactTitle": "Report excerpt",
             "artifactItems": ["Summary", "Photo references", "Next action"]
           },
           {
             "key": "decision",
-            "marker": "DEC",
-            "title": "Decision enters at the threshold.",
+            "marker": "05",
+            "title": "Decision threshold",
             "body": "If the issue exceeds package scope, authority limit, or prior agreement, the decision returns to the owner.",
             "artifactTitle": "Threshold record",
             "artifactItems": ["Within limit", "Owner approval", "Outside scope"]
           },
           {
             "key": "action",
-            "marker": "LOG",
-            "title": "Action is logged and continuity is kept.",
+            "marker": "06",
+            "title": "Action closed",
             "body": "Closed items, pending approvals, access events, and rhythm changes remain in the operating record.",
             "artifactTitle": "Action log",
             "artifactItems": ["Closed", "Pending", "Next rhythm"]

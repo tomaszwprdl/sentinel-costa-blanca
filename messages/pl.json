@@ -1710,12 +1710,12 @@
         ]
       },
       "procedure": {
-        "eyebrow": "Korytarz procedury",
-        "title": "Dostęp, wizyta, raport, decyzja i działanie przechodzą przez jedną kontrolowaną sekwencję.",
-        "intro": "Proces pokazuje właścicielowi, co jest ustalone przed działaniem, co dzieje się na miejscu, co zostaje zapisane i gdzie decyzja wraca do właściciela.",
+        "eyebrow": "Droga operacyjna",
+        "title": "Od wejścia do działania — jedna kontrolowana droga.",
+        "intro": "Każdy etap wynika z poprzedniego: najpierw zakres, potem dostęp, wizyta, zapis, decyzja i wykonanie. Scroll pokazuje, gdzie Sentinel działa samodzielnie, a gdzie decyzja wraca do właściciela.",
         "visitRecordImageAlt": "Operacyjne zdjęcie zastępcze przygotowania zapisu wizyty przy drzwiach mieszkania",
         "rulesEyebrow": "Zasada operacyjna",
-        "rulesTitle": "Sekwencja chroni zakres.",
+        "rulesTitle": "Nie ma działania bez zapisu.",
         "rules": [
           { "label": "Dostęp", "value": "Nie ma wejścia bez uzgodnionego powodu, metody dostępu i zapisu." },
           { "label": "Wizyta", "value": "Wizyta wynika z rytmu pakietu albo uzgodnionego zdarzenia." },
@@ -1724,48 +1724,48 @@
         "steps": [
           {
             "key": "setup",
-            "marker": "UST",
-            "title": "Zakres jest ustalony przed działaniem.",
+            "marker": "01",
+            "title": "Ustalenie zakresu",
             "body": "Dane nieruchomości, sposób używania, pakiet, osoby kontaktowe i zasady komunikacji są potwierdzone zanim Sentinel zacznie działać.",
             "artifactTitle": "Notatka startowa",
             "artifactItems": ["Dopasowanie lokalu", "Kontakt właściciela", "Granica pakietu"]
           },
           {
             "key": "access",
-            "marker": "KL",
-            "title": "Dostęp jest kontrolowany.",
+            "marker": "02",
+            "title": "Kontrolowany dostęp",
             "body": "Klucze, metoda wejścia, dostęp osób trzecich i powody wejścia są prowadzone jako część uzgodnionego zakresu.",
             "artifactTitle": "Notatka dostępu",
             "artifactItems": ["Przechowanie kluczy", "Powód wejścia", "Potwierdzenie po wejściu"]
           },
           {
             "key": "visit",
-            "marker": "WIZ",
-            "title": "Wizyta idzie według listy.",
+            "marker": "03",
+            "title": "Wizyta na miejscu",
             "body": "Sentinel sprawdza widoczny stan, punkty dostępu, sygnały wilgoci lub wody, stan wnętrza i uzgodnione punkty operacyjne.",
             "artifactTitle": "Lista wizyty",
             "artifactItems": ["Dostęp i zabezpieczenia", "Woda / wilgoć", "Stan wnętrza"]
           },
           {
             "key": "report",
-            "marker": "RAP",
-            "title": "Obserwacje stają się raportem.",
+            "marker": "04",
+            "title": "Raport i zapis",
             "body": "Zdjęcia, notatki, czas, stan i kontekst następnego kroku trafiają do jednego zapisu dla właściciela.",
             "artifactTitle": "Fragment raportu",
             "artifactItems": ["Podsumowanie", "Referencje zdjęć", "Następne działanie"]
           },
           {
             "key": "decision",
-            "marker": "DEC",
-            "title": "Decyzja wchodzi na progu.",
+            "marker": "05",
+            "title": "Próg decyzji",
             "body": "Jeśli sprawa przekracza zakres pakietu, limit uprawnień albo wcześniejsze ustalenie, decyzja wraca do właściciela.",
             "artifactTitle": "Zapis progu",
             "artifactItems": ["W limicie", "Zgoda właściciela", "Poza zakresem"]
           },
           {
             "key": "action",
-            "marker": "LOG",
-            "title": "Działanie zostaje zapisane, a ciągłość utrzymana.",
+            "marker": "06",
+            "title": "Zamknięcie działania",
             "body": "Zamknięte elementy, oczekujące zgody, zdarzenia dostępu i zmiany rytmu zostają w zapisie operacyjnym.",
             "artifactTitle": "Dziennik działania",
             "artifactItems": ["Zamknięte", "Oczekujące", "Następny rytm"]
