@@ -20631,11 +20631,11 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 
 .hiw-procedure-journey__route-map {
   position: absolute;
-  top: 8%;
+  top: -8%;
   left: 0;
   z-index: 0;
   width: 100%;
-  height: 94%;
+  height: 82%;
   overflow: visible;
 }
 
@@ -20847,7 +20847,7 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   --stage-scale: 1;
   --stage-layer: 1;
   position: absolute;
-  top: 58%;
+  top: 67%;
   left: 56%;
   z-index: var(--stage-layer);
   width: min(41.5rem, 41vw);
@@ -21339,7 +21339,7 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   .hiw-procedure-journey__stage,
   .hiw-procedure-journey__stage[data-active="true"] {
     position: absolute;
-    top: 58%;
+    top: 66%;
     left: 57%;
     width: min(32rem, 48vw);
     opacity: var(--stage-opacity);
