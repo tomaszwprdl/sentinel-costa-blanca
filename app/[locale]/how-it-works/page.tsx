@@ -37,6 +37,8 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
   const procedureSteps = t.raw('redesign.procedure.steps') as ProcedureStep[];
   const procedureRules = t.raw('redesign.procedure.rules') as RecordRow[];
   const evidencePanels = t.raw('redesign.evidence.panels') as EvidencePanel[];
+  const reportStatusChips = t.raw('redesign.evidence.reportStatusChips') as string[];
+  const reportNextAction = t.raw('redesign.evidence.nextAction') as RecordRow;
   const journeyItems = [
     { id: 'process-start', label: t('redesign.hero.eyebrow') },
     { id: 'procedure-corridor', label: t('redesign.procedure.eyebrow') },
@@ -118,12 +120,21 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
                   <strong>{evidencePanels[0]?.title}</strong>
                 </div>
                 <div className="hiw-report-excerpt__rows">
-                  {evidencePanels[0]?.rows.map((row) => (
+                  {evidencePanels[0]?.rows.map((row, index) => (
                     <div key={row.label} className="hiw-report-excerpt__row">
-                      <span>{row.label}</span>
+                      <div className="hiw-report-excerpt__row-heading">
+                        <span>{row.label}</span>
+                        {reportStatusChips[index] ? <em>{reportStatusChips[index]}</em> : null}
+                      </div>
                       <p>{row.value}</p>
                     </div>
                   ))}
+                  <div className="hiw-report-excerpt__row hiw-report-excerpt__row--next">
+                    <div className="hiw-report-excerpt__row-heading">
+                      <span>{reportNextAction.label}</span>
+                    </div>
+                    <p>{reportNextAction.value}</p>
+                  </div>
                 </div>
               </section>
 
@@ -140,8 +151,11 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
                     </dl>
                   ))}
                 </div>
-                <ReportDecisionLimits />
               </section>
+            </div>
+
+            <div className="hiw-evidence-limits-strip">
+              <ReportDecisionLimits />
             </div>
           </div>
         </Section>

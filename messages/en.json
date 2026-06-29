@@ -1780,6 +1780,11 @@
         "intro": "How It Works is not a promise of instant fixing. It is a controlled chain from on-site observation to documented responsibility.",
         "reportLabel": "Evidence panel",
         "thresholdLabel": "Decision threshold",
+        "reportStatusChips": ["closed", "recorded", "decision"],
+        "nextAction": {
+          "label": "Next action",
+          "value": "The owner sees what is closed, what is pending, and what moves to the decision threshold."
+        },
         "panels": [
           {
             "title": "Sample visit record",

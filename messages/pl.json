@@ -1780,6 +1780,11 @@
         "intro": "Jak to działa nie jest obietnicą natychmiastowej naprawy. To kontrolowany łańcuch od obserwacji na miejscu do udokumentowanej odpowiedzialności.",
         "reportLabel": "Panel dowodu",
         "thresholdLabel": "Próg decyzji",
+        "reportStatusChips": ["zamknięte", "zapisane", "decyzja"],
+        "nextAction": {
+          "label": "Następny krok",
+          "value": "Właściciel widzi, co jest zamknięte, co oczekuje i co przechodzi do progu decyzji."
+        },
         "panels": [
           {
             "title": "Przykładowy zapis wizyty",
