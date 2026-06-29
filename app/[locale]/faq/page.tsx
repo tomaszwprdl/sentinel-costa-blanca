@@ -23,7 +23,8 @@ type HeroFact = {
 type QuickAnswerSource = {
   title: string;
   answer: string;
-  href: string;
+  targetSectionId: string;
+  targetQuestionId: string;
 };
 
 type AssumptionItem = {
@@ -36,13 +37,15 @@ export default function FAQPage() {
   const t = useTranslations('faq');
   const tCommon = useTranslations('common');
   const [searchQuery, setSearchQuery] = useState('');
+  const [activeSectionId, setActiveSectionId] = useState('service-model');
+  const [openAnswerId, setOpenAnswerId] = useState('q1');
 
   const facts = t.raw('redesign.hero.facts') as HeroFact[];
   const journeyItems = [
-    { id: 'faq-start', label: t('redesign.hero.eyebrow') },
-    { id: 'faq-quick', label: t('redesign.quick.eyebrow') },
-    { id: 'faq-details', label: t('redesign.details.eyebrow') },
-    { id: 'faq-decision', label: t('redesign.decision.eyebrow') },
+    { id: 'faq-start', label: t('redesign.journey.start') },
+    { id: 'faq-quick', label: t('redesign.journey.common') },
+    { id: 'faq-details', label: t('redesign.journey.all') },
+    { id: 'faq-decision', label: t('redesign.journey.decide') },
   ];
   const quickAnswers = (t.raw('redesign.quick.items') as QuickAnswerSource[]).map((item) => ({
     ...item,
@@ -145,7 +148,7 @@ export default function FAQPage() {
     },
   ], [t]);
 
-  const filteredSections = useMemo(() => {
+  const filteredSections = useMemo<FAQGroup[]>(() => {
     const query = searchQuery.trim().toLowerCase();
 
     if (!query) {
@@ -159,8 +162,53 @@ export default function FAQPage() {
         : section.faqs.filter((faq) => `${faq.question} ${faq.answer}`.toLowerCase().includes(query));
 
       return { ...section, faqs };
-    }).filter((section) => section.faqs.length > 0);
+    });
   }, [faqSections, searchQuery]);
+
+  const scrollToFAQDetails = () => {
+    const target = document.getElementById('faq-details');
+
+    if (!target) {
+      return;
+    }
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
+  };
+
+  const handleSectionChange = (sectionId: string, answerId?: string) => {
+    setActiveSectionId(sectionId);
+    setOpenAnswerId(answerId ?? faqSections.find((section) => section.id === sectionId)?.faqs[0]?.id ?? '');
+  };
+
+  const handleQuickAnswerSelect = (item: QuickAnswerSource) => {
+    setSearchQuery('');
+    setActiveSectionId(item.targetSectionId);
+    setOpenAnswerId(item.targetQuestionId);
+    window.requestAnimationFrame(scrollToFAQDetails);
+  };
+
+  const handleSearchChange = (value: string) => {
+    setSearchQuery(value);
+
+    const query = value.trim().toLowerCase();
+
+    if (!query) {
+      return;
+    }
+
+    const firstMatch = faqSections.find((section) => {
+      const sectionMatches = `${section.title} ${section.intro}`.toLowerCase().includes(query);
+      const answerMatches = section.faqs.some((faq) => `${faq.question} ${faq.answer}`.toLowerCase().includes(query));
+
+      return sectionMatches || answerMatches;
+    });
+
+    if (firstMatch) {
+      setActiveSectionId(firstMatch.id);
+      setOpenAnswerId(firstMatch.faqs[0]?.id ?? '');
+    }
+  };
 
   return (
     <>
@@ -177,9 +225,6 @@ export default function FAQPage() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link href={`/${locale}/contact`} className="btn-primary">
                   {t('redesign.hero.primaryCta')}
-                </Link>
-                <Link href={`/${locale}/services`} className="btn-secondary btn-secondary-on-dark faq-hero__secondary-cta">
-                  {t('redesign.hero.secondaryCta')}
                 </Link>
               </div>
               <div className="hero-fact-grid">
@@ -206,6 +251,7 @@ export default function FAQPage() {
             title={t('redesign.quick.title')}
             intro={t('redesign.quick.intro')}
             items={quickAnswers}
+            onSelect={handleQuickAnswerSelect}
           />
         </Section>
 
@@ -215,6 +261,9 @@ export default function FAQPage() {
             title={t('redesign.details.title')}
             intro={t('redesign.details.intro')}
             sections={filteredSections}
+            activeSectionId={activeSectionId}
+            activeAnswerId={openAnswerId}
+            onSectionChange={handleSectionChange}
             noResults={t('noResults')}
             sectionsLabel={t('sectionsLabel')}
             searchControl={(
@@ -228,7 +277,7 @@ export default function FAQPage() {
                   aria-label={t('search.placeholder')}
                   placeholder={t('search.placeholder')}
                   value={searchQuery}
-                  onChange={(event) => setSearchQuery(event.target.value)}
+                  onChange={(event) => handleSearchChange(event.target.value)}
                   className="faq-search-input form-control"
                 />
               </div>
@@ -241,6 +290,8 @@ export default function FAQPage() {
             eyebrow={t('redesign.assumptions.eyebrow')}
             title={t('redesign.assumptions.title')}
             intro={t('redesign.assumptions.intro')}
+            assumptionLabel={t('redesign.assumptions.assumptionLabel')}
+            boundaryLabel={t('redesign.assumptions.boundaryLabel')}
             items={assumptionItems}
           />
         </Section>
@@ -252,28 +303,6 @@ export default function FAQPage() {
             intro={t('redesign.decision.intro')}
             items={decisionItems}
           />
-        </Section>
-
-        <Section tone="light" className="faq-section faq-closing-section !pt-10 !pb-0">
-          <div className="page-final-cta reveal-rise overflow-hidden">
-            <div className="grid gap-0 lg:grid-cols-[minmax(0,0.68fr)_minmax(18rem,0.32fr)]">
-              <div className="page-final-cta__copy p-5 md:p-8">
-                <p className="section-label">{t('redesign.finalCta.eyebrow')}</p>
-                <h2 className="h2-system mt-3">{t('redesign.finalCta.title')}</h2>
-                <p className="mt-4 max-w-[62ch] text-lg leading-relaxed text-body">{t('redesign.finalCta.intro')}</p>
-              </div>
-              <div className="page-final-cta__panel p-5 md:p-8">
-                <div className="flex flex-col gap-3">
-                  <Link href={`/${locale}/contact`} className="btn-primary btn-primary-inverse">
-                    {tCommon('nav.contact')}
-                  </Link>
-                  <Link href={`/${locale}/services`} className="btn-secondary btn-secondary-on-dark">
-                    {tCommon('nav.services')}
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
         </Section>
       </main>
       <MobileStickyCTA

@@ -1,9 +1,8 @@
-import Link from 'next/link';
-
 interface QuickAnswer {
   title: string;
   answer: string;
-  href: string;
+  targetSectionId: string;
+  targetQuestionId: string;
   linkLabel: string;
 }
 
@@ -12,6 +11,7 @@ interface FAQQuickAnswerCardsProps {
   title: string;
   intro: string;
   items: QuickAnswer[];
+  onSelect: (item: QuickAnswer) => void;
 }
 
 export default function FAQQuickAnswerCards({
@@ -19,6 +19,7 @@ export default function FAQQuickAnswerCards({
   title,
   intro,
   items,
+  onSelect,
 }: FAQQuickAnswerCardsProps) {
   return (
     <div>
@@ -35,9 +36,14 @@ export default function FAQQuickAnswerCards({
             </p>
             <h3 className="faq-quick-rail__title">{item.title}</h3>
             <p className="faq-quick-rail__answer">{item.answer}</p>
-            <Link href={item.href} className="faq-quick-rail__link link-system">
+            <button
+              type="button"
+              className="faq-quick-rail__link link-system"
+              aria-controls="faq-details"
+              onClick={() => onSelect(item)}
+            >
               {item.linkLabel}
-            </Link>
+            </button>
           </article>
         ))}
       </div>

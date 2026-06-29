@@ -2569,18 +2569,22 @@
         { "label": "Limity", "value": "awarie i uprawnienia" }
       ]
     },
+    "journey": {
+      "start": "Start",
+      "common": "Częste wątpliwości",
+      "all": "Wszystkie odpowiedzi",
+      "decide": "Decyzja"
+    },
     "quick": {
       "eyebrow": "Zacznij tutaj",
       "title": "Zacznij od pytania, które prawdopodobnie masz.",
-      "intro": "Te karty obejmują pytania, które najczęściej decydują o dopasowaniu modelu.",
-      "linkLabel": "Przejdź do szczegółów",
+      "intro": "Te karty ustawiają właściwą kategorię i otwierają odpowiedź w głównym panelu FAQ.",
+      "linkLabel": "Otwórz w panelu FAQ",
       "items": [
-        { "title": "Czy Sentinel pomoże, jeśli nieruchomość jest poza obszarem?", "answer": "Nie. Nieruchomości poza Torrevieja + 50-70 km są odrzucane zamiast włączane w słabą obsługę.", "href": "#communication" },
-        { "title": "Czy mogę poprosić o jednorazową pomoc?", "answer": "Nie. Sentinel działa w miesięcznej strukturze pakietowej, a nie przez nieformalne jednorazowe zadania.", "href": "#service-model" },
-        { "title": "Czy to jest zarządzanie nieruchomością?", "answer": "Nie. Sentinel zapewnia lokalny nadzór i reprezentację właściciela, nie operacje agencji wynajmu.", "href": "#service-model" },
-        { "title": "Co dzieje się w sytuacji awaryjnej?", "answer": "Działanie awaryjne wynika z zasad pakietu, limitów decyzji, kontaktu z właścicielem i dokumentacji.", "href": "#emergencies" },
-        { "title": "Czy Sentinel może zarządzać gośćmi albo sprzątaniem?", "answer": "Sprzątanie, dostęp i wsparcie związane z gośćmi mogą istnieć tylko w uzgodnionym zakresie nadzoru albo module.", "href": "#practical" },
-        { "title": "Co otrzymuję po wizycie?", "answer": "Użyteczny zapis: raport, notatki, zdjęcia albo potwierdzenie zgodnie z pakietem i zdarzeniem.", "href": "#operations" }
+        { "title": "Czy to jest zarządzanie nieruchomością?", "answer": "Otwiera odpowiedź o granicy modelu i roli Sentinel.", "targetSectionId": "service-model", "targetQuestionId": "q1" },
+        { "title": "Czy mogę poprosić o jednorazową pomoc?", "answer": "Otwiera odpowiedź o pojedynczych wizytach i dlaczego pakiet jest warunkiem działania.", "targetSectionId": "service-model", "targetQuestionId": "q2" },
+        { "title": "Co dzieje się w sytuacji awaryjnej?", "answer": "Otwiera odpowiedź o trybie awaryjnym, kontakcie z właścicielem i limitach decyzji.", "targetSectionId": "emergencies", "targetQuestionId": "q9" },
+        { "title": "Czy Sentinel może zarządzać gośćmi albo sprzątaniem?", "answer": "Otwiera odpowiedź o gościach, sprzątaniu i tym, gdzie kończy się nadzór.", "targetSectionId": "practical", "targetQuestionId": "q18" }
       ]
     },
     "categories": {
@@ -2607,6 +2611,8 @@
       "eyebrow": "Częste błędne założenia",
       "title": "Precyzyjne pytanie skraca odpowiedź.",
       "intro": "Te założenia najczęściej przesuwają usługę w złą kategorię.",
+      "assumptionLabel": "Nie chodzi o",
+      "boundaryLabel": "Chodzi o",
       "items": [
         { "assumption": "Same klucze oznaczają pełny nadzór", "boundary": "Przechowywanie kluczy to tylko zdolność dostępu. Nadzór wymaga zakresu pakietu i raportowania." },
         { "assumption": "SLA oznacza rozwiązanie w podanym czasie", "boundary": "SLA określa czas reakcji i decyzji. Części, wykonawcy i dostępność mogą wydłużyć samo rozwiązanie." },

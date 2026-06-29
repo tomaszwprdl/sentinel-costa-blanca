@@ -2569,18 +2569,22 @@
         { "label": "Limits", "value": "emergencies and authority" }
       ]
     },
+    "journey": {
+      "start": "Start",
+      "common": "Common doubts",
+      "all": "All answers",
+      "decide": "Decide"
+    },
     "quick": {
       "eyebrow": "Start here",
       "title": "Start with the question you probably have.",
-      "intro": "These cards cover the questions that usually determine whether the model fits.",
-      "linkLabel": "Read detailed answer",
+      "intro": "These cards set the right category and open the answer in the main FAQ panel.",
+      "linkLabel": "Open in FAQ panel",
       "items": [
-        { "title": "Can Sentinel help if my property is outside the area?", "answer": "No. Properties outside Torrevieja + 50-70 km are declined rather than accepted as weak coverage.", "href": "#communication" },
-        { "title": "Can I ask for one-off help?", "answer": "No. Sentinel works through monthly package structure, not informal one-time tasks.", "href": "#service-model" },
-        { "title": "Is this property management?", "answer": "No. Sentinel provides structured local oversight and owner representation, not rental agency operations.", "href": "#service-model" },
-        { "title": "What happens if there is an emergency?", "answer": "Emergency action follows package rules, decision limits, owner contact, and documentation.", "href": "#emergencies" },
-        { "title": "Can Sentinel manage guests or cleaners?", "answer": "Cleaning, access, and guest-related support may exist only inside the agreed oversight scope or module.", "href": "#practical" },
-        { "title": "What do I receive after a visit?", "answer": "A useful record: report, notes, photos, or confirmation according to the package and event.", "href": "#operations" }
+        { "title": "Is this property management?", "answer": "Opens the answer on the model boundary and Sentinel's role.", "targetSectionId": "service-model", "targetQuestionId": "q1" },
+        { "title": "Can I ask for one-off help?", "answer": "Opens the answer on one-off visits and why package context is required.", "targetSectionId": "service-model", "targetQuestionId": "q2" },
+        { "title": "What happens if there is an emergency?", "answer": "Opens the answer on emergency handling, owner contact, and decision limits.", "targetSectionId": "emergencies", "targetQuestionId": "q9" },
+        { "title": "Can Sentinel manage guests or cleaners?", "answer": "Opens the answer on guest stays, cleaning, and where oversight ends.", "targetSectionId": "practical", "targetQuestionId": "q18" }
       ]
     },
     "categories": {
@@ -2607,6 +2611,8 @@
       "eyebrow": "Common wrong assumptions",
       "title": "Precise context produces the right answer.",
       "intro": "These assumptions create most category drift.",
+      "assumptionLabel": "Not this",
+      "boundaryLabel": "This boundary",
       "items": [
         { "assumption": "Keyholding alone means full oversight", "boundary": "Keyholding is only an access capability. Oversight requires package scope and reporting." },
         { "assumption": "SLA means resolution within the stated time", "boundary": "SLA sets response and decision timing. Parts, contractors, and availability can delay the actual fix." },
