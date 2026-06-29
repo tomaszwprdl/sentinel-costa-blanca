@@ -113,50 +113,62 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
               <p className="mt-3 max-w-[62ch] text-body">{t('redesign.evidence.intro')}</p>
             </div>
 
-            <div className="hiw-evidence-grid">
-              <section className="hiw-report-excerpt" aria-label={evidencePanels[0]?.title}>
-                <div className="hiw-report-excerpt__top">
-                  <span>{t('redesign.evidence.reportLabel')}</span>
-                  <strong>{evidencePanels[0]?.title}</strong>
+            <article className="hiw-owner-record" aria-label={t('redesign.evidence.sampleMarker')}>
+              <div className="hiw-owner-record__header">
+                <div>
+                  <p>{t('redesign.evidence.sampleMarker')}</p>
+                  <h3>{evidencePanels[0]?.title}</h3>
                 </div>
-                <div className="hiw-report-excerpt__rows">
-                  {evidencePanels[0]?.rows.map((row, index) => (
-                    <div key={row.label} className="hiw-report-excerpt__row">
-                      <div className="hiw-report-excerpt__row-heading">
-                        <span>{row.label}</span>
-                        {reportStatusChips[index] ? <em>{reportStatusChips[index]}</em> : null}
+                <span>{t('redesign.evidence.reportLabel')}</span>
+              </div>
+
+              <div className="hiw-owner-record__body">
+                <section className="hiw-report-excerpt" aria-label={evidencePanels[0]?.title}>
+                  <div className="hiw-report-excerpt__rows">
+                    {evidencePanels[0]?.rows.map((row, index) => (
+                      <div key={row.label} className="hiw-report-excerpt__row">
+                        <div className="hiw-report-excerpt__row-heading">
+                          <span>{row.label}</span>
+                        </div>
+                        <p>{row.value}</p>
+                        {index === 2 ? (
+                          <div className="hiw-report-excerpt__status-chips" aria-label={row.label}>
+                            {reportStatusChips.map((chip) => (
+                              <em key={chip}>{chip}</em>
+                            ))}
+                          </div>
+                        ) : null}
                       </div>
-                      <p>{row.value}</p>
+                    ))}
+                    <div className="hiw-report-excerpt__row hiw-report-excerpt__row--next">
+                      <div className="hiw-report-excerpt__row-heading">
+                        <span>{reportNextAction.label}</span>
+                      </div>
+                      <p>{reportNextAction.value}</p>
                     </div>
-                  ))}
-                  <div className="hiw-report-excerpt__row hiw-report-excerpt__row--next">
-                    <div className="hiw-report-excerpt__row-heading">
-                      <span>{reportNextAction.label}</span>
-                    </div>
-                    <p>{reportNextAction.value}</p>
                   </div>
-                </div>
-              </section>
+                </section>
 
-              <section className="hiw-threshold-console" aria-label={evidencePanels[1]?.title}>
-                <div className="hiw-threshold-console__top">
-                  <span>{t('redesign.evidence.thresholdLabel')}</span>
-                  <strong>{evidencePanels[1]?.title}</strong>
-                </div>
-                <div className="hiw-threshold-console__rows">
-                  {evidencePanels[1]?.rows.map((row) => (
-                    <dl key={row.label} className="hiw-threshold-console__row">
-                      <dt>{row.label}</dt>
-                      <dd>{row.value}</dd>
-                    </dl>
-                  ))}
-                </div>
-              </section>
-            </div>
+                <section className="hiw-threshold-console" aria-label={evidencePanels[1]?.title}>
+                  <div className="hiw-threshold-console__top">
+                    <span>{t('redesign.evidence.thresholdLabel')}</span>
+                    <strong>{evidencePanels[1]?.title}</strong>
+                  </div>
+                  <div className="hiw-threshold-console__rows">
+                    {evidencePanels[1]?.rows.map((row) => (
+                      <dl key={row.label} className="hiw-threshold-console__row">
+                        <dt>{row.label}</dt>
+                        <dd>{row.value}</dd>
+                      </dl>
+                    ))}
+                  </div>
+                </section>
+              </div>
 
-            <div className="hiw-evidence-limits-strip">
-              <ReportDecisionLimits />
-            </div>
+              <div className="hiw-evidence-limits-strip">
+                <ReportDecisionLimits />
+              </div>
+            </article>
           </div>
         </Section>
 

@@ -1777,13 +1777,14 @@
       "evidence": {
         "eyebrow": "Report and threshold",
         "title": "The report is where observation becomes owner decision.",
-        "intro": "How It Works is not a promise of instant fixing. It is a controlled chain from on-site observation to documented responsibility.",
+        "intro": "This is a sample record the owner receives after a visit: observation, documentation, status, and decision threshold in one layout.",
         "reportLabel": "Evidence panel",
         "thresholdLabel": "Decision threshold",
-        "reportStatusChips": ["closed", "recorded", "decision"],
+        "sampleMarker": "Sample report layout",
+        "reportStatusChips": ["closed", "pending", "owner decision"],
         "nextAction": {
           "label": "Next action",
-          "value": "The owner sees what is closed, what is pending, and what moves to the decision threshold."
+          "value": "The owner sees what continues inside scope, what waits, and what reaches the decision threshold."
         },
         "panels": [
           {
@@ -1868,7 +1869,7 @@
         "eyebrow": "Decision map",
         "title": "When Sentinel acts, and when the owner approves",
         "intro": "The central process boundary is not speed. It is authority to act.",
-        "limitsTitle": "Package limits",
+        "limitsTitle": "Package limits reference",
         "protectiveTitle": "Protective action in an emergency",
         "protectiveIntro": "Applies only to limiting immediate damage when the owner cannot be reached. It is not authority for autonomous repairs, larger work, or action outside package scope.",
         "authorityTitle": "Autonomous decision limit",

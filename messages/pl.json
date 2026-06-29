@@ -1777,13 +1777,14 @@
       "evidence": {
         "eyebrow": "Raport i próg",
         "title": "Raport jest miejscem, gdzie obserwacja staje się decyzją właściciela.",
-        "intro": "Jak to działa nie jest obietnicą natychmiastowej naprawy. To kontrolowany łańcuch od obserwacji na miejscu do udokumentowanej odpowiedzialności.",
+        "intro": "To przykład rekordu, który właściciel otrzymuje po wizycie: obserwacja, dokumentacja, status i próg decyzji w jednym układzie.",
         "reportLabel": "Panel dowodu",
         "thresholdLabel": "Próg decyzji",
-        "reportStatusChips": ["zamknięte", "zapisane", "decyzja"],
+        "sampleMarker": "Przykładowy układ raportu",
+        "reportStatusChips": ["zamknięte", "oczekuje", "decyzja właściciela"],
         "nextAction": {
           "label": "Następny krok",
-          "value": "Właściciel widzi, co jest zamknięte, co oczekuje i co przechodzi do progu decyzji."
+          "value": "Właściciel widzi, co kontynuuje się w ramach zakresu, co czeka i co trafia do progu decyzji."
         },
         "panels": [
           {
@@ -1868,7 +1869,7 @@
         "eyebrow": "Mapa decyzji",
         "title": "Kiedy Sentinel działa, a kiedy właściciel zatwierdza",
         "intro": "Najważniejsza granica procesu to nie szybkość, tylko uprawnienie do działania.",
-        "limitsTitle": "Limity według pakietu",
+        "limitsTitle": "Odniesienie: limity pakietu",
         "protectiveTitle": "Działanie zabezpieczające w sytuacji nagłej",
         "protectiveIntro": "Dotyczy wyłącznie ograniczenia bezpośredniej szkody, gdy kontakt z właścicielem nie jest możliwy. Nie oznacza zgody na samodzielne naprawy, większe prace ani działania poza zakresem pakietu.",
         "authorityTitle": "Autonomiczny limit decyzyjny",
