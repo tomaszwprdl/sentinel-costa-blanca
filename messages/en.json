@@ -2578,13 +2578,13 @@
     "quick": {
       "eyebrow": "Start here",
       "title": "Start with the question you probably have.",
-      "intro": "These cards set the right category and open the answer in the main FAQ panel.",
-      "linkLabel": "Open in FAQ panel",
+      "intro": "The most common doubts in brief — the full answer is in the panel below.",
+      "linkLabel": "Show full answer",
       "items": [
-        { "title": "Is this property management?", "answer": "Opens the answer on the model boundary and Sentinel's role.", "targetSectionId": "service-model", "targetQuestionId": "q1" },
-        { "title": "Can I ask for one-off help?", "answer": "Opens the answer on one-off visits and why package context is required.", "targetSectionId": "service-model", "targetQuestionId": "q2" },
-        { "title": "What happens if there is an emergency?", "answer": "Opens the answer on emergency handling, owner contact, and decision limits.", "targetSectionId": "emergencies", "targetQuestionId": "q9" },
-        { "title": "Can Sentinel manage guests or cleaners?", "answer": "Opens the answer on guest stays, cleaning, and where oversight ends.", "targetSectionId": "practical", "targetQuestionId": "q18" }
+        { "title": "Is this property management?", "answer": "No. Sentinel is local owner representation: presence, checks, reports, and decisions within defined limits.", "targetSectionId": "service-model", "targetQuestionId": "q1" },
+        { "title": "Can I request one-off help?", "answer": "Sometimes, as a separately agreed action. A one-off visit does not replace an oversight package.", "targetSectionId": "service-model", "targetQuestionId": "q2" },
+        { "title": "What happens in an emergency?", "answer": "Sentinel acts within agreed limits. Above the limit, the decision returns to the owner.", "targetSectionId": "emergencies", "targetQuestionId": "q9" },
+        { "title": "Can Sentinel manage guests or cleaning?", "answer": "Cleaning and readiness may be part of the agreed scope. Rental or guest management as a business is not.", "targetSectionId": "practical", "targetQuestionId": "q18" }
       ]
     },
     "categories": {

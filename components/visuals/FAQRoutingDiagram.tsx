@@ -18,7 +18,7 @@ export default function FAQRoutingDiagram() {
           <path d="M120 238 C190 112 410 118 500 232" fill="none" stroke="var(--authority-on-dark)" strokeWidth="2" strokeDasharray="10 14" opacity="0.22" />
           <path d="M122 240 C210 356 430 344 502 232" fill="none" stroke="var(--authority-on-dark)" strokeWidth="2" strokeDasharray="10 14" opacity="0.2" />
 
-          <g filter="drop-shadow(0 18px 34px rgba(0,0,0,0.18))">
+          <g filter="drop-shadow(0 10px 22px rgba(0,0,0,0.12))">
             <rect x="46" y="154" width="176" height="178" rx="22" fill="url(#faq-card-fill)" />
             <rect x="70" y="184" width="68" height="10" rx="5" fill="var(--accent)" opacity="0.85" />
             <rect x="70" y="214" width="120" height="8" rx="4" fill="var(--authority)" opacity="0.42" />
@@ -27,21 +27,21 @@ export default function FAQRoutingDiagram() {
             <path d="M178 292 L184 298 L196 284" fill="none" stroke="var(--accent)" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
           </g>
 
-          <g filter="drop-shadow(0 18px 34px rgba(0,0,0,0.18))">
+          <g filter="drop-shadow(0 10px 22px rgba(0,0,0,0.12))">
             <rect x="264" y="74" width="172" height="126" rx="20" fill="url(#faq-card-fill)" />
             <rect x="288" y="104" width="66" height="10" rx="5" fill="var(--support)" opacity="0.8" />
             <rect x="288" y="132" width="106" height="8" rx="4" fill="var(--authority)" opacity="0.34" />
             <rect x="288" y="153" width="78" height="8" rx="4" fill="var(--authority)" opacity="0.24" />
           </g>
 
-          <g filter="drop-shadow(0 18px 34px rgba(0,0,0,0.18))">
+          <g filter="drop-shadow(0 10px 22px rgba(0,0,0,0.12))">
             <rect x="264" y="280" width="172" height="126" rx="20" fill="url(#faq-card-fill)" />
             <rect x="288" y="310" width="72" height="10" rx="5" fill="var(--accent)" opacity="0.78" />
             <rect x="288" y="338" width="108" height="8" rx="4" fill="var(--authority)" opacity="0.34" />
             <rect x="288" y="359" width="88" height="8" rx="4" fill="var(--authority)" opacity="0.24" />
           </g>
 
-          <g filter="drop-shadow(0 18px 34px rgba(0,0,0,0.18))">
+          <g filter="drop-shadow(0 10px 22px rgba(0,0,0,0.12))">
             <rect x="476" y="154" width="116" height="178" rx="24" fill="url(#faq-route-fill)" />
             <circle cx="534" cy="206" r="28" fill="var(--authority-on-dark)" opacity="0.22" />
             <path d="M522 207 L532 217 L550 195" fill="none" stroke="var(--authority-on-dark)" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" />

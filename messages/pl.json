@@ -2578,13 +2578,13 @@
     "quick": {
       "eyebrow": "Zacznij tutaj",
       "title": "Zacznij od pytania, które prawdopodobnie masz.",
-      "intro": "Te karty ustawiają właściwą kategorię i otwierają odpowiedź w głównym panelu FAQ.",
-      "linkLabel": "Otwórz w panelu FAQ",
+      "intro": "Najczęstsze wątpliwości w skrócie — pełna odpowiedź jest w panelu poniżej.",
+      "linkLabel": "Pokaż pełną odpowiedź",
       "items": [
-        { "title": "Czy to jest zarządzanie nieruchomością?", "answer": "Otwiera odpowiedź o granicy modelu i roli Sentinel.", "targetSectionId": "service-model", "targetQuestionId": "q1" },
-        { "title": "Czy mogę poprosić o jednorazową pomoc?", "answer": "Otwiera odpowiedź o pojedynczych wizytach i dlaczego pakiet jest warunkiem działania.", "targetSectionId": "service-model", "targetQuestionId": "q2" },
-        { "title": "Co dzieje się w sytuacji awaryjnej?", "answer": "Otwiera odpowiedź o trybie awaryjnym, kontakcie z właścicielem i limitach decyzji.", "targetSectionId": "emergencies", "targetQuestionId": "q9" },
-        { "title": "Czy Sentinel może zarządzać gośćmi albo sprzątaniem?", "answer": "Otwiera odpowiedź o gościach, sprzątaniu i tym, gdzie kończy się nadzór.", "targetSectionId": "practical", "targetQuestionId": "q18" }
+        { "title": "Czy to jest zarządzanie nieruchomością?", "answer": "Nie. Sentinel to lokalna reprezentacja właściciela: obecność, kontrola, raport i decyzje w ustalonych granicach.", "targetSectionId": "service-model", "targetQuestionId": "q1" },
+        { "title": "Czy mogę poprosić o jednorazową pomoc?", "answer": "Czasem tak, ale jako osobno uzgodnione działanie. Pojedyncza wizyta nie zastępuje pakietu nadzoru.", "targetSectionId": "service-model", "targetQuestionId": "q2" },
+        { "title": "Co dzieje się w sytuacji awaryjnej?", "answer": "Sentinel działa według ustalonych limitów. Powyżej limitu decyzja wraca do właściciela.", "targetSectionId": "emergencies", "targetQuestionId": "q9" },
+        { "title": "Czy Sentinel może zarządzać gośćmi albo sprzątaniem?", "answer": "Sprzątanie i gotowość mogą być częścią zakresu. Zarządzanie wynajmem ani biznesową obsługą gości — nie.", "targetSectionId": "practical", "targetQuestionId": "q18" }
       ]
     },
     "categories": {

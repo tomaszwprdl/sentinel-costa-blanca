@@ -24611,12 +24611,12 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .faq-hero .visual-card-strong {
-  border-color: rgba(255, 250, 242, 0.18);
+  border-color: rgba(255, 250, 242, 0.14);
   background:
-    linear-gradient(180deg, rgba(255, 253, 249, 0.08), rgba(255, 253, 249, 0.035));
+    linear-gradient(180deg, rgba(255, 253, 249, 0.06), rgba(255, 253, 249, 0.025));
   box-shadow:
-    0 24px 58px rgba(0, 0, 0, 0.26),
-    inset 0 1px 0 rgba(255, 253, 249, 0.14);
+    0 16px 40px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 253, 249, 0.1);
 }
 
 .about-operator-hero {
