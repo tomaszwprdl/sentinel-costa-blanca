@@ -1714,6 +1714,8 @@
         "title": "From access to action — one controlled path.",
         "intro": "Each stage follows the previous one: scope, access, visit, record, decision, and execution. The journey shows where Sentinel acts within scope and where the decision returns to the owner.",
         "visitRecordImageAlt": "Operational placeholder photo of a visit record setup outside an apartment door",
+        "thresholdDeviceLabel": "Decision threshold",
+        "closureDeviceLabel": "RECORD CLOSED",
         "rulesEyebrow": "Operating rule",
         "rulesTitle": "No action happens without a record.",
         "rules": [

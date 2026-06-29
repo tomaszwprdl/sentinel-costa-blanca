@@ -13490,392 +13490,6 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 
-@media (min-width: 1080px) {
-  .hiw-procedure-journey__stage:not([data-active="true"]) .hiw-procedure-journey__artifact {
-    max-height: none;
-    margin-top: 0;
-    overflow: visible;
-    opacity: 1;
-    padding-top: 1rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1079px) {
-  .hiw-procedure-journey {
-    min-height: clamp(150rem, 310vh, 210rem);
-  }
-
-  .hiw-procedure-journey__sticky {
-    min-height: 41rem;
-    height: calc(100svh - var(--header-offset) - var(--journey-nav-height));
-    padding: 1rem;
-  }
-
-  .hiw-procedure-journey__field {
-    grid-template-columns: minmax(14rem, 0.38fr) minmax(0, 1fr);
-    grid-template-rows: minmax(0, 1fr) auto;
-    gap: 1rem;
-  }
-
-  .hiw-procedure-journey__intro {
-    padding-left: 0.5rem;
-  }
-
-  .hiw-procedure-journey__intro .h2-system {
-    max-width: 16ch;
-    font-size: 2.65rem;
-    line-height: 0.98;
-  }
-
-  .hiw-procedure-journey__intro > p {
-    font-size: 0.93rem;
-    line-height: 1.5;
-  }
-
-  .hiw-procedure-journey__rule strong {
-    font-size: 1.08rem;
-  }
-
-  .hiw-procedure-journey__corridor {
-    grid-column: 2;
-    min-height: 29rem;
-  }
-
-  .hiw-procedure-journey__stage,
-  .hiw-procedure-journey__stage[data-past="true"],
-  .hiw-procedure-journey__stage[data-active="true"] {
-    position: absolute;
-    top: 50%;
-    left: 44%;
-    width: min(33rem, 55vw);
-    opacity: var(--stage-opacity);
-    filter: blur(calc(var(--stage-abs-distance) * 0.36px));
-    transform:
-      translate(-50%, -50%)
-      translateX(calc(var(--stage-distance) * 38vw))
-      translateY(calc(var(--stage-abs-distance) * 1.1rem))
-      scale(var(--stage-scale));
-  }
-
-  .hiw-procedure-journey__stage-panel {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.75rem;
-    height: auto;
-    padding: 0.95rem;
-  }
-
-  .hiw-procedure-journey__stage-copy h3 {
-    font-size: 1.55rem;
-    line-height: 1;
-  }
-
-  .hiw-procedure-journey__stage-copy p {
-    font-size: 0.86rem;
-    line-height: 1.44;
-  }
-
-  .hiw-procedure-journey__artifact {
-    padding-top: 0.68rem;
-  }
-
-  .hiw-procedure-journey__artifact::before {
-    width: 2.8rem;
-    height: 2.8rem;
-  }
-
-  .hiw-procedure-journey__photo-fragment {
-    width: min(16rem, 30vw);
-  }
-
-  .hiw-procedure-journey__guardrails {
-    padding-inline: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .hiw-procedure-section.section-primitive--compact {
-    padding-block: 0;
-  }
-
-  .hiw-procedure-journey {
-    min-height: auto;
-  }
-
-  .hiw-procedure-journey::before {
-    inset: 0;
-  }
-
-  .hiw-procedure-journey__sticky {
-    position: static;
-    min-height: 0;
-    height: auto;
-    max-height: none;
-    padding: 1rem;
-  }
-
-  .hiw-procedure-journey__field {
-    display: block;
-    padding: 0;
-  }
-
-  .hiw-procedure-journey__field::after {
-    inset: -1rem;
-  }
-
-  .hiw-procedure-journey__intro {
-    max-width: none;
-    padding: 0 0 1.35rem;
-  }
-
-  .hiw-procedure-journey__intro .h2-system {
-    max-width: 18ch;
-    font-size: 2.05rem;
-    line-height: 1.02;
-  }
-
-  .hiw-procedure-journey__intro > p {
-    font-size: 0.95rem;
-    line-height: 1.55;
-  }
-
-  .hiw-procedure-journey__rule {
-    padding: 0.78rem 0.86rem;
-  }
-
-  .hiw-procedure-journey__rule strong {
-    font-size: 1.02rem;
-  }
-
-  .hiw-procedure-journey__corridor {
-    position: absolute;
-    inset: 0;
-    min-height: 0;
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  .hiw-procedure-journey__route-map {
-    display: none;
-  }
-
-  .hiw-procedure-journey__threshold-plane {
-    top: auto;
-    right: 1.05rem;
-    bottom: 17rem;
-    height: 13rem;
-  }
-
-  .hiw-procedure-journey__closure-mark {
-    right: 1rem;
-    bottom: 6.5rem;
-    width: 4.8rem;
-  }
-
-  .hiw-procedure-journey__photo-fragment {
-    display: none;
-  }
-
-  .hiw-procedure-journey__stages {
-    position: relative;
-    inset: auto;
-    display: grid;
-    gap: 1rem;
-    padding-left: 1.25rem;
-    pointer-events: auto;
-  }
-
-  .hiw-procedure-journey__stages::before,
-  .hiw-procedure-journey__stages::after {
-    position: absolute;
-    top: 0.6rem;
-    bottom: 0.6rem;
-    left: 0.28rem;
-    width: 0.28rem;
-    border-radius: 999px;
-    content: "";
-  }
-
-  .hiw-procedure-journey__stages::before {
-    background: rgba(255, 250, 242, 0.12);
-  }
-
-  .hiw-procedure-journey__stages::after {
-    background: linear-gradient(180deg, #6fb6ac, #d29a57 72%, #6fb6ac);
-    transform: scaleY(var(--journey-progress));
-    transform-origin: top;
-  }
-
-  .hiw-procedure-journey__stage,
-  .hiw-procedure-journey__stage[data-past="true"],
-  .hiw-procedure-journey__stage[data-active="true"] {
-    position: relative;
-    top: auto;
-    left: auto;
-    z-index: 1;
-    width: auto;
-    opacity: 1;
-    filter: none;
-    transform: none;
-  }
-
-  .hiw-procedure-journey__stage::before {
-    position: absolute;
-    top: 1.1rem;
-    left: -1.25rem;
-    z-index: 2;
-    width: 0.62rem;
-    height: 1.55rem;
-    border: 1px solid rgba(255, 250, 242, 0.24);
-    background: rgba(255, 250, 242, 0.08);
-    content: "";
-    transform: translateX(-0.08rem) skewY(-12deg);
-  }
-
-  .hiw-procedure-journey__stage[data-stage-key="decision"]::before {
-    height: 2.6rem;
-    border-color: rgba(210, 154, 87, 0.52);
-    background: rgba(184, 102, 74, 0.18);
-  }
-
-  .hiw-procedure-journey__stage[data-stage-key="action"]::before {
-    border-color: rgba(111, 182, 172, 0.42);
-    background: rgba(47, 111, 115, 0.18);
-  }
-
-  .hiw-procedure-journey__stage-panel {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.72rem;
-    border-radius: 0.18rem;
-    padding: 0.85rem;
-  }
-
-  .hiw-procedure-journey__stage-copy h3 {
-    font-size: 1.18rem;
-    line-height: 1.08;
-  }
-
-  .hiw-procedure-journey__stage-copy p {
-    font-size: 0.86rem;
-    line-height: 1.48;
-  }
-
-  .hiw-procedure-journey__artifact {
-    padding-top: 0.62rem;
-  }
-
-  .hiw-procedure-journey__artifact::before {
-    width: 2.55rem;
-    height: 2.55rem;
-  }
-
-  .hiw-procedure-journey__guardrails {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0;
-    margin-top: 1rem;
-    padding: 0;
-  }
-
-  .hiw-procedure-journey__guardrails section {
-    padding: 0.68rem 0.78rem 0.72rem;
-  }
-
-  .hiw-procedure-journey__guardrails section + section {
-    border-left: 0;
-  }
-}
-
-@media (max-width: 430px) {
-  .hiw-procedure-journey__sticky {
-    padding: 0.85rem;
-  }
-
-  .hiw-procedure-journey__intro .h2-system {
-    font-size: 1.88rem;
-  }
-
-  .hiw-procedure-journey__stage-panel {
-    padding: 0.76rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hiw-procedure-journey {
-    min-height: auto;
-  }
-
-  .hiw-procedure-journey__sticky {
-    position: static;
-    min-height: 0;
-    height: auto;
-    max-height: none;
-  }
-
-  .hiw-procedure-journey__field {
-    display: block;
-    padding: clamp(1rem, 3vw, 2rem);
-  }
-
-  .hiw-procedure-journey__intro {
-    max-width: 48rem;
-    padding: 0 0 1.35rem;
-  }
-
-  .hiw-procedure-journey__corridor,
-  .hiw-procedure-journey__route-map,
-  .hiw-procedure-journey__threshold-plane,
-  .hiw-procedure-journey__closure-mark,
-  .hiw-procedure-journey__photo-fragment {
-    display: none;
-  }
-
-  .hiw-procedure-journey__stages {
-    position: relative;
-    inset: auto;
-    display: grid;
-    gap: 0.9rem;
-    padding-left: 1.15rem;
-    pointer-events: auto;
-  }
-
-  .hiw-procedure-journey__stages::before {
-    position: absolute;
-    top: 0.5rem;
-    bottom: 0.5rem;
-    left: 0.32rem;
-    width: 0.28rem;
-    border-radius: 999px;
-    background: linear-gradient(180deg, #6fb6ac, #d29a57 72%, #6fb6ac);
-    content: "";
-  }
-
-  .hiw-procedure-journey__stage,
-  .hiw-procedure-journey__stage[data-active="true"] {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: auto;
-    opacity: 1;
-    filter: none;
-    transform: none;
-  }
-
-  .hiw-procedure-journey__stage-panel,
-  .hiw-procedure-journey__photo-fragment {
-    transition: none !important;
-  }
-
-  .hiw-procedure-journey__stage-panel {
-    grid-template-columns: minmax(0, 1fr) minmax(10rem, 0.32fr);
-  }
-
-  .hiw-procedure-journey__artifact {
-    max-height: none !important;
-    overflow: visible !important;
-    opacity: 1 !important;
-  }
-}
-
 /* ============================================================
    SENTINEL GRAPHIC SYSTEM — operational cartography layer
    Reusable graphic language: radius rings, inspection routes,
@@ -20994,39 +20608,78 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 
 .hiw-procedure-journey__threshold-plane {
   position: absolute;
-  top: 13%;
-  right: 23%;
-  z-index: 2;
-  width: 0.45rem;
-  height: 74%;
+  top: -0.7rem;
+  right: -1rem;
+  bottom: -0.7rem;
+  z-index: 5;
+  width: clamp(0.72rem, 0.85vw, 0.95rem);
   background:
-    linear-gradient(180deg, transparent, rgba(210, 154, 87, 0.72) 18% 82%, transparent);
+    linear-gradient(180deg, transparent 0%, rgba(210, 154, 87, 0.92) 16% 84%, transparent 100%),
+    linear-gradient(90deg, rgba(255, 250, 242, 0.34), rgba(184, 102, 74, 0.72));
   box-shadow:
-    0 0 34px rgba(184, 102, 74, 0.35),
-    0 0 0 1px rgba(255, 250, 242, 0.08);
+    0 0 0 1px rgba(255, 250, 242, 0.14),
+    -0.55rem 0 0 rgba(184, 102, 74, 0.18),
+    0 0 34px rgba(184, 102, 74, 0.42);
   opacity: 0;
-  transform: translateX(2rem) skewX(-12deg);
+  pointer-events: none;
+  transform: skewX(-10deg) scaleY(0.84);
+  transform-origin: center;
   transition:
     opacity 320ms var(--motion-ease-out),
     transform 320ms var(--motion-ease-out);
 }
 
-.hiw-procedure-journey[data-active-step="decision"] .hiw-procedure-journey__threshold-plane {
+.hiw-procedure-journey__threshold-plane::before {
+  position: absolute;
+  top: 50%;
+  right: -0.35rem;
+  width: clamp(4rem, 8vw, 7rem);
+  height: 0.22rem;
+  background: linear-gradient(90deg, rgba(210, 154, 87, 0.86), transparent);
+  content: "";
+  transform: translateY(-50%);
+}
+
+.hiw-procedure-journey__threshold-plane::after {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 0.46rem);
+  color: color-mix(in srgb, var(--hiw-decision) 82%, #fffaf2);
+  content: attr(data-label);
+  font-size: 0.64rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+}
+
+.hiw-procedure-journey__stage[data-stage-key="decision"][data-active="true"] .hiw-procedure-journey__threshold-plane {
   opacity: 1;
-  transform: translateX(0) skewX(-12deg);
+  transform: skewX(-10deg) scaleY(1);
 }
 
 .hiw-procedure-journey__closure-mark {
-  position: absolute;
-  right: 4.5%;
-  bottom: 18%;
-  z-index: 2;
-  width: clamp(5rem, 9vw, 8rem);
-  aspect-ratio: 1;
-  border: 2px solid rgba(111, 182, 172, 0.42);
-  border-radius: 999px;
+  position: relative;
+  display: inline-grid;
+  min-height: 3.35rem;
+  width: min(100%, 8.3rem);
+  place-items: center;
+  justify-self: start;
+  margin-bottom: 0.28rem;
+  border: 1px solid rgba(111, 182, 172, 0.56);
+  border-radius: 0.18rem;
+  background:
+    linear-gradient(135deg, rgba(47, 111, 115, 0.28), rgba(255, 250, 242, 0.045)),
+    linear-gradient(90deg, rgba(255, 250, 242, 0.08) 0 1px, transparent 1px 100%) 0 0 / 0.72rem 100%;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 250, 242, 0.08),
+    0 12px 28px rgba(2, 12, 24, 0.24);
+  color: #fffaf2;
   opacity: 0;
-  transform: scale(0.68) rotate(-12deg);
+  transform: rotate(-5deg) scale(0.92);
   transition:
     opacity 320ms var(--motion-ease-out),
     transform 360ms var(--motion-ease-out);
@@ -21039,24 +20692,27 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .hiw-procedure-journey__closure-mark::before {
-  inset: 22%;
+  inset: 0.34rem;
   border: 1px solid rgba(255, 250, 242, 0.22);
-  border-radius: inherit;
+  border-radius: 0.12rem;
 }
 
 .hiw-procedure-journey__closure-mark::after {
-  top: 48%;
-  left: 26%;
-  width: 48%;
-  height: 16%;
-  border-right: 3px solid rgba(255, 250, 242, 0.72);
-  border-bottom: 3px solid rgba(255, 250, 242, 0.72);
-  transform: rotate(38deg);
+  position: relative;
+  max-width: 8ch;
+  color: color-mix(in srgb, #fffaf2 88%, var(--hiw-field));
+  content: attr(data-label);
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.09em;
+  line-height: 1.05;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-.hiw-procedure-journey[data-active-step="action"] .hiw-procedure-journey__closure-mark {
+.hiw-procedure-journey__stage[data-stage-key="action"][data-active="true"] .hiw-procedure-journey__closure-mark {
   opacity: 1;
-  transform: scale(1) rotate(-6deg);
+  transform: rotate(-3deg) scale(1);
 }
 
 .hiw-procedure-journey__photo-fragment {
@@ -21123,15 +20779,15 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   --stage-layer: 1;
   position: absolute;
   top: 50%;
-  left: 44%;
+  left: 58%;
   z-index: var(--stage-layer);
-  width: min(38rem, 48vw);
+  width: min(40rem, 43vw);
   min-width: 0;
   opacity: var(--stage-opacity);
   filter: blur(calc(var(--stage-abs-distance) * 0.42px));
   transform:
     translate(-50%, -50%)
-    translateX(calc(var(--stage-distance) * 31vw))
+    translateX(calc(var(--stage-distance) * 25vw))
     translateY(calc(var(--stage-abs-distance) * 1.5rem))
     scale(var(--stage-scale));
   transition:
@@ -21150,6 +20806,7 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   grid-template-columns: minmax(0, 1fr) minmax(10rem, 0.42fr);
   gap: clamp(0.9rem, 1.8vw, 1.45rem);
   min-width: 0;
+  overflow: visible;
   border: 1px solid rgba(255, 250, 242, 0.14);
   border-radius: 0.25rem;
   background:
@@ -21539,121 +21196,103 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   }
 }
 
-@media (min-width: 1080px) {
-  .hiw-procedure-journey__stage:not([data-active="true"]) .hiw-procedure-journey__stage-panel > p,
-  .hiw-procedure-journey__stage:not([data-active="true"]) .hiw-procedure-journey__artifact {
-    max-height: 0;
-    margin-top: 0;
-    overflow: hidden;
-    opacity: 0;
-    padding-top: 0;
-    transition:
-      max-height 260ms var(--motion-ease-out),
-      opacity 220ms var(--motion-ease-out),
-      margin 260ms var(--motion-ease-out),
-      padding 260ms var(--motion-ease-out);
-  }
-
-  .hiw-procedure-journey__stage[data-active="true"] .hiw-procedure-journey__stage-panel > p {
-    max-height: 7rem;
-  }
-
-  .hiw-procedure-journey__stage[data-active="true"] .hiw-procedure-journey__artifact {
-    max-height: 5.5rem;
-  }
-}
-
 @media (min-width: 768px) and (max-width: 1079px) {
   .hiw-procedure-journey {
-    min-height: clamp(132rem, 280vh, 190rem);
+    min-height: clamp(150rem, 310vh, 210rem);
   }
 
   .hiw-procedure-journey__sticky {
-    min-height: 42rem;
-    height: calc(100svh - var(--header-offset) - var(--journey-nav-height) - 1.4rem);
-    max-height: none;
+    min-height: 41rem;
+    height: calc(100svh - var(--header-offset) - var(--journey-nav-height));
+    padding: 1rem;
   }
 
   .hiw-procedure-journey__field {
-    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+    grid-template-columns: minmax(14rem, 0.38fr) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) auto;
     gap: 1rem;
   }
 
+  .hiw-procedure-journey__intro {
+    padding-left: 0.5rem;
+  }
+
   .hiw-procedure-journey__intro .h2-system {
-    max-width: 14ch;
-    font-size: 2.8rem;
-    line-height: 0.96;
+    max-width: 16ch;
+    font-size: 2.65rem;
+    line-height: 0.98;
   }
 
   .hiw-procedure-journey__intro > p {
-    font-size: 0.96rem;
-    line-height: 1.54;
+    font-size: 0.93rem;
+    line-height: 1.5;
   }
 
   .hiw-procedure-journey__rule strong {
-    font-size: 1.12rem;
+    font-size: 1.08rem;
   }
 
-  .hiw-procedure-journey__route {
-    inset: 1rem 12% 1rem 42%;
-    opacity: 0.72;
-  }
-
-  .hiw-procedure-journey__stages {
-    grid-column: 1 / -1;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-content: stretch;
-    gap: 0.55rem;
+  .hiw-procedure-journey__corridor {
+    grid-column: 2;
+    min-height: 29rem;
   }
 
   .hiw-procedure-journey__stage,
-  .hiw-procedure-journey__stage[data-past="true"],
   .hiw-procedure-journey__stage[data-active="true"] {
-    grid-template-columns: 0.9rem minmax(0, 1fr);
-    opacity: 0.92;
-    transform: none;
-  }
-
-  .hiw-procedure-journey__stage[data-active="true"] {
-    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    width: min(33rem, 50vw);
+    opacity: var(--stage-opacity);
+    filter: blur(calc(var(--stage-abs-distance) * 0.36px));
+    transform:
+      translate(-50%, -50%)
+      translateX(calc(var(--stage-distance) * 28vw))
+      translateY(calc(var(--stage-abs-distance) * 1.1rem))
+      scale(var(--stage-scale));
   }
 
   .hiw-procedure-journey__stage-panel {
-    height: 100%;
-    padding: 0.72rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+    height: auto;
+    padding: 0.95rem;
   }
 
-  .hiw-procedure-journey__stage-top {
-    grid-template-columns: 2rem minmax(0, 1fr);
-    gap: 0.48rem;
+  .hiw-procedure-journey__stage-copy h3 {
+    font-size: 1.55rem;
+    line-height: 1;
   }
 
-  .hiw-procedure-journey__stage-top h3 {
-    font-size: 1rem;
-    line-height: 1.1;
+  .hiw-procedure-journey__stage-copy p {
+    font-size: 0.86rem;
+    line-height: 1.44;
   }
 
-  .hiw-procedure-journey__stage-panel > p {
-    font-size: 0.82rem;
-    line-height: 1.4;
+  .hiw-procedure-journey__threshold-plane::after {
+    display: none;
   }
 
   .hiw-procedure-journey__artifact {
-    margin-top: 0.5rem;
-    padding-top: 0.45rem;
+    padding-top: 0.68rem;
   }
 
-  .hiw-procedure-journey__artifact p,
+  .hiw-procedure-journey__artifact::before {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .hiw-procedure-journey__photo-fragment {
+    width: min(16rem, 30vw);
+  }
+
+  .hiw-procedure-journey__guardrails {
+    padding-inline: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
   .hiw-procedure-journey__guardrails p {
     font-size: 0.74rem;
-  }
-
-  .hiw-procedure-journey__photo {
-    min-height: 12rem;
-  }
-
-  .hiw-procedure-journey__guardrails li {
-    padding: 0.52rem 0 0.52rem 0.68rem;
   }
 }
 
@@ -21693,7 +21332,7 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   }
 
   .hiw-procedure-section.section-primitive--compact {
-    padding-block: 2rem;
+    padding-block: 0;
   }
 
   .hiw-procedure-journey {
@@ -21709,29 +21348,23 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
     min-height: 0;
     height: auto;
     max-height: none;
-    padding-block: 0;
-  }
-
-  .hiw-procedure-journey__field {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1rem;
-    border-radius: 1rem;
     padding: 1rem;
   }
 
-  .hiw-procedure-journey__route {
-    display: none;
+  .hiw-procedure-journey__field {
+    display: block;
+    padding: 0;
   }
 
   .hiw-procedure-journey__intro {
-    gap: 0.9rem;
-    padding-block: 0;
+    max-width: none;
+    padding: 0 0 1.35rem;
   }
 
   .hiw-procedure-journey__intro .h2-system {
-    max-width: 15ch;
-    font-size: 2.15rem;
-    line-height: 0.98;
+    max-width: 18ch;
+    font-size: 2.05rem;
+    line-height: 1.02;
   }
 
   .hiw-procedure-journey__intro > p {
@@ -21740,71 +21373,164 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   }
 
   .hiw-procedure-journey__rule {
-    padding: 0.8rem 0.85rem;
+    padding: 0.78rem 0.86rem;
   }
 
   .hiw-procedure-journey__rule strong {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
+  }
+
+  .hiw-procedure-journey__corridor {
+    position: absolute;
+    inset: 0;
+    min-height: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .hiw-procedure-journey__route-map,
+  .hiw-procedure-journey__photo-fragment {
+    display: none;
   }
 
   .hiw-procedure-journey__stages {
-    align-content: start;
-    gap: 0.8rem;
+    position: relative;
+    inset: auto;
+    display: grid;
+    gap: 1rem;
+    padding-left: 1.25rem;
+    pointer-events: auto;
+  }
+
+  .hiw-procedure-journey__stages::before,
+  .hiw-procedure-journey__stages::after {
+    position: absolute;
+    top: 0.6rem;
+    bottom: 0.6rem;
+    left: 0.28rem;
+    width: 0.28rem;
+    border-radius: 999px;
+    content: "";
+  }
+
+  .hiw-procedure-journey__stages::before {
+    background: rgba(255, 250, 242, 0.12);
+  }
+
+  .hiw-procedure-journey__stages::after {
+    background: linear-gradient(180deg, #6fb6ac, #d29a57 72%, #6fb6ac);
+    transform: scaleY(var(--journey-progress));
+    transform-origin: top;
   }
 
   .hiw-procedure-journey__stage,
-  .hiw-procedure-journey__stage[data-past="true"],
   .hiw-procedure-journey__stage[data-active="true"] {
-    grid-template-columns: 0.85rem minmax(0, 1fr);
+    position: relative;
+    top: auto;
+    left: auto;
+    z-index: 1;
+    width: auto;
     opacity: 1;
+    filter: none;
     transform: none;
   }
 
-  .hiw-procedure-journey__stage-stop {
-    align-self: start;
-    margin-top: 0.52rem;
+  .hiw-procedure-journey__stage::before {
+    position: absolute;
+    top: 1.1rem;
+    left: -1.25rem;
+    z-index: 2;
+    width: 0.62rem;
+    height: 1.55rem;
+    border: 1px solid rgba(255, 250, 242, 0.24);
+    background: rgba(255, 250, 242, 0.08);
+    content: "";
+    transform: translateX(-0.08rem) skewY(-12deg);
+  }
+
+  .hiw-procedure-journey__stage[data-stage-key="decision"]::before {
+    height: 2.6rem;
+    border-color: rgba(210, 154, 87, 0.52);
+    background: rgba(184, 102, 74, 0.18);
+  }
+
+  .hiw-procedure-journey__stage[data-stage-key="action"]::before {
+    border-color: rgba(111, 182, 172, 0.42);
+    background: rgba(47, 111, 115, 0.18);
   }
 
   .hiw-procedure-journey__stage-panel {
-    padding: 0.82rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.72rem;
+    border-radius: 0.18rem;
+    padding: 0.85rem;
   }
 
-  .hiw-procedure-journey__stage-top {
-    grid-template-columns: 2rem minmax(0, 1fr);
-    gap: 0.5rem;
+  .hiw-procedure-journey__stage-copy h3 {
+    font-size: 1.18rem;
+    line-height: 1.08;
   }
 
-  .hiw-procedure-journey__stage-top h3 {
-    font-size: 1.05rem;
-    line-height: 1.12;
-  }
-
-  .hiw-procedure-journey__stage-panel > p {
+  .hiw-procedure-journey__stage-copy p {
     font-size: 0.86rem;
+    line-height: 1.48;
+  }
+
+  .hiw-procedure-journey__threshold-plane {
+    top: 0.78rem;
+    right: auto;
+    bottom: auto;
+    left: -1.74rem;
+    width: 0.72rem;
+    height: 3.35rem;
+    opacity: 1;
+    transform: translateX(-0.08rem) skewY(-12deg) scaleY(1);
+  }
+
+  .hiw-procedure-journey__threshold-plane::before {
+    right: auto;
+    left: -0.16rem;
+    width: 1.35rem;
+    height: 0.18rem;
+  }
+
+  .hiw-procedure-journey__threshold-plane::after {
+    display: none;
+  }
+
+  .hiw-procedure-journey__closure-mark {
+    min-height: 3rem;
+    width: min(100%, 7.8rem);
+    opacity: 1;
+    transform: rotate(-3deg) scale(1);
+  }
+
+  .hiw-procedure-journey__artifact {
+    padding-top: 0.62rem;
+  }
+
+  .hiw-procedure-journey__artifact::before {
+    width: 2.55rem;
+    height: 2.55rem;
   }
 
   .hiw-procedure-journey__artifact p {
     font-size: 0.76rem;
   }
 
-  .hiw-procedure-journey__scene {
-    gap: 0.75rem;
-  }
-
-  .hiw-procedure-journey__photo {
-    min-height: 14rem;
-  }
-
-  .hiw-procedure-journey__active-readout {
-    display: none;
-  }
-
   .hiw-procedure-journey__guardrails {
-    gap: 0.5rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    margin-top: 1rem;
+    padding: 0;
   }
 
-  .hiw-procedure-journey__guardrails li {
-    padding: 0.62rem 0 0.62rem 0.68rem;
+  .hiw-procedure-journey__guardrails section {
+    padding: 0.68rem 0.78rem 0.72rem;
+  }
+
+  .hiw-procedure-journey__guardrails section + section {
+    border-left: 0;
   }
 }
 
@@ -21843,15 +21569,15 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   }
 
   .hiw-procedure-journey__intro .h2-system {
-    font-size: 1.95rem;
+    font-size: 1.88rem;
   }
 
   .hiw-procedure-journey__stage-panel {
-    padding: 0.72rem;
+    padding: 0.76rem;
   }
 
-  .hiw-procedure-journey__photo {
-    min-height: 12.5rem;
+  .hiw-procedure-journey__closure-mark {
+    width: min(100%, 7.25rem);
   }
 }
 
@@ -21867,42 +21593,78 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
     max-height: none;
   }
 
-  .hiw-procedure-journey__stage,
-  .hiw-procedure-journey__stage-panel,
-  .hiw-procedure-journey__photo,
-  .hiw-procedure-journey__active-readout {
-    transition: none !important;
+  .hiw-procedure-journey__field {
+    display: block;
+    padding: clamp(1rem, 3vw, 2rem);
+  }
+
+  .hiw-procedure-journey__intro {
+    max-width: 48rem;
+    padding: 0 0 1.35rem;
+  }
+
+  .hiw-procedure-journey__corridor,
+  .hiw-procedure-journey__route-map,
+  .hiw-procedure-journey__photo-fragment {
+    display: none;
+  }
+
+  .hiw-procedure-journey__stages {
+    position: relative;
+    inset: auto;
+    display: grid;
+    gap: 0.9rem;
+    padding-left: 1.15rem;
+    pointer-events: auto;
+  }
+
+  .hiw-procedure-journey__stages::before {
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.32rem;
+    width: 0.28rem;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #6fb6ac, #d29a57 72%, #6fb6ac);
+    content: "";
   }
 
   .hiw-procedure-journey__stage,
-  .hiw-procedure-journey__stage[data-past="true"],
   .hiw-procedure-journey__stage[data-active="true"] {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
     opacity: 1;
+    filter: none;
     transform: none;
   }
 
-  .hiw-procedure-journey__stage-panel > p,
+  .hiw-procedure-journey__stage,
+  .hiw-procedure-journey__stage-panel,
+  .hiw-procedure-journey__threshold-plane,
+  .hiw-procedure-journey__closure-mark {
+    transition: none !important;
+  }
+
+  .hiw-procedure-journey__stage-panel {
+    grid-template-columns: minmax(0, 1fr) minmax(10rem, 0.32fr);
+  }
+
+  .hiw-procedure-journey__threshold-plane {
+    opacity: 1;
+    transform: skewX(-10deg) scaleY(1);
+  }
+
+  .hiw-procedure-journey__closure-mark {
+    opacity: 1;
+    transform: rotate(-3deg) scale(1);
+  }
+
   .hiw-procedure-journey__artifact {
     max-height: none !important;
     overflow: visible !important;
     opacity: 1 !important;
-  }
-
-  .hiw-procedure-journey__stage-panel > p {
-    margin-top: 0.38rem !important;
-  }
-
-  .hiw-procedure-journey__artifact {
-    margin-top: 0.68rem !important;
-    padding-top: 0.55rem !important;
-  }
-
-  .hiw-procedure-journey__route-beam {
-    transform: translateX(-50%) skewX(-10deg) scaleY(1);
-  }
-
-  .hiw-procedure-journey__route::before {
-    top: 100%;
   }
 
   .hiw-procedure-register,
@@ -21911,6 +21673,12 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   .hiw-threshold-console {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  .hiw-procedure-journey__stage-panel {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -24756,381 +24524,5 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 
   .services-site-map__node--5 {
     animation-delay: 240ms;
-  }
-}
-
-/* How It Works correction: final cascade for the operational journey mechanic. */
-@media (min-width: 1080px) {
-  .hiw-procedure-journey__stage:not([data-active="true"]) .hiw-procedure-journey__artifact {
-    max-height: none;
-    margin-top: 0;
-    overflow: visible;
-    opacity: 1;
-    padding-top: 1rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1079px) {
-  .hiw-procedure-journey {
-    min-height: clamp(150rem, 310vh, 210rem);
-  }
-
-  .hiw-procedure-journey__sticky {
-    min-height: 41rem;
-    height: calc(100svh - var(--header-offset) - var(--journey-nav-height));
-    padding: 1rem;
-  }
-
-  .hiw-procedure-journey__field {
-    grid-template-columns: minmax(14rem, 0.38fr) minmax(0, 1fr);
-    grid-template-rows: minmax(0, 1fr) auto;
-    gap: 1rem;
-  }
-
-  .hiw-procedure-journey__intro {
-    padding-left: 0.5rem;
-  }
-
-  .hiw-procedure-journey__intro .h2-system {
-    max-width: 16ch;
-    font-size: 2.65rem;
-    line-height: 0.98;
-  }
-
-  .hiw-procedure-journey__intro > p {
-    font-size: 0.93rem;
-    line-height: 1.5;
-  }
-
-  .hiw-procedure-journey__rule strong {
-    font-size: 1.08rem;
-  }
-
-  .hiw-procedure-journey__corridor {
-    grid-column: 2;
-    min-height: 29rem;
-  }
-
-  .hiw-procedure-journey__stage,
-  .hiw-procedure-journey__stage[data-past="true"],
-  .hiw-procedure-journey__stage[data-active="true"] {
-    position: absolute;
-    top: 50%;
-    left: 44%;
-    width: min(33rem, 55vw);
-    opacity: var(--stage-opacity);
-    filter: blur(calc(var(--stage-abs-distance) * 0.36px));
-    transform:
-      translate(-50%, -50%)
-      translateX(calc(var(--stage-distance) * 38vw))
-      translateY(calc(var(--stage-abs-distance) * 1.1rem))
-      scale(var(--stage-scale));
-  }
-
-  .hiw-procedure-journey__stage-panel {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.75rem;
-    height: auto;
-    padding: 0.95rem;
-  }
-
-  .hiw-procedure-journey__stage-copy h3 {
-    font-size: 1.55rem;
-    line-height: 1;
-  }
-
-  .hiw-procedure-journey__stage-copy p {
-    font-size: 0.86rem;
-    line-height: 1.44;
-  }
-
-  .hiw-procedure-journey__artifact {
-    padding-top: 0.68rem;
-  }
-
-  .hiw-procedure-journey__artifact::before {
-    width: 2.8rem;
-    height: 2.8rem;
-  }
-
-  .hiw-procedure-journey__photo-fragment {
-    width: min(16rem, 30vw);
-  }
-
-  .hiw-procedure-journey__guardrails {
-    padding-inline: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .hiw-procedure-section.section-primitive--compact {
-    padding-block: 0;
-  }
-
-  .hiw-procedure-journey {
-    min-height: auto;
-  }
-
-  .hiw-procedure-journey__sticky {
-    position: static;
-    min-height: 0;
-    height: auto;
-    max-height: none;
-    padding: 1rem;
-  }
-
-  .hiw-procedure-journey__field {
-    display: block;
-    padding: 0;
-  }
-
-  .hiw-procedure-journey__intro {
-    max-width: none;
-    padding: 0 0 1.35rem;
-  }
-
-  .hiw-procedure-journey__intro .h2-system {
-    max-width: 18ch;
-    font-size: 2.05rem;
-    line-height: 1.02;
-  }
-
-  .hiw-procedure-journey__intro > p {
-    font-size: 0.95rem;
-    line-height: 1.55;
-  }
-
-  .hiw-procedure-journey__rule {
-    padding: 0.78rem 0.86rem;
-  }
-
-  .hiw-procedure-journey__rule strong {
-    font-size: 1.02rem;
-  }
-
-  .hiw-procedure-journey__corridor {
-    position: absolute;
-    inset: 0;
-    min-height: 0;
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  .hiw-procedure-journey__route-map,
-  .hiw-procedure-journey__photo-fragment {
-    display: none;
-  }
-
-  .hiw-procedure-journey__threshold-plane {
-    top: auto;
-    right: 1.05rem;
-    bottom: 17rem;
-    height: 13rem;
-  }
-
-  .hiw-procedure-journey__closure-mark {
-    right: 1rem;
-    bottom: 6.5rem;
-    width: 4.8rem;
-  }
-
-  .hiw-procedure-journey__stages {
-    position: relative;
-    inset: auto;
-    display: grid;
-    gap: 1rem;
-    padding-left: 1.25rem;
-    pointer-events: auto;
-  }
-
-  .hiw-procedure-journey__stages::before,
-  .hiw-procedure-journey__stages::after {
-    position: absolute;
-    top: 0.6rem;
-    bottom: 0.6rem;
-    left: 0.28rem;
-    width: 0.28rem;
-    border-radius: 999px;
-    content: "";
-  }
-
-  .hiw-procedure-journey__stages::before {
-    background: rgba(255, 250, 242, 0.12);
-  }
-
-  .hiw-procedure-journey__stages::after {
-    background: linear-gradient(180deg, #6fb6ac, #d29a57 72%, #6fb6ac);
-    transform: scaleY(var(--journey-progress));
-    transform-origin: top;
-  }
-
-  .hiw-procedure-journey__stage,
-  .hiw-procedure-journey__stage[data-past="true"],
-  .hiw-procedure-journey__stage[data-active="true"] {
-    position: relative;
-    top: auto;
-    left: auto;
-    z-index: 1;
-    width: auto;
-    opacity: 1;
-    filter: none;
-    transform: none;
-  }
-
-  .hiw-procedure-journey__stage::before {
-    position: absolute;
-    top: 1.1rem;
-    left: -1.25rem;
-    z-index: 2;
-    width: 0.62rem;
-    height: 1.55rem;
-    border: 1px solid rgba(255, 250, 242, 0.24);
-    background: rgba(255, 250, 242, 0.08);
-    content: "";
-    transform: translateX(-0.08rem) skewY(-12deg);
-  }
-
-  .hiw-procedure-journey__stage[data-stage-key="decision"]::before {
-    height: 2.6rem;
-    border-color: rgba(210, 154, 87, 0.52);
-    background: rgba(184, 102, 74, 0.18);
-  }
-
-  .hiw-procedure-journey__stage[data-stage-key="action"]::before {
-    border-color: rgba(111, 182, 172, 0.42);
-    background: rgba(47, 111, 115, 0.18);
-  }
-
-  .hiw-procedure-journey__stage-panel {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.72rem;
-    border-radius: 0.18rem;
-    padding: 0.85rem;
-  }
-
-  .hiw-procedure-journey__stage-copy h3 {
-    font-size: 1.18rem;
-    line-height: 1.08;
-  }
-
-  .hiw-procedure-journey__stage-copy p {
-    font-size: 0.86rem;
-    line-height: 1.48;
-  }
-
-  .hiw-procedure-journey__artifact {
-    padding-top: 0.62rem;
-  }
-
-  .hiw-procedure-journey__artifact::before {
-    width: 2.55rem;
-    height: 2.55rem;
-  }
-
-  .hiw-procedure-journey__guardrails {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0;
-    margin-top: 1rem;
-    padding: 0;
-  }
-
-  .hiw-procedure-journey__guardrails section {
-    padding: 0.68rem 0.78rem 0.72rem;
-  }
-
-  .hiw-procedure-journey__guardrails section + section {
-    border-left: 0;
-  }
-}
-
-@media (max-width: 430px) {
-  .hiw-procedure-journey__sticky {
-    padding: 0.85rem;
-  }
-
-  .hiw-procedure-journey__intro .h2-system {
-    font-size: 1.88rem;
-  }
-
-  .hiw-procedure-journey__stage-panel {
-    padding: 0.76rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hiw-procedure-journey {
-    min-height: auto;
-  }
-
-  .hiw-procedure-journey__sticky {
-    position: static;
-    min-height: 0;
-    height: auto;
-    max-height: none;
-  }
-
-  .hiw-procedure-journey__field {
-    display: block;
-    padding: clamp(1rem, 3vw, 2rem);
-  }
-
-  .hiw-procedure-journey__intro {
-    max-width: 48rem;
-    padding: 0 0 1.35rem;
-  }
-
-  .hiw-procedure-journey__corridor,
-  .hiw-procedure-journey__route-map,
-  .hiw-procedure-journey__threshold-plane,
-  .hiw-procedure-journey__closure-mark,
-  .hiw-procedure-journey__photo-fragment {
-    display: none;
-  }
-
-  .hiw-procedure-journey__stages {
-    position: relative;
-    inset: auto;
-    display: grid;
-    gap: 0.9rem;
-    padding-left: 1.15rem;
-    pointer-events: auto;
-  }
-
-  .hiw-procedure-journey__stages::before {
-    position: absolute;
-    top: 0.5rem;
-    bottom: 0.5rem;
-    left: 0.32rem;
-    width: 0.28rem;
-    border-radius: 999px;
-    background: linear-gradient(180deg, #6fb6ac, #d29a57 72%, #6fb6ac);
-    content: "";
-  }
-
-  .hiw-procedure-journey__stage,
-  .hiw-procedure-journey__stage[data-active="true"] {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: auto;
-    opacity: 1;
-    filter: none;
-    transform: none;
-  }
-
-  .hiw-procedure-journey__stage-panel,
-  .hiw-procedure-journey__photo-fragment {
-    transition: none !important;
-  }
-
-  .hiw-procedure-journey__stage-panel {
-    grid-template-columns: minmax(0, 1fr) minmax(10rem, 0.32fr);
-  }
-
-  .hiw-procedure-journey__artifact {
-    max-height: none !important;
-    overflow: visible !important;
-    opacity: 1 !important;
   }
 }

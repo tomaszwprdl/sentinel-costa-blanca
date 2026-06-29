@@ -24,6 +24,8 @@ type ProcedureJourneyProps = {
   ruleTitle: string;
   rules: ProcedureJourneyRule[];
   steps: ProcedureJourneyStep[];
+  thresholdDeviceLabel: string;
+  closureDeviceLabel: string;
   visitRecordImageAlt: string;
 };
 
@@ -43,6 +45,8 @@ export default function ProcedureJourney({
   ruleTitle,
   rules,
   steps,
+  thresholdDeviceLabel,
+  closureDeviceLabel,
   visitRecordImageAlt,
 }: ProcedureJourneyProps) {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -176,8 +180,6 @@ export default function ProcedureJourney({
                 </g>
               ))}
             </svg>
-            <span className="hiw-procedure-journey__threshold-plane" />
-            <span className="hiw-procedure-journey__closure-mark" />
             <figure className="hiw-procedure-journey__photo-fragment">
               <Image
                 src="/photos/hiw-visit-record.webp"
@@ -195,9 +197,9 @@ export default function ProcedureJourney({
             {steps.map((step, index) => {
               const distance = index - journeyState.stageProgress;
               const absDistance = clamp(Math.abs(distance), 0, 3);
-              const presence = clamp(1 - absDistance * 0.36, 0.1, 1);
-              const scale = clamp(1 - absDistance * 0.08, 0.78, 1);
               const isActive = index === journeyState.activeIndex;
+              const presence = isActive ? 1 : clamp(0.3 - absDistance * 0.1, 0.06, 0.26);
+              const scale = clamp(1 - absDistance * 0.08, 0.78, 1);
 
               const stageStyle = {
                 '--stage-index': index,
@@ -222,9 +224,15 @@ export default function ProcedureJourney({
                       <p>{step.body}</p>
                     </div>
                     <div className="hiw-procedure-journey__artifact" aria-label={step.artifactTitle}>
+                      {step.key === 'action' ? (
+                        <span className="hiw-procedure-journey__closure-mark" data-label={closureDeviceLabel} aria-hidden="true" />
+                      ) : null}
                       <span>{step.artifactTitle}</span>
                       <p>{step.artifactItems.join(' / ')}</p>
                     </div>
+                    {step.key === 'decision' ? (
+                      <span className="hiw-procedure-journey__threshold-plane" data-label={thresholdDeviceLabel} aria-hidden="true" />
+                    ) : null}
                   </article>
                 </li>
               );

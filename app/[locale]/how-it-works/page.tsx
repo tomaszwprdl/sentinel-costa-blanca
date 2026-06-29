@@ -104,6 +104,8 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
             ruleTitle={t('redesign.procedure.rulesTitle')}
             rules={procedureRules}
             steps={procedureSteps}
+            thresholdDeviceLabel={t('redesign.procedure.thresholdDeviceLabel')}
+            closureDeviceLabel={t('redesign.procedure.closureDeviceLabel')}
             visitRecordImageAlt={t('redesign.procedure.visitRecordImageAlt')}
           />
         </Section>

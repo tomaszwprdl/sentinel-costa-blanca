@@ -1714,6 +1714,8 @@
         "title": "Od wejścia do działania — jedna kontrolowana droga.",
         "intro": "Każdy etap wynika z poprzedniego: najpierw zakres, potem dostęp, wizyta, zapis, decyzja i wykonanie. Scroll pokazuje, gdzie Sentinel działa samodzielnie, a gdzie decyzja wraca do właściciela.",
         "visitRecordImageAlt": "Operacyjne zdjęcie zastępcze przygotowania zapisu wizyty przy drzwiach mieszkania",
+        "thresholdDeviceLabel": "Próg decyzji",
+        "closureDeviceLabel": "ZAPIS ZAMKNIĘTY",
         "rulesEyebrow": "Zasada operacyjna",
         "rulesTitle": "Nie ma działania bez zapisu.",
         "rules": [
