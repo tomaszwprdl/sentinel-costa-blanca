@@ -238,26 +238,26 @@ export default function ProcedureJourney({
               })}
             </ol>
 
-            <div className="hiw-procedure-journey__footer">
-              <div className="hiw-procedure-journey__footer-inner">
-                <div className="hiw-procedure-journey__rule">
-                  <span>{ruleEyebrow}</span>
-                  <strong>{ruleTitle}</strong>
-                </div>
-                <aside className="hiw-procedure-journey__guardrails" aria-label={ruleTitle}>
-                  {rules.map((rule) => (
-                    <section key={rule.label}>
-                      <span>{rule.label}</span>
-                      <p>{rule.value}</p>
-                    </section>
-                  ))}
-                </aside>
-              </div>
-            </div>
           </div>
         </div>
       </div>
       <div className="hiw-procedure-journey__exit-runway" aria-hidden="true" />
+      <div className="hiw-procedure-journey__footer">
+        <div className="hiw-procedure-journey__footer-inner">
+          <div className="hiw-procedure-journey__rule">
+            <span>{ruleEyebrow}</span>
+            <strong>{ruleTitle}</strong>
+          </div>
+          <aside className="hiw-procedure-journey__guardrails" aria-label={ruleTitle}>
+            {rules.map((rule) => (
+              <section key={rule.label}>
+                <span>{rule.label}</span>
+                <p>{rule.value}</p>
+              </section>
+            ))}
+          </aside>
+        </div>
+      </div>
     </div>
   );
 }
