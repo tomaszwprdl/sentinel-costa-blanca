@@ -80,13 +80,6 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
                     </div>
                   ))}
                 </div>
-                <ol className="hiw-procedure-mini-rail" aria-label={t('redesign.procedure.title')}>
-                  {procedureSteps.slice(1, 6).map((step) => (
-                    <li key={step.key}>
-                      <strong>{step.title}</strong>
-                    </li>
-                  ))}
-                </ol>
                 <span className="hiw-procedure-register__stamp">{t('redesign.hero.registerStamp')}</span>
               </div>
             </figure>
