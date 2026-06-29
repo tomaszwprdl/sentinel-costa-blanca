@@ -6,7 +6,7 @@ import Section from '@/components/layout/Section';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import JourneyNav from '@/components/JourneyNav';
 import ProcedureJourney from '@/components/how-it-works/ProcedureJourney';
-import ReportDecisionLimits from '@/components/how-it-works/ReportDecisionLimits';
+import DecisionReadyReport, { type DecisionReadyReportContent } from '@/components/how-it-works/DecisionReadyReport';
 
 type RecordRow = {
   label: string;
@@ -21,11 +21,6 @@ type ProcedureStep = {
   artifactItems: string[];
 };
 
-type EvidencePanel = {
-  title: string;
-  rows: RecordRow[];
-};
-
 const RHYTHM_KEYS = ['visits', 'reports', 'access', 'changes'] as const;
 
 export default async function HowItWorksPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -36,9 +31,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
   const heroRows = t.raw('redesign.hero.registerRows') as RecordRow[];
   const procedureSteps = t.raw('redesign.procedure.steps') as ProcedureStep[];
   const procedureRules = t.raw('redesign.procedure.rules') as RecordRow[];
-  const evidencePanels = t.raw('redesign.evidence.panels') as EvidencePanel[];
-  const reportStatusChips = t.raw('redesign.evidence.reportStatusChips') as string[];
-  const reportNextAction = t.raw('redesign.evidence.nextAction') as RecordRow;
+  const sampleReport = t.raw('redesign.evidence.sampleReport') as DecisionReadyReportContent;
   const journeyItems = [
     { id: 'process-start', label: t('redesign.hero.eyebrow') },
     { id: 'procedure-corridor', label: t('redesign.procedure.eyebrow') },
@@ -113,62 +106,20 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
               <p className="mt-3 max-w-[62ch] text-body">{t('redesign.evidence.intro')}</p>
             </div>
 
-            <article className="hiw-owner-record" aria-label={t('redesign.evidence.sampleMarker')}>
-              <div className="hiw-owner-record__header">
-                <div>
-                  <p>{t('redesign.evidence.sampleMarker')}</p>
-                  <h3>{evidencePanels[0]?.title}</h3>
-                </div>
-                <span>{t('redesign.evidence.reportLabel')}</span>
-              </div>
-
-              <div className="hiw-owner-record__body">
-                <section className="hiw-report-excerpt" aria-label={evidencePanels[0]?.title}>
-                  <div className="hiw-report-excerpt__rows">
-                    {evidencePanels[0]?.rows.map((row, index) => (
-                      <div key={row.label} className="hiw-report-excerpt__row">
-                        <div className="hiw-report-excerpt__row-heading">
-                          <span>{row.label}</span>
-                        </div>
-                        <p>{row.value}</p>
-                        {index === 2 ? (
-                          <div className="hiw-report-excerpt__status-chips" aria-label={row.label}>
-                            {reportStatusChips.map((chip) => (
-                              <em key={chip}>{chip}</em>
-                            ))}
-                          </div>
-                        ) : null}
-                      </div>
-                    ))}
-                    <div className="hiw-report-excerpt__row hiw-report-excerpt__row--next">
-                      <div className="hiw-report-excerpt__row-heading">
-                        <span>{reportNextAction.label}</span>
-                      </div>
-                      <p>{reportNextAction.value}</p>
-                    </div>
-                  </div>
-                </section>
-
-                <section className="hiw-threshold-console" aria-label={evidencePanels[1]?.title}>
-                  <div className="hiw-threshold-console__top">
-                    <span>{t('redesign.evidence.thresholdLabel')}</span>
-                    <strong>{evidencePanels[1]?.title}</strong>
-                  </div>
-                  <div className="hiw-threshold-console__rows">
-                    {evidencePanels[1]?.rows.map((row) => (
-                      <dl key={row.label} className="hiw-threshold-console__row">
-                        <dt>{row.label}</dt>
-                        <dd>{row.value}</dd>
-                      </dl>
-                    ))}
-                  </div>
-                </section>
-              </div>
-
-              <div className="hiw-evidence-limits-strip">
-                <ReportDecisionLimits />
-              </div>
-            </article>
+            <DecisionReadyReport
+              report={sampleReport}
+              limits={{
+                title: t('redesign.decision.limitsTitle'),
+                protectiveTitle: t('redesign.decision.protectiveTitle'),
+                protectiveIntro: t('redesign.decision.protectiveIntro'),
+                authorityTitle: t('redesign.decision.authorityTitle'),
+                authorityScope: t('redesign.decision.authorityScope'),
+                standard: t('step2.redPackageLimits.standard'),
+                optional: t('step2.redPackageLimits.optional'),
+                approval: t('redesign.decision.ownerApprovalLine'),
+                note: t('redesign.decision.note'),
+              }}
+            />
           </div>
         </Section>
 

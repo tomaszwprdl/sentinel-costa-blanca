@@ -1777,33 +1777,39 @@
       "evidence": {
         "eyebrow": "Report and threshold",
         "title": "The report is where observation becomes owner decision.",
-        "intro": "This is a sample record the owner receives after a visit: observation, documentation, status, and decision threshold in one layout.",
-        "reportLabel": "Evidence panel",
-        "thresholdLabel": "Decision threshold",
-        "sampleMarker": "Sample report layout",
-        "reportStatusChips": ["closed", "pending", "owner decision"],
-        "nextAction": {
-          "label": "Next action",
-          "value": "The owner sees what continues inside scope, what waits, and what reaches the decision threshold."
-        },
-        "panels": [
-          {
-            "title": "Sample visit record",
-            "rows": [
-              { "label": "Observed", "value": "Visible condition and relevant risk points." },
-              { "label": "Documented", "value": "Photos, notes, timing, and context." },
-              { "label": "Owner sees", "value": "What is closed, what is pending, and what requires approval." }
-            ]
+        "intro": "This sample shows how one scheduled-visit observation becomes an owner record: no alarm, no repair without approval, and a clear decision threshold.",
+        "sampleReport": {
+          "ribbon": "Sample report layout",
+          "context": ["Scheduled inspection", "Apartment", "Southern Costa Blanca"],
+          "headline": "One observation recorded. No immediate action required.",
+          "finding": {
+            "eyebrow": "Observation",
+            "title": "Visible early damp trace at the balcony-door frame.",
+            "body": "During a scheduled visit, Sentinel notes a point at the frame. There is no active leak or emergency; no repair is started without the owner's decision.",
+            "note": "Operator note: document the point, compare it at the next visit, inform the owner if status changes."
           },
-          {
-            "title": "Action boundary",
-            "rows": [
-              { "label": "Inside scope", "value": "Handled according to package rhythm and authority." },
-              { "label": "At threshold", "value": "Sentinel may act only inside the agreed limit." },
-              { "label": "Outside limit", "value": "Owner approval or separate agreement is required." }
-            ]
-          }
-        ]
+          "evidenceTitle": "Evidence in the report",
+          "evidence": [
+            { "label": "Frame detail", "detail": "schematic close-up of the observation point" },
+            { "label": "Interior context", "detail": "schematic context frame" }
+          ],
+          "checklistTitle": "Inspection excerpt",
+          "checklist": [
+            { "label": "Access confirmed", "status": "OK", "tone": "ok" },
+            { "label": "Interior checked", "status": "OK", "tone": "ok" },
+            { "label": "Water point unchanged", "status": "OK", "tone": "ok" },
+            { "label": "Damp trace at frame", "status": "Observation", "tone": "observation" }
+          ],
+          "decisionTitle": "Decision stamp",
+          "decision": [
+            { "label": "Status", "value": "Monitor / observation" },
+            { "label": "Scope", "value": "Inside agreed package rhythm" },
+            { "label": "Approval", "value": "Not required at this stage" },
+            { "label": "Threshold", "value": "If work exceeds agreed scope or limit, owner approval is required." }
+          ],
+          "nextActionLabel": "Next action",
+          "nextAction": "Sentinel compares the point at the next scheduled visit. The owner is informed if the status changes."
+        }
       },
       "timeline": {
         "eyebrow": "Whole process",

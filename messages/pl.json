@@ -1777,33 +1777,39 @@
       "evidence": {
         "eyebrow": "Raport i próg",
         "title": "Raport jest miejscem, gdzie obserwacja staje się decyzją właściciela.",
-        "intro": "To przykład rekordu, który właściciel otrzymuje po wizycie: obserwacja, dokumentacja, status i próg decyzji w jednym układzie.",
-        "reportLabel": "Panel dowodu",
-        "thresholdLabel": "Próg decyzji",
-        "sampleMarker": "Przykładowy układ raportu",
-        "reportStatusChips": ["zamknięte", "oczekuje", "decyzja właściciela"],
-        "nextAction": {
-          "label": "Następny krok",
-          "value": "Właściciel widzi, co kontynuuje się w ramach zakresu, co czeka i co trafia do progu decyzji."
-        },
-        "panels": [
-          {
-            "title": "Przykładowy zapis wizyty",
-            "rows": [
-              { "label": "Zaobserwowano", "value": "Widoczny stan i istotne punkty ryzyka." },
-              { "label": "Udokumentowano", "value": "Zdjęcia, notatki, czas i kontekst." },
-              { "label": "Właściciel widzi", "value": "Co jest zamknięte, co oczekuje i co wymaga zgody." }
-            ]
+        "intro": "Ten przykład pokazuje, jak pojedyncza obserwacja z planowanej wizyty staje się rekordem dla właściciela: bez alarmu, bez naprawy bez zgody, z jasnym progiem decyzji.",
+        "sampleReport": {
+          "ribbon": "Przykładowy układ raportu",
+          "context": ["Planowana kontrola", "Apartament", "Południowa Costa Blanca"],
+          "headline": "Jedna obserwacja zapisana. Bez natychmiastowego działania.",
+          "finding": {
+            "eyebrow": "Obserwacja",
+            "title": "Widoczny wczesny ślad wilgoci przy ramie drzwi balkonowych.",
+            "body": "Podczas planowanej wizyty Sentinel zauważa punkt przy ramie. Nie ma aktywnego wycieku ani sytuacji nagłej; naprawa nie zostaje uruchomiona bez decyzji właściciela.",
+            "note": "Zapis operatora: udokumentować punkt, porównać przy kolejnej wizycie, poinformować właściciela przy zmianie statusu."
           },
-          {
-            "title": "Granica działania",
-            "rows": [
-              { "label": "W zakresie", "value": "Prowadzone zgodnie z rytmem pakietu i uprawnieniem." },
-              { "label": "Na progu", "value": "Sentinel może działać tylko w uzgodnionym limicie." },
-              { "label": "Poza limitem", "value": "Wymagana jest zgoda właściciela albo osobne ustalenie." }
-            ]
-          }
-        ]
+          "evidenceTitle": "Dowód w raporcie",
+          "evidence": [
+            { "label": "Detal przy ramie", "detail": "schematyczny kadr miejsca obserwacji" },
+            { "label": "Kontekst wnętrza", "detail": "schematyczny kadr otoczenia" }
+          ],
+          "checklistTitle": "Wyciąg z kontroli",
+          "checklist": [
+            { "label": "Dostęp potwierdzony", "status": "OK", "tone": "ok" },
+            { "label": "Wnętrze sprawdzone", "status": "OK", "tone": "ok" },
+            { "label": "Punkt wodny bez zmian", "status": "OK", "tone": "ok" },
+            { "label": "Ślad wilgoci przy ramie", "status": "Obserwacja", "tone": "observation" }
+          ],
+          "decisionTitle": "Stempel decyzji",
+          "decision": [
+            { "label": "Status", "value": "Monitorować / obserwacja" },
+            { "label": "Zakres", "value": "W rytmie uzgodnionego pakietu" },
+            { "label": "Zgoda", "value": "Nie jest wymagana na tym etapie" },
+            { "label": "Próg", "value": "Jeśli prace przekroczą uzgodniony zakres lub limit, wymagana jest zgoda właściciela." }
+          ],
+          "nextActionLabel": "Następne działanie",
+          "nextAction": "Sentinel porównuje punkt przy kolejnej planowanej wizycie. Właściciel otrzymuje informację, jeśli status się zmieni."
+        }
       },
       "timeline": {
         "eyebrow": "Cały proces",
