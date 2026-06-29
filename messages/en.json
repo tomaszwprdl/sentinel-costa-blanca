@@ -1777,7 +1777,7 @@
       "evidence": {
         "eyebrow": "Report and threshold",
         "title": "The report is where observation becomes owner decision.",
-        "intro": "This sample shows how one scheduled-visit observation becomes an owner record: no alarm, no repair without approval, and a clear decision threshold.",
+        "intro": "This compact preview shows how a visit observation becomes a written owner record: no alarm, no repair without approval, and a clear decision threshold.",
         "sampleReport": {
           "ribbon": "Sample report layout",
           "context": ["Scheduled inspection", "Apartment", "Southern Costa Blanca"],
@@ -1785,20 +1785,13 @@
           "finding": {
             "eyebrow": "Observation",
             "title": "Visible early damp trace at the balcony-door frame.",
-            "body": "During a scheduled visit, Sentinel notes a point at the frame. There is no active leak or emergency; no repair is started without the owner's decision.",
-            "note": "Operator note: document the point, compare it at the next visit, inform the owner if status changes."
+            "body": "Sentinel records a point at the frame. There is no active leak or emergency; no repair is started without the owner's decision.",
+            "note": "Record: document the point, compare it at the next visit, inform the owner if status changes."
           },
           "evidenceTitle": "Evidence in the report",
           "evidence": [
-            { "label": "Frame detail", "detail": "schematic close-up of the observation point" },
-            { "label": "Interior context", "detail": "schematic context frame" }
-          ],
-          "checklistTitle": "Inspection excerpt",
-          "checklist": [
-            { "label": "Access confirmed", "status": "OK", "tone": "ok" },
-            { "label": "Interior checked", "status": "OK", "tone": "ok" },
-            { "label": "Water point unchanged", "status": "OK", "tone": "ok" },
-            { "label": "Damp trace at frame", "status": "Observation", "tone": "observation" }
+            { "label": "Frame detail", "detail": "observation point" },
+            { "label": "Interior context", "detail": "surrounding context" }
           ],
           "decisionTitle": "Decision stamp",
           "decision": [

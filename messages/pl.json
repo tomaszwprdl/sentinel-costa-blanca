@@ -1777,7 +1777,7 @@
       "evidence": {
         "eyebrow": "Raport i próg",
         "title": "Raport jest miejscem, gdzie obserwacja staje się decyzją właściciela.",
-        "intro": "Ten przykład pokazuje, jak pojedyncza obserwacja z planowanej wizyty staje się rekordem dla właściciela: bez alarmu, bez naprawy bez zgody, z jasnym progiem decyzji.",
+        "intro": "Ten skrócony podgląd pokazuje, jak obserwacja z wizyty staje się pisemnym rekordem dla właściciela: bez alarmu, bez naprawy bez zgody, z jasnym progiem decyzji.",
         "sampleReport": {
           "ribbon": "Przykładowy układ raportu",
           "context": ["Planowana kontrola", "Apartament", "Południowa Costa Blanca"],
@@ -1785,20 +1785,13 @@
           "finding": {
             "eyebrow": "Obserwacja",
             "title": "Widoczny wczesny ślad wilgoci przy ramie drzwi balkonowych.",
-            "body": "Podczas planowanej wizyty Sentinel zauważa punkt przy ramie. Nie ma aktywnego wycieku ani sytuacji nagłej; naprawa nie zostaje uruchomiona bez decyzji właściciela.",
-            "note": "Zapis operatora: udokumentować punkt, porównać przy kolejnej wizycie, poinformować właściciela przy zmianie statusu."
+            "body": "Sentinel zapisuje punkt przy ramie. Nie ma aktywnego wycieku ani sytuacji nagłej; naprawa nie zostaje uruchomiona bez decyzji właściciela.",
+            "note": "Zapis: udokumentować punkt, porównać przy kolejnej wizycie, poinformować właściciela przy zmianie statusu."
           },
           "evidenceTitle": "Dowód w raporcie",
           "evidence": [
-            { "label": "Detal przy ramie", "detail": "schematyczny kadr miejsca obserwacji" },
-            { "label": "Kontekst wnętrza", "detail": "schematyczny kadr otoczenia" }
-          ],
-          "checklistTitle": "Wyciąg z kontroli",
-          "checklist": [
-            { "label": "Dostęp potwierdzony", "status": "OK", "tone": "ok" },
-            { "label": "Wnętrze sprawdzone", "status": "OK", "tone": "ok" },
-            { "label": "Punkt wodny bez zmian", "status": "OK", "tone": "ok" },
-            { "label": "Ślad wilgoci przy ramie", "status": "Obserwacja", "tone": "observation" }
+            { "label": "Detal przy ramie", "detail": "miejsce obserwacji" },
+            { "label": "Kontekst wnętrza", "detail": "otoczenie punktu" }
           ],
           "decisionTitle": "Stempel decyzji",
           "decision": [

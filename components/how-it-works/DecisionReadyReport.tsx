@@ -13,12 +13,6 @@ export type DecisionReadyReportContent = {
     label: string;
     detail: string;
   }[];
-  checklistTitle: string;
-  checklist: {
-    label: string;
-    status: string;
-    tone: 'ok' | 'observation';
-  }[];
   decisionTitle: string;
   decision: {
     label: string;
@@ -73,30 +67,14 @@ export default function DecisionReadyReport({ report, limits }: DecisionReadyRep
             <div className="hiw-decision-report__section-head">
               <span>{report.evidenceTitle}</span>
             </div>
-            <div className="hiw-decision-report__evidence-grid">
+            <ul>
               {report.evidence.map((slot, index) => (
-                <figure key={slot.label} className="hiw-decision-report__evidence-slot">
-                  <div className="hiw-decision-report__evidence-visual" data-slot={index + 1} aria-hidden="true">
-                    <span />
-                  </div>
-                  <figcaption>
+                <li key={slot.label}>
+                  <span className="hiw-decision-report__evidence-mark" data-slot={index + 1} aria-hidden="true" />
+                  <div>
                     <strong>{slot.label}</strong>
                     <span>{slot.detail}</span>
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-          </section>
-
-          <section className="hiw-decision-report__checklist" aria-label={report.checklistTitle}>
-            <div className="hiw-decision-report__section-head">
-              <span>{report.checklistTitle}</span>
-            </div>
-            <ul>
-              {report.checklist.map((row) => (
-                <li key={row.label} data-tone={row.tone}>
-                  <span>{row.label}</span>
-                  <strong>{row.status}</strong>
+                  </div>
                 </li>
               ))}
             </ul>
@@ -125,21 +103,22 @@ export default function DecisionReadyReport({ report, limits }: DecisionReadyRep
 
       <footer className="hiw-decision-report__appendix">
         <p className="hiw-decision-report__appendix-title">{limits.title}</p>
-        <div className="hiw-decision-report__appendix-grid">
-          <section>
-            <strong>{limits.protectiveTitle}</strong>
-            <p>{limits.protectiveIntro}</p>
-          </section>
-          <section>
-            <strong>{limits.authorityTitle}</strong>
-            <p>{limits.authorityScope}</p>
-            <ul>
-              <li>{limits.standard}</li>
-              <li>{limits.optional}</li>
-            </ul>
-            <p>{limits.approval}</p>
-          </section>
-        </div>
+        <p>
+          <strong>{limits.protectiveTitle}</strong>
+          {' '}
+          {limits.protectiveIntro}
+        </p>
+        <p>
+          <strong>{limits.authorityTitle}</strong>
+          {' '}
+          {limits.authorityScope}
+          {' '}
+          {limits.standard}
+          {' / '}
+          {limits.optional}
+          {'. '}
+          {limits.approval}
+        </p>
         <p className="hiw-decision-report__appendix-note">{limits.note}</p>
       </footer>
     </article>

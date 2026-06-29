@@ -88,6 +88,12 @@ Recently completed live work:
 
 ---
 
+# Scoped follow-up TODOs
+
+- Replace sample report layout with anonymized real Sentinel report after report protocol is created and used.
+
+---
+
 # Forbidden without Owner approval
 
 - Package rename or count change
