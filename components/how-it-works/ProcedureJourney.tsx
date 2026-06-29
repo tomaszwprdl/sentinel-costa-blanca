@@ -101,7 +101,9 @@ export default function ProcedureJourney({
 
       const rect = root.getBoundingClientRect();
       const travel = Math.max(rect.height - window.innerHeight, 1);
-      const progress = clamp(-rect.top / travel, 0, 1);
+      const finalHold = clamp(window.innerHeight * 0.44, 300, 520);
+      const effectiveTravel = Math.max(travel - finalHold, 1);
+      const progress = clamp(-rect.top / effectiveTravel, 0, 1);
       const stageProgress = progress * maxStage;
       const activeIndex = clamp(Math.round(stageProgress), 0, steps.length - 1);
 
@@ -150,105 +152,112 @@ export default function ProcedureJourney({
       data-active-step={activeStep?.key}
       style={rootStyle}
     >
-      <div className="hiw-procedure-journey__sticky">
-        <div className="hiw-procedure-journey__field">
-          <div className="hiw-procedure-journey__intro">
-            <p className="section-label">{eyebrow}</p>
-            <h2 className="h2-system">{title}</h2>
-            <p>{intro}</p>
-            <div className="hiw-procedure-journey__rule">
-              <span>{ruleEyebrow}</span>
-              <strong>{ruleTitle}</strong>
+      <div className="hiw-procedure-journey__track">
+        <div className="hiw-procedure-journey__sticky">
+          <div className="hiw-procedure-journey__field">
+            <div className="hiw-procedure-journey__intro">
+              <p className="section-label">{eyebrow}</p>
+              <h2 className="h2-system">{title}</h2>
+              <p>{intro}</p>
+            </div>
+
+            <div className="hiw-procedure-journey__corridor" aria-hidden="true">
+              <svg className="hiw-procedure-journey__route-map" viewBox="0 0 1200 560" preserveAspectRatio="none">
+                <path
+                  className="hiw-procedure-journey__route-base"
+                  d="M68 418 C220 300 292 224 420 246 C560 270 590 128 725 152 C860 176 885 344 1036 262 L1136 210"
+                  pathLength="1"
+                />
+                <path
+                  className="hiw-procedure-journey__route-progress"
+                  d="M68 418 C220 300 292 224 420 246 C560 270 590 128 725 152 C860 176 885 344 1036 262 L1136 210"
+                  pathLength="1"
+                />
+                {steps.map((step, index) => (
+                  <g key={step.key} className="hiw-procedure-journey__checkpoint" data-stage-key={step.key}>
+                    <line x1={118 + index * 194} y1="128" x2={70 + index * 194} y2="432" />
+                  </g>
+                ))}
+              </svg>
+              <figure className="hiw-procedure-journey__photo-fragment">
+                <Image
+                  src="/photos/hiw-visit-record.webp"
+                  alt={visitRecordImageAlt}
+                  fill
+                  sizes="(min-width: 1024px) 24vw, (min-width: 768px) 34vw, 100vw"
+                  className="hiw-procedure-journey__photo-image"
+                  loading="eager"
+                  priority={false}
+                />
+              </figure>
+            </div>
+
+            <ol className="hiw-procedure-journey__stages">
+              {steps.map((step, index) => {
+                const distance = index - journeyState.stageProgress;
+                const absDistance = clamp(Math.abs(distance), 0, 3);
+                const isActive = index === journeyState.activeIndex;
+                const presence = isActive ? 1 : clamp(0.07 - absDistance * 0.025, 0.01, 0.045);
+                const scale = isActive ? 1 : clamp(0.82 - absDistance * 0.07, 0.62, 0.78);
+
+                const stageStyle = {
+                  '--stage-index': index,
+                  '--stage-distance': Number(distance.toFixed(3)),
+                  '--stage-abs-distance': Number(absDistance.toFixed(3)),
+                  '--stage-opacity': Number(presence.toFixed(3)),
+                  '--stage-scale': Number(scale.toFixed(3)),
+                  '--stage-layer': Math.round(80 - absDistance * 12),
+                } as CSSProperties;
+
+                return (
+                  <li
+                    key={step.key}
+                    className="hiw-procedure-journey__stage"
+                    data-stage-key={step.key}
+                    data-active={isActive ? 'true' : undefined}
+                    style={stageStyle}
+                  >
+                    <article className="hiw-procedure-journey__stage-panel">
+                      <div className="hiw-procedure-journey__stage-copy">
+                        <h3>{step.title}</h3>
+                        <p>{step.body}</p>
+                      </div>
+                      <div className="hiw-procedure-journey__artifact" aria-label={step.artifactTitle}>
+                        {step.key === 'action' ? (
+                          <span className="hiw-procedure-journey__closure-mark" data-label={closureDeviceLabel} aria-hidden="true" />
+                        ) : null}
+                        <span>{step.artifactTitle}</span>
+                        <p>{step.artifactItems.join(' / ')}</p>
+                      </div>
+                      {step.key === 'decision' ? (
+                        <span className="hiw-procedure-journey__threshold-plane" data-label={thresholdDeviceLabel} aria-hidden="true" />
+                      ) : null}
+                    </article>
+                  </li>
+                );
+              })}
+            </ol>
+
+            <div className="hiw-procedure-journey__footer">
+              <div className="hiw-procedure-journey__footer-inner">
+                <div className="hiw-procedure-journey__rule">
+                  <span>{ruleEyebrow}</span>
+                  <strong>{ruleTitle}</strong>
+                </div>
+                <aside className="hiw-procedure-journey__guardrails" aria-label={ruleTitle}>
+                  {rules.map((rule) => (
+                    <section key={rule.label}>
+                      <span>{rule.label}</span>
+                      <p>{rule.value}</p>
+                    </section>
+                  ))}
+                </aside>
+              </div>
             </div>
           </div>
-
-          <div className="hiw-procedure-journey__corridor" aria-hidden="true">
-            <svg className="hiw-procedure-journey__route-map" viewBox="0 0 1200 560" preserveAspectRatio="none">
-              <path
-                className="hiw-procedure-journey__route-base"
-                d="M68 418 C220 300 292 224 420 246 C560 270 590 128 725 152 C860 176 885 344 1036 262 L1136 210"
-                pathLength="1"
-              />
-              <path
-                className="hiw-procedure-journey__route-progress"
-                d="M68 418 C220 300 292 224 420 246 C560 270 590 128 725 152 C860 176 885 344 1036 262 L1136 210"
-                pathLength="1"
-              />
-              {steps.map((step, index) => (
-                <g key={step.key} className="hiw-procedure-journey__checkpoint" data-stage-key={step.key}>
-                  <line x1={118 + index * 194} y1="128" x2={70 + index * 194} y2="432" />
-                </g>
-              ))}
-            </svg>
-            <figure className="hiw-procedure-journey__photo-fragment">
-              <Image
-                src="/photos/hiw-visit-record.webp"
-                alt={visitRecordImageAlt}
-                fill
-                sizes="(min-width: 1024px) 24vw, (min-width: 768px) 34vw, 100vw"
-                className="hiw-procedure-journey__photo-image"
-                loading="eager"
-                priority={false}
-              />
-            </figure>
-          </div>
-
-          <ol className="hiw-procedure-journey__stages">
-            {steps.map((step, index) => {
-              const distance = index - journeyState.stageProgress;
-              const absDistance = clamp(Math.abs(distance), 0, 3);
-              const isActive = index === journeyState.activeIndex;
-              const presence = isActive ? 1 : clamp(0.3 - absDistance * 0.1, 0.06, 0.26);
-              const scale = clamp(1 - absDistance * 0.08, 0.78, 1);
-
-              const stageStyle = {
-                '--stage-index': index,
-                '--stage-distance': Number(distance.toFixed(3)),
-                '--stage-abs-distance': Number(absDistance.toFixed(3)),
-                '--stage-opacity': Number(presence.toFixed(3)),
-                '--stage-scale': Number(scale.toFixed(3)),
-                '--stage-layer': Math.round(80 - absDistance * 12),
-              } as CSSProperties;
-
-              return (
-                <li
-                  key={step.key}
-                  className="hiw-procedure-journey__stage"
-                  data-stage-key={step.key}
-                  data-active={isActive ? 'true' : undefined}
-                  style={stageStyle}
-                >
-                  <article className="hiw-procedure-journey__stage-panel">
-                    <div className="hiw-procedure-journey__stage-copy">
-                      <h3>{step.title}</h3>
-                      <p>{step.body}</p>
-                    </div>
-                    <div className="hiw-procedure-journey__artifact" aria-label={step.artifactTitle}>
-                      {step.key === 'action' ? (
-                        <span className="hiw-procedure-journey__closure-mark" data-label={closureDeviceLabel} aria-hidden="true" />
-                      ) : null}
-                      <span>{step.artifactTitle}</span>
-                      <p>{step.artifactItems.join(' / ')}</p>
-                    </div>
-                    {step.key === 'decision' ? (
-                      <span className="hiw-procedure-journey__threshold-plane" data-label={thresholdDeviceLabel} aria-hidden="true" />
-                    ) : null}
-                  </article>
-                </li>
-              );
-            })}
-          </ol>
-
-          <aside className="hiw-procedure-journey__guardrails" aria-label={ruleTitle}>
-            {rules.map((rule) => (
-              <section key={rule.label}>
-                <span>{rule.label}</span>
-                <p>{rule.value}</p>
-              </section>
-            ))}
-          </aside>
         </div>
       </div>
+      <div className="hiw-procedure-journey__exit-runway" aria-hidden="true" />
     </div>
   );
 }

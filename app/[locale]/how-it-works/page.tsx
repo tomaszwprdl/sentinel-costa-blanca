@@ -194,7 +194,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
         primaryLabel={tCommon('nav.contact')}
         secondaryHref="#procedure-corridor"
         secondaryLabel={t('redesign.procedure.eyebrow')}
-        suppressWhenVisible="footer,.hiw-handoff,.hiw-section--support,#report-decision"
+        suppressWhenVisible="footer,.hiw-handoff,.hiw-section--support,#report-decision,#procedure-corridor"
       />
       <Footer />
     </>
