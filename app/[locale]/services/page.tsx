@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
@@ -108,6 +109,15 @@ export default async function ServicesPage({
             </Region>
             <Region name="support" tabletSpan="half" desktopSpan="half">
               <figure className="services-site-map motion-panel-reveal" aria-hidden="true">
+                <div className="services-site-map__photo">
+                  <Image
+                    src="/photos/sentinel-corridor-exterior-placeholder.png"
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 42vw, 90vw"
+                    priority
+                  />
+                </div>
                 <p className="services-site-map__title">{t('redesign.siteMap.title')}</p>
                 <div className="services-site-map__field">
                   <svg
@@ -286,19 +296,29 @@ export default async function ServicesPage({
                   <p className="services-output-preview__stamp">{t('redesign.modules.recordLabel')}</p>
                 </div>
                 <div className="services-output-preview__body">
-                  <ol className="services-operational-outputs services-output-preview__outputs">
-                    {OPERATIONAL_OUTPUT_KEYS.map((key, index) => (
-                      <li key={key} className="services-operational-output">
-                        <span className="services-operational-output__marker" aria-hidden="true">
-                          {String(index + 1).padStart(2, '0')}
-                        </span>
-                        <div className="services-operational-output__text">
-                          <h3>{t(`redesign.modules.outputs.${key}.title`)}</h3>
-                          <p>{t(`redesign.modules.outputs.${key}.body`)}</p>
-                        </div>
-                      </li>
-                    ))}
-                  </ol>
+                  <div className="services-output-preview__record-shell">
+                    <div className="services-output-preview__media" aria-hidden="true">
+                      <Image
+                        src="/photos/services-operational-capability.webp"
+                        alt=""
+                        fill
+                        sizes="(min-width: 1024px) 26vw, 90vw"
+                      />
+                    </div>
+                    <ol className="services-operational-outputs services-output-preview__outputs">
+                      {OPERATIONAL_OUTPUT_KEYS.map((key, index) => (
+                        <li key={key} className="services-operational-output">
+                          <span className="services-operational-output__marker" aria-hidden="true">
+                            {String(index + 1).padStart(2, '0')}
+                          </span>
+                          <div className="services-operational-output__text">
+                            <h3>{t(`redesign.modules.outputs.${key}.title`)}</h3>
+                            <p>{t(`redesign.modules.outputs.${key}.body`)}</p>
+                          </div>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
                   <aside className="services-output-preview__handoff">
                     <span>{t('redesign.modules.handoffLabel')}</span>
                     <strong>{t('redesign.modules.recordSummary')}</strong>
@@ -334,15 +354,6 @@ export default async function ServicesPage({
                     <p className="services-checkpoint__label">{t('executionOnly.microLabel')}</p>
                     <h3 className="services-checkpoint__title">{t('redesign.executionStrip.title')}</h3>
                     <p className="services-checkpoint__rule">{t('redesign.executionStrip.body')}</p>
-
-                    <div className="services-checkpoint__possible">
-                      <h4 className="services-checkpoint__list-title">{t('redesign.executionStrip.availableLabel')}</h4>
-                      <ul className="services-checkpoint__list services-checkpoint__list--possible">
-                        {EXECUTION_ONLY_AVAILABLE_KEYS.map((key) => (
-                          <li key={key}>{t(`executionOnly.availableItems.${key}`)}</li>
-                        ))}
-                      </ul>
-                    </div>
                   </div>
 
                   <div className="services-checkpoint__gate">
@@ -358,15 +369,26 @@ export default async function ServicesPage({
                     </Link>
                   </div>
 
-                  <div className="services-checkpoint__lockout">
-                    <h4 className="services-checkpoint__list-title services-checkpoint__list-title--lockout">
-                      {t('redesign.executionStrip.limitsLabel')}
-                    </h4>
-                    <ul className="services-checkpoint__list services-checkpoint__list--lockout">
-                      {EXECUTION_ONLY_LIMITATION_KEYS.map((key) => (
-                        <li key={key}>{t(`executionOnly.limitationsItems.${key}`)}</li>
-                      ))}
-                    </ul>
+                  <div className="services-checkpoint__lanes">
+                    <div className="services-checkpoint__possible">
+                      <h4 className="services-checkpoint__list-title">{t('redesign.executionStrip.availableLabel')}</h4>
+                      <ul className="services-checkpoint__list services-checkpoint__list--possible">
+                        {EXECUTION_ONLY_AVAILABLE_KEYS.map((key) => (
+                          <li key={key}>{t(`executionOnly.availableItems.${key}`)}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="services-checkpoint__lockout">
+                      <h4 className="services-checkpoint__list-title services-checkpoint__list-title--lockout">
+                        {t('redesign.executionStrip.limitsLabel')}
+                      </h4>
+                      <ul className="services-checkpoint__list services-checkpoint__list--lockout">
+                        {EXECUTION_ONLY_LIMITATION_KEYS.map((key) => (
+                          <li key={key}>{t(`executionOnly.limitationsItems.${key}`)}</li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>

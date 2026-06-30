@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 const DOES_KEYS = ['oversight', 'access', 'documentation', 'coordination'] as const;
@@ -18,13 +19,23 @@ export default function ServiceBoundaryGrid() {
   return (
     <div className="services-boundary-panel services-scope-subband">
       <div className="services-boundary-panel__header">
-        <p className="section-label">{t('redesign.boundary.eyebrow')}</p>
-        <h2 className="h2-system mt-3">{t('redesign.boundary.title')}</h2>
-        <p className="mt-3 max-w-[62ch] text-body">{t('redesign.boundary.intro')}</p>
-        <p className="services-boundary-eligibility">
-          {eligLabel && <span className="services-boundary-eligibility__label">{eligLabel}</span>}
-          <span className="services-boundary-eligibility__value">{eligValue}</span>
-        </p>
+        <div className="services-boundary-panel__header-copy">
+          <p className="section-label">{t('redesign.boundary.eyebrow')}</p>
+          <h2 className="h2-system mt-3">{t('redesign.boundary.title')}</h2>
+          <p className="mt-3 max-w-[62ch] text-body">{t('redesign.boundary.intro')}</p>
+          <p className="services-boundary-eligibility">
+            {eligLabel && <span className="services-boundary-eligibility__label">{eligLabel}</span>}
+            <span className="services-boundary-eligibility__value">{eligValue}</span>
+          </p>
+        </div>
+        <div className="services-boundary-panel__object" aria-hidden="true">
+          <Image
+            src="/photos/services-scope-object.webp"
+            alt=""
+            fill
+            sizes="(min-width: 1024px) 22vw, 90vw"
+          />
+        </div>
       </div>
 
       <div className="services-boundary-dual">
