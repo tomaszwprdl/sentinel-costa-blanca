@@ -736,14 +736,16 @@
         ]
       },
       "skim": {
-        "eyebrow": "Co dostajesz",
-        "title": "Cztery rzeczy są jasne od początku.",
-        "intro": "Wiesz, co sprawdzamy, kto ma dostęp, co zostaje zapisane i kiedy decyzja wraca do Ciebie.",
+        "eyebrow": "Briefing właściciela",
+        "title": "Zanim wybierzesz pakiet, porządkujemy sytuację lokalu.",
+        "intro": "Strukturalny nadzór ma sens wtedy, gdy znany jest stan wyjściowy, dostęp i granica decyzji. Ten briefing pokazuje, co musi być ustalone przed estymatorem.",
+        "protocolLabel": "Bazowy protokół",
+        "protocolNote": "Dopiero po takim uporządkowaniu pakiet i estymator mają właściwy kontekst.",
         "items": {
-          "inspections": { "label": "KONTROLE / RAPORTY", "title": "Stan lokalu jest sprawdzany i zapisany.", "body": "Po uzgodnionej wizycie dostajesz zapis tego, co było widoczne na miejscu." },
-          "access": { "label": "KLUCZE / DOSTĘP", "title": "Dostęp nie jest przypadkowy.", "body": "Wejście właściciela, technika, sprzątania lub partnera odbywa się według ustalonych zasad." },
-          "decisions": { "label": "DECYZJE", "title": "Każde działanie zostawia ślad.", "body": "Raport pokazuje, co sprawdzono, co wykonano i co wymaga kolejnego kroku." },
-          "approval": { "label": "ZGODA WŁAŚCICIELA", "title": "Powyżej limitu decyzja wraca do Ciebie.", "body": "Sentinel działa w ustalonym zakresie. Większy koszt albo zmiana zakresu wymaga Twojej zgody." }
+          "inspections": { "label": "Stan lokalu", "title": "Najpierw wiadomo, co ma być sprawdzane.", "body": "Kontrole dotyczą widocznego stanu i uzgodnionych punktów, nie dowolnej listy zadań." },
+          "access": { "label": "Dostęp", "title": "Wejścia mają zasady przed pierwszą wizytą.", "body": "Właściciel, technik, sprzątanie lub partner działają według ustalonego sposobu dostępu." },
+          "decisions": { "label": "Zapis", "title": "Działanie kończy się zapisem dla właściciela.", "body": "Raport pokazuje, co sprawdzono, co wykonano i co wymaga kolejnego kroku." },
+          "approval": { "label": "Granica decyzji", "title": "Powyżej limitu decyzja wraca do Ciebie.", "body": "Sentinel działa w ustalonym zakresie. Większy koszt albo zmiana zakresu wymaga Twojej zgody." }
         }
       },
       "ladder": {
@@ -869,6 +871,9 @@
         "eyebrow": "Warstwa operacyjna",
         "title": "Właściciel widzi gotowość, dostęp i decyzje w jednym zapisie.",
         "intro": "Nadzór zamienia praktyczne działania na zapis: co jest gotowe, kto wszedł, co zostało skoordynowane i co wymaga decyzji właściciela.",
+        "recordLabel": "Podgląd zapisu",
+        "handoffLabel": "Co widzi właściciel",
+        "recordSummary": "Jeden zapis porządkuje status lokalu, wejścia, koordynację i punkty wymagające decyzji.",
         "outputs": {
           "readiness": { "title": "Gotowość", "body": "Stan lokalu przed przyjazdem lub po pobycie gości jest sprawdzany i zapisywany w ustalonym zakresie." },
           "access": { "title": "Dostęp", "body": "Klucze, wejścia i obecność osób trzecich są koordynowane według uzgodnionych zasad." },
@@ -956,6 +961,10 @@
         "review": { "label": "Kwalifikacja", "body": "Najpierw lokalizacja i sposób używania." },
         "scope": { "label": "Zakres", "body": "Wiesz, co będzie sprawdzane i kiedy potrzebna jest zgoda." },
         "next": { "label": "Następny krok", "body": "Wyślij kontekst nieruchomości do krótkiej oceny." }
+      },
+      "finalCta": {
+        "eyebrow": "Po przeglądzie zakresu",
+        "continuity": "Jeśli model pasuje do sposobu używania nieruchomości, następny krok to krótkie zapytanie z kontekstem lokalu."
       }
     },
     "diagrams": {

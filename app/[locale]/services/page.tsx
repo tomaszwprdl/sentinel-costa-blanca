@@ -24,7 +24,7 @@ const NOT_INCLUDED_ITEM_KEYS = [
 const EXECUTION_ONLY_AVAILABLE_KEYS = ['keyHolding', 'cleaning', 'oneTimeAccess', 'seasonalPrep'] as const;
 const EXECUTION_ONLY_LIMITATION_KEYS = ['noRegularChecks', 'noCyclicReporting', 'noEmergencySLA', 'noDecisionAuthority'] as const;
 const OPERATIONAL_OUTPUT_KEYS = ['readiness', 'access', 'coordination', 'decision'] as const;
-const SKIM_ITEM_KEYS = ['inspections', 'access', 'decisions', 'approval'] as const;
+const BRIEFING_SIGNAL_KEYS = ['inspections', 'access', 'decisions'] as const;
 const ESTIMATOR_INPUT_KEYS = ['package', 'usage', 'property'] as const;
 
 // Service-map node icons, in the order of redesign.siteMap.nodes:
@@ -168,23 +168,29 @@ export default async function ServicesPage({
         <JourneyNav items={journeyItems} ariaLabel={t('redesign.hero.headline')} className="services-journey-nav" />
 
         <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--skim" id="what-you-get">
-          <div className="services-skim-strip">
-            <div className="services-skim-strip__header motion-reveal">
-              <div>
-                <p className="section-label">{t('redesign.skim.eyebrow')}</p>
-                <h2 className="h2-system mt-3">{t('redesign.skim.title')}</h2>
-              </div>
+          <div className="services-briefing-panel">
+            <div className="services-briefing-panel__copy motion-reveal">
+              <p className="services-briefing-kicker">{t('redesign.skim.eyebrow')}</p>
+              <h2>{t('redesign.skim.title')}</h2>
               <p>{t('redesign.skim.intro')}</p>
             </div>
-            <div className="services-skim-strip__items reveal-stagger">
-              {SKIM_ITEM_KEYS.map((key, index) => (
-                <article key={key} className="services-skim-item">
-                  <span className="services-skim-item__marker">{String(index + 1).padStart(2, '0')}</span>
-                  <p>{t(`redesign.skim.items.${key}.label`)}</p>
-                  <h3>{t(`redesign.skim.items.${key}.title`)}</h3>
-                  <small>{t(`redesign.skim.items.${key}.body`)}</small>
-                </article>
-              ))}
+            <div className="services-briefing-register reveal-stagger">
+              <p className="services-briefing-register__label">{t('redesign.skim.protocolLabel')}</p>
+              <div className="services-briefing-register__body">
+                {BRIEFING_SIGNAL_KEYS.map((key) => (
+                  <article key={key} className="services-briefing-signal">
+                    <span>{t(`redesign.skim.items.${key}.label`)}</span>
+                    <h3>{t(`redesign.skim.items.${key}.title`)}</h3>
+                    <p>{t(`redesign.skim.items.${key}.body`)}</p>
+                  </article>
+                ))}
+              </div>
+              <div className="services-briefing-decision">
+                <span>{t('redesign.skim.items.approval.label')}</span>
+                <strong>{t('redesign.skim.items.approval.title')}</strong>
+                <p>{t('redesign.skim.items.approval.body')}</p>
+              </div>
+              <p className="services-briefing-register__note">{t('redesign.skim.protocolNote')}</p>
             </div>
           </div>
         </Section>
@@ -270,25 +276,34 @@ export default async function ServicesPage({
         <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--modules" id="operational-modules">
           <div className="services-modules-band services-capability-theatre">
             <div className="services-capability-console">
-              <div className="services-operational-record">
-                <div className="services-operational-record__header">
-                  <p className="section-label">{t('redesign.modules.eyebrow')}</p>
-                  <h2 className="h2-system mt-3">{t('redesign.modules.title')}</h2>
-                  <p className="services-operational-record__intro mt-3">{t('redesign.modules.intro')}</p>
+              <div className="services-operational-record services-output-preview">
+                <div className="services-operational-record__header services-output-preview__header">
+                  <div>
+                    <p className="section-label">{t('redesign.modules.eyebrow')}</p>
+                    <h2 className="h2-system mt-3">{t('redesign.modules.title')}</h2>
+                    <p className="services-operational-record__intro mt-3">{t('redesign.modules.intro')}</p>
+                  </div>
+                  <p className="services-output-preview__stamp">{t('redesign.modules.recordLabel')}</p>
                 </div>
-                <ol className="services-operational-outputs">
-                  {OPERATIONAL_OUTPUT_KEYS.map((key, index) => (
-                    <li key={key} className="services-operational-output">
-                      <span className="services-operational-output__marker" aria-hidden="true">
-                        {String(index + 1).padStart(2, '0')}
-                      </span>
-                      <div className="services-operational-output__text">
-                        <h3>{t(`redesign.modules.outputs.${key}.title`)}</h3>
-                        <p>{t(`redesign.modules.outputs.${key}.body`)}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ol>
+                <div className="services-output-preview__body">
+                  <ol className="services-operational-outputs services-output-preview__outputs">
+                    {OPERATIONAL_OUTPUT_KEYS.map((key, index) => (
+                      <li key={key} className="services-operational-output">
+                        <span className="services-operational-output__marker" aria-hidden="true">
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                        <div className="services-operational-output__text">
+                          <h3>{t(`redesign.modules.outputs.${key}.title`)}</h3>
+                          <p>{t(`redesign.modules.outputs.${key}.body`)}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                  <aside className="services-output-preview__handoff">
+                    <span>{t('redesign.modules.handoffLabel')}</span>
+                    <strong>{t('redesign.modules.recordSummary')}</strong>
+                  </aside>
+                </div>
                 <p className="services-operational-guardrail">{t('redesign.modules.guardrailBody')}</p>
               </div>
 
@@ -363,11 +378,12 @@ export default async function ServicesPage({
           <div className="services-final-cta services-final-cta--no-map overflow-hidden">
             <div className="grid gap-0 lg:grid-cols-[minmax(0,0.68fr)_minmax(18rem,0.32fr)]">
               <div className="p-5 md:p-8">
-                <p className="section-label">{t('redesign.ladder.eyebrow')}</p>
+                <p className="section-label">{t('redesign.finalCta.eyebrow')}</p>
                 <h2 className="h2-system mt-3">{t('cta.headline')}</h2>
                 <p className="mt-4 max-w-[62ch] text-lg leading-relaxed text-body">
                   {t('cta.subheadline')}
                 </p>
+                <p className="services-final-cta__continuity">{t('redesign.finalCta.continuity')}</p>
                 <div className="services-final-threshold" aria-hidden="true">
                   <span />
                   <span />

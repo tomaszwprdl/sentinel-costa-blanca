@@ -736,14 +736,16 @@
         ]
       },
       "skim": {
-        "eyebrow": "What you get",
-        "title": "Four things are clear from the start.",
-        "intro": "You know what we check, who has access, what gets recorded, and when a decision comes back to you.",
+        "eyebrow": "Owner briefing",
+        "title": "Before choosing a package, establish the property's operating situation.",
+        "intro": "Structured oversight only works when the starting condition, access rules, and decision boundary are known. This briefing shows what must be set before the estimator.",
+        "protocolLabel": "Baseline protocol",
+        "protocolNote": "Only then do the package and estimator have the right context.",
         "items": {
-          "inspections": { "label": "CHECKS / REPORTS", "title": "The property's condition is checked and recorded.", "body": "After an agreed visit, you receive a record of what was visible on site." },
-          "access": { "label": "KEYS / ACCESS", "title": "Access is not accidental.", "body": "Owner, technician, cleaner, or partner entry follows agreed rules." },
-          "decisions": { "label": "DECISIONS", "title": "Every action leaves a record.", "body": "The report shows what was checked, what was done, and what needs the next step." },
-          "approval": { "label": "OWNER APPROVAL", "title": "Above the limit, the decision comes back to you.", "body": "Sentinel acts within the agreed scope. A higher cost or a scope change requires your approval." }
+          "inspections": { "label": "Property condition", "title": "First, it is clear what will be checked.", "body": "Checks cover visible condition and agreed points, not an open list of tasks." },
+          "access": { "label": "Access", "title": "Entry rules exist before the first visit.", "body": "Owner, technician, cleaner, or partner entry follows the agreed access method." },
+          "decisions": { "label": "Record", "title": "Each action ends with an owner-facing record.", "body": "The report shows what was checked, what was done, and what needs the next step." },
+          "approval": { "label": "Decision boundary", "title": "Above the limit, the decision comes back to you.", "body": "Sentinel acts within the agreed scope. A higher cost or a scope change requires your approval." }
         }
       },
       "ladder": {
@@ -869,6 +871,9 @@
         "eyebrow": "Operational layer",
         "title": "The owner sees readiness, access, and decisions in one record.",
         "intro": "Oversight turns practical work into a record: what is ready, who entered, what was coordinated, and what requires the owner's decision.",
+        "recordLabel": "Record preview",
+        "handoffLabel": "What the owner sees",
+        "recordSummary": "One record organizes property status, entries, coordination, and decision points.",
         "outputs": {
           "readiness": { "title": "Readiness", "body": "The condition of the property before arrival or after a guest stay is checked and recorded within the agreed scope." },
           "access": { "title": "Access", "body": "Keys, entries, and third-party presence are coordinated under the agreed access rules." },
@@ -956,6 +961,10 @@
         "review": { "label": "Review", "body": "Location and usage pattern first." },
         "scope": { "label": "Scope", "body": "You know what will be checked and when approval is required." },
         "next": { "label": "Next step", "body": "Send the property context for a short review." }
+      },
+      "finalCta": {
+        "eyebrow": "After reviewing scope",
+        "continuity": "If the model fits how the property is used, the next step is a short inquiry with property context."
       }
     },
     "diagrams": {
