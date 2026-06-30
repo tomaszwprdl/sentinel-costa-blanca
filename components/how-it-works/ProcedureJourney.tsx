@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { type CSSProperties, useEffect, useRef, useState } from 'react';
 
 export type ProcedureJourneyStep = {
@@ -26,7 +25,6 @@ type ProcedureJourneyProps = {
   steps: ProcedureJourneyStep[];
   thresholdDeviceLabel: string;
   closureDeviceLabel: string;
-  visitRecordImageAlt: string;
 };
 
 type JourneyState = {
@@ -47,7 +45,6 @@ export default function ProcedureJourney({
   steps,
   thresholdDeviceLabel,
   closureDeviceLabel,
-  visitRecordImageAlt,
 }: ProcedureJourneyProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const frameRef = useRef<number>(0);
@@ -179,17 +176,6 @@ export default function ProcedureJourney({
                   </g>
                 ))}
               </svg>
-              <figure className="hiw-procedure-journey__photo-fragment">
-                <Image
-                  src="/photos/hiw-visit-record.webp"
-                  alt={visitRecordImageAlt}
-                  fill
-                  sizes="(min-width: 1024px) 24vw, (min-width: 768px) 34vw, 100vw"
-                  className="hiw-procedure-journey__photo-image"
-                  loading="eager"
-                  priority={false}
-                />
-              </figure>
             </div>
 
             <ol className="hiw-procedure-journey__stages">
