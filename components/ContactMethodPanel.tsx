@@ -7,7 +7,7 @@ interface ContactMethodPanelProps {
   phone: string;
   hoursLabel: string;
   hours: string;
-  note: string;
+  note?: string;
 }
 
 export default function ContactMethodPanel({
@@ -43,7 +43,7 @@ export default function ContactMethodPanel({
           <dd>{hours}</dd>
         </div>
       </dl>
-      <p className="mt-4 mb-0 text-sm leading-relaxed text-muted">{note}</p>
+      {note ? <p className="mt-4 mb-0 text-sm leading-relaxed text-muted">{note}</p> : null}
     </aside>
   );
 }

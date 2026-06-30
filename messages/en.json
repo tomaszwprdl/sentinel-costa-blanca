@@ -1603,8 +1603,8 @@
         "intro": "A complete inquiry is easier to review and less likely to require back-and-forth clarification.",
         "items": [
           { "marker": "01", "title": "Property location", "body": "Town, area, or address so the service radius can be checked." },
-          { "marker": "02", "title": "Property type", "body": "Apartment, house, villa, or another format that may affect access." },
-          { "marker": "03", "title": "Usage situation", "body": "Private Use Only, Regular Guest Stays, or Mixed / Not Yet Defined." },
+          { "marker": "02", "title": "Type and access", "body": "Apartment, house, villa, and whether keys, codes, or technician access are involved." },
+          { "marker": "03", "title": "Usage and package", "body": "Private use, guest stays, or mixed use; the expected package if you already know it." },
           { "marker": "04", "title": "Package if known", "body": "Basic, Extended, Full, or not sure if classification is needed first." },
           { "marker": "05", "title": "Access and keys", "body": "Whether keys, access codes, community gates, or technician access are involved." },
           { "marker": "06", "title": "Operational needs", "body": "Cleaning readiness, guest activity, technical checks, or documentation needs." },
@@ -1648,7 +1648,7 @@
       "form": {
         "eyebrow": "Inquiry form",
         "title": "Complete your inquiry",
-        "intro": "A few fields about you, the property, and how it's used. Usually takes a minute.",
+        "intro": "A few fields about you, the property, and how it's used. Clear context helps us review fit faster; usually takes a minute.",
         "ownerSection": "Owner details",
         "propertySection": "Property details",
         "serviceSection": "Usage and needs",
@@ -1673,7 +1673,7 @@
       },
       "finalCta": {
         "title": "Want to see how it works first?",
-        "intro": "Services and How It Works show the packages, access, documentation, and decision limits. Or just send your inquiry — we'll reply."
+        "intro": "Services and How It Works show packages, access, documentation, and decision limits before you send an inquiry."
       }
     }
   },

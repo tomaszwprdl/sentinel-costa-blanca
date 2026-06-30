@@ -360,34 +360,8 @@ function ContactPageInner() {
 
         <Section tone="alt" id="contact-intake" className="contact-section contact-dossier-intake-section">
           <div className="contact-intake-layout">
-            <aside className="contact-intake-support">
-              <div className="contact-support-panel contact-support-panel--primary">
-                <p className="section-label">{t('redesign.dossier.eyebrow')}</p>
-                <h2>{t('redesign.dossier.title')}</h2>
-                <p>{t('redesign.dossier.intro')}</p>
-              </div>
-
-              <div className="contact-support-panel" id="qualification-context">
-                <p className="section-label">{t('redesign.prepare.eyebrow')}</p>
-                <h3>{t('redesign.dossier.helpsTitle')}</h3>
-                <ContactInfoList items={preparationItems.slice(0, 5)} />
-              </div>
-
-              <ContactMethodPanel
-                eyebrow={t('directContact.subtitle')}
-                title={t('directContact.title')}
-                emailLabel={t('directContact.email')}
-                email={tCommon('contact.email')}
-                phoneLabel={t('directContact.phone')}
-                phone={tCommon('contact.phone')}
-                hoursLabel={t('directContact.hoursTitle')}
-                hours={tCommon('contact.hours')}
-                note={t('redesign.method.note')}
-              />
-            </aside>
-
             <div className="contact-form-file reveal-rise" id="intake-form">
-              <div className="contact-intake-shell contact-form-dossier p-4 md:p-6">
+              <div className="contact-intake-shell contact-form-dossier">
                 <div className="contact-form-dossier__header">
                   <div>
                     <p className="section-label contact-form-dossier__eyebrow">{t('redesign.form.eyebrow')}</p>
@@ -686,6 +660,25 @@ function ContactPageInner() {
                 </form>
               </div>
             </div>
+
+            <aside className="contact-intake-support">
+              <div className="contact-support-panel" id="qualification-context">
+                <p className="section-label">{t('redesign.prepare.eyebrow')}</p>
+                <h3>{t('redesign.dossier.helpsTitle')}</h3>
+                <ContactInfoList items={preparationItems.slice(0, 3)} />
+              </div>
+
+              <ContactMethodPanel
+                eyebrow={t('directContact.subtitle')}
+                title={t('directContact.title')}
+                emailLabel={t('directContact.email')}
+                email={tCommon('contact.email')}
+                phoneLabel={t('directContact.phone')}
+                phone={tCommon('contact.phone')}
+                hoursLabel={t('directContact.hoursTitle')}
+                hours={tCommon('contact.hours')}
+              />
+            </aside>
           </div>
         </Section>
 
@@ -720,11 +713,11 @@ function ContactPageInner() {
               </div>
               <div className="page-final-cta__panel p-5 md:p-8">
                 <div className="flex flex-col gap-3">
-                  <Link href="#intake-form" className="btn-primary btn-primary-inverse">
-                    {t('form.submitButton')}
-                  </Link>
-                  <Link href={`/${locale}/services`} className="btn-secondary btn-secondary-on-dark">
+                  <Link href={`/${locale}/services`} className="btn-primary btn-primary-inverse">
                     {tCommon('nav.services')}
+                  </Link>
+                  <Link href={`/${locale}/how-it-works`} className="btn-secondary btn-secondary-on-dark">
+                    {tCommon('nav.howItWorks')}
                   </Link>
                 </div>
               </div>

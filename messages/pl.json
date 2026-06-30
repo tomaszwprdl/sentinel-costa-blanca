@@ -1603,8 +1603,8 @@
         "intro": "Pełniejsze zapytanie łatwiej ocenić i rzadziej wymaga dodatkowego wyjaśniania.",
         "items": [
           { "marker": "01", "title": "Lokalizacja nieruchomości", "body": "Miasto, okolica albo adres, aby można było sprawdzić obszar obsługi." },
-          { "marker": "02", "title": "Typ nieruchomości", "body": "Apartament, dom, willa albo inny format, który może wpływać na dostęp." },
-          { "marker": "03", "title": "Sytuacja używania", "body": "Tylko użytek prywatny, regularne pobyty gości albo model mieszany / jeszcze nieustalony." },
+          { "marker": "02", "title": "Typ i dostęp", "body": "Apartament, dom, willa oraz informacja, czy w grę wchodzą klucze, kody lub wejścia techników." },
+          { "marker": "03", "title": "Używanie i pakiet", "body": "Tylko użytek prywatny, pobyty gości albo model mieszany; pakiet, jeśli jest już znany." },
           { "marker": "04", "title": "Pakiet, jeśli znany", "body": "Podstawowy, Rozszerzony, Pełny albo brak pewności, jeśli najpierw potrzebna jest klasyfikacja." },
           { "marker": "05", "title": "Dostęp i klucze", "body": "Czy w grę wchodzą klucze, kody, bramy wspólnoty albo wejścia techników." },
           { "marker": "06", "title": "Potrzeby operacyjne", "body": "Przygotowanie lokalu, pobyty gości, kontrole techniczne albo dokumentacja." },
@@ -1648,7 +1648,7 @@
       "form": {
         "eyebrow": "Formularz zapytania",
         "title": "Uzupełnij zapytanie",
-        "intro": "Kilka pól o Tobie, nieruchomości i sposobie używania. Zwykle zajmuje minutę.",
+        "intro": "Kilka pól o Tobie, nieruchomości i sposobie używania. Jasny kontekst pomaga szybciej ocenić dopasowanie; zwykle zajmuje minutę.",
         "ownerSection": "Dane właściciela",
         "propertySection": "Dane nieruchomości",
         "serviceSection": "Sposób używania i potrzeby",
@@ -1673,7 +1673,7 @@
       },
       "finalCta": {
         "title": "Chcesz najpierw zobaczyć, jak działamy?",
-        "intro": "Strony Usługi i Jak to działa pokazują pakiety, dostęp, dokumentację i granice decyzji. Możesz też po prostu wysłać zapytanie — odpowiemy."
+        "intro": "Strony Usługi i Jak to działa pokazują pakiety, dostęp, dokumentację i granice decyzji przed wysłaniem zapytania."
       }
     }
   },
