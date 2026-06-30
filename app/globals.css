@@ -10189,8 +10189,9 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   border: 1px solid color-mix(in srgb, var(--svc-copper) 18%, #1b1e18);
   background-color: #23271f;
   background-image:
-    linear-gradient(118deg, rgba(19, 22, 17, 0.92) 0%, rgba(27, 33, 27, 0.72) 52%, rgba(46, 37, 24, 0.8) 100%),
-    url("/images/estimator-background.jpg");
+    radial-gradient(42rem 24rem at 86% 18%, rgba(47, 111, 115, 0.2), transparent 72%),
+    radial-gradient(30rem 18rem at 16% 100%, rgba(210, 154, 87, 0.13), transparent 72%),
+    linear-gradient(118deg, rgba(19, 22, 17, 0.96) 0%, rgba(27, 33, 27, 0.91) 52%, rgba(46, 37, 24, 0.88) 100%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
