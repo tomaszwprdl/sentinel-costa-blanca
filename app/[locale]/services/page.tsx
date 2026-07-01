@@ -27,6 +27,7 @@ const EXECUTION_ONLY_LIMITATION_KEYS = ['noRegularChecks', 'noCyclicReporting', 
 const OPERATIONAL_OUTPUT_KEYS = ['readiness', 'access', 'coordination', 'decision'] as const;
 const BRIEFING_SIGNAL_KEYS = ['inspections', 'access', 'decisions'] as const;
 const ESTIMATOR_INPUT_KEYS = ['package', 'usage', 'property'] as const;
+const ESTIMATOR_HANDOFF_KEYS = ['responsibility', 'usage', 'property'] as const;
 
 // Service-map node icons, in the order of redesign.siteMap.nodes:
 // activity · access (key) · readiness (check) · documentation · agreed scope.
@@ -212,6 +213,22 @@ export default async function ServicesPage({
         </Section>
 
         <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--estimator" id="estimator">
+          <div className="services-estimator-handoff">
+            <div className="services-estimator-handoff__copy">
+              <p className="section-label">{t('redesign.estimatorHandoff.eyebrow')}</p>
+              <h2>{t('redesign.estimatorHandoff.title')}</h2>
+              <p>{t('redesign.estimatorHandoff.body')}</p>
+            </div>
+            <ol className="services-estimator-handoff__steps" aria-label={t('redesign.estimatorHandoff.eyebrow')}>
+              {ESTIMATOR_HANDOFF_KEYS.map((key) => (
+                <li key={key} className="services-estimator-handoff__step">
+                  <span>{t(`redesign.estimatorHandoff.steps.${key}.label`)}</span>
+                  <strong>{t(`redesign.estimatorHandoff.steps.${key}.title`)}</strong>
+                  <p>{t(`redesign.estimatorHandoff.steps.${key}.body`)}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
           <div className="services-estimator-band services-estimator-band--checkpoint">
             <div className="services-estimator-stage mb-6">
               <div className="services-estimator-stage__copy">

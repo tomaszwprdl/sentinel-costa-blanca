@@ -697,7 +697,7 @@
     },
     "redesign": {
       "journey": {
-        "overview": "What you get",
+        "overview": "What we establish",
         "situation": "Situation",
         "responsibility": "Responsibility",
         "scope": "Scope",
@@ -713,7 +713,7 @@
           "that matches how you actually use the property."
         ],
         "lead": "Start with what oversight actually includes. Then compare packages, check the indicative range, and review execution boundaries.",
-        "secondaryCta": "See what you get",
+        "secondaryCta": "See the starting point",
         "estimatorCue": {
           "text": "Indicative: from approx. €80/month for the simplest scope. The exact range depends on property size and usage mode.",
           "link": "Jump to the estimator."
@@ -736,16 +736,16 @@
         ]
       },
       "skim": {
-        "eyebrow": "Owner briefing",
-        "title": "Before choosing a package, establish the property's operating situation.",
-        "intro": "Structured oversight only works when the starting condition, access rules, and decision boundary are known. This briefing shows what must be set before the estimator.",
-        "protocolLabel": "Baseline protocol",
-        "protocolNote": "Only then do the package and estimator have the right context.",
+        "eyebrow": "Operating setup",
+        "title": "First, establish the property operating model.",
+        "intro": "A package does not start as a task list. It starts with four setup points: property condition, access rules, post-action record, and decision boundary while the owner is away.",
+        "protocolLabel": "Four setup points",
+        "protocolNote": "After this, the estimator has context and the scope is not guessed.",
         "items": {
-          "inspections": { "label": "Property condition", "title": "First, it is clear what will be checked.", "body": "Checks cover visible condition and agreed points, not an open list of tasks." },
-          "access": { "label": "Access", "title": "Entry rules exist before the first visit.", "body": "Owner, technician, cleaner, or partner entry follows the agreed access method." },
-          "decisions": { "label": "Record", "title": "Each action ends with an owner-facing record.", "body": "The report shows what was checked, what was done, and what needs the next step." },
-          "approval": { "label": "Decision boundary", "title": "Above the limit, the decision comes back to you.", "body": "Sentinel acts within the agreed scope. A higher cost or a scope change requires your approval." }
+          "inspections": { "label": "Property condition", "title": "What gets checked", "body": "Checks cover visible condition and agreed points, not an open list of tasks." },
+          "access": { "label": "Access", "title": "Who may enter", "body": "Owner, technician, cleaner, or partner entry follows the agreed access method." },
+          "decisions": { "label": "Record", "title": "What enters the report", "body": "The record shows what was checked, what was done, and what needs the next step." },
+          "approval": { "label": "Decision boundary", "title": "What needs approval", "body": "A higher cost or scope change requires owner approval before action." }
         }
       },
       "ladder": {
@@ -938,6 +938,16 @@
         "alsoLabel": "The estimator also accounts for",
         "alsoItems": ["Bathrooms", "Patio / outdoor area"],
         "note": "This is an orientation tool. It does not approve a service or change the estimator matrix."
+      },
+      "estimatorHandoff": {
+        "eyebrow": "Estimator handoff",
+        "title": "The range has context only after responsibility is clear.",
+        "body": "The estimator does not choose the package for you. It converts the agreed model into an indicative monthly range for the conversation.",
+        "steps": {
+          "responsibility": { "label": "01", "title": "Responsibility level", "body": "package and decision boundary" },
+          "usage": { "label": "02", "title": "Usage model", "body": "private use, guests, or mixed model" },
+          "property": { "label": "03", "title": "Property parameters", "body": "size, rooms, and basic context" }
+        }
       },
       "executionStrip": {
         "thresholdLabel": "Outside the package model",

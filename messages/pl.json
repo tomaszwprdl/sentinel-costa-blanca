@@ -697,7 +697,7 @@
     },
     "redesign": {
       "journey": {
-        "overview": "Co dostajesz",
+        "overview": "Co ustalamy",
         "situation": "Sytuacja",
         "responsibility": "Odpowiedzialność",
         "scope": "Zakres",
@@ -713,7 +713,7 @@
           "do tego, jak naprawdę korzystasz z nieruchomości."
         ],
         "lead": "Najpierw zobaczysz, co realnie obejmuje nadzór. Potem porównasz pakiety, sprawdzisz orientacyjny przedział i dopiero na końcu granice wykonania.",
-        "secondaryCta": "Zobacz, co obejmuje",
+        "secondaryCta": "Zobacz punkt startu",
         "estimatorCue": {
           "text": "Orientacyjnie: od ok. 80 €/mies. dla najprostszego zakresu. Dokładny przedział zależy od metrażu i sposobu użycia.",
           "link": "Przejdź do estymatora."
@@ -736,16 +736,16 @@
         ]
       },
       "skim": {
-        "eyebrow": "Briefing właściciela",
-        "title": "Zanim wybierzesz pakiet, porządkujemy sytuację lokalu.",
-        "intro": "Strukturalny nadzór ma sens wtedy, gdy znany jest stan wyjściowy, dostęp i granica decyzji. Ten briefing pokazuje, co musi być ustalone przed estymatorem.",
-        "protocolLabel": "Bazowy protokół",
-        "protocolNote": "Dopiero po takim uporządkowaniu pakiet i estymator mają właściwy kontekst.",
+        "eyebrow": "Ustalenie modelu",
+        "title": "Najpierw ustalamy model działania lokalu.",
+        "intro": "Pakiet nie zaczyna się od listy zadań. Zaczyna się od czterech ustaleń: stanu lokalu, zasad dostępu, zapisu po działaniu i granicy decyzji pod nieobecność właściciela.",
+        "protocolLabel": "Cztery ustalenia",
+        "protocolNote": "Po tym etapie estymator ma kontekst, a zakres nie jest zgadywany.",
         "items": {
-          "inspections": { "label": "Stan lokalu", "title": "Najpierw wiadomo, co ma być sprawdzane.", "body": "Kontrole dotyczą widocznego stanu i uzgodnionych punktów, nie dowolnej listy zadań." },
-          "access": { "label": "Dostęp", "title": "Wejścia mają zasady przed pierwszą wizytą.", "body": "Właściciel, technik, sprzątanie lub partner działają według ustalonego sposobu dostępu." },
-          "decisions": { "label": "Zapis", "title": "Działanie kończy się zapisem dla właściciela.", "body": "Raport pokazuje, co sprawdzono, co wykonano i co wymaga kolejnego kroku." },
-          "approval": { "label": "Granica decyzji", "title": "Powyżej limitu decyzja wraca do Ciebie.", "body": "Sentinel działa w ustalonym zakresie. Większy koszt albo zmiana zakresu wymaga Twojej zgody." }
+          "inspections": { "label": "Stan lokalu", "title": "Co sprawdzamy", "body": "Kontrole obejmują widoczny stan i uzgodnione punkty, nie otwartą listę zadań." },
+          "access": { "label": "Dostęp", "title": "Kto może wejść", "body": "Właściciel, technik, sprzątanie lub partner działają według ustalonego sposobu dostępu." },
+          "decisions": { "label": "Zapis", "title": "Co trafia do raportu", "body": "Zapis pokazuje, co sprawdzono, co wykonano i co wymaga kolejnego kroku." },
+          "approval": { "label": "Granica decyzji", "title": "Co wymaga zgody", "body": "Wyższy koszt albo zmiana zakresu wymaga zgody właściciela przed działaniem." }
         }
       },
       "ladder": {
@@ -938,6 +938,16 @@
         "alsoLabel": "Estymator uwzględnia też",
         "alsoItems": ["Łazienki", "Patio / część zewnętrzna"],
         "note": "To narzędzie orientacyjne. Nie zatwierdza usługi ani nie zmienia matrycy estymatora."
+      },
+      "estimatorHandoff": {
+        "eyebrow": "Przejście do estymatora",
+        "title": "Przedział ma sens dopiero po ustaleniu odpowiedzialności.",
+        "body": "Estymator nie wybiera pakietu za Ciebie. Przelicza ustalony model na orientacyjny miesięczny zakres rozmowy.",
+        "steps": {
+          "responsibility": { "label": "01", "title": "Poziom odpowiedzialności", "body": "pakiet i granica decyzji" },
+          "usage": { "label": "02", "title": "Sposób używania", "body": "prywatnie, goście albo model mieszany" },
+          "property": { "label": "03", "title": "Parametry lokalu", "body": "metraż, pokoje i podstawowy kontekst" }
+        }
       },
       "executionStrip": {
         "thresholdLabel": "Poza modelem pakietowym",

@@ -9045,6 +9045,7 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   display: grid;
   gap: 1rem;
   min-width: 0;
+  align-content: center;
   background:
     linear-gradient(90deg, rgba(16, 38, 63, 0.04) 0 1px, transparent 1px 100%) 0 0 / 3.8rem 100%,
     linear-gradient(180deg, var(--svc-paper-strong, #fffdf8), var(--svc-paper, #fffaf2));
@@ -19241,6 +19242,106 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   }
 }
 
+.services-estimator-handoff {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: clamp(1rem, 2vw, 1.35rem);
+  border: 1px solid color-mix(in srgb, var(--svc-ink) 20%, var(--svc-rule));
+  border-radius: var(--svc-radius);
+  background:
+    radial-gradient(44rem 18rem at 96% 16%, rgba(70, 164, 170, 0.18), transparent 70%),
+    linear-gradient(135deg, color-mix(in srgb, var(--svc-paper-strong) 88%, white), color-mix(in srgb, var(--svc-stone) 34%, var(--svc-paper)));
+  box-shadow:
+    0 24px 52px -42px rgba(16, 38, 63, 0.34),
+    inset 0 1px 0 rgba(255, 253, 247, 0.84);
+  padding: clamp(1rem, 2.2vw, 1.45rem);
+}
+
+.services-estimator-handoff__copy {
+  min-width: 0;
+}
+
+.services-estimator-handoff__copy h2 {
+  max-width: 18ch;
+  margin: 0.35rem 0 0;
+  color: var(--svc-ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.65rem);
+  font-weight: 820;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.services-estimator-handoff__copy p:last-child {
+  max-width: 58ch;
+  margin: 0.7rem 0 0;
+  color: color-mix(in srgb, var(--svc-ink) 72%, var(--svc-muted));
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.services-estimator-handoff__steps {
+  display: grid;
+  gap: 0.55rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.services-estimator-handoff__step {
+  display: grid;
+  grid-template-columns: 2.15rem minmax(0, 1fr);
+  gap: 0.2rem 0.7rem;
+  min-width: 0;
+  border: 1px solid color-mix(in srgb, var(--svc-rule) 84%, transparent);
+  border-radius: 0.6rem;
+  background: color-mix(in srgb, var(--svc-paper) 78%, white);
+  padding: 0.78rem;
+}
+
+.services-estimator-handoff__step span {
+  grid-row: 1 / span 2;
+  display: inline-flex;
+  width: 2.15rem;
+  height: 2.15rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--svc-field) 12%, var(--svc-paper));
+  color: color-mix(in srgb, var(--svc-field) 80%, var(--svc-ink));
+  font-size: 0.7rem;
+  font-weight: 950;
+  font-variant-numeric: tabular-nums;
+}
+
+.services-estimator-handoff__step strong {
+  min-width: 0;
+  color: var(--svc-ink);
+  font-size: 0.95rem;
+  font-weight: 900;
+  line-height: 1.22;
+}
+
+.services-estimator-handoff__step p {
+  min-width: 0;
+  margin: 0;
+  color: color-mix(in srgb, var(--svc-ink) 62%, var(--svc-muted));
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+@media (min-width: 860px) {
+  .services-estimator-handoff {
+    grid-template-columns: minmax(0, 0.9fr) minmax(26rem, 1.1fr);
+    align-items: center;
+  }
+
+  .services-estimator-handoff__steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 .services-estimator-band {
   background:
     linear-gradient(90deg, rgba(92, 72, 46, 0.045) 0 1px, transparent 1px 100%) 0 0 / 3.8rem 100%,
@@ -19531,13 +19632,11 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 
 .services-capability-console {
   grid-template-columns: minmax(0, 1fr) !important;
-  gap: 0;
-  overflow: hidden;
-  border: 1px solid var(--svc-rule);
-  border-radius: var(--svc-radius);
-  background:
-    linear-gradient(90deg, rgba(92, 72, 46, 0.035) 0 1px, transparent 1px 100%) 0 0 / 3.4rem 100%,
-    linear-gradient(180deg, var(--svc-paper-strong), var(--svc-paper));
+  gap: clamp(0.9rem, 2vw, 1.25rem);
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .services-capability-record {
@@ -25381,6 +25480,77 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   .services-page .services-output-preview__outputs {
     grid-template-columns: minmax(0, 1fr);
   }
+}
+
+.services-page .services-output-preview {
+  border-color: rgba(255, 250, 242, 0.16);
+  background:
+    radial-gradient(46rem 24rem at 8% 0%, rgba(70, 164, 170, 0.18), transparent 70%),
+    radial-gradient(34rem 20rem at 100% 82%, rgba(184, 102, 74, 0.16), transparent 72%),
+    linear-gradient(135deg, #071524 0%, #10263f 66%, #17384d 100%);
+  box-shadow:
+    0 34px 74px -46px rgba(7, 21, 36, 0.64),
+    inset 0 1px 0 rgba(255, 250, 242, 0.09);
+}
+
+.services-page .services-output-preview__header {
+  border-bottom-color: rgba(255, 250, 242, 0.14);
+  background: transparent;
+}
+
+.services-page .services-output-preview__header .section-label {
+  color: color-mix(in srgb, var(--svc-field) 62%, var(--svc-paper));
+}
+
+.services-page .services-output-preview__header .h2-system {
+  max-width: 18ch;
+  color: var(--svc-paper);
+}
+
+.services-page .services-output-preview__header .services-operational-record__intro {
+  color: color-mix(in srgb, var(--svc-paper) 78%, transparent);
+}
+
+.services-page .services-output-preview__stamp {
+  border-color: rgba(255, 250, 242, 0.2);
+  background: rgba(255, 250, 242, 0.07);
+  color: color-mix(in srgb, var(--svc-paper) 78%, var(--svc-field));
+}
+
+.services-page .services-output-preview__record-shell {
+  border-color: rgba(255, 250, 242, 0.2);
+  background:
+    linear-gradient(90deg, rgba(16, 38, 63, 0.035) 0 1px, transparent 1px 100%) 0 0 / 3.3rem 100%,
+    linear-gradient(180deg, #fffdf8, var(--svc-paper));
+  box-shadow:
+    0 24px 54px -38px rgba(0, 0, 0, 0.58),
+    inset 0 1px 0 rgba(255, 253, 247, 0.9);
+}
+
+.services-page .services-output-preview__media {
+  display: none;
+}
+
+.services-page .services-output-preview .services-operational-output__marker {
+  border-right-color: color-mix(in srgb, var(--svc-field) 32%, var(--svc-rule));
+  background: color-mix(in srgb, var(--svc-field) 9%, var(--svc-paper));
+}
+
+.services-page .services-output-preview__handoff {
+  border-color: rgba(255, 250, 242, 0.2);
+  background:
+    linear-gradient(180deg, rgba(255, 250, 242, 0.085), rgba(255, 250, 242, 0.025)),
+    linear-gradient(145deg, color-mix(in srgb, var(--svc-ink-mid) 88%, var(--svc-field)), var(--svc-ink-deep));
+  box-shadow: inset 0 1px 0 rgba(255, 250, 242, 0.08);
+}
+
+.services-page .services-output-preview .services-operational-guardrail {
+  border-top-color: rgba(255, 250, 242, 0.14);
+  border-left-color: color-mix(in srgb, var(--svc-field) 74%, var(--svc-paper));
+  background:
+    linear-gradient(90deg, rgba(70, 164, 170, 0.12), transparent 64%),
+    rgba(255, 250, 242, 0.055);
+  color: color-mix(in srgb, var(--svc-paper) 78%, transparent);
 }
 
 .services-checkpoint {
