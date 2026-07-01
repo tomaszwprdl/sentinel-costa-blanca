@@ -86,9 +86,9 @@ The site uses **one art-directed Sentinel atmosphere** (merged on `main`) — no
 - Synthetic images treated as real evidence
 - Repeated keys, folders, dossiers, doors, and limits language after they stop clarifying the service
 
-Logo and wordmark rules remain strict (`LOGO-*.md`). Logo restrictions apply to the **logo asset**, not every background, card, or accent on the page.
+Logo and wordmark integrity remain protected by `DECISIONS.md`. Logo restrictions apply to the **logo asset**, not every background, card, or accent on the page.
 
-Direction: `VISUAL-FREEDOM-SPRINT.md`
+Current visual state and next work: `STATUS.md` and `TASK.md`.
 
 Current proof-layer images are allowed only as temporary shot-planning placeholders. They must not claim actual Sentinel work, real client property, real reports, real operator identity, or final operational evidence. Replacement with real photography remains a pre-promotion / indexed-launch goal where possible.
 
@@ -107,6 +107,6 @@ The site qualifies fit — it does not chase every visitor.
 This document guides tone and meaning.
 
 Binding contracts: `DECISIONS.md`  
-Service architecture: `SERVICE-STRUCTURING.md`
+Current state and scope: `STATUS.md` / `TASK.md`
 
 If conflict → `DECISIONS.md` prevails.

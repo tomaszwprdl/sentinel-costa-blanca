@@ -1,67 +1,63 @@
-# WORKFLOW.md — SENTINEL
+# WORKFLOW.md - Launch Workflow
 
-Execution rules for code changes.
+## Start
 
----
+1. Run `git status -sb`.
+2. Confirm branch and HEAD.
+3. Read `doc/STATUS.md`, `doc/TASK.md`, `doc/DECISIONS.md`, and `doc/QA.md`.
+4. Understand any existing uncommitted changes before editing.
 
-# Before starting
+## Scope
 
-1. `git status` — working tree clean or changes understood.
-2. Confirm current branch and HEAD.
-3. Read `DECISIONS.md` for anything in scope.
-4. Cursor agents: read `doc/CURSOR.md` when implementing scoped changes.
-5. Confirm task brief scope (section, golden question if given).
+- Implement only the approved brief.
+- Do not redesign unrelated sections.
+- Do not reopen closed Services/estimator work unless fixing confirmed regression or explicitly scoped.
+- Do not change protected contracts without Owner approval.
+- User-facing copy must update PL and EN together.
 
----
+## Validation
 
-# During work
-
-- **Scoped patch only** — bounded by the approved brief; may include large page-section rebuilds when Owner-scoped. Do not redesign unrelated sections.
-- **One agent edits code at a time.**
-- User-facing strings: update both `messages/pl.json` and `messages/en.json`.
-- Protected contracts unchanged unless Owner explicitly approved.
-- Visual experimentation allowed when briefed per `VISUAL-FREEDOM-SPRINT.md`.
-
----
-
-# Staging and commits
-
-- Stage **exact files** for the change — never `git add .`
-- Do not stage: `doc/screenshots/`, generated QA artifacts, temp scripts, `.env`, zips
-- Clear commit message; small reviewable commits
-- **No push** unless Owner approves
-
----
-
-# Before commit / push
+Code changes:
 
 ```bash
-npm run lint
-npm run build
+npm.cmd run lint
+npm.cmd run build
 git diff --check
 ```
 
-For visual changes also verify:
+Docs-only changes:
 
-- PL/EN parity
-- 390px mobile — no horizontal overflow
-- No accidental edits outside requested scope
+```bash
+git diff --check
+git status -sb
+```
 
----
+Visual changes also require production-build screenshots and browser checks from `doc/QA.md`.
 
-# Reporting
+## Git
 
-After a task, report:
+- Stage exact files only.
+- Never use `git add .`.
+- Never stage screenshots, `output/`, QA artifacts, temp scripts, `.env`, zips, or generated files.
+- Commit when the task asks for a commit and validation passes.
+- Push only when Owner explicitly approves.
 
-- Files changed
-- What changed / what was deliberately not changed
-- Lint and build result
-- Git status
-- Whether anything was pushed
+## Commit Messages
 
----
+Use clear, scoped messages:
 
-# Documentation
+- `docs: ...`
+- `fix: ...`
+- `refine: ...`
 
-- **Active docs** in `doc/` prevail for current work.
-- Build-era task and audit documents were removed after documentation reset — they must not block approved launch-era visual work.
+## Reporting
+
+Report:
+
+1. Starting branch/HEAD and status.
+2. Files changed.
+3. What changed.
+4. What was deliberately not changed.
+5. Validation results.
+6. Final status.
+7. Commit SHA and push status.

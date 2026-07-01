@@ -1,97 +1,81 @@
-# STATUS.md — SENTINEL
+# STATUS.md - Sentinel Costa Blanca
 
-Descriptive only. Does not define decisions or intent.
+Current project state only. This document is descriptive; `DECISIONS.md` is binding.
 
----
+## Snapshot
 
-# Snapshot
+- Branch at last documentation consolidation: `main`
+- Observed HEAD before this docs-only consolidation: `1f14a58` (`refine: polish FAQ answer register`)
+- Local state before consolidation: `main...origin/main [ahead 1]`
+- FAQ polish commit is local and unpushed.
+- Site phase: pre-launch / soft-launch review.
+- `noindex,nofollow` remains active until Owner approves indexing.
 
-| Field | Value |
-|-------|-------|
-| Project | Sentinel |
-| Current live/main baseline | `69b0d02` (`refine: rebuild operational layer as output record`) |
-| Services boundary polish | `a7d37f7` (`refine: render services boundary as ruled scope register`) |
-| Cursor operating protocol | `2172b0f` (`docs: add cursor operating protocol`) |
-| Homepage Trust Spine Pilot | `01b2624` (historical milestone) |
-| Proof-assets integration | `b9800ce` (`feat: integrate proof layer visual assets`) |
-| Major graphic system pass | `38a4849` |
-| Middle-page visual proof pass | `cef326b` |
-| Launch-era governance baseline SHA | `6a0d0f7` |
-| Optional cognitive audit tool added | `96fef3e` |
-| Website phase | Pre-live / soft-launch review ready |
-| Visual composition rebuild | **Merged** (`e5fa7bb` baseline; graphic passes through `cef326b`) |
-| Canonical visual mode | **Active** — one art-directed atmosphere; no public theme toggle |
-| Current focus | Page-by-page micro polish; Services page core sections accepted and locked |
-| Services page accepted state | Estimator shell · Ruled Scope Register boundary · Operational Layer output record · About category-clarity split — through `69b0d02` |
-| Gate 2 (open) | Execution-only exception checkpoint — compact/restyle attempts rejected; old dark checkpoint remains |
-| Proof-layer image status | Synthetic placeholders remain temporary; About now uses an Owner-approved public operator identity photo for Aleksy Gugała, not operational/client-property evidence |
-| Council v2 trust audit | Visual credibility accepted; Trust Spine Pilot delivered on homepage gate |
-| Site-polish phase | Closed (gate, pages, legal readability, contact sequencing) |
-| Documentation phase | Aligned to post-trust-spine / pre-homepage-micro-polish state |
-| Identity core | Locked (logo, descriptors, service model) |
-| Website visuals | Canonical system per `VISUAL-FREEDOM-SPRINT.md`; broad visual iteration stopped |
-| Indexing | `noindex,nofollow` still active |
-| Legal validation | Presentation improved; legal/entity/GDPR review still pending |
+Always verify current branch, HEAD, and status with git preflight.
 
----
+## Shipped / Closed
 
-# What is done
+Services page is shipped, live-verified, and closed unless real-use evidence or a confirmed regression appears.
 
-- Homepage hard diagnostic gate and three usage pathways (PL/EN).
-- Core routes functional: Home, Services, How It Works, FAQ, About, Contact, Terms, Privacy.
-- Customer-clarity passes on Contact, About, Home inquiry language.
-- Legal pages: readability polish (TOC, lists, spacing) — `01560f6`.
-- Contact page: preparation before form; pre-submit after-flow removed — `28ccca2`.
-- **Visual composition rebuild merged** — full-bleed heroes, editorial rails, Services console, unified page rhythm — `5ca566f` / `e5fa7bb`.
-- **Unified canonical visual mode** — dark cinematic authority bands, warm paper body, dark final CTA/footer; theme toggle removed — `d7ab89e` / `e5fa7bb`.
-- **Major graphic system pass** — jurisdiction rings, operational ledgers, proof modules, service-area motifs — `38a4849`.
-- **Middle-page visual proof pass** — additional proof bands and graphic language across middle sections — `cef326b`.
-- **Codex middle-page rebuild merged and deployed** — `97997eb` (historical baseline).
-- **Services doctrine/page refinement live** — package-summary contract drift corrected; cleaning/readiness/turnover cleaning visible inside oversight; bathrooms/patio context added without estimator pricing-logic changes; NowRent mention restrained.
-- **Proof-assets integration live** — `b9800ce`: selected homepage pathway media, final CTA image, Services capability photo, How It Works visit-record photo, and About local/operator imagery.
-- **Selected-pathway contrast patch live** — `e682b5b` (historical milestone): "Bez nas / Z nami" carousel strengthened across private, guest, and mixed pathway states.
-- **Homepage Trust Spine Pilot delivered** — through `01b2624`: gate carries operator cue (Aleksy Gugała public operator proof), verified €80/mo minimum price cue, estimator/cost-logic link, and mobile scroll affordance (`#usage-situation-gate`, `gate-scroll-cue`, `scroll-mt-28`, mobile-only pathway-selector cue). Diagnostic gate preserved.
-- **Services page polish accepted** — through `69b0d02`:
-  - Estimator: dark checkpoint shell restored; horizontal step rail; live result/ledger panel; patio/outdoor layout readable; translation contract repaired. Lower estimator UI protected.
-  - Services boundary: copy split from About category clarity; visual treatment accepted as **Ruled Scope Register** (`a7d37f7`) — operating file for in-scope work, separate agreement, minimum period/exclusions, local area qualification.
-  - About category clarity: owns identity (`Sentinel jest` / `Sentinel nie jest`); left = operating principles, right = category exclusions; does not duplicate detailed Services scope (`c0c060b`).
-  - Operational Layer: rebuilt as **output record** with four outputs — Gotowość · Dostęp · Koordynacja · Decyzja (`69b0d02`). Shows what local oversight produces on site.
-  - Execution-only checkpoint: deliberately left in older dark checkpoint form after Gate 1; not restyled or compacted.
-- **Cursor operating protocol** — `doc/CURSOR.md` active from `2172b0f`.
-- Latest checked selected-pathway routes: no console errors, hydration mismatch, failed requests, HTTP 4xx/5xx, or 390px overflow.
-- Visual atmosphere is now a strength; next risk is over-polished/synthetic trust leak rather than weak visuals.
+Estimator affordance is shipped:
 
----
+- Charcoal + terracotta outer frame.
+- Paper/light inner workspace.
+- Copper = action / ready to choose.
+- Teal = selected / confirmed.
+- Larger ballot/radio/checkbox signifiers.
+- Choice rails.
+- Step 1/2 navigation docked closer to content.
 
-# What is not done / next decisions
+Protected estimator logic, matrix, ranges, result behavior, package/SLA/emergency rules, and contact payload remained unchanged.
 
-- Repo cleanup baseline after rapid global visual passes.
-- Homepage micro polish (Owner-scoped; gate internals protected — see `TASK.md`).
-- Gate 2: execution-only exception checkpoint — separate scoped task; compact/light-strip restyle attempts rejected.
-- Real-photo replacement plan for accepted synthetic proof-layer placeholders.
-- Contact form production email end-to-end verification (inbox receipt pending Owner confirmation).
-- Final commercial pricing / estimator matrix confirmation.
-- Legal / entity / GDPR review for indexed public launch.
-- Remove `noindex/nofollow` when Owner approves.
+Services live QA passed:
 
----
+- PL/EN route checks.
+- 390px overflow checks.
+- Console/fetch checks.
+- HTTP 4xx/5xx checks.
 
-# Protected vs flexible
+## In Progress
 
-**Protected:** see `DECISIONS.md` — service model, packages, SLA meaning, pathways, estimator logic, contact details, legal substance, logo assets, noindex state.
+FAQ polish is local, unpushed, and not Owner-approved.
 
-**Services page locked (unless explicitly scoped):** estimator shell and lower UI · estimator logic/matrix/translation keys · Services boundary (Ruled Scope Register) · Operational Layer output record · About category-clarity split · package/SLA/emergency/contact contracts.
+Current local FAQ state:
 
-**Rejected on Services (do not reintroduce):** dark split boundary panel · central empty spine · approval-gate gadget · rotated labels · CleaningAccordion theatre in Operational Layer · autoplay/photos/action-result micro-lines in Operational Layer · compact execution-only strip (Gate 2 not accepted).
+- Command Desk / Answer Register direction.
+- Improved category-left / accordion-right grouping.
+- Diagnostic assumption board replacing the raw ledger.
+- Strengthened final routing panel.
+- Cleaned JourneyNav/progression strip.
 
-**Flexible:** website palette, composition, imagery, rhythm, proof modules, warmth, motion, generated assets, and page-specific visual passes when Owner-scoped — per `VISUAL-FREEDOM-SPRINT.md`. Broad visual iteration is stopped; next work is page-by-page micro polish starting with the homepage. Build on canonical mode; do not recreate a dual theme system unless Owner explicitly asks. Agents may remove, demote, or replace modules when they create repetition or weaken trust.
+Remaining FAQ work is narrow:
 
-**Homepage gate internals (protected during polish):** `#usage-situation-gate` · `gate-scroll-cue` · `scroll-mt-28` · mobile-only cue to the pathway selector. Refine the gate; do not remove, bypass, or de-gate unless Owner explicitly approves.
+1. Codex-style ambient background depth without mouse cursor effect.
+2. Diagnostic assumption board label/copy sanity.
 
-**Proof-layer caveat:** accepted synthetic images are temporary shot-planning placeholders, not real evidence. They must not be claimed as actual Sentinel work, real client property, real reports, real operator identity, or final operational proof.
+Current diagnostic label target:
 
----
+- PL: `Częste założenie` / `Jak działa Sentinel`
+- EN: `Common assumption` / `How Sentinel works`
 
-# Documentation
+Do not push FAQ until Owner approves.
 
-Build-era task and audit documents were removed from the active repository after documentation reset. Current work is governed by the active docs listed in `REPO-MAP.md`.
+## Not Done
+
+- Final FAQ pass, QA, and Owner review.
+- Production contact email end-to-end confirmation.
+- Final commercial pricing/range confirmation.
+- Legal/entity/GDPR review.
+- Owner decision to remove `noindex,nofollow`.
+- Real-photo replacement plan for accepted synthetic placeholders.
+
+## Protected During Current Work
+
+- Services unless fixing a confirmed regression.
+- Estimator logic/matrix/ranges/result/contact payload.
+- Contact API/schema/payload.
+- Routes/slugs/query behavior.
+- Legal/noindex.
+- Package names/count.
+- SLA/emergency authority.
+- FAQ answer meanings.

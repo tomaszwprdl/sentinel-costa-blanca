@@ -1,121 +1,85 @@
-# QA.md — SENTINEL
+# QA.md - Launch Validation
 
-Practical technical QA before commit or handoff. Not doctrine enforcement.
+Use Windows `npm.cmd` if PowerShell blocks `npm`.
 
-For launch owner actions see `LAUNCH-CHECKLIST.md`.  
-For git/commit rules see `WORKFLOW.md`.
-
----
-
-# Pre-commit (code changes)
-
-On Windows, use `npm.cmd` instead of plain `npm`; PowerShell may block `npm.ps1`.
+## Required For Code Changes
 
 ```bash
-npm run lint
-npm run build
+npm.cmd run lint
+npm.cmd run build
 git diff --check
 ```
 
-- Only intended files changed
-- No `.env`, screenshots, or artifacts staged
-- PL and EN dictionaries updated together if copy changed
+Fix failures caused by the change.
 
----
+Docs-only changes require:
 
-# Hardened local visual QA (production server)
+```bash
+git diff --check
+git status -sb
+```
 
-On Windows, run these commands as `npm.cmd ...` from the repo root.
+## Visual QA
 
-One reliable path. Use this for every visual change — do **not** screenshot the dev server.
+Use production build screenshots, not dev-server screenshots.
 
-**1. Build** (TLS-safe — no env var needed; `next.config.ts` sets `experimental.turbopackUseSystemTlsCerts`):
+1. Build:
 
-```cmd
+```bash
 npm.cmd run build
 ```
 
-**2. Serve the production build** on a fixed, known port in a normal foreground terminal:
+2. Serve production build:
 
-```cmd
-cd /d C:\Users\Tomus\Desktop\guardian
+```bash
 npm.cmd run qa:serve
 ```
 
-Do not use hidden or detached Codex background server launches on Windows.
+3. Capture with repo tool:
 
-**3. Capture real pixels** with the repo-owned tool as the primary visual QA path (PowerShell examples; one capture per command):
-
-```cmd
-npm.cmd run qa:capture -- --url=http://127.0.0.1:3100/pl/services --full --out=doc/screenshots/pl-services.png --expect=#operational-modules
-npm.cmd run qa:capture -- --url=http://127.0.0.1:3100/pl?pathway=private-use-only --regionFrom=.page-final-cta --regionTo=footer --pad=200 --out=doc/screenshots/cta.png
-npm.cmd run qa:capture -- --url=http://127.0.0.1:3100/pl?pathway=private-use-only --mobile --width=390 --height=844 --dpr=2 --full --expect=.page-final-cta,footer --out=doc/screenshots/m390.png
+```bash
+npm.cmd run qa:capture -- --url=http://127.0.0.1:3100/pl/faq --full --out=doc/screenshots/pl-faq.png --expect=.journey-nav
 ```
 
-Codex browser/MCP is optional. If it fails, report the tooling failure instead of spending time on server workarounds.
+Required checks for visual work:
 
-**4. Stop the server** by its identified PID (never blanket-kill node):
+- PL desktop screenshot.
+- EN desktop screenshot.
+- PL 390px screenshot.
+- `overflowPx <= 0`.
+- `consoleErrors` empty.
+- `failedRequests` empty.
+- `http4xx5xx` empty.
+- Open the PNGs before approval.
 
-```powershell
-$p = (Get-NetTCPConnection -State Listen -LocalPort 3100).OwningProcess; taskkill /PID $p /T /F
-```
+## Interaction QA
 
-**Pass criteria** — read the JSON report each capture prints/writes and require all of:
+For FAQ work:
 
-- `overflowPx <= 0` (no horizontal overflow) — check at 390px mobile too
-- `consoleErrors` empty
-- `failedRequests` empty
-- `http4xx5xx` empty
-- the actual PNG is opened and looks correct — **never approve on computed style alone**
+- JourneyNav sticky/click behavior.
+- Category switch.
+- Accordion open/close.
 
-**Requirements / notes:**
+For forms/contact work:
 
-- `qa:capture` uses the repo dev dependency `puppeteer-core` to drive an already-installed browser; it does **not** download Chrome.
-- It auto-detects installed Chrome, then Edge (full paths, not `PATH`). Override with `--chrome=<path>`.
-- It deliberately avoids network-idle (dev keeps an HMR socket open forever) and uses a fixed settle, so it never hangs.
-- Write captures under `doc/screenshots/` (already git-ignored) or the tool's `%TEMP%` default; never commit screenshots (see `WORKFLOW.md`).
+- Contact form renders.
+- Do not change schema/API/payload without Owner approval.
 
----
+For estimator work:
 
-# Visual / UI spot checks
+- Confirm protected logic/matrix/ranges/result behavior/contact payload are unchanged unless explicitly approved.
 
-- [ ] 390px width — no horizontal scroll on changed pages
-- [ ] PL and EN routes for changed pages
-- [ ] Homepage gate still requires pathway before body sections
-- [ ] Homepage gate has not been removed or bypassed unless Owner explicitly approved it
-- [ ] Logo legible on changed headers/footers
-- [ ] Focus states still visible on interactive elements
-- [ ] `prefers-reduced-motion` — no essential meaning only in animation
-- [ ] **No public theme toggle** in header or mobile menu (unless Owner reintroduces it)
-- [ ] **Canonical visual mode** renders consistently — warm paper body, dark authority bands, dark footer; not a second global skin from OS dark preference
-- [ ] Synthetic proof-layer images are not presented as real Sentinel work, real client property, real reports, real operator identity, or final evidence
-- [ ] **Services page (if touched):** estimator checkpoint shell intact · step rail and live ledger visible · patio/outdoor options readable · boundary reads as Ruled Scope Register · Operational Layer shows four outputs only · execution-only limits still attached · no compact execution-only strip unless Gate 2 explicitly approved
+## Protected Contract QA
 
----
+When touched or nearby, verify:
 
-# Regression routes (smoke)
+- Package names/count unchanged.
+- SLA/emergency authority unchanged.
+- Pathway slugs unchanged.
+- Estimator logic unchanged.
+- Contact API/schema/payload unchanged.
+- Legal/noindex unchanged unless launch brief says otherwise.
 
-- [ ] `/pl` and `/en` home (with each pathway param)
-- [ ] Services, How It Works, FAQ, About, Contact
-- [ ] Terms, Privacy
-- [ ] Contact form renders; prep section before form
-- [ ] Language switch preserves query params where applicable
-- [ ] Footer `tel:` and `mailto:` links present and correctly formed
+## Artifacts
 
----
-
-# Protected-contract sanity (if touched)
-
-- [ ] Package names unchanged unless Owner approved
-- [ ] Pathway slugs unchanged
-- [ ] Estimator logic untouched unless briefed
-- [ ] Contact API payload/schema untouched unless briefed
-- [ ] `noindex,nofollow` still present unless launch brief says otherwise
-
----
-
-# Reporting
-
-Note in handoff: lint/build result, routes checked, known deferrals.
-
-Do not commit `doc/screenshots/` or generated capture folders.
+Do not stage screenshots, `output/`, QA artifacts, temp scripts, `.env`, zips, or generated folders.

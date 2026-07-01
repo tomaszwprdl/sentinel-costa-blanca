@@ -20,8 +20,8 @@ It governs:
 - FAQ construction  
 - PL / EN alignment rules  
 
-It does not define service scope (see SERVICE-STRUCTURING.md).  
-It does not define layout (see `LAYOUT COMPOSITION.md`).  
+It does not define service scope or protected contracts (see `DECISIONS.md`).
+It does not define task scope or QA protocol (see `TASK.md` and `QA.md`).
 It does not define brand philosophy (see DECISIONS.md / BRAND.md).  
 
 This document defines how Sentinel speaks.
@@ -362,8 +362,8 @@ Not allowed:
 If copy conflicts with:
 
 - DECISIONS.md → DECISIONS prevails.
-- SERVICE-STRUCTURING.md → Service document prevails.
-- `LAYOUT COMPOSITION.md` → Layout prevails structurally.
+- TASK.md → current task scope prevails when it does not conflict with DECISIONS.
+- STATUS.md → current project state prevails when it does not conflict with DECISIONS.
 
 Copy must adapt.  
 Copy never overrides structure.
@@ -385,7 +385,7 @@ It must be rewritten.
 
 # 13. Governance Note
 
-Material changes to copy discipline require Owner approval. Routine PL/EN copy edits do not require STATUS.md or AI-GOVERNANCE.md updates unless they change protected positioning, service meaning, or prohibited-language policy.
+Material changes to copy discipline require Owner approval. Routine PL/EN copy edits do not require STATUS.md updates unless they change protected positioning, service meaning, or prohibited-language policy.
 
 ---
 
