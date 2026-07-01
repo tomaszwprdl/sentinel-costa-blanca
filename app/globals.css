@@ -8157,6 +8157,7 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 #situation,
+#what-you-get,
 #responsibility,
 #scope,
 #operational-modules,
@@ -17956,6 +17957,54 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 /* Services prototype: Sentinel Operational Dossier */
+@property --svc-cloud-left-x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: -14%;
+}
+
+@property --svc-cloud-left-y {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 22%;
+}
+
+@property --svc-cloud-right-x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 114%;
+}
+
+@property --svc-cloud-right-y {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 42%;
+}
+
+@property --svc-cloud-mist-x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 38%;
+}
+
+@property --svc-cloud-mist-y {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 48%;
+}
+
+@property --svc-cloud-sand-x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 92%;
+}
+
+@property --svc-cloud-sand-y {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 80%;
+}
+
 .services-page {
   --svc-ink: #10263f;
   --svc-ink-deep: #071524;
@@ -17973,9 +18022,106 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   --svc-copper: #d29a57;
   --svc-radius: 0.55rem;
   --svc-shadow: 0 22px 54px rgba(44, 34, 20, 0.12), 0 1px 0 rgba(255, 253, 247, 0.72);
+  --svc-cloud-left-x: -14%;
+  --svc-cloud-left-y: 22%;
+  --svc-cloud-right-x: 114%;
+  --svc-cloud-right-y: 42%;
+  --svc-cloud-mist-x: 38%;
+  --svc-cloud-mist-y: 48%;
+  --svc-cloud-sand-x: 92%;
+  --svc-cloud-sand-y: 80%;
+  position: relative;
+  isolation: isolate;
   background:
-    linear-gradient(90deg, rgba(92, 72, 46, 0.045) 0 1px, transparent 1px 100%) 0 0 / 4.25rem 100%,
-    linear-gradient(180deg, var(--svc-stone) 0%, #f0e7d9 32%, var(--svc-paper) 64%, var(--svc-stone) 100%);
+    radial-gradient(ellipse 118vw 78rem at var(--svc-cloud-left-x) var(--svc-cloud-left-y),
+      rgba(58, 101, 204, 0.48) 0%,
+      rgba(126, 136, 224, 0.34) 30%,
+      rgba(226, 235, 251, 0.22) 55%,
+      transparent 78%),
+    radial-gradient(ellipse 112vw 86rem at var(--svc-cloud-right-x) var(--svc-cloud-right-y),
+      rgba(70, 164, 170, 0.42) 0%,
+      rgba(76, 129, 148, 0.3) 36%,
+      rgba(225, 233, 229, 0.2) 60%,
+      transparent 82%),
+    radial-gradient(ellipse 104vw 70rem at var(--svc-cloud-mist-x) var(--svc-cloud-mist-y),
+      rgba(213, 225, 248, 0.28) 0%,
+      rgba(121, 170, 186, 0.2) 42%,
+      transparent 76%),
+    radial-gradient(ellipse 122vw 82rem at var(--svc-cloud-sand-x) var(--svc-cloud-sand-y),
+      rgba(222, 178, 104, 0.28) 0%,
+      rgba(247, 232, 210, 0.22) 42%,
+      transparent 78%),
+    linear-gradient(180deg, #f1e5d7 0%, #f9efe4 28%, #f2e5d6 64%, #e4d6c5 100%);
+  background-repeat: no-repeat;
+}
+
+.services-page > section {
+  position: relative;
+  z-index: 1;
+}
+
+.services-page > .journey-nav-shell {
+  position: sticky;
+  top: var(--header-offset);
+  z-index: 45;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .services-page {
+    animation:
+      services-left-cloud-drift 16s ease-in-out infinite alternate,
+      services-right-cloud-drift 21s ease-in-out infinite alternate,
+      services-mist-cloud-drift 18s ease-in-out infinite alternate,
+      services-sand-cloud-drift 26s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes services-left-cloud-drift {
+  from {
+    --svc-cloud-left-x: -17%;
+    --svc-cloud-left-y: 20%;
+  }
+
+  to {
+    --svc-cloud-left-x: -7%;
+    --svc-cloud-left-y: 27%;
+  }
+}
+
+@keyframes services-right-cloud-drift {
+  from {
+    --svc-cloud-right-x: 116%;
+    --svc-cloud-right-y: 39%;
+  }
+
+  to {
+    --svc-cloud-right-x: 105%;
+    --svc-cloud-right-y: 47%;
+  }
+}
+
+@keyframes services-mist-cloud-drift {
+  from {
+    --svc-cloud-mist-x: 34%;
+    --svc-cloud-mist-y: 45%;
+  }
+
+  to {
+    --svc-cloud-mist-x: 48%;
+    --svc-cloud-mist-y: 52%;
+  }
+}
+
+@keyframes services-sand-cloud-drift {
+  from {
+    --svc-cloud-sand-x: 88%;
+    --svc-cloud-sand-y: 82%;
+  }
+
+  to {
+    --svc-cloud-sand-x: 102%;
+    --svc-cloud-sand-y: 75%;
+  }
 }
 
 .services-page .section-label {
@@ -19284,7 +19430,25 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 @media (max-width: 767px) {
   .services-page {
     background:
-      linear-gradient(180deg, var(--svc-stone) 0%, var(--svc-paper) 50%, var(--svc-stone) 100%);
+      radial-gradient(ellipse 154vw 54rem at var(--svc-cloud-left-x) var(--svc-cloud-left-y),
+        rgba(58, 101, 204, 0.42) 0%,
+        rgba(126, 136, 224, 0.3) 32%,
+        rgba(226, 235, 251, 0.2) 58%,
+        transparent 82%),
+      radial-gradient(ellipse 150vw 58rem at var(--svc-cloud-right-x) var(--svc-cloud-right-y),
+        rgba(70, 164, 170, 0.36) 0%,
+        rgba(76, 129, 148, 0.25) 38%,
+        rgba(225, 233, 229, 0.18) 62%,
+        transparent 84%),
+      radial-gradient(ellipse 136vw 46rem at var(--svc-cloud-mist-x) var(--svc-cloud-mist-y),
+        rgba(213, 225, 248, 0.23) 0%,
+        rgba(121, 170, 186, 0.17) 44%,
+        transparent 78%),
+      radial-gradient(ellipse 150vw 54rem at var(--svc-cloud-sand-x) var(--svc-cloud-sand-y),
+        rgba(222, 178, 104, 0.22) 0%,
+        rgba(247, 232, 210, 0.2) 46%,
+        transparent 82%),
+      linear-gradient(180deg, #f1e5d7 0%, #f9efe4 28%, #f2e5d6 64%, #e4d6c5 100%);
   }
 
   .services-command-hero.section-primitive--first {
@@ -19341,6 +19505,10 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .services-page {
+    animation: none !important;
+  }
+
   .services-pathway-spine span,
   .services-site-map__node {
     animation: none !important;
