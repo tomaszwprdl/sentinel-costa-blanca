@@ -27,16 +27,21 @@ export default function FAQWrongAssumptions({
         <h2 className="h2-system mt-3">{title}</h2>
         <p className="mt-3 mb-0 text-body">{intro}</p>
       </div>
-      <div className="faq-boundary-strip__grid">
-        {items.map((item) => (
-          <article key={item.assumption} className="faq-boundary-strip__item">
-            <div>
+      <div className="faq-boundary-strip__board" role="list">
+        {items.map((item, index) => (
+          <article key={item.assumption} className="faq-boundary-strip__tile" role="listitem">
+            <div className="faq-boundary-strip__tile-top">
+              <span className="faq-boundary-strip__marker" aria-hidden="true">
+                {String(index + 1).padStart(2, '0')}
+              </span>
               <p className="faq-boundary-strip__label faq-boundary-strip__label--wrong">{assumptionLabel}</p>
-              <p className="faq-boundary-strip__assumption">{item.assumption}</p>
             </div>
-            <div>
-              <p className="faq-boundary-strip__label faq-boundary-strip__label--right">{boundaryLabel}</p>
-              <p className="faq-boundary-strip__boundary">{item.boundary}</p>
+            <div className="faq-boundary-strip__tile-body">
+              <p className="faq-boundary-strip__assumption">{item.assumption}</p>
+              <div className="faq-boundary-strip__correction">
+                <p className="faq-boundary-strip__label faq-boundary-strip__label--right">{boundaryLabel}</p>
+                <p className="faq-boundary-strip__boundary">{item.boundary}</p>
+              </div>
             </div>
           </article>
         ))}

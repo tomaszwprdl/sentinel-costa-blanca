@@ -2622,14 +2622,14 @@
       "eyebrow": "Częste błędne założenia",
       "title": "Precyzyjne pytanie skraca odpowiedź.",
       "intro": "Te założenia najczęściej przesuwają usługę w złą kategorię.",
-      "assumptionLabel": "Nie chodzi o",
-      "boundaryLabel": "Chodzi o",
+      "assumptionLabel": "Częste założenie",
+      "boundaryLabel": "Jak działa Sentinel",
       "items": [
-        { "assumption": "Same klucze oznaczają pełny nadzór", "boundary": "Przechowywanie kluczy to tylko zdolność dostępu. Nadzór wymaga zakresu pakietu i raportowania." },
-        { "assumption": "SLA oznacza rozwiązanie w podanym czasie", "boundary": "SLA określa czas reakcji i decyzji. Części, wykonawcy i dostępność mogą wydłużyć samo rozwiązanie." },
-        { "assumption": "Koordynacja sprzątania oznacza zarządzanie wynajmem", "boundary": "Sprzątanie albo gotowość lokalu mogą być w zakresie. Rezerwacje i zarządzanie biznesem wynajmu nie są w zakresie." },
-        { "assumption": "Wsparcie awaryjne jest publiczne i na żądanie", "boundary": "Kanały awaryjne istnieją dla uprawnionych aktywnych klientów zgodnie z warunkami pakietu." },
-        { "assumption": "Poza obszarem można dopłacić", "boundary": "Granica obszaru jest operacyjna, a nie negocjowana ceną." }
+        { "assumption": "Same klucze oznaczają pełny nadzór", "boundary": "Klucze dają dostęp. Zakres nadzoru wynika z pakietu, zasad wejścia i raportowania." },
+        { "assumption": "SLA oznacza rozwiązanie sprawy w podanym czasie", "boundary": "SLA określa czas reakcji i decyzji. Termin rozwiązania zależy od części, wykonawców i dostępności." },
+        { "assumption": "Sprzątanie oznacza zarządzanie wynajmem", "boundary": "Możemy koordynować gotowość lokalu w ustalonym zakresie. Rezerwacje i obsługa najmu są poza modelem." },
+        { "assumption": "Awaria oznacza automatyczne działanie na żądanie", "boundary": "Działania awaryjne są dostępne dla aktywnych klientów i w granicach pakietu, uprawnień oraz limitów." },
+        { "assumption": "Poza obszarem można po prostu dopłacić", "boundary": "Obszar działania jest granicą operacyjną, nie pozycją do negocjacji w cenie." }
       ]
     },
     "decision": {

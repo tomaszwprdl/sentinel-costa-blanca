@@ -28,10 +28,15 @@ export default function FAQDecisionPanel({
         <p className="mt-3 mb-0 max-w-[62ch] text-body">{intro}</p>
       </div>
       <div className="faq-decision-strip">
-        {items.map((item) => (
-          <article key={item.title} className="faq-decision-strip__cell">
-            <h3 className="faq-decision-strip__title">{item.title}</h3>
-            <p className="faq-decision-strip__body">{item.body}</p>
+        {items.map((item, index) => (
+          <article key={item.title} className="faq-decision-strip__cell" data-has-route={item.href ? 'true' : 'false'}>
+            <span className="faq-decision-strip__marker" aria-hidden="true">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+            <div className="faq-decision-strip__copy">
+              <h3 className="faq-decision-strip__title">{item.title}</h3>
+              <p className="faq-decision-strip__body">{item.body}</p>
+            </div>
             {item.href && item.label && (
               <Link href={item.href} className="faq-decision-strip__cta btn-secondary">
                 {item.label}

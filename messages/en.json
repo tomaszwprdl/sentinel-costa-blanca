@@ -2622,14 +2622,14 @@
       "eyebrow": "Common wrong assumptions",
       "title": "Precise context produces the right answer.",
       "intro": "These assumptions create most category drift.",
-      "assumptionLabel": "Not this",
-      "boundaryLabel": "This boundary",
+      "assumptionLabel": "Common assumption",
+      "boundaryLabel": "How Sentinel works",
       "items": [
-        { "assumption": "Keyholding alone means full oversight", "boundary": "Keyholding is only an access capability. Oversight requires package scope and reporting." },
-        { "assumption": "SLA means resolution within the stated time", "boundary": "SLA sets response and decision timing. Parts, contractors, and availability can delay the actual fix." },
-        { "assumption": "Cleaner coordination means rental management", "boundary": "Cleaning or readiness can sit inside scope. Booking and rental business management do not." },
-        { "assumption": "Emergency support is public and on demand", "boundary": "Emergency channels exist for eligible active clients under agreed package terms." },
-        { "assumption": "Out-of-area can be accepted for higher price", "boundary": "The service boundary is operational, not a price negotiation." }
+        { "assumption": "Keys alone mean full oversight", "boundary": "Keys provide access. Oversight depends on the package scope, entry rules, and reporting model." },
+        { "assumption": "The SLA guarantees the issue is solved within that time", "boundary": "The SLA defines response and decision timing. Resolution can depend on parts, contractors, and availability." },
+        { "assumption": "Cleaning means rental management", "boundary": "We can coordinate property readiness within the agreed scope. Bookings and rental operations are outside the model." },
+        { "assumption": "An emergency means automatic action on demand", "boundary": "Emergency channels apply to active clients within package terms, authority, and spending limits." },
+        { "assumption": "Outside the area can simply be added for a fee", "boundary": "The service area is an operational boundary, not a price item to negotiate." }
       ]
     },
     "decision": {

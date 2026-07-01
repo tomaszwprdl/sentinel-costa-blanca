@@ -39,6 +39,7 @@ export default function FAQPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeSectionId, setActiveSectionId] = useState('service-model');
   const [openAnswerId, setOpenAnswerId] = useState('q1');
+  const [selectedQuickAnswerId, setSelectedQuickAnswerId] = useState('');
 
   const facts = t.raw('redesign.hero.facts') as HeroFact[];
   const journeyItems = [
@@ -177,12 +178,14 @@ export default function FAQPage() {
   };
 
   const handleSectionChange = (sectionId: string, answerId?: string) => {
+    setSelectedQuickAnswerId('');
     setActiveSectionId(sectionId);
     setOpenAnswerId(answerId ?? faqSections.find((section) => section.id === sectionId)?.faqs[0]?.id ?? '');
   };
 
   const handleQuickAnswerSelect = (item: QuickAnswerSource) => {
     setSearchQuery('');
+    setSelectedQuickAnswerId(item.targetQuestionId);
     setActiveSectionId(item.targetSectionId);
     setOpenAnswerId(item.targetQuestionId);
     window.requestAnimationFrame(scrollToFAQDetails);
@@ -190,6 +193,7 @@ export default function FAQPage() {
 
   const handleSearchChange = (value: string) => {
     setSearchQuery(value);
+    setSelectedQuickAnswerId('');
 
     const query = value.trim().toLowerCase();
 
@@ -251,6 +255,7 @@ export default function FAQPage() {
             title={t('redesign.quick.title')}
             intro={t('redesign.quick.intro')}
             items={quickAnswers}
+            activeTargetQuestionId={selectedQuickAnswerId}
             onSelect={handleQuickAnswerSelect}
           />
         </Section>
