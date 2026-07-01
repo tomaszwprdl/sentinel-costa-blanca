@@ -11421,6 +11421,41 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
     box-shadow var(--motion-standard) var(--motion-ease-out);
 }
 
+/* Choice rail: selectable cards carry a left vertical rail so the whole row
+   reads as a control — action colour when waiting, confirmation when selected. */
+.estimator-choice-card::before,
+.estimator-mode-card::before,
+.estimator-scope-pill::before {
+  position: absolute;
+  top: 0.55rem;
+  bottom: 0.55rem;
+  left: 0;
+  width: 3px;
+  border-radius: 0 999px 999px 0;
+  background: color-mix(in srgb, var(--accent) 72%, var(--line));
+  content: "";
+  transition:
+    background var(--motion-standard) var(--motion-ease-out),
+    box-shadow var(--motion-standard) var(--motion-ease-out);
+}
+
+.estimator-choice-card:hover::before,
+.estimator-choice-card:focus-visible::before,
+.estimator-mode-card:hover::before,
+.estimator-mode-card:focus-visible::before,
+.estimator-scope-pill:hover::before,
+.estimator-scope-pill:focus-visible::before {
+  background: var(--accent);
+  box-shadow: 1px 0 6px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.estimator-choice-card[data-selected="true"]::before,
+.estimator-mode-card[data-selected="true"]::before,
+.estimator-scope-pill[data-selected="true"]::before {
+  background: var(--support);
+  box-shadow: 1px 0 6px color-mix(in srgb, var(--support) 30%, transparent);
+}
+
 /* Control signifier: single-select option cards carry a visible radio indicator,
    sized as a real control and centered on the row like a ballot mark. */
 .estimator-choice-card::after,
@@ -19698,13 +19733,54 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
     linear-gradient(180deg, var(--svc-stone) 0%, var(--svc-paper) 28%, var(--svc-paper) 100%);
 }
 
+/* Estimator shell: warm charcoal instrument case with a clean terracotta signal
+   rim. The attention lives on the frame only — the working floor stays paper. */
 .estimator-embedded-shell,
 .estimator-configurator {
-  border-color: var(--svc-rule);
+  border-color: color-mix(in srgb, #d86f45 60%, #181611);
   border-radius: var(--svc-radius);
+  background: linear-gradient(180deg, #1c1a16 0%, #151512 100%);
+  box-shadow:
+    inset 0 1.5px 0 rgba(224, 122, 79, 0.5),
+    0 0 0 1px rgba(216, 111, 69, 0.16),
+    0 26px 58px -30px rgba(216, 111, 69, 0.22);
+  padding: 0.7rem;
+}
+
+@media (min-width: 768px) {
+  .estimator-embedded-shell,
+  .estimator-configurator {
+    padding: 0.85rem;
+  }
+}
+
+/* Inner workspace floor: light paper grid inside the case. */
+.services-page .estimator-configurator__grid {
+  border-radius: calc(var(--svc-radius) - 0.1rem);
   background:
     linear-gradient(90deg, rgba(16, 38, 63, 0.035) 0 1px, transparent 1px 100%) 0 0 / 3.5rem 100%,
     linear-gradient(180deg, var(--svc-paper-strong), var(--svc-paper));
+  padding: 0.85rem;
+}
+
+@media (min-width: 768px) {
+  .services-page .estimator-configurator__grid {
+    padding: 1.1rem;
+  }
+}
+
+/* Active step panel: thin copper rail + warm top wash = "make a choice here". */
+.services-page .estimator-configurator__control {
+  border-top: 3px solid color-mix(in srgb, var(--svc-decision) 55%, var(--svc-copper));
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--svc-copper) 6%, transparent), transparent 16%),
+    color-mix(in srgb, var(--svc-paper) 78%, white);
+}
+
+.services-page .estimator-configurator__footer .btn-primary:not(:disabled) {
+  box-shadow:
+    0 12px 26px -12px rgba(184, 102, 74, 0.55),
+    inset 0 1px 0 rgba(255, 253, 247, 0.28);
 }
 
 .estimator-stepper__item,
@@ -19747,7 +19823,7 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 
 .estimator-choice-card::after,
 .estimator-mode-card::after {
-  border-color: color-mix(in srgb, var(--svc-field) 55%, var(--svc-rule));
+  border-color: color-mix(in srgb, var(--svc-copper) 68%, var(--svc-rule));
   background: color-mix(in srgb, var(--svc-paper) 60%, white);
 }
 
@@ -19755,8 +19831,8 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 .estimator-choice-card:focus-visible::after,
 .estimator-mode-card:hover::after,
 .estimator-mode-card:focus-visible::after {
-  border-color: var(--svc-field);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--svc-field) 14%, transparent);
+  border-color: color-mix(in srgb, var(--svc-decision) 70%, var(--svc-copper));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--svc-copper) 24%, transparent);
 }
 
 .estimator-choice-card[data-selected="true"]::after,
@@ -19770,7 +19846,8 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 .estimator-choice-card:hover,
 .estimator-mode-card:hover,
 .estimator-scope-pill:hover {
-  background: color-mix(in srgb, var(--svc-field) 5%, white);
+  border-color: color-mix(in srgb, var(--svc-copper) 62%, var(--svc-rule));
+  background: color-mix(in srgb, var(--svc-copper) 6%, white);
 }
 
 .estimator-choice-card[data-selected="true"],
@@ -19784,13 +19861,36 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .estimator-scope-pill > span {
-  border-color: color-mix(in srgb, var(--svc-field) 58%, var(--svc-rule));
+  border-color: color-mix(in srgb, var(--svc-copper) 68%, var(--svc-rule));
 }
 
 .estimator-scope-pill:hover > span,
 .estimator-scope-pill:focus-visible > span {
-  border-color: var(--svc-field);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--svc-field) 14%, transparent);
+  border-color: color-mix(in srgb, var(--svc-decision) 70%, var(--svc-copper));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--svc-copper) 24%, transparent);
+}
+
+.estimator-choice-card::before,
+.estimator-mode-card::before,
+.estimator-scope-pill::before {
+  background: color-mix(in srgb, var(--svc-copper) 78%, var(--svc-rule));
+}
+
+.estimator-choice-card:hover::before,
+.estimator-choice-card:focus-visible::before,
+.estimator-mode-card:hover::before,
+.estimator-mode-card:focus-visible::before,
+.estimator-scope-pill:hover::before,
+.estimator-scope-pill:focus-visible::before {
+  background: color-mix(in srgb, var(--svc-decision) 65%, var(--svc-copper));
+  box-shadow: 1px 0 6px color-mix(in srgb, var(--svc-copper) 38%, transparent);
+}
+
+.estimator-choice-card[data-selected="true"]::before,
+.estimator-mode-card[data-selected="true"]::before,
+.estimator-scope-pill[data-selected="true"]::before {
+  background: var(--svc-field);
+  box-shadow: 1px 0 6px color-mix(in srgb, var(--svc-field) 32%, transparent);
 }
 
 .estimator-scope-pill[data-selected="true"] > span {
@@ -19804,12 +19904,12 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 .estimator-scope-pill:focus-visible,
 .estimator-bedroom-options button:focus-visible,
 .estimator-quantity-control button:focus-visible {
-  outline-color: color-mix(in srgb, var(--svc-field) 60%, transparent);
+  outline-color: color-mix(in srgb, var(--svc-decision) 55%, transparent);
 }
 
 .estimator-bedroom-options button:not([data-selected="true"]):hover {
-  border-color: color-mix(in srgb, var(--svc-field) 55%, var(--svc-rule));
-  background: color-mix(in srgb, var(--svc-field) 6%, white);
+  border-color: color-mix(in srgb, var(--svc-copper) 62%, var(--svc-rule));
+  background: color-mix(in srgb, var(--svc-copper) 7%, white);
 }
 
 .estimator-result-output {
