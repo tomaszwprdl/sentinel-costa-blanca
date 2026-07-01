@@ -18720,12 +18720,10 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 /* Services boundary contract: institutional scope panel, not marketing card. */
 .services-page .services-boundary-contract {
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--svc-ink) 18%, var(--svc-rule));
+  border: 1px solid color-mix(in srgb, var(--svc-ink) 11%, var(--svc-rule));
   border-radius: var(--svc-radius);
-  background: color-mix(in srgb, var(--svc-paper) 92%, var(--svc-stone));
-  box-shadow:
-    inset 0 1px 0 rgba(255, 253, 247, 0.7),
-    0 10px 26px -22px rgba(16, 38, 63, 0.16);
+  background: color-mix(in srgb, var(--svc-paper) 94%, var(--svc-stone));
+  box-shadow: inset 0 1px 0 rgba(255, 253, 247, 0.55);
 }
 
 .services-page .services-boundary-contract .services-boundary-panel {
@@ -18739,73 +18737,76 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   display: none;
 }
 
+/* Boundary decision panel header: dark authority band with the scope map as anchor. */
 .services-page .services-boundary-contract .services-boundary-panel__header {
-  border-bottom: 1.5px solid color-mix(in srgb, var(--svc-ink) 24%, var(--svc-rule));
-  background: linear-gradient(180deg, var(--svc-paper-strong) 0%, var(--svc-paper) 100%);
-  padding: 0.78rem 1.05rem 0.72rem;
+  border-bottom: 1.5px solid color-mix(in srgb, var(--svc-ink) 32%, var(--svc-rule));
+  background: linear-gradient(140deg, var(--svc-ink-mid) 0%, var(--svc-ink-deep) 62%);
+  padding: 0;
 }
 
 .services-page .services-boundary-contract .services-boundary-panel__header .section-label {
-  color: color-mix(in srgb, var(--svc-field) 70%, var(--svc-ink));
+  color: color-mix(in srgb, var(--svc-copper) 72%, var(--svc-paper));
   letter-spacing: 0.14em;
 }
 
 .services-page .services-boundary-contract .services-boundary-panel__header .h2-system {
-  color: var(--svc-ink);
-  font-size: clamp(1.42rem, 2.35vw, 1.95rem);
+  color: var(--svc-paper);
+  font-size: clamp(1.5rem, 2.5vw, 2.05rem);
   font-weight: 950;
   letter-spacing: -0.02em;
   line-height: 1.08;
 }
 
-.services-page .services-boundary-contract .services-boundary-panel__header .text-body {
-  margin-top: 0.6rem !important;
-  color: color-mix(in srgb, var(--svc-ink) 80%, var(--svc-muted));
-  font-size: 0.9rem;
-  line-height: 1.48;
+.services-page .services-boundary-contract .services-boundary-panel__intro {
+  max-width: 46ch;
+  color: color-mix(in srgb, var(--svc-paper) 76%, var(--svc-ink-deep));
+  font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 .services-page .services-boundary-contract .services-boundary-eligibility {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
+  align-self: end;
   gap: 0.1rem 0.55rem;
   width: 100%;
   max-width: none;
-  margin: 0.7rem 0 0;
+  margin: 0;
   border: 0;
-  border-left: 3px solid var(--svc-field);
   border-radius: 0;
-  background: color-mix(in srgb, var(--svc-field) 6%, transparent);
+  background: linear-gradient(180deg, rgba(7, 21, 36, 0) 0%, rgba(7, 21, 36, 0.58) 36%, rgba(7, 21, 36, 0.94) 100%);
   line-height: 1.3;
-  padding: 0.42rem 0.62rem;
+  padding: 1.9rem 1rem 0.78rem;
   text-transform: none;
 }
 
 .services-page .services-boundary-contract .services-boundary-eligibility__label {
-  color: color-mix(in srgb, var(--svc-ink) 62%, var(--svc-muted));
-  font-size: 0.66rem;
+  color: color-mix(in srgb, var(--svc-copper) 78%, var(--svc-paper));
+  font-size: 0.64rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
 }
 
 .services-page .services-boundary-contract .services-boundary-eligibility__value {
-  color: var(--svc-ink);
-  font-size: 0.83rem;
-  font-weight: 700;
+  color: var(--svc-paper);
+  font-size: 0.86rem;
+  font-weight: 750;
   letter-spacing: 0.005em;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum" 1;
 }
 
 .services-page .services-boundary-contract .services-boundary-column {
-  padding: 0.85rem 0.95rem 0.95rem;
+  padding: 0.95rem 1rem 1.05rem;
 }
 
 .services-page .services-boundary-contract .services-boundary-column__heading {
   gap: 0.65rem;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.85rem;
 }
 
 .services-page .services-boundary-contract .services-boundary-column__heading > span {
@@ -18816,14 +18817,16 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .services-page .services-boundary-contract .services-boundary-column__heading h3 {
-  font-size: clamp(1.05rem, 1.7vw, 1.28rem);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
   font-weight: 950;
   line-height: 1.12;
 }
 
 .services-page .services-boundary-contract .services-boundary-column--inside {
-  border-bottom: 1px solid color-mix(in srgb, var(--svc-ink) 18%, var(--svc-rule));
-  background: color-mix(in srgb, var(--svc-field) 3%, var(--svc-paper));
+  border-bottom: 0;
+  background:
+    linear-gradient(180deg, rgba(47, 111, 115, 0.06), rgba(47, 111, 115, 0.015) 46%),
+    color-mix(in srgb, #f2f8f6 62%, var(--svc-paper));
 }
 
 .services-page .services-boundary-contract .services-boundary-column--inside .services-boundary-column__heading > span {
@@ -18833,7 +18836,9 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .services-page .services-boundary-contract .services-boundary-column--outside {
-  background: color-mix(in srgb, var(--svc-stone) 22%, var(--svc-paper));
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--svc-copper) 8%, transparent), transparent 48%),
+    color-mix(in srgb, var(--svc-stone) 44%, var(--svc-paper));
   box-shadow: inset 0 1px 0 rgba(16, 38, 63, 0.04);
 }
 
@@ -18841,6 +18846,98 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   border-color: color-mix(in srgb, var(--svc-copper) 40%, var(--svc-rule));
   background: color-mix(in srgb, var(--svc-copper) 12%, var(--svc-paper));
   color: color-mix(in srgb, var(--svc-copper) 70%, var(--svc-ink));
+}
+
+/* Consent boundary spine: polarity divider between included scope and separate consent. */
+@property --svc-polar-blue {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0.09;
+}
+
+@property --svc-polar-copper {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0.09;
+}
+
+@keyframes svc-consent-scan {
+  0% {
+    background-position: 0 -40%, 0 0;
+  }
+  50% {
+    background-position: 0 140%, 0 0;
+  }
+  100% {
+    background-position: 0 -40%, 0 0;
+  }
+}
+
+.services-page .services-boundary-contract .services-boundary-dual {
+  position: relative;
+  --svc-polar-blue: 0.09;
+  --svc-polar-copper: 0.09;
+}
+
+.services-page .services-boundary-contract .services-boundary-dual:has(.services-boundary-column--inside:is(:hover, :focus-within)) {
+  --svc-polar-blue: 0.19;
+}
+
+.services-page .services-boundary-contract .services-boundary-dual:has(.services-boundary-column--outside:is(:hover, :focus-within)) {
+  --svc-polar-copper: 0.19;
+}
+
+@media (min-width: 768px) {
+  .services-page .services-boundary-contract .services-boundary-dual::before {
+    position: absolute;
+    top: 0.9rem;
+    bottom: 0.9rem;
+    left: 50%;
+    width: 7.5rem;
+    transform: translateX(-50%);
+    background: linear-gradient(
+      90deg,
+      rgba(47, 111, 115, 0) 0%,
+      rgba(47, 111, 115, var(--svc-polar-blue)) 49.5%,
+      rgba(210, 154, 87, var(--svc-polar-copper)) 50.5%,
+      rgba(210, 154, 87, 0) 100%
+    );
+    transition: --svc-polar-blue 0.7s ease, --svc-polar-copper 0.7s ease;
+    pointer-events: none;
+    content: "";
+  }
+
+  .services-page .services-boundary-contract .services-boundary-dual::after {
+    position: absolute;
+    top: 0.9rem;
+    bottom: 0.9rem;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    background-image:
+      linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--svc-field) 62%, var(--svc-ink)) 50%, transparent 100%),
+      linear-gradient(180deg, color-mix(in srgb, var(--svc-ink) 30%, transparent), color-mix(in srgb, var(--svc-ink) 22%, transparent));
+    background-size: 100% 26%, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 0 -40%, 0 0;
+    animation: svc-consent-scan 12s ease-in-out infinite;
+    pointer-events: none;
+    content: "";
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-page .services-boundary-contract .services-boundary-dual::after {
+    animation: none;
+    background-image: linear-gradient(
+      180deg,
+      rgba(47, 111, 115, 0.42) 0%,
+      color-mix(in srgb, var(--svc-ink) 24%, transparent) 50%,
+      rgba(210, 154, 87, 0.48) 100%
+    );
+    background-size: 100% 100%;
+    background-position: 0 0;
+  }
 }
 
 .services-page .services-boundary-contract .services-boundary-list {
@@ -18858,13 +18955,17 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .services-page .services-boundary-contract .services-boundary-item {
-  grid-template-columns: 1.2rem minmax(0, 1fr);
+  grid-template-columns: 1.35rem minmax(0, 1fr);
   gap: 0.55rem;
   border: 0;
   border-bottom: 1px solid color-mix(in srgb, var(--svc-rule) 78%, transparent);
   border-radius: 0;
   background: transparent;
-  padding: 0.55rem 0.1rem 0.52rem;
+  padding: 0.78rem 0.15rem 0.74rem;
+}
+
+.services-page .services-boundary-contract .services-boundary-column--outside .services-boundary-item {
+  border-bottom-color: color-mix(in srgb, var(--svc-copper) 22%, var(--svc-rule));
 }
 
 .services-page .services-boundary-contract .services-boundary-list > .services-boundary-item:last-child {
@@ -18872,13 +18973,13 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .services-page .services-boundary-contract .services-boundary-item > span {
-  width: 1.2rem;
-  height: 1.2rem;
-  margin-top: 0.02rem;
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-top: 0.05rem;
   border: 0;
   border-radius: 0;
   background: transparent;
-  font-size: 0.92rem;
+  font-size: 1.02rem;
   font-weight: 900;
 }
 
@@ -18897,17 +18998,57 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .services-page .services-boundary-contract .services-boundary-item p {
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.16rem;
   color: var(--svc-ink);
-  font-size: 0.88rem;
+  font-size: 0.97rem;
   font-weight: 800;
-  line-height: 1.22;
+  line-height: 1.24;
 }
 
 .services-page .services-boundary-contract .services-boundary-item small {
-  color: color-mix(in srgb, var(--svc-ink) 64%, var(--svc-muted));
-  font-size: 0.77rem;
-  line-height: 1.4;
+  color: color-mix(in srgb, var(--svc-ink) 62%, var(--svc-muted));
+  font-size: 0.8rem;
+  line-height: 1.42;
+}
+
+/* Zone detail toggle: mobile-only control that reveals item descriptions per zone. */
+.services-page .services-boundary-contract .services-boundary-column__toggle {
+  display: none;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.65rem;
+  border: 1px solid color-mix(in srgb, var(--svc-field) 34%, var(--svc-rule));
+  border-radius: 0.35rem;
+  background: transparent;
+  color: var(--svc-field);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.48rem 0.72rem;
+}
+
+.services-page .services-boundary-contract .services-boundary-column--outside .services-boundary-column__toggle {
+  border-color: color-mix(in srgb, var(--svc-copper) 42%, var(--svc-rule));
+  color: color-mix(in srgb, var(--svc-copper) 72%, var(--svc-ink));
+}
+
+@media (max-width: 899px) {
+  .services-page .services-boundary-contract .services-boundary-column__toggle {
+    display: inline-flex;
+  }
+
+  .services-page .services-boundary-contract .services-boundary-column:not(.services-boundary-column--open) .services-boundary-item small {
+    display: none;
+  }
+
+  .services-page .services-boundary-contract .services-boundary-column:not(.services-boundary-column--open) .services-boundary-item {
+    padding: 0.52rem 0.15rem 0.5rem;
+  }
+
+  .services-page .services-boundary-contract .services-boundary-column:not(.services-boundary-column--open) .services-boundary-item p {
+    margin-bottom: 0;
+  }
 }
 
 .services-page .services-boundary-contract .services-boundary-details {
@@ -18958,33 +19099,113 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   padding: 0 0.95rem 0.85rem;
 }
 
+/* Expanded disclosures render as compact clause rows inside the same contract sheet. */
+.services-page .services-boundary-contract .services-boundary-clauses {
+  display: grid;
+  gap: 0;
+}
+
+.services-page .services-boundary-contract .services-boundary-clause {
+  border-top: 1px solid color-mix(in srgb, var(--svc-rule) 85%, transparent);
+  padding: 0.62rem 0 0.58rem;
+}
+
+.services-page .services-boundary-contract .services-boundary-clause:first-child {
+  border-top: 0;
+  padding-top: 0.1rem;
+}
+
+.services-page .services-boundary-contract .services-boundary-clause h3 {
+  margin: 0 0 0.32rem;
+  color: color-mix(in srgb, var(--svc-field) 62%, var(--svc-ink));
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.services-page .services-boundary-contract .services-boundary-clause p {
+  margin: 0;
+  color: color-mix(in srgb, var(--svc-ink) 76%, var(--svc-muted));
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.services-page .services-boundary-contract .services-boundary-clause p.services-boundary-clause__intro {
+  margin: 0 0 0.4rem;
+  color: var(--svc-ink);
+  font-weight: 700;
+}
+
+.services-page .services-boundary-contract .services-boundary-clause ul {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.services-page .services-boundary-contract .services-boundary-clause li {
+  border-bottom: 1px solid color-mix(in srgb, var(--svc-rule) 70%, transparent);
+  padding: 0.34rem 0 0.32rem;
+  color: color-mix(in srgb, var(--svc-ink) 76%, var(--svc-muted));
+  font-size: 0.84rem;
+  line-height: 1.42;
+}
+
+.services-page .services-boundary-contract .services-boundary-clause li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0.05rem;
+}
+
 @media (min-width: 768px) {
-  .services-page .services-boundary-contract .services-boundary-panel__header {
-    padding: 1.05rem 1.25rem;
+  .services-page .services-boundary-contract .services-boundary-panel__header-copy {
+    padding: 1.5rem 1.6rem 1.4rem;
   }
 
   .services-page .services-boundary-contract .services-boundary-column {
-    padding: 0.95rem 1.05rem 1.05rem;
+    padding: 1.15rem 1.2rem 1.25rem;
   }
 
   .services-page .services-boundary-contract .services-boundary-column--inside {
-    border-right: 1px solid color-mix(in srgb, var(--svc-ink) 18%, var(--svc-rule));
+    border-right: 0;
     border-bottom: 0;
   }
 
   .services-page .services-boundary-contract .services-boundary-column--outside {
-    box-shadow: inset 13px 0 22px -20px rgba(16, 38, 63, 0.18);
+    box-shadow: inset 0 1px 0 rgba(16, 38, 63, 0.04);
   }
 }
 
 @media (max-width: 767px) {
   .services-page .services-boundary-contract .services-boundary-column--inside {
+    position: relative;
     border-right: 0;
-    border-bottom: 1px solid color-mix(in srgb, var(--svc-ink) 18%, var(--svc-rule));
+    border-bottom: 0;
+    padding-bottom: 1.35rem;
+  }
+
+  /* Compact horizontal boundary threshold between the stacked zones. */
+  .services-page .services-boundary-contract .services-boundary-column--inside::after {
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    left: 1rem;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(
+      90deg,
+      rgba(47, 111, 115, 0.55) 0%,
+      rgba(47, 111, 115, 0.14) 46%,
+      rgba(210, 154, 87, 0.14) 54%,
+      rgba(210, 154, 87, 0.6) 100%
+    );
+    pointer-events: none;
+    content: "";
   }
 
   .services-page .services-boundary-contract .services-boundary-column--outside {
-    box-shadow: inset 0 12px 20px -18px rgba(16, 38, 63, 0.16);
+    box-shadow: none;
   }
 }
 
@@ -19318,7 +19539,7 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 .services-estimator-handoff__step strong {
   min-width: 0;
   color: var(--svc-ink);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 900;
   line-height: 1.22;
 }
@@ -25332,50 +25553,61 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 
 .services-page .services-boundary-contract .services-boundary-panel__header {
   display: grid;
-  gap: 1rem;
+  grid-template-areas:
+    "copy"
+    "object";
+  gap: 0;
   align-items: stretch;
 }
 
-.services-boundary-panel__header-copy {
+.services-page .services-boundary-contract .services-boundary-panel__header-copy {
+  grid-area: copy;
   min-width: 0;
+  padding: 1.15rem 1.1rem 1.05rem;
+}
+
+.services-page .services-boundary-contract .services-boundary-eligibility {
+  grid-area: object;
 }
 
 .services-boundary-panel__object {
   position: relative;
-  display: none;
-  min-height: 12rem;
+  display: block;
+  grid-area: object;
+  min-height: 10.5rem;
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--svc-ink) 18%, var(--svc-rule));
-  border-radius: 0.65rem;
   background: #071524;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 253, 247, 0.3),
-    0 18px 34px -28px rgba(16, 38, 63, 0.28);
 }
 
 .services-boundary-panel__object::after {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background:
-    linear-gradient(180deg, rgba(7, 21, 36, 0.06), rgba(7, 21, 36, 0.46)),
-    linear-gradient(90deg, rgba(255, 250, 242, 0.06), transparent 44%);
+  background: linear-gradient(180deg, rgba(7, 21, 36, 0.12), rgba(7, 21, 36, 0.05) 45%);
   content: "";
 }
 
 .services-boundary-panel__object img {
   object-fit: cover;
-  object-position: 49% 50%;
-  filter: saturate(0.86) contrast(0.96) brightness(0.86);
+  object-position: 58% 52%;
+  filter: saturate(0.98) contrast(1.02) brightness(0.98);
 }
 
 @media (min-width: 900px) {
   .services-page .services-boundary-contract .services-boundary-panel__header {
-    grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.34fr);
+    grid-template-areas: "copy object";
+    grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.48fr);
+    grid-template-rows: minmax(15rem, auto);
   }
 
   .services-boundary-panel__object {
-    display: block;
+    min-height: 100%;
+  }
+
+  .services-boundary-panel__object::after {
+    background:
+      linear-gradient(90deg, rgba(9, 26, 43, 0.97) 0%, rgba(9, 26, 43, 0.52) 20%, rgba(9, 26, 43, 0) 52%),
+      linear-gradient(180deg, rgba(7, 21, 36, 0.14), rgba(7, 21, 36, 0) 42%);
   }
 }
 
@@ -25483,6 +25715,8 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .services-page .services-output-preview {
+  position: relative;
+  isolation: isolate;
   border-color: rgba(255, 250, 242, 0.16);
   background:
     radial-gradient(46rem 24rem at 8% 0%, rgba(70, 164, 170, 0.18), transparent 70%),
@@ -25491,6 +25725,30 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   box-shadow:
     0 34px 74px -46px rgba(7, 21, 36, 0.64),
     inset 0 1px 0 rgba(255, 250, 242, 0.09);
+}
+
+.services-page .services-output-preview::before {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: clamp(17rem, 34vw, 25rem);
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(7, 21, 36, 0.54) 0%, rgba(7, 21, 36, 0.24) 44%, rgba(7, 21, 36, 0.12) 100%),
+    linear-gradient(180deg, rgba(7, 21, 36, 0.02) 0%, rgba(16, 38, 63, 0.34) 100%),
+    url("/photos/services-operational-record-bg.webp");
+  background-position: 60% 45%;
+  background-size: cover;
+  content: "";
+  filter: saturate(0.95) contrast(0.98) brightness(0.96);
+  opacity: 1;
+}
+
+.services-page .services-output-preview > * {
+  position: relative;
+  z-index: 1;
 }
 
 .services-page .services-output-preview__header {
@@ -25551,6 +25809,14 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
     linear-gradient(90deg, rgba(70, 164, 170, 0.12), transparent 64%),
     rgba(255, 250, 242, 0.055);
   color: color-mix(in srgb, var(--svc-paper) 78%, transparent);
+}
+
+@media (max-width: 640px) {
+  .services-page .services-output-preview::before {
+    height: 13.5rem;
+    background-position: 62% 48%;
+    opacity: 0.24;
+  }
 }
 
 .services-checkpoint {

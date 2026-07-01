@@ -26,7 +26,6 @@ const EXECUTION_ONLY_AVAILABLE_KEYS = ['keyHolding', 'cleaning', 'oneTimeAccess'
 const EXECUTION_ONLY_LIMITATION_KEYS = ['noRegularChecks', 'noCyclicReporting', 'noEmergencySLA', 'noDecisionAuthority'] as const;
 const OPERATIONAL_OUTPUT_KEYS = ['readiness', 'access', 'coordination', 'decision'] as const;
 const BRIEFING_SIGNAL_KEYS = ['inspections', 'access', 'decisions'] as const;
-const ESTIMATOR_INPUT_KEYS = ['package', 'usage', 'property'] as const;
 const ESTIMATOR_HANDOFF_KEYS = ['responsibility', 'usage', 'property'] as const;
 
 // Service-map node icons, in the order of redesign.siteMap.nodes:
@@ -206,7 +205,7 @@ export default async function ServicesPage({
           </div>
         </Section>
 
-        <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--responsibility">
+        <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--responsibility" id="package-fit">
           <div className="services-responsibility-stage">
             <PackageResponsibilityLadder />
           </div>
@@ -234,8 +233,6 @@ export default async function ServicesPage({
               <div className="services-estimator-stage__copy">
                 <p className="section-label">{t('redesign.estimatorBand.eyebrow')}</p>
                 <h2 className="h2-system mt-3">{t('redesign.estimatorBand.title')}</h2>
-                <p className="mt-3 text-body">{t('redesign.estimatorBand.intro')}</p>
-                <p className="services-estimator-note">{t('redesign.estimatorBand.note')}</p>
               </div>
               <div className="services-estimator-ticket">
                 <p className="services-estimator-ticket__header">{t('redesign.estimatorBand.preview.header')}</p>
@@ -247,14 +244,6 @@ export default async function ServicesPage({
                   <span className="services-estimator-ticket__cap">{t('redesign.estimatorBand.preview.to')}</span>
                 </div>
                 <p className="services-estimator-ticket__caption">{t('redesign.estimatorBand.preview.rangeCaption')}</p>
-                <ul className="services-estimator-ticket__tiles">
-                  {ESTIMATOR_INPUT_KEYS.map((key) => (
-                    <li key={key} className="services-estimator-tile">
-                      <p className="services-estimator-tile__label">{t(`redesign.estimatorBand.inputs.${key}.label`)}</p>
-                      <p className="services-estimator-tile__body">{t(`redesign.estimatorBand.inputs.${key}.body`)}</p>
-                    </li>
-                  ))}
-                </ul>
                 <p className="services-estimator-ticket__result">{t('redesign.estimatorBand.preview.resultNote')}</p>
               </div>
             </div>
@@ -269,32 +258,36 @@ export default async function ServicesPage({
             <ServiceBoundaryGrid />
             <div className="services-boundary-details">
               <DisclosureBlock className="services-boundary-note" label={t('redesign.details.frameworkLabel')} explainer={t('redesign.details.frameworkExplainer')}>
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-base font-black text-heading">{t('framework.visitSchedulingTitle')}</h3>
-                    <ul className="ml-4 list-disc space-y-2 text-sm text-body">
+                <div className="services-boundary-clauses">
+                  <section className="services-boundary-clause">
+                    <h3>{t('framework.visitSchedulingTitle')}</h3>
+                    <ul>
                       <li>{t('framework.visitSchedulingItems.scheduled')}</li>
                       <li>{t('framework.visitSchedulingItems.additional')}</li>
                     </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-base font-black text-heading">{t('framework.decisionLimitsTitle')}</h3>
-                    <p className="mb-0 text-sm text-body">{t('framework.decisionLimitsText')}</p>
-                  </div>
-                  <div>
-                    <h3 className="text-base font-black text-heading">{t('framework.minCommitmentTitle')}</h3>
-                    <p className="mb-0 text-sm text-body">{t('framework.minCommitmentText')}</p>
-                  </div>
+                  </section>
+                  <section className="services-boundary-clause">
+                    <h3>{t('framework.decisionLimitsTitle')}</h3>
+                    <p>{t('framework.decisionLimitsText')}</p>
+                  </section>
+                  <section className="services-boundary-clause">
+                    <h3>{t('framework.minCommitmentTitle')}</h3>
+                    <p>{t('framework.minCommitmentText')}</p>
+                  </section>
                 </div>
               </DisclosureBlock>
 
               <DisclosureBlock className="services-boundary-note" label={t('redesign.details.notIncludedLabel')} explainer={t('redesign.details.notIncludedExplainer')}>
-                <p className="text-sm text-body">{t('notIncluded.intro')}</p>
-                <ul className="ml-4 list-disc space-y-2 text-sm text-body">
-                  {NOT_INCLUDED_ITEM_KEYS.map((key) => (
-                    <li key={key}>{t(`notIncluded.items.${key}`)}</li>
-                  ))}
-                </ul>
+                <div className="services-boundary-clauses">
+                  <section className="services-boundary-clause">
+                    <p className="services-boundary-clause__intro">{t('notIncluded.intro')}</p>
+                    <ul>
+                      {NOT_INCLUDED_ITEM_KEYS.map((key) => (
+                        <li key={key}>{t(`notIncluded.items.${key}`)}</li>
+                      ))}
+                    </ul>
+                  </section>
+                </div>
               </DisclosureBlock>
             </div>
           </div>

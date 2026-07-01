@@ -701,7 +701,7 @@
         "situation": "Sytuacja",
         "responsibility": "Odpowiedzialność",
         "scope": "Zakres",
-        "modules": "Zdolności",
+        "modules": "Zapis",
         "estimator": "Estymator"
       },
       "hero": {
@@ -712,7 +712,7 @@
           "Dobierz zakres obsługi",
           "do tego, jak naprawdę korzystasz z nieruchomości."
         ],
-        "lead": "Najpierw zobaczysz, co realnie obejmuje nadzór. Potem porównasz pakiety, sprawdzisz orientacyjny przedział i dopiero na końcu granice wykonania.",
+        "lead": "Zobacz, co obejmuje nadzór, porównaj pakiety i sprawdź orientacyjny przedział.",
         "secondaryCta": "Zobacz punkt startu",
         "estimatorCue": {
           "text": "Orientacyjnie: od ok. 80 €/mies. dla najprostszego zakresu. Dokładny przedział zależy od metrażu i sposobu użycia.",
@@ -738,7 +738,7 @@
       "skim": {
         "eyebrow": "Ustalenie modelu",
         "title": "Najpierw ustalamy model działania lokalu.",
-        "intro": "Pakiet nie zaczyna się od listy zadań. Zaczyna się od czterech ustaleń: stanu lokalu, zasad dostępu, zapisu po działaniu i granicy decyzji pod nieobecność właściciela.",
+        "intro": "Pakiet zaczyna się od czterech ustaleń: stanu lokalu, dostępu, zapisu i granicy decyzji.",
         "protocolLabel": "Cztery ustalenia",
         "protocolNote": "Po tym etapie estymator ma kontekst, a zakres nie jest zgadywany.",
         "items": {
@@ -751,7 +751,7 @@
       "ladder": {
         "eyebrow": "Poziom odpowiedzialności",
         "title": "Pakiet określa, za co Sentinel odpowiada.",
-        "intro": "Pakiety różnią się rytmem wizyt, koordynacją dostępu, priorytetem i limitem decyzji. To sposób ustalenia odpowiedzialności, nie luźna lista zadań.",
+        "intro": "Pakiety różnią się rytmem wizyt, koordynacją dostępu, priorytetem i limitem decyzji.",
         "bridgeLine": "Najpierw ustalamy, jak nieruchomość jest używana. Dopiero potem dobieramy poziom obsługi.",
         "cueLabels": ["Rytm wizyt", "Dostęp i koordynacja", "Limit decyzji"],
         "detailCta": "Zobacz pełny zakres",
@@ -849,7 +849,7 @@
       "boundary": {
         "eyebrow": "Granice usługi",
         "title": "Co mieści się w ustalonym zakresie.",
-        "intro": "Ta część określa praktyczne granice obsługi: co sprawdzamy, co koordynujemy, kiedy raportujemy i które działania wymagają osobnego ustalenia albo zgody właściciela.",
+        "intro": "Tu widać, co sprawdzamy, co koordynujemy i co wymaga osobnej zgody.",
         "eligibility": "Kwalifikacja lokalizacji: Torrevieja + promień 50–70 km.",
         "doesTitle": "W uzgodnionym zakresie",
         "doesNotTitle": "Poza uzgodnionym zakresem",
@@ -876,7 +876,7 @@
         "recordSummary": "Jeden zapis porządkuje status lokalu, wejścia, koordynację i punkty wymagające decyzji.",
         "outputs": {
           "readiness": { "title": "Gotowość", "body": "Stan lokalu przed przyjazdem lub po pobycie gości jest sprawdzany i zapisywany w ustalonym zakresie." },
-          "access": { "title": "Dostęp", "body": "Klucze, wejścia i obecność osób trzecich są koordynowane według uzgodnionych zasad." },
+          "access": { "title": "Dostęp", "body": "Każde wejście zostawia zapis: powód, czas i kto był obecny." },
           "coordination": { "title": "Koordynacja", "body": "Sprzątanie, technicy, przygotowanie sezonowe i działania partnerów są prowadzone tylko wtedy, gdy mieszczą się w zakresie." },
           "decision": { "title": "Decyzja", "body": "Sprawy poza zakresem, limitem lub uprawnieniem wracają do właściciela przed działaniem." }
         },
@@ -921,8 +921,6 @@
       "estimatorBand": {
         "eyebrow": "Orientacyjny zakres miesięczny",
         "title": "Sprawdź przedział zanim wyślesz zapytanie.",
-        "intro": "Wybierz pakiet, sposób używania i podstawowe parametry lokalu. Estymator pokaże orientacyjny zakres rozmowy.",
-        "inputsTitle": "Co ustawiasz w estymatorze",
         "preview": {
           "header": "Przedział po ustawieniu danych",
           "from": "od",
@@ -930,21 +928,15 @@
           "rangeCaption": "orientacyjny zakres miesięczny",
           "resultNote": "Wynik pojawi się po wypełnieniu estymatora."
         },
-        "inputs": {
-          "package": { "label": "Pakiet", "body": "Określa poziom odpowiedzialności." },
-          "usage": { "label": "Sposób używania", "body": "Prywatnie, goście albo model mieszany." },
-          "property": { "label": "Parametry lokalu", "body": "Metraż, pokoje i podstawowy kontekst." }
-        },
         "alsoLabel": "Estymator uwzględnia też",
-        "alsoItems": ["Łazienki", "Patio / część zewnętrzna"],
-        "note": "To narzędzie orientacyjne. Nie zatwierdza usługi ani nie zmienia matrycy estymatora."
+        "alsoItems": ["Łazienki", "Patio / część zewnętrzna"]
       },
       "estimatorHandoff": {
         "eyebrow": "Przejście do estymatora",
-        "title": "Przedział ma sens dopiero po ustaleniu odpowiedzialności.",
+        "title": "Najpierw zakres, potem orientacyjne widełki.",
         "body": "Estymator nie wybiera pakietu za Ciebie. Przelicza ustalony model na orientacyjny miesięczny zakres rozmowy.",
         "steps": {
-          "responsibility": { "label": "01", "title": "Poziom odpowiedzialności", "body": "pakiet i granica decyzji" },
+          "responsibility": { "label": "01", "title": "Zakres", "body": "pakiet i granica decyzji" },
           "usage": { "label": "02", "title": "Sposób używania", "body": "prywatnie, goście albo model mieszany" },
           "property": { "label": "03", "title": "Parametry lokalu", "body": "metraż, pokoje i podstawowy kontekst" }
         }
@@ -974,7 +966,7 @@
       },
       "finalCta": {
         "eyebrow": "Po przeglądzie zakresu",
-        "continuity": "Jeśli model pasuje do sposobu używania nieruchomości, następny krok to krótkie zapytanie z kontekstem lokalu."
+        "continuity": "Wyślij krótki kontekst lokalu; kwalifikacja potwierdzi, czy model pasuje."
       }
     },
     "diagrams": {

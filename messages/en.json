@@ -701,7 +701,7 @@
         "situation": "Situation",
         "responsibility": "Responsibility",
         "scope": "Scope",
-        "modules": "Capabilities",
+        "modules": "Record",
         "estimator": "Estimator"
       },
       "hero": {
@@ -712,7 +712,7 @@
           "Choose a service scope",
           "that matches how you actually use the property."
         ],
-        "lead": "Start with what oversight actually includes. Then compare packages, check the indicative range, and review execution boundaries.",
+        "lead": "See what oversight covers, compare packages, and check the indicative range.",
         "secondaryCta": "See the starting point",
         "estimatorCue": {
           "text": "Indicative: from approx. €80/month for the simplest scope. The exact range depends on property size and usage mode.",
@@ -738,7 +738,7 @@
       "skim": {
         "eyebrow": "Operating setup",
         "title": "First, establish the property operating model.",
-        "intro": "A package does not start as a task list. It starts with four setup points: property condition, access rules, post-action record, and decision boundary while the owner is away.",
+        "intro": "A package starts with four setup points: property condition, access, record, and decision boundary.",
         "protocolLabel": "Four setup points",
         "protocolNote": "After this, the estimator has context and the scope is not guessed.",
         "items": {
@@ -751,7 +751,7 @@
       "ladder": {
         "eyebrow": "Responsibility level",
         "title": "The package defines what Sentinel is responsible for.",
-        "intro": "Packages differ by visit rhythm, access coordination, priority, and decision limit. This defines responsibility — it is not a loose list of tasks.",
+        "intro": "Packages differ in visit rhythm, access coordination, priority, and decision limit.",
         "bridgeLine": "First we establish how the property is used. Then we match the service level.",
         "cueLabels": ["Visit rhythm", "Access & coordination", "Decision limit"],
         "detailCta": "View full scope",
@@ -849,7 +849,7 @@
       "boundary": {
         "eyebrow": "Service boundaries",
         "title": "What sits inside the agreed scope.",
-        "intro": "This section defines the practical operating boundary: what we check, what we coordinate, when we report, and which actions require separate agreement or owner approval.",
+        "intro": "Here you see what we check, what we coordinate, and what needs separate approval.",
         "eligibility": "Location eligibility: Torrevieja + 50–70 km radius.",
         "doesTitle": "Inside agreed scope",
         "doesNotTitle": "Outside agreed scope",
@@ -876,7 +876,7 @@
         "recordSummary": "One record organizes property status, entries, coordination, and decision points.",
         "outputs": {
           "readiness": { "title": "Readiness", "body": "The condition of the property before arrival or after a guest stay is checked and recorded within the agreed scope." },
-          "access": { "title": "Access", "body": "Keys, entries, and third-party presence are coordinated under the agreed access rules." },
+          "access": { "title": "Access", "body": "Each entry leaves a record: purpose, time, and who was present." },
           "coordination": { "title": "Coordination", "body": "Cleaning, technicians, seasonal preparation, and partner actions are carried out only where they fit the agreed scope." },
           "decision": { "title": "Decision", "body": "Anything beyond scope, limit, or authority returns to the owner before action." }
         },
@@ -921,8 +921,6 @@
       "estimatorBand": {
         "eyebrow": "Indicative monthly range",
         "title": "Check the range before sending an inquiry.",
-        "intro": "Choose the package, usage model, and basic property parameters. The estimator shows an approximate range for the conversation.",
-        "inputsTitle": "What you set in the estimator",
         "preview": {
           "header": "Range after setting the details",
           "from": "from",
@@ -930,21 +928,15 @@
           "rangeCaption": "approximate monthly range",
           "resultNote": "The result appears after completing the estimator."
         },
-        "inputs": {
-          "package": { "label": "Package", "body": "Defines the responsibility level." },
-          "usage": { "label": "Usage model", "body": "Private use, guests, or mixed model." },
-          "property": { "label": "Property parameters", "body": "Size, rooms, and basic context." }
-        },
         "alsoLabel": "The estimator also accounts for",
-        "alsoItems": ["Bathrooms", "Patio / outdoor area"],
-        "note": "This is an orientation tool. It does not approve a service or change the estimator matrix."
+        "alsoItems": ["Bathrooms", "Patio / outdoor area"]
       },
       "estimatorHandoff": {
         "eyebrow": "Estimator handoff",
-        "title": "The range has context only after responsibility is clear.",
+        "title": "Scope first, then the indicative range.",
         "body": "The estimator does not choose the package for you. It converts the agreed model into an indicative monthly range for the conversation.",
         "steps": {
-          "responsibility": { "label": "01", "title": "Responsibility level", "body": "package and decision boundary" },
+          "responsibility": { "label": "01", "title": "Scope", "body": "package and decision boundary" },
           "usage": { "label": "02", "title": "Usage model", "body": "private use, guests, or mixed model" },
           "property": { "label": "03", "title": "Property parameters", "body": "size, rooms, and basic context" }
         }
@@ -974,7 +966,7 @@
       },
       "finalCta": {
         "eyebrow": "After reviewing scope",
-        "continuity": "If the model fits how the property is used, the next step is a short inquiry with property context."
+        "continuity": "Send a short property context; qualification will confirm whether the model fits."
       }
     },
     "diagrams": {
