@@ -11409,12 +11409,45 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   border-radius: 1rem;
   background: color-mix(in srgb, var(--surface-light-alt) 72%, var(--surface-card));
   color: var(--body);
+  cursor: pointer;
   text-align: left;
   transition:
     transform var(--motion-standard) var(--motion-ease-out),
     border-color var(--motion-standard) var(--motion-ease-out),
     background var(--motion-standard) var(--motion-ease-out),
     box-shadow var(--motion-standard) var(--motion-ease-out);
+}
+
+/* Control signifier: single-select option cards carry a visible radio indicator. */
+.estimator-choice-card::after,
+.estimator-mode-card::after {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  display: inline-flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid color-mix(in srgb, var(--accent) 55%, var(--line));
+  border-radius: 999px;
+  background: var(--surface-card);
+  color: transparent;
+  font-size: 0.7rem;
+  font-weight: 950;
+  line-height: 1;
+  content: "✓";
+  transition:
+    background var(--motion-standard) var(--motion-ease-out),
+    border-color var(--motion-standard) var(--motion-ease-out),
+    color var(--motion-standard) var(--motion-ease-out);
+}
+
+.estimator-choice-card[data-selected="true"]::after,
+.estimator-mode-card[data-selected="true"]::after {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--surface-card);
 }
 
 .estimator-choice-card:hover,
@@ -11431,17 +11464,58 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   box-shadow: 0 16px 38px rgba(16, 38, 63, 0.12);
 }
 
+.estimator-choice-card:hover,
+.estimator-mode-card:hover,
+.estimator-scope-pill:hover {
+  background: color-mix(in srgb, var(--accent) 4%, var(--surface-card));
+}
+
+.estimator-choice-card:active,
+.estimator-mode-card:active,
+.estimator-scope-pill:active,
+.estimator-bedroom-options button:active {
+  transform: translateY(0);
+}
+
 .estimator-choice-card[data-selected="true"],
 .estimator-mode-card[data-selected="true"],
 .estimator-scope-pill[data-selected="true"] {
-  background: color-mix(in srgb, var(--surface-light-alt) 76%, white);
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, white);
+  box-shadow:
+    inset 0 0 0 1px var(--accent),
+    0 16px 38px rgba(16, 38, 63, 0.12);
+}
+
+/* Keyboard affordance: explicit focus ring on every estimator control. */
+.estimator-stepper__item:focus-visible,
+.estimator-choice-card:focus-visible,
+.estimator-mode-card:focus-visible,
+.estimator-scope-pill:focus-visible,
+.estimator-bedroom-options button:focus-visible,
+.estimator-quantity-control button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  outline-offset: 2px;
+}
+
+.estimator-stepper__item,
+.estimator-bedroom-options button,
+.estimator-quantity-control button {
+  cursor: pointer;
+}
+
+.estimator-configurator__footer button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+  box-shadow: none;
 }
 
 .estimator-choice-card {
   display: grid;
   grid-template-columns: 2.25rem minmax(0, 1fr);
   gap: 0.85rem;
-  padding: 0.95rem;
+  padding: 0.95rem 2.5rem 0.95rem 0.95rem;
 }
 
 .estimator-choice-card__marker {
@@ -11483,7 +11557,7 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 .estimator-mode-card {
   display: grid;
   gap: 0.45rem;
-  padding: 1rem;
+  padding: 1rem 2.6rem 1rem 1rem;
 }
 
 .estimator-parameter-grid {
@@ -11565,6 +11639,15 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   background: var(--surface-card);
   color: var(--body);
   font-weight: 900;
+  transition:
+    border-color var(--motion-standard) var(--motion-ease-out),
+    background var(--motion-standard) var(--motion-ease-out),
+    color var(--motion-standard) var(--motion-ease-out);
+}
+
+.estimator-bedroom-options button:not([data-selected="true"]):hover {
+  border-color: color-mix(in srgb, var(--accent) 58%, var(--line));
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface-card));
 }
 
 .estimator-bedroom-options button[data-selected="true"] {
@@ -11587,17 +11670,34 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .estimator-scope-pill > span {
-  width: 0.9rem;
-  height: 0.9rem;
-  margin-top: 0.2rem;
-  border: 1px solid color-mix(in srgb, var(--accent) 58%, var(--line));
-  border-radius: 999px;
+  display: inline-flex;
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-top: 0.12rem;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid color-mix(in srgb, var(--accent) 58%, var(--line));
+  border-radius: 0.3rem;
   background: var(--surface-card);
 }
 
+.estimator-scope-pill > span::after {
+  color: var(--surface-card);
+  font-size: 0.66rem;
+  font-weight: 950;
+  line-height: 1;
+  content: "✓";
+  opacity: 0;
+}
+
 .estimator-scope-pill[data-selected="true"] > span {
+  border-color: var(--accent);
   background: var(--accent);
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+.estimator-scope-pill[data-selected="true"] > span::after {
+  opacity: 1;
 }
 
 .estimator-scope-pill strong,
@@ -19614,6 +19714,58 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 .estimator-scope-pill[data-selected="true"] > span {
   background: var(--svc-field);
   color: var(--svc-paper);
+}
+
+.estimator-choice-card::after,
+.estimator-mode-card::after {
+  border-color: color-mix(in srgb, var(--svc-field) 55%, var(--svc-rule));
+  background: color-mix(in srgb, var(--svc-paper) 60%, white);
+}
+
+.estimator-choice-card[data-selected="true"]::after,
+.estimator-mode-card[data-selected="true"]::after {
+  border-color: var(--svc-field);
+  background: var(--svc-field);
+  color: var(--svc-paper);
+}
+
+.estimator-choice-card:hover,
+.estimator-mode-card:hover,
+.estimator-scope-pill:hover {
+  background: color-mix(in srgb, var(--svc-field) 5%, white);
+}
+
+.estimator-choice-card[data-selected="true"],
+.estimator-mode-card[data-selected="true"],
+.estimator-scope-pill[data-selected="true"] {
+  border-color: var(--svc-field);
+  background: color-mix(in srgb, var(--svc-field) 6%, white);
+  box-shadow:
+    inset 0 0 0 1px var(--svc-field),
+    0 12px 30px rgba(16, 38, 63, 0.09);
+}
+
+.estimator-scope-pill > span {
+  border-color: color-mix(in srgb, var(--svc-field) 58%, var(--svc-rule));
+}
+
+.estimator-scope-pill[data-selected="true"] > span {
+  border-color: var(--svc-field);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--svc-field) 16%, transparent);
+}
+
+.estimator-stepper__item:focus-visible,
+.estimator-choice-card:focus-visible,
+.estimator-mode-card:focus-visible,
+.estimator-scope-pill:focus-visible,
+.estimator-bedroom-options button:focus-visible,
+.estimator-quantity-control button:focus-visible {
+  outline-color: color-mix(in srgb, var(--svc-field) 60%, transparent);
+}
+
+.estimator-bedroom-options button:not([data-selected="true"]):hover {
+  border-color: color-mix(in srgb, var(--svc-field) 55%, var(--svc-rule));
+  background: color-mix(in srgb, var(--svc-field) 6%, white);
 }
 
 .estimator-result-output {
