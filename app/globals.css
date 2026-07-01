@@ -11292,6 +11292,9 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   border: 1px solid var(--structural-light);
   border-radius: 0.75rem;
   background: color-mix(in srgb, var(--surface-card) 62%, transparent);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 253, 247, 0.8),
+    0 1px 2px rgba(16, 38, 63, 0.05);
   padding: 0.55rem;
   text-align: left;
   transition:
@@ -11418,35 +11421,47 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
     box-shadow var(--motion-standard) var(--motion-ease-out);
 }
 
-/* Control signifier: single-select option cards carry a visible radio indicator. */
+/* Control signifier: single-select option cards carry a visible radio indicator,
+   sized as a real control and centered on the row like a ballot mark. */
 .estimator-choice-card::after,
 .estimator-mode-card::after {
   position: absolute;
-  top: 0.85rem;
-  right: 0.85rem;
+  top: 50%;
+  right: 0.9rem;
   display: inline-flex;
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid color-mix(in srgb, var(--accent) 55%, var(--line));
+  border: 2px solid color-mix(in srgb, var(--accent) 55%, var(--line));
   border-radius: 999px;
   background: var(--surface-card);
   color: transparent;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 950;
   line-height: 1;
   content: "✓";
+  transform: translateY(-50%);
   transition:
     background var(--motion-standard) var(--motion-ease-out),
     border-color var(--motion-standard) var(--motion-ease-out),
+    box-shadow var(--motion-standard) var(--motion-ease-out),
     color var(--motion-standard) var(--motion-ease-out);
+}
+
+.estimator-choice-card:hover::after,
+.estimator-choice-card:focus-visible::after,
+.estimator-mode-card:hover::after,
+.estimator-mode-card:focus-visible::after {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 14%, transparent);
 }
 
 .estimator-choice-card[data-selected="true"]::after,
 .estimator-mode-card[data-selected="true"]::after {
   border-color: var(--accent);
   background: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
   color: var(--surface-card);
 }
 
@@ -11481,9 +11496,9 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 .estimator-mode-card[data-selected="true"],
 .estimator-scope-pill[data-selected="true"] {
   border-color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 6%, white);
+  background: color-mix(in srgb, var(--accent) 8%, white);
   box-shadow:
-    inset 0 0 0 1px var(--accent),
+    inset 0 0 0 1.5px var(--accent),
     0 16px 38px rgba(16, 38, 63, 0.12);
 }
 
@@ -11515,7 +11530,7 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   display: grid;
   grid-template-columns: 2.25rem minmax(0, 1fr);
   gap: 0.85rem;
-  padding: 0.95rem 2.5rem 0.95rem 0.95rem;
+  padding: 0.95rem 3rem 0.95rem 0.95rem;
 }
 
 .estimator-choice-card__marker {
@@ -11557,7 +11572,7 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 .estimator-mode-card {
   display: grid;
   gap: 0.45rem;
-  padding: 1rem 2.6rem 1rem 1rem;
+  padding: 1rem 3.1rem 1rem 1rem;
 }
 
 .estimator-parameter-grid {
@@ -11663,27 +11678,37 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 
 .estimator-scope-pill {
   display: grid;
-  grid-template-columns: 1.2rem minmax(0, 1fr);
-  gap: 0.7rem;
+  grid-template-columns: 1.5rem minmax(0, 1fr);
+  gap: 0.75rem;
   align-items: start;
   padding: 0.85rem;
 }
 
 .estimator-scope-pill > span {
   display: inline-flex;
-  width: 1.05rem;
-  height: 1.05rem;
-  margin-top: 0.12rem;
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-top: 0.02rem;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid color-mix(in srgb, var(--accent) 58%, var(--line));
+  border: 2px solid color-mix(in srgb, var(--accent) 58%, var(--line));
   border-radius: 0.3rem;
   background: var(--surface-card);
+  transition:
+    border-color var(--motion-standard) var(--motion-ease-out),
+    background var(--motion-standard) var(--motion-ease-out),
+    box-shadow var(--motion-standard) var(--motion-ease-out);
+}
+
+.estimator-scope-pill:hover > span,
+.estimator-scope-pill:focus-visible > span {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 14%, transparent);
 }
 
 .estimator-scope-pill > span::after {
   color: var(--surface-card);
-  font-size: 0.66rem;
+  font-size: 0.78rem;
   font-weight: 950;
   line-height: 1;
   content: "✓";
@@ -11962,8 +11987,12 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
     grid-template-areas:
       "steps steps"
       "control output"
-      "actions output";
+      "actions output"
+      ". output";
     grid-template-columns: minmax(0, 1.5fr) minmax(18rem, 0.58fr);
+    /* Trailing 1fr row absorbs the output column's extra height so the
+       Back/Next row docks under the control panel on short steps. */
+    grid-template-rows: auto auto auto 1fr;
     align-items: start;
     gap: 1.1rem;
   }
@@ -19722,10 +19751,19 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   background: color-mix(in srgb, var(--svc-paper) 60%, white);
 }
 
+.estimator-choice-card:hover::after,
+.estimator-choice-card:focus-visible::after,
+.estimator-mode-card:hover::after,
+.estimator-mode-card:focus-visible::after {
+  border-color: var(--svc-field);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--svc-field) 14%, transparent);
+}
+
 .estimator-choice-card[data-selected="true"]::after,
 .estimator-mode-card[data-selected="true"]::after {
   border-color: var(--svc-field);
   background: var(--svc-field);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--svc-field) 18%, transparent);
   color: var(--svc-paper);
 }
 
@@ -19739,14 +19777,20 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 .estimator-mode-card[data-selected="true"],
 .estimator-scope-pill[data-selected="true"] {
   border-color: var(--svc-field);
-  background: color-mix(in srgb, var(--svc-field) 6%, white);
+  background: color-mix(in srgb, var(--svc-field) 8%, white);
   box-shadow:
-    inset 0 0 0 1px var(--svc-field),
+    inset 0 0 0 1.5px var(--svc-field),
     0 12px 30px rgba(16, 38, 63, 0.09);
 }
 
 .estimator-scope-pill > span {
   border-color: color-mix(in srgb, var(--svc-field) 58%, var(--svc-rule));
+}
+
+.estimator-scope-pill:hover > span,
+.estimator-scope-pill:focus-visible > span {
+  border-color: var(--svc-field);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--svc-field) 14%, transparent);
 }
 
 .estimator-scope-pill[data-selected="true"] > span {
