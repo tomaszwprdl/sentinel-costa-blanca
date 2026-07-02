@@ -35,11 +35,6 @@ const MODE_KEYS: ModeKey[] = ['private_use', 'active_guest'];
 const SIZE_KEYS: SizeKey[] = ['S', 'M', 'L'];
 const BEDROOMS_KEYS: BedroomsKey[] = ['B1', 'B2', 'B3', 'B4P'];
 
-type Fact = {
-  label: string;
-  value: string;
-};
-
 type MarkedItem = {
   marker: string;
   title: string;
@@ -85,43 +80,6 @@ const createContactFormSchema = (t: (key: string) => string) => z.object({
   }),
 });
 
-function ContactRecordArtifact({
-  title,
-  badge,
-  rows,
-  facts,
-}: {
-  title: string;
-  badge: string;
-  rows: Fact[];
-  facts: Fact[];
-}) {
-  return (
-    <aside className="contact-record-artifact reveal-rise" aria-label={title}>
-      <div className="contact-record-artifact__top">
-        <p className="section-label">{badge}</p>
-        <h2>{title}</h2>
-      </div>
-      <dl className="contact-record-artifact__rows">
-        {rows.map((row) => (
-          <div key={row.label}>
-            <dt>{row.label}</dt>
-            <dd>{row.value}</dd>
-          </div>
-        ))}
-      </dl>
-      <div className="contact-record-artifact__facts">
-        {facts.map((fact) => (
-          <div key={fact.label}>
-            <span>{fact.label}</span>
-            <strong>{fact.value}</strong>
-          </div>
-        ))}
-      </div>
-    </aside>
-  );
-}
-
 function ContactInfoList({
   items,
   markerMode = 'text',
@@ -159,8 +117,6 @@ function ContactPageInner() {
   const tCommon = useTranslations('common');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const heroFacts = t.raw('redesign.hero.facts') as Fact[];
-  const heroRows = t.raw('redesign.hero.artifactRows') as Fact[];
   const preparationItems = t.raw('redesign.prepare.items') as MarkedItem[];
   const routeCards = t.raw('redesign.routes.cards') as Required<MarkedItem>[];
   const nextSteps = t.raw('redesign.afterSubmit.steps') as MarkedItem[];
@@ -348,13 +304,6 @@ function ContactPageInner() {
                 </Link>
               </div>
             </div>
-
-            <ContactRecordArtifact
-              title={t('redesign.hero.artifactTitle')}
-              badge={t('redesign.hero.artifactBadge')}
-              rows={heroRows}
-              facts={heroFacts}
-            />
           </div>
         </Section>
 
@@ -658,6 +607,23 @@ function ContactPageInner() {
                     </button>
                   </div>
                 </form>
+
+                <div id="after-sending" className="contact-next-shell contact-next-shell--attached">
+                  <div className="contact-section-heading contact-section-heading--compact">
+                    <p className="section-label">{t('redesign.afterSubmit.eyebrow')}</p>
+                    <h2 className="h2-system">{t('redesign.afterSubmit.title')}</h2>
+                    <p>{t('redesign.afterSubmit.intro')}</p>
+                  </div>
+                  <div className="contact-next-shell__steps">
+                    {nextSteps.map((step) => (
+                      <article key={step.marker} className="contact-next-step">
+                        <span>{step.marker}</span>
+                        <h3>{step.title}</h3>
+                        <p>{step.body}</p>
+                      </article>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -679,25 +645,6 @@ function ContactPageInner() {
                 hours={tCommon('contact.hours')}
               />
             </aside>
-          </div>
-        </Section>
-
-        <Section tone="light" id="after-sending" className="contact-section contact-after-section">
-          <div className="contact-after-layout">
-            <div className="contact-section-heading">
-              <p className="section-label">{t('redesign.afterSubmit.eyebrow')}</p>
-              <h2 className="h2-system">{t('redesign.afterSubmit.title')}</h2>
-              <p>{t('redesign.afterSubmit.intro')}</p>
-            </div>
-            <div className="contact-next-shell">
-              {nextSteps.map((step) => (
-                <article key={step.marker} className="contact-next-step">
-                  <span>{step.marker}</span>
-                  <h3>{step.title}</h3>
-                  <p>{step.body}</p>
-                </article>
-              ))}
-            </div>
           </div>
         </Section>
 
