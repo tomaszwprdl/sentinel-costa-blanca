@@ -63,12 +63,13 @@
       "companyHeadlineQuestion": "Masz nieruchomość na Costa Blanca, ale mieszkasz gdzie indziej?",
       "companyHeadlineAnswerBrand": "Sentinel",
       "companyHeadlineAnswerRest": " jest lokalnym operatorem po Twojej stronie.",
-      "companyLine": "Działamy w imieniu właściciela: sprawdzamy stan, kontrolujemy dostęp i dokumentujemy sytuację na miejscu.",
+      "companyLine": "Sentinel działa na miejscu w imieniu właściciela: sprawdza stan lokalu, kontroluje dostęp, dokumentuje wizyty i uruchamia działania w ustalonych granicach.",
+      "companyMetaLine": "Torrevieja + promień 50–70 km · od ok. 80 €/mies. dla najprostszego zakresu.",
       "companyProofLine": "Zakres, dostęp i zapis są ustalone przed rozpoczęciem nadzoru.",
       "companyFacts": {
         "area": {
-          "label": "ZAKRES",
-          "value": "Przed działaniem"
+          "label": "OBSZAR",
+          "value": "Torrevieja + 50–70 km"
         },
         "documentation": {
           "label": "ZAPIS",
@@ -216,8 +217,8 @@
       },
       "detail": {
       "private-use-only": {
-        "priority": "To wariant dla właścicieli, którzy korzystają z mieszkania prywatnie: między Twoimi pobytami sprawdzamy jego stan, kontrolujemy dostęp i pomagamy przygotować lokal na Twój przyjazd.",
-        "meaning": "Między Twoimi pobytami skupiamy się na tym, co zwykle umyka zdalnemu właścicielowi: stanie lokalu, dostępie i gotowości mieszkania przed przyjazdem.",
+        "priority": "Między Twoimi pobytami mieszkanie stoi puste — nikt regularnie z niego nie korzysta. Sentinel sprawdza wtedy stan lokalu na miejscu, kontroluje dostęp i przygotowuje mieszkanie na Twój przyjazd.",
+        "meaning": "Pusty lokal nie zgłasza problemów sam. Skupiamy się na tym, co umyka zdalnemu właścicielowi: wentylacji, wodzie i prądzie, widocznym stanie oraz gotowości mieszkania przed przyjazdem.",
         "next": "Sprawdź pakiety, a następnie potwierdź, jaki rytm kontroli i przygotowania jest potrzebny.",
         "point1": "Przecieki, wilgoć, zapach i wentylacja",
         "point2": "Widoczne kontrole wody, prądu i stanu bojlera",
@@ -226,25 +227,25 @@
           "point5": "Udokumentowany stan przed przyjazdem"
         },
       "regular-guest-stays": {
-        "priority": "Porządek między pobytami, koordynacja dostępu, gotowość po sprzątaniu, kontrola po pobycie i dokumentacja zdarzeń.",
-        "meaning": "Zakres musi obsłużyć zdarzenia między pobytami: dostęp, sprzątanie, stan po użyciu i zapis ustaleń.",
+        "priority": "Lokal żyje w rytmie rotacji: goście wyjeżdżają, ktoś musi wejść, sprawdzić stan po pobycie, skoordynować sprzątanie i zostawić udokumentowaną gotowość przed kolejnym przyjazdem.",
+        "meaning": "Zakres musi obsłużyć to, co dzieje się między pobytami: dostęp po wyjeździe gości, widoczne szkody i braki, stan wody i prądu po użyciu oraz zapis stanu przed następnym pobytem.",
         "next": "Porównaj poziomy zakresu i ustal, czy potrzebna jest obsługa dostępu oraz dokumentacja rotacji.",
         "point1": "Sprzątanie i przygotowanie między pobytami",
-        "point2": "Przechowanie kluczy i obsługa dostępu",
+        "point2": "Przechowanie kluczy i dostęp po wyjeździe gości",
         "point3": "Kontrola stanu po pobycie",
-          "point4": "Dokumentacja szkód i zdarzeń",
+          "point4": "Dokumentacja widocznych szkód i braków",
           "point5": "Koordynacja sprzątania, wykonawców i techników",
           "point6": "Ograniczenie chaosu operacyjnego dla właściciela"
         },
       "mixed-not-defined": {
-        "priority": "Najpierw klasyfikacja sposobu używania, potem dobór zakresu bez zgadywania.",
-        "meaning": "Zakres nie powinien być wybierany na podstawie domysłu, jeśli model używania może się zmienić.",
+        "priority": "Najpierw klasyfikujemy faktyczny sposób używania lokalu i ustalamy zakres startowy. Model może się zmienić po pierwszej ocenie — bez blokowania się w źle dobranym pakiecie.",
+        "meaning": "Gdy model używania może się zmienić, zakres dobiera się tymczasowo i potwierdza po pierwszej ocenie — zamiast wybierać pakiet z domysłu.",
         "next": "Rozpocznij wstępną ocenę zapytania, aby rozdzielić użytek prywatny, pobyty gości i potrzebny zakres.",
         "point1": "Dziś użytek prywatny, później możliwy wynajem",
         "point2": "Uniknięcie złego wyboru zakresu",
         "point3": "Uniknięcie niepotrzebnej intensywności obsługi gości",
           "point4": "Uniknięcie zbyt słabej struktury, jeśli pojawi się wynajem",
-          "point5": "Zakres potwierdzany po wstępnej ocenie zapytania"
+          "point5": "Zakres startowy potwierdzany i korygowany po pierwszej ocenie"
         }
       }
     },
@@ -351,6 +352,30 @@
         "distinctionIntro": "Sentinel najpierw porządkuje sposób używania lokalu, zanim zostanie dobrany zakres obsługi, rytm obecności, dokumentacja i granice decyzji.",
         "finalContext": "To nie trzeci wariant wyceny. Następny krok to wstępna ocena zapytania i klasyfikacja."
       }
+    },
+    "floor": {
+      "eyebrow": "Wspólny rdzeń",
+      "title": "W każdym modelu działa ten sam rdzeń",
+      "lead": "Niezależnie od tego, którą sytuację wybierzesz, lokalna obsługa opiera się na tych samych czterech krokach.",
+      "steps": {
+        "scope": {
+          "title": "Ustalamy zakres",
+          "body": "Przed startem wiadomo, co jest sprawdzane, jak często i gdzie kończy się nasza odpowiedzialność."
+        },
+        "access": {
+          "title": "Kontrolujemy dostęp",
+          "body": "Klucze i wejścia — nasze, sprzątających i techników — działają według ustalonych zasad."
+        },
+        "check": {
+          "title": "Sprawdzamy lokal",
+          "body": "Kontrole odbywają się fizycznie na miejscu: woda, prąd, wentylacja i widoczny stan."
+        },
+        "record": {
+          "title": "Wysyłamy zapis i decyzję",
+          "body": "Po wizycie otrzymujesz zapis stanu. Działanie mieści się w uzgodnionych limitach — powyżej decyzja wraca do Ciebie."
+        }
+      },
+      "note": "Wybór sytuacji powyżej dopasowuje ten rdzeń do sposobu używania Twojego lokalu."
     },
     "exposure": {
       "title": "Czym naprawdę ryzykujesz bez lokalnej reprezentacji?",

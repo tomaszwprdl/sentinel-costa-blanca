@@ -29,18 +29,29 @@ export default function JourneyNav({
       return;
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-
-        if (visible[0]?.target.id) {
-          setActiveId(visible[0].target.id);
+    // Recompute from live geometry on every callback: fast scrolls batch
+    // entries so a section's exit can arrive alone, which would otherwise
+    // keep the previous section highlighted while the next one fills the
+    // viewport. The reading line sits on the observation band's bottom edge
+    // (42% viewport, matching the rootMargin below) because that is exactly
+    // where entry/exit events fire; the epsilon absorbs rounding at the edge.
+    const syncActive = () => {
+      const line = window.innerHeight * 0.42 + 2;
+      let nextId = sections[0].id;
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= line) {
+          nextId = section.id;
+        } else {
+          break;
         }
-      },
-      { rootMargin: '-32% 0px -58% 0px', threshold: [0, 0.08, 0.2] },
-    );
+      }
+      setActiveId(nextId);
+    };
+
+    const observer = new IntersectionObserver(syncActive, {
+      rootMargin: '-32% 0px -58% 0px',
+      threshold: [0, 0.08, 0.2],
+    });
 
     sections.forEach((section) => observer.observe(section));
 

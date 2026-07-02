@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import HeroGateFrame from '@/components/HeroGateFrame';
+import HomeOperatingFloor from '@/components/HomeOperatingFloor';
 import Section from '@/components/layout/Section';
 import OperationalField from '@/components/graphics/OperationalField';
 import {
@@ -41,6 +42,7 @@ type UsagePathwayLayerProps = {
 
 export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) {
   const locale = useLocale();
+  const th = useTranslations('home');
   const tp = useTranslations('home.pathway');
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -103,6 +105,8 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
           </DiagnosticGateIntro>
         </Section>
       )}
+
+      {showFullGate && <HomeOperatingFloor locale={locale} t={th} />}
 
       {!showFullGate && showPicker && (
         <Section tone="alt" className="section-primitive--first !pb-12">
@@ -338,6 +342,9 @@ function DiagnosticGateIntro({
               </span>
             </h1>
             <p className="hero-lead">{tp('companyLine')}</p>
+            <p className="mt-2 text-sm leading-relaxed text-authority-on-dark/80">
+              {tp('companyMetaLine')}
+            </p>
           </div>
 
           <div className="hero-fact-grid">

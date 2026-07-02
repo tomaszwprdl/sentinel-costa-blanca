@@ -6,6 +6,7 @@ import UsagePathwayLayer, {
   PathwayProcessPanel,
 } from '@/components/UsagePathwayLayer';
 import HeroGateFrame from '@/components/HeroGateFrame';
+import HomeOperatingFloor from '@/components/HomeOperatingFloor';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
@@ -127,6 +128,7 @@ function UsagePathwayFallback({
   const hasSelection = selected !== null;
 
   return (
+    <>
     <Section
       tone={hasSelection ? 'alt' : 'authority'}
       className={hasSelection ? 'section-primitive--first !pb-12' : 'visual-hero-section'}
@@ -145,6 +147,9 @@ function UsagePathwayFallback({
                   </span>
                 </h1>
                 <p className="hero-lead">{t('pathway.companyLine')}</p>
+                <p className="mt-2 text-sm leading-relaxed text-authority-on-dark/80">
+                  {t('pathway.companyMetaLine')}
+                </p>
               </div>
 
               <div className="hero-fact-grid">
@@ -217,6 +222,8 @@ function UsagePathwayFallback({
         </div>
       )}
     </Section>
+    {!hasSelection && <HomeOperatingFloor locale={locale} t={t} />}
+    </>
   );
 }
 

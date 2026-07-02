@@ -63,12 +63,13 @@
       "companyHeadlineQuestion": "Own a property on the Costa Blanca but live elsewhere?",
       "companyHeadlineAnswerBrand": "Sentinel",
       "companyHeadlineAnswerRest": " is your local operator on the ground.",
-      "companyLine": "We act on the owner's behalf: checking condition, controlling access, and documenting what happens on site.",
+      "companyLine": "Sentinel works on site on the owner's behalf: checking the property's condition, controlling access, documenting visits, and acting within agreed limits.",
+      "companyMetaLine": "Torrevieja + a 50–70 km radius · from approx. €80/mo for the simplest scope.",
       "companyProofLine": "Scope, access, and records are set before oversight begins.",
       "companyFacts": {
         "area": {
-          "label": "SCOPE",
-          "value": "Before action"
+          "label": "AREA",
+          "value": "Torrevieja + 50–70 km"
         },
         "documentation": {
           "label": "RECORD",
@@ -216,8 +217,8 @@
       },
       "detail": {
       "private-use-only": {
-        "priority": "This option is for owners who use the property privately: between your stays, we check its condition, control access, and help prepare it for your arrival.",
-        "meaning": "Between your stays, we focus on what remote owners usually cannot see: the property’s condition, access, and readiness before arrival.",
+        "priority": "Between your stays the property sits empty — no one uses it regularly. Sentinel checks its condition on site, controls access, and prepares the property for your arrival.",
+        "meaning": "An empty property does not report problems on its own. We focus on what remote owners cannot see: ventilation, water and power, visible condition, and readiness before arrival.",
         "next": "Review the package levels, then confirm the inspection and readiness rhythm the property requires.",
         "point1": "Leaks, moisture, smell, and ventilation",
         "point2": "Visible water, electricity, and boiler condition checks",
@@ -226,25 +227,25 @@
           "point5": "Documented condition before arrival"
         },
       "regular-guest-stays": {
-        "priority": "Turnover order, access coordination, cleaning readiness, post-stay checks, and event documentation.",
-        "meaning": "Scope must handle events between stays: access, cleaning, post-use condition, and a clear record.",
+        "priority": "The property runs on a turnover rhythm: guests leave, someone has to enter, check the post-stay condition, coordinate cleaning, and leave a documented readiness before the next arrival.",
+        "meaning": "Scope must handle what happens between stays: access after guests leave, visible damage and missing items, water and power condition after use, and a condition record before the next stay.",
         "next": "Compare package levels and decide whether access handling and turnover documentation are required.",
         "point1": "Cleaning and readiness between stays",
-        "point2": "Keyholding and access events",
+        "point2": "Keyholding and access after guests leave",
         "point3": "Post-stay condition checks",
-          "point4": "Damage and event documentation",
+          "point4": "Documentation of visible damage and missing items",
           "point5": "Cleaner, vendor, and technician coordination",
           "point6": "Reducing operational noise for the owner"
         },
       "mixed-not-defined": {
-        "priority": "First classify the use pattern, then define the scope without guessing.",
-        "meaning": "Scope should not be chosen from assumptions when the use pattern may change.",
+        "priority": "We first classify how the property is actually used and set a starting scope. The model can change after the first assessment — without being locked into the wrong package.",
+        "meaning": "When the use pattern may change, scope is set provisionally and confirmed after the first assessment — instead of choosing a package from assumptions.",
         "next": "Start an initial inquiry assessment so private use, guest stays, and required scope can be separated.",
         "point1": "Private use now, possible rental later",
         "point2": "Avoiding the wrong package choice",
         "point3": "Avoiding unnecessary guest-service intensity",
           "point4": "Avoiding under-structuring if guest activity starts",
-          "point5": "Scope confirmed after initial inquiry assessment"
+          "point5": "Starting scope confirmed and adjusted after the first assessment"
         }
       }
     },
@@ -351,6 +352,30 @@
         "distinctionIntro": "Sentinel first clarifies how the property is used before operating scope, local presence, documentation, and decision boundaries are selected.",
         "finalContext": "This is not a third pricing mode. The next step is initial inquiry assessment and classification."
       }
+    },
+    "floor": {
+      "eyebrow": "The shared core",
+      "title": "Every model runs on the same core",
+      "lead": "Whichever situation you choose, local service is built on the same four steps.",
+      "steps": {
+        "scope": {
+          "title": "We agree the scope",
+          "body": "Before we start, it is defined what is checked, how often, and where our responsibility ends."
+        },
+        "access": {
+          "title": "We control access",
+          "body": "Keys and entries — ours, cleaners', and technicians' — follow agreed rules."
+        },
+        "check": {
+          "title": "We check the property",
+          "body": "Checks happen physically on site: water, power, ventilation, and visible condition."
+        },
+        "record": {
+          "title": "We send the record and decision",
+          "body": "After each visit you receive a condition record. Action stays within agreed limits — above them, the decision returns to you."
+        }
+      },
+      "note": "Choosing a situation above tunes this core to how your property is used."
     },
     "exposure": {
       "title": "What do you really risk without local representation?",
