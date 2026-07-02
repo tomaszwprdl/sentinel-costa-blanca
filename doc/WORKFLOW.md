@@ -12,7 +12,10 @@
 - Implement only the approved brief.
 - Do not redesign unrelated sections.
 - Do not reopen closed Services/estimator work unless fixing confirmed regression or explicitly scoped.
+- Do not re-open shipped Services, FAQ, About, or Contact visual models unless explicitly scoped by Owner.
 - Do not change protected contracts without Owner approval.
+- Contact visual work must not alter schema, field names, validation, payload, or `app/api/contact/route.ts`.
+- Estimator visual work must not alter pricing/range logic or contact handoff payload.
 - User-facing copy must update PL and EN together.
 
 ## Validation

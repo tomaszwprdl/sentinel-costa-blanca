@@ -63,11 +63,11 @@ For FAQ work:
 For forms/contact work:
 
 - Contact form renders.
-- Do not change schema/API/payload without Owner approval.
+- Do not change contact schema, field names, validation, payload, or `app/api/contact/route.ts` without Owner approval.
 
 For estimator work:
 
-- Confirm protected logic/matrix/ranges/result behavior/contact payload are unchanged unless explicitly approved.
+- Confirm protected logic/matrix/pricing/ranges/result behavior/contact handoff payload are unchanged unless explicitly approved.
 
 ## Protected Contract QA
 
@@ -77,7 +77,8 @@ When touched or nearby, verify:
 - SLA/emergency authority unchanged.
 - Pathway slugs unchanged.
 - Estimator logic unchanged.
-- Contact API/schema/payload unchanged.
+- Estimator pricing/ranges and contact handoff payload unchanged.
+- Contact schema, field names, validation, payload, and API route unchanged.
 - Legal/noindex unchanged unless launch brief says otherwise.
 
 ## Artifacts

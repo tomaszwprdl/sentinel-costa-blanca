@@ -8,7 +8,7 @@ Sentinel may feel warmer, more tactile, more premium, and more visually attracti
 
 The website should feel like a **real local operating company**, not a policy document.
 
-Current post-Council v2 state: the live visual atmosphere is credible enough to keep. The next brand risk is not weak design; it is over-polished / synthetic trust leakage caused by missing real operator proof, buried price logic, repetitive defensive language, and repeated dossier/key/door motifs.
+Current launch state: Services, estimator, FAQ, About, and Contact are shipped/live and protected unless the Owner explicitly reopens them. The next brand risk is not weak design; it is over-polished / synthetic trust leakage caused by fake proof, buried price logic, repetitive defensive language, and repeated motifs after they stop clarifying.
 
 ---
 
@@ -91,6 +91,14 @@ Logo and wordmark integrity remain protected by `DECISIONS.md`. Logo restriction
 Current visual state and next work: `STATUS.md` and `TASK.md`.
 
 Current proof-layer images are allowed only as temporary shot-planning placeholders. They must not claim actual Sentinel work, real client property, real reports, real operator identity, or final operational evidence. Replacement with real photography remains a pre-promotion / indexed-launch goal where possible.
+
+Contact-specific visual lock:
+
+- Contact uses the Night Desk / controlled intake model.
+- The form is a crisp qualification dossier inside a dark secure environment.
+- The hero may use `public/photos/contact-night-window.webp` as a visible but subdued architectural/lit-window background.
+- Do not revert Contact to beige paperwork.
+- Do not add casual contact imagery, call-center visuals, beach/lifestyle imagery, testimonials, or sales urgency.
 
 ---
 

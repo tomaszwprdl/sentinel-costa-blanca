@@ -4,6 +4,12 @@ Sentinel Costa Blanca is a Next.js site for structured local owner representatio
 
 The public site is bilingual (`/pl`, `/en`) and is currently pre-launch with `noindex,nofollow` active until the Owner approves indexing.
 
+## Current Shipped State
+
+- Services, estimator, FAQ, About, and Contact are shipped/live and protected unless the Owner explicitly reopens them.
+- Contact is shipped as the Night Desk controlled intake: dark secure intake canvas, white form dossier, sticky preparation/direct-contact guide on desktop, integrated post-submit flow, and a visible but subdued lit-window hero background.
+- Contact form schema, field names, validation, payload, and `app/api/contact/route.ts` are protected during visual work.
+
 ## Run Locally
 
 ```bash

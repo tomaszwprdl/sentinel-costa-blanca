@@ -4,78 +4,53 @@ This file tracks the next action only. Binding contracts live in `DECISIONS.md`.
 
 ## Current Task
 
-One final FAQ-only polish pass, then QA and Owner review.
+Current active task: post-launch monitoring / Owner-directed final polish only.
 
-Do not push the FAQ commit before Owner approval.
+No open implementation task after the Contact Night Desk deploy.
 
-## Scope
+## Current Shipped State
 
-FAQ page only.
+- Services page is shipped/live and protected.
+- Estimator is shipped/live and protected.
+- FAQ is shipped/live and protected.
+- About is shipped/live and launch-grade after the editorial-depth/team-introduction pass.
+- Contact is shipped/live as Night Desk controlled intake.
 
-Allowed:
+## Default Scope
 
-- Improve FAQ body background to Codex-style ambient flux.
-- No mouse cursor effect.
-- No hard diagonal lines.
-- No grid scratches.
-- No blobs.
-- No parchment/paper-wash look.
-- Final sanity on diagnostic assumption board labels/copy.
+Unless the Owner gives a new explicit implementation brief:
 
-Keep:
-
-- Hero structure and message.
-- Category-left / accordion-right FAQ mechanics.
-- Diagnostic assumption board structure.
-- Final routing panel direction.
-- JourneyNav sticky/click behavior.
-- PL/EN parity.
+- Do not re-open shipped pages.
+- Do not change app code, CSS, messages, assets, package files, routes, legal/noindex, estimator logic, contact API, or form contracts.
+- Docs/status updates may proceed only when requested.
 
 ## Protected
 
-Do not change:
+Do not change without explicit Owner approval:
 
-- FAQ answer meanings unless explicitly approved.
-- Services page unless fixing confirmed regression.
-- Estimator logic, matrix, ranges, result behavior, contact payload.
-- Contact API/schema/payload.
+- Services shipped visual/content model.
+- FAQ shipped answer meanings and visual model.
+- About shipped local/team proof direction.
+- Contact Night Desk visual model.
+- Contact schema, field names, validation, payload, or `app/api/contact/route.ts`.
+- Estimator logic, matrix, pricing/ranges, result behavior, or contact handoff payload.
 - Routes/slugs/query behavior.
 - Legal/noindex.
 - Package names/count.
 - SLA/emergency authority.
 
-## Current FAQ Targets
+## Validation For Future Work
 
-Background:
+Docs-only changes:
 
-- Codex-style ambient depth.
-- Soft luminous layered radial fields.
-- Slow, subtle motion.
-- `prefers-reduced-motion` fallback.
-- No mouse tracking.
-
-Diagnostic labels:
-
-- PL: `Częste założenie` / `Jak działa Sentinel`
-- EN: `Common assumption` / `How Sentinel works`
-
-## Validation Required
-
+- `rg --files -g "*.md"`
 - `git diff --check`
-- `npm.cmd run lint`
-- `npm.cmd run build`
-- PL desktop screenshot.
-- EN desktop screenshot.
-- PL 390px screenshot.
-- JourneyNav sticky/click test.
-- FAQ category switch test.
-- Accordion open/close test.
-- No horizontal overflow.
-- No console errors, failed requests, or 4xx/5xx.
+
+Code or visual changes:
+
+- Follow `doc/QA.md`.
+- Do not stage `output/`.
 
 ## After Owner Approval
 
-Only after Owner review:
-
-- Amend or commit as requested.
-- Push only if explicitly approved.
+Commit and push only when explicitly requested by Owner.

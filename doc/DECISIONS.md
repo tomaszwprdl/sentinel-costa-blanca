@@ -67,6 +67,7 @@ Frame the estimator; do not visually fill over protected logic with decorative r
 Protected:
 
 - Contact API/schema/payload.
+- Contact form field names, validation, and submission semantics.
 - Contact details: `sentinelcostablanca@gmail.com`, `+34 694 22 90 35`.
 - Usage pathway slugs:
   - `private-use-only`
@@ -75,6 +76,18 @@ Protected:
 - Route and query behavior.
 - Legal substance.
 - `noindex,nofollow` until Owner approves launch indexing.
+
+Contact page visual model is locked:
+
+- Night Desk / controlled intake desk.
+- The form is a qualification dossier, not a lead-gen form.
+- Dark slate/navy environment.
+- Crisp white form dossier.
+- Sticky preparation/direct-contact guide on desktop.
+- Post-submit flow integrated into the form dossier.
+- Visible architectural/lit-window hero atmosphere using `public/photos/contact-night-window.webp`.
+
+Do not revert Contact to beige paperwork. Do not add casual contact imagery, call-center visuals, beach/lifestyle imagery, testimonials, or sales urgency.
 
 ## Services Page
 
@@ -90,23 +103,29 @@ Accepted and protected unless a confirmed regression or explicit Owner scope app
 
 Do not reopen Services polish because of visual preference alone.
 
+## About Page
+
+About is shipped and launch-grade after the editorial-depth/team-introduction pass.
+
+Accepted and protected unless a confirmed regression or explicit Owner scope appears:
+
+- Local credibility and service boundaries.
+- Team/local-presence framing without fake proof or unsupported headcount claims.
+- Editorial proof rhythm with field-evidence treatment.
+- No concierge/luxury/rental-management drift.
+
+Do not reopen About polish because of visual preference alone.
+
 ## FAQ Page
 
-FAQ direction is Command Desk / Answer Register:
+FAQ is shipped and launch-grade enough to stop active polishing.
+
+Accepted and protected unless a confirmed regression or explicit Owner scope appears:
 
 - Fast objection resolution.
 - Category-left / accordion-right mechanics.
 - Diagnostic assumption board.
 - Final routing decision panel.
-
-Current FAQ local polish is not approved/final. The remaining allowed pass is narrow:
-
-- Codex-like ambient flux background.
-- No mouse cursor effect.
-- No hard lines.
-- No blobs.
-- No parchment/paper-wash look.
-- Diagnostic board label/copy sanity.
 
 Protected:
 
@@ -136,7 +155,12 @@ Synthetic or AI-like proof-layer images are temporary shot-planning placeholders
 
 They must not claim actual Sentinel work, real client property, real reports, real operator identity, or final operational evidence.
 
+Asset notes:
+
+- `public/photos/contact-night-window.webp` - Contact hero atmospheric proof image. Decorative background only; no content alt required if used as CSS/pseudo-layer.
+
 ## Git / Launch
 
 - Do not push unless Owner approves.
 - DNS, Netlify production, indexing, and environment changes require explicit Owner/Cloudie approval.
+- Do not stage `output/`, screenshots, QA artifacts, temp scripts, `.env`, zips, or generated files.

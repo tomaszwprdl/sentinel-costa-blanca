@@ -27,28 +27,35 @@ Reference docs are read only when they are directly relevant to the task.
 ## Current Truth
 
 - Services page is shipped and closed unless confirmed real-use evidence or a regression appears.
-- Estimator affordance is shipped; protected estimator logic stayed untouched.
-- FAQ polish is local, unpushed, and not final.
-- Current FAQ remaining scope is narrow:
-  - Codex-style ambient background depth, no mouse cursor effect.
-  - Diagnostic assumption board label/copy sanity.
+- Estimator affordance is shipped/live; protected estimator logic, pricing/ranges, and contact handoff payload stayed untouched.
+- FAQ is shipped/live and protected unless the Owner explicitly reopens it.
+- About is shipped/live and launch-grade after the editorial-depth/team-introduction pass.
+- Contact is shipped/live as Night Desk controlled intake:
+  - dark secure intake canvas
+  - crisp white form dossier
+  - sticky preparation/direct-contact guide on desktop
+  - post-submit flow integrated into the form dossier
+  - `public/photos/contact-night-window.webp` as visible but subdued decorative hero atmosphere
+  - form schema, field names, validation, payload, and API route deliberately unchanged
 
 ## Protected Areas
 
 Do not change without explicit Owner approval:
 
-- Estimator logic, matrix, ranges, result behavior, or contact payload.
-- Contact API/schema/payload.
+- Estimator logic, matrix, pricing/ranges, result behavior, or contact handoff payload.
+- Contact schema, field names, validation, payload, or `app/api/contact/route.ts`.
 - Routes, slugs, pathway query behavior.
 - Legal substance and `noindex,nofollow`.
 - Package names/count.
 - SLA meaning and emergency authority.
 - FAQ answer meanings.
 - Sentinel identity, descriptors, contact details, and service area.
+- Shipped page visual models unless the Owner explicitly reopens them.
 
 ## Workflow
 
 - Stay inside the approved scope.
+- Do not re-open shipped pages unless explicitly requested by the Owner.
 - User-facing copy must update PL and EN together through `messages/pl.json` and `messages/en.json`.
 - Never use `git add .`; stage exact files only.
 - Never stage screenshots, `output/`, QA artifacts, temp scripts, `.env`, zips, or generated files.

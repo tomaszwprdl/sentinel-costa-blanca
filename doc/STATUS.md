@@ -4,65 +4,47 @@ Current project state only. This document is descriptive; `DECISIONS.md` is bind
 
 ## Snapshot
 
-- Branch at last documentation consolidation: `main`
-- Observed HEAD before this docs-only consolidation: `1f14a58` (`refine: polish FAQ answer register`)
-- Local state before consolidation: `main...origin/main [ahead 1]`
-- FAQ polish commit is local and unpushed.
+- Branch at this documentation update: `main`.
+- Latest shipped app commit before this docs pass: `30a6f9a` (`refine: add night desk contact intake`).
 - Site phase: pre-launch / soft-launch review.
 - `noindex,nofollow` remains active until Owner approves indexing.
 
 Always verify current branch, HEAD, and status with git preflight.
 
-## Shipped / Closed
+## Shipped / Live / Protected
 
-Services page is shipped, live-verified, and closed unless real-use evidence or a confirmed regression appears.
+Services page is shipped, live-verified, and closed unless real-use evidence, a confirmed regression, or explicit Owner scope appears.
 
-Estimator affordance is shipped:
+Estimator affordance is shipped/live and protected:
 
-- Charcoal + terracotta outer frame.
-- Paper/light inner workspace.
-- Copper = action / ready to choose.
-- Teal = selected / confirmed.
-- Larger ballot/radio/checkbox signifiers.
-- Choice rails.
-- Step 1/2 navigation docked closer to content.
+- Estimator logic, matrix, pricing/ranges, result behavior, and contact handoff payload remain unchanged.
+- Package/SLA/emergency meanings remain protected.
 
-Protected estimator logic, matrix, ranges, result behavior, package/SLA/emergency rules, and contact payload remained unchanged.
+FAQ is shipped/live and protected unless the Owner explicitly reopens it.
 
-Services live QA passed:
+About is shipped/live and launch-grade after the editorial-depth/team-introduction pass.
 
-- PL/EN route checks.
-- 390px overflow checks.
-- Console/fetch checks.
-- HTTP 4xx/5xx checks.
+Contact is shipped/live as Night Desk controlled intake:
 
-## In Progress
+- Dark secure intake canvas.
+- Crisp white form dossier.
+- Sticky preparation/direct-contact sidebar on desktop.
+- Post-submit flow integrated into the form dossier.
+- Hero uses `public/photos/contact-night-window.webp` as visible but subdued architectural/lit-window atmosphere.
+- Form schema, field names, validation, payload, and `app/api/contact/route.ts` were deliberately unchanged.
 
-FAQ polish is local, unpushed, and not Owner-approved.
+## Active Task State
 
-Current local FAQ state:
+No open implementation task after the Contact Night Desk deploy.
 
-- Command Desk / Answer Register direction.
-- Improved category-left / accordion-right grouping.
-- Diagnostic assumption board replacing the raw ledger.
-- Strengthened final routing panel.
-- Cleaned JourneyNav/progression strip.
+Current active task state:
 
-Remaining FAQ work is narrow:
-
-1. Codex-style ambient background depth without mouse cursor effect.
-2. Diagnostic assumption board label/copy sanity.
-
-Current diagnostic label target:
-
-- PL: `Częste założenie` / `Jak działa Sentinel`
-- EN: `Common assumption` / `How Sentinel works`
-
-Do not push FAQ until Owner approves.
+- Post-launch monitoring.
+- Owner-directed final polish only.
+- Do not re-open shipped pages unless explicitly requested by Owner.
 
 ## Not Done
 
-- Final FAQ pass, QA, and Owner review.
 - Production contact email end-to-end confirmation.
 - Final commercial pricing/range confirmation.
 - Legal/entity/GDPR review.
@@ -71,11 +53,15 @@ Do not push FAQ until Owner approves.
 
 ## Protected During Current Work
 
-- Services unless fixing a confirmed regression.
-- Estimator logic/matrix/ranges/result/contact payload.
-- Contact API/schema/payload.
+- Services unless fixing a confirmed regression or Owner-scoped request.
+- FAQ answer meanings and shipped FAQ visual model unless explicitly reopened.
+- About shipped local/team proof direction unless explicitly reopened.
+- Contact schema, field names, validation, payload, and `app/api/contact/route.ts`.
+- Contact Night Desk visual model unless explicitly reopened.
+- Estimator logic/matrix/pricing/ranges/result behavior/contact handoff payload.
 - Routes/slugs/query behavior.
 - Legal/noindex.
 - Package names/count.
 - SLA/emergency authority.
-- FAQ answer meanings.
+- Contact details and service area.
+- `output/`, screenshots, QA artifacts, temp scripts, `.env`, zips, and generated files.

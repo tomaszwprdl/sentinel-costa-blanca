@@ -50,7 +50,7 @@ Protected:
 
 ### FAQ
 
-FAQ polish is local, unpushed, and not approved.
+FAQ is shipped, live, and protected unless the Owner explicitly reopens it.
 
 Keep:
 
@@ -60,21 +60,26 @@ Keep:
 - Final routing decision panel.
 - JourneyNav cleanup.
 
-Remaining:
-
-- Codex-style ambient background depth without mouse cursor effect.
-- Diagnostic label/copy sanity only.
-- Do not change FAQ answer meanings.
+Do not change FAQ answer meanings without explicit Owner approval.
 
 ### About
 
-Named operator identity photo is identity/team proof only. Do not imply client-property or field-work evidence.
+About is shipped, live, and launch-grade after the editorial-depth/team-introduction pass.
+
+Team/local-presence imagery is identity/team proof only. Do not imply client-property evidence, per-property assignment, guaranteed headcount, or unsupported operating capacity.
 
 ### How It Works / Contact
 
-Keep existing proof structure unless separately briefed.
+How It Works proof structure stays protected unless separately briefed.
 
-Do not change contact schema/API/payload.
+Contact is shipped/live as Night Desk controlled intake:
+
+- `public/photos/contact-night-window.webp` is the Contact hero atmospheric proof image.
+- It is decorative background only; no content alt is required if used as CSS/pseudo-layer.
+- It should read as architectural/lit-window atmosphere, not testimonial, client-property evidence, real-estate listing imagery, or lifestyle proof.
+- The form remains a qualification dossier, not a lead-gen form.
+
+Do not change contact schema, field names, validation, payload, or `app/api/contact/route.ts`.
 
 ## Replacement Direction
 
