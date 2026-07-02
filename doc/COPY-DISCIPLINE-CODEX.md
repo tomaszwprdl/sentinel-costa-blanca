@@ -85,8 +85,10 @@ Prefer:
 Avoid:
 
 - Open-ended emotional framing  
-- Narrative storytelling  
+- Invented origin stories, emotional brand narrative, and lifestyle storytelling
 - Rhetorical questions  
+
+Factual operational story is allowed when it explains why Sentinel exists, who is responsible, or why a boundary matters.
 
 ---
 

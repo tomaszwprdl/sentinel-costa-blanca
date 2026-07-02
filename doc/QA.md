@@ -38,7 +38,7 @@ npm.cmd run qa:serve
 3. Capture with repo tool:
 
 ```bash
-npm.cmd run qa:capture -- --url=http://127.0.0.1:3100/pl/faq --full --out=doc/screenshots/pl-faq.png --expect=.journey-nav
+npm.cmd run qa:capture -- --url=http://127.0.0.1:3100/pl/faq --full --out=output/qa/pl-faq.png --expect=.journey-nav
 ```
 
 Required checks for visual work:

@@ -39,7 +39,7 @@ For visual QA, use the production-build capture flow in `doc/QA.md`.
 
 ## Deploy
 
-The project is configured for Netlify. Production DNS, environment variables, indexing, and deploy operations are Owner/Cloudie scope.
+The project is configured for Netlify. Commits and pushes require explicit Owner approval. DNS, Netlify environment variables, indexing, and production configuration changes remain Owner/Cloudie scope.
 
 ## Documentation
 
