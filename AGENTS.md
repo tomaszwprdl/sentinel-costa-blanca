@@ -63,6 +63,19 @@ Do not change without explicit Owner approval:
 - For visual changes use production-build screenshots and check PL/EN, 390px overflow, console errors, failed requests, and 4xx/5xx.
 - Push only when Owner explicitly approves.
 
+## Codex Environment Rule
+
+- If the current shell reports duplicate `PATH`/`Path` or PowerShell Env provider throws `An item with the same key has already been added`, do not debug app code.
+- In Codex, use clean scripts for build/server/capture:
+  - `npm.cmd run env:doctor`
+  - `npm.cmd run build:clean`
+  - `npm.cmd run qa:smoke:clean`
+  - `npm.cmd run qa:serve:clean`
+  - `npm.cmd run qa:capture:clean -- ...`
+- Avoid PowerShell `Start-Process` or background server orchestration from Codex.
+- Normal Owner PowerShell, Cursor terminal, and Claude Code shell may use normal scripts when their env check is clean.
+- Treat duplicate `PATH`/`Path` as a Codex process-wrapper limitation unless proven otherwise.
+
 ## Reporting
 
 Report:
