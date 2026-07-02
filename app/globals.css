@@ -26325,48 +26325,18 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   position: relative;
   overflow: clip;
   background:
-    radial-gradient(78rem 48rem at 8% 8%, rgba(92, 174, 168, 0.36), transparent 64%),
-    radial-gradient(76rem 56rem at 96% 28%, rgba(88, 154, 154, 0.34), transparent 68%),
-    radial-gradient(74rem 56rem at 42% 50%, rgba(136, 140, 192, 0.22), transparent 70%),
-    radial-gradient(66rem 50rem at 82% 68%, rgba(226, 154, 104, 0.24), transparent 72%),
-    linear-gradient(132deg, rgba(92, 168, 163, 0.16) 0%, rgba(142, 144, 194, 0.13) 45%, rgba(230, 166, 116, 0.15) 78%, transparent 100%),
-    linear-gradient(180deg, #f8f4ea 0%, #f3ecde 44%, #eadfcc 100%);
+    radial-gradient(78rem 48rem at 8% 8%, rgba(92, 174, 168, 0.44), transparent 64%),
+    radial-gradient(76rem 56rem at 96% 28%, rgba(88, 154, 154, 0.4), transparent 68%),
+    radial-gradient(74rem 56rem at 42% 50%, rgba(130, 140, 190, 0.26), transparent 70%),
+    radial-gradient(66rem 50rem at 82% 68%, rgba(224, 150, 100, 0.28), transparent 72%),
+    linear-gradient(132deg, rgba(92, 168, 163, 0.19) 0%, rgba(138, 142, 192, 0.16) 45%, rgba(228, 162, 112, 0.18) 78%, transparent 100%),
+    linear-gradient(180deg, #f6f2e6 0%, #f2ebdb 44%, #e8dcc7 100%);
 }
 
 .faq-page::before,
 .faq-page::after {
-  position: absolute;
-  inset-inline: 0;
-  pointer-events: none;
-  content: "";
-}
-
-.faq-page::before {
-  z-index: 0;
-  inset-block: -10rem -8rem;
-  background:
-    radial-gradient(ellipse 72rem 42rem at 12% 14%, rgba(92, 174, 168, 0.5), transparent 64%),
-    radial-gradient(ellipse 78rem 46rem at 78% 30%, rgba(74, 152, 148, 0.42), transparent 66%),
-    radial-gradient(ellipse 72rem 46rem at 42% 50%, rgba(142, 146, 202, 0.28), transparent 68%),
-    radial-gradient(ellipse 68rem 42rem at 78% 62%, rgba(228, 156, 104, 0.32), transparent 70%),
-    radial-gradient(ellipse 58rem 40rem at 22% 76%, rgba(50, 86, 120, 0.2), transparent 70%),
-    linear-gradient(136deg, transparent 8%, rgba(90, 162, 158, 0.16) 26%, rgba(148, 146, 200, 0.15) 54%, rgba(228, 158, 106, 0.17) 80%, transparent 98%);
-  filter: blur(50px) saturate(118%);
-  opacity: 0.96;
-  transform: translate3d(0, 0, 0) scale(1.05);
-}
-
-.faq-page::after {
-  z-index: 0;
-  inset-block: 12rem -12rem;
-  background:
-    radial-gradient(ellipse 84rem 54rem at -4% 40%, rgba(255, 255, 250, 0.28), transparent 68%),
-    radial-gradient(ellipse 78rem 48rem at 72% 42%, rgba(130, 140, 194, 0.24), transparent 70%),
-    radial-gradient(ellipse 74rem 50rem at 88% 66%, rgba(226, 158, 106, 0.22), transparent 72%),
-    radial-gradient(ellipse 66rem 44rem at 16% 76%, rgba(56, 106, 126, 0.2), transparent 70%),
-    linear-gradient(150deg, transparent 0%, rgba(88, 148, 160, 0.1) 20%, rgba(148, 142, 190, 0.12) 52%, rgba(226, 158, 106, 0.14) 80%, transparent 100%);
-  filter: blur(38px);
-  opacity: 0.9;
+  display: none;
+  content: none;
 }
 
 .faq-page > * {
@@ -26380,7 +26350,7 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .faq-page .faq-section:not(.faq-hero)::before {
-  opacity: 0.52;
+  opacity: 0.85;
 }
 
 .faq-page .faq-section:not(.faq-hero)::after {
@@ -26389,31 +26359,33 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 
 .faq-page .faq-section--quick::before {
   background:
-    radial-gradient(70rem 38rem at 78% 12%, rgba(104, 176, 170, 0.26), transparent 70%),
-    radial-gradient(52rem 30rem at 12% 8%, rgba(118, 178, 174, 0.14), transparent 72%),
-    radial-gradient(52rem 30rem at 44% 96%, rgba(138, 146, 196, 0.14), transparent 74%);
+    radial-gradient(70rem 40rem at 76% 8%, rgba(103, 178, 169, 0.42), transparent 68%),
+    radial-gradient(56rem 34rem at 10% 20%, rgba(169, 215, 205, 0.35), transparent 70%),
+    radial-gradient(52rem 30rem at 44% 98%, rgba(122, 143, 163, 0.18), transparent 74%),
+    linear-gradient(180deg, rgba(147, 200, 190, 0.16) 0%, transparent 62%);
 }
 
 .faq-page .faq-section--details::before {
   background:
-    radial-gradient(66rem 38rem at 84% 0%, rgba(86, 148, 150, 0.2), transparent 72%),
-    radial-gradient(70rem 38rem at 48% 50%, rgba(140, 144, 200, 0.24), transparent 72%),
-    radial-gradient(54rem 32rem at 8% 78%, rgba(224, 158, 110, 0.12), transparent 72%);
+    radial-gradient(72rem 42rem at 48% 34%, rgba(122, 143, 163, 0.3), transparent 70%),
+    radial-gradient(62rem 36rem at 86% 2%, rgba(103, 178, 169, 0.22), transparent 70%),
+    radial-gradient(56rem 34rem at 6% 82%, rgba(27, 58, 78, 0.14), transparent 72%),
+    linear-gradient(168deg, rgba(138, 146, 194, 0.16) 6%, rgba(27, 58, 78, 0.1) 94%);
 }
 
 .faq-page .faq-section--assumptions::before {
   background:
-    radial-gradient(66rem 38rem at 72% 34%, rgba(226, 152, 98, 0.36), transparent 70%),
-    radial-gradient(58rem 34rem at 18% 12%, rgba(108, 156, 176, 0.16), transparent 72%),
-    radial-gradient(52rem 30rem at 20% 82%, rgba(206, 116, 78, 0.16), transparent 72%),
-    linear-gradient(136deg, rgba(92, 150, 154, 0.08) 0%, rgba(228, 160, 108, 0.18) 64%, transparent 100%);
+    radial-gradient(68rem 40rem at 72% 30%, rgba(214, 137, 87, 0.34), transparent 70%),
+    radial-gradient(58rem 34rem at 16% 12%, rgba(122, 143, 163, 0.18), transparent 72%),
+    radial-gradient(52rem 30rem at 22% 86%, rgba(206, 116, 78, 0.2), transparent 72%),
+    linear-gradient(136deg, rgba(103, 178, 169, 0.1) 0%, rgba(226, 160, 108, 0.24) 64%, transparent 100%);
 }
 
 .faq-page .faq-section--decision::before {
   background:
-    radial-gradient(64rem 38rem at 70% 14%, rgba(108, 128, 178, 0.22), transparent 70%),
-    radial-gradient(54rem 32rem at 14% 44%, rgba(226, 154, 104, 0.12), transparent 72%),
-    linear-gradient(150deg, rgba(88, 150, 154, 0.1) 0%, rgba(20, 46, 66, 0.18) 100%);
+    radial-gradient(64rem 40rem at 68% 12%, rgba(122, 143, 163, 0.28), transparent 70%),
+    radial-gradient(56rem 34rem at 12% 46%, rgba(214, 137, 87, 0.2), transparent 72%),
+    linear-gradient(150deg, rgba(103, 178, 169, 0.12) 0%, rgba(27, 58, 78, 0.2) 100%);
 }
 
 .faq-page .journey-nav-shell {
@@ -26422,8 +26394,8 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   z-index: 35;
   background:
     linear-gradient(180deg, rgba(250, 251, 245, 0.93), rgba(244, 248, 243, 0.91));
-  -webkit-backdrop-filter: blur(18px) saturate(112%);
-  backdrop-filter: blur(18px) saturate(112%);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
   box-shadow:
     inset 0 -1px 0 rgba(16, 38, 63, 0.09),
     0 12px 28px -24px rgba(16, 38, 63, 0.34);
@@ -26434,6 +26406,17 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   background:
     linear-gradient(180deg, rgba(255, 255, 250, 0.74), rgba(245, 249, 244, 0.78));
   box-shadow: none;
+}
+
+.faq-page .faq-hero .gfx-field .gfx-draw {
+  stroke-dasharray: none;
+  stroke-dashoffset: 0;
+  transition: none;
+}
+
+.faq-page .faq-hero .gfx-field .gfx-fade {
+  opacity: 1;
+  transition: none;
 }
 
 .faq-page .journey-nav__track {
@@ -27156,7 +27139,7 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   }
 
   .faq-page .faq-section:not(.faq-hero)::before {
-    opacity: 0.38;
+    opacity: 0.68;
   }
 
   .faq-quick-rail__cell {
@@ -27181,14 +27164,6 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .faq-page::before {
-    animation: faq-answer-field 48s ease-in-out infinite alternate;
-  }
-
-  .faq-page::after {
-    animation: faq-answer-depth 56s ease-in-out infinite alternate;
-  }
-
   .faq-answer-console__panel {
     animation: faq-register-snap 180ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
   }
@@ -27225,32 +27200,6 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   .faq-quick-rail__cell[data-active="true"],
   .faq-section-anchor-strip__link[aria-pressed="true"] {
     transform: none;
-  }
-}
-
-@keyframes faq-answer-field {
-  from {
-    background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
-    transform: translate3d(-0.8rem, -0.4rem, 0) scale(1.045);
-  }
-
-  to {
-    background-position: 4.2rem -2.4rem, -3.6rem 2.8rem, 2.6rem 3.4rem, -3.2rem -2.2rem, 1.8rem 2.4rem, -2rem 1.6rem;
-    transform: translate3d(1.2rem, 0.8rem, 0) scale(1.055);
-  }
-}
-
-@keyframes faq-answer-depth {
-  from {
-    background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
-    opacity: 0.84;
-    transform: translate3d(0.8rem, 0, 0) scale(1.02);
-  }
-
-  to {
-    background-position: -3.2rem 2.4rem, 2.8rem -1.8rem, -2.6rem -2.2rem, 1.8rem -1.2rem, 0 0;
-    opacity: 0.96;
-    transform: translate3d(-0.9rem, 0.8rem, 0) scale(1.04);
   }
 }
 
