@@ -49,6 +49,7 @@ tmp/
 .claude/
 
 # local QA captures and scripts
+/output/
 doc/screenshots/
 phase3-motion-imagery-working/
 screenshots-*/
