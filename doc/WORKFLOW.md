@@ -37,6 +37,28 @@ git status -sb
 
 Visual changes also require production-build screenshots and browser checks from `doc/QA.md`.
 
+## Local Server Workflow
+
+- Dev iteration uses one foreground dev server:
+
+```bash
+npm.cmd run dev -- --hostname 127.0.0.1 --port 3000
+```
+
+- Dev URLs use `http://127.0.0.1:3000/...`.
+- Do not compare dev work against `3100` or live production.
+- Production QA always runs `npm.cmd run build` before `npm.cmd run qa:serve`.
+- Production QA uses `http://127.0.0.1:3100`.
+- Source changes are not reflected in production QA until rebuild.
+- Commit does not refresh dev, production QA, screenshots, or live deploys.
+- Capture with an explicit URL and write only to `output/qa`.
+- If a change appears stale, check wrong port, stale `.next`, stuck HMR, old
+  screenshots, live/local confusion, and late-loading images before changing app
+  code.
+- If PowerShell or `Start-Process` reports duplicate `PATH`/`Path`, restart
+  terminal, Cursor, and Codex before debugging app code. Registry state should
+  normally contain only `Path`.
+
 ## Git
 
 - Stage exact files only.

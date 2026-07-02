@@ -19,6 +19,104 @@ git diff --check
 git status -sb
 ```
 
+## Local Server Protocol
+
+Use one server identity at a time. Do not compare dev work against production QA,
+live Netlify, or old screenshots.
+
+### Dev Iteration
+
+Use one foreground dev server:
+
+```bash
+npm.cmd run dev -- --hostname 127.0.0.1 --port 3000
+```
+
+Use:
+
+```text
+http://127.0.0.1:3000/...
+```
+
+The dev server should reflect source changes through hot reload. If changes do
+not appear, suspect the wrong port, a stuck dev server, or browser/cache state
+before suspecting app code. Commit does not refresh the dev server.
+
+### Production QA
+
+Always build before serving production QA:
+
+```bash
+npm.cmd run build
+npm.cmd run qa:serve
+```
+
+`qa:serve` uses:
+
+```text
+http://127.0.0.1:3100
+```
+
+Production QA serves the current `.next` build. Source changes are not reflected
+until `npm.cmd run build` runs again. Commit does not refresh anything.
+
+### Capture
+
+Use an explicit URL and save screenshots under `output/qa` only:
+
+```bash
+npm.cmd run qa:capture -- --url=http://127.0.0.1:3100/pl/contact --full --out=output/qa/pl-contact.png --report=output/qa/pl-contact.report.json --wait=2500
+```
+
+Do not stage `output/`.
+
+### Stale-State Checklist
+
+When a change looks missing, check these before changing app code:
+
+- Wrong port or host.
+- Stale `.next` production build.
+- Stuck dev hot reload.
+- Old screenshot opened from `output/qa`.
+- Live Netlify confused with localhost.
+- Lazy images or late client effects captured too early.
+
+### Recovery Commands
+
+Check common local ports:
+
+```powershell
+netstat -ano -p tcp | Select-String ':3000|:3001|:3100|:3200'
+```
+
+Stop a specific PID:
+
+```powershell
+Stop-Process -Id <PID> -Force
+```
+
+For broken dev state, stop the dev server first, then:
+
+```powershell
+Remove-Item -Recurse -Force .next\dev
+npm.cmd run dev -- --hostname 127.0.0.1 --port 3000
+```
+
+For stale production QA, stop the QA server first, then:
+
+```powershell
+Remove-Item -Recurse -Force .next
+npm.cmd run build
+npm.cmd run qa:serve
+```
+
+### Windows Environment Note
+
+If PowerShell or `Start-Process` reports duplicate `PATH`/`Path`, restart the
+terminal, Cursor, and Codex before debugging app code. Registry checks should
+normally show only `Path`; this is usually stale process environment state, not
+an app failure.
+
 ## Visual QA
 
 Use production build screenshots, not dev-server screenshots.
