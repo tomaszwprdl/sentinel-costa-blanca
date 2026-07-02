@@ -128,6 +128,23 @@ export default async function AboutPage({
           </div>
         </Section>
 
+        <Section tone="light" className="about-operator-section about-access-break-section">
+          <figure className="about-access-break">
+            <div className="about-access-break__frame">
+              <Image
+                src="/photos/about-access-check.webp"
+                alt={t('redesign.accessBreak.alt')}
+                width={2048}
+                height={1152}
+                sizes="(min-width: 1024px) 76vw, 100vw"
+                className="about-access-break__image"
+                loading="eager"
+              />
+            </div>
+            <figcaption>{t('redesign.accessBreak.caption')}</figcaption>
+          </figure>
+        </Section>
+
         <Section tone="alt" className="about-operator-section about-contrast-section">
           <div className="about-operator-intro">
             <div>
@@ -137,22 +154,29 @@ export default async function AboutPage({
             <p>{t('redesign.contrast.intro')}</p>
           </div>
           <div className="about-contrast reveal-rise">
-            {contrastRows.map((row) => (
-              <article
-                key={row.role}
-                className={
-                  row.role === 'Sentinel'
-                    ? 'about-contrast__row about-contrast__row--sentinel'
-                    : 'about-contrast__row'
-                }
-              >
-                <div className="about-contrast__lede">
-                  <span>{row.role}</span>
-                  <strong>{row.action}</strong>
-                </div>
-                <p>{row.body}</p>
-              </article>
-            ))}
+            <div className="about-contrast__chain">
+              {contrastRows.map((row, index) => (
+                <article
+                  key={row.role}
+                  className={
+                    row.role === 'Sentinel'
+                      ? 'about-contrast__row about-contrast__row--sentinel'
+                      : 'about-contrast__row'
+                  }
+                >
+                  <div className="about-contrast__node" aria-hidden="true">
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                  </div>
+                  <div className="about-contrast__content">
+                    <div className="about-contrast__lede">
+                      <span>{row.role}</span>
+                      <strong>{row.action}</strong>
+                    </div>
+                    <p>{row.body}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
             <p className="about-contrast__closing">{t('redesign.contrast.closing')}</p>
           </div>
         </Section>

@@ -2963,6 +2963,10 @@
         ],
         "closing": "Sentinel replaces informal delegation with one accountable local layer: agreed scope, controlled access, documented visits, bounded decisions."
       },
+      "accessBreak": {
+        "alt": "Access check at a property entrance.",
+        "caption": "Access, locks and keys are part of responsibility — not an add-on to cleaning."
+      },
       "contrast": {
         "eyebrow": "The difference",
         "title": "Cleaning is a task. Oversight is a chain.",
