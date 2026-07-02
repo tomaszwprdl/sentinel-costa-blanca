@@ -5,9 +5,9 @@ interface ContactMethodPanelProps {
   email: string;
   phoneLabel: string;
   phone: string;
-  hoursLabel: string;
-  hours: string;
-  note?: string;
+  responseLabel: string;
+  responseValue: string;
+  responseNote?: string;
 }
 
 export default function ContactMethodPanel({
@@ -17,12 +17,12 @@ export default function ContactMethodPanel({
   email,
   phoneLabel,
   phone,
-  hoursLabel,
-  hours,
-  note,
+  responseLabel,
+  responseValue,
+  responseNote,
 }: ContactMethodPanelProps) {
   return (
-    <aside className="contact-method-panel reveal-rise p-5 md:p-6">
+    <aside className="contact-method-panel p-5 md:p-6">
       <p className="section-label">{eyebrow}</p>
       <h2 className="mt-3 text-2xl font-black text-heading">{title}</h2>
       <dl className="contact-method-panel__items mt-5 text-body">
@@ -39,11 +39,11 @@ export default function ContactMethodPanel({
           </dd>
         </div>
         <div className="contact-method-panel__row">
-          <dt>{hoursLabel}</dt>
-          <dd>{hours}</dd>
+          <dt>{responseLabel}</dt>
+          <dd>{responseValue}</dd>
         </div>
       </dl>
-      {note ? <p className="mt-4 mb-0 text-sm leading-relaxed text-muted">{note}</p> : null}
+      {responseNote ? <p className="mt-4 mb-0 text-sm leading-relaxed text-muted">{responseNote}</p> : null}
     </aside>
   );
 }

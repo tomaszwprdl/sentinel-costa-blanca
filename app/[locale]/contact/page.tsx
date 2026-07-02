@@ -309,7 +309,7 @@ function ContactPageInner() {
 
         <Section tone="alt" id="contact-intake" className="contact-section contact-dossier-intake-section">
           <div className="contact-intake-layout">
-            <div className="contact-form-file reveal-rise" id="intake-form">
+            <div className="contact-form-file" id="intake-form">
               <div className="contact-intake-shell contact-form-dossier">
                 <div className="contact-form-dossier__header">
                   <div>
@@ -641,15 +641,16 @@ function ContactPageInner() {
                 email={tCommon('contact.email')}
                 phoneLabel={t('directContact.phone')}
                 phone={tCommon('contact.phone')}
-                hoursLabel={t('directContact.hoursTitle')}
-                hours={tCommon('contact.hours')}
+                responseLabel={t('directContact.responseTitle')}
+                responseValue={t('directContact.responseValue')}
+                responseNote={t('directContact.responseNote')}
               />
             </aside>
           </div>
         </Section>
 
         <Section tone="light" className="contact-section contact-closing-section !pt-10 !pb-0">
-          <div className="page-final-cta contact-final-cta reveal-rise overflow-hidden">
+          <div className="page-final-cta contact-final-cta overflow-hidden">
             <div className="grid gap-0 lg:grid-cols-[minmax(0,0.68fr)_minmax(18rem,0.32fr)]">
               <div className="page-final-cta__copy p-5 md:p-8">
                 <p className="section-label">{t('redesign.form.eyebrow')}</p>

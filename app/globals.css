@@ -27350,20 +27350,21 @@ html:has(.hiw-page),
 
 .contact-dossier-intake-section .contact-support-panel,
 .contact-intake-support .contact-method-panel {
-  border: 1px solid rgba(255, 250, 242, 0.16);
+  border: 1px solid rgba(211, 137, 91, 0.36);
   border-radius: 0.9rem;
   background:
-    linear-gradient(135deg, rgba(255, 250, 242, 0.08), rgba(255, 250, 242, 0.03)),
-    rgba(7, 21, 34, 0.68);
+    linear-gradient(145deg, rgba(184, 102, 74, 0.18), rgba(62, 40, 32, 0.96) 44%, rgba(35, 27, 25, 0.98)),
+    #2e231f;
   box-shadow:
-    0 18px 46px rgba(0, 0, 0, 0.24),
-    inset 3px 0 0 rgba(184, 102, 74, 0.72);
-  color: rgba(255, 250, 242, 0.82);
+    0 18px 46px rgba(0, 0, 0, 0.3),
+    inset 3px 0 0 rgba(196, 110, 74, 0.78),
+    inset 0 1px 0 rgba(255, 240, 218, 0.1);
+  color: rgba(255, 244, 226, 0.86);
 }
 
 .contact-dossier-intake-section .contact-support-panel .section-label,
 .contact-intake-support .contact-method-panel .section-label {
-  color: color-mix(in srgb, var(--contact-copper) 74%, #fffaf2);
+  color: #d49369;
 }
 
 .contact-dossier-intake-section .contact-support-panel h2,
@@ -27375,19 +27376,19 @@ html:has(.hiw-page),
 
 .contact-dossier-intake-section .contact-support-panel p,
 .contact-intake-support .contact-method-panel p {
-  color: rgba(255, 250, 242, 0.74);
+  color: rgba(255, 244, 226, 0.74);
 }
 
 .contact-dossier-intake-section .contact-info-list {
-  border-top-color: rgba(255, 250, 242, 0.14);
+  border-top-color: rgba(211, 137, 91, 0.24);
 }
 
 .contact-dossier-intake-section .contact-info-list__item {
-  border-bottom-color: rgba(255, 250, 242, 0.14);
+  border-bottom-color: rgba(211, 137, 91, 0.2);
 }
 
 .contact-dossier-intake-section .contact-info-list__marker {
-  color: color-mix(in srgb, var(--contact-copper) 78%, #fffaf2);
+  color: #d49369;
 }
 
 .contact-dossier-intake-section .contact-info-list__item h3 {
@@ -27396,11 +27397,35 @@ html:has(.hiw-page),
 
 .contact-dossier-intake-section .contact-info-list__item p,
 .contact-dossier-intake-section .contact-info-list__note {
-  color: rgba(255, 250, 242, 0.72) !important;
+  color: rgba(255, 244, 226, 0.72) !important;
 }
 
 .contact-intake-support .contact-method-panel a {
-  color: #fffaf2;
+  border-bottom-color: rgba(211, 137, 91, 0.58);
+  color: #fff4e2;
+}
+
+.contact-intake-support .contact-method-panel a:hover {
+  border-bottom-color: #d49369;
+  color: #fff8ec;
+}
+
+.contact-intake-support .contact-method-panel__row {
+  border-bottom-color: rgba(211, 137, 91, 0.24);
+}
+
+.contact-intake-support .contact-method-panel__row dt {
+  color: #d49369;
+}
+
+.contact-intake-support .contact-method-panel__row dd {
+  color: #fff4e2;
+}
+
+.contact-intake-support .contact-method-panel dl + p {
+  border-top: 1px solid rgba(211, 137, 91, 0.24);
+  padding-top: 0.95rem;
+  color: rgba(255, 244, 226, 0.7) !important;
 }
 
 .contact-dossier-intake-section .contact-form-dossier {
@@ -27509,34 +27534,37 @@ html:has(.hiw-page),
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 0;
-  margin-top: clamp(1.2rem, 2.5vw, 1.75rem);
+  margin-top: clamp(0.65rem, 1.4vw, 0.95rem);
   overflow: hidden;
-  border: 1px solid rgba(16, 38, 63, 0.72);
-  border-radius: 0.8rem;
+  border: 1px solid color-mix(in srgb, var(--contact-slate) 16%, var(--line));
+  border-left: 3px solid color-mix(in srgb, var(--contact-copper) 86%, var(--contact-slate));
+  border-radius: 0.62rem;
   background:
-    linear-gradient(135deg, rgba(255, 250, 242, 0.08), transparent 45%),
-    var(--contact-night);
-  box-shadow: none;
-  color: #fffaf2;
+    linear-gradient(180deg, #fffaf1 0%, #f6eee2 100%),
+    var(--contact-paper);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.84),
+    0 10px 24px rgba(16, 38, 63, 0.08);
+  color: var(--contact-ink);
 }
 
 .contact-next-shell--attached .contact-section-heading {
   max-width: none;
-  border-bottom: 1px solid rgba(255, 250, 242, 0.14);
-  padding: clamp(1.05rem, 2vw, 1.35rem);
+  border-bottom: 1px solid color-mix(in srgb, var(--contact-copper) 20%, var(--line));
+  padding: clamp(0.95rem, 1.8vw, 1.15rem);
 }
 
 .contact-next-shell--attached .contact-section-heading .section-label {
-  color: color-mix(in srgb, var(--contact-copper) 76%, #fffaf2);
+  color: var(--contact-copper);
 }
 
 .contact-next-shell--attached .contact-section-heading h2 {
-  color: #fffaf2;
-  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+  color: var(--contact-ink);
+  font-size: clamp(1.22rem, 2.1vw, 1.55rem);
 }
 
 .contact-next-shell--attached .contact-section-heading p:not(.section-label) {
-  color: rgba(255, 250, 242, 0.76);
+  color: color-mix(in srgb, var(--contact-ink) 62%, var(--muted));
   font-size: 0.95rem;
 }
 
@@ -27545,22 +27573,22 @@ html:has(.hiw-page),
 }
 
 .contact-next-shell--attached .contact-next-step {
-  border-color: rgba(255, 250, 242, 0.12);
-  background: transparent;
+  border-color: color-mix(in srgb, var(--contact-copper) 18%, var(--line));
+  background: color-mix(in srgb, var(--contact-copper) 3%, transparent);
 }
 
 .contact-next-shell--attached .contact-next-step span {
-  border-color: rgba(184, 102, 74, 0.62);
-  background: rgba(184, 102, 74, 0.12);
-  color: color-mix(in srgb, var(--contact-copper) 76%, #fffaf2);
+  border-color: color-mix(in srgb, var(--contact-copper) 54%, var(--line));
+  background: #fffdf8;
+  color: var(--contact-copper);
 }
 
 .contact-next-shell--attached .contact-next-step h3 {
-  color: #fffaf2;
+  color: var(--contact-ink);
 }
 
 .contact-next-shell--attached .contact-next-step p {
-  color: rgba(255, 250, 242, 0.72);
+  color: color-mix(in srgb, var(--contact-ink) 64%, var(--muted));
 }
 
 .contact-closing-section {
@@ -27569,12 +27597,12 @@ html:has(.hiw-page),
 
 @media (min-width: 768px) {
   .contact-next-shell--attached .contact-next-shell__steps {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .contact-next-shell--attached .contact-next-step {
     grid-template-columns: minmax(0, 1fr);
-    border-right: 1px solid rgba(255, 250, 242, 0.12);
+    border-right: 1px solid color-mix(in srgb, var(--contact-copper) 18%, var(--line));
     border-bottom: 0;
   }
 
