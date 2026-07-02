@@ -115,7 +115,36 @@ npm.cmd run qa:serve
 If PowerShell or `Start-Process` reports duplicate `PATH`/`Path`, restart the
 terminal, Cursor, and Codex before debugging app code. Registry checks should
 normally show only `Path`; this is usually stale process environment state, not
-an app failure.
+an app failure. Do not treat duplicate `PATH`/`Path` as an app failure.
+
+### Clean Tooling Runner (AI Agent Shells)
+
+Some AI agent shells (Codex, Cursor, Claude Code) inherit an environment block
+with both `PATH` and `Path`, which breaks PowerShell's Env provider
+("An item with the same key has already been added") and background server
+launches. The repo ships a sanitizer for that case:
+
+```bash
+npm.cmd run env:doctor
+```
+
+`env:doctor` reports the pollution and exits non-zero only if a child spawned
+through the clean runner would still be broken.
+
+When the agent shell is polluted, prefer the clean variants; they run the same
+commands through `scripts/tooling/run-clean-env.cjs`, which merges all
+`PATH`/`Path` variants into a single de-duplicated `Path`:
+
+```bash
+npm.cmd run dev:clean
+npm.cmd run build:clean
+npm.cmd run qa:serve:clean
+npm.cmd run qa:capture:clean -- --url=http://127.0.0.1:3100/pl/contact --full --out=output/qa/pl-contact.png
+```
+
+The clean scripts are additive. The normal manual workflow remains valid, and
+the existing `dev`/`build`/`qa:serve`/`qa:capture` scripts remain valid from a
+clean Owner PowerShell.
 
 ## Visual QA
 

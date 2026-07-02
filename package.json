@@ -8,7 +8,13 @@
     "start": "next start",
     "lint": "eslint",
     "qa:serve": "next start --hostname 127.0.0.1 --port 3100",
-    "qa:capture": "node scripts/qa/capture-route.cjs"
+    "qa:capture": "node scripts/qa/capture-route.cjs",
+    "env:doctor": "node scripts/tooling/env-doctor.cjs",
+    "dev:clean": "node scripts/tooling/run-clean-env.cjs -- next dev --hostname 127.0.0.1 --port 3000",
+    "build:clean": "node scripts/tooling/run-clean-env.cjs -- next build",
+    "qa:serve:clean": "node scripts/tooling/run-clean-env.cjs -- next start --hostname 127.0.0.1 --port 3100",
+    "qa:capture:clean": "node scripts/tooling/run-clean-env.cjs -- node scripts/qa/capture-route.cjs",
+    "qa:smoke:clean": "node scripts/tooling/qa-smoke-clean.cjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

@@ -57,7 +57,14 @@ npm.cmd run dev -- --hostname 127.0.0.1 --port 3000
   code.
 - If PowerShell or `Start-Process` reports duplicate `PATH`/`Path`, restart
   terminal, Cursor, and Codex before debugging app code. Registry state should
-  normally contain only `Path`.
+  normally contain only `Path`. Duplicate `PATH`/`Path` is shell pollution,
+  never an app failure.
+- AI agent shells with duplicate `PATH`/`Path` should run
+  `npm.cmd run env:doctor` and then prefer the clean variants
+  (`dev:clean`, `build:clean`, `qa:serve:clean`, `qa:capture:clean`), which
+  route through `scripts/tooling/run-clean-env.cjs` with a sanitized single
+  `Path`. See `doc/QA.md` "Clean Tooling Runner". The normal manual workflow
+  and the existing scripts remain valid from a clean Owner PowerShell.
 
 ## Git
 
