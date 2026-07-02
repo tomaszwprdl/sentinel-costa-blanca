@@ -4,7 +4,6 @@ import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
 import Section from '@/components/layout/Section';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
-import JourneyNav from '@/components/JourneyNav';
 import ProcedureJourney from '@/components/how-it-works/ProcedureJourney';
 import DecisionReadyReport, { type DecisionReadyReportContent } from '@/components/how-it-works/DecisionReadyReport';
 
@@ -32,12 +31,6 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
   const procedureSteps = t.raw('redesign.procedure.steps') as ProcedureStep[];
   const procedureRules = t.raw('redesign.procedure.rules') as RecordRow[];
   const sampleReport = t.raw('redesign.evidence.sampleReport') as DecisionReadyReportContent;
-  const journeyItems = [
-    { id: 'process-start', label: t('redesign.hero.eyebrow') },
-    { id: 'procedure-corridor', label: t('redesign.procedure.eyebrow') },
-    { id: 'report-decision', label: t('redesign.evidence.eyebrow') },
-    { id: 'process-handoff', label: t('cta.eyebrow') },
-  ];
 
   return (
     <>
@@ -80,8 +73,6 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
             </figure>
           </div>
         </Section>
-
-        <JourneyNav items={journeyItems} ariaLabel={t('redesign.hero.headline')} className="hiw-journey-nav" />
 
         <Section tone="light" id="procedure-corridor" className="section-primitive--compact hiw-interface-section hiw-procedure-section">
           <ProcedureJourney

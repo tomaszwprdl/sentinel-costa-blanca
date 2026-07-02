@@ -8749,20 +8749,24 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
     linear-gradient(180deg, #ebe4d9 0%, #f0e9df 42%, #ece5da 100%);
 }
 
-/* HIW journey nav wraps on mobile; default anchor offset is too small for hash navigation */
+/* Services journey nav wraps on mobile; default anchor offset is too small for hash navigation */
 @media (max-width: 767px) {
   html:has(.services-page),
-  .services-page,
-  html:has(.hiw-page),
-  .hiw-page {
+  .services-page {
     --journey-nav-height: 10.375rem;
     --scroll-anchor-offset: calc(var(--header-offset) + var(--journey-nav-height) + 0.75rem);
   }
 
-  html:has(.services-page),
-  html:has(.hiw-page) {
+  html:has(.services-page) {
     scroll-padding-top: var(--scroll-anchor-offset);
   }
+}
+
+/* HIW no longer renders the journey strip; sticky geometry and anchors clear the header only */
+html:has(.hiw-page),
+.hiw-page {
+  --journey-nav-height: 0rem;
+  --scroll-anchor-offset: calc(var(--header-offset) + var(--journey-nav-height) + 0.75rem);
 }
 
 
@@ -21292,10 +21296,6 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   transform: rotate(-1.4deg);
 }
 
-.hiw-journey-nav .journey-nav__link {
-  border-radius: 0.35rem;
-}
-
 .hiw-procedure-section {
   position: relative;
   overflow: clip;
@@ -26388,26 +26388,6 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
     linear-gradient(150deg, rgba(103, 178, 169, 0.12) 0%, rgba(27, 58, 78, 0.2) 100%);
 }
 
-.faq-page .journey-nav-shell {
-  position: sticky;
-  top: var(--header-offset);
-  z-index: 35;
-  background:
-    linear-gradient(180deg, rgba(250, 251, 245, 0.93), rgba(244, 248, 243, 0.91));
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
-  box-shadow:
-    inset 0 -1px 0 rgba(16, 38, 63, 0.09),
-    0 12px 28px -24px rgba(16, 38, 63, 0.34);
-}
-
-.faq-page .journey-nav {
-  border-block-color: rgba(16, 38, 63, 0.1);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 250, 0.74), rgba(245, 249, 244, 0.78));
-  box-shadow: none;
-}
-
 .faq-page .faq-hero .gfx-field .gfx-draw {
   stroke-dasharray: none;
   stroke-dashoffset: 0;
@@ -26417,57 +26397,6 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 .faq-page .faq-hero .gfx-field .gfx-fade {
   opacity: 1;
   transition: none;
-}
-
-.faq-page .journey-nav__track {
-  gap: 0.36rem;
-  flex-wrap: nowrap;
-  padding-block: 0.38rem;
-}
-
-.faq-page .journey-nav__link {
-  min-height: 1.92rem;
-  border-color: rgba(16, 38, 63, 0.12);
-  background: rgba(255, 255, 250, 0.7);
-  color: color-mix(in srgb, var(--faq-desk-ink) 84%, var(--body));
-  padding: 0.34rem 0.58rem;
-  font-size: 0.7rem;
-  font-weight: 850;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.68);
-}
-
-.faq-page .journey-nav__link:hover {
-  border-color: color-mix(in srgb, var(--faq-desk-teal) 52%, var(--line));
-  background: rgba(238, 248, 244, 0.88);
-  color: var(--faq-desk-ink);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.82),
-    0 8px 16px -15px rgba(16, 38, 63, 0.22);
-}
-
-.faq-page .journey-nav__link[aria-current="true"] {
-  transform: none;
-  border-color: color-mix(in srgb, var(--faq-desk-teal) 62%, var(--faq-desk-ink));
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--faq-desk-teal) 34%, var(--faq-desk-ink)), color-mix(in srgb, var(--faq-desk-ink) 92%, var(--faq-desk-teal)));
-  color: #fffaf2;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 250, 242, 0.16),
-    0 8px 16px -13px rgba(16, 38, 63, 0.42);
-}
-
-.faq-page .journey-nav__marker {
-  height: 0.98rem;
-  min-width: 0.98rem;
-  background: rgba(255, 255, 250, 0.74);
-  color: color-mix(in srgb, var(--faq-desk-copper) 68%, var(--faq-desk-ink));
-  font-size: 0.54rem;
-}
-
-.faq-page .journey-nav__link[aria-current="true"] .journey-nav__marker {
-  background: color-mix(in srgb, var(--copper) 72%, #fffaf2);
-  color: var(--faq-desk-ink);
-  transform: none;
 }
 
 .faq-quick-rail {

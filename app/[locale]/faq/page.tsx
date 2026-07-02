@@ -11,7 +11,6 @@ import FAQGroupedAccordion, { type FAQGroup } from '@/components/FAQGroupedAccor
 import FAQQuickAnswerCards from '@/components/FAQQuickAnswerCards';
 import FAQWrongAssumptions from '@/components/FAQWrongAssumptions';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
-import JourneyNav from '@/components/JourneyNav';
 import FAQRoutingDiagram from '@/components/visuals/FAQRoutingDiagram';
 import OperationalField from '@/components/graphics/OperationalField';
 
@@ -42,12 +41,6 @@ export default function FAQPage() {
   const [selectedQuickAnswerId, setSelectedQuickAnswerId] = useState('');
 
   const facts = t.raw('redesign.hero.facts') as HeroFact[];
-  const journeyItems = [
-    { id: 'faq-start', label: t('redesign.journey.start') },
-    { id: 'faq-quick', label: t('redesign.journey.common') },
-    { id: 'faq-details', label: t('redesign.journey.all') },
-    { id: 'faq-decision', label: t('redesign.journey.decide') },
-  ];
   const quickAnswers = (t.raw('redesign.quick.items') as QuickAnswerSource[]).map((item) => ({
     ...item,
     linkLabel: t('redesign.quick.linkLabel'),
@@ -246,8 +239,6 @@ export default function FAQPage() {
             </div>
           </div>
         </Section>
-
-        <JourneyNav items={journeyItems} ariaLabel={t('redesign.hero.headline')} />
 
         <Section tone="light" id="faq-quick" className="faq-section faq-section--quick">
           <FAQQuickAnswerCards
