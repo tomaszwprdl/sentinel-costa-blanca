@@ -2665,7 +2665,7 @@
   "about": {
     "meta": {
       "title": "About - Sentinel",
-      "description": "Operational philosophy, system design, and service boundaries"
+      "description": "Why Sentinel exists, who runs it locally, and where the boundaries of the service lie"
     },
     "pageTitle": "About Sentinel",
     "intro": {
@@ -2933,129 +2933,151 @@
     "redesign": {
       "hero": {
         "eyebrow": "Sentinel Costa Blanca",
-        "headline": "A local operator for owners who are away.",
-        "lead": "Sentinel provides Structured Property Oversight for remote owners on the southern Costa Blanca. The model exists so local presence, access, documentation, and owner decisions are handled inside a defined operating scope.",
+        "headline": "When you are away, someone local has to own the situation.",
+        "lead": "A property does not pause because its owner left. Keys, access, water, technicians, and decisions carry on — and someone on site has to answer for the whole of it, not just the tasks. Sentinel is that local layer.",
         "primaryCta": "Start an inquiry",
-        "secondaryCta": "View service scope",
-        "operatorImageAlt": "Operational placeholder photo of keys and a notebook being prepared for local owner representation",
-        "artifactBadge": "Presence and boundaries",
-        "artifactTitle": "Local operator record",
-        "artifactRows": [
-          { "label": "Role", "value": "structured owner representation" },
-          { "label": "Area", "value": "southern Costa Blanca" },
-          { "label": "Work", "value": "checks, access, documentation" },
-          { "label": "Boundary", "value": "package, approval, decision limit" }
-        ],
-        "facts": [
-          { "label": "Local", "value": "southern Costa Blanca" },
-          { "label": "Method", "value": "documented checks" },
-          { "label": "Boundary", "value": "defined scope" }
-        ]
+        "boundaryCta": "What Sentinel is — and is not",
+        "photoAlt": "Keys and a visit record prepared on a table before a property handover.",
+        "photoCaption": "Keys, record, handover — the working end of owner representation."
       },
       "why": {
         "eyebrow": "Why Sentinel exists",
-        "title": "Remote ownership creates an operational gap.",
-        "intro": "A property can be local, active, and vulnerable while the owner is far away. Informal help can solve a task, but it rarely defines responsibility.",
-        "cards": [
-          { "marker": "01", "title": "The owner is away", "body": "Distance makes access, inspection, and urgent judgment difficult to manage directly." },
-          { "marker": "02", "title": "The property remains local", "body": "Doors, keys, water, electricity, cleaners, technicians, and weather still require physical presence." },
-          { "marker": "03", "title": "Ad-hoc help has limits", "body": "One-off favors can leave unclear records, unclear authority, and unclear accountability." }
+        "title": "Remote ownership does not fail at cleaning. It fails at responsibility.",
+        "body": "Most owners can find someone to mop a floor or water the plants. What breaks is the chain around those tasks: who holds the keys, who lets the technician in, who decides at what cost, who writes down what was found — and who answers for it afterwards. Sentinel was built to own that chain.",
+        "points": [
+          {
+            "marker": "01",
+            "title": "Nobody local owns the whole",
+            "body": "Helpers each hold a piece — a key, a chore, a phone number. No one is responsible for the situation."
+          },
+          {
+            "marker": "02",
+            "title": "Decisions drift",
+            "body": "Without agreed limits, every small event becomes a message thread stretched across two countries."
+          },
+          {
+            "marker": "03",
+            "title": "Nothing is written down",
+            "body": "Favors leave no record. When something goes wrong, there is no account of what was done, when, or why."
+          }
         ],
-        "closing": "Sentinel exists to replace informal delegation with a local operating structure: scope first, access controlled, checks documented, decisions bounded."
+        "closing": "Sentinel replaces informal delegation with one accountable local layer: agreed scope, controlled access, documented visits, bounded decisions."
       },
-      "model": {
-        "eyebrow": "Operating model",
-        "title": "Sentinel works through a defined on-site operating method.",
-        "intro": "The model is deliberately structured. It defines when Sentinel is present, what can be checked, how access is handled, and when a decision returns to the owner.",
-        "items": [
-          { "marker": "01", "title": "Local presence", "body": "Work happens inside a realistic service area, not from a distant coordination desk." },
-          { "marker": "02", "title": "Controlled access", "body": "Keys, entry, and third-party access are used only inside the agreed scope." },
-          { "marker": "03", "title": "Documented checks", "body": "Visits and relevant events leave a report, note, photo set, or written confirmation." },
-          { "marker": "04", "title": "Owner decision boundary", "body": "Sentinel acts within agreed limits. Above the limit or outside scope, the owner approves." },
-          { "marker": "05", "title": "Package scope", "body": "Responsibility increases through Basic, Extended, and Full packages without creating open-ended service." }
-        ]
+      "contrast": {
+        "eyebrow": "The difference",
+        "title": "Cleaning is a task. Oversight is a chain.",
+        "intro": "Property oversight is a chain of access, decisions, timing, documentation, and accountability. A task can be hired out. The chain has to be owned.",
+        "rows": [
+          {
+            "role": "A cleaner",
+            "action": "executes a visit",
+            "body": "The apartment is left in order. That is the whole job — and it should be."
+          },
+          {
+            "role": "A handyman",
+            "action": "fixes a task",
+            "body": "The fault in front of them gets solved. The situation around it is not theirs to carry."
+          },
+          {
+            "role": "Sentinel",
+            "action": "owns the operating situation",
+            "body": "Access, timing, decisions, records, escalation — coordinated on site, inside your agreed scope, with your authority protected."
+          }
+        ],
+        "closing": "Others do work at the property. Sentinel answers for what happens around it."
+      },
+      "team": {
+        "eyebrow": "The local team",
+        "title": "A small local team, not casual help.",
+        "body": "Sentinel is not a platform routing tasks to strangers. It works locally through a small operating team: coordination, access, documentation, property preparation, and field support. An owner is never passed to a random helper — every task lands inside an agreed operating structure.",
+        "named": "Day to day, owner contact runs through Aleksy Gugała, Sentinel's named operating contact.",
+        "area": "The team is based around Torrevieja and works within roughly 50–70 km of it — close enough for presence to stay real.",
+        "rosterLabel": "Operating structure",
+        "roster": [
+          {
+            "name": "Piotr Nowicki",
+            "role": "operational coordination"
+          },
+          {
+            "name": "Tomasz Wesołowski",
+            "role": "access and technical checks"
+          },
+          {
+            "name": "Agnieszka Czyżewska",
+            "role": "documents and owner contact"
+          },
+          {
+            "name": "Marta Kozierska",
+            "role": "property preparation and standard control"
+          },
+          {
+            "name": "Kuba Maćkowski",
+            "role": "field support and reported issues"
+          },
+          {
+            "name": "Aleksy Gugała",
+            "role": "named operating contact"
+          }
+        ],
+        "photoAlt": "The Sentinel local team at a property entrance.",
+        "photoCaption": "The Sentinel local team. Work stays inside agreed scope and decision limits."
       },
       "boundary": {
-        "eyebrow": "Category clarity",
+        "eyebrow": "Boundaries",
         "title": "What Sentinel is, and what it is not.",
-        "intro": "Sentinel is the owner's local operating layer: on-site presence, documentation, coordination, and decision control when the owner is not at the property. It does not replace the owner, a rental agency, a concierge, or a contractor.",
+        "intro": "Sentinel is the owner's local operating layer — presence, records, coordination, and decision control while the owner is away. It does not replace the owner, a rental agency, or a contractor, and it does not pretend to.",
         "isTitle": "Sentinel is",
         "isNotTitle": "Sentinel is not",
         "isItems": [
-          { "title": "On-site owner presence", "body": "A local person checks condition, access, and events — but acts within agreed limits." },
-          { "title": "A system of records and confirmations", "body": "Condition, actions, and decisions are documented instead of relying on loose arrangements." },
-          { "title": "Decision control", "body": "The owner keeps authority where scope, cost, or responsibility require it." },
-          { "title": "Coordination within agreed limits", "body": "Technicians, cleaning, and access are coordinated when they fit the agreed scope." },
-          { "title": "Escalation beyond scope", "body": "When a matter exceeds the package, limit, or authority, it returns to the owner for a decision." }
+          {
+            "title": "On-site presence",
+            "body": "A local person checks condition, access, and events — inside agreed limits."
+          },
+          {
+            "title": "A system of record",
+            "body": "Condition, actions, and decisions are documented, not remembered."
+          },
+          {
+            "title": "Decision control",
+            "body": "The owner keeps authority wherever scope, cost, or responsibility demand it."
+          },
+          {
+            "title": "Bounded coordination",
+            "body": "Technicians, cleaning, and access are coordinated when they fit the agreed scope."
+          },
+          {
+            "title": "Escalation, not improvisation",
+            "body": "Anything beyond the package, limit, or authority returns to the owner for a decision."
+          }
         ],
         "isNotItems": [
-          { "title": "Concierge", "body": "Personal errands and open-ended tasks are not part of the service." },
-          { "title": "Rental agency", "body": "Bookings, pricing, licensing, and platform communication are not handled by Sentinel." },
-          { "title": "General contractor", "body": "Construction work and third-party contractor quality are not taken on by Sentinel." },
-          { "title": "Unlimited emergency service", "body": "Response follows the package, agreed limits, and contractor availability." },
-          { "title": "Informal favor network", "body": "Every action has scope, a record, and defined responsibility." }
+          {
+            "title": "A concierge",
+            "body": "Personal errands and open-ended favors are not the service."
+          },
+          {
+            "title": "A rental agency",
+            "body": "Bookings, pricing, licensing, and guest platforms stay with the owner."
+          },
+          {
+            "title": "A contractor",
+            "body": "Sentinel coordinates work; it does not build, and it does not own third-party quality."
+          },
+          {
+            "title": "An unlimited hotline",
+            "body": "Response follows the package, agreed limits, and contractor availability."
+          },
+          {
+            "title": "A favor network",
+            "body": "Every action has a scope, a record, and a named responsibility."
+          }
         ]
       },
-      "operator": {
-        "eyebrow": "Local operator",
-        "title": "Aleksy Gugała",
-        "status": "Local Sentinel Operator on the Costa Blanca",
-        "body": "Aleksy is the publicly shown local Sentinel operator. Scope, access, and communication are handled through an agreed process, not as an informal favor by one person. He is responsible for owner contact, local visits, documentation, and decision escalation within the agreed scope. Not every person working with Sentinel is shown on the website.",
-        "rows": [
-          { "label": "Person", "value": "Aleksy Gugała" },
-          { "label": "Role", "value": "Local Sentinel Operator" },
-          { "label": "Area", "value": "southern Costa Blanca" },
-          { "label": "Work scope", "value": "owner contact, local visits, documentation, decision escalation" },
-          { "label": "Boundary", "value": "agreed scope and decision limits" }
-        ],
-        "artifact": {
-          "alt": "Aleksy Gugała, Local Sentinel Operator shown publicly",
-          "caption": "Aleksy Gugała — Local Sentinel Operator on the Costa Blanca."
-        }
-      },
-      "local": {
-        "eyebrow": "Local operating area",
-        "title": "Torrevieja + 50-70 km is an operating rule, not a marketing claim.",
-        "intro": "Sentinel serves this local southern Costa Blanca area because physical presence must stay realistic.",
-        "cards": [
-          { "title": "Travel discipline", "body": "Visit rhythm and event response depend on manageable distance." },
-          { "title": "Local relationships", "body": "Cleaners, technicians, and access coordination work better inside a known area." },
-          { "title": "Service refusal", "body": "Out-of-area properties are declined instead of being absorbed into weak coverage." }
-        ],
-        "note": "The boundary protects service quality for properties inside the operating area.",
-        "exteriorImageAlt": "Operational placeholder photo of a local apartment entrance and exterior access area"
-      },
-      "capabilities": {
-        "eyebrow": "Capability without exaggeration",
-        "title": "Keys, access, and property readiness support the agreed oversight scope.",
-        "intro": "Keys, cleaning readiness, access, checks, reporting, and contractor coordination are operational capabilities. They do not turn Sentinel into a cleaning company, concierge, or rental agency.",
-        "items": [
-          { "marker": "Keyholding", "title": "Access basis", "body": "Keys or access methods are held and used according to the agreement." },
-          { "marker": "Readiness", "title": "Cleaning and arrival state", "body": "Cleaning or readiness support may be included or coordinated where the scope allows it." },
-          { "marker": "Access", "title": "Technician and service entry", "body": "Entry events can be coordinated, recorded, and reported when agreed." },
-          { "marker": "Checks", "title": "Visible condition review", "body": "Visits focus on observable risk points and package-defined checklist items." },
-          { "marker": "Reports", "title": "Owner record", "body": "The owner receives usable documentation after visits or relevant events." },
-          { "marker": "Coordination", "title": "External work where agreed", "body": "Sentinel may coordinate contractors inside defined authority, but does not guarantee their work." }
-        ],
-        "note": "The capability layer exists to make oversight executable. It is not an invitation to unlimited task handling."
-      },
-      "responsibility": {
-        "eyebrow": "Responsibility control",
-        "title": "Action follows agreement, scope, documentation, and approval.",
-        "intro": "This is how the service works: agreement first, execution second. It is intentionally less flexible than informal help.",
-        "steps": [
-          { "marker": "01", "title": "Agreement before action", "body": "Property data, access method, package, and communication rules are confirmed first." },
-          { "marker": "02", "title": "Scope before execution", "body": "The task must fit the package or an agreed module before Sentinel acts." },
-          { "marker": "03", "title": "Documentation after action", "body": "Visits, access events, observations, and relevant decisions leave a record." },
-          { "marker": "04", "title": "Owner approval above limits", "body": "Financial or operational decisions outside authority return to the owner." }
-        ],
-        "note": "This is why Sentinel can be commercially useful without becoming open-ended property management."
-      },
       "cta": {
-        "title": "Check whether Sentinel's operating model fits your property.",
-        "intro": "If the service area, responsibility boundaries, and communication model fit your situation, start an inquiry.",
+        "title": "If nobody local owns your situation, that is the gap Sentinel fills.",
+        "intro": "Tell us about the property and how you use it. You will get a plain answer on whether the model fits.",
         "primaryCta": "Start an inquiry",
-        "secondaryCta": "View services"
+        "secondaryCta": "View service scope"
       }
     }
   },

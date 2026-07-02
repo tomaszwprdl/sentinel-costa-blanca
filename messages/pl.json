@@ -2665,7 +2665,7 @@
   "about": {
     "meta": {
       "title": "O nas - Sentinel",
-      "description": "Filozofia operacyjna, projekt systemu i granice usług"
+      "description": "Dlaczego istnieje Sentinel, kto prowadzi go lokalnie i gdzie przebiegają granice usługi"
     },
     "pageTitle": "O Sentinel",
     "intro": {
@@ -2933,129 +2933,151 @@
     "redesign": {
       "hero": {
         "eyebrow": "Sentinel Costa Blanca",
-        "headline": "Lokalny operator dla właściciela poza miejscem.",
-        "lead": "Sentinel zapewnia reprezentację właściciela na miejscu na południowym Costa Blanca. Model porządkuje lokalną obecność, dostęp, dokumentację i decyzje właściciela w określonym zakresie operacyjnym.",
+        "headline": "Gdy Ciebie nie ma, ktoś na miejscu musi odpowiadać za sytuację.",
+        "lead": "Nieruchomość nie robi przerwy dlatego, że właściciel wyjechał. Klucze, dostęp, woda, technicy i decyzje toczą się dalej — a ktoś na miejscu musi odpowiadać za całość, nie tylko za pojedyncze zadania. Sentinel jest tą lokalną warstwą.",
         "primaryCta": "Rozpocznij zapytanie",
-        "secondaryCta": "Zobacz zakres usług",
-        "operatorImageAlt": "Operacyjne zdjęcie zastępcze kluczy i notatnika przygotowywanych do lokalnej reprezentacji właściciela",
-        "artifactBadge": "Obecność i granice",
-        "artifactTitle": "Rejestr operatora lokalnego",
-        "artifactRows": [
-          { "label": "Rola", "value": "reprezentacja właściciela na miejscu" },
-          { "label": "Obszar", "value": "południowe Costa Blanca" },
-          { "label": "Działanie", "value": "kontrola, dostęp, dokumentacja" },
-          { "label": "Granica", "value": "pakiet, zgoda, limit decyzji" }
-        ],
-        "facts": [
-          { "label": "Lokalnie", "value": "południowe Costa Blanca" },
-          { "label": "Metoda", "value": "udokumentowane kontrole" },
-          { "label": "Granica", "value": "określony zakres" }
-        ]
+        "boundaryCta": "Czym Sentinel jest — a czym nie",
+        "photoAlt": "Klucze i zapis wizyty przygotowane na stole przed przekazaniem nieruchomości.",
+        "photoCaption": "Klucze, zapis, przekazanie — codzienny warsztat reprezentacji właściciela."
       },
       "why": {
         "eyebrow": "Dlaczego istnieje Sentinel",
-        "title": "Zdalne posiadanie nieruchomości tworzy lukę operacyjną.",
-        "intro": "Nieruchomość pozostaje lokalna, aktywna i podatna na zdarzenia, nawet gdy właściciel jest daleko. Doraźna pomoc może wykonać zadanie, ale rzadko określa odpowiedzialność.",
-        "cards": [
-          { "marker": "01", "title": "Właściciel jest poza miejscem", "body": "Odległość utrudnia bezpośrednie zarządzanie dostępem, kontrolą i decyzją w pilnej sytuacji." },
-          { "marker": "02", "title": "Nieruchomość działa lokalnie", "body": "Drzwi, klucze, woda, prąd, sprzątanie, technicy i pogoda nadal wymagają fizycznej obecności." },
-          { "marker": "03", "title": "Doraźna pomoc ma granice", "body": "Jednorazowe przysługi często zostawiają niejasny zapis, niejasne uprawnienia i niejasną odpowiedzialność." }
+        "title": "Zdalne posiadanie nie zawodzi na sprzątaniu. Zawodzi na odpowiedzialności.",
+        "body": "Większość właścicieli znajdzie kogoś, kto umyje podłogę albo podleje kwiaty. Pęka natomiast łańcuch wokół tych zadań: kto trzyma klucze, kto wpuszcza technika, kto decyduje i do jakiej kwoty, kto zapisuje, co zastał — i kto potem za to odpowiada. Sentinel powstał po to, żeby ten łańcuch prowadzić w całości.",
+        "points": [
+          {
+            "marker": "01",
+            "title": "Nikt lokalnie nie odpowiada za całość",
+            "body": "Każdy pomocnik trzyma swój fragment — klucz, zadanie, numer telefonu. Za sytuację nie odpowiada nikt."
+          },
+          {
+            "marker": "02",
+            "title": "Decyzje się rozmywają",
+            "body": "Bez ustalonych limitów każde drobne zdarzenie zamienia się w wątek wiadomości rozciągnięty między dwoma krajami."
+          },
+          {
+            "marker": "03",
+            "title": "Nic nie zostaje zapisane",
+            "body": "Przysługi nie zostawiają śladu. Gdy coś pójdzie źle, nie ma zapisu, co zrobiono, kiedy i dlaczego."
+          }
         ],
-        "closing": "Sentinel zastępuje nieformalną delegację lokalną strukturą działania: najpierw zakres, potem kontrolowany dostęp, dokumentacja i decyzje w określonych granicach."
+        "closing": "Sentinel zastępuje nieformalną delegację jedną odpowiedzialną warstwą lokalną: uzgodniony zakres, kontrolowany dostęp, udokumentowane wizyty, decyzje w ustalonych granicach."
       },
-      "model": {
-        "eyebrow": "Model działania",
-        "title": "Sentinel działa według ustalonego sposobu pracy na miejscu.",
-        "intro": "Model jest celowo uporządkowany. Określa, kiedy Sentinel jest na miejscu, co może sprawdzić, jak używany jest dostęp i kiedy decyzja wraca do właściciela.",
-        "items": [
-          { "marker": "01", "title": "Lokalna obecność", "body": "Praca odbywa się w realistycznym obszarze obsługi, a nie z odległego punktu koordynacji." },
-          { "marker": "02", "title": "Kontrolowany dostęp", "body": "Klucze, wejście i dostęp osób trzecich są używane tylko w uzgodnionym zakresie." },
-          { "marker": "03", "title": "Udokumentowane kontrole", "body": "Wizyty i istotne zdarzenia zostawiają raport, notatkę, zdjęcia albo pisemne potwierdzenie." },
-          { "marker": "04", "title": "Granica decyzji właściciela", "body": "Sentinel działa w uzgodnionych limitach. Powyżej limitu albo poza zakresem decyzję zatwierdza właściciel." },
-          { "marker": "05", "title": "Zakres pakietu", "body": "Odpowiedzialność rośnie przez pakiety Podstawowy, Rozszerzony i Pełny, bez tworzenia otwartej usługi." }
-        ]
+      "contrast": {
+        "eyebrow": "Różnica",
+        "title": "Sprzątanie to zadanie. Nadzór to łańcuch.",
+        "intro": "Nadzór nad nieruchomością to łańcuch dostępu, decyzji, terminów, dokumentacji i odpowiedzialności. Zadanie można zlecić. Łańcuch trzeba komuś powierzyć w całości.",
+        "rows": [
+          {
+            "role": "Osoba sprzątająca",
+            "action": "wykonuje wizytę",
+            "body": "Mieszkanie zostaje doprowadzone do porządku. To jest całe zadanie — i tak ma być."
+          },
+          {
+            "role": "Złota rączka",
+            "action": "zamyka usterkę",
+            "body": "Naprawia to, co ma przed sobą. Sytuacja wokół usterki zostaje bez gospodarza."
+          },
+          {
+            "role": "Sentinel",
+            "action": "prowadzi sytuację operacyjną",
+            "body": "Dostęp, terminy, decyzje, zapisy, eskalacja — koordynowane na miejscu, w uzgodnionym zakresie, z zachowaniem Twojej decyzji."
+          }
+        ],
+        "closing": "Inni wykonują pracę przy nieruchomości. Sentinel odpowiada za to, co dzieje się wokół niej."
+      },
+      "team": {
+        "eyebrow": "Lokalny zespół",
+        "title": "Mały lokalny zespół, nie przypadkowa pomoc.",
+        "body": "Sentinel nie jest platformą, która rozsyła zadania obcym wykonawcom. Działa lokalnie przez mały zespół operacyjny: koordynację, dostęp, dokumentację, przygotowanie lokalu i wsparcie terenowe. Właściciel nie trafia do przypadkowej osoby, tylko do ustalonej struktury działania.",
+        "named": "Na co dzień kontakt właściciela prowadzi Aleksy Gugała — imiennie wskazany kontakt operacyjny Sentinel.",
+        "area": "Zespół działa z okolic Torrevieja, w promieniu około 50–70 km — na tyle blisko, żeby obecność była realna.",
+        "rosterLabel": "Struktura działania",
+        "roster": [
+          {
+            "name": "Piotr Nowicki",
+            "role": "koordynacja operacyjna"
+          },
+          {
+            "name": "Tomasz Wesołowski",
+            "role": "dostęp i techniczne sprawdzenia"
+          },
+          {
+            "name": "Agnieszka Czyżewska",
+            "role": "dokumenty i kontakt właścicielski"
+          },
+          {
+            "name": "Marta Kozierska",
+            "role": "przygotowanie lokalu i kontrola standardu"
+          },
+          {
+            "name": "Kuba Maćkowski",
+            "role": "wsparcie terenowe i zgłoszenia"
+          },
+          {
+            "name": "Aleksy Gugała",
+            "role": "wskazany kontakt operacyjny"
+          }
+        ],
+        "photoAlt": "Lokalny zespół Sentinel przy wejściu do nieruchomości.",
+        "photoCaption": "Lokalny zespół Sentinel. Praca pozostaje w uzgodnionym zakresie i limitach decyzji."
       },
       "boundary": {
-        "eyebrow": "Jasność kategorii",
+        "eyebrow": "Granice",
         "title": "Czym Sentinel jest, a czym nie jest.",
-        "intro": "Sentinel jest lokalną warstwą operacyjną właściciela: obecnością na miejscu, dokumentacją, koordynacją i kontrolą decyzji, gdy właściciel nie jest przy nieruchomości. Nie zastępuje właściciela, agencji wynajmu, concierge ani wykonawcy prac.",
+        "intro": "Sentinel jest lokalną warstwą operacyjną właściciela — obecnością, zapisem, koordynacją i kontrolą decyzji, gdy właściciela nie ma na miejscu. Nie zastępuje właściciela, agencji wynajmu ani wykonawcy — i nie udaje, że jest inaczej.",
         "isTitle": "Sentinel jest",
         "isNotTitle": "Sentinel nie jest",
         "isItems": [
-          { "title": "Obecnością właściciela na miejscu", "body": "Lokalna osoba sprawdza stan, dostęp i zdarzenia, ale działa w ustalonych granicach." },
-          { "title": "Systemem zapisu i potwierdzeń", "body": "Stan, działania i decyzje są dokumentowane, zamiast opierać się na luźnych ustaleniach." },
-          { "title": "Kontrolą decyzji", "body": "Właściciel zachowuje decyzję tam, gdzie zakres, koszt albo odpowiedzialność tego wymagają." },
-          { "title": "Koordynacją w granicach ustaleń", "body": "Technicy, sprzątanie i dostęp są koordynowane wtedy, gdy mieszczą się w uzgodnionym zakresie." },
-          { "title": "Eskalacją poza zakresem", "body": "Gdy sprawa przekracza pakiet, limit lub uprawnienia, wraca do właściciela do decyzji." }
+          {
+            "title": "Obecnością na miejscu",
+            "body": "Lokalna osoba sprawdza stan, dostęp i zdarzenia — w ustalonych granicach."
+          },
+          {
+            "title": "Systemem zapisu",
+            "body": "Stan, działania i decyzje są dokumentowane, a nie zapamiętywane."
+          },
+          {
+            "title": "Kontrolą decyzji",
+            "body": "Właściciel zachowuje decyzję wszędzie tam, gdzie wymaga tego zakres, koszt albo odpowiedzialność."
+          },
+          {
+            "title": "Koordynacją w granicach",
+            "body": "Technicy, sprzątanie i dostęp są koordynowane, gdy mieszczą się w uzgodnionym zakresie."
+          },
+          {
+            "title": "Eskalacją, nie improwizacją",
+            "body": "Wszystko ponad pakiet, limit lub uprawnienia wraca do właściciela do decyzji."
+          }
         ],
         "isNotItems": [
-          { "title": "Concierge", "body": "Sprawy osobiste i otwarte zadania nie są częścią usługi." },
-          { "title": "Agencją wynajmu", "body": "Rezerwacje, ceny, licencje i komunikacja z platformami nie są prowadzone przez Sentinel." },
-          { "title": "Generalnym wykonawcą", "body": "Prace budowlane i jakość wykonawców zewnętrznych nie są przejmowane przez Sentinel." },
-          { "title": "Nieograniczoną usługą awaryjną", "body": "Reakcja wynika z pakietu, ustalonych limitów i dostępności wykonawców." },
-          { "title": "Siecią nieformalnych przysług", "body": "Każde działanie ma zakres, zapis i odpowiedzialność." }
+          {
+            "title": "Concierge",
+            "body": "Prywatne sprawunki i otwarte przysługi nie są tą usługą."
+          },
+          {
+            "title": "Agencją wynajmu",
+            "body": "Rezerwacje, ceny, licencje i platformy zostają po stronie właściciela."
+          },
+          {
+            "title": "Wykonawcą prac",
+            "body": "Sentinel koordynuje prace; nie buduje i nie odpowiada za jakość firm zewnętrznych."
+          },
+          {
+            "title": "Nieograniczoną linią alarmową",
+            "body": "Reakcja wynika z pakietu, ustalonych limitów i dostępności wykonawców."
+          },
+          {
+            "title": "Siecią przysług",
+            "body": "Każde działanie ma zakres, zapis i imiennie określoną odpowiedzialność."
+          }
         ]
       },
-      "operator": {
-        "eyebrow": "Lokalny operator",
-        "title": "Aleksy Gugała",
-        "status": "Lokalny operator Sentinel na Costa Blanca",
-        "body": "Aleksy jest publicznie pokazanym operatorem lokalnym Sentinel. Zakres, dostęp i komunikacja są prowadzone w ramach ustalonego procesu, nie jako nieformalna przysługa jednej osoby. Odpowiada za kontakt z właścicielem, wizyty lokalne, dokumentację i eskalację decyzji w ramach ustalonego zakresu. Nie każda osoba współpracująca z Sentinel jest pokazywana na stronie.",
-        "rows": [
-          { "label": "Osoba", "value": "Aleksy Gugała" },
-          { "label": "Rola", "value": "lokalny operator Sentinel" },
-          { "label": "Obszar", "value": "południowe Costa Blanca" },
-          { "label": "Zakres pracy", "value": "kontakt, wizyty, dokumentacja, eskalacja decyzji" },
-          { "label": "Granica", "value": "ustalony zakres i limity decyzji" }
-        ],
-        "artifact": {
-          "alt": "Aleksy Gugała, lokalny operator Sentinel pokazany publicznie",
-          "caption": "Aleksy Gugała — lokalny operator Sentinel na Costa Blanca."
-        }
-      },
-      "local": {
-        "eyebrow": "Lokalny obszar działania",
-        "title": "Torrevieja + 50-70 km to zasada operacyjna, nie hasło marketingowe.",
-        "intro": "Sentinel obsługuje ten lokalny obszar południowego Costa Blanca, bo fizyczna obecność musi pozostać realistyczna.",
-        "cards": [
-          { "title": "Dyscyplina dojazdu", "body": "Rytm wizyt i reakcja na zdarzenia zależą od odległości, którą da się obsłużyć." },
-          { "title": "Relacje lokalne", "body": "Sprzątanie, technicy i koordynacja dostępu działają lepiej w znanym obszarze." },
-          { "title": "Odmowa poza obszarem", "body": "Nieruchomości poza zasięgiem są odrzucane zamiast włączane w słabą obsługę." }
-        ],
-        "note": "Ta granica chroni jakość usługi dla nieruchomości znajdujących się w obszarze działania.",
-        "exteriorImageAlt": "Operacyjne zdjęcie zastępcze lokalnego wejścia do budynku i zewnętrznej strefy dostępu"
-      },
-      "capabilities": {
-        "eyebrow": "Zdolność bez przesady",
-        "title": "Klucze, dostęp i gotowość lokalu wspierają ustalony nadzór.",
-        "intro": "Klucze, przygotowanie lokalu, dostęp, kontrole, raportowanie i koordynacja wykonawców są funkcjami operacyjnymi. Nie zmieniają Sentinel w firmę sprzątającą, concierge ani agencję wynajmu.",
-        "items": [
-          { "marker": "Klucze", "title": "Podstawa dostępu", "body": "Klucze albo metody wejścia są przechowywane i używane zgodnie z ustaleniami." },
-          { "marker": "Gotowość", "title": "Sprzątanie i stan przyjazdowy", "body": "Sprzątanie albo przygotowanie może być uwzględnione lub koordynowane tam, gdzie pozwala na to zakres." },
-          { "marker": "Dostęp", "title": "Wejście technika lub usługi", "body": "Zdarzenia dostępu mogą być koordynowane, zapisywane i raportowane, jeśli zostały uzgodnione." },
-          { "marker": "Kontrole", "title": "Widoczny przegląd stanu", "body": "Wizyty skupiają się na widocznych punktach ryzyka i elementach listy kontrolnej danego pakietu." },
-          { "marker": "Raporty", "title": "Zapis dla właściciela", "body": "Właściciel otrzymuje użyteczną dokumentację po wizycie albo istotnym zdarzeniu." },
-          { "marker": "Koordynacja", "title": "Prace zewnętrzne, jeśli uzgodnione", "body": "Sentinel może koordynować wykonawców w określonym zakresie, ale nie gwarantuje jakości ich pracy." }
-        ],
-        "note": "Warstwa praktycznych funkcji istnieje po to, aby nadzór był wykonalny. Nie oznacza nieograniczonej obsługi zadań."
-      },
-      "responsibility": {
-        "eyebrow": "Kontrola odpowiedzialności",
-        "title": "Działanie wynika z ustaleń, zakresu, dokumentacji i zgody.",
-        "intro": "Tak działa usługa: najpierw ustalenia, potem wykonanie. Celowo jest mniej elastyczna niż nieformalna pomoc.",
-        "steps": [
-          { "marker": "01", "title": "Ustalenie przed działaniem", "body": "Dane nieruchomości, metoda dostępu, pakiet i zasady komunikacji są potwierdzane najpierw." },
-          { "marker": "02", "title": "Zakres przed wykonaniem", "body": "Zadanie musi mieścić się w pakiecie albo uzgodnionym module, zanim Sentinel zacznie działać." },
-          { "marker": "03", "title": "Dokumentacja po działaniu", "body": "Wizyty, zdarzenia dostępu, obserwacje i istotne decyzje zostawiają zapis." },
-          { "marker": "04", "title": "Zgoda właściciela powyżej limitów", "body": "Decyzje finansowe lub operacyjne poza uprawnieniami wracają do właściciela." }
-        ],
-        "note": "Dlatego Sentinel może być użyteczny komercyjnie bez składania nieokreślonej obietnicy zarządzania nieruchomością."
-      },
       "cta": {
-        "title": "Sprawdź, czy sposób działania Sentinel pasuje do Twojej nieruchomości.",
-        "intro": "Jeżeli obszar działania, zakres odpowiedzialności i sposób komunikacji odpowiadają Twojej sytuacji, rozpocznij zapytanie.",
+        "title": "Jeśli nikt na miejscu nie odpowiada za Twoją sytuację, właśnie tę lukę wypełnia Sentinel.",
+        "intro": "Opowiedz nam o nieruchomości i o tym, jak z niej korzystasz. Dostaniesz prostą odpowiedź, czy ten model pasuje.",
         "primaryCta": "Rozpocznij zapytanie",
-        "secondaryCta": "Zobacz usługi"
+        "secondaryCta": "Zobacz zakres usług"
       }
     }
   },
