@@ -154,6 +154,11 @@
     "servicesCta": "Compare service scope",
     "meaningLabel": "Operational meaning",
     "nextLabel": "Owner next step",
+    "summaryLabels": {
+      "risk": "Risk",
+      "rhythm": "Operating rhythm",
+      "decision": "Owner decision"
+    },
       "evidence": {
         "gate": {
           "eyebrow": "Field record sample",
@@ -191,7 +196,7 @@
             "title": "Decision and scope threshold",
             "rows": {
               "first": { "label": "Classification", "value": "private use, guests, or mixed model" },
-              "second": { "label": "Threshold", "value": "what fits the limit and package" },
+              "second": { "label": "Threshold", "value": "what fits the agreed limit" },
               "third": { "label": "Approval", "value": "what returns to owner before action" }
             },
             "note": "The sample helps choose scope after assessment, without guessing."
@@ -224,7 +229,12 @@
         "point2": "Visible water, electricity, and boiler condition checks",
         "point3": "Keyholding and controlled access",
           "point4": "Pre-arrival cleaning and readiness",
-          "point5": "Documented condition before arrival"
+          "point5": "Documented condition before arrival",
+          "summary": {
+            "risk": "Moisture, a leak, or a fault builds up unwitnessed and surfaces only before arrival.",
+            "rhythm": "Condition checks on an agreed rhythm between visits, and preparation before you arrive.",
+            "decision": "You confirm the check rhythm and scope. Above agreed limits, the decision returns to you."
+          }
         },
       "regular-guest-stays": {
         "priority": "The property runs on a turnover rhythm: guests leave, someone has to enter, check the post-stay condition, coordinate cleaning, and leave a documented readiness before the next arrival.",
@@ -235,17 +245,27 @@
         "point3": "Post-stay condition checks",
           "point4": "Documentation of visible damage and missing items",
           "point5": "Cleaner, vendor, and technician coordination",
-          "point6": "Reducing operational noise for the owner"
+          "point6": "Reducing operational noise for the owner",
+          "summary": {
+            "risk": "Turnover depends on several people — access, cleaning, and post-stay condition easily lose a single reference point.",
+            "rhythm": "After each departure: entry, condition check, cleaning coordination, and documented readiness before the next arrival.",
+            "decision": "You decide whether Sentinel handles access and turnover documentation. Decisions above the limit return to you."
+          }
         },
       "mixed-not-defined": {
-        "priority": "We first classify how the property is actually used and set a starting scope. The model can change after the first assessment — without being locked into the wrong package.",
-        "meaning": "When the use pattern may change, scope is set provisionally and confirmed after the first assessment — instead of choosing a package from assumptions.",
+        "priority": "We first classify how the property is actually used and set a starting scope. The model can change after the first assessment — without assuming the wrong oversight rhythm upfront.",
+        "meaning": "When the use pattern may change, the starting scope is set carefully and confirmed after the first assessment — instead of being assumed upfront.",
         "next": "Start an initial inquiry assessment so private use, guest stays, and required scope can be separated.",
         "point1": "Private use now, possible rental later",
-        "point2": "Avoiding the wrong package choice",
+        "point2": "Avoiding the wrong scope choice",
         "point3": "Avoiding unnecessary guest-service intensity",
           "point4": "Avoiding under-structuring if guest activity starts",
-          "point5": "Starting scope confirmed and adjusted after the first assessment"
+          "point5": "Starting scope confirmed and adjusted after the first assessment",
+          "summary": {
+            "risk": "A scope chosen from assumptions may not match how the property is actually used.",
+            "rhythm": "First an initial assessment and classification. Service starts with a carefully chosen scope.",
+            "decision": "After the first assessment you confirm or correct the ongoing oversight scope."
+          }
         }
       }
     },
@@ -257,23 +277,23 @@
         "systemIntroProcess": {
           "scope": {
             "label": "Absence",
-            "title": "Scope for the empty weeks",
-            "body": "Before we start, it is defined what is checked while the property stands empty and where local responsibility ends."
+            "title": "The empty property",
+            "body": "We define what needs checking when the apartment stands without regular presence."
           },
           "documentation": {
-            "label": "Access",
-            "title": "Keys under control",
-            "body": "Keys are held locally, and every entry — ours or a contractor's — follows the agreed rules and is recorded."
+            "label": "Entries",
+            "title": "Access and keys",
+            "body": "We confirm how entry works, where keys are held, and the rules for admitting third parties."
           },
           "procedure": {
             "label": "Condition",
-            "title": "Checks on site",
-            "body": "Water, power, ventilation, and visible condition are checked physically in the property, on a steady rhythm between your visits."
+            "title": "Condition check",
+            "body": "We check the entrance, ventilation, water and power, moisture, smell, and the visible condition of the property."
           },
           "decisions": {
-            "label": "Readiness",
-            "title": "Ready before you arrive",
-            "body": "Before your arrival the property is prepared and confirmed with a record, and responses stay within agreed limits."
+            "label": "Arrival",
+            "title": "Ready before arrival",
+            "body": "The owner receives a record of the condition and the points to confirm before arrival."
           }
         },
         "contrast": {
@@ -302,22 +322,22 @@
           "scope": {
             "label": "Turnover",
             "title": "The rhythm between stays",
-            "body": "The scope covers what happens between departure and the next arrival: entries, preparation, and condition checks."
+            "body": "We set the moment of the check: after departure and before the property is used again."
           },
           "documentation": {
-            "label": "Access & cleaning",
-            "title": "Entries follow the rules",
-            "body": "Cleaners and technicians enter under agreed rules, and their entries are coordinated and recorded."
+            "label": "Entries",
+            "title": "Access and preparation",
+            "body": "We coordinate keys, entry, cleaning, and basic readiness before guests arrive."
           },
           "procedure": {
-            "label": "Post-stay condition",
-            "title": "Checked after departure",
-            "body": "After each stay the condition is checked on site, and visible damage or missing items go into the record."
+            "label": "Record",
+            "title": "Post-stay condition",
+            "body": "We record missing items, damage, reference photos, and anything that needs a decision."
           },
           "decisions": {
             "label": "Readiness",
-            "title": "Ready for the next stay",
-            "body": "Before the next arrival readiness is confirmed, and operational decisions stay within agreed limits."
+            "title": "Ready for the next turnover",
+            "body": "The owner knows whether the property is ready before the next stay starts generating problems."
           }
         },
         "contrast": {
@@ -344,31 +364,31 @@
         "systemIntroPosture": "First assessment → classification → starting scope → confirmed plan",
         "systemIntroProcess": {
           "scope": {
-            "label": "First assessment",
-            "title": "Describe the situation first",
-            "body": "Before any scope decision, we describe how the property is actually used and what may change."
+            "label": "Assessment",
+            "title": "First assessment",
+            "body": "First we establish how the property will actually be used: privately, by guests, or both."
           },
           "documentation": {
-            "label": "Classification",
-            "title": "Models kept separate",
-            "body": "Private use and guest stays are separated so the scope does not come from guesswork."
+            "label": "Usage model",
+            "title": "Classification",
+            "body": "We separate permanent needs from those that come only with occasional stays."
           },
           "procedure": {
-            "label": "Starting scope",
-            "title": "A temporary scope",
-            "body": "Service starts with a temporary scope matched to what is known today, without locking into a package."
+            "label": "Scope",
+            "title": "Starting scope",
+            "body": "We start with a carefully chosen scope before the property's usage rhythm is confirmed."
           },
           "decisions": {
-            "label": "Confirmed plan",
-            "title": "The plan after first review",
-            "body": "After the first assessment the scope is confirmed or corrected, and limits follow the confirmed model."
+            "label": "Plan",
+            "title": "The plan after confirmation",
+            "body": "After the first assessment the owner receives a recommended rhythm and scope for further oversight."
           }
         },
         "contrast": {
           "intro": "The difference between choosing intensity too early and classifying use before scope is fixed.",
           "left1": "The property may be treated as private-only even if guest activity begins later.",
           "left2": "Guest-support structure may be built before it is actually needed.",
-          "left3": "Package choice may follow assumptions rather than actual use.",
+          "left3": "Scope may follow assumptions rather than actual use.",
           "left4": "Access, cleaning, and documentation are agreed case by case.",
           "leftClosing": "An unclear model creates the wrong basis for decisions.",
           "right1": "Actual use is reviewed before operational intensity is fixed.",
@@ -568,7 +588,7 @@
           "alt": "A hallway with keys, towels, cleaning supplies, and an instruction board."
         },
         "wrongScopeAssumption": {
-          "title": "A package chosen from a guess rarely fits reality.",
+          "title": "A scope chosen from a guess rarely fits reality.",
           "body": "Too little scope leaves gaps; too much starts work the property does not yet need. The mismatch appears when the first use pattern changes.",
           "responseLead": "Scope follows the classified model, not a default category.",
           "responseBody": "Sentinel structures stay frequency, access, cleaning, decisions, and reporting, then points to the correct operational intensity.",
@@ -585,7 +605,7 @@
     },
   "systemIntro": {
     "eyebrow": "Short process",
-    "title": "How the Sentinel system works",
+    "title": "How Sentinel works in this model",
     "lensLabel": "Mode logic",
     "intro": "Sentinel provides fixed, local control over your property.",
     "process": {

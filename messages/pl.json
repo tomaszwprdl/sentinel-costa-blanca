@@ -154,6 +154,11 @@
     "servicesCta": "Porównaj zakres usług",
     "meaningLabel": "Znaczenie operacyjne",
     "nextLabel": "Następny krok właściciela",
+    "summaryLabels": {
+      "risk": "Ryzyko",
+      "rhythm": "Rytm działania",
+      "decision": "Decyzja właściciela"
+    },
       "evidence": {
         "gate": {
           "eyebrow": "Wzór zapisu terenowego",
@@ -191,7 +196,7 @@
             "title": "Próg decyzji i zakresu",
             "rows": {
               "first": { "label": "Klasyfikacja", "value": "użytek prywatny, goście albo model mieszany" },
-              "second": { "label": "Próg", "value": "co mieści się w limicie i pakiecie" },
+              "second": { "label": "Próg", "value": "co mieści się w ustalonym limicie" },
               "third": { "label": "Zgoda", "value": "co wraca do właściciela przed działaniem" }
             },
             "note": "Przykład pomaga wybrać zakres po ocenie, bez zgadywania."
@@ -224,7 +229,12 @@
         "point2": "Widoczne kontrole wody, prądu i stanu bojlera",
         "point3": "Przechowanie kluczy i kontrolowany dostęp",
           "point4": "Sprzątanie i przygotowanie przed przyjazdem",
-          "point5": "Udokumentowany stan przed przyjazdem"
+          "point5": "Udokumentowany stan przed przyjazdem",
+          "summary": {
+            "risk": "Wilgoć, przeciek lub usterka narastają bez świadka i wychodzą na jaw dopiero przed przyjazdem.",
+            "rhythm": "Kontrole stanu w ustalonym rytmie między pobytami i przygotowanie lokalu przed Twoim przyjazdem.",
+            "decision": "Potwierdzasz rytm kontroli i zakres. Powyżej ustalonych limitów decyzja wraca do Ciebie."
+          }
         },
       "regular-guest-stays": {
         "priority": "Lokal żyje w rytmie rotacji: goście wyjeżdżają, ktoś musi wejść, sprawdzić stan po pobycie, skoordynować sprzątanie i zostawić udokumentowaną gotowość przed kolejnym przyjazdem.",
@@ -235,17 +245,27 @@
         "point3": "Kontrola stanu po pobycie",
           "point4": "Dokumentacja widocznych szkód i braków",
           "point5": "Koordynacja sprzątania, wykonawców i techników",
-          "point6": "Ograniczenie chaosu operacyjnego dla właściciela"
+          "point6": "Ograniczenie chaosu operacyjnego dla właściciela",
+          "summary": {
+            "risk": "Rotacja zależy od wielu osób — dostęp, sprzątanie i stan po pobycie łatwo tracą jeden punkt odniesienia.",
+            "rhythm": "Po każdym wyjeździe: wejście, kontrola stanu, koordynacja sprzątania i udokumentowana gotowość przed kolejnym przyjazdem.",
+            "decision": "Ustalasz, czy Sentinel obsługuje dostęp i dokumentację rotacji. Decyzje ponad limitem wracają do Ciebie."
+          }
         },
       "mixed-not-defined": {
-        "priority": "Najpierw klasyfikujemy faktyczny sposób używania lokalu i ustalamy zakres startowy. Model może się zmienić po pierwszej ocenie — bez blokowania się w źle dobranym pakiecie.",
-        "meaning": "Gdy model używania może się zmienić, zakres dobiera się tymczasowo i potwierdza po pierwszej ocenie — zamiast wybierać pakiet z domysłu.",
+        "priority": "Najpierw klasyfikujemy faktyczny sposób używania lokalu i ustalamy zakres startowy. Model może się zmienić po pierwszej ocenie — bez zakładania z góry niewłaściwego rytmu nadzoru.",
+        "meaning": "Gdy model używania może się zmienić, zakres startowy ustala się ostrożnie i potwierdza po pierwszej ocenie — zamiast zakładać go z góry.",
         "next": "Rozpocznij wstępną ocenę zapytania, aby rozdzielić użytek prywatny, pobyty gości i potrzebny zakres.",
         "point1": "Dziś użytek prywatny, później możliwy wynajem",
         "point2": "Uniknięcie złego wyboru zakresu",
         "point3": "Uniknięcie niepotrzebnej intensywności obsługi gości",
           "point4": "Uniknięcie zbyt słabej struktury, jeśli pojawi się wynajem",
-          "point5": "Zakres startowy potwierdzany i korygowany po pierwszej ocenie"
+          "point5": "Zakres startowy potwierdzany i korygowany po pierwszej ocenie",
+          "summary": {
+            "risk": "Zakres wybrany na założeniach może nie pasować do faktycznego sposobu używania lokalu.",
+            "rhythm": "Najpierw wstępna ocena i klasyfikacja. Obsługa startuje w ostrożnie dobranym zakresie.",
+            "decision": "Po pierwszej ocenie potwierdzasz albo korygujesz zakres dalszego nadzoru."
+          }
         }
       }
     },
@@ -257,23 +277,23 @@
         "systemIntroProcess": {
           "scope": {
             "label": "Nieobecność",
-            "title": "Zakres na czas nieobecności",
-            "body": "Przed startem wiadomo, co jest sprawdzane, gdy lokal stoi pusty, i gdzie kończy się lokalna odpowiedzialność."
+            "title": "Pusty lokal",
+            "body": "Ustalamy, co trzeba sprawdzać, gdy mieszkanie stoi bez regularnej obecności."
           },
           "documentation": {
-            "label": "Dostęp",
-            "title": "Klucze pod kontrolą",
-            "body": "Klucze są przechowywane lokalnie, a każde wejście — nasze lub wykonawcy — odbywa się według ustaleń i zostaje zapisane."
+            "label": "Wejścia",
+            "title": "Dostęp i klucze",
+            "body": "Potwierdzamy sposób wejścia, przechowywanie kluczy i zasady wpuszczania osób trzecich."
           },
           "procedure": {
             "label": "Stan lokalu",
-            "title": "Kontrola na miejscu",
-            "body": "Woda, prąd, wentylacja i widoczny stan są sprawdzane fizycznie w lokalu, w stałym rytmie między pobytami."
+            "title": "Kontrola stanu",
+            "body": "Sprawdzamy wejście, wentylację, wodę/prąd, wilgoć, zapach i widoczny stan lokalu."
           },
           "decisions": {
-            "label": "Gotowość",
+            "label": "Przyjazd",
             "title": "Gotowość przed przyjazdem",
-            "body": "Przed Twoim przyjazdem lokal jest przygotowany i potwierdzony zapisem, a reakcje mieszczą się w uzgodnionych limitach."
+            "body": "Właściciel dostaje zapis stanu i punktów, które trzeba potwierdzić przed przyjazdem."
           }
         },
         "contrast": {
@@ -302,22 +322,22 @@
           "scope": {
             "label": "Rotacja",
             "title": "Rytm między pobytami",
-            "body": "Zakres obejmuje to, co dzieje się między wyjazdem a kolejnym przyjazdem: wejścia, przygotowanie i kontrolę stanu."
+            "body": "Ustalamy moment kontroli po wyjeździe i przed kolejnym użyciem lokalu."
           },
           "documentation": {
-            "label": "Dostęp i sprzątanie",
-            "title": "Wejścia według zasad",
-            "body": "Sprzątający i technicy wchodzą według ustalonych zasad, a ich wejścia są koordynowane i zapisywane."
+            "label": "Wejścia",
+            "title": "Dostęp i przygotowanie",
+            "body": "Koordynujemy klucze, wejście, sprzątanie i podstawową gotowość przed przyjazdem gości."
           },
           "procedure": {
-            "label": "Stan po pobycie",
-            "title": "Kontrola po wyjeździe",
-            "body": "Po pobycie stan lokalu jest sprawdzany na miejscu, a widoczne szkody i braki trafiają do zapisu."
+            "label": "Zapis",
+            "title": "Stan po pobycie",
+            "body": "Zapisujemy braki, szkody, zdjęcia referencyjne i rzeczy wymagające decyzji."
           },
           "decisions": {
             "label": "Gotowość",
-            "title": "Gotowość na kolejny pobyt",
-            "body": "Przed kolejnym przyjazdem gotowość jest potwierdzona, a decyzje operacyjne mieszczą się w uzgodnionych granicach."
+            "title": "Gotowość kolejnej rotacji",
+            "body": "Właściciel wie, czy lokal jest gotowy, zanim kolejny pobyt zacznie generować problem."
           }
         },
         "contrast": {
@@ -344,31 +364,31 @@
         "systemIntroPosture": "Pierwsza ocena → klasyfikacja → zakres startowy → potwierdzony plan",
         "systemIntroProcess": {
           "scope": {
-            "label": "Pierwsza ocena",
-            "title": "Najpierw opis sytuacji",
-            "body": "Zanim padnie decyzja o zakresie, opisujemy, jak lokal jest faktycznie używany i co może się zmienić."
+            "label": "Ocena",
+            "title": "Pierwsza ocena",
+            "body": "Najpierw ustalamy, jak lokal faktycznie będzie używany: prywatnie, gościnnie albo mieszanie."
           },
           "documentation": {
-            "label": "Klasyfikacja",
-            "title": "Rozdzielenie modeli",
-            "body": "Użytek prywatny i pobyty gości zostają rozdzielone, żeby zakres nie wynikał z domysłu."
+            "label": "Model użycia",
+            "title": "Klasyfikacja",
+            "body": "Oddzielamy potrzeby stałe od tych, które wynikają tylko z okazjonalnych pobytów."
           },
           "procedure": {
-            "label": "Zakres startowy",
-            "title": "Zakres tymczasowy",
-            "body": "Obsługa startuje w zakresie tymczasowym, dobranym do obecnego stanu wiedzy, bez blokowania się w pakiecie."
+            "label": "Zakres",
+            "title": "Zakres startowy",
+            "body": "Startujemy od ostrożnie dobranego zakresu, zanim rytm używania lokalu zostanie potwierdzony."
           },
           "decisions": {
-            "label": "Potwierdzony plan",
-            "title": "Plan po pierwszej ocenie",
-            "body": "Po pierwszej ocenie zakres zostaje potwierdzony albo skorygowany, a limity wynikają z potwierdzonego modelu."
+            "label": "Plan",
+            "title": "Plan po potwierdzeniu",
+            "body": "Po pierwszej ocenie właściciel dostaje rekomendowany rytm i zakres dalszego nadzoru."
           }
         },
         "contrast": {
           "intro": "Różnica między przedwczesnym wyborem zakresu a klasyfikacją przed ustaleniem struktury.",
           "left1": "Lokal może być traktowany jak wyłącznie prywatny, mimo że później pojawią się goście.",
           "left2": "Obsługa gości bywa budowana zanim jest naprawdę potrzebna.",
-          "left3": "Pakiet wybiera się z założeń, nie z faktycznego sposobu używania.",
+          "left3": "Zakres wybiera się z założeń, nie z faktycznego sposobu używania.",
           "left4": "Dostęp, sprzątanie i dokumentacja są ustalane ad hoc.",
           "leftClosing": "Niepewny model daje złą podstawę decyzji.",
           "right1": "Najpierw ustalamy, jak lokal jest faktycznie używany.",
@@ -568,7 +588,7 @@
           "alt": "Korytarz z kluczami, ręcznikami, środkami sprzątania i tablicą z instrukcjami."
         },
         "wrongScopeAssumption": {
-          "title": "Pakiet wybrany z domysłu rzadko pasuje do rzeczywistości.",
+          "title": "Zakres wybrany z domysłu rzadko pasuje do rzeczywistości.",
           "body": "Zbyt niski zakres zostawia luki, a zbyt szeroki uruchamia elementy, których lokal jeszcze nie potrzebuje. Problem pojawia się dopiero przy pierwszej zmianie używania.",
           "responseLead": "Zakres wynika z rozpoznanego modelu, nie z domyślnej kategorii.",
           "responseBody": "Sentinel porządkuje częstotliwość pobytów, dostęp, sprzątanie, decyzje i raportowanie, a następnie wskazuje właściwą intensywność obsługi.",
@@ -585,7 +605,7 @@
     },
   "systemIntro": {
     "eyebrow": "Krótki proces",
-    "title": "Jak działa system Sentinel",
+    "title": "Jak działa Sentinel w tym modelu",
     "lensLabel": "Logika trybu",
     "intro": "Sentinel wprowadza stałą, lokalną kontrolę nad Twoją nieruchomością.",
     "process": {

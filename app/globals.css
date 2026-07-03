@@ -2833,47 +2833,10 @@ textarea:focus {
   background: linear-gradient(180deg, rgba(255, 250, 242, 0.05) 0%, transparent 22%);
 }
 
-.pathway-hero__changes > .pathway-hero__changes-field {
-  position: absolute;
-  inset: -18% -24% -16% -24%;
-  z-index: 0;
-  opacity: 0.72;
-  pointer-events: none;
-  transform: none;
-  -webkit-mask-image: radial-gradient(circle at 56% 48%, #000 0%, rgba(0, 0, 0, 0.92) 44%, rgba(0, 0, 0, 0.35) 70%, transparent 100%);
-  mask-image: radial-gradient(circle at 56% 48%, #000 0%, rgba(0, 0, 0, 0.92) 44%, rgba(0, 0, 0, 0.35) 70%, transparent 100%);
-}
-
-.pathway-hero__changes > .pathway-hero__changes-field svg {
-  transform: translateX(-20%) scale(1.22);
-  transform-origin: 50% 50%;
-}
-
 @media (min-width: 1024px) {
   .pathway-hero__changes {
     justify-self: end;
     width: min(100%, 26rem);
-  }
-
-  .pathway-hero .pathway-hero__changes > .pathway-hero__changes-field {
-    inset: -22% -30% -20% -30%;
-    opacity: 0.78;
-  }
-
-  .pathway-hero .pathway-hero__changes > .pathway-hero__changes-field svg {
-    transform: translateX(-24%) scale(1.32);
-  }
-
-  .pathway-hero[data-pathway="mixed-not-defined"] .pathway-hero__changes > .pathway-hero__changes-field {
-    inset: -14% -42% -28% -12%;
-    opacity: 0.86;
-    -webkit-mask-image: linear-gradient(180deg, transparent 0%, transparent 30%, rgba(0, 0, 0, 0.38) 48%, #000 100%);
-    mask-image: linear-gradient(180deg, transparent 0%, transparent 30%, rgba(0, 0, 0, 0.38) 48%, #000 100%);
-  }
-
-  .pathway-hero[data-pathway="mixed-not-defined"] .pathway-hero__changes > .pathway-hero__changes-field svg {
-    transform: translate(8%, 18%) scale(0.72);
-    transform-origin: 64% 70%;
   }
 }
 
@@ -2897,101 +2860,42 @@ textarea:focus {
   text-transform: uppercase;
 }
 
-.pathway-hero__changes > .pathway-hero__changes-list {
+/* Compact situation summary: risk / operating rhythm / owner decision point.
+   The operational detail lives in the "Jak działa" spine below the hero. */
+.pathway-hero__summary {
   position: relative;
   z-index: 2;
   display: grid;
   gap: 0;
   margin: 0;
-  padding: 0.35rem 1.3rem 1.2rem;
-  list-style: none;
+  padding: 0.2rem 1.3rem 1.1rem;
 }
 
-.pathway-hero__changes-list li {
-  display: flex;
-  gap: 0.85rem;
-  padding: 0.8rem 0;
-  border-bottom: 1px solid rgba(255, 250, 242, 0.09);
-  color: color-mix(in srgb, var(--authority-on-dark) 94%, transparent);
-  font-size: 0.93rem;
-  line-height: 1.62;
-}
-
-.pathway-hero__changes-list li:last-child {
-  border-bottom: none;
-  padding-bottom: 0.15rem;
-}
-
-.pathway-evidence-artifact {
-  position: relative;
-  z-index: 2;
-  margin: 1rem 1.3rem 0.35rem;
-  overflow: hidden;
-  border: 1px solid rgba(255, 250, 242, 0.2);
-  border-radius: 0.42rem;
-  background: linear-gradient(170deg, #0f2740 0%, #0a1f35 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 250, 242, 0.08);
-}
-
-.pathway-evidence-artifact__head {
+.pathway-hero__summary-row {
   display: grid;
-  gap: 0.25rem;
-  border-bottom: 1px solid rgba(255, 250, 242, 0.12);
-  padding: 0.95rem 1rem 0.8rem;
+  gap: 0.3rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255, 250, 242, 0.09);
 }
 
-.pathway-evidence-artifact__head span,
-.pathway-evidence-artifact__rows dt {
+.pathway-hero__summary-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0.2rem;
+}
+
+.pathway-hero__summary-row dt {
   color: color-mix(in srgb, var(--authority-on-dark) 56%, var(--pw-accent));
-  font-size: 0.62rem;
+  font-size: 0.64rem;
   font-weight: 900;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-.pathway-evidence-artifact__head strong {
-  color: var(--authority-on-dark);
-  font-size: 1.05rem;
-  line-height: 1.25;
-}
-
-.pathway-evidence-artifact__rows {
-  display: grid;
+.pathway-hero__summary-row dd {
   margin: 0;
-}
-
-.pathway-evidence-artifact__rows div {
-  display: grid;
-  grid-template-columns: minmax(5.7rem, 0.38fr) minmax(0, 0.62fr);
-  gap: 0.75rem;
-  border-bottom: 1px solid rgba(255, 250, 242, 0.1);
-  padding: 0.65rem 1rem;
-}
-
-.pathway-evidence-artifact__rows dd {
-  margin: 0;
-  color: rgba(255, 250, 242, 0.9);
-  font-size: 0.82rem;
-  font-weight: 750;
-  line-height: 1.35;
-}
-
-.pathway-evidence-artifact__note {
-  margin: 0;
-  padding: 0.75rem 1rem 0.9rem;
-  color: rgba(255, 250, 242, 0.62);
-  font-size: 0.74rem;
-  line-height: 1.45;
-}
-
-.pathway-hero__tick {
-  margin-top: 0.58rem;
-  width: 0.42rem;
-  height: 0.42rem;
-  flex-shrink: 0;
-  border-radius: 1px;
-  background: var(--pw-accent);
-  box-shadow: none;
+  color: color-mix(in srgb, var(--authority-on-dark) 94%, transparent);
+  font-size: 0.9rem;
+  line-height: 1.58;
 }
 
 @media (max-width: 767px) {
@@ -3014,19 +2918,6 @@ textarea:focus {
     gap: 1.75rem;
   }
 
-  .pathway-hero .pathway-hero__changes > .pathway-hero__changes-field:not(.gfx-field--gate) {
-    inset: -10% -22% auto -22%;
-    height: 58%;
-    opacity: 0.22;
-    -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.34) 62%, transparent 100%);
-    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.34) 62%, transparent 100%);
-  }
-
-  .pathway-hero .pathway-hero__changes > .pathway-hero__changes-field svg {
-    transform: translateX(-10%) scale(0.92);
-    transform-origin: 54% 26%;
-  }
-
   .pathway-hero__title {
     max-width: none;
     font-size: 2.15rem;
@@ -3047,14 +2938,6 @@ textarea:focus {
     gap: 0.85rem;
   }
 
-  .pathway-evidence-artifact {
-    margin-inline: 1rem;
-  }
-
-  .pathway-evidence-artifact__rows div {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.2rem;
-  }
 }
 
 .footer-contact-region {
@@ -27817,35 +27700,17 @@ html:has(.hiw-page),
       pick up their own accent climate instead of the generic dark wash.
    ========================================================================== */
 
-/* 1. Hero evidence panel — lighter rhythm, same content */
+/* 1. Hero panel label — lighter rhythm above the compact summary */
 .pathway-hero__changes > .pathway-hero__changes-label {
-  padding: 0.8rem 1.15rem 0.7rem;
+  padding: 0.85rem 1.3rem 0.7rem;
 }
 
-.pathway-evidence-artifact {
-  margin: 0.85rem 1.15rem 0.3rem;
-}
-
-.pathway-evidence-artifact__head {
-  padding: 0.72rem 0.9rem 0.6rem;
-}
-
-.pathway-evidence-artifact__rows div {
-  padding: 0.5rem 0.9rem;
-}
-
-.pathway-evidence-artifact__note {
-  padding: 0.58rem 0.9rem 0.7rem;
-}
-
-.pathway-hero__changes > .pathway-hero__changes-list {
-  padding: 0.25rem 1.15rem 0.95rem;
-}
-
-.pathway-hero__changes-list li {
-  padding: 0.6rem 0;
-  font-size: 0.9rem;
-  line-height: 1.55;
+/* The compact summary no longer fills the column: let the panel hug its
+   content instead of stretching into an empty dark block. */
+@media (min-width: 1024px) {
+  .pathway-hero__changes {
+    align-self: start;
+  }
 }
 
 /* 2. Hero facts — one merged panel with an internal divider instead of two

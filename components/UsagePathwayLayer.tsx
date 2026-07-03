@@ -8,32 +8,20 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import HeroGateFrame from '@/components/HeroGateFrame';
 import HomeOperatingFloor from '@/components/HomeOperatingFloor';
 import Section from '@/components/layout/Section';
-import OperationalField from '@/components/graphics/OperationalField';
 import {
   PATHWAY_KEYS,
   normalizePathwayParam,
   type PathwayKey,
 } from '@/lib/pathway';
 
-const PATHWAY_POINT_COUNTS: Record<PathwayKey, number> = {
-  'private-use-only': 5,
-  'regular-guest-stays': 6,
-  'mixed-not-defined': 5,
-};
-
-const PATHWAY_EVIDENCE_ROW_KEYS = ['first', 'second', 'third'] as const;
+// Hero right panel: compact situation summary only — risk, operating rhythm,
+// owner decision point. Operational detail lives in the "Jak działa" spine.
+const PATHWAY_SUMMARY_KEYS = ['risk', 'rhythm', 'decision'] as const;
 
 const PATHWAY_MEDIA: Record<PathwayKey, string> = {
   'private-use-only': '/photos/home-pathway-private-empty-check.webp',
   'regular-guest-stays': '/photos/home-pathway-guest-readiness.webp',
   'mixed-not-defined': '/photos/home-pathway-mixed-decision-threshold.webp',
-};
-
-// Each pathway carries its own operational geometry on the selected hero
-const PATHWAY_FIELD: Record<PathwayKey, 'inspection' | 'turnover' | 'classification'> = {
-  'private-use-only': 'inspection',
-  'regular-guest-stays': 'turnover',
-  'mixed-not-defined': 'classification',
 };
 
 type UsagePathwayLayerProps = {
@@ -544,45 +532,17 @@ function PathwayHero({
         </div>
 
         <aside className="pathway-hero__changes">
-          <OperationalField variant={PATHWAY_FIELD[pathway]} className="pathway-hero__changes-field" />
           <p className="pathway-hero__changes-label">{t('changesLabel')}</p>
-          <PathwayEvidenceArtifact pathway={pathway} t={t} />
-          <ul className="pathway-hero__changes-list">
-            {Array.from({ length: PATHWAY_POINT_COUNTS[pathway] }, (_, i) => (
-              <li key={i}>
-                <span className="pathway-hero__tick" aria-hidden />
-                <span>{t(`detail.${pathway}.point${i + 1}`)}</span>
-              </li>
+          <dl className="pathway-hero__summary">
+            {PATHWAY_SUMMARY_KEYS.map((key) => (
+              <div key={key} className="pathway-hero__summary-row">
+                <dt>{t(`summaryLabels.${key}`)}</dt>
+                <dd>{t(`detail.${pathway}.summary.${key}`)}</dd>
+              </div>
             ))}
-          </ul>
+          </dl>
         </aside>
       </div>
-    </section>
-  );
-}
-
-function PathwayEvidenceArtifact({
-  pathway,
-  t,
-}: {
-  pathway: PathwayKey;
-  t: ReturnType<typeof useTranslations<'home.pathway'>>;
-}) {
-  return (
-    <section className="pathway-evidence-artifact" aria-label={t(`evidence.pathways.${pathway}.title`)}>
-      <div className="pathway-evidence-artifact__head">
-        <span>{t(`evidence.pathways.${pathway}.eyebrow`)}</span>
-        <strong>{t(`evidence.pathways.${pathway}.title`)}</strong>
-      </div>
-      <dl className="pathway-evidence-artifact__rows">
-        {PATHWAY_EVIDENCE_ROW_KEYS.map((key) => (
-          <div key={key}>
-            <dt>{t(`evidence.pathways.${pathway}.rows.${key}.label`)}</dt>
-            <dd>{t(`evidence.pathways.${pathway}.rows.${key}.value`)}</dd>
-          </div>
-        ))}
-      </dl>
-      <p className="pathway-evidence-artifact__note">{t(`evidence.pathways.${pathway}.note`)}</p>
     </section>
   );
 }
