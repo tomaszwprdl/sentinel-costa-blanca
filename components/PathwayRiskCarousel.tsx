@@ -51,7 +51,6 @@ const PATHWAY_RISK: Record<PathwayKey, PathwayRiskConfig> = {
 const MECHANISM_STEPS = ['detection', 'documentation', 'decision', 'action'] as const;
 
 const SWEEP_MS = 820;
-const AUTO_MS = 6000;
 
 export default function PathwayRiskCarousel({ pathway }: { pathway: PathwayKey }) {
   const config = PATHWAY_RISK[pathway];
@@ -60,10 +59,9 @@ export default function PathwayRiskCarousel({ pathway }: { pathway: PathwayKey }
   const total = slides.length;
 
   // Initial render is fully deterministic (matches SSR): active=0, no transition,
-  // not paused, motion/desktop flags false until measured client-side in effects.
+  // motion/desktop flags false until measured client-side in effects.
   const [active, setActive] = useState(0);
   const [incoming, setIncoming] = useState<number | null>(null);
-  const [paused, setPaused] = useState(false);
   const [reduced, setReduced] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 
@@ -124,12 +122,9 @@ export default function PathwayRiskCarousel({ pathway }: { pathway: PathwayKey }
     };
   }, []);
 
-  // Auto-advance: desktop only, paused on hover/focus/interaction and reduced-motion.
-  useEffect(() => {
-    if (!isDesktop || reduced || paused || incoming !== null) return;
-    const id = window.setTimeout(() => transitionTo(active + 1), AUTO_MS);
-    return () => window.clearTimeout(id);
-  }, [isDesktop, reduced, paused, incoming, active, transitionTo]);
+  // No auto-advance: the lead slide is the concrete default state of the
+  // comparison on every viewport; later slides are reached only by the arrows
+  // and dots, so a darker slide never replaces the default unprompted.
 
   useEffect(() => clearCommit, [clearCommit]);
 
@@ -152,10 +147,6 @@ export default function PathwayRiskCarousel({ pathway }: { pathway: PathwayKey }
         role="group"
         aria-roledescription="carousel"
         aria-label={t('riskHeading')}
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-        onFocusCapture={() => setPaused(true)}
-        onBlurCapture={() => setPaused(false)}
       >
         {/* RISK plane - the unmanaged situation, swept on each advance */}
         <div className="home-risk-plane home-risk-plane--risk">
