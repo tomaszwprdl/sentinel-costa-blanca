@@ -355,27 +355,27 @@
     },
     "floor": {
       "eyebrow": "The shared core",
-      "title": "Every model runs on the same core",
-      "lead": "Whichever situation you choose, local service is built on the same four steps.",
+      "title": "In every model we operate through the same core.",
+      "lead": "Your situation sets the frequency and scope. The mechanism itself stays constant: agreed terms, access, on-site checks, and a record for the owner.",
       "steps": {
         "scope": {
           "title": "We agree the scope",
-          "body": "Before we start, it is defined what is checked, how often, and where our responsibility ends."
+          "body": "Before we start, it is clear what we check, how often, and where local responsibility ends."
         },
         "access": {
           "title": "We control access",
-          "body": "Keys and entries — ours, cleaners', and technicians' — follow agreed rules."
+          "body": "Keys, entries, and third-party presence follow agreed rules."
         },
         "check": {
           "title": "We check the property",
-          "body": "Checks happen physically on site: water, power, ventilation, and visible condition."
+          "body": "The check happens physically on site: water, power, ventilation, and visible condition."
         },
         "record": {
-          "title": "We send the record and decision",
-          "body": "After each visit you receive a condition record. Action stays within agreed limits — above them, the decision returns to you."
+          "title": "A record for the owner",
+          "body": "After each visit you receive a record of the condition, the actions taken, and the points that need your decision."
         }
       },
-      "note": "Choosing a situation above tunes this core to how your property is used."
+      "note": "Choose a situation above to see the variant matched to how your property is used."
     },
     "exposure": {
       "title": "What do you really risk without local representation?",

@@ -355,27 +355,27 @@
     },
     "floor": {
       "eyebrow": "Wspólny rdzeń",
-      "title": "W każdym modelu działa ten sam rdzeń",
-      "lead": "Niezależnie od tego, którą sytuację wybierzesz, lokalna obsługa opiera się na tych samych czterech krokach.",
+      "title": "W każdym modelu działamy przez ten sam rdzeń.",
+      "lead": "Wybór sytuacji dopasowuje częstotliwość i zakres. Sam mechanizm pozostaje stały: ustalenia, dostęp, kontrola na miejscu i zapis dla właściciela.",
       "steps": {
         "scope": {
           "title": "Ustalamy zakres",
-          "body": "Przed startem wiadomo, co jest sprawdzane, jak często i gdzie kończy się nasza odpowiedzialność."
+          "body": "Przed startem wiadomo, co sprawdzamy, jak często i gdzie kończy się lokalna odpowiedzialność."
         },
         "access": {
           "title": "Kontrolujemy dostęp",
-          "body": "Klucze i wejścia — nasze, sprzątających i techników — działają według ustalonych zasad."
+          "body": "Klucze, wejścia i obecność osób trzecich działają według ustalonych zasad."
         },
         "check": {
           "title": "Sprawdzamy lokal",
-          "body": "Kontrole odbywają się fizycznie na miejscu: woda, prąd, wentylacja i widoczny stan."
+          "body": "Kontrola odbywa się fizycznie na miejscu: woda, prąd, wentylacja i widoczny stan."
         },
         "record": {
-          "title": "Wysyłamy zapis i decyzję",
-          "body": "Po wizycie otrzymujesz zapis stanu. Działanie mieści się w uzgodnionych limitach — powyżej decyzja wraca do Ciebie."
+          "title": "Zapis dla właściciela",
+          "body": "Po wizycie otrzymujesz zapis stanu, wykonanych działań i punktów wymagających decyzji."
         }
       },
-      "note": "Wybór sytuacji powyżej dopasowuje ten rdzeń do sposobu używania Twojego lokalu."
+      "note": "Wybierz sytuację powyżej, żeby zobaczyć wariant dopasowany do sposobu używania lokalu."
     },
     "exposure": {
       "title": "Czym naprawdę ryzykujesz bez lokalnej reprezentacji?",

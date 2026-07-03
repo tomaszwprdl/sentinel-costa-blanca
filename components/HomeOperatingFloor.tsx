@@ -20,17 +20,16 @@ export default function HomeOperatingFloor({ locale, t }: HomeOperatingFloorProp
           <p className="mt-4 text-base leading-relaxed text-body">{t('floor.lead')}</p>
         </header>
 
-        <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="home-floor-core mt-8">
           {FLOOR_STEP_KEYS.map((key, index) => (
-            <li
-              key={key}
-              className="rounded-xl border border-structural-light bg-surface-card p-5"
-            >
-              <span className="section-label">{String(index + 1).padStart(2, '0')}</span>
-              <h3 className="mt-3 text-lg leading-snug">{t(`floor.steps.${key}.title`)}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-body">
-                {t(`floor.steps.${key}.body`)}
-              </p>
+            <li key={key} className="home-floor-core__step">
+              <span className="home-floor-core__marker" aria-hidden>
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <div className="home-floor-core__copy">
+                <h3 className="home-floor-core__title">{t(`floor.steps.${key}.title`)}</h3>
+                <p className="home-floor-core__body">{t(`floor.steps.${key}.body`)}</p>
+              </div>
             </li>
           ))}
         </ol>
