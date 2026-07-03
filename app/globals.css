@@ -8634,16 +8634,16 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
     linear-gradient(180deg, #ebe4d9 0%, #f0e9df 42%, #ece5da 100%);
 }
 
-/* Services journey nav wraps on mobile; default anchor offset is too small for hash navigation */
+/* Services mobile journey rail stays one compact row; anchors clear the sticky header + rail */
 @media (max-width: 767px) {
   html:has(.services-page),
   .services-page {
-    --journey-nav-height: 10.375rem;
+    --journey-nav-height: 4rem;
     --scroll-anchor-offset: calc(var(--header-offset) + var(--journey-nav-height) + 0.75rem);
   }
 
   html:has(.services-page) {
-    scroll-padding-top: var(--scroll-anchor-offset);
+    scroll-padding-top: 0;
   }
 }
 
@@ -8800,11 +8800,14 @@ html:has(.hiw-page),
   opacity: 0.75;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 767px) {
   .services-journey-nav .journey-nav__track {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    overflow-x: clip;
+    flex-wrap: nowrap;
+    gap: 0.45rem;
+    overflow-x: auto;
+    padding-block: 0.48rem;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
   }
 
   .services-journey-nav .journey-nav__track::before {
@@ -8812,14 +8815,13 @@ html:has(.hiw-page),
   }
 
   .services-journey-nav .journey-nav__link {
-    min-width: 0;
-    width: 100%;
-    white-space: normal;
-  }
-
-  .services-journey-nav .journey-nav__link > span:last-child {
-    min-width: 0;
-    overflow-wrap: anywhere;
+    min-height: 2.35rem;
+    min-width: max-content;
+    max-width: 13.5rem;
+    flex: 0 0 auto;
+    padding: 0.48rem 0.72rem;
+    scroll-snap-align: start;
+    white-space: nowrap;
   }
 }
 
