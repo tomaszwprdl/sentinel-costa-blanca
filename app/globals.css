@@ -5010,10 +5010,6 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 .home-risk-stage[data-pathway='regular-guest-stays'] .home-risk-bubble--control {
-  background:
-    radial-gradient(16rem 12rem at 92% 4%, rgba(199, 120, 78, 0.38), transparent 68%),
-    radial-gradient(13rem 11rem at 0% 100%, rgba(118, 205, 193, 0.12), transparent 66%),
-    linear-gradient(145deg, #0a1826 0%, #15212d 54%, #0a1119 100%);
   border-top-color: rgba(210, 154, 87, 0.26);
 }
 
@@ -25279,18 +25275,6 @@ html:has(.hiw-page),
     opacity: 0.86;
   }
 
-  .home-risk-stage[data-pathway="regular-guest-stays"] .home-risk-plane--risk::before {
-    background:
-      repeating-linear-gradient(90deg, rgba(210, 154, 87, 0.34) 0 0.6rem, transparent 0.6rem 1.7rem),
-      linear-gradient(90deg, transparent, rgba(184, 102, 74, 0.26), transparent 72%);
-  }
-
-  .home-risk-stage[data-pathway="mixed-not-defined"] .home-risk-plane--risk::before {
-    background:
-      linear-gradient(90deg, transparent 0%, rgba(91, 106, 126, 0.44) 18%, transparent 19% 36%, rgba(214, 173, 106, 0.42) 37%, transparent 38% 64%, rgba(255, 250, 242, 0.26) 65%, transparent 66%),
-      linear-gradient(180deg, transparent, rgba(7, 15, 24, 0.16));
-  }
-
   .home-risk-bubble--risk {
     top: clamp(1.6rem, 2.6vw, 2.25rem);
     left: clamp(1.6rem, 2.6vw, 2.25rem);
@@ -27821,5 +27805,134 @@ html:has(.hiw-page),
 
   .home-floor-core__copy {
     margin-top: 0.95rem;
+  }
+}
+
+/* ==========================================================================
+   Selected-pathway differentiation polish.
+   1) The hero "Co to zmienia" panel keeps its full record + checklist but
+      breathes more: spacing/padding reductions only.
+   2) The two hero fact cards merge into one quiet strip.
+   3) Guest and mixed "Bez nas / Z nami" stages lose the over-dark scrims and
+      pick up their own accent climate instead of the generic dark wash.
+   ========================================================================== */
+
+/* 1. Hero evidence panel — lighter rhythm, same content */
+.pathway-hero__changes > .pathway-hero__changes-label {
+  padding: 0.8rem 1.15rem 0.7rem;
+}
+
+.pathway-evidence-artifact {
+  margin: 0.85rem 1.15rem 0.3rem;
+}
+
+.pathway-evidence-artifact__head {
+  padding: 0.72rem 0.9rem 0.6rem;
+}
+
+.pathway-evidence-artifact__rows div {
+  padding: 0.5rem 0.9rem;
+}
+
+.pathway-evidence-artifact__note {
+  padding: 0.58rem 0.9rem 0.7rem;
+}
+
+.pathway-hero__changes > .pathway-hero__changes-list {
+  padding: 0.25rem 1.15rem 0.95rem;
+}
+
+.pathway-hero__changes-list li {
+  padding: 0.6rem 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+/* 2. Hero facts — one merged panel with an internal divider instead of two
+   competing bordered cards. Labels and bodies are unchanged. */
+.pathway-hero__facts {
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 250, 242, 0.14);
+  border-left: 2px solid color-mix(in srgb, var(--pw-accent) 72%, transparent);
+  border-radius: 1rem;
+  background: linear-gradient(168deg, rgba(10, 28, 44, 0.58) 0%, rgba(10, 28, 44, 0.46) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 250, 242, 0.06),
+    0 10px 28px rgba(0, 0, 0, 0.16);
+}
+
+.pathway-hero__fact {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0.95rem 1.15rem 1rem;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+}
+
+.pathway-hero__fact + .pathway-hero__fact {
+  border-top: 1px solid rgba(255, 250, 242, 0.12);
+}
+
+.pathway-hero__fact-label {
+  margin-bottom: 0.4rem;
+}
+
+.pathway-hero__fact-body {
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 640px) {
+  .pathway-hero__facts {
+    gap: 0;
+  }
+
+  .pathway-hero__fact + .pathway-hero__fact {
+    border-top: 0;
+    border-left: 1px solid rgba(255, 250, 242, 0.12);
+  }
+}
+
+/* 3. Guest + mixed contrast stages — the photography is brighter than the
+   private-use set, so the shared dark scrims muddied it. Lift the wash and
+   let each pathway's accent carry the differentiation. */
+.home-risk-stage[data-pathway="regular-guest-stays"] .home-risk-imgwrap::before,
+.home-risk-stage[data-pathway="mixed-not-defined"] .home-risk-imgwrap::before {
+  background:
+    linear-gradient(90deg, rgba(5, 15, 26, 0.34) 0%, rgba(5, 15, 26, 0.1) 40%, transparent 70%),
+    linear-gradient(0deg, rgba(5, 15, 26, 0.42) 0%, transparent 32%, rgba(5, 15, 26, 0.1) 100%);
+}
+
+.home-risk-stage[data-pathway="regular-guest-stays"] .home-risk-figure__img,
+.home-risk-stage[data-pathway="mixed-not-defined"] .home-risk-figure__img {
+  filter: saturate(1.06) contrast(1.04) brightness(1.02);
+}
+
+@media (min-width: 900px) {
+  .home-risk-stage[data-pathway="regular-guest-stays"]::before,
+  .home-risk-stage[data-pathway="mixed-not-defined"]::before {
+    background:
+      linear-gradient(90deg, rgba(6, 18, 31, 0.4) 0%, rgba(6, 18, 31, 0.14) 34%, transparent 66%),
+      linear-gradient(0deg, rgba(6, 18, 31, 0.42) 0%, transparent 34%);
+  }
+
+  /* Z NAMI column: same base depth as private, pathway-owned glow colours */
+  .home-risk-stage[data-pathway="regular-guest-stays"] .home-risk-bubble--control {
+    background:
+      radial-gradient(16rem 18rem at 100% 0%, rgba(210, 154, 87, 0.3), transparent 66%),
+      radial-gradient(14rem 16rem at 0% 100%, rgba(118, 205, 193, 0.14), transparent 70%),
+      linear-gradient(155deg, #071827 0%, #0e2b39 48%, #06111e 100%);
+  }
+
+  .home-risk-stage[data-pathway="mixed-not-defined"] .home-risk-bubble--control {
+    background:
+      radial-gradient(16rem 18rem at 100% 0%, rgba(143, 158, 189, 0.28), transparent 66%),
+      radial-gradient(14rem 16rem at 0% 100%, rgba(214, 173, 106, 0.18), transparent 70%),
+      linear-gradient(155deg, #071827 0%, #0e2b39 48%, #06111e 100%);
   }
 }

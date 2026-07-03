@@ -82,11 +82,11 @@ export default async function HomePage({
             <div className="home-handoff-cta__copy">
               <p className="section-label">{t('finalCta.eyebrow')}</p>
               <h2 id="home-handoff-cta-heading" className="home-handoff-cta__title">
-                {t('finalCta.title')}
+                <PathwayCopy path="finalCtaTitle" />
               </h2>
               <div className="home-handoff-cta__body">
                 <p><PathwayCopy path="finalContext" /></p>
-                <p>{t('finalCta.p2')}</p>
+                <p><PathwayCopy path="finalCtaSupport" /></p>
               </div>
             </div>
             <aside className="home-handoff-cta__dock" aria-label={t('finalCta.eyebrow')}>

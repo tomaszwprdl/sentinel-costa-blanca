@@ -253,19 +253,27 @@
       "private-use-only": {
         "systemIntroContext": "For private use, what matters is the property's condition between visits and readiness before you or your family arrive.",
         "systemIntroLens": "Sentinel keeps the property in a known condition before absence turns a small risk into an arrival problem.",
-        "systemIntroPosture": "Absence → condition control → readiness before arrival",
+        "systemIntroPosture": "Absence → access → condition → readiness before arrival",
         "systemIntroProcess": {
           "scope": {
-            "body": "The first step defines what is checked during absence and where local responsibility stops."
+            "label": "Absence",
+            "title": "Scope for the empty weeks",
+            "body": "Before we start, it is defined what is checked while the property stands empty and where local responsibility ends."
           },
           "documentation": {
-            "body": "Each check leaves a condition record between visits, not just a general confirmation that someone attended."
+            "label": "Access",
+            "title": "Keys under control",
+            "body": "Keys are held locally, and every entry — ours or a contractor's — follows the agreed rules and is recorded."
           },
           "procedure": {
-            "body": "Visits, access, and pre-arrival preparation follow a fixed operating order."
+            "label": "Condition",
+            "title": "Checks on site",
+            "body": "Water, power, ventilation, and visible condition are checked physically in the property, on a steady rhythm between your visits."
           },
           "decisions": {
-            "body": "Response stays inside agreed limits before an issue starts affecting your arrival."
+            "label": "Readiness",
+            "title": "Ready before you arrive",
+            "body": "Before your arrival the property is prepared and confirmed with a record, and responses stay within agreed limits."
           }
         },
         "contrast": {
@@ -282,24 +290,34 @@
           "rightClosing": "You have a local point of control while you are away."
         },
         "distinctionIntro": "Sentinel closes the gap between owner absence and the real condition of the property through defined scope, local presence, documentation, and bounded decisions.",
-        "finalContext": "The question is local control before arrival, not arranging everything from abroad."
+        "finalContext": "The question is local control before arrival, not arranging everything from abroad.",
+        "finalCtaTitle": "You can react after a problem appears. Or follow an agreed on-site plan.",
+        "finalCtaSupport": "Sentinel helps keep local operations structured: scope, documentation, access, and decisions within defined limits."
       },
       "regular-guest-stays": {
         "systemIntroContext": "For regular guest stays, what matters is order between departures: access, cleaning, condition, and event documentation.",
         "systemIntroLens": "Each turnover returns to the same rhythm: entry, preparation, check, and record before the next use.",
-        "systemIntroPosture": "Departure → access → preparation → condition record",
+        "systemIntroPosture": "Guest departure → access and cleaning → post-stay condition → ready for the next arrival",
         "systemIntroProcess": {
           "scope": {
-            "body": "Scope separates property checks, access for people on site, and preparation before the next use."
+            "label": "Turnover",
+            "title": "The rhythm between stays",
+            "body": "The scope covers what happens between departure and the next arrival: entries, preparation, and condition checks."
           },
           "documentation": {
-            "body": "After a stay, the record captures condition, events, and completed actions before the next turnover."
+            "label": "Access & cleaning",
+            "title": "Entries follow the rules",
+            "body": "Cleaners and technicians enter under agreed rules, and their entries are coordinated and recorded."
           },
           "procedure": {
-            "body": "Access, cleaning, checks, and requests return to the same rhythm between stays."
+            "label": "Post-stay condition",
+            "title": "Checked after departure",
+            "body": "After each stay the condition is checked on site, and visible damage or missing items go into the record."
           },
           "decisions": {
-            "body": "Operational decisions remain inside agreed boundaries instead of sending every turnover back to the owner."
+            "label": "Readiness",
+            "title": "Ready for the next stay",
+            "body": "Before the next arrival readiness is confirmed, and operational decisions stay within agreed limits."
           }
         },
         "contrast": {
@@ -316,24 +334,34 @@
           "rightClosing": "Turnover becomes a process, not a chain of urgent calls."
         },
         "distinctionIntro": "Sentinel structures responsibility between stays, access, and property readiness through defined scope, local presence, documentation, and bounded decisions.",
-        "finalContext": "The question is a fixed structure between stays, not your continuous operational involvement."
+        "finalContext": "The question is a fixed structure between stays, not your continuous operational involvement.",
+        "finalCtaTitle": "Every turnover can be separate logistics. Or part of an agreed routine.",
+        "finalCtaSupport": "Sentinel runs the order between stays: access, cleaning, post-stay condition checks, and documented readiness before the next arrival."
       },
       "mixed-not-defined": {
         "systemIntroContext": "When the use pattern is not yet clear, it must be described first. Scope is set after property situation assessment.",
         "systemIntroLens": "The use model is identified first. Only after that classification can scope be set without guessing.",
-        "systemIntroPosture": "Assessment → classification → scope → action",
+        "systemIntroPosture": "First assessment → classification → starting scope → confirmed plan",
         "systemIntroProcess": {
           "scope": {
-            "body": "The first step is classifying how the property is used before the service scope is selected."
+            "label": "First assessment",
+            "title": "Describe the situation first",
+            "body": "Before any scope decision, we describe how the property is actually used and what may change."
           },
           "documentation": {
-            "body": "The record helps separate private-use needs from situations that require a guest-stay rhythm."
+            "label": "Classification",
+            "title": "Models kept separate",
+            "body": "Private use and guest stays are separated so the scope does not come from guesswork."
           },
           "procedure": {
-            "body": "Only after assessment is it clear which steps should run continuously and which are needed case by case."
+            "label": "Starting scope",
+            "title": "A temporary scope",
+            "body": "Service starts with a temporary scope matched to what is known today, without locking into a package."
           },
           "decisions": {
-            "body": "Limits and responses follow the confirmed model, not an assumption made at the start."
+            "label": "Confirmed plan",
+            "title": "The plan after first review",
+            "body": "After the first assessment the scope is confirmed or corrected, and limits follow the confirmed model."
           }
         },
         "contrast": {
@@ -350,7 +378,9 @@
           "rightClosing": "Classification first, then scope."
         },
         "distinctionIntro": "Sentinel first clarifies how the property is used before operating scope, local presence, documentation, and decision boundaries are selected.",
-        "finalContext": "This is not a third pricing mode. The next step is initial inquiry assessment and classification."
+        "finalContext": "This is not a third pricing mode. The next step is initial inquiry assessment and classification.",
+        "finalCtaTitle": "You do not have to pick the final scope today. Start with classification.",
+        "finalCtaSupport": "The initial inquiry assessment separates private use from guest stays. The starting scope is confirmed after the first review."
       }
     },
     "floor": {

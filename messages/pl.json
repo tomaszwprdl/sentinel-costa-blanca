@@ -253,19 +253,27 @@
       "private-use-only": {
         "systemIntroContext": "Gdy lokal służy wyłącznie Tobie lub rodzinie, liczy się stan między pobytami i gotowość przed przyjazdem.",
         "systemIntroLens": "Sentinel utrzymuje lokal w znanym stanie, zanim nieobecność zmieni drobne ryzyko w problem przed przyjazdem.",
-        "systemIntroPosture": "Nieobecność → kontrola stanu → gotowość przed przyjazdem",
+        "systemIntroPosture": "Nieobecność → dostęp → stan lokalu → gotowość przed przyjazdem",
         "systemIntroProcess": {
           "scope": {
-            "body": "Najpierw ustala się, co ma być sprawdzane podczas nieobecności i gdzie kończy się lokalna odpowiedzialność."
+            "label": "Nieobecność",
+            "title": "Zakres na czas nieobecności",
+            "body": "Przed startem wiadomo, co jest sprawdzane, gdy lokal stoi pusty, i gdzie kończy się lokalna odpowiedzialność."
           },
           "documentation": {
-            "body": "Każda kontrola zostawia zapis stanu lokalu między pobytami, nie tylko ogólne potwierdzenie wizyty."
+            "label": "Dostęp",
+            "title": "Klucze pod kontrolą",
+            "body": "Klucze są przechowywane lokalnie, a każde wejście — nasze lub wykonawcy — odbywa się według ustaleń i zostaje zapisane."
           },
           "procedure": {
-            "body": "Wizyty, dostęp i przygotowanie przed przyjazdem przebiegają według stałego porządku."
+            "label": "Stan lokalu",
+            "title": "Kontrola na miejscu",
+            "body": "Woda, prąd, wentylacja i widoczny stan są sprawdzane fizycznie w lokalu, w stałym rytmie między pobytami."
           },
           "decisions": {
-            "body": "Reakcja odbywa się w uzgodnionych limitach, zanim problem zacznie wpływać na Twój przyjazd."
+            "label": "Gotowość",
+            "title": "Gotowość przed przyjazdem",
+            "body": "Przed Twoim przyjazdem lokal jest przygotowany i potwierdzony zapisem, a reakcje mieszczą się w uzgodnionych limitach."
           }
         },
         "contrast": {
@@ -282,24 +290,34 @@
           "rightClosing": "Masz lokalny punkt kontroli, gdy Cię nie ma."
         },
         "distinctionIntro": "Sentinel zamyka lukę między nieobecnością właściciela a realnym stanem lokalu: przez ustalony zakres, obecność na miejscu, dokumentację i decyzje w limitach.",
-        "finalContext": "Chodzi o lokalną kontrolę przed przyjazdem, a nie o organizowanie wszystkiego z dystansu."
+        "finalContext": "Chodzi o lokalną kontrolę przed przyjazdem, a nie o organizowanie wszystkiego z dystansu.",
+        "finalCtaTitle": "Możesz reagować dopiero po problemie. Albo działać według ustalonego planu.",
+        "finalCtaSupport": "Sentinel pomaga utrzymać lokalny porządek działań: zakres, dokumentację, dostęp i decyzje w określonych granicach."
       },
       "regular-guest-stays": {
         "systemIntroContext": "Przy regularnych pobytach gości liczy się porządek między wyjazdami: dostęp, sprzątanie, stan i dokumentacja zdarzeń.",
         "systemIntroLens": "Każda rotacja wraca do tego samego rytmu: wejście, przygotowanie, kontrola i zapis przed kolejnym użyciem.",
-        "systemIntroPosture": "Wyjazd → dostęp → przygotowanie → zapis stanu",
+        "systemIntroPosture": "Wyjazd gości → dostęp i sprzątanie → stan po pobycie → gotowość na kolejny przyjazd",
         "systemIntroProcess": {
           "scope": {
-            "body": "Zakres rozdziela kontrolę lokalu, dostęp dla osób na miejscu i przygotowanie przed kolejnym użyciem."
+            "label": "Rotacja",
+            "title": "Rytm między pobytami",
+            "body": "Zakres obejmuje to, co dzieje się między wyjazdem a kolejnym przyjazdem: wejścia, przygotowanie i kontrolę stanu."
           },
           "documentation": {
-            "body": "Po pobycie powstaje zapis stanu, zdarzeń i wykonanych działań przed kolejną rotacją."
+            "label": "Dostęp i sprzątanie",
+            "title": "Wejścia według zasad",
+            "body": "Sprzątający i technicy wchodzą według ustalonych zasad, a ich wejścia są koordynowane i zapisywane."
           },
           "procedure": {
-            "body": "Dostęp, sprzątanie, kontrola i zgłoszenia wracają do tego samego rytmu między pobytami."
+            "label": "Stan po pobycie",
+            "title": "Kontrola po wyjeździe",
+            "body": "Po pobycie stan lokalu jest sprawdzany na miejscu, a widoczne szkody i braki trafiają do zapisu."
           },
           "decisions": {
-            "body": "Decyzje operacyjne pozostają w uzgodnionych granicach, bez przenoszenia każdej rotacji na właściciela."
+            "label": "Gotowość",
+            "title": "Gotowość na kolejny pobyt",
+            "body": "Przed kolejnym przyjazdem gotowość jest potwierdzona, a decyzje operacyjne mieszczą się w uzgodnionych granicach."
           }
         },
         "contrast": {
@@ -316,24 +334,34 @@
           "rightClosing": "Rotacja jest procesem, nie serią pilnych telefonów."
         },
         "distinctionIntro": "Sentinel porządkuje odpowiedzialność między pobytami, dostępem i przygotowaniem lokalu: przez ustalony zakres, obecność na miejscu, dokumentację i decyzje w limitach.",
-        "finalContext": "Chodzi o stałą strukturę między pobytami, a nie o Twoją ciągłą obecność operacyjną."
+        "finalContext": "Chodzi o stałą strukturę między pobytami, a nie o Twoją ciągłą obecność operacyjną.",
+        "finalCtaTitle": "Każda rotacja może być osobną logistyką. Albo częścią ustalonego porządku.",
+        "finalCtaSupport": "Sentinel prowadzi porządek między pobytami: dostęp, sprzątanie, kontrolę stanu po pobycie i udokumentowaną gotowość przed kolejnym przyjazdem."
       },
       "mixed-not-defined": {
         "systemIntroContext": "Gdy model użytkowania nie jest jeszcze jasny, najpierw trzeba go opisać. Zakres ustala się po ocenie sytuacji nieruchomości.",
         "systemIntroLens": "Najpierw rozpoznaje się model używania. Dopiero po tej klasyfikacji zakres może być ustawiony bez zgadywania.",
-        "systemIntroPosture": "Ocena → klasyfikacja → zakres → działanie",
+        "systemIntroPosture": "Pierwsza ocena → klasyfikacja → zakres startowy → potwierdzony plan",
         "systemIntroProcess": {
           "scope": {
-            "body": "Pierwszym krokiem jest klasyfikacja sposobu używania lokalu, zanim zostanie dobrany zakres obsługi."
+            "label": "Pierwsza ocena",
+            "title": "Najpierw opis sytuacji",
+            "body": "Zanim padnie decyzja o zakresie, opisujemy, jak lokal jest faktycznie używany i co może się zmienić."
           },
           "documentation": {
-            "body": "Zapis pomaga oddzielić potrzeby prywatnego użytku od sytuacji, które wymagają rytmu dla pobytów gości."
+            "label": "Klasyfikacja",
+            "title": "Rozdzielenie modeli",
+            "body": "Użytek prywatny i pobyty gości zostają rozdzielone, żeby zakres nie wynikał z domysłu."
           },
           "procedure": {
-            "body": "Dopiero po ocenie ustala się, które kroki mają działać stale, a które tylko w razie potrzeby."
+            "label": "Zakres startowy",
+            "title": "Zakres tymczasowy",
+            "body": "Obsługa startuje w zakresie tymczasowym, dobranym do obecnego stanu wiedzy, bez blokowania się w pakiecie."
           },
           "decisions": {
-            "body": "Limity i reakcje wynikają z potwierdzonego modelu, nie z założenia przyjętego na początku."
+            "label": "Potwierdzony plan",
+            "title": "Plan po pierwszej ocenie",
+            "body": "Po pierwszej ocenie zakres zostaje potwierdzony albo skorygowany, a limity wynikają z potwierdzonego modelu."
           }
         },
         "contrast": {
@@ -350,7 +378,9 @@
           "rightClosing": "Najpierw klasyfikacja, potem zakres."
         },
         "distinctionIntro": "Sentinel najpierw porządkuje sposób używania lokalu, zanim zostanie dobrany zakres obsługi, rytm obecności, dokumentacja i granice decyzji.",
-        "finalContext": "To nie trzeci wariant wyceny. Następny krok to wstępna ocena zapytania i klasyfikacja."
+        "finalContext": "To nie trzeci wariant wyceny. Następny krok to wstępna ocena zapytania i klasyfikacja.",
+        "finalCtaTitle": "Nie musisz dziś wybierać docelowego zakresu. Zacznij od klasyfikacji.",
+        "finalCtaSupport": "Wstępna ocena zapytania rozdziela użytek prywatny i pobyty gości. Zakres startowy zostaje potwierdzony po pierwszej ocenie."
       }
     },
     "floor": {

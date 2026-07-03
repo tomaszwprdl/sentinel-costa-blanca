@@ -283,10 +283,10 @@ export function PathwayProcessRail() {
             </span>
             <div className="home-command-output__copy">
               <p className="home-command-output__label">
-                {t(`systemIntro.process.${key}.label`)}
+                {t(`pathwayContent.${selected}.systemIntroProcess.${key}.label`)}
               </p>
               <h3 className="home-command-output__title">
-                {t(`systemIntro.process.${key}.title`)}
+                {t(`pathwayContent.${selected}.systemIntroProcess.${key}.title`)}
               </h3>
               <p className="home-command-output__body mb-0">
                 {t(`pathwayContent.${selected}.systemIntroProcess.${key}.body`)}
