@@ -3150,6 +3150,12 @@ main.home-page:not(:has(.home-pathway-body)) .visual-hero-section {
   padding-bottom: clamp(2.85rem, 4.8vw, 4rem);
 }
 
+@media (min-width: 900px) {
+  main.home-page:not(:has(.home-pathway-body)) .visual-hero-section {
+    margin-top: -5rem;
+  }
+}
+
 main.home-page:not(:has(.home-pathway-body))::after {
   display: block;
   height: 2.75rem;
