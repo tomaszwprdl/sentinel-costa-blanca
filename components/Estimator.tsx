@@ -211,6 +211,13 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
               </button>
             ))}
           </div>
+          {packageKey && (
+            <div className="estimator-package-active-card" aria-live="polite">
+              <span>{t('packageLabel')}</span>
+              <strong>{t(`packages.${packageKey}`)}</strong>
+              <p>{t(`packageDescriptor.${packageKey}`)}</p>
+            </div>
+          )}
           {showCompatibilityNote && <p className="estimator-compatibility-note" role="note">{t('compatibilityNote')}</p>}
         </div>
       );

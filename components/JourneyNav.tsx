@@ -37,8 +37,11 @@ export default function JourneyNav({
     // where entry/exit events fire; the epsilon absorbs rounding at the edge.
     const syncActive = () => {
       const line = window.innerHeight * 0.42 + 2;
-      let nextId = sections[0].id;
-      for (const section of sections) {
+      const orderedSections = [...sections].sort(
+        (a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top,
+      );
+      let nextId = orderedSections[0].id;
+      for (const section of orderedSections) {
         if (section.getBoundingClientRect().top <= line) {
           nextId = section.id;
         } else {
@@ -70,6 +73,7 @@ export default function JourneyNav({
                 <a
                   key={item.id}
                   href={`#${item.id}`}
+                  data-journey-id={item.id}
                   aria-current={isActive ? 'true' : undefined}
                   className="journey-nav__link"
                   onClick={() => setActiveId(item.id)}

@@ -834,6 +834,11 @@
         "costNote": "Koszt zależy od pakietu, metrażu i sposobu używania nieruchomości. Dokładny przedział pokaże estymator.",
         "responsibilityLabel": "Główna odpowiedzialność",
         "depthLabel": "Zakres działania",
+        "mobileScope": {
+          "basic": "Kontrola",
+          "extended": "Kontrola + dostęp",
+          "full": "Kontrola + dostęp + decyzje"
+        },
         "basic": {
           "responsibility": "Kontrola i sprawdzenia. Udokumentowane wizyty. Właściciel zatrzymuje większość decyzji.",
           "fit": "Gdy głównym zadaniem jest regularna obecność na miejscu i zapis stanu bez regularnej koordynacji dostępu."
@@ -846,6 +851,30 @@
           "responsibility": "Kontrola + dostęp + decyzje. Szybsza reakcja i uprawnienia awaryjne w uzgodnionym limicie.",
           "fit": "Gdy właściciel chce ograniczyć decyzje zdalne i potrzebuje wyższego priorytetu operacyjnego."
         }
+      },
+      "mobileDisclosure": {
+        "open": "Pokaż szczegóły",
+        "close": "Ukryj",
+        "responsibilityTitle": "Szczegóły odpowiedzialności pakietu",
+        "responsibilitySummary": "Rytm wizyt, dostęp, decyzje i przejście do zakresu.",
+        "estimatorTitle": "Co estymator bierze pod uwagę",
+        "estimatorSummary": "Pakiet, sposób używania i parametry lokalu przed widełkami.",
+        "scopeTitle": "Pełne ramy i wyłączenia",
+        "scopeSummary": "Zasady wizyt, limity decyzji i lista rzeczy poza zakresem.",
+        "recordTitle": "Co trafia do zapisu",
+        "recordSummary": "Gotowość, dostęp, koordynacja i decyzje w jednym zapisie.",
+        "appendixTitle": "Poza modelem pakietowym",
+        "appendixSummary": "Kiedy pojedyncze czynności są wyjątkiem i wymagają osobnej oceny.",
+        "packageProofTitle": "Odpowiedzialność pakietów",
+        "packageProofSummary": "Rytm wizyt, dostęp, decyzje i szczegółowe różnice między pakietami."
+      },
+      "mobilePackageSummary": {
+        "eyebrow": "Pakiet w skrócie",
+        "title": "Wybierz poziom obsługi, potem sprawdź przedział.",
+        "intro": "Trzy pakiety różnią się zakresem obecności, dostępem i decyzjami na miejscu.",
+        "boundaryNote": "Wyższy koszt, zmiana zakresu albo działanie poza limitem wraca do decyzji właściciela.",
+        "estimatorCta": "Sprawdź przedział w estymatorze",
+        "compareCta": "Porównaj szczegóły pakietów"
       },
       "bridge": {
         "eyebrow": "Od sytuacji do pakietu",

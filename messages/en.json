@@ -834,6 +834,11 @@
         "costNote": "Cost depends on package, property size, and how the property is used. The estimator shows the exact range.",
         "responsibilityLabel": "Primary responsibility",
         "depthLabel": "Operating depth",
+        "mobileScope": {
+          "basic": "Control",
+          "extended": "Control + access",
+          "full": "Control + access + decisions"
+        },
         "basic": {
           "responsibility": "Control and checks. Documented visits. The owner keeps most decisions.",
           "fit": "When the main need is regular local presence and a condition record without regular access coordination."
@@ -846,6 +851,30 @@
           "responsibility": "Control + access + decisions. Faster response and emergency authority inside the agreed limit.",
           "fit": "When the owner wants fewer remote decisions and a higher operational priority."
         }
+      },
+      "mobileDisclosure": {
+        "open": "Show details",
+        "close": "Hide",
+        "responsibilityTitle": "Package responsibility details",
+        "responsibilitySummary": "Visit rhythm, access, decisions, and the path to full scope.",
+        "estimatorTitle": "What the estimator uses",
+        "estimatorSummary": "Package, usage model, and property parameters before the range.",
+        "scopeTitle": "Full frame and exclusions",
+        "scopeSummary": "Visit rules, decision limits, and items outside scope.",
+        "recordTitle": "What enters the record",
+        "recordSummary": "Readiness, access, coordination, and decisions in one record.",
+        "appendixTitle": "Outside the package model",
+        "appendixSummary": "When single actions are exceptions and need separate review.",
+        "packageProofTitle": "Package responsibility",
+        "packageProofSummary": "Visit rhythm, access, decisions, and detailed differences between packages."
+      },
+      "mobilePackageSummary": {
+        "eyebrow": "Package in brief",
+        "title": "Choose the service level, then check the range.",
+        "intro": "The three packages differ by local presence, access handling, and on-site decisions.",
+        "boundaryNote": "Higher cost, scope change, or action beyond the limit returns to the owner's decision.",
+        "estimatorCta": "Check the range in the estimator",
+        "compareCta": "Compare package details"
       },
       "bridge": {
         "eyebrow": "From situation to package",

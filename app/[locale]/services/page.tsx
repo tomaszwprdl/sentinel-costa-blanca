@@ -12,6 +12,7 @@ import PackageResponsibilityLadder from '@/components/PackageResponsibilityLadde
 import ServiceBoundaryGrid from '@/components/ServiceBoundaryGrid';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import JourneyNav from '@/components/JourneyNav';
+import MobileDisclosure from '@/components/MobileDisclosure';
 
 const NOT_INCLUDED_ITEM_KEYS = [
   'noGuaranteeFixes',
@@ -27,6 +28,11 @@ const EXECUTION_ONLY_LIMITATION_KEYS = ['noRegularChecks', 'noCyclicReporting', 
 const OPERATIONAL_OUTPUT_KEYS = ['readiness', 'access', 'coordination', 'decision'] as const;
 const BRIEFING_SIGNAL_KEYS = ['inspections', 'access', 'decisions'] as const;
 const ESTIMATOR_HANDOFF_KEYS = ['responsibility', 'usage', 'property'] as const;
+const MOBILE_PACKAGE_SUMMARY_KEYS = [
+  { key: 'green', marker: '01' },
+  { key: 'orange', marker: '02' },
+  { key: 'red', marker: '03' },
+] as const;
 
 // Service-map node icons, in the order of redesign.siteMap.nodes:
 // activity · access (key) · readiness (check) · documentation · agreed scope.
@@ -205,6 +211,38 @@ export default async function ServicesPage({
           </div>
         </Section>
 
+        <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--mobile-packages">
+          <div className="services-mobile-package-summary">
+            <div className="services-mobile-package-summary__head">
+              <p className="section-label">{t('redesign.mobilePackageSummary.eyebrow')}</p>
+              <h2>{t('redesign.mobilePackageSummary.title')}</h2>
+              <p>{t('redesign.mobilePackageSummary.intro')}</p>
+            </div>
+            <div className="services-mobile-package-summary__cards" aria-label={t('redesign.mobilePackageSummary.title')}>
+              {MOBILE_PACKAGE_SUMMARY_KEYS.map((pkg) => (
+                <article key={pkg.key} className="services-mobile-package-card">
+                  <span className="services-mobile-package-card__marker">{pkg.marker}</span>
+                  <div>
+                    <h3>{t(`${pkg.key}.title`)}</h3>
+                    <p>{t(`${pkg.key}.definition`)}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <p className="services-mobile-package-summary__boundary">
+              {t('redesign.mobilePackageSummary.boundaryNote')}
+            </p>
+            <div className="services-mobile-package-summary__actions">
+              <Link href="#estimator" className="btn-primary">
+                {t('redesign.mobilePackageSummary.estimatorCta')}
+              </Link>
+              <Link href="#responsibility" className="btn-secondary">
+                {t('redesign.mobilePackageSummary.compareCta')}
+              </Link>
+            </div>
+          </div>
+        </Section>
+
         <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--responsibility" id="package-fit">
           <div className="services-responsibility-stage">
             <PackageResponsibilityLadder />
@@ -218,15 +256,23 @@ export default async function ServicesPage({
               <h2>{t('redesign.estimatorHandoff.title')}</h2>
               <p>{t('redesign.estimatorHandoff.body')}</p>
             </div>
-            <ol className="services-estimator-handoff__steps" aria-label={t('redesign.estimatorHandoff.eyebrow')}>
-              {ESTIMATOR_HANDOFF_KEYS.map((key) => (
-                <li key={key} className="services-estimator-handoff__step">
-                  <span>{t(`redesign.estimatorHandoff.steps.${key}.label`)}</span>
-                  <strong>{t(`redesign.estimatorHandoff.steps.${key}.title`)}</strong>
-                  <p>{t(`redesign.estimatorHandoff.steps.${key}.body`)}</p>
-                </li>
-              ))}
-            </ol>
+            <MobileDisclosure
+              className="services-mobile-disclosure--estimator"
+              title={t('redesign.mobileDisclosure.estimatorTitle')}
+              summary={t('redesign.mobileDisclosure.estimatorSummary')}
+              openLabel={t('redesign.mobileDisclosure.open')}
+              closeLabel={t('redesign.mobileDisclosure.close')}
+            >
+              <ol className="services-estimator-handoff__steps" aria-label={t('redesign.estimatorHandoff.eyebrow')}>
+                {ESTIMATOR_HANDOFF_KEYS.map((key) => (
+                  <li key={key} className="services-estimator-handoff__step">
+                    <span>{t(`redesign.estimatorHandoff.steps.${key}.label`)}</span>
+                    <strong>{t(`redesign.estimatorHandoff.steps.${key}.title`)}</strong>
+                    <p>{t(`redesign.estimatorHandoff.steps.${key}.body`)}</p>
+                  </li>
+                ))}
+              </ol>
+            </MobileDisclosure>
           </div>
           <div className="services-estimator-band services-estimator-band--checkpoint">
             <div className="services-estimator-stage mb-6">
@@ -255,41 +301,49 @@ export default async function ServicesPage({
 
         <Section tone="alt" className="section-primitive--compact services-interface-section services-interface-section--boundary" id="scope">
           <div className="services-boundary-contract">
-            <ServiceBoundaryGrid />
-            <div className="services-boundary-details">
-              <DisclosureBlock className="services-boundary-note" label={t('redesign.details.frameworkLabel')} explainer={t('redesign.details.frameworkExplainer')}>
-                <div className="services-boundary-clauses">
-                  <section className="services-boundary-clause">
-                    <h3>{t('framework.visitSchedulingTitle')}</h3>
-                    <ul>
-                      <li>{t('framework.visitSchedulingItems.scheduled')}</li>
-                      <li>{t('framework.visitSchedulingItems.additional')}</li>
-                    </ul>
-                  </section>
-                  <section className="services-boundary-clause">
-                    <h3>{t('framework.decisionLimitsTitle')}</h3>
-                    <p>{t('framework.decisionLimitsText')}</p>
-                  </section>
-                  <section className="services-boundary-clause">
-                    <h3>{t('framework.minCommitmentTitle')}</h3>
-                    <p>{t('framework.minCommitmentText')}</p>
-                  </section>
-                </div>
-              </DisclosureBlock>
+            <MobileDisclosure
+              className="services-mobile-disclosure--scope"
+              title={t('redesign.mobileDisclosure.scopeTitle')}
+              summary={t('redesign.mobileDisclosure.scopeSummary')}
+              openLabel={t('redesign.mobileDisclosure.open')}
+              closeLabel={t('redesign.mobileDisclosure.close')}
+            >
+              <ServiceBoundaryGrid />
+              <div className="services-boundary-details">
+                <DisclosureBlock className="services-boundary-note" label={t('redesign.details.frameworkLabel')} explainer={t('redesign.details.frameworkExplainer')}>
+                  <div className="services-boundary-clauses">
+                    <section className="services-boundary-clause">
+                      <h3>{t('framework.visitSchedulingTitle')}</h3>
+                      <ul>
+                        <li>{t('framework.visitSchedulingItems.scheduled')}</li>
+                        <li>{t('framework.visitSchedulingItems.additional')}</li>
+                      </ul>
+                    </section>
+                    <section className="services-boundary-clause">
+                      <h3>{t('framework.decisionLimitsTitle')}</h3>
+                      <p>{t('framework.decisionLimitsText')}</p>
+                    </section>
+                    <section className="services-boundary-clause">
+                      <h3>{t('framework.minCommitmentTitle')}</h3>
+                      <p>{t('framework.minCommitmentText')}</p>
+                    </section>
+                  </div>
+                </DisclosureBlock>
 
-              <DisclosureBlock className="services-boundary-note" label={t('redesign.details.notIncludedLabel')} explainer={t('redesign.details.notIncludedExplainer')}>
-                <div className="services-boundary-clauses">
-                  <section className="services-boundary-clause">
-                    <p className="services-boundary-clause__intro">{t('notIncluded.intro')}</p>
-                    <ul>
-                      {NOT_INCLUDED_ITEM_KEYS.map((key) => (
-                        <li key={key}>{t(`notIncluded.items.${key}`)}</li>
-                      ))}
-                    </ul>
-                  </section>
-                </div>
-              </DisclosureBlock>
-            </div>
+                <DisclosureBlock className="services-boundary-note" label={t('redesign.details.notIncludedLabel')} explainer={t('redesign.details.notIncludedExplainer')}>
+                  <div className="services-boundary-clauses">
+                    <section className="services-boundary-clause">
+                      <p className="services-boundary-clause__intro">{t('notIncluded.intro')}</p>
+                      <ul>
+                        {NOT_INCLUDED_ITEM_KEYS.map((key) => (
+                          <li key={key}>{t(`notIncluded.items.${key}`)}</li>
+                        ))}
+                      </ul>
+                    </section>
+                  </div>
+                </DisclosureBlock>
+              </div>
+            </MobileDisclosure>
           </div>
         </Section>
 
@@ -297,111 +351,127 @@ export default async function ServicesPage({
           <div className="services-modules-band services-capability-theatre">
             <div className="services-capability-console">
               <div className="services-operational-record services-output-preview">
-                <div className="services-operational-record__header services-output-preview__header">
-                  <div>
-                    <p className="section-label">{t('redesign.modules.eyebrow')}</p>
-                    <h2 className="h2-system mt-3">{t('redesign.modules.title')}</h2>
-                    <p className="services-operational-record__intro mt-3">{t('redesign.modules.intro')}</p>
+                <MobileDisclosure
+                  className="services-mobile-disclosure--record"
+                  title={t('redesign.mobileDisclosure.recordTitle')}
+                  summary={t('redesign.mobileDisclosure.recordSummary')}
+                  openLabel={t('redesign.mobileDisclosure.open')}
+                  closeLabel={t('redesign.mobileDisclosure.close')}
+                >
+                  <div className="services-operational-record__header services-output-preview__header">
+                    <div>
+                      <p className="section-label">{t('redesign.modules.eyebrow')}</p>
+                      <h2 className="h2-system mt-3">{t('redesign.modules.title')}</h2>
+                      <p className="services-operational-record__intro mt-3">{t('redesign.modules.intro')}</p>
+                    </div>
+                    <p className="services-output-preview__stamp">{t('redesign.modules.recordLabel')}</p>
                   </div>
-                  <p className="services-output-preview__stamp">{t('redesign.modules.recordLabel')}</p>
-                </div>
-                <div className="services-output-preview__body">
-                  <div className="services-output-preview__record-shell">
-                    <div className="services-output-preview__media" aria-hidden="true">
-                      <Image
-                        src="/photos/services-operational-capability.webp"
-                        alt=""
-                        fill
-                        sizes="(min-width: 1024px) 26vw, 90vw"
+                  <div className="services-output-preview__body">
+                    <div className="services-output-preview__record-shell">
+                      <div className="services-output-preview__media" aria-hidden="true">
+                        <Image
+                          src="/photos/services-operational-capability.webp"
+                          alt=""
+                          fill
+                          sizes="(min-width: 1024px) 26vw, 90vw"
+                        />
+                      </div>
+                      <ol className="services-operational-outputs services-output-preview__outputs">
+                        {OPERATIONAL_OUTPUT_KEYS.map((key, index) => (
+                          <li key={key} className="services-operational-output">
+                            <span className="services-operational-output__marker" aria-hidden="true">
+                              {String(index + 1).padStart(2, '0')}
+                            </span>
+                            <div className="services-operational-output__text">
+                              <h3>{t(`redesign.modules.outputs.${key}.title`)}</h3>
+                              <p>{t(`redesign.modules.outputs.${key}.body`)}</p>
+                            </div>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                    <aside className="services-output-preview__handoff">
+                      <span>{t('redesign.modules.handoffLabel')}</span>
+                      <strong>{t('redesign.modules.recordSummary')}</strong>
+                    </aside>
+                  </div>
+                  <p className="services-operational-guardrail">{t('redesign.modules.guardrailBody')}</p>
+                </MobileDisclosure>
+              </div>
+
+              <MobileDisclosure
+                className="services-mobile-disclosure--appendix"
+                title={t('redesign.mobileDisclosure.appendixTitle')}
+                summary={t('redesign.mobileDisclosure.appendixSummary')}
+                openLabel={t('redesign.mobileDisclosure.open')}
+                closeLabel={t('redesign.mobileDisclosure.close')}
+              >
+                <div className="services-checkpoint" id="execution-only">
+                  <p className="services-checkpoint__marker">
+                    <svg
+                      className="services-checkpoint__marker-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M12 2.9 L21.5 20.5 H2.5 Z"
+                        fill="currentColor"
+                        stroke="currentColor"
+                        strokeWidth="1.1"
+                        strokeLinejoin="round"
                       />
-                    </div>
-                    <ol className="services-operational-outputs services-output-preview__outputs">
-                      {OPERATIONAL_OUTPUT_KEYS.map((key, index) => (
-                        <li key={key} className="services-operational-output">
-                          <span className="services-operational-output__marker" aria-hidden="true">
-                            {String(index + 1).padStart(2, '0')}
-                          </span>
-                          <div className="services-operational-output__text">
-                            <h3>{t(`redesign.modules.outputs.${key}.title`)}</h3>
-                            <p>{t(`redesign.modules.outputs.${key}.body`)}</p>
-                          </div>
-                        </li>
-                      ))}
-                    </ol>
-                  </div>
-                  <aside className="services-output-preview__handoff">
-                    <span>{t('redesign.modules.handoffLabel')}</span>
-                    <strong>{t('redesign.modules.recordSummary')}</strong>
-                  </aside>
-                </div>
-                <p className="services-operational-guardrail">{t('redesign.modules.guardrailBody')}</p>
-              </div>
+                      <path d="M12 8.8 V13.9" stroke="#0f2238" strokeWidth="2.1" strokeLinecap="round" />
+                      <circle cx="12" cy="17" r="1.2" fill="#0f2238" />
+                    </svg>
+                    {t('redesign.executionStrip.thresholdLabel')}
+                  </p>
 
-              <div className="services-checkpoint" id="execution-only">
-                <p className="services-checkpoint__marker">
-                  <svg
-                    className="services-checkpoint__marker-icon"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    aria-hidden="true"
-                    focusable="false"
-                  >
-                    <path
-                      d="M12 2.9 L21.5 20.5 H2.5 Z"
-                      fill="currentColor"
-                      stroke="currentColor"
-                      strokeWidth="1.1"
-                      strokeLinejoin="round"
-                    />
-                    <path d="M12 8.8 V13.9" stroke="#0f2238" strokeWidth="2.1" strokeLinecap="round" />
-                    <circle cx="12" cy="17" r="1.2" fill="#0f2238" />
-                  </svg>
-                  {t('redesign.executionStrip.thresholdLabel')}
-                </p>
-
-                <div className="services-checkpoint__body">
-                  <div className="services-checkpoint__request">
-                    <p className="services-checkpoint__label">{t('executionOnly.microLabel')}</p>
-                    <h3 className="services-checkpoint__title">{t('redesign.executionStrip.title')}</h3>
-                    <p className="services-checkpoint__rule">{t('redesign.executionStrip.body')}</p>
-                  </div>
-
-                  <div className="services-checkpoint__gate">
-                    <p className="services-checkpoint__gate-label">{t('redesign.executionStrip.gateLabel')}</p>
-                    <ol className="services-checkpoint__sequence">
-                      {qualificationSteps.map((step) => (
-                        <li key={step}>{step}</li>
-                      ))}
-                    </ol>
-                    <p className="services-checkpoint__gate-note">{t('redesign.executionStrip.gateNote')}</p>
-                    <Link href={`/${locale}/contact`} className="btn-primary services-checkpoint__cta">
-                      {t('redesign.executionStrip.cta')}
-                    </Link>
-                  </div>
-
-                  <div className="services-checkpoint__lanes">
-                    <div className="services-checkpoint__possible">
-                      <h4 className="services-checkpoint__list-title">{t('redesign.executionStrip.availableLabel')}</h4>
-                      <ul className="services-checkpoint__list services-checkpoint__list--possible">
-                        {EXECUTION_ONLY_AVAILABLE_KEYS.map((key) => (
-                          <li key={key}>{t(`executionOnly.availableItems.${key}`)}</li>
-                        ))}
-                      </ul>
+                  <div className="services-checkpoint__body">
+                    <div className="services-checkpoint__request">
+                      <p className="services-checkpoint__label">{t('executionOnly.microLabel')}</p>
+                      <h3 className="services-checkpoint__title">{t('redesign.executionStrip.title')}</h3>
+                      <p className="services-checkpoint__rule">{t('redesign.executionStrip.body')}</p>
                     </div>
 
-                    <div className="services-checkpoint__lockout">
-                      <h4 className="services-checkpoint__list-title services-checkpoint__list-title--lockout">
-                        {t('redesign.executionStrip.limitsLabel')}
-                      </h4>
-                      <ul className="services-checkpoint__list services-checkpoint__list--lockout">
-                        {EXECUTION_ONLY_LIMITATION_KEYS.map((key) => (
-                          <li key={key}>{t(`executionOnly.limitationsItems.${key}`)}</li>
+                    <div className="services-checkpoint__gate">
+                      <p className="services-checkpoint__gate-label">{t('redesign.executionStrip.gateLabel')}</p>
+                      <ol className="services-checkpoint__sequence">
+                        {qualificationSteps.map((step) => (
+                          <li key={step}>{step}</li>
                         ))}
-                      </ul>
+                      </ol>
+                      <p className="services-checkpoint__gate-note">{t('redesign.executionStrip.gateNote')}</p>
+                      <Link href={`/${locale}/contact`} className="btn-primary services-checkpoint__cta">
+                        {t('redesign.executionStrip.cta')}
+                      </Link>
+                    </div>
+
+                    <div className="services-checkpoint__lanes">
+                      <div className="services-checkpoint__possible">
+                        <h4 className="services-checkpoint__list-title">{t('redesign.executionStrip.availableLabel')}</h4>
+                        <ul className="services-checkpoint__list services-checkpoint__list--possible">
+                          {EXECUTION_ONLY_AVAILABLE_KEYS.map((key) => (
+                            <li key={key}>{t(`executionOnly.availableItems.${key}`)}</li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="services-checkpoint__lockout">
+                        <h4 className="services-checkpoint__list-title services-checkpoint__list-title--lockout">
+                          {t('redesign.executionStrip.limitsLabel')}
+                        </h4>
+                        <ul className="services-checkpoint__list services-checkpoint__list--lockout">
+                          {EXECUTION_ONLY_LIMITATION_KEYS.map((key) => (
+                            <li key={key}>{t(`executionOnly.limitationsItems.${key}`)}</li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </MobileDisclosure>
             </div>
           </div>
         </Section>
