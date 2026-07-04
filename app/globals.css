@@ -25024,9 +25024,13 @@ html:has(.hiw-page),
 }
 
 @media (max-width: 767px) {
+  .about-operator-page .about-operator-section.section-primitive:not(.about-operator-hero):not(.about-access-break-section) {
+    padding-block: 2.8rem;
+  }
+
   .about-operator-hero.section-primitive--first {
-    padding-top: 3.25rem;
-    padding-bottom: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 2.65rem;
   }
 
   .about-operator-hero__actions,
@@ -25039,6 +25043,24 @@ html:has(.hiw-page),
   .about-operator-final__actions .btn-primary,
   .about-operator-final__actions .btn-secondary {
     width: 100%;
+  }
+
+  .about-operator-intro {
+    gap: 0.7rem;
+    margin-bottom: 1.05rem;
+  }
+
+  .about-operator-intro h2,
+  .about-team__copy h2,
+  .about-operator-final h2 {
+    margin-top: 0.45rem;
+  }
+
+  .about-operator-intro p:not(.section-label),
+  .about-team__copy > p:not(.section-label),
+  .about-operator-final p {
+    font-size: 0.9rem;
+    line-height: 1.55;
   }
 
   .about-hero-photo__frame,
@@ -25054,6 +25076,11 @@ html:has(.hiw-page),
     display: none;
   }
 
+  .about-access-break-section.section-primitive {
+    padding-top: 1.2rem;
+    padding-bottom: 2.15rem;
+  }
+
   .about-access-break__frame {
     width: 100%;
     margin-left: 0;
@@ -25067,12 +25094,201 @@ html:has(.hiw-page),
   }
 
   .about-access-break__image {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 10.4;
     object-position: 58% 52%;
   }
 
   .about-access-break figcaption {
     margin-left: 0.2rem;
+  }
+
+  .about-why-board {
+    background:
+      linear-gradient(180deg, rgba(255, 253, 249, 0.96), rgba(250, 246, 238, 0.94));
+  }
+
+  .about-why-board__points::before {
+    display: none;
+  }
+
+  .about-why-board__point {
+    grid-template-columns: 2.2rem minmax(0, 1fr);
+    gap: 0.68rem;
+    padding: 0.85rem 0.88rem;
+  }
+
+  .about-why-board__point span {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 0.48rem;
+    box-shadow: none;
+    font-size: 0.62rem;
+  }
+
+  .about-why-board__point h3 {
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.92rem;
+    font-weight: 850;
+    line-height: 1.26;
+  }
+
+  .about-why-board__point p {
+    margin-top: 0.28rem;
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+
+  .about-why-board__closing {
+    padding: 0.82rem 0.9rem;
+    font-size: 0.84rem;
+    line-height: 1.48;
+  }
+
+  .about-contrast {
+    background:
+      linear-gradient(90deg, rgba(16, 38, 63, 0.055) 1px, transparent 1px) 0 0 / 3.25rem 100%,
+      linear-gradient(180deg, rgba(239, 233, 223, 0.82), rgba(255, 253, 249, 0.82));
+  }
+
+  .about-contrast__chain {
+    gap: 0.58rem;
+    padding: 0.68rem;
+  }
+
+  .about-contrast__chain::before {
+    top: 1rem;
+    bottom: 1rem;
+    left: 2rem;
+  }
+
+  .about-contrast__row {
+    grid-template-columns: 2.35rem minmax(0, 1fr);
+    gap: 0.68rem;
+    padding: 0.82rem 0.82rem 0.86rem;
+  }
+
+  .about-contrast__node {
+    width: 1.9rem;
+    height: 1.9rem;
+    box-shadow: 0 0 0 4px rgba(255, 253, 249, 0.84);
+    font-size: 0.58rem;
+  }
+
+  .about-contrast__lede span {
+    font-size: 0.62rem;
+  }
+
+  .about-contrast__lede strong {
+    margin-top: 0.2rem;
+    font-size: 1.06rem;
+    line-height: 1.16;
+  }
+
+  .about-contrast__row p {
+    margin-top: 0.42rem;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .about-contrast__row--sentinel {
+    margin-top: 0.12rem;
+    padding-top: 0.98rem;
+    padding-bottom: 0.98rem;
+  }
+
+  .about-contrast__row--sentinel .about-contrast__node {
+    box-shadow:
+      0 0 0 4px rgba(16, 38, 63, 0.68),
+      0 0 18px rgba(184, 102, 74, 0.24);
+  }
+
+  .about-contrast__closing {
+    padding: 0.84rem 0.9rem;
+    font-size: 0.84rem;
+    line-height: 1.48;
+  }
+
+  .about-team {
+    gap: 1.25rem;
+  }
+
+  .about-team__copy > p:not(.section-label) {
+    margin-top: 0.78rem;
+  }
+
+  .about-team__named {
+    border-left-width: 3px;
+    padding-left: 0.82rem;
+  }
+
+  .about-team__photo {
+    padding: 0.48rem;
+  }
+
+  .about-team__photo figcaption {
+    padding-top: 0.58rem;
+    font-size: 0.74rem;
+  }
+
+  .about-team-roster {
+    margin-top: 1rem;
+  }
+
+  .about-team-roster__label {
+    padding: 0.72rem 0.88rem;
+    font-size: 0.64rem;
+  }
+
+  .about-team-roster li {
+    display: grid;
+    grid-template-columns: minmax(6.6rem, 0.42fr) minmax(0, 1fr);
+    gap: 0.5rem;
+    align-items: baseline;
+    padding: 0.72rem 0.88rem;
+  }
+
+  .about-team-roster strong {
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.86rem;
+    font-weight: 850;
+    line-height: 1.25;
+  }
+
+  .about-team-roster span {
+    margin-top: 0;
+    font-size: 0.76rem;
+    line-height: 1.34;
+  }
+
+  .about-doctrine__col {
+    padding: 1.18rem 1rem;
+  }
+
+  .about-doctrine__col h3 {
+    font-size: 1.45rem;
+  }
+
+  .about-doctrine__items {
+    margin-top: 0.65rem;
+  }
+
+  .about-doctrine__items li {
+    gap: 0.62rem;
+    padding: 0.74rem 0;
+  }
+
+  .about-doctrine__items strong {
+    font-size: 0.98rem;
+  }
+
+  .about-doctrine__items p {
+    margin-top: 0.24rem;
+    font-size: 0.8rem;
+    line-height: 1.44;
+  }
+
+  .about-operator-final__actions {
+    margin-top: 1.35rem;
   }
 }
 
@@ -25084,12 +25300,12 @@ html:has(.hiw-page),
 
   .about-contrast__row,
   .about-contrast__closing {
-    padding-right: 1.05rem;
-    padding-left: 1.05rem;
+    padding-right: 0.82rem;
+    padding-left: 0.82rem;
   }
 
   .about-doctrine__col {
-    padding: 1.35rem 1.05rem;
+    padding: 1.18rem 1rem;
   }
 }
 
