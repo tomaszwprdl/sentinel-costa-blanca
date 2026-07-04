@@ -28224,6 +28224,201 @@ html:has(.hiw-page),
   .contact-next-shell--attached {
     border-radius: 0.8rem;
   }
+
+  .contact-intake-layout {
+    gap: 0.9rem;
+  }
+
+  .contact-intake-support {
+    gap: 0.75rem;
+  }
+
+  .contact-dossier-intake-section .contact-support-panel,
+  .contact-intake-support .contact-method-panel {
+    padding: 1rem;
+  }
+
+  .contact-dossier-intake-section .contact-info-list {
+    margin-top: 0.85rem;
+  }
+
+  .contact-dossier-intake-section .contact-info-list__item {
+    gap: 0.65rem;
+    padding-block: 0.78rem;
+  }
+
+  .contact-intake-support .contact-method-panel {
+    gap: 0.75rem;
+  }
+
+  .contact-intake-support .contact-method-panel__row {
+    padding-block: 0.68rem;
+  }
+
+  .contact-intake-support .contact-method-panel dl + p {
+    padding-top: 0.72rem;
+  }
+
+  .contact-dossier-intake-section .contact-form-dossier {
+    padding: 0.95rem;
+  }
+
+  .contact-dossier-intake-section .contact-form-dossier__header {
+    margin-bottom: 0.95rem;
+    padding-bottom: 0.85rem;
+  }
+
+  .contact-dossier-intake-section .contact-form-dossier__header h2 {
+    font-size: clamp(1.35rem, 8vw, 1.85rem);
+  }
+
+  .contact-dossier-intake-section .contact-form-dossier__header p:not(.contact-form-dossier__eyebrow) {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .contact-dossier-intake-section .contact-form-fields {
+    display: grid;
+    gap: 0.78rem;
+  }
+
+  .contact-dossier-intake-section .contact-form-section,
+  .contact-dossier-intake-section .contact-consent-panel {
+    border-left: 3px solid color-mix(in srgb, var(--contact-copper) 72%, var(--contact-slate));
+    padding: 0.85rem;
+  }
+
+  .contact-dossier-intake-section .contact-form-section legend,
+  .contact-dossier-intake-section .contact-consent-panel legend {
+    align-items: center;
+    gap: 0.52rem;
+    margin-bottom: 0.72rem;
+    font-size: 0.92rem;
+    line-height: 1.25;
+  }
+
+  .contact-dossier-intake-section .contact-intake-shell .form-section__label,
+  .contact-dossier-intake-section .contact-intake-shell .notice-panel .form-section__label {
+    display: inline-grid;
+    width: 1.9rem;
+    height: 1.9rem;
+    place-items: center;
+    flex: 0 0 auto;
+    border: 1px solid color-mix(in srgb, var(--contact-copper) 48%, var(--line));
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--contact-copper) 8%, #ffffff);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+  }
+
+  .contact-dossier-intake-section .contact-form-section .grid.gap-5 {
+    gap: 0.82rem;
+  }
+
+  .contact-dossier-intake-section .contact-form-section .space-y-5 {
+    display: grid;
+    gap: 0.82rem;
+  }
+
+  .contact-dossier-intake-section .contact-form-section .space-y-5 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .contact-dossier-intake-section .contact-field-label {
+    margin-bottom: 0.34rem;
+    font-size: 0.78rem;
+    line-height: 1.25;
+  }
+
+  .contact-dossier-intake-section .contact-field-help,
+  .contact-dossier-intake-section .contact-field-error {
+    margin-top: 0.34rem;
+    font-size: 0.74rem;
+    line-height: 1.45;
+  }
+
+  .contact-dossier-intake-section .contact-form-dossier .form-control {
+    min-height: 2.72rem;
+    padding: 0.62rem 0.74rem;
+    font-size: 0.92rem;
+  }
+
+  .contact-dossier-intake-section .contact-form-dossier textarea.form-control {
+    min-height: 7rem;
+  }
+
+  .contact-dossier-intake-section .contact-consent-panel__check {
+    gap: 0.65rem;
+  }
+
+  .contact-dossier-intake-section .contact-consent-panel__check label {
+    font-size: 0.84rem;
+    line-height: 1.55;
+  }
+
+  .contact-dossier-intake-section .contact-submit-row {
+    display: grid;
+    gap: 0.72rem;
+    padding-top: 0.9rem;
+  }
+
+  .contact-dossier-intake-section .contact-submit-row p {
+    border: 1px solid color-mix(in srgb, var(--contact-copper) 18%, var(--line));
+    border-left: 3px solid color-mix(in srgb, var(--contact-copper) 78%, var(--contact-slate));
+    border-radius: 0.58rem;
+    background: color-mix(in srgb, var(--contact-copper) 6%, #ffffff);
+    padding: 0.7rem 0.75rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .contact-dossier-intake-section .contact-submit-row .btn-primary {
+    width: 100%;
+    min-height: 2.95rem;
+  }
+
+  .contact-next-shell--attached {
+    margin-top: 0.8rem;
+  }
+
+  .contact-next-shell--attached .contact-section-heading {
+    padding: 0.82rem 0.9rem;
+  }
+
+  .contact-next-shell--attached .contact-section-heading h2 {
+    font-size: 1.12rem;
+  }
+
+  .contact-next-shell--attached .contact-section-heading p:not(.section-label) {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .contact-next-shell--attached .contact-next-step {
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: 0.18rem 0.62rem;
+    align-items: start;
+    padding: 0.72rem 0.9rem;
+  }
+
+  .contact-next-shell--attached .contact-next-step span {
+    grid-row: span 2;
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.66rem;
+  }
+
+  .contact-next-shell--attached .contact-next-step h3 {
+    font-size: 0.9rem;
+    line-height: 1.25;
+  }
+
+  .contact-next-shell--attached .contact-next-step p {
+    font-size: 0.78rem;
+    line-height: 1.48;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
