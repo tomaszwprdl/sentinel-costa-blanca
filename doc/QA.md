@@ -179,6 +179,10 @@ Required checks for visual work:
 - `http4xx5xx` empty.
 - Open the PNGs before approval.
 
+This is the standard used for the page-by-page polish pass (lint, build, diff-check, plus desktop + 390px mobile capture with the checks above). Screenshots, `output/`, and temp artifacts stay untracked.
+
+For Services, also verify shortcut-rail / in-page anchors still resolve to the correct sections after any mobile IA change. Because the mobile Services order differs from desktop, confirm the anchor targets exist and scroll correctly in both layouts.
+
 ## Interaction QA
 
 For FAQ work:

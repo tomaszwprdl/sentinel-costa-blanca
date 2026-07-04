@@ -6,6 +6,8 @@ The public site is bilingual (`/pl`, `/en`) and is currently pre-launch with `no
 
 ## Current Shipped State
 
+- The page-by-page polish pass is complete: Home, Pathway states, Services, FAQ, About, and Contact all pass the core polish gate. Next steps are push/deploy and final whole-site QA; launch/`noindex` removal is a later Owner decision.
+- Mobile may use a buyer-oriented IA distinct from the desktop dossier layout where usability requires it (see `doc/DECISIONS.md`).
 - Services, estimator, FAQ, About, and Contact are shipped/live and protected unless the Owner explicitly reopens them.
 - Contact is shipped as the Night Desk controlled intake: dark secure intake canvas, white form dossier, sticky preparation/direct-contact guide on desktop, integrated post-submit flow, and a visible but subdued lit-window hero background.
 - Contact form schema, field names, validation, payload, and `app/api/contact/route.ts` are protected during visual work.

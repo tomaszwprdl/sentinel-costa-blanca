@@ -86,6 +86,8 @@ The site uses **one art-directed Sentinel atmosphere** (merged on `main`) — no
 - Synthetic images treated as real evidence
 - Repeated keys, folders, dossiers, doors, and limits language after they stop clarifying the service
 
+**Responsive IA divergence is allowed.** Mobile may reorder and compress a page into a buyer-oriented flow (e.g. Services mobile leading with the estimator) while desktop stays in dossier/specification form. Same meaning and boundaries, different density. This is a usability decision, not a brand weakening, as long as service boundaries and protected contracts stay intact. See `DECISIONS.md` "Responsive IA".
+
 Logo and wordmark integrity remain protected by `DECISIONS.md`. Logo restrictions apply to the **logo asset**, not every background, card, or accent on the page.
 
 Current visual state and next work: `STATUS.md` and `TASK.md`.

@@ -4,17 +4,23 @@ This file tracks the next action only. Binding contracts live in `DECISIONS.md`.
 
 ## Current Task
 
-Current active task: post-launch monitoring / Owner-directed final polish only.
+The page-by-page polish pass is complete. No open implementation task.
 
-No open implementation task after the Contact Night Desk deploy.
+Next steps are verification, not new work:
+
+1. Push/deploy the local polish commits (Owner-approved push only).
+2. Final whole-site QA against the deployed build (desktop + 390px mobile, PL/EN, overflow/console/failed-request/4xx-5xx, Services anchors).
+3. Launch / `noindex,nofollow` removal decision — later, Owner-owned.
 
 ## Current Shipped State
 
-- Services page is shipped/live and protected.
+- Home is passed after the hero/shared-core polish.
+- Pathway states are passed after the hero-summary / process-spine split and pathway differentiation.
+- Services page is shipped/live and protected; mobile uses a separate buyer-oriented IA (see `DECISIONS.md`).
 - Estimator is shipped/live and protected.
-- FAQ is shipped/live and protected.
-- About is shipped/live and launch-grade after the editorial-depth/team-introduction pass.
-- Contact is shipped/live as Night Desk controlled intake.
+- FAQ is shipped/live and protected after the mobile compression pass.
+- About is shipped/live and launch-grade after the editorial-depth/team-introduction and mobile-tightening passes.
+- Contact is shipped/live as Night Desk controlled intake; mobile form is the tightened four-step presentation.
 
 ## Default Scope
 

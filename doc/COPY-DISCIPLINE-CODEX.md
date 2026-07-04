@@ -270,6 +270,44 @@ EN:
 
 ---
 
+## 5.5 Package & Pathway Integrity Language
+
+Copy must not weaken the package model, especially on the mixed / undetermined pathway.
+
+Not allowed:
+
+PL:
+- zły pakiet
+- blokada pakietu / pakiet na stałe
+- ryzyko wyboru złego pakietu
+
+EN:
+- wrong package
+- package lock-in
+- stuck with the wrong package
+
+Prefer scope framing:
+
+PL:
+- zakres
+- zakres startowy
+- potwierdzony rytm i zakres
+
+A mixed/undetermined case is a starting scope to confirm, not a mispurchase to unwind. Do not imply the buyer can pick the "wrong" package or get locked in. See `DECISIONS.md` "Service Model".
+
+## 5.6 Owner-Decision Boundaries
+
+Copy discipline governs how Sentinel speaks. It does not authorize changing what Sentinel sells or promises. The following are Owner decisions, not copy decisions:
+
+- Package names, count, meanings, pricing, ranges.
+- SLA values and emergency/authority limits.
+- Contact schema, required fields, and contact details.
+- Legal substance and `noindex,nofollow`.
+
+Rewrite copy for clarity within these; never let a copy edit silently move one of these boundaries.
+
+---
+
 # 6. Parameter Expression Rules
 
 When presenting limits:

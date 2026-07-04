@@ -26,6 +26,9 @@ Reference docs are read only when they are directly relevant to the task.
 
 ## Current Truth
 
+- The page-by-page polish pass is complete. Home, Pathway states, Services, FAQ, About, and Contact all pass the core polish gate. Do not reopen a passed page without a real regression or explicit Owner scope. Next steps are push/deploy and final whole-site QA; launch/`noindex` removal is a later Owner decision.
+- Home and Pathway states passed after the hero/shared-core and hero-summary / process-spine work; mixed pathway must avoid "wrong package" / package-lock language (use scope framing).
+- Mobile may use a different IA from desktop where usability requires it (e.g. Services mobile leads with the estimator). Same meaning, different order/density. See `doc/DECISIONS.md` "Responsive IA".
 - Services page is shipped and closed unless confirmed real-use evidence or a regression appears.
 - Estimator affordance is shipped/live; protected estimator logic, pricing/ranges, and contact handoff payload stayed untouched.
 - FAQ is shipped/live and protected unless the Owner explicitly reopens it.

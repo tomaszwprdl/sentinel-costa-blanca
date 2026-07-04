@@ -16,6 +16,8 @@ They must not claim:
 - Real operator identity.
 - Final operational evidence.
 
+Status after the page-by-page polish pass: real / redacted proof remains deferred until real redacted reports exist. The polish pass did not add proof and did not solve it with fake claims. Where mobile now collapses or reveals a proof section, that is presentation only — the claim status of the underlying content is unchanged.
+
 ## Current Page State
 
 ### Home

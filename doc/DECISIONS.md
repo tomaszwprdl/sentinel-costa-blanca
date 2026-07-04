@@ -31,6 +31,8 @@ Package names and count are locked:
 
 Package differentiation is by structured oversight, inspection intensity, operational allocation, response/decision windows, and authority limits. It is not lifestyle convenience.
 
+Mixed pathway copy must not weaken the package model. Do not use "wrong package", "package lock-in", or package-lock framing. Use scope language: `zakres`, `zakres startowy`, `potwierdzony rytm i zakres`. A mixed/undetermined use case is a starting scope to confirm, not a mispurchase to unwind.
+
 ## SLA And Emergency Authority
 
 - SLA means response/decision timing, not guaranteed resolution timing.
@@ -67,7 +69,7 @@ Frame the estimator; do not visually fill over protected logic with decorative r
 Protected:
 
 - Contact API/schema/payload.
-- Contact form field names, validation, and submission semantics.
+- Contact form field names, required fields, validation, and submission semantics. The mobile four-step presentation is layout only; it does not change the schema or which fields are required.
 - Contact details: `sentinelcostablanca@gmail.com`, `+34 694 22 90 35`.
 - Usage pathway slugs:
   - `private-use-only`
@@ -135,6 +137,14 @@ Protected:
 - Legal/noindex.
 - Services and estimator contracts.
 
+## Responsive IA (Mobile vs Desktop)
+
+Mobile may use a different information architecture from desktop when usability requires it. Same content and meaning; different ordering and density. This is accepted, not a regression.
+
+- Services mobile prioritizes early estimator access and a buyer-oriented order (hero → shortcut rail → short model summary → package summary → estimator → collapsed proof sections → final CTA). Desktop stays dossier/specification style.
+- Proof and detail layers may collapse or reveal on mobile to reduce scroll load. Collapsing a proof layer does not change what it claims; protected proof rules still apply (see `PROOF-LAYER-INVENTORY.md`).
+- Responsive IA changes must not alter protected contracts: estimator logic/pricing/ranges, package meanings, contact schema/required fields/payload, routes/slugs, or PL/EN parity.
+
 ## Visual System
 
 The site uses one art-directed Sentinel atmosphere. There is no public dark/light theme toggle.
@@ -154,6 +164,8 @@ Avoid:
 Synthetic or AI-like proof-layer images are temporary shot-planning placeholders only.
 
 They must not claim actual Sentinel work, real client property, real reports, real operator identity, or final operational evidence.
+
+Real proof/report artifacts remain deferred until real redacted reports exist. Do not close this gap with fabricated case studies, sample reports, or synthetic evidence. The polish pass did not solve proof; it left proof honestly deferred.
 
 Asset notes:
 
