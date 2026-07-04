@@ -2730,6 +2730,8 @@
       "intro": "These assumptions create most category drift.",
       "assumptionLabel": "Common assumption",
       "boundaryLabel": "How Sentinel works",
+      "showMoreLabel": "Show remaining assumptions",
+      "showLessLabel": "Hide remaining assumptions",
       "items": [
         { "assumption": "Keys alone mean full oversight", "boundary": "Keys provide access. Oversight depends on the package scope, entry rules, and reporting model." },
         { "assumption": "The SLA guarantees the issue is solved within that time", "boundary": "The SLA defines response and decision timing. Resolution can depend on parts, contractors, and availability." },

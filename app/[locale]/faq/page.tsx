@@ -288,6 +288,8 @@ export default function FAQPage() {
             intro={t('redesign.assumptions.intro')}
             assumptionLabel={t('redesign.assumptions.assumptionLabel')}
             boundaryLabel={t('redesign.assumptions.boundaryLabel')}
+            showMoreLabel={t('redesign.assumptions.showMoreLabel')}
+            showLessLabel={t('redesign.assumptions.showLessLabel')}
             items={assumptionItems}
           />
         </Section>

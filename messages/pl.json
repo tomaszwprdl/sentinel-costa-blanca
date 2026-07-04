@@ -2730,6 +2730,8 @@
       "intro": "Te założenia najczęściej przesuwają usługę w złą kategorię.",
       "assumptionLabel": "Częste założenie",
       "boundaryLabel": "Jak działa Sentinel",
+      "showMoreLabel": "Pokaż pozostałe założenia",
+      "showLessLabel": "Ukryj pozostałe założenia",
       "items": [
         { "assumption": "Same klucze oznaczają pełny nadzór", "boundary": "Klucze dają dostęp. Zakres nadzoru wynika z pakietu, zasad wejścia i raportowania." },
         { "assumption": "SLA oznacza rozwiązanie sprawy w podanym czasie", "boundary": "SLA określa czas reakcji i decyzji. Termin rozwiązania zależy od części, wykonawców i dostępności." },
