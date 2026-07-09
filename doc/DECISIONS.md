@@ -31,6 +31,8 @@ Package names and count are locked:
 
 Package differentiation is by structured oversight, inspection intensity, operational allocation, response/decision windows, and authority limits. It is not lifestyle convenience.
 
+Full package visit rhythm is locked at `min. 3/mies.` / `min. 3/month`. This is the premium tier's minimum inspection cadence and must not be weakened.
+
 Mixed pathway copy must not weaken the package model. Do not use "wrong package", "package lock-in", or package-lock framing. Use scope language: `zakres`, `zakres startowy`, `potwierdzony rytm i zakres`. A mixed/undetermined use case is a starting scope to confirm, not a mispurchase to unwind.
 
 ## SLA And Emergency Authority
@@ -63,6 +65,15 @@ Current estimator visual grammar is shipped and should not be reopened unless re
 - Step 1/2 navigation docked closer to content.
 
 Frame the estimator; do not visually fill over protected logic with decorative redesign.
+
+Mixed / Undetermined Use is classification-before-estimate (Option A), locked:
+
+- Selecting mixed/undetermined ("Nie wiem jeszcze / model mieszany" / "Not sure yet / mixed use") and clicking Next shows a full-width classification notice inside the estimator workspace.
+- It does not produce a numeric range and must not be squeezed into the narrow right-side result rail.
+- Downstream priced parameters are not collected for this path; the CTA continues to contact via the existing `mixed-not-defined` pathway.
+- Do not re-fix the right result column for mixed/undetermined; that was the rejected approach.
+- Private-use and active-guest priced flows keep the existing estimator flow and result panel.
+- Classification headings: PL "Klasyfikacja przed wyceną" / EN "Classification before estimate". Do not reuse "Zakres do potwierdzenia po rozmowie" as the large result heading.
 
 ## Contact, Routes, Legal
 

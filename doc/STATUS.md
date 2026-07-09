@@ -5,20 +5,29 @@ Current project state only. This document is descriptive; `DECISIONS.md` is bind
 ## Snapshot
 
 - Branch at this documentation update: `main`.
-- Latest shipped app commit before this docs pass: `c230b56` (`polish: tighten contact mobile form`).
+- Latest app commit: `c0736d0` (`refine: address beta-test clarity findings`) — committed locally, not pushed.
 - Site phase: pre-launch / soft-launch review.
-- The page-by-page polish pass is complete for the current scope. This is the core polish gate, not "launch-final forever."
+- The page-by-page polish pass is complete; the beta-test clarity bundle (`c0736d0`) is now applied on top of it. This is the core polish gate, not "launch-final forever."
 - `noindex,nofollow` remains active until Owner approves indexing.
 
 Always verify current branch, HEAD, and status with git preflight.
+
+## Beta-Test Clarity Bundle (c0736d0)
+
+Owner-accepted clarity changes on top of the closed polish pass. Committed locally, not pushed.
+
+- Home: estimator CTA in the local-operator/cost card is now a real button ("Sprawdź orientacyjny zakres" / "Check the indicative scope"), not a weak text link. The pathway selector remains the primary first interaction. The main capability sentence now names keyholding/access and cleaning/readiness alongside condition checks, documentation, and action-within-limits. The shared-core mechanism line adds property readiness ("gotowość lokalu" / "property readiness").
+- Services: package responsibility/deliverable summaries clarified; tablet package ladder layout corrected. Full package visit rhythm is `min. 3/mies.` / `min. 3/month`.
+- Estimator: mixed/undetermined use is a classification-before-estimate path (Option A). Selecting "Nie wiem jeszcze / model mieszany" and clicking Next shows a full-width classification notice — no numeric range, no narrow result side rail. Private/guest priced flow is unchanged.
+- Protected contracts unchanged: estimator matrix/pricing/ranges, contact API/schema/payload, routes/slugs/query behavior, legal/noindex, package names/count, emergency authority limits.
 
 ## Page-by-Page Polish Pass — Verdicts
 
 All pages pass the core polish gate. Do not reopen a passed page without a real regression or explicit Owner scope.
 
-- Home: pass. Clearer first-screen hero on the unselected state; shared-core floor is a compact connected dossier/spine panel; unselected hero moved upward on desktop to tighten the opening.
+- Home: pass. Clearer first-screen hero on the unselected state; shared-core floor is a compact connected dossier/spine panel; unselected hero moved upward on desktop to tighten the opening. Beta bundle: estimator CTA is now a real button, the capability sentence names keys/access and cleaning/readiness, and the shared-core line adds property readiness.
 - Pathway states: pass. Hero detail simplified into a compact summary; detailed operational logic moved into pathway-specific process spines; private / guest / mixed differentiated in rhythm and copy; guest comparison carousel no longer auto-advances on desktop.
-- Services: pass. Desktop stays dossier/specification style; mobile uses a separate buyer-oriented IA (hero → shortcut rail → short model summary → package summary → estimator → collapsed proof sections → final CTA) with estimator early, a compact segmented package selector, and a compact vertical responsibility ladder.
+- Services: pass. Desktop stays dossier/specification style; mobile uses a separate buyer-oriented IA (hero → shortcut rail → short model summary → package summary → estimator → collapsed proof sections → final CTA) with estimator early, a compact segmented package selector, and a compact vertical responsibility ladder. Beta bundle: package responsibility/deliverable summaries clarified, tablet package ladder layout corrected, Full package visit rhythm `min. 3/mies.` / `min. 3/month`.
 - FAQ: pass. Mobile quick questions are compact action rows; search/category access comes earlier; wrong assumptions reduced on mobile behind reveal. Answer substance and business boundaries unchanged.
 - About: pass. Mobile spacing tightened; operating/team structure more compact on mobile. Trust meaning, local team proof, Aleksy proof, and "Sentinel jest / nie jest" substance unchanged.
 - Contact: pass. Mobile form reads as four compact numbered steps; "Po wysłaniu" steps are compact rows on mobile; direct contact stays before the form. Schema/API/payload, required fields, and form behavior unchanged.
@@ -31,6 +40,7 @@ Estimator affordance is shipped/live and protected:
 
 - Estimator logic, matrix, pricing/ranges, result behavior, and contact handoff payload remain unchanged.
 - Package/SLA/emergency meanings remain protected.
+- Mixed/undetermined use is a classification-before-estimate path (Option A): selecting it and clicking Next shows a full-width classification notice, not a numeric range and not a narrow result side rail. Private/guest priced flow is unchanged. See `DECISIONS.md`.
 
 FAQ is shipped/live and protected unless the Owner explicitly reopens it.
 
@@ -47,11 +57,11 @@ Contact is shipped/live as Night Desk controlled intake:
 
 ## Active Task State
 
-No open implementation task. The page-by-page polish pass is closed.
+No open implementation task. The page-by-page polish pass is closed and the beta-test clarity bundle (`c0736d0`) is accepted.
 
 Current active task state:
 
-- Next steps are verification, not new polish: push/deploy of the polish commits, then final whole-site QA against the deployed build.
+- Next steps are verification, not new polish: push/deploy of the local commits (`c0736d0` plus this docs commit), then final whole-site QA against the deployed build.
 - Launch / `noindex,nofollow` removal remains a later Owner decision.
 - Owner-directed final polish only if a real regression appears.
 - Do not re-open a passed page unless explicitly requested by Owner.
