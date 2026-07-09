@@ -40,8 +40,15 @@ Mixed pathway copy must not weaken the package model. Do not use "wrong package"
 - SLA means response/decision timing, not guaranteed resolution timing.
 - Package SLA meaning is protected.
 - Emergency authority limits are protected.
-- Full package standard autonomous decision limit remains EUR 300 per decision, with optional EUR 500 if agreed.
-- Above agreed limit requires owner approval.
+- Launch authority doctrine is Option A:
+  - Basic / Extended: no autonomous paid spend by default.
+  - Basic / Extended: owner approval is required before any paid action or vendor spend.
+  - Full retains EUR 300 standard autonomous protective-action authority per decision, with optional EUR 500 if agreed.
+  - Emergency services / community-required minimal protective action may be documented where required, but this is not a pre-authorised Sentinel spend mandate.
+  - No Basic / Extended euro amount may be invented or implied.
+- Above agreed authority requires owner approval unless law, safety, emergency services, or community administration requires minimal immediate action.
+- Package responsibility does not equal emergency authority or liability.
+- A package level controls service posture, response/decision timing, operating intensity, and authority posture; it does not make Sentinel an insurer or guarantee resolution.
 
 ## Estimator And Pricing
 

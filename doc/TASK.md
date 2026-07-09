@@ -4,13 +4,17 @@ This file tracks the next action only. Binding contracts live in `DECISIONS.md`.
 
 ## Current Task
 
-The page-by-page polish pass and the beta-test clarity bundle (`c0736d0`) are complete. No open implementation task.
+The page-by-page polish pass and the beta-test clarity bundle (`c0736d0`) are complete. No open website implementation task.
 
-Next steps are verification, not new work:
+Current docs stage: review/commit alignment after Owner approval. No more drafting until the Owner scopes it.
 
-1. Push/deploy the local commits — `c0736d0` (`refine: address beta-test clarity findings`) plus the docs commit — Owner-approved push only.
+Next steps are verification, not new implementation work:
+
+1. Push/deploy local commits only when Owner approves.
 2. Final whole-site QA against the deployed build (desktop + 390px mobile, PL/EN, overflow/console/failed-request/4xx-5xx, Services anchors).
-3. Launch / `noindex,nofollow` removal decision — later, Owner-owned.
+3. Scenario C operational test only when relevant: before the first guest-use customer.
+4. Legal/accountant review remains required before customer-facing use of customer documents.
+5. Launch / `noindex,nofollow` removal decision — later, Owner-owned.
 
 ## Current Shipped State
 
@@ -28,7 +32,7 @@ Unless the Owner gives a new explicit implementation brief:
 
 - Do not re-open shipped pages.
 - Do not change app code, CSS, messages, assets, package files, routes, legal/noindex, estimator logic, contact API, or form contracts.
-- Docs/status updates may proceed only when requested.
+- Docs/status updates may proceed only when requested; no more drafting until Owner scopes it.
 
 ## Protected
 

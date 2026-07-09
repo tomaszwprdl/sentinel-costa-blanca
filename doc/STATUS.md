@@ -5,7 +5,8 @@ Current project state only. This document is descriptive; `DECISIONS.md` is bind
 ## Snapshot
 
 - Branch at this documentation update: `main`.
-- Latest app commit: `c0736d0` (`refine: address beta-test clarity findings`) — committed locally, not pushed.
+- Latest app/content beta-test clarity commit: `c0736d0` (`refine: address beta-test clarity findings`); `origin/main` already contains this commit.
+- Current docs HEAD: `578197d` (`docs: record beta-test clarity bundle`).
 - Site phase: pre-launch / soft-launch review.
 - The page-by-page polish pass is complete; the beta-test clarity bundle (`c0736d0`) is now applied on top of it. This is the core polish gate, not "launch-final forever."
 - `noindex,nofollow` remains active until Owner approves indexing.
@@ -14,12 +15,22 @@ Always verify current branch, HEAD, and status with git preflight.
 
 ## Beta-Test Clarity Bundle (c0736d0)
 
-Owner-accepted clarity changes on top of the closed polish pass. Committed locally, not pushed.
+Owner-accepted clarity changes on top of the closed polish pass. App/content commit `c0736d0` is present on `origin/main`; docs HEAD `578197d` records the bundle.
 
 - Home: estimator CTA in the local-operator/cost card is now a real button ("Sprawdź orientacyjny zakres" / "Check the indicative scope"), not a weak text link. The pathway selector remains the primary first interaction. The main capability sentence now names keyholding/access and cleaning/readiness alongside condition checks, documentation, and action-within-limits. The shared-core mechanism line adds property readiness ("gotowość lokalu" / "property readiness").
 - Services: package responsibility/deliverable summaries clarified; tablet package ladder layout corrected. Full package visit rhythm is `min. 3/mies.` / `min. 3/month`.
 - Estimator: mixed/undetermined use is a classification-before-estimate path (Option A). Selecting "Nie wiem jeszcze / model mieszany" and clicking Next shows a full-width classification notice — no numeric range, no narrow result side rail. Private/guest priced flow is unchanged.
 - Protected contracts unchanged: estimator matrix/pricing/ranges, contact API/schema/payload, routes/slugs/query behavior, legal/noindex, package names/count, emergency authority limits.
+
+## Documentation System Status
+
+- Scope Register v0.3 semantic patch exists.
+- Scenario B Scope Register test fill is complete and passed as `fill-ready`.
+- REC-01 Visit Report and REC-03 Decision Request templates are drafted.
+- Scenario B dry-runs for REC-01 and REC-03 are complete and passed as `template-ready`.
+- Option A authority doctrine is now the launch doctrine: Basic / Extended require owner approval before paid action/vendor spend; Full keeps EUR 300 standard autonomous protective-action authority and optional EUR 500 if agreed.
+- These documents remain draft/internal/test artifacts. They are not customer-facing approved.
+- Legal and accountant gates remain before customer-facing use.
 
 ## Page-by-Page Polish Pass — Verdicts
 
@@ -57,11 +68,14 @@ Contact is shipped/live as Night Desk controlled intake:
 
 ## Active Task State
 
-No open implementation task. The page-by-page polish pass is closed and the beta-test clarity bundle (`c0736d0`) is accepted.
+No open website implementation task. The page-by-page polish pass is closed and the beta-test clarity bundle (`c0736d0`) is accepted.
 
 Current active task state:
 
-- Next steps are verification, not new polish: push/deploy of the local commits (`c0736d0` plus this docs commit), then final whole-site QA against the deployed build.
+- Current docs stage: review/commit alignment after Owner approval. No more drafting until Owner scopes it.
+- Next steps are verification, not new polish: push/deploy of local commits only when Owner approves, then final whole-site QA against the deployed build.
+- Next operational test only when relevant: Scenario C before the first guest-use customer.
+- Legal/accountant review remains required before customer-facing use of the document system.
 - Launch / `noindex,nofollow` removal remains a later Owner decision.
 - Owner-directed final polish only if a real regression appears.
 - Do not re-open a passed page unless explicitly requested by Owner.
