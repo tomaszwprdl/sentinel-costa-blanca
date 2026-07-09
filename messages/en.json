@@ -63,7 +63,7 @@
       "companyHeadlineQuestion": "Own a property on the Costa Blanca but live elsewhere?",
       "companyHeadlineAnswerBrand": "Sentinel",
       "companyHeadlineAnswerRest": " is your local operator on the ground.",
-      "companyLine": "Sentinel works on site on the owner's behalf: checking the property's condition, controlling access, documenting visits, and acting within agreed limits.",
+      "companyLine": "Sentinel acts locally on behalf of the owner: checks the property condition, handles keyholding and access, coordinates cleaning or readiness work, documents visits, and triggers action within agreed limits.",
       "companyMetaLine": "Torrevieja + a 50–70 km radius · from approx. €80/mo for the simplest scope.",
       "companyProofLine": "Scope, access, and records are set before oversight begins.",
       "companyFacts": {
@@ -90,7 +90,7 @@
         "priceTextLead": "From approx. ",
         "priceTextAmount": "€80/mo",
         "priceTextTail": "for the simplest scope; check the exact range in the estimator.",
-        "priceLink": "Open the estimator"
+        "priceLink": "Check the indicative scope"
       },
       "mediaAlt": {
         "private-use-only": "Operational placeholder photo of keys and a notebook prepared for an empty-property check",
@@ -406,7 +406,7 @@
     "floor": {
       "eyebrow": "The shared core",
       "title": "In every model we operate through the same core.",
-      "lead": "Your situation sets the frequency and scope. The mechanism itself stays constant: agreed terms, access, on-site checks, and a record for the owner.",
+      "lead": "Your situation sets the frequency and scope. The mechanism itself stays constant: agreed terms, access, property readiness, on-site checks, and a record for the owner.",
       "steps": {
         "scope": {
           "title": "We agree the scope",
@@ -840,16 +840,16 @@
           "full": "Control + access + decisions"
         },
         "basic": {
-          "responsibility": "Control and checks. Documented visits. The owner keeps most decisions.",
-          "fit": "When the main need is regular local presence and a condition record without regular access coordination."
+          "responsibility": "Regular local checks, documented visits, and a clear status after each visit. The owner still handles access, technicians, and most decisions.",
+          "fit": "When the main need is a steady property-check rhythm and condition reporting without regular third-party coordination."
         },
         "extended": {
-          "responsibility": "Control + access. Technician, cleaning, and entry coordination. More active operational handling.",
-          "fit": "When regular third-party entry is added to condition checks and local event handling is required."
+          "responsibility": "Basic + access, technician, cleaning, and entry coordination. Sentinel handles operations more actively, so the owner is not connecting every person remotely.",
+          "fit": "When checks also involve regular third-party entry, cleaning, technicians, or local event handling."
         },
         "full": {
-          "responsibility": "Control + access + decisions. Faster response and emergency authority inside the agreed limit.",
-          "fit": "When the owner wants fewer remote decisions and a higher operational priority."
+          "responsibility": "Extended + priority response, emergency decisions within the agreed limit, and the strongest local representation. Sentinel becomes the local decision layer within defined boundaries.",
+          "fit": "When the owner does not want to coordinate from abroad and needs higher priority, stronger coordination, and more decision support."
         }
       },
       "mobileDisclosure": {
@@ -1153,7 +1153,7 @@
     "green": {
       "title": "Basic Package",
       "badgeLabel": "Basic",
-      "definition": "Scheduled property checks.",
+      "definition": "Regular local checks, documented visits, and a clear status after each visit.",
       "suitableForTitle": "Suitable for",
       "suitableItems": {
         "rarelyUsed": "Properties left vacant between visits",
@@ -1198,15 +1198,17 @@
         "visitsLabel": "Visits:",
         "visitsValue": "min. 1/month",
         "accessLabel": "Access coordination:",
-        "accessValue": "not standard",
+        "accessValue": "owner arranges",
         "decisionsLabel": "Emergency decisions:",
-        "decisionsValue": "limited securing"
+        "decisionsValue": "limited securing",
+        "ownerLabel": "Owner receives:",
+        "ownerValue": "report and status; owner still handles entries, technicians, and most decisions"
       }
     },
     "orange": {
       "title": "Extended Package",
       "badgeLabel": "Extended",
-      "definition": "Scheduled checks and access coordination.",
+      "definition": "Basic + access, technician, cleaning, and entry coordination within the agreed scope.",
       "fromBasic": "Includes everything from the Basic Package, plus:",
       "accessTitle": "Access Coordination",
       "accessItems": {
@@ -1236,15 +1238,17 @@
         "visitsLabel": "Visits:",
         "visitsValue": "min. 2/month",
         "accessLabel": "Access coordination:",
-        "accessValue": "included",
+        "accessValue": "technicians, cleaning, entries",
         "decisionsLabel": "Emergency decisions:",
-        "decisionsValue": "limit + approval"
+        "decisionsValue": "limit + approval",
+        "ownerLabel": "Owner receives:",
+        "ownerValue": "reporting and people coordination; owner is not connecting technicians, cleaning, and access remotely"
       }
     },
     "red": {
       "title": "Full Package",
       "badgeLabel": "Full",
-      "definition": "Checks, access, and local decision authority.",
+      "definition": "Extended + priority response, emergency decisions within the agreed limit, and the strongest local representation.",
       "fromExtended": "Includes everything from the Extended Package, plus:",
       "emergencyTitle": "Emergency Response",
       "emergencyItems": {
@@ -1278,11 +1282,13 @@
       },
       "summary": {
         "visitsLabel": "Visits:",
-        "visitsValue": "min. 2/month",
+        "visitsValue": "min. 3/month",
         "accessLabel": "Access coordination:",
-        "accessValue": "priority",
+        "accessValue": "strongest coordination",
         "decisionsLabel": "Emergency decisions:",
-        "decisionsValue": "agreed limit"
+        "decisionsValue": "agreed limit",
+        "ownerLabel": "Owner receives:",
+        "ownerValue": "a local decision layer; less remote coordination from abroad within defined boundaries"
       }
     },
     "addons": {
@@ -1408,20 +1414,22 @@
         "extended_jurisdiction": "Full"
       },
       "packageDescriptor": {
-        "structured_presence": "Regular inspections only. No third-party representation.",
-        "active_oversight": "Inspections and access coordination.",
-        "extended_jurisdiction": "Full representation with emergency authority."
+        "structured_presence": "Regular checks, a report after each visit, and basic property status; no ongoing third-party coordination.",
+        "active_oversight": "Checks + access, technician, cleaning, and entry coordination within the agreed scope.",
+        "extended_jurisdiction": "Priority response, strongest coordination, and emergency decisions within the agreed limit."
       },
       "groupMode": "Operational Mode",
       "groupModeAnchor": "Operational mode reflects oversight intensity resulting from property usage.",
       "modeLabel": "Operational Mode",
       "modePrivateUse": "Private Use Only",
       "modeActiveGuest": "Regular Guest Stays",
+      "modeMixedUse": "Not sure yet / mixed use",
       "modeSublinePrivateUse": "Standard oversight intensity.",
       "modeSublineActiveGuest": "Higher oversight intensity associated with guest turnover.",
       "modeDescriptor": {
         "private_use": "No regular guest rotation.",
-        "active_guest": "Regular guest rotation / regular guest stays."
+        "active_guest": "Regular guest rotation / regular guest stays.",
+        "mixed_undetermined": "Scope to classify after conversation."
       },
       "groupParameters": "Property parameters",
       "groupParametersAnchor": "Parameters affect service scope and coordination complexity.",
@@ -1465,6 +1473,8 @@
       "modeWhatGuest1": "Higher frequency of control visits.",
       "modeWhatGuest2": "Higher operational coordination.",
       "modeWhatGuest3": "Higher communication and event handling.",
+      "modeWhatMixed1": "You do not need to choose the model at the start. If the property is used in different ways or guest stays are only being planned, describe the situation.",
+      "modeWhatMixed2": "Sentinel will help define the right scope after a conversation.",
       "scopeElementBilledByUse": "Billed by use.",
       "gateBefore": "Range will appear after parameters are set.",
       "gateReady": "Selections are complete. Determine range to show the bracket.",
@@ -1486,7 +1496,11 @@
       "rangeTitle": "Estimated monthly range",
       "rangeSuffix": "/ month",
       "disclaimer": "Estimate is indicative. Final scope is confirmed after inquiry review.",
-      "ctaProceed": "Continue to inquiry"
+      "ctaProceed": "Continue to inquiry",
+      "mixedPanelLabel": "Scope classification",
+      "mixedRangeHeading": "Classification before estimate",
+      "mixedResultBody": "This model requires a short classification before pricing. Send a description of the situation and we will confirm the right scope: private, active guest use, or mixed.",
+      "mixedCtaProceed": "Send an inquiry with situation details"
     },
     "cta": {
       "headline": "Request a package comparison for your property.",
@@ -1519,7 +1533,7 @@
       "empty-between-visits": "Private Use Only",
       "private-use-only": "Private Use Only",
       "regular-guest-stays": "Regular Guest Stays",
-      "mixed-not-defined": "Mixed / Not Yet Defined",
+      "mixed-not-defined": "Not sure yet / mixed use",
       "prefillPrefix": "Usage pathway:"
     },
     "directContact": {
@@ -1577,7 +1591,7 @@
       "propertyStatuses": {
         "private-use-only": "Private Use Only",
         "regular-guest-stays": "Regular Guest Stays",
-        "mixed-not-defined": "Mixed / Not Yet Defined"
+        "mixed-not-defined": "Not sure yet / mixed use"
       },
       "serviceRequirements": "Service Requirements:",
       "expectedPackage": "Expected Package",

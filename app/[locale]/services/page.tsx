@@ -225,6 +225,24 @@ export default async function ServicesPage({
                   <div>
                     <h3>{t(`${pkg.key}.title`)}</h3>
                     <p>{t(`${pkg.key}.definition`)}</p>
+                    <dl className="services-mobile-package-card__facts">
+                      <div>
+                        <dt>{t(`${pkg.key}.summary.visitsLabel`)}</dt>
+                        <dd>{t(`${pkg.key}.summary.visitsValue`)}</dd>
+                      </div>
+                      <div>
+                        <dt>{t(`${pkg.key}.summary.accessLabel`)}</dt>
+                        <dd>{t(`${pkg.key}.summary.accessValue`)}</dd>
+                      </div>
+                      <div>
+                        <dt>{t(`${pkg.key}.summary.decisionsLabel`)}</dt>
+                        <dd>{t(`${pkg.key}.summary.decisionsValue`)}</dd>
+                      </div>
+                      <div>
+                        <dt>{t(`${pkg.key}.summary.ownerLabel`)}</dt>
+                        <dd>{t(`${pkg.key}.summary.ownerValue`)}</dd>
+                      </div>
+                    </dl>
                   </div>
                 </article>
               ))}

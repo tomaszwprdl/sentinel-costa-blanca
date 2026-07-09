@@ -148,6 +148,10 @@ export default function PackageResponsibilityLadder() {
                     />
                   </dd>
                 </div>
+                <div>
+                  <dt>{t(`${active.packageKey}.summary.ownerLabel`)}</dt>
+                  <dd>{t(`${active.packageKey}.summary.ownerValue`)}</dd>
+                </div>
               </dl>
             </MobileDisclosure>
 

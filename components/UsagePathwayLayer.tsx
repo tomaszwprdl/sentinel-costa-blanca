@@ -396,7 +396,7 @@ function GateOperatorCue({
         </div>
       </div>
       <p className="gate-operator-cue__presence">{t('operatorCue.presence')}</p>
-      <Link href={`/${locale}/services#estimator`} className="gate-operator-cue__price">
+      <div className="gate-operator-cue__price">
         <span className="gate-operator-cue__price-label">{t('operatorCue.priceLabel')}</span>
         <span className="gate-operator-cue__price-text">
           <span className="gate-cost-line">
@@ -405,13 +405,13 @@ function GateOperatorCue({
           </span>
           <span className="gate-cost-detail">{t('operatorCue.priceTextTail')}</span>
         </span>
-        <span className="gate-operator-cue__price-link">
+        <Link href={`/${locale}/services#estimator`} className="gate-operator-cue__estimate-btn">
           {t('operatorCue.priceLink')}
           <span className="choice-arrow" aria-hidden>
             -&gt;
           </span>
-        </span>
-      </Link>
+        </Link>
+      </div>
     </aside>
   );
 }

@@ -63,7 +63,7 @@
       "companyHeadlineQuestion": "Masz nieruchomość na Costa Blanca, ale mieszkasz gdzie indziej?",
       "companyHeadlineAnswerBrand": "Sentinel",
       "companyHeadlineAnswerRest": " jest lokalnym operatorem po Twojej stronie.",
-      "companyLine": "Sentinel działa na miejscu w imieniu właściciela: sprawdza stan lokalu, kontroluje dostęp, dokumentuje wizyty i uruchamia działania w ustalonych granicach.",
+      "companyLine": "Sentinel działa na miejscu w imieniu właściciela: sprawdza stan lokalu, obsługuje klucze i dostęp, koordynuje sprzątanie lub przygotowanie lokalu, dokumentuje wizyty i uruchamia działania w ustalonych granicach.",
       "companyMetaLine": "Torrevieja + promień 50–70 km · od ok. 80 €/mies. dla najprostszego zakresu.",
       "companyProofLine": "Zakres, dostęp i zapis są ustalone przed rozpoczęciem nadzoru.",
       "companyFacts": {
@@ -90,7 +90,7 @@
         "priceTextLead": "Od ok. ",
         "priceTextAmount": "80 €/mies.",
         "priceTextTail": "dla najprostszego zakresu; dokładny przedział sprawdzisz w estymatorze.",
-        "priceLink": "Otwórz estymator"
+        "priceLink": "Sprawdź orientacyjny zakres"
       },
       "mediaAlt": {
         "private-use-only": "Operacyjne zdjęcie zastępcze kluczy i notatnika przygotowanych do kontroli pustego lokalu",
@@ -406,7 +406,7 @@
     "floor": {
       "eyebrow": "Wspólny rdzeń",
       "title": "W każdym modelu działamy przez ten sam rdzeń.",
-      "lead": "Wybór sytuacji dopasowuje częstotliwość i zakres. Sam mechanizm pozostaje stały: ustalenia, dostęp, kontrola na miejscu i zapis dla właściciela.",
+      "lead": "Wybór sytuacji dopasowuje częstotliwość i zakres. Sam mechanizm pozostaje stały: ustalenia, dostęp, gotowość lokalu, kontrola na miejscu i zapis dla właściciela.",
       "steps": {
         "scope": {
           "title": "Ustalamy zakres",
@@ -840,16 +840,16 @@
           "full": "Kontrola + dostęp + decyzje"
         },
         "basic": {
-          "responsibility": "Kontrola i sprawdzenia. Udokumentowane wizyty. Właściciel zatrzymuje większość decyzji.",
-          "fit": "Gdy głównym zadaniem jest regularna obecność na miejscu i zapis stanu bez regularnej koordynacji dostępu."
+          "responsibility": "Regularne lokalne kontrole, udokumentowane wizyty i jasny status po każdej wizycie. Właściciel nadal prowadzi dostęp, techników i większość decyzji.",
+          "fit": "Gdy głównym zadaniem jest sprawdzanie lokalu w stałym rytmie i raportowanie stanu bez regularnej koordynacji osób trzecich."
         },
         "extended": {
-          "responsibility": "Kontrola + dostęp. Koordynacja techników, sprzątania i wejść. Aktywniejsze prowadzenie operacji.",
-          "fit": "Gdy do kontroli dochodzą regularne wejścia osób trzecich i potrzeba lokalnego prowadzenia zdarzeń."
+          "responsibility": "Podstawowy + koordynacja dostępu, techników, sprzątania i wejść. Sentinel aktywniej prowadzi operacje, więc właściciel nie łączy sam wszystkich osób.",
+          "fit": "Gdy do kontroli dochodzą regularne wejścia osób trzecich, sprzątanie, technicy albo lokalne prowadzenie zdarzeń."
         },
         "full": {
-          "responsibility": "Kontrola + dostęp + decyzje. Szybsza reakcja i uprawnienia awaryjne w uzgodnionym limicie.",
-          "fit": "Gdy właściciel chce ograniczyć decyzje zdalne i potrzebuje wyższego priorytetu operacyjnego."
+          "responsibility": "Rozszerzony + priorytetowa reakcja, decyzje awaryjne w uzgodnionym limicie i najsilniejsza lokalna reprezentacja. Sentinel staje się lokalną warstwą decyzji w ustalonych granicach.",
+          "fit": "Gdy właściciel nie chce koordynować z zagranicy i potrzebuje wyższego priorytetu, mocniejszej koordynacji oraz większego wsparcia decyzyjnego."
         }
       },
       "mobileDisclosure": {
@@ -1153,7 +1153,7 @@
     "green": {
       "title": "Pakiet Podstawowy",
       "badgeLabel": "Podstawowy",
-      "definition": "Stała kontrola nieruchomości.",
+      "definition": "Regularne lokalne kontrole, udokumentowane wizyty i jasny status po każdej wizycie.",
       "suitableForTitle": "Dla kogo",
       "suitableItems": {
         "rarelyUsed": "Nieruchomości rzadko użytkowane",
@@ -1198,15 +1198,17 @@
         "visitsLabel": "Wizyty:",
         "visitsValue": "min. 1/mies.",
         "accessLabel": "Koordynacja dostępu:",
-        "accessValue": "poza standardem",
+        "accessValue": "właściciel organizuje",
         "decisionsLabel": "Decyzje awaryjne:",
-        "decisionsValue": "ograniczone zabezp."
+        "decisionsValue": "ograniczone zabezp.",
+        "ownerLabel": "Właściciel otrzymuje:",
+        "ownerValue": "raport i status; sam prowadzi wejścia, techników i większość decyzji"
       }
     },
     "orange": {
       "title": "Pakiet Rozszerzony",
       "badgeLabel": "Rozszerzony",
-      "definition": "Kontrola i organizacja dostępu.",
+      "definition": "Podstawowy + koordynacja dostępu, techników, sprzątania i wejść w uzgodnionym zakresie.",
       "fromBasic": "Zawiera wszystko z Pakietu Podstawowego oraz:",
       "accessTitle": "Organizacja dostępu",
       "accessItems": {
@@ -1236,15 +1238,17 @@
         "visitsLabel": "Wizyty:",
         "visitsValue": "min. 2/mies.",
         "accessLabel": "Koordynacja dostępu:",
-        "accessValue": "w zakresie",
+        "accessValue": "technicy, sprzątanie, wejścia",
         "decisionsLabel": "Decyzje awaryjne:",
-        "decisionsValue": "limit + zgoda"
+        "decisionsValue": "limit + zgoda",
+        "ownerLabel": "Właściciel otrzymuje:",
+        "ownerValue": "raport i koordynację osób; nie łączy sam techników, sprzątania i dostępu"
       }
     },
     "red": {
       "title": "Pakiet Pełny",
       "badgeLabel": "Pełny",
-      "definition": "Kontrola, dostęp i decyzje na miejscu.",
+      "definition": "Rozszerzony + priorytetowa reakcja, decyzje awaryjne w uzgodnionym limicie i najsilniejsza lokalna reprezentacja.",
       "fromExtended": "Zawiera wszystko z Pakietu Rozszerzonego oraz:",
       "emergencyTitle": "Reakcja awaryjna",
       "emergencyItems": {
@@ -1278,11 +1282,13 @@
       },
       "summary": {
         "visitsLabel": "Wizyty:",
-        "visitsValue": "min. 2/mies.",
+        "visitsValue": "min. 3/mies.",
         "accessLabel": "Koordynacja dostępu:",
-        "accessValue": "priorytet",
+        "accessValue": "najsilniejsza koordynacja",
         "decisionsLabel": "Decyzje awaryjne:",
-        "decisionsValue": "ustalony limit"
+        "decisionsValue": "ustalony limit",
+        "ownerLabel": "Właściciel otrzymuje:",
+        "ownerValue": "lokalną warstwę decyzji; mniej koordynowania z zagranicy w ustalonych granicach"
       }
     },
     "addons": {
@@ -1408,20 +1414,22 @@
         "extended_jurisdiction": "Pełny"
       },
       "packageDescriptor": {
-        "structured_presence": "Regularne wizyty kontrolne. Brak reprezentacji wobec podmiotów trzecich.",
-        "active_oversight": "Wizyty kontrolne i koordynacja dostępu.",
-        "extended_jurisdiction": "Pełna reprezentacja z uprawnieniami awaryjnymi."
+        "structured_presence": "Regularne kontrole, raport po każdej wizycie i podstawowy status lokalu; bez stałej koordynacji osób trzecich.",
+        "active_oversight": "Kontrole + koordynacja dostępu, techników, sprzątania i wejść w uzgodnionym zakresie.",
+        "extended_jurisdiction": "Priorytetowa reakcja, najsilniejsza koordynacja i decyzje awaryjne w uzgodnionym limicie."
       },
       "groupMode": "Tryb operacyjny",
       "groupModeAnchor": "Tryb operacyjny określa intensywność nadzoru wynikającą z użytkowania nieruchomości.",
       "modeLabel": "Tryb operacyjny",
       "modePrivateUse": "Tylko użytek prywatny",
       "modeActiveGuest": "Regularne pobyty gości",
+      "modeMixedUse": "Nie wiem jeszcze / model mieszany",
       "modeSublinePrivateUse": "Standardowa intensywność nadzoru.",
       "modeSublineActiveGuest": "Zwiększona intensywność nadzoru związana z rotacją gości.",
       "modeDescriptor": {
         "private_use": "Brak regularnej rotacji gości.",
-        "active_guest": "Regularna rotacja gości / regularne pobyty gości."
+        "active_guest": "Regularna rotacja gości / regularne pobyty gości.",
+        "mixed_undetermined": "Zakres do klasyfikacji po rozmowie."
       },
       "groupParameters": "Parametry nieruchomości",
       "groupParametersAnchor": "Parametry wpływają na zakres obsługi i złożoność koordynacji.",
@@ -1465,6 +1473,8 @@
       "modeWhatGuest1": "Zwiększona częstotliwość wizyt kontrolnych.",
       "modeWhatGuest2": "Większa koordynacja operacyjna.",
       "modeWhatGuest3": "Większa komunikacja i obsługa zdarzeń.",
+      "modeWhatMixed1": "Nie musisz wybierać modelu na start. Jeśli lokal bywa używany różnie albo dopiero planujesz wynajem, opisz sytuację.",
+      "modeWhatMixed2": "Sentinel pomoże dobrać właściwy zakres po rozmowie.",
       "scopeElementBilledByUse": "Rozliczane według użycia.",
       "gateBefore": "Zakres pojawi się po ustaleniu parametrów.",
       "gateReady": "Wybory są kompletne. Ustal zakres, aby pokazać widełki.",
@@ -1486,7 +1496,11 @@
       "rangeTitle": "Szacunkowy zakres miesięczny",
       "rangeSuffix": "/ miesiąc",
       "disclaimer": "Szacunek ma charakter orientacyjny. Ostateczny zakres potwierdzamy po sprawdzeniu zapytania.",
-      "ctaProceed": "Przejdź do zapytania"
+      "ctaProceed": "Przejdź do zapytania",
+      "mixedPanelLabel": "Klasyfikacja zakresu",
+      "mixedRangeHeading": "Klasyfikacja przed wyceną",
+      "mixedResultBody": "Ten model wymaga krótkiej klasyfikacji przed wyceną. Wyślij opis sytuacji, a ustalimy właściwy zakres: prywatny, rotacyjny albo mieszany.",
+      "mixedCtaProceed": "Wyślij zapytanie z opisem sytuacji"
     },
     "cta": {
       "headline": "Poproś o porównanie pakietów dla swojej nieruchomości.",
@@ -1519,7 +1533,7 @@
       "empty-between-visits": "Tylko użytek prywatny",
       "private-use-only": "Tylko użytek prywatny",
       "regular-guest-stays": "Regularne pobyty gości",
-      "mixed-not-defined": "Model mieszany / jeszcze nieustalony",
+      "mixed-not-defined": "Nie wiem jeszcze / model mieszany",
       "prefillPrefix": "Ścieżka użycia:"
     },
     "directContact": {
@@ -1577,7 +1591,7 @@
       "propertyStatuses": {
         "private-use-only": "Tylko użytek prywatny",
         "regular-guest-stays": "Regularne pobyty gości",
-        "mixed-not-defined": "Model mieszany / jeszcze nieustalony"
+        "mixed-not-defined": "Nie wiem jeszcze / model mieszany"
       },
       "serviceRequirements": "Wymagania usługowe:",
       "expectedPackage": "Oczekiwany pakiet",

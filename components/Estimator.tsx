@@ -25,8 +25,14 @@ const OUTDOOR_KEYS = ['none', 'terrace', 'large'] as const;
 const ESTIMATOR_STEP_KEYS = ['jurisdiction', 'mode', 'parameters', 'scope'] as const;
 
 type EstimatorStepKey = (typeof ESTIMATOR_STEP_KEYS)[number];
+type MixedModeKey = 'mixed_undetermined';
+type EstimatorModeKey = ModeKey | MixedModeKey;
 type BathroomsKey = (typeof BATHROOMS_KEYS)[number];
 type OutdoorKey = (typeof OUTDOOR_KEYS)[number];
+
+function isPricedModeKey(value: EstimatorModeKey | null): value is ModeKey {
+  return value === 'private_use' || value === 'active_guest';
+}
 
 function formatRange(min: number, max: number): string {
   return `€${min}–€${max}`;
@@ -45,7 +51,7 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
   const t = useTranslations('services.estimator');
   const [activeStep, setActiveStep] = useState<EstimatorStepKey>('jurisdiction');
   const [packageKey, setPackageKey] = useState<PackageKey | null>(null);
-  const [modeKey, setModeKey] = useState<ModeKey | null>(null);
+  const [modeKey, setModeKey] = useState<EstimatorModeKey | null>(null);
   const [sqmInput, setSqmInput] = useState('');
   const [bedroomsKey, setBedroomsKey] = useState<BedroomsKey | null>(null);
   const [bathroomsKey, setBathroomsKey] = useState<BathroomsKey | null>(null);
@@ -55,13 +61,18 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
   const [result, setResult] = useState<{ min: number; max: number } | null>(null);
   const [hasCalculated, setHasCalculated] = useState(false);
   const [hasCalculatedOnce, setHasCalculatedOnce] = useState(false);
+  // Option A: mixed/undetermined use routes out of the priced flow into a
+  // full-width classification notice instead of computing a numeric range.
+  const [classificationActive, setClassificationActive] = useState(false);
 
   const parsedSqm = sqmInput.trim() === '' ? Number.NaN : Number(sqmInput);
   const sqmValue = Number.isFinite(parsedSqm) ? Math.round(parsedSqm) : null;
   const clampedSqm = sqmValue === null ? null : Math.max(SQM_INPUT_MIN, Math.min(SQM_INPUT_MAX, sqmValue));
   const sizeKey: SizeKey | null = clampedSqm === null ? null : getSizeKeyFromSqm(clampedSqm);
-  const requiredInputsComplete = Boolean(packageKey && modeKey && clampedSqm !== null && bedroomsKey && bathroomsKey && outdoorKey);
-  const showCompatibilityNote = packageKey === 'structured_presence' && modeKey === 'active_guest';
+  const pricedModeKey = isPricedModeKey(modeKey) ? modeKey : null;
+  const isMixedMode = modeKey === 'mixed_undetermined';
+  const requiredInputsComplete = Boolean(packageKey && pricedModeKey && clampedSqm !== null && bedroomsKey && bathroomsKey && outdoorKey);
+  const showCompatibilityNote = packageKey === 'structured_presence' && pricedModeKey === 'active_guest';
   const showSqmMinValidation = sqmValue !== null && sqmValue < SQM_INPUT_MIN;
   const showSqmMaxValidation = sqmValue !== null && sqmValue > SQM_INPUT_MAX;
   const activeStepIndex = ESTIMATOR_STEP_KEYS.indexOf(activeStep);
@@ -78,8 +89,11 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
     setPackageKey(v);
     collapseResult();
   };
-  const handleModeChange = (v: ModeKey) => {
+  const handleModeChange = (v: EstimatorModeKey) => {
     setModeKey(v);
+    // Leaving/entering a mode selection always returns to the wizard grid;
+    // the classification notice is only reachable via "Next" on the mode step.
+    setClassificationActive(false);
     collapseResult();
   };
   const handleSqmChange = (v: number | string) => {
@@ -103,21 +117,21 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
   };
 
   const handleCalculate = () => {
-    if (!requiredInputsComplete || !packageKey || !modeKey || !sizeKey || !bedroomsKey || clampedSqm === null) {
+    if (!requiredInputsComplete || !packageKey || !pricedModeKey || !sizeKey || !bedroomsKey || clampedSqm === null) {
       return;
     }
     setScopeTouched(true);
-    const r = computeEstimate(packageKey, modeKey, sizeKey, bedroomsKey, sortScopeElements(scopeElements));
+    const r = computeEstimate(packageKey, pricedModeKey, sizeKey, bedroomsKey, sortScopeElements(scopeElements));
     setResult(r);
     setHasCalculated(true);
     setHasCalculatedOnce(true);
   };
 
   const scopeSerialized = sortScopeElements(scopeElements).join(',');
-  const contactPayload = result && packageKey && modeKey && sizeKey && clampedSqm !== null && bedroomsKey
+  const contactPayload = result && packageKey && pricedModeKey && sizeKey && clampedSqm !== null && bedroomsKey
     ? new URLSearchParams({
         est_package: packageKey,
-        est_mode: modeKey,
+        est_mode: pricedModeKey,
         est_size: sizeKey,
         est_sqm: String(clampedSqm),
         est_bedrooms: bedroomsKey,
@@ -125,6 +139,7 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
         est_range: `${result.min}-${result.max}`,
       })
     : null;
+  const classificationContactHref = `/${locale}/contact?pathway=mixed-not-defined`;
 
   const showParamsChangedCue = hasCalculatedOnce && !result;
   const hasVisibleResult = Boolean(result && hasCalculated);
@@ -153,15 +168,23 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
       ? sortScopeElements(scopeElements).map((k) => t(`scopeElements.${k}`)).join(', ')
       : t('wizard.scopeNone')
     : null;
+  const modeLabel = modeKey
+    ? modeKey === 'mixed_undetermined'
+      ? t('modeMixedUse')
+      : modeKey === 'private_use'
+        ? t('modePrivateUse')
+        : t('modeActiveGuest')
+    : null;
   const ledgerRows = [
     { label: t('resultJurisdiction'), value: packageKey ? t(`packages.${packageKey}`) : null },
-    { label: t('resultMode'), value: modeKey ? (modeKey === 'private_use' ? t('modePrivateUse') : t('modeActiveGuest')) : null },
+    { label: t('resultMode'), value: modeLabel },
     { label: t('resultArea'), value: clampedSqm === null ? null : `${clampedSqm} m²` },
     { label: t('resultBedrooms'), value: formatCount(bedroomsKey) },
     { label: t('bathroomsLabel'), value: formatCount(bathroomsKey) },
     { label: t('outdoorLabel'), value: outdoorKey ? t(`outdoorOptions.${outdoorKey}`) : null },
     { label: t('resultScopeElements'), value: scopeSummary },
   ];
+  const resultKind = hasVisibleResult ? 'estimate' : 'pending';
 
   const liveStructureSummary = (
     <dl className="estimator-live-summary">
@@ -254,6 +277,17 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
               <span>{t('modeWhatGuest1')}</span>
               <span>{t('modeWhatGuest2')}</span>
               <span>{t('modeWhatGuest3')}</span>
+            </button>
+            <button
+              type="button"
+              aria-pressed={modeKey === 'mixed_undetermined'}
+              data-selected={modeKey === 'mixed_undetermined'}
+              onClick={() => handleModeChange('mixed_undetermined')}
+              className="estimator-mode-card estimator-mode-card--mixed"
+            >
+              <strong>{t('modeMixedUse')}</strong>
+              <span>{t('modeWhatMixed1')}</span>
+              <span>{t('modeWhatMixed2')}</span>
             </button>
           </div>
         </div>
@@ -379,7 +413,12 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
   })();
 
   const outputPanel = (
-    <div className="estimator-live-panel" data-complete={requiredInputsComplete} data-has-result={hasVisibleResult}>
+    <div
+      className="estimator-live-panel"
+      data-complete={requiredInputsComplete}
+      data-has-result={hasVisibleResult}
+      data-result-kind={resultKind}
+    >
       <div className="estimator-live-panel__top">
         <p>{t('wizard.outputTitle')}</p>
         {result && hasCalculated ? (
@@ -398,7 +437,7 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
             <li>{t('driverBullet2')}</li>
             <li>{t('driverBullet3')}</li>
             <li>{t('driverBullet4')}</li>
-            {modeKey === 'active_guest' && <li>{t('driverBulletGuest')}</li>}
+            {pricedModeKey === 'active_guest' && <li>{t('driverBulletGuest')}</li>}
           </ul>
           <span>{t('disclaimer')}</span>
           {contactPayload && (
@@ -416,6 +455,24 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
     </div>
   );
 
+  const classificationView = (
+    <div className="estimator-classification">
+      <div className="estimator-classification__card" role="status" aria-live="polite">
+        <p className="estimator-classification__eyebrow">{t('mixedPanelLabel')}</p>
+        <h3 className="estimator-classification__title">{t('mixedRangeHeading')}</h3>
+        <p className="estimator-classification__body">{t('mixedResultBody')}</p>
+        <div className="estimator-classification__actions">
+          <button type="button" onClick={() => setClassificationActive(false)} className="btn-secondary">
+            {t('wizard.previous')}
+          </button>
+          <Link href={classificationContactHref} className="btn-primary">
+            {t('mixedCtaProceed')}
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+
   const shell = (
     <div className={embedded ? 'estimator-embedded-shell estimator-configurator' : 'visual-card-strong mx-auto max-w-[65ch] p-5 md:p-8 lg:max-w-none'}>
       {!embedded && (
@@ -425,46 +482,62 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
         </div>
       )}
 
-      <div className="estimator-configurator__grid">
-        <nav className="estimator-stepper" aria-label={t('heading')}>
-          {ESTIMATOR_STEP_KEYS.map((step, index) => (
-            <button
-              key={step}
-              type="button"
-              aria-current={step === activeStep ? 'step' : undefined}
-              data-active={step === activeStep}
-              onClick={() => goToStep(step)}
-              className="estimator-stepper__item"
-            >
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              <strong>{stepTitles[step]}</strong>
-            </button>
-          ))}
-        </nav>
+      {classificationActive ? (
+        classificationView
+      ) : (
+        <div className="estimator-configurator__grid" data-mixed={isMixedMode ? 'true' : undefined}>
+          <nav className="estimator-stepper" aria-label={t('heading')}>
+            {ESTIMATOR_STEP_KEYS.map((step, index) => {
+              // Mixed/undetermined never collects the pricing parameters, so the
+              // downstream steps are inert for that path.
+              const stepDisabled = isMixedMode && (step === 'parameters' || step === 'scope');
+              return (
+                <button
+                  key={step}
+                  type="button"
+                  aria-current={step === activeStep ? 'step' : undefined}
+                  data-active={step === activeStep}
+                  onClick={() => goToStep(step)}
+                  disabled={stepDisabled}
+                  className="estimator-stepper__item"
+                >
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <strong>{stepTitles[step]}</strong>
+                </button>
+              );
+            })}
+          </nav>
 
-        <section className="estimator-configurator__control" aria-live="polite">
-          {activeControl}
-        </section>
+          <section className="estimator-configurator__control" aria-live="polite">
+            {activeControl}
+          </section>
 
-        <aside className="estimator-configurator__output">
-          {outputPanel}
-        </aside>
-
-        <div className="estimator-configurator__footer">
-          <button type="button" onClick={goToPrevious} className="btn-secondary" disabled={activeStepIndex === 0}>
-            {t('wizard.previous')}
-          </button>
-          {activeStepIndex < ESTIMATOR_STEP_KEYS.length - 1 ? (
-            <button type="button" onClick={goToNext} className="btn-primary">
-              {t('wizard.next')}
-            </button>
-          ) : (
-            <button type="button" onClick={handleCalculate} className="btn-primary" disabled={!requiredInputsComplete}>
-              {hasCalculated ? t('recalculate') : t('calculate')}
-            </button>
+          {!isMixedMode && (
+            <aside className="estimator-configurator__output">
+              {outputPanel}
+            </aside>
           )}
+
+          <div className="estimator-configurator__footer">
+            <button type="button" onClick={goToPrevious} className="btn-secondary" disabled={activeStepIndex === 0}>
+              {t('wizard.previous')}
+            </button>
+            {isMixedMode && activeStep === 'mode' ? (
+              <button type="button" onClick={() => setClassificationActive(true)} className="btn-primary">
+                {t('wizard.next')}
+              </button>
+            ) : activeStepIndex < ESTIMATOR_STEP_KEYS.length - 1 ? (
+              <button type="button" onClick={goToNext} className="btn-primary">
+                {t('wizard.next')}
+              </button>
+            ) : (
+              <button type="button" onClick={handleCalculate} className="btn-primary" disabled={!requiredInputsComplete}>
+                {hasCalculated ? t('recalculate') : t('calculate')}
+              </button>
+            )}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 
