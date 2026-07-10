@@ -29,7 +29,7 @@ Ten dokument służy do uporządkowania informacji o nieruchomości, uzgodnionym
 | Referencja nieruchomości | `SEN-PROP-______` |
 | Wersja robocza | `______` |
 | Data wypełnienia | `______` |
-| Etap wypełnienia | ☐ rozmowa wstępna<br>☐ częściowo wypełnione - przed pierwszą wizytą<br>☐ po pierwszej wizycie<br>☐ test wewnętrzny<br>☐ wycofane |
+| Etap wypełnienia | ☐ rozmowa wstępna<br>☐ częściowo wypełnione - przed pierwszą wizytą<br>☐ po pierwszej wizycie<br>☐ wycofane |
 | Język rekordu | ☒ PL<br>☐ EN<br>☐ inny: `______` |
 | Kanał wypełnienia | ☐ spotkanie<br>☐ telefon<br>☐ wideo<br>☐ email<br>☐ WhatsApp<br>☐ inny: `______` |
 | Uczestnicy | `______` |
@@ -107,7 +107,7 @@ Krótki termin może ograniczyć wykonanie gotowości. Nie zmienia to znaczenia 
 | Model sprzątania | ☐ cleaner Sentinel<br>☐ cleaner wybrany przez właściciela<br>☐ nie dotyczy<br>☐ oczekuje na decyzję |
 | Zakres sprzątania | ☐ gotowość właściciela<br>☐ rotacja gości<br>☐ oba<br>☐ nie obejmuje |
 | Odpowiedzialność za środki / produkty | ☐ Sentinel<br>☐ właściciel<br>☐ przechowywane w lokalu<br>☐ zakup za zgodą właściciela<br>☐ oczekuje na decyzję |
-| Postępowanie przy braku środków | ☐ raport bez zakupu<br>☐ zakup po zgodzie właściciela<br>☐ stała zgoda w limicie<br>☐ oczekuje na decyzję |
+| Postępowanie przy braku środków | ☐ raport bez zakupu<br>☐ zakup po zgodzie właściciela<br>☐ osobna stała zgoda wyłącznie w sprawdzonym instrumencie uprawnienia (po wymaganym przeglądzie prawnym / księgowym)<br>☐ oczekuje na decyzję |
 | Pranie / pościel | ☐ Sentinel<br>☐ właściciel<br>☐ cleaner właściciela<br>☐ pralnia zewnętrzna<br>☐ nie obejmuje |
 | Pytanie o ponowne sprzątanie | ☐ właściciel decyduje<br>☐ Sentinel poprawia, jeśli błąd cleaner Sentinel<br>☐ koszt wg ustalenia<br>☐ oczekuje na przegląd |
 | Dowód przed/po | ☐ wymagany<br>☐ nie dotyczy<br>☐ oczekuje na decyzję |
@@ -138,12 +138,9 @@ Nie wolno wpisywać w tym dokumencie rzeczywistych kodów, haseł, PIN-ów, etyk
 
 | Pole | Wartość |
 |---|---|
-| Zasada uprawnień startowych | Basic / Extended: brak autonomicznego płatnego działania domyślnie; zgoda właściciela wymagana przed płatnym działaniem lub wydatkiem na wykonawcę (wewnętrzna referencja: Option A) |
-| Basic / Extended | Brak autonomicznego płatnego działania domyślnie; wymagana zgoda właściciela przed płatnym działaniem lub wydatkiem na wykonawcę |
-| Oddzielny instrument uprawnienia dla Basic / Extended | ☐ brak<br>☐ istnieje po przeglądzie: `______`<br>☐ oczekuje na przegląd prawny |
-| Full - standardowy limit działania ochronnego | EUR 300 na decyzję |
-| Full - opcjonalny limit | ☐ EUR 500 uzgodnione<br>☐ nie uzgodnione<br>☐ nie dotyczy |
-| Próg zgody właściciela | Basic / Extended: każde płatne działanie, chyba że istnieje osobny sprawdzony instrument; Full: powyżej uzgodnionego limitu |
+| Basic / Extended - zgoda właściciela | Brak autonomicznego płatnego działania domyślnie; zgoda właściciela wymagana przed każdym płatnym działaniem lub wydatkiem na wykonawcę (wewnętrzna referencja: Option A) |
+| Full - uprawnienie do działania ochronnego | Standardowo EUR 300 na decyzję; ☐ opcjonalnie EUR 500 uzgodnione<br>☐ opcjonalnie EUR 500 nieuzgodnione<br>☐ nie dotyczy; powyżej uzgodnionego limitu wymagana zgoda właściciela |
+| Oddzielny instrument uprawnienia | ☐ brak<br>☐ istnieje po wymaganym przeglądzie: `______`<br>☐ oczekuje na przegląd prawny / księgowy |
 | Kanał decyzji właściciela | `______` |
 | Zasada potwierdzenia pisemnego | ☐ email<br>☐ WhatsApp jako dowód komunikacji + archiwizacja<br>☐ telefon tylko z pisemnym potwierdzeniem<br>☐ inne: `______` |
 | Reguła rachunku / dowodu wydatku | ☐ wymagany rachunek<br>☐ próg de minimis oczekuje na księgowego<br>☐ nie dotyczy |

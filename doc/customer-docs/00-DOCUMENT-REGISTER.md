@@ -90,7 +90,7 @@ Values: **Y** = yes/required, **—** = no/not required, **P** = partial/light.
 
 | ID | Document | Class | Status | Owner | Law | Acct | OpTest | Path | 1stCust | Depends on | Next action | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| SCO-01 | Scope Register (draft) | customer-facing | draft-source | Y | P | — | Y | field | Y | GOV-01, Decision Memo | DOCX v0.1 candidate rejected before commit; source needs DOCX-readiness patch; next = produce v0.2 candidate and Owner visual review | Dependency root for contracts/SOPs |
+| SCO-01 | Scope Register (draft) | customer-facing | draft-source | Y | P | — | Y | field | Y | GOV-01, Decision Memo | DOCX v0.2 candidate rejected before commit; v0.3 candidate produced for Owner visual review; next = visual acceptance / internal simulation against private/guest/mixed cases / patch only if Owner approves | Dependency root for contracts/SOPs |
 | SCO-02 | Exclusions master | internal | draft-source | Y | — | — | — | — | Y | SCO-01 | Extract from SCO-01 §12 | Backs "if not listed, not included" |
 | SCO-03 | Onboarding & Scope Confirmation form | customer-facing | draft-source | Y | P | — | Y | conditional block | Y | SCO-01 | Produce clean working Property Scope Confirmation form from SCO-01 fields | Mirrors contact schema fields |
 | SCO-04 | Property Profile sheet | internal | draft-source | — | — | — | Y | field | Y | SCO-01 | Draft after Scope Register | Shut-offs, risk areas, baseline photos |
