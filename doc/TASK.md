@@ -10,21 +10,24 @@ Website implementation and proof polish are paused/frozen except for critical fi
 
 Current task: produce a clean working document set from the existing Sentinel draft architecture, templates, and test fills. These are working documents, not final customer-ready documents until simulation, beta reading, and legal/accounting gates are cleared.
 
-### Immediate next step — build the minimum beta-readable set
+### Immediate next step — prepare the connected beta-read packet
 
-SCO-01 v0.5 passed two internal simulations (Scenario B re-fill and one fresh private-profile fill), both `simulation-pass`, and its beta-read packet is committed. **Beta read is deferred by Owner decision:** beta should read a small connected operational set, not an isolated SCO-01.
+The **minimum beta-readable set is complete**; all five documents are `simulation-pass` Level-2 working candidates. The earlier deferral (beta blocked until the companion set existed) is satisfied.
 
-- **Do not send the beta packet yet.**
-- Build the minimum beta-readable working set (scope → visit/report → decision → cleaning → key receipt):
-  1. **SCO-01** — Property Scope Confirmation — done; frozen.
-  2. **REC-01** — Visit Report working document.
-  3. **REC-03** — Decision Request working document.
-  4. **CLN-02** — Cleaning / Readiness Checklist.
-  5. **AKC-03** — Key Handover / Return Receipt working receipt.
-- **Next immediate document: CLN-02** (Cleaning / Readiness Checklist) — the actionable checklist used per cleaning; SCO-01 sets the cleaning model/limits, CLN-02 is the per-cleaning protocol.
-- Beta read resumes after the set exists.
-- No SCO-01 patch before beta unless the Owner explicitly approves.
-- Beta watch-points carried forward (do not pre-solve): cleaning pending-state wording · owner-arranged exterior contractor/gardener · smart-lock digital access lifecycle · access wording `do ustalenia` vs `nieprzekazany` · Basic visit rhythm free-text.
+Set (all with Markdown source + DOCX candidate):
+1. **SCO-01** v0.5 — scope confirmation (frozen)
+2. **AKC-03** v0.1 — key handover / return receipt
+3. **CLN-02** v0.1 — cleaning / readiness checklist
+4. **REC-01** v0.1 — visit report
+5. **REC-03** v0.1 — decision request
+
+- **Immediate next step: prepare the connected beta-read packet** for the set.
+- Beta reader reviews the **connected operational set**: scope → access/key receipt → cleaning/readiness → visit report → decision request.
+- Prepare revised beta instructions and a revised feedback form for the *set* (not isolated SCO-01).
+- Prepare a send folder with numbered human-facing copies of the five DOCX candidates (do **not** rename repo source files).
+- **Do not patch SCO-01 / CLN-02 / REC-01 / REC-03 / AKC-03 before beta unless the Owner explicitly approves.**
+- After beta feedback: triage into real defect / reader preference / legal-accounting concern / ignore-noise.
+- Watch-points carried forward (do not pre-solve): SCO-01 — cleaning pending-state wording · owner-arranged exterior contractor/gardener · smart-lock access lifecycle · `do ustalenia` vs `nieprzekazany` · Basic rhythm free-text. REC-01 — §5 status controlled values · multi-finding affordance · multi-context visit type. REC-03 — trim options menu · §5/§6 authority overlap · §9 reply channel. AKC-03 — collapse digital-access when N/A · handover/return selector · per-key access test.
 
 Next concrete document batch:
 
