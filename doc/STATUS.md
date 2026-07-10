@@ -28,6 +28,10 @@ Owner-accepted clarity changes on top of the closed polish pass. App/content com
 
 - Scope Register v0.3 semantic patch exists.
 - Scenario B Scope Register test fill is complete and passed as `fill-ready`.
+- SCO-01 v0.5 functional working DOCX candidate exists (Level 2): not customer-ready, not lawyer/accountant reviewed, not signature-approved.
+- SCO-01 v0.5 Scenario B re-fill: `simulation-pass`.
+- SCO-01 v0.5 fresh private-profile fill: `simulation-pass`.
+- SCO-01 v0.5 current state: ready for beta read; watch-points carried, patch only if Owner approves.
 - REC-01 Visit Report and REC-03 Decision Request templates are drafted.
 - Scenario B dry-runs for REC-01 and REC-03 are complete and passed as `template-ready`.
 - Option A authority doctrine is now the launch doctrine: Basic / Extended require owner approval before paid action/vendor spend; Full keeps EUR 300 standard autonomous protective-action authority and optional EUR 500 if agreed.

@@ -10,6 +10,19 @@ Website implementation and proof polish are paused/frozen except for critical fi
 
 Current task: produce a clean working document set from the existing Sentinel draft architecture, templates, and test fills. These are working documents, not final customer-ready documents until simulation, beta reading, and legal/accounting gates are cleared.
 
+### Immediate next step — SCO-01 v0.5 beta read
+
+SCO-01 v0.5 passed two internal simulations (Scenario B re-fill and one fresh private-profile fill), both `simulation-pass`.
+
+- Prepare/use SCO-01 v0.5 for beta read.
+- Do not patch SCO-01 before beta unless the Owner explicitly approves.
+- Beta watch-points (do not pre-solve; beta readers may not care or may expose a better fix):
+  1. cleaning pending-state wording
+  2. owner-arranged exterior contractor / gardener
+  3. smart-lock digital access lifecycle
+  4. access wording: `do ustalenia` vs `nieprzekazany`
+  5. Basic visit rhythm free-text
+
 Next concrete document batch:
 
 1. Scope Register / Property Scope Confirmation.
