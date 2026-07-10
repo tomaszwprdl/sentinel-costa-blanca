@@ -6,9 +6,11 @@ Current project state only. This document is descriptive; `DECISIONS.md` is bind
 
 - Branch at this documentation update: `main`.
 - Latest app/content beta-test clarity commit: `c0736d0` (`refine: address beta-test clarity findings`); `origin/main` already contains this commit.
-- Current docs HEAD: `578197d` (`docs: record beta-test clarity bundle`).
+- Last pushed docs checkpoint before this phase update: `50a292c` (`docs: add Sentinel document-system drafts`).
 - Site phase: pre-launch / soft-launch review.
 - The page-by-page polish pass is complete; the beta-test clarity bundle (`c0736d0`) is now applied on top of it. This is the core polish gate, not "launch-final forever."
+- Website implementation is paused/frozen except for critical fixes; website proof polish is not the active bottleneck.
+- Current active phase: Sentinel document production from the repo draft system.
 - `noindex,nofollow` remains active until Owner approves indexing.
 
 Always verify current branch, HEAD, and status with git preflight.
@@ -29,7 +31,10 @@ Owner-accepted clarity changes on top of the closed polish pass. App/content com
 - REC-01 Visit Report and REC-03 Decision Request templates are drafted.
 - Scenario B dry-runs for REC-01 and REC-03 are complete and passed as `template-ready`.
 - Option A authority doctrine is now the launch doctrine: Basic / Extended require owner approval before paid action/vendor spend; Full keeps EUR 300 standard autonomous protective-action authority and optional EUR 500 if agreed.
+- The repo now contains draft architecture, audits, draft templates, and simulated test fills; it does not yet contain finished customer-ready Word/PDF/fillable documents.
+- The next goal is to produce clean working documents from these drafts, beginning with scope confirmation, visit/report records, decision/action records, access/key records, contact-channel sheets, cleaning/readiness checklists, evidence rules, and emergency/non-response SOPs.
 - These documents remain draft/internal/test artifacts. They are not customer-facing approved.
+- Testing sequence before final proof polish: internal simulation, beta tester read, lawyer/accountant review, public-safe sample report, then final website proof integration.
 - Legal and accountant gates remain before customer-facing use.
 
 ## Page-by-Page Polish Pass — Verdicts
@@ -68,13 +73,14 @@ Contact is shipped/live as Night Desk controlled intake:
 
 ## Active Task State
 
-No open website implementation task. The page-by-page polish pass is closed and the beta-test clarity bundle (`c0736d0`) is accepted.
+No open website implementation task. Website implementation is paused/frozen except for critical fixes. The page-by-page polish pass is closed and the beta-test clarity bundle (`c0736d0`) is accepted.
 
-Current active task state:
+Current active phase:
 
-- Current docs stage: review/commit alignment after Owner approval. No more drafting until Owner scopes it.
-- Next steps are verification, not new polish: push/deploy of local commits only when Owner approves, then final whole-site QA against the deployed build.
-- Next operational test only when relevant: Scenario C before the first guest-use customer.
+- Sentinel document production: turn the existing draft architecture, templates, and test fills into a clean working document set.
+- Do not reopen website proof polish during this phase; final proof/report example work comes later.
+- Existing repo docs are not finished customer-ready documents.
+- Testing order: internal simulation, beta tester read, lawyer/accountant review, public-safe sample report, then final website proof integration.
 - Legal/accountant review remains required before customer-facing use of the document system.
 - Launch / `noindex,nofollow` removal remains a later Owner decision.
 - Owner-directed final polish only if a real regression appears.

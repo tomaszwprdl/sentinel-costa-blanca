@@ -4,17 +4,33 @@ This file tracks the next action only. Binding contracts live in `DECISIONS.md`.
 
 ## Current Task
 
-The page-by-page polish pass and the beta-test clarity bundle (`c0736d0`) are complete. No open website implementation task.
+The page-by-page polish pass and the beta-test clarity bundle (`c0736d0`) are complete. The website is not the active bottleneck.
 
-Current docs stage: review/commit alignment after Owner approval. No more drafting until the Owner scopes it.
+Website implementation and proof polish are paused/frozen except for critical fixes. Do not reopen website polish during this phase.
 
-Next steps are verification, not new implementation work:
+Current task: produce a clean working document set from the existing Sentinel draft architecture, templates, and test fills. These are working documents, not final customer-ready documents until simulation, beta reading, and legal/accounting gates are cleared.
 
-1. Push/deploy local commits only when Owner approves.
-2. Final whole-site QA against the deployed build (desktop + 390px mobile, PL/EN, overflow/console/failed-request/4xx-5xx, Services anchors).
-3. Scenario C operational test only when relevant: before the first guest-use customer.
-4. Legal/accountant review remains required before customer-facing use of customer documents.
-5. Launch / `noindex,nofollow` removal decision — later, Owner-owned.
+Next concrete document batch:
+
+1. Scope Register / Property Scope Confirmation.
+2. Visit Report.
+3. Decision Request.
+4. Completed Action Summary.
+5. Key Custody / Access Register.
+6. Owner Contact + Decision Channel Sheet.
+7. Cleaning / Readiness Checklist.
+8. Photo / Evidence Rules.
+9. Emergency / Non-response SOP.
+
+Testing sequence:
+
+1. Internal simulation.
+2. Beta tester read.
+3. Lawyer/accountant review.
+4. Public-safe sample report.
+5. Final website proof integration.
+
+Launch / `noindex,nofollow` removal remains a later Owner-owned decision.
 
 ## Current Shipped State
 
@@ -32,7 +48,8 @@ Unless the Owner gives a new explicit implementation brief:
 
 - Do not re-open shipped pages.
 - Do not change app code, CSS, messages, assets, package files, routes, legal/noindex, estimator logic, contact API, or form contracts.
-- Docs/status updates may proceed only when requested; no more drafting until Owner scopes it.
+- Document production and docs/status updates may proceed only when requested and scoped by Owner.
+- Do not create final customer-facing documents, legal clauses, or public proof examples before the required simulation, beta, legal/accounting, and Owner approval gates.
 
 ## Protected
 

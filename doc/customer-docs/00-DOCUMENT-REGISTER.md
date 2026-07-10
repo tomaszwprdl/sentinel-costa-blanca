@@ -90,12 +90,12 @@ Values: **Y** = yes/required, **—** = no/not required, **P** = partial/light.
 
 | ID | Document | Class | Status | Owner | Law | Acct | OpTest | Path | 1stCust | Depends on | Next action | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| SCO-01 | Scope Register (draft) | customer-facing | draft-source | Y | P | — | Y | field | Y | GOV-01, Decision Memo | Scenario B test fill complete; review findings / patch only if Owner approves; Scenario C required before first guest-use customer; legal/accountant gates before customer-facing use | Dependency root for contracts/SOPs |
+| SCO-01 | Scope Register (draft) | customer-facing | draft-source | Y | P | — | Y | field | Y | GOV-01, Decision Memo | Produce clean working Scope Register / Property Scope Confirmation from draft; then simulate, beta-read, and review before customer-facing use | Dependency root for contracts/SOPs |
 | SCO-02 | Exclusions master | internal | draft-source | Y | — | — | — | — | Y | SCO-01 | Extract from SCO-01 §12 | Backs "if not listed, not included" |
-| SCO-03 | Onboarding & Scope Confirmation form | customer-facing | draft-source | Y | P | — | Y | conditional block | Y | SCO-01 | Draft after Scope Register | Mirrors contact schema fields |
+| SCO-03 | Onboarding & Scope Confirmation form | customer-facing | draft-source | Y | P | — | Y | conditional block | Y | SCO-01 | Produce clean working Property Scope Confirmation form from SCO-01 fields | Mirrors contact schema fields |
 | SCO-04 | Property Profile sheet | internal | draft-source | — | — | — | Y | field | Y | SCO-01 | Draft after Scope Register | Shut-offs, risk areas, baseline photos |
 | SCO-05 | Authorised-persons register | internal | draft-source | Y | P | — | Y | field | Y | AKC-01 | Draft with key custody | Ties to key custody + vendor access |
-| SCO-06 | Owner contact & decision-channel sheet | internal | draft-source | — | — | — | — | — | Y | SCO-01 | Draft after Scope Register | Establishes separate operational channel |
+| SCO-06 | Owner contact & decision-channel sheet | internal | draft-source | — | — | — | — | — | Y | SCO-01 | Produce clean working Owner Contact + Decision Channel Sheet | Establishes separate operational channel |
 | SCO-07 | Consent & acknowledgements sheet (data/photo/service-start) | customer-facing | lawyer-review-required | Y | Y | — | — | — | Y | DAT-01, LEG-08 | Outline for lawyer only | Backs contact acknowledgment checkbox |
 
 ## 5. Register — Access / key custody
@@ -103,7 +103,7 @@ Values: **Y** = yes/required, **—** = no/not required, **P** = partial/light.
 | ID | Document | Class | Status | Owner | Law | Acct | OpTest | Path | 1stCust | Depends on | Next action | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | AKC-01 | Access & Key Custody annex | legal-review | lawyer-review-required | Y | Y | Y | Y | field | Y | insurance question | Outline for lawyer only | Balanced liability; **no final wording** |
-| AKC-02 | Key custody register | internal | draft-source | — | — | — | Y | — | Y | SCO-01 | Draft as internal register | Key ID not full address |
+| AKC-02 | Key custody register | internal | draft-source | — | — | — | Y | — | Y | SCO-01 | Produce clean working Key Custody / Access Register | Key ID not full address |
 | AKC-03 | Key handover / return receipt | internal | draft-source | — | P | — | Y | — | Y | AKC-02 | Draft blank receipt | Signed on handover + return |
 | AKC-04 | Key movement log | internal | draft-source | — | — | — | Y | — | Y | AKC-02 | Draft internal log | Every check-out/in |
 | AKC-05 | Access-failure log | internal | draft-source | — | — | — | Y | — | Y | AKC-02 | Draft internal log | Lock/alarm/access problems |
@@ -125,8 +125,8 @@ Raised in priority because **Sentinel performs cleaning** (Decision Memo §5).
 | ID | Document | Class | Status | Owner | Law | Acct | OpTest | Path | 1stCust | Depends on | Next action | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | CLN-01 | Cleaning Scope annex | customer-facing | draft-source | Y | P | — | Y | trigger field | Y (if scoped) | SCO-01 | Draft after Scope Register | Readiness/turnover inside oversight |
-| CLN-02 | Cleaning checklist | internal | draft-source | — | — | — | Y | trigger field | Y (if scoped) | CLN-01 | Draft field form | Behind cleaning execution |
-| CLN-03 | Before/after evidence rule | internal | draft-source | — | P | — | Y | — | Y (if scoped) | CLN-01, DAT-03 | Draft rule | Mandatory paired evidence |
+| CLN-02 | Cleaning checklist | internal | draft-source | — | — | — | Y | trigger field | Y (if scoped) | CLN-01 | Produce clean working Cleaning / Readiness Checklist | Behind cleaning execution |
+| CLN-03 | Before/after evidence rule | internal | draft-source | — | P | — | Y | — | Y (if scoped) | CLN-01, DAT-03 | Produce clean working evidence rule with CLN-02 and DAT-03 | Mandatory paired evidence |
 | CLN-04 | Cleaner handoff record | internal | draft-source | — | — | — | Y | field | Y (if scoped) | CLN-01 | Draft field form | Brief + verify |
 | CLN-05 | Re-clean / cleaning-failure rule | internal | draft-source | Y | — | — | Y | — | P | CLN-01 | Draft rule | Who bears re-clean cost |
 | CLN-06 | Cleaning exclusions | internal | draft-source | Y | — | — | — | — | Y (if scoped) | SCO-02 | Extract from Scope Register | Biohazard/mould/pest/etc. |
@@ -143,18 +143,18 @@ Raised in priority because **Sentinel performs cleaning** (Decision Memo §5).
 
 | ID | Document | Class | Status | Owner | Law | Acct | OpTest | Path | 1stCust | Depends on | Next action | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| REC-01 | Visit report template | delivered-record | draft-source | — | — | — | Y | context field | Y | INS-01 | Scenario B dry-run complete (test-fills/02-VISIT-REPORT-TEST-FILL-SCENARIO-B.md); next = review dry-run findings / patch only if Owner approves | Consumes SCO-01 fields; visible facts, not diagnosis; not customer-facing approved |
+| REC-01 | Visit report template | delivered-record | draft-source | — | — | — | Y | context field | Y | INS-01 | Produce clean working Visit Report from template-ready draft; use in internal simulation | Consumes SCO-01 fields; visible facts, not diagnosis; not customer-facing approved |
 | REC-02 | Issue report template | delivered-record | draft-source | — | — | — | Y | — | Y | REC-01 | Draft template | Documents a finding |
-| REC-03 | Decision request template | delivered-record | draft-source | — | — | — | Y | — | Y | REC-01 | Scenario B dry-run complete (test-fills/03-DECISION-REQUEST-TEST-FILL-SCENARIO-B.md); next = review dry-run findings / patch only if Owner approves | Authority basis is a referenced field; non-Full = owner approval (Option A); no invented spend limit; not customer-facing approved |
-| REC-04 | Completed-action summary template | delivered-record | draft-source | — | — | — | Y | — | Y | REC-01, EMG-01 | Draft template | Protective/within-limit action |
+| REC-03 | Decision request template | delivered-record | draft-source | — | — | — | Y | — | Y | REC-01 | Produce clean working Decision Request from template-ready draft; keep Option A authority basis | Authority basis is a referenced field; non-Full = owner approval (Option A); no invented spend limit; not customer-facing approved |
+| REC-04 | Completed-action summary template | delivered-record | draft-source | — | — | — | Y | — | Y | REC-01, EMG-01 | Produce clean working Completed Action Summary | Protective/within-limit action |
 | REC-05 | Decision & action log | internal | draft-source | — | — | — | Y | — | Y | REC-03 | Draft internal log | Authority basis per decision |
 
 ## 10. Register — Emergency / escalation
 
 | ID | Document | Class | Status | Owner | Law | Acct | OpTest | Path | 1stCust | Depends on | Next action | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| EMG-01 | Escalation / emergency + non-response SOP | internal | lawyer-review-required | Y | Y | — | Y | — | Y | Decision Memo §4 | Outline; align to FAQ | Protective Action Doctrine |
-| EMG-02 | Owner non-response decision tree | internal | lawyer-review-required | Y | Y | — | Y | — | Y | EMG-01 | Outline for lawyer | Public FAQ promise already live |
+| EMG-01 | Escalation / emergency + non-response SOP | internal | lawyer-review-required | Y | Y | — | Y | — | Y | Decision Memo §4 | Produce clean working Emergency / Non-response SOP outline for simulation; lawyer review remains required | Protective Action Doctrine |
+| EMG-02 | Owner non-response decision tree | internal | lawyer-review-required | Y | Y | — | Y | — | Y | EMG-01 | Produce working decision tree with EMG-01; lawyer review remains required | Public FAQ promise already live |
 | EMG-03 | Key / access-failure procedure | internal | draft-source | — | P | — | Y | — | Y | AKC-05 | Draft SOP | No forced/unauthorised entry |
 
 ## 11. Register — Vendor / third-party
@@ -172,7 +172,7 @@ Raised in priority because of the photo/storage decisions (Decision Memo §7–�
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | DAT-01 | Data / Photo / Report privacy instrument | legal-review | lawyer-review-required | Y | Y | — | — | — | Y | live Privacy notice | Outline for lawyer only | Must match published notice |
 | DAT-02 | Record of Processing Activities (RAT) | internal | lawyer-review-required | Y | Y | — | — | — | Y | DAT-01 | Outline for lawyer | LOPDGDD requirement |
-| DAT-03 | Photo policy (do-not-photograph list) | internal | draft-source | Y | P | — | Y | — | Y | Decision Memo §7 | Draft from memo | Binds all report templates |
+| DAT-03 | Photo policy (do-not-photograph list) | internal | draft-source | Y | P | — | Y | — | Y | Decision Memo §7 | Produce clean working Photo / Evidence Rules | Binds all report templates |
 | DAT-04 | Retention & data-blocking schedule | internal | lawyer-review-required | Y | Y | Y | — | — | Y | DAT-01, tax periods | Outline; confirm periods | 24-month proposal; bloqueo de datos |
 | DAT-05 | Processor agreements (accountant, payments, hosting, email, cleaners/technicians) | legal-review | lawyer-review-required | Y | Y | Y | — | — | Y (per party) | DAT-01 | Outline for lawyer only | Named in live Privacy notice |
 | DAT-06 | Data-subject-rights procedure | internal | draft-source | Y | P | — | Y | — | Y | DAT-01 | Draft SOP | Executes rights the notice grants |
@@ -201,8 +201,8 @@ DAT-01/02/04/05, VEN-02) stays **outline-for-lawyer only** until the `[LAWYER RE
 `SENTINEL-OWNER-DECISION-MEMO.md` are resolved (data governance, non-response, withdrawal, liability).
 
 Internal SOPs, registers, checklists, and record **templates** (which carry no new legal promise) may be
-drafted and reach `internal-approved` earlier. That is the batch the Owner has authorised next, beginning
-with **SCO-01 (Scope Register)** as the dependency root.
+produced as clean working documents and reach `internal-approved` earlier. That is the active production
+batch, beginning with **SCO-01 (Scope Register / Property Scope Confirmation)** as the dependency root.
 
 ## Rules preserved
 
