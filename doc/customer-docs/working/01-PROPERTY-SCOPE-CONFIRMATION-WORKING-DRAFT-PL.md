@@ -7,234 +7,256 @@ accountant_review_required: partial
 owner_review_required: true
 language: pl
 pathway: private / guest / mixed selectable
-source: 01-SCOPE-REGISTER-DRAFT.md v0.3
+version: 0.5-working
+supersedes: DOCX v0.4
+source: SCO-01 v0.5 form-shape correction
 ---
 
 <!--
-DOCX generator note: the YAML frontmatter above is internal repo metadata only.
-It must not be rendered into the visible Word/PDF document body.
+Internal metadata above must not render in the Word/PDF body.
+DOCX v0.4 is superseded by this v0.5 working source.
+Moved codes, record links and review-gate destinations live in:
+doc/customer-docs/internal/01-PROPERTY-SCOPE-CONFIRMATION-OPERATOR-DATA-MAP.md
 -->
 
-# Potwierdzenie zakresu obsługi nieruchomości / Scope Register
+# Potwierdzenie zakresu obsługi nieruchomości
 
-Dokument roboczy operacyjny. Nie jest umową, nie jest finalnym brzmieniem prawnym i nie jest zatwierdzony do podpisu przez właściciela. Wymaga przeglądu po stronie Sentinel oraz, w oznaczonych miejscach, przeglądu prawnego i księgowego.
+Pełny formularz ustalenia zakresu - dokument roboczy.
 
-Ten dokument służy do uporządkowania informacji o nieruchomości, uzgodnionym zakresie, dostępie, kontakcie decyzyjnym, dokumentacji i ograniczeniach działania Sentinel. Pola niewypełnione muszą mieć status: `nie dotyczy`, `oczekuje na decyzję właściciela` albo `oczekuje na pierwszą wizytę`.
+Nie jest umową, nie jest finalnym brzmieniem prawnym i nie jest zatwierdzony do podpisu przez właściciela. Wymaga przeglądu po stronie Sentinel oraz, w oznaczonych miejscach, przeglądu prawnego i księgowego.
 
-## 1. Kontrola dokumentu
+Formularz ustala zakres, dostęp, kanał decyzji i ograniczenia działania Sentinel. Każde niewypełnione pole oznacz: `nie dotyczy`, `oczekuje na decyzję właściciela` albo `oczekuje na pierwszą wizytę`.
 
-| Pole | Wartość |
-|---|---|
-| ID dokumentu | `SCO-01 / ______` |
-| Referencja nieruchomości | `SEN-PROP-______` |
-| Wersja robocza | `______` |
-| Data wypełnienia | `______` |
-| Etap wypełnienia | ☐ rozmowa wstępna<br>☐ częściowo wypełnione - przed pierwszą wizytą<br>☐ po pierwszej wizycie<br>☐ wycofane |
-| Język rekordu | ☒ PL<br>☐ EN<br>☐ inny: `______` |
-| Kanał wypełnienia | ☐ spotkanie<br>☐ telefon<br>☐ wideo<br>☐ email<br>☐ WhatsApp<br>☐ inny: `______` |
-| Uczestnicy | `______` |
-| Operator wypełniający | `______` |
-| Punkty nierozstrzygnięte | `______` |
-| Odniesienie do archiwum roboczego | `______` |
-
-## 2. Właściciel / nieruchomość / profil użycia
+## 1. Właściciel, nieruchomość i sposób użycia
 
 | Pole | Wartość |
 |---|---|
-| Referencja właściciela | `WLASC-______` |
 | Imię i nazwisko / nazwa właściciela | `______` |
-| Email właściciela | `______` |
-| Telefon właściciela | `______` |
 | Preferowany język kontaktu | ☐ polski<br>☐ angielski<br>☐ inny: `______` |
-| Obszar nieruchomości | `______` (obszar / miejscowość, bez pełnego adresu w wersji roboczej) |
+| Obszar nieruchomości | `______` (obszar / miejscowość; bez pełnego adresu w tym formularzu roboczym) |
 | Typ nieruchomości | ☐ apartament<br>☐ dom<br>☐ willa<br>☐ inny: `______` |
-| Profil użycia | ☐ Nieobecność prywatna (`private`)<br>☐ Aktywne użycie przez gości (`guest`)<br>☐ Użycie mieszane / nieustalone (`mixed`) |
-| Źródło kalendarza pobytów | ☐ nie dotyczy<br>☐ właściciel przekazuje daty<br>☐ współdzielony kalendarz<br>☐ email<br>☐ inne: `______` |
-| Wiarygodność źródła kalendarza | ☐ potwierdzone<br>☐ wymaga testu<br>☐ oczekuje na decyzję właściciela<br>☐ nie dotyczy |
-| Uwagi do profilu użycia | `______` |
+| Profil użycia | ☐ Nieobecność prywatna<br>☐ Aktywne użycie przez gości<br>☐ Użycie mieszane / nieustalone |
+| Ważne uwagi do sposobu użycia | `______` |
 
-Źródło kalendarza służy wyłącznie jako źródło terminów gotowości. Nie oznacza obsługi rezerwacji, cen, komunikacji z gośćmi ani zarządzania najmem.
+### Terminy uruchamiające gotowość
 
-## 3. Pakiet i poziom odpowiedzialności
+Wypełnij tylko, jeśli gotowość, przyjazdy właściciela, goście albo sprzątanie zależą od terminów.
+
+| Pole | Wartość |
+|---|---|
+| Skąd Sentinel bierze terminy, które uruchamiają gotowość? | ☐ nie dotyczy<br>☐ właściciel wysyła terminy ręcznie<br>☐ współdzielony kalendarz<br>☐ email<br>☐ inne: `______` |
+| Czy Sentinel ma działający dostęp do tych terminów? | ☐ tak, sprawdzono<br>☐ właściciel będzie wysyłał terminy ręcznie<br>☐ do przetestowania przed użyciem<br>☐ nie dotyczy |
+
+Źródło terminów służy wyłącznie do planowania gotowości. Sentinel nie obsługuje rezerwacji, cen, ogłoszeń, meldowania ani komunikacji z gośćmi i nie świadczy zarządzania najmem.
+
+Profil mieszany / nieustalony oznacza zakres startowy do potwierdzenia. Wypełnij tylko te moduły prywatne i gościnne, które rzeczywiście mają działać; nie powielaj wspólnych ustaleń.
+
+## 2. Pakiet, rytm i czas reakcji
 
 | Pole | Wartość |
 |---|---|
 | Pakiet | ☐ Podstawowy / Basic<br>☐ Rozszerzony / Extended<br>☐ Pełny / Full<br>☐ do potwierdzenia |
-| Znaczenie SLA | Czas reakcji / decyzji, nie gwarancja rozwiązania sprawy |
 | Okno reakcji / decyzji | ☐ 48h<br>☐ 24h<br>☐ tego samego dnia<br>☐ inne zgodne z pakietem: `______` |
-| Rytm wizyt / częstotliwość | `______` |
-| Full - minimum wizyt | `min. 3/mies.` jeśli wybrano Full |
-| Dodatkowe zdarzenia dostępu | `______` |
-| Przypomnienie o odpowiedzialności | Pakiet określa rytm, intensywność, czas reakcji i pozycję decyzyjną; nie przenosi odpowiedzialności właściciela i nie tworzy gwarancji rezultatu |
+| Uzgodniony rytm wizyt | `______` |
+| Dodatkowe wejścia poza planowymi wizytami | `______` (kiedy i na jakiej podstawie) |
 
-Zasada stała: odpowiedzialność pakietowa ≠ uprawnienie awaryjne ≠ odpowiedzialność za szkodę. Sentinel dokumentuje widoczne fakty i działa w uzgodnionych granicach; nie stawia diagnoz technicznych.
+**Full: minimum 3 wizyty w miesiącu.**
 
-## 4. Moduły zakresu
+SLA oznacza czas reakcji / decyzji, nie gwarancję rozwiązania sprawy. Pakiet określa rytm, intensywność, czas reakcji i pozycję decyzyjną; nie przenosi odpowiedzialności właściciela i nie tworzy gwarancji rezultatu.
 
-Status modułu: objęte zakresem / poza zakresem / nie dotyczy / oczekuje na decyzję właściciela / oczekuje na pierwszą wizytę. Wewnętrzne kody mogą zostać użyte pomocniczo: `included`, `not_included`, `n/a`, `owner_decision`, `first_visit`.
+Odpowiedzialność pakietowa ≠ uprawnienie awaryjne ≠ odpowiedzialność za szkodę. Sentinel dokumentuje widoczne fakty i działa w uzgodnionych granicach; nie stawia diagnoz technicznych.
 
-| Moduł | Kod | Status | Wyzwalacz / kiedy działa | Częstotliwość / limit | Dowód / rekord | Decyzja właściciela? | Uwagi / wyłączenia |
-|---|---|---|---|---|---|---|---|
-| Planowa wizyta nadzorcza | `scheduled_oversight_visit` | `______` | `______` | `______` | raport wizyty (`REC-01`) | ☐ tak<br>☐ nie | `______` |
-| Przechowanie kluczy | `keyholding` | `______` | podpisane przekazanie kluczy | ciągłe / wg rejestru | rejestr kluczy (`AKC-02`) | ☐ tak<br>☐ nie | bez pełnego adresu na oznaczeniach |
-| Gotowość przed przyjazdem właściciela | `pre_arrival_readiness` | `______` | zgłoszony termin przyjazdu | `______` | raport / checklista | ☐ tak<br>☐ nie | zależne od terminu powiadomienia |
-| Sprzątanie gotowości | `cleaning_readiness` | `______` | przyjazd właściciela / uzgodniona gotowość | `______` | dowód przed/po | ☐ tak<br>☐ nie | funkcja w ramach nadzoru |
-| Sprzątanie rotacyjne | `turnover_cleaning` | `______` | wyjazd/przyjazd gości | `______` | dowód przed/po | ☐ tak<br>☐ nie | nie oznacza zarządzania najmem |
-| Pościel / pranie | `linen_laundry` | `______` | `______` | `______` | `______` | ☐ tak<br>☐ nie | kto pierze i uzupełnia stan: `______` |
-| Kontrola po gościach | `guest_check` | `______` | termin z kalendarza gotowości | `______` | raport / zdjęcia referencyjne | ☐ tak<br>☐ nie | bez obsługi rezerwacji, cen i wiadomości do gości |
-| Dostęp dla wykonawcy | `vendor_access` | `______` | decyzja właściciela / zlecenie | `______` | log dostępu + raport | ☐ tak<br>☐ nie | Sentinel nie gwarantuje pracy wykonawcy |
-| Balkon / zewnętrzna kontrola wizualna | `exterior_visual_check` | `______` | wizyta nadzorcza | `______` | notatka / zdjęcie referencyjne | ☐ tak<br>☐ nie | tylko widoczne elementy, bez prac technicznych |
-| Media / świadomość odcięć | `utility_shutoff_awareness` | `______` | pierwsza wizyta / zmiana danych | `______` | notatka lokalizacji | ☐ tak<br>☐ nie | lokalizacja zaworów/wyłączników, bez napraw |
-| Komunikaty wspólnoty / budynku | `community_notice_check` | `______` | wizyta / dostęp do tablicy | `______` | notatka | ☐ tak<br>☐ nie | tylko widoczne komunikaty |
+## 3. Co Sentinel robi i kiedy
 
-## 5. Zasady powiadomienia i przyjazdu
+Dla każdego bloku uzupełnij tylko pola potrzebne do realnego działania. Statusy: `w zakresie`, `poza zakresem`, `nie dotyczy`, `decyzja właściciela`, `pierwsza wizyta`.
 
-| Temat | Wartość domyślna / minimalne powiadomienie | Czy omówione? | Czy potwierdzone? | Nadpisanie / wyjątek | Status |
+### 3A. Regularne działania Sentinel
+
+| Działanie | Zakres / status | Kiedy działa | Jak często / kiedy sprawdzane | Wynik dla właściciela | Granica działania / uwagi |
 |---|---|---|---|---|---|
-| Powiadomienie o przyjeździe właściciela | `______` | ☐ tak<br>☐ nie | ☐ tak<br>☐ nie | `______` | `______` |
-| Krótki termin przyjazdu | `______` | ☐ tak<br>☐ nie | ☐ tak<br>☐ nie | `______` | `______` |
-| Gotowość lokalu | `______` | ☐ tak<br>☐ nie | ☐ tak<br>☐ nie | `______` | `______` |
-| Sprzątanie gotowości | `______` | ☐ tak<br>☐ nie | ☐ tak<br>☐ nie | `______` | `______` |
-| Sprzątanie rotacyjne | `______` | ☐ tak<br>☐ nie | ☐ tak<br>☐ nie | `______` | `______` |
-| Dostęp wykonawcy | `______` | ☐ tak<br>☐ nie | ☐ tak<br>☐ nie | `______` | `______` |
+| Planowa wizyta nadzorcza | `______` | zgodnie z uzgodnionym planem | `______` | raport wizyty | `______` |
+| Przechowanie kluczy | `______` | po udokumentowanym przekazaniu kluczy | stan przy przekazaniu / zwrocie; ruch według rejestru dostępu | potwierdzenie przechowania / log dostępu | bez pełnego adresu na oznaczeniach; `______` |
+| Komunikaty wspólnoty / budynku | `______` | gdy tablica / komunikat jest dostępny podczas wizyty | podczas uzgodnionych wizyt | notatka | tylko widoczne komunikaty; `______` |
 
-Krótki termin może ograniczyć wykonanie gotowości. Nie zmienia to znaczenia SLA: SLA dotyczy reakcji / decyzji, nie gwarantowanego rezultatu.
+### 3B. Gotowość uruchamiana terminem
 
-## 6. Sprzątanie i gotowość
+Wypełnij tylko moduły wybrane dla profilu prywatnego, gościnnego albo mieszanego.
 
-| Pole | Wartość |
-|---|---|
-| Model sprzątania | ☐ cleaner Sentinel<br>☐ cleaner wybrany przez właściciela<br>☐ nie dotyczy<br>☐ oczekuje na decyzję |
-| Zakres sprzątania | ☐ gotowość właściciela<br>☐ rotacja gości<br>☐ oba<br>☐ nie obejmuje |
-| Odpowiedzialność za środki / produkty | ☐ Sentinel<br>☐ właściciel<br>☐ przechowywane w lokalu<br>☐ zakup za zgodą właściciela<br>☐ oczekuje na decyzję |
-| Postępowanie przy braku środków | ☐ raport bez zakupu<br>☐ zakup po zgodzie właściciela<br>☐ osobna stała zgoda wyłącznie w sprawdzonym instrumencie uprawnienia (po wymaganym przeglądzie prawnym / księgowym)<br>☐ oczekuje na decyzję |
-| Pranie / pościel | ☐ Sentinel<br>☐ właściciel<br>☐ cleaner właściciela<br>☐ pralnia zewnętrzna<br>☐ nie obejmuje |
-| Pytanie o ponowne sprzątanie | ☐ właściciel decyduje<br>☐ Sentinel poprawia, jeśli błąd cleaner Sentinel<br>☐ koszt wg ustalenia<br>☐ oczekuje na przegląd |
-| Dowód przed/po | ☐ wymagany<br>☐ nie dotyczy<br>☐ oczekuje na decyzję |
-| Odniesienie do checklisty | `CLN-02 / ______` |
+| Działanie | Zakres / status | Co uruchamia działanie | Kiedy ma być gotowe / minimalny termin | Wynik dla właściciela | Warunki wykonania / ograniczenia |
+|---|---|---|---|---|---|
+| Gotowość przed przyjazdem właściciela | `______` | termin przekazany zgodnie z sekcją 1 | `______` | potwierdzenie gotowości | zależne od terminu powiadomienia; `______` |
+| Sprzątanie w ramach gotowości | `______` | termin przyjazdu właściciela / uzgodnionej gotowości | `______` | potwierdzenie gotowości + dowód przed/po | funkcja w ramach nadzoru; `______` |
+| Sprzątanie rotacyjne | `______` | termin wyjazdu / przyjazdu gości przekazany zgodnie z sekcją 1 | `______` | potwierdzenie gotowości + dowód przed/po | bez obsługi rezerwacji lub komunikacji z gośćmi; `______` |
+| Kontrola po gościach | `______` | termin zakończenia pobytu przekazany zgodnie z sekcją 1 | `______` | raport / zdjęcia referencyjne | bez obsługi rezerwacji, cen i wiadomości do gości; `______` |
 
-Sprzątanie jest funkcją w ramach uzgodnionego nadzoru, a nie publiczną kategorią usługi. Dowód przed/po dokumentuje widoczną gotowość; nie jest certyfikatem higieny ani gwarancją stanu technicznego.
+Pościel / pranie ustala się w sekcji 6 tylko wtedy, gdy jest objęte zakresem sprzątania.
 
-## 7. Dostęp, klucze, kody
+### 3C. Dostęp dla wykonawcy
 
 | Pole | Wartość |
 |---|---|
-| Liczba kluczy deklarowana przez właściciela | `______` |
-| Liczba kluczy potwierdzona przy przekazaniu | ☐ oczekuje na pierwszą wizytę / przekazanie<br>☐ potwierdzono: `______` |
-| Oznaczenie kluczy | `______` (ID klucza, bez pełnego adresu) |
-| Stan przechowania kluczy | ☐ nie przekazano<br>☐ przekazano częściowo<br>☐ przekazano i wpisano do rejestru<br>☐ oczekuje na AKC-02 |
+| Czy dostęp dla wykonawcy jest w zakresie? | ☐ tak<br>☐ nie<br>☐ oczekuje na decyzję |
+| Kiedy dostęp jest możliwy? | `______` |
+| Wymagana decyzja właściciela | ☐ tak<br>☐ nie dotyczy; płatne działanie lub wydatek zawsze podlega zasadom z sekcji 7 |
+| Co Sentinel dokumentuje? | log dostępu / podsumowanie |
+| Granica działania | Sentinel nie gwarantuje dostępności, ceny, jakości ani rezultatu pracy wykonawcy. |
+
+### 3D. Kontrola wizualna podczas wizyty
+
+| Pole | Wartość |
+|---|---|
+| Czy kontrola wizualna balkonu / elementów zewnętrznych jest w zakresie? | ☐ tak<br>☐ nie<br>☐ nie dotyczy<br>☐ oczekuje na pierwszą wizytę |
+| Kiedy sprawdzane? | podczas uzgodnionej wizyty nadzorczej |
+| Wynik dla właściciela | notatka / zdjęcie referencyjne |
+| Granica sprawdzenia | tylko widoczne elementy; bez prac technicznych i bez diagnozy |
+
+## 4. Terminy powiadomienia i krótkie terminy
+
+| Temat | Ustalona zasada / termin | Wyjątek / krótki termin | Status |
+|---|---|---|---|
+| Przyjazd właściciela | `______` | `______` | ☐ uzgodnione<br>☐ oczekuje<br>☐ nie dotyczy |
+| Gotowość lokalu | `______` | `______` | ☐ uzgodnione<br>☐ oczekuje<br>☐ nie dotyczy |
+| Sprzątanie w ramach gotowości | `______` | `______` | ☐ uzgodnione<br>☐ oczekuje<br>☐ nie dotyczy |
+| Sprzątanie rotacyjne | `______` | `______` | ☐ uzgodnione<br>☐ oczekuje<br>☐ nie dotyczy |
+| Dostęp wykonawcy | `______` | `______` | ☐ uzgodnione<br>☐ oczekuje<br>☐ nie dotyczy |
+
+Krótki termin może ograniczyć gotowość. Sentinel potwierdza reakcję i decyzję, nie gwarantuje rezultatu.
+
+## 5. Dostęp i klucze
+
+| Pole | Wartość |
+|---|---|
+| Czy przechowanie kluczy jest w zakresie? | ☐ tak<br>☐ nie<br>☐ oczekuje na decyzję |
 | Metoda dostępu | ☐ klucz fizyczny<br>☐ smart lock<br>☐ kod alarmu<br>☐ wspólnota / portier<br>☐ inna: `______` |
-| Stan kodów | ☐ brak systemu kodowego<br>☐ znany, ale nie wpisany tutaj<br>☐ zapisany wyłącznie w bezpiecznym rejestrze<br>☐ zmieniony przez właściciela<br>☐ właściciel odmawia przekazania - respektowane<br>☐ oczekuje na AKC-01 |
-| Udostępnienie kodu cleanerowi Sentinel | ☐ tak<br>☐ nie<br>☐ nie dotyczy<br>☐ oczekuje na AKC-01 |
-| Udostępnienie kodu cleanerowi właściciela | ☐ tak<br>☐ nie<br>☐ nie dotyczy<br>☐ oczekuje na AKC-01 |
-| Udostępnienie kodu wykonawcy | ☐ tak<br>☐ nie<br>☐ nie dotyczy<br>☐ każdorazowo za zgodą właściciela<br>☐ oczekuje na AKC-01 |
-| Klucze, które nie mogą opuścić nieruchomości | `______` |
-| Osoby upoważnione do dostępu | `______` |
-| Odniesienie do rejestru dostępu | `AKC-02 / AKC-04 / ______` |
+| Stan dostępu kodowego | ☐ nie dotyczy<br>☐ dostęp potwierdzony w bezpiecznym rejestrze<br>☐ nieprzekazany<br>☐ do ustalenia |
+| Role dopuszczone do dostępu | ☐ operator Sentinel<br>☐ osoba sprzątająca Sentinel<br>☐ osoba wybrana przez właściciela<br>☐ wykonawca - każdorazowo za zgodą właściciela<br>☐ inne: `______` |
+| Ograniczenia dostępu / strefy wyłączone | `______` |
+| Kontakt przy problemie z wejściem | `______` |
+
+Przekazanie i zwrot kluczy są dokumentowane osobnym potwierdzeniem. Szczegóły liczby, identyfikatorów i stanu kluczy nie należą do tego formularza zakresu.
 
 Nie wolno wpisywać w tym dokumencie rzeczywistych kodów, haseł, PIN-ów, etykiet Wi-Fi, kodów sejfu ani pełnych danych dostępowych. Dokument zapisuje wyłącznie stan i zgodę na użycie dostępu.
 
-## 8. Uprawnienia, płatne działania i decyzje właściciela
+## 6. Sprzątanie i gotowość - ustalenia wykonawcze
+
+Wypełnij tylko wtedy, gdy sprzątanie jest objęte zakresem.
+
+Ten formularz ustala model i granice sprzątania. Konkretna checklista wykonania każdej usługi jest osobnym dokumentem roboczym CLN-02.
 
 | Pole | Wartość |
 |---|---|
-| Basic / Extended - zgoda właściciela | Brak autonomicznego płatnego działania domyślnie; zgoda właściciela wymagana przed każdym płatnym działaniem lub wydatkiem na wykonawcę (wewnętrzna referencja: Option A) |
-| Full - uprawnienie do działania ochronnego | Standardowo EUR 300 na decyzję; ☐ opcjonalnie EUR 500 uzgodnione<br>☐ opcjonalnie EUR 500 nieuzgodnione<br>☐ nie dotyczy; powyżej uzgodnionego limitu wymagana zgoda właściciela |
-| Oddzielny instrument uprawnienia | ☐ brak<br>☐ istnieje po wymaganym przeglądzie: `______`<br>☐ oczekuje na przegląd prawny / księgowy |
-| Kanał decyzji właściciela | `______` |
-| Zasada potwierdzenia pisemnego | ☐ email<br>☐ WhatsApp jako dowód komunikacji + archiwizacja<br>☐ telefon tylko z pisemnym potwierdzeniem<br>☐ inne: `______` |
-| Reguła rachunku / dowodu wydatku | ☐ wymagany rachunek<br>☐ próg de minimis oczekuje na księgowego<br>☐ nie dotyczy |
-| Odniesienie do księgowości | `[ACCOUNTANT REVIEW REQUIRED]` dla progów, zwrotów i rozliczeń |
-| Wydajność wykonawcy | Sentinel może koordynować dostęp i dokumentację; nie gwarantuje rezultatu pracy wykonawcy |
+| Kto wykonuje sprzątanie | ☐ osoba Sentinel<br>☐ osoba wybrana przez właściciela<br>☐ nie dotyczy<br>☐ oczekuje na decyzję |
+| Zakres sprzątania | ☐ gotowość właściciela<br>☐ rotacja gości<br>☐ oba<br>☐ nie obejmuje |
+| Kto dostarcza środki / produkty | ☐ przechowywane w lokalu<br>☐ właściciel<br>☐ Sentinel - zakup po zgodzie właściciela<br>☐ oczekuje na decyzję |
+| Brak środków / produktów | ☐ raport bez zakupu<br>☐ zakup po zgodzie właściciela<br>☐ osobny, wcześniej sprawdzony dokument uprawnienia<br>☐ oczekuje na decyzję |
+| Pranie / pościel | ☐ Sentinel<br>☐ właściciel<br>☐ osoba wybrana przez właściciela<br>☐ pralnia zewnętrzna<br>☐ nie obejmuje |
+| Ponowne sprzątanie | ☐ właściciel decyduje<br>☐ Sentinel poprawia, jeśli błąd leży po stronie osoby Sentinel<br>☐ koszt i zasada oczekują na test operacyjny / decyzję |
+| Dowód przed/po | ☐ wymagany<br>☐ nie dotyczy<br>☐ oczekuje na decyzję |
 
-Minimalne działanie wymagane przez służby awaryjne albo administrację wspólnoty może zostać udokumentowane, jeżeli sytuacja tego wymaga. Nie oznacza to jednak wcześniej autoryzowanego mandatu Sentinel do wydatków w Basic / Extended. Nie wolno tworzyć limitu euro dla Basic / Extended.
+Sprzątanie jest funkcją w ramach uzgodnionego nadzoru, a nie odrębną publiczną kategorią usługi. Sentinel dokumentuje wykonanie własnej osoby sprzątającej. Przy osobie wybranej przez właściciela Sentinel dokumentuje wyłącznie widoczną gotowość i nie gwarantuje metody, terminu, produktów, obsady ani rezultatu tej osoby.
 
-## 9. Kontakty i kanały decyzyjne
+Dowód przed/po dokumentuje widoczną gotowość; nie jest certyfikatem higieny ani gwarancją stanu technicznego.
 
-| Kontakt / kanał | Dane / status | Użycie | Uwagi |
-|---|---|---|---|
-| Główny kontakt decyzyjny właściciela | `______` | decyzje operacyjne i płatne działania | `______` |
-| Kontakt zapasowy | `______` | gdy właściciel nie odpowiada | `______` |
-| Kontakt wspólnoty / administracji | `______` | sprawy budynku / awarie wspólnotowe | ☐ podano<br>☐ oczekuje<br>☐ nie dotyczy |
-| Kontakt ubezpieczeniowy / szkoda | `______` | ścieżka roszczeń właściciela | ☐ podano<br>☐ oczekuje<br>☐ nie dotyczy |
-| Kontakt dostawcy mediów | `______` | woda / prąd / gaz, jeśli podano | ☐ podano<br>☐ oczekuje<br>☐ nie dotyczy |
-| Oficjalne archiwum | `______` | archiwum rekordu i dowodów | WhatsApp nie jest oficjalnym archiwum |
-| Kanał operacyjny pomocniczy | ☐ email<br>☐ WhatsApp<br>☐ telefon<br>☐ inny: `______` | komunikacja robocza | musi mieć ślad w archiwum |
-
-## 10. Dowody, zdjęcia i dane
+## 7. Płatne działania i decyzje właściciela
 
 | Pole | Wartość |
 |---|---|
-| Referencja bazowego zestawu dowodowego | `______` |
-| Referencje zdjęć / dowodów | `______` |
-| Dostawa wybranych zdjęć | ☐ email<br>☐ link z archiwum<br>☐ oba<br>☐ nie dotyczy |
-| Pełny zestaw dowodów | strukturalne zaszyfrowane archiwum: `______` |
-| Strefy ograniczone | `______` |
-| Retencja / prywatność | `[LAWYER REVIEW REQUIRED]` do potwierdzenia z polityką prywatności i harmonogramem retencji |
+| Basic / Extended | Brak autonomicznego płatnego działania domyślnie; zgoda właściciela wymagana przed płatnym działaniem lub wydatkiem na wykonawcę. |
+| Full | ☐ standardowy limit EUR 300 na decyzję<br>☐ opcjonalny limit EUR 500 uzgodniony<br>Powyżej wybranego limitu wymagana jest zgoda właściciela. |
+| Oddzielny dokument uprawnienia | ☐ brak<br>☐ istnieje po wymaganym przeglądzie: `______`<br>☐ oczekuje na przegląd prawny / księgowy |
+| Kanał ważnej decyzji właściciela | `______` |
+| Potwierdzenie decyzji | ☐ email<br>☐ WhatsApp jako dowód komunikacji + archiwizacja<br>☐ telefon tylko z pisemnym potwierdzeniem<br>☐ inne: `______` |
+| Dowód wydatku | Rachunek wymagany; wyjątki wyłącznie po przeglądzie księgowym. |
+| Zasady rozliczeń | oczekują na wymagany przegląd księgowy tam, gdzie oznaczono |
+| Wykonawcy zewnętrzni | Sentinel może koordynować dostęp i dokumentację; nie gwarantuje dostępności, ceny, jakości ani rezultatu pracy wykonawcy. |
 
-Nie fotografować:
+Minimalne działanie wymagane przez służby awaryjne albo administrację wspólnoty może zostać udokumentowane, jeżeli sytuacja tego wymaga. Nie oznacza to wcześniej autoryzowanego mandatu Sentinel do wydatków w Basic / Extended. Nie wolno tworzyć limitu euro dla Basic / Extended.
 
-- dokumentów tożsamości, paszportów, dokumentów prawnych;
-- kart płatniczych, faktur z pełnymi danymi, dokumentów bankowych;
-- kodów alarmu, haseł, routerów / etykiet Wi-Fi, kodów sejfu;
+## 8. Kontakty, decyzje i dostarczanie raportów
+
+| Kontakt / kanał | Dane | Kiedy użyć |
+|---|---|---|
+| Główny kontakt decyzyjny właściciela | `______` | decyzje operacyjne i płatne działania |
+| Kontakt zapasowy | `______` | gdy właściciel nie odpowiada |
+| Kontakt wspólnoty / administracji | `______` | sprawy budynku / awarie wspólnotowe |
+| Kontakt ubezpieczeniowy / szkoda | `______` | ścieżka roszczeń właściciela, jeśli podano |
+| Email do raportów i decyzji | `______` | oficjalna dostawa dokumentów |
+| Kanał roboczy | ☐ email<br>☐ WhatsApp<br>☐ telefon<br>☐ inny: `______` | komunikacja operacyjna |
+
+Raporty i decyzje trafiają do emaila / bezpiecznego archiwum. WhatsApp może służyć do komunikacji roboczej, ale nie jest oficjalnym archiwum.
+
+## 9. Zdjęcia, dowody i prywatność
+
+| Pole | Wartość |
+|---|---|
+| Dostawa wybranych zdjęć | ☐ email z raportem<br>☐ link z archiwum<br>☐ oba<br>☐ nie dotyczy |
+| Strefy ograniczone / bez zdjęć | `______` |
+| Zasady retencji i prywatności | do potwierdzenia po wymaganym przeglądzie prawnym / księgowym |
+
+Pełny zestaw dowodów jest przechowywany w bezpiecznym archiwum Sentinel.
+
+**Nie fotografować:**
+
+- dokumentów tożsamości, paszportów i dokumentów prawnych;
+- kart płatniczych, dokumentów bankowych i faktur z pełnymi danymi;
+- kodów alarmu, haseł, routerów / etykiet Wi-Fi i kodów sejfu;
+- ekranów z wiadomościami, emailami, kontami lub danymi logowania;
 - dzieci, zdjęć rodzinnych i prywatnych materiałów osobistych;
-- wnętrza zamkniętych szaf, sejfów, prywatnych schowków lub stref wyłączonych;
-- przedmiotów wrażliwych, jeśli wystarczy notatka operacyjna.
+- leków, dokumentów medycznych i przedmiotów intymnych;
+- wnętrza zamkniętych szaf, sejfów, prywatnych schowków i stref wyłączonych;
+- kosztowności oraz rzeczy osobistych gości, chyba że są bezpośrednio związane ze zgłaszanym problemem - wtedy materiał należy ograniczyć lub wykadrować.
 
-Jeżeli element wrażliwy ma znaczenie operacyjne, zapisać fakt widoczny bez fotografowania. Dowody opisują widoczny stan; nie są diagnozą techniczną.
+Jeżeli element wrażliwy ma znaczenie operacyjne, zapisz: `Element wrażliwy widoczny; nie sfotografowano. Może wymagać decyzji właściciela.` Dowody opisują widoczny stan; nie są diagnozą techniczną.
 
-## 11. Wyłączenia i brak obietnic
+## 10. Granice usługi i brak obietnic
 
-| Obszar | Wyłączenie |
+| Obszar | Granica |
 |---|---|
-| Zarządzanie nieruchomością | Sentinel nie przejmuje ogólnego zarządzania nieruchomością właściciela |
-| Zarządzanie najmem | Brak obsługi rezerwacji, cen, ogłoszeń, meldowania gości lub komunikacji z gośćmi, chyba że osobno i wyraźnie poza tym dokumentem |
-| Concierge / lifestyle | Brak usług lifestyle, zakupów osobistych, organizacji wygody lub ogólnej opieki |
-| Diagnoza techniczna | Sentinel dokumentuje widoczne fakty; diagnoza należy do właściwego specjalisty |
-| Gwarancja rozwiązania | SLA oznacza reakcję / decyzję, nie gwarantowany rezultat |
-| Wykonawcy | Sentinel nie gwarantuje dostępności, ceny ani jakości pracy wykonawcy |
-| Usługi niewymienione | Jeżeli coś nie jest wpisane jako objęte zakresem (`included`), nie jest automatycznie objęte zakresem |
-| Odpowiedzialność prawna / podatkowa | Zgodność prawna, podatkowa i ubezpieczeniowa pozostaje po stronie właściciela i właściwych doradców |
+| Uzgodniony nadzór | Sentinel wykonuje wyłącznie uzgodniony nadzór i reprezentację właściciela; nie przejmuje nieograniczonego zarządzania nieruchomością. |
+| Zarządzanie najmem | Sentinel nie obsługuje rezerwacji, cen, ogłoszeń, meldowania ani komunikacji z gośćmi. |
+| Concierge / lifestyle | Sentinel nie świadczy usług lifestyle, zakupów osobistych, organizacji wygody ani ogólnej opieki. |
+| Diagnoza techniczna | Sentinel dokumentuje widoczne fakty; diagnoza należy do właściwego specjalisty. |
+| Gwarancja rozwiązania | SLA oznacza reakcję / decyzję, nie gwarantowany rezultat. |
+| Wykonawcy | Sentinel nie gwarantuje dostępności, ceny, jakości ani rezultatu pracy wykonawcy. |
+| Zamknięty zakres | Jeżeli usługa nie jest wyraźnie wpisana jako objęta zakresem, nie jest objęta automatycznie. |
+| Prawo / podatki / ubezpieczenie | Sentinel nie świadczy porad prawnych, podatkowych ani ubezpieczeniowych; właściciel korzysta z właściwych doradców. Końcowe brzmienie wymaga przeglądu prawnego. |
 
-## 12. Weryfikacja podczas pierwszej wizyty
+## 11. Co pozostaje do potwierdzenia
 
-Pola, które mogą pozostać jako oczekujące na pierwszą wizytę (`pending first visit`) przed fizyczną weryfikacją:
+| Punkt | Odpowiedzialny | Termin / status |
+|---|---|---|
+| Otwarte decyzje właściciela | właściciel | `______` |
+| Brakujące dane | `______` | `______` |
+| Pierwsza wizyta wymagana do zamknięcia zakresu | Sentinel | ☐ tak<br>☐ nie<br>☐ wykonano: `______` |
+| Zmiana zakresu | właściciel + Sentinel | wymaga pisemnego potwierdzenia |
 
-| Obszar | Status | Wynik po wizycie | Referencja dowodu |
-|---|---|---|---|
-| Lokalizacja zaworu wody | ☐ oczekuje na pierwszą wizytę<br>☐ potwierdzono<br>☐ nie dotyczy | `______` | `______` |
-| Lokalizacja wyłącznika prądu | ☐ oczekuje na pierwszą wizytę<br>☐ potwierdzono<br>☐ nie dotyczy | `______` | `______` |
-| Mechanika wejścia do budynku / wspólnoty | ☐ oczekuje na pierwszą wizytę<br>☐ potwierdzono<br>☐ nie dotyczy | `______` | `______` |
-| Znane ryzyka widoczne | ☐ oczekuje na pierwszą wizytę<br>☐ potwierdzono<br>☐ brak widocznych | `______` | `______` |
-| Bazowy zestaw zdjęć | ☐ oczekuje na pierwszą wizytę<br>☐ wykonano<br>☐ ograniczono | `______` | `______` |
-| Liczba i typ kluczy | ☐ oczekuje na pierwszą wizytę<br>☐ potwierdzono<br>☐ rozbieżność | `______` | `______` |
-| Komunikaty wspólnoty / zasady budynku | ☐ oczekuje na pierwszą wizytę<br>☐ potwierdzono<br>☐ brak dostępu | `______` | `______` |
-| Strefy wyłączone / prywatne | ☐ oczekuje na pierwszą wizytę<br>☐ potwierdzono<br>☐ nie dotyczy | `______` | `______` |
+Pierwsza wizyta / profil nieruchomości ustala m.in. zawory, wyłączniki, wejście do budynku, strefy prywatne, widoczne ryzyka i zdjęcia bazowe. Szczegóły trafiają do wewnętrznego profilu nieruchomości / raportu pierwszej wizyty, a nie do tego formularza.
 
-## 13. Punkty otwarte i bramki przeglądu
+## 12. Robocze potwierdzenie ustaleń
 
-| Kategoria | Punkty | Odpowiedzialny | Status |
-|---|---|---|---|
-| Decyzje właściciela | `______` | właściciel | ☐ otwarte<br>☐ zamknięte |
-| Oczekuje na pierwszą wizytę | `______` | Sentinel | ☐ otwarte<br>☐ zamknięte |
-| Przegląd prawny | `______` | prawnik / Sentinel | ☐ wymagany<br>☐ nie dotyczy |
-| Przegląd księgowy | `______` | księgowy / Sentinel | ☐ wymagany<br>☐ nie dotyczy |
-| Zmiana zakresu | `______` | właściciel + Sentinel | ☐ wymaga pisemnego potwierdzenia |
-| Braki danych | `______` | `______` | ☐ otwarte<br>☐ zamknięte |
-
-## 14. Potwierdzenie właściciela - robocze
+Przed potwierdzeniem przeczytaj sekcje: pakiet i SLA, płatne działania, zdjęcia i prywatność oraz granice usługi.
 
 To nie jest klauzula podpisu prawnego.
 
 | Pole | Wartość |
 |---|---|
-| Właściciel potwierdza, że informacje operacyjne są wystarczająco dokładne do przygotowania pracy Sentinel, z zastrzeżeniem finalnej umowy i wymaganych przeglądów | ☐ tak<br>☐ nie<br>☐ częściowo: `______` |
-| Właściciel rozumie, że pola oznaczone jako oczekujące wymagają uzupełnienia przed użyciem operacyjnym albo przed przekazaniem jako dokument właściciela | ☐ tak<br>☐ nie |
+| Potwierdzenie informacji | ☐ tak<br>☐ nie<br>☐ częściowo: `______` |
+| Potwierdzenie braków | ☐ rozumiem, że oznaczone braki muszą zostać uzupełnione przed rozpoczęciem odpowiednich działań<br>☐ nie potwierdzam |
 | Data roboczego potwierdzenia | `______` |
-| Potwierdzone przez | `______` |
+| Imię osoby potwierdzającej (bez podpisu) | `______` |
 
-## 15. Wewnętrzny rejestr zmian
+Potwierdzenie oznacza, że podane informacje wystarczają do przygotowania pracy Sentinel. Nie zastępuje umowy, podpisu ani wymaganych przeglądów prawnych, księgowych i właścicielskich.
 
-| Wersja | Data | Zmiana | Autor | Status |
-|---|---|---|---|---|
-| 0.1-working | `______` | Pierwszy czysty roboczy draft PL na bazie SCO-01 v0.3 | `______` | źródło robocze (`draft-source`) |
+## Wewnętrzny pasek rekordu
+
+| Pole | Wartość |
+|---|---|
+| ID dokumentu | `SCO-01 / ______` |
+| Referencja nieruchomości | `SEN-PROP-______` |
+| Data wypełnienia | `______` |
+| Operator | `______` |
+| Język rekordu | ☐ PL<br>☐ EN<br>☐ inny: `______` |
+| Status formularza | ☐ rozmowa wstępna<br>☐ częściowo wypełnione - przed pierwszą wizytą<br>☐ po pierwszej wizycie<br>☐ wycofane |
+| Punkty nierozstrzygnięte | `______` |
+
+Ten pasek służy wyłącznie identyfikacji roboczego rekordu. Historia wersji, kody systemowe, odwołania do archiwum i bramki przeglądu są prowadzone poza formularzem właściciela.
