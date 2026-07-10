@@ -31,7 +31,10 @@ Owner-accepted clarity changes on top of the closed polish pass. App/content com
 - SCO-01 v0.5 functional working DOCX candidate exists (Level 2): not customer-ready, not lawyer/accountant reviewed, not signature-approved.
 - SCO-01 v0.5 Scenario B re-fill: `simulation-pass`.
 - SCO-01 v0.5 fresh private-profile fill: `simulation-pass`.
-- SCO-01 v0.5 current state: ready for beta read; watch-points carried, patch only if Owner approves.
+- SCO-01 v0.5 remains the accepted Level 2 working document; it is frozen unless later feedback / Owner approval requires a patch.
+- SCO-01 v0.5 beta-read packet exists and is committed (`doc/customer-docs/beta/`), but **beta read is deferred by Owner decision**.
+- Reason for deferral: beta should review a small operational document set (scope confirmation → visit/report → decision request → cleaning/action checklist → key receipt), not an isolated SCO-01. "Small set", not the whole register.
+- Current active work shifts to companion working-document production; beta read resumes once the minimum beta-readable set exists.
 - REC-01 Visit Report and REC-03 Decision Request templates are drafted.
 - Scenario B dry-runs for REC-01 and REC-03 are complete and passed as `template-ready`.
 - Option A authority doctrine is now the launch doctrine: Basic / Extended require owner approval before paid action/vendor spend; Full keeps EUR 300 standard autonomous protective-action authority and optional EUR 500 if agreed.

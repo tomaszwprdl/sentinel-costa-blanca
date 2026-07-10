@@ -90,7 +90,7 @@ Values: **Y** = yes/required, **—** = no/not required, **P** = partial/light.
 
 | ID | Document | Class | Status | Owner | Law | Acct | OpTest | Path | 1stCust | Depends on | Next action | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| SCO-01 | Scope Register (draft) | customer-facing | draft-source | Y | P | — | Y | field | Y | GOV-01, Decision Memo | SCO-01 v0.5 passed Scenario B re-fill and one fresh private-profile fill; next = beta read with watch-points / patch only if Owner approves; legal/accountant/customer-facing approval gates remain | Dependency root for contracts/SOPs |
+| SCO-01 | Scope Register (draft) | customer-facing | draft-source | Y | P | — | Y | field | Y | GOV-01, Decision Memo | SCO-01 v0.5 passed simulations ×2; beta packet exists; beta read deferred until the minimum beta-readable companion set exists (REC-01, REC-03, CLN-02, AKC-03); SCO-01 frozen unless Owner approves patch; legal/accountant/customer-facing approval gates remain | Dependency root for contracts/SOPs |
 | SCO-02 | Exclusions master | internal | draft-source | Y | — | — | — | — | Y | SCO-01 | Extract from SCO-01 §12 | Backs "if not listed, not included" |
 | SCO-03 | Onboarding & Scope Confirmation form | customer-facing | draft-source | Y | P | — | Y | conditional block | Y | SCO-01 | Produce clean working Property Scope Confirmation form from SCO-01 fields | Mirrors contact schema fields |
 | SCO-04 | Property Profile sheet | internal | draft-source | — | — | — | Y | field | Y | SCO-01 | Draft after Scope Register | Shut-offs, risk areas, baseline photos |
@@ -104,7 +104,7 @@ Values: **Y** = yes/required, **—** = no/not required, **P** = partial/light.
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | AKC-01 | Access & Key Custody annex | legal-review | lawyer-review-required | Y | Y | Y | Y | field | Y | insurance question | Outline for lawyer only | Balanced liability; **no final wording** |
 | AKC-02 | Key custody register | internal | draft-source | — | — | — | Y | — | Y | SCO-01 | Produce clean working Key Custody / Access Register | Key ID not full address |
-| AKC-03 | Key handover / return receipt | internal | draft-source | — | P | — | Y | — | Y | AKC-02 | Draft blank receipt | Signed on handover + return |
+| AKC-03 | Key handover / return receipt | internal | draft-source | — | P | — | Y | — | Y | AKC-02 | Turn stub into usable working Key Handover / Return Receipt for the minimum beta-readable set | Signed on handover + return |
 | AKC-04 | Key movement log | internal | draft-source | — | — | — | Y | — | Y | AKC-02 | Draft internal log | Every check-out/in |
 | AKC-05 | Access-failure log | internal | draft-source | — | — | — | Y | — | Y | AKC-02 | Draft internal log | Lock/alarm/access problems |
 
@@ -125,7 +125,7 @@ Raised in priority because **Sentinel performs cleaning** (Decision Memo §5).
 | ID | Document | Class | Status | Owner | Law | Acct | OpTest | Path | 1stCust | Depends on | Next action | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | CLN-01 | Cleaning Scope annex | customer-facing | draft-source | Y | P | — | Y | trigger field | Y (if scoped) | SCO-01 | Draft after Scope Register | Readiness/turnover inside oversight |
-| CLN-02 | Cleaning checklist | internal | draft-source | — | — | — | Y | trigger field | Y (if scoped) | CLN-01 | Produce clean working Cleaning / Readiness Checklist | Behind cleaning execution |
+| CLN-02 | Cleaning checklist | internal | draft-source | — | — | — | Y | trigger field | Y (if scoped) | CLN-01 | **Next companion document:** produce clean working Cleaning / Readiness Checklist for the minimum beta-readable set (SCO-01 sets cleaning model/limits; CLN-02 is the per-cleaning protocol) | Behind cleaning execution |
 | CLN-03 | Before/after evidence rule | internal | draft-source | — | P | — | Y | — | Y (if scoped) | CLN-01, DAT-03 | Produce clean working evidence rule with CLN-02 and DAT-03 | Mandatory paired evidence |
 | CLN-04 | Cleaner handoff record | internal | draft-source | — | — | — | Y | field | Y (if scoped) | CLN-01 | Draft field form | Brief + verify |
 | CLN-05 | Re-clean / cleaning-failure rule | internal | draft-source | Y | — | — | Y | — | P | CLN-01 | Draft rule | Who bears re-clean cost |
@@ -143,9 +143,9 @@ Raised in priority because **Sentinel performs cleaning** (Decision Memo §5).
 
 | ID | Document | Class | Status | Owner | Law | Acct | OpTest | Path | 1stCust | Depends on | Next action | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| REC-01 | Visit report template | delivered-record | draft-source | — | — | — | Y | context field | Y | INS-01 | Produce clean working Visit Report from template-ready draft; use in internal simulation | Consumes SCO-01 fields; visible facts, not diagnosis; not customer-facing approved |
+| REC-01 | Visit report template | delivered-record | draft-source | — | — | — | Y | context field | Y | INS-01 | Produce clean working Visit Report for the minimum beta-readable set; use in internal simulation | Consumes SCO-01 fields; visible facts, not diagnosis; not customer-facing approved |
 | REC-02 | Issue report template | delivered-record | draft-source | — | — | — | Y | — | Y | REC-01 | Draft template | Documents a finding |
-| REC-03 | Decision request template | delivered-record | draft-source | — | — | — | Y | — | Y | REC-01 | Produce clean working Decision Request from template-ready draft; keep Option A authority basis | Authority basis is a referenced field; non-Full = owner approval (Option A); no invented spend limit; not customer-facing approved |
+| REC-03 | Decision request template | delivered-record | draft-source | — | — | — | Y | — | Y | REC-01 | Produce clean working Decision Request for the minimum beta-readable set; keep Option A authority basis | Authority basis is a referenced field; non-Full = owner approval (Option A); no invented spend limit; not customer-facing approved |
 | REC-04 | Completed-action summary template | delivered-record | draft-source | — | — | — | Y | — | Y | REC-01, EMG-01 | Produce clean working Completed Action Summary | Protective/within-limit action |
 | REC-05 | Decision & action log | internal | draft-source | — | — | — | Y | — | Y | REC-03 | Draft internal log | Authority basis per decision |
 

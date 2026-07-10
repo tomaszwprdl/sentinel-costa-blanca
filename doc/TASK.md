@@ -10,18 +10,21 @@ Website implementation and proof polish are paused/frozen except for critical fi
 
 Current task: produce a clean working document set from the existing Sentinel draft architecture, templates, and test fills. These are working documents, not final customer-ready documents until simulation, beta reading, and legal/accounting gates are cleared.
 
-### Immediate next step — SCO-01 v0.5 beta read
+### Immediate next step — build the minimum beta-readable set
 
-SCO-01 v0.5 passed two internal simulations (Scenario B re-fill and one fresh private-profile fill), both `simulation-pass`.
+SCO-01 v0.5 passed two internal simulations (Scenario B re-fill and one fresh private-profile fill), both `simulation-pass`, and its beta-read packet is committed. **Beta read is deferred by Owner decision:** beta should read a small connected operational set, not an isolated SCO-01.
 
-- Prepare/use SCO-01 v0.5 for beta read.
-- Do not patch SCO-01 before beta unless the Owner explicitly approves.
-- Beta watch-points (do not pre-solve; beta readers may not care or may expose a better fix):
-  1. cleaning pending-state wording
-  2. owner-arranged exterior contractor / gardener
-  3. smart-lock digital access lifecycle
-  4. access wording: `do ustalenia` vs `nieprzekazany`
-  5. Basic visit rhythm free-text
+- **Do not send the beta packet yet.**
+- Build the minimum beta-readable working set (scope → visit/report → decision → cleaning → key receipt):
+  1. **SCO-01** — Property Scope Confirmation — done; frozen.
+  2. **REC-01** — Visit Report working document.
+  3. **REC-03** — Decision Request working document.
+  4. **CLN-02** — Cleaning / Readiness Checklist.
+  5. **AKC-03** — Key Handover / Return Receipt working receipt.
+- **Next immediate document: CLN-02** (Cleaning / Readiness Checklist) — the actionable checklist used per cleaning; SCO-01 sets the cleaning model/limits, CLN-02 is the per-cleaning protocol.
+- Beta read resumes after the set exists.
+- No SCO-01 patch before beta unless the Owner explicitly approves.
+- Beta watch-points carried forward (do not pre-solve): cleaning pending-state wording · owner-arranged exterior contractor/gardener · smart-lock digital access lifecycle · access wording `do ustalenia` vs `nieprzekazany` · Basic visit rhythm free-text.
 
 Next concrete document batch:
 
