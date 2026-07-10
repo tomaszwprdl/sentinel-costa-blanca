@@ -143,7 +143,7 @@ Raised in priority because **Sentinel performs cleaning** (Decision Memo §5).
 
 | ID | Document | Class | Status | Owner | Law | Acct | OpTest | Path | 1stCust | Depends on | Next action | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| REC-01 | Visit report template | delivered-record | draft-source | — | — | — | Y | context field | Y | INS-01 | Produce clean working Visit Report for the minimum beta-readable set; use in internal simulation | Consumes SCO-01 fields; visible facts, not diagnosis; not customer-facing approved |
+| REC-01 | Visit report template | delivered-record | draft-source | — | — | — | Y | context field | Y | INS-01 | v0.1 source + DOCX candidate produced; next = Owner review / one visit-report simulation fill / patch only if Owner approves | Consumes SCO-01 fields; visible facts, not diagnosis; not customer-facing approved |
 | REC-02 | Issue report template | delivered-record | draft-source | — | — | — | Y | — | Y | REC-01 | Draft template | Documents a finding |
 | REC-03 | Decision request template | delivered-record | draft-source | — | — | — | Y | — | Y | REC-01 | Produce clean working Decision Request for the minimum beta-readable set; keep Option A authority basis | Authority basis is a referenced field; non-Full = owner approval (Option A); no invented spend limit; not customer-facing approved |
 | REC-04 | Completed-action summary template | delivered-record | draft-source | — | — | — | Y | — | Y | REC-01, EMG-01 | Produce clean working Completed Action Summary | Protective/within-limit action |
