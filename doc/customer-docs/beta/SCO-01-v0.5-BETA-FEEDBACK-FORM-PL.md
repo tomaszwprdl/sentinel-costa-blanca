@@ -1,3 +1,5 @@
+> **UWAGA: Ten plik dotyczył wcześniejszego testu samego SCO-01. Aktualny test beta obejmuje połączony zestaw dokumentów i znajduje się w `doc/customer-docs/beta/connected-set/`.**
+
 # Sentinel — formularz opinii po przeczytaniu (dokument roboczy)
 
 > Wypełnij po przeczytaniu roboczego dokumentu Sentinel. To **nie jest** test wiedzy — nie ma złych
