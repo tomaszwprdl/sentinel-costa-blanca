@@ -104,7 +104,7 @@ Values: **Y** = yes/required, **—** = no/not required, **P** = partial/light.
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | AKC-01 | Access & Key Custody annex | legal-review | lawyer-review-required | Y | Y | Y | Y | field | Y | insurance question | Outline for lawyer only | Balanced liability; **no final wording** |
 | AKC-02 | Key custody register | internal | draft-source | — | — | — | Y | — | Y | SCO-01 | Produce clean working Key Custody / Access Register | Key ID not full address |
-| AKC-03 | Key handover / return receipt | internal | draft-source | — | P | — | Y | — | Y | AKC-02 | v0.3 source + DOCX candidate produced as blind-feedback micro-patch; v0.2 kept for history until Owner acceptance; next = Owner review / quick acceptance check / connected beta packet update only after Owner acceptance | Signed on handover + return |
+| AKC-03 | Key handover / return receipt | internal | draft-source | — | P | — | Y | — | Y | AKC-02 | v0.3 source + DOCX candidate produced as blind-feedback micro-patch; v0.3 is the current DOCX export; prior AKC-03 DOCX exports are retained in Git history only; next = Owner review / quick acceptance check / connected beta packet update only after Owner acceptance | Signed on handover + return |
 | AKC-04 | Key movement log | internal | draft-source | — | — | — | Y | — | Y | AKC-02 | Draft internal log | Every check-out/in |
 | AKC-05 | Access-failure log | internal | draft-source | — | — | — | Y | — | Y | AKC-02 | Draft internal log | Lock/alarm/access problems |
 
@@ -125,7 +125,7 @@ Raised in priority because **Sentinel performs cleaning** (Decision Memo §5).
 | ID | Document | Class | Status | Owner | Law | Acct | OpTest | Path | 1stCust | Depends on | Next action | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | CLN-01 | Cleaning Scope annex | customer-facing | draft-source | Y | P | — | Y | trigger field | Y (if scoped) | SCO-01 | Draft after Scope Register | Readiness/turnover inside oversight |
-| CLN-02 | Cleaning checklist | internal | draft-source | — | — | — | Y | trigger field | Y (if scoped) | CLN-01 | v0.1 source + DOCX + `simulation-pass`; included in connected beta set; patch only after beta / Owner approval | Behind cleaning execution; SCO-01 sets cleaning model/limits, CLN-02 is the per-cleaning protocol |
+| CLN-02 | Cleaning checklist | internal | draft-source | — | — | — | Y | trigger field | Y (if scoped) | CLN-01 | v0.2 source + DOCX candidate produced as blind-feedback micro-patch; v0.2 is the current DOCX export; prior CLN-02 DOCX exports are retained in Git history only; next = Owner review / quick acceptance check / connected beta packet update only after Owner acceptance | Behind cleaning execution; SCO-01 sets cleaning model/limits, CLN-02 is the per-cleaning protocol |
 | CLN-03 | Before/after evidence rule | internal | draft-source | — | P | — | Y | — | Y (if scoped) | CLN-01, DAT-03 | Produce clean working evidence rule with CLN-02 and DAT-03 | Mandatory paired evidence |
 | CLN-04 | Cleaner handoff record | internal | draft-source | — | — | — | Y | field | Y (if scoped) | CLN-01 | Draft field form | Brief + verify |
 | CLN-05 | Re-clean / cleaning-failure rule | internal | draft-source | Y | — | — | Y | — | P | CLN-01 | Draft rule | Who bears re-clean cost |

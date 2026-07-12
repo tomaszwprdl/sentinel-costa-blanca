@@ -5,15 +5,28 @@ customer_facing: false
 lawyer_review_required: partial
 accountant_review_required: partial
 owner_review_required: true
-version: 0.1-working
-source: SCO-01 v0.5 cleaning separation
+version: 0.2-working
+supersedes: DOCX v0.1
+source: CLN-02 v0.2 blind-feedback micro-patch
 ---
+
+<!--
+v0.2 = blind-feedback micro-patch: top label OSTRZEŻENIE -> WAŻNE, warm purpose sentence,
+who-fills clarification, plain-language note on document codes, grouped photo/privacy rule.
+Structure and doctrine unchanged.
+-->
 
 # CLN-02 — Checklista sprzątania i gotowości
 
 Dokument roboczy wewnętrzny. Nie jest umową ani dokumentem do podpisu. Używany do jednej usługi sprzątania / gotowości. Zakres musi wynikać z SCO-01 lub późniejszego pisemnego potwierdzenia.
 
 Ta checklista wykonuje jedno zdarzenie sprzątania / gotowości. Model sprzątania, granice i osobę wykonującą ustala SCO-01; checklista ich nie zmienia i nie otwiera na nowo.
+
+Celem checklisty jest sprawdzić, czy lokal jest czysty, uporządkowany i gotowy w widocznym zakresie, a każdy problem jest jasno odnotowany i przekazany do decyzji właściciela.
+
+**Kto wypełnia:** checklistę wypełnia osoba Sentinel albo osoba sprawdzająca wykonanie. Właściciel nie musi jej samodzielnie wypełniać; może otrzymać wynik, raport albo wybrane informacje z checklisty.
+
+Skróty dokumentów to wewnętrzne referencje Sentinel: SCO-01 oznacza ustalony zakres obsługi, REC-01 raport wizyty, a REC-03 wniosek o decyzję właściciela.
 
 ## 1. Rekord zdarzenia
 
@@ -101,7 +114,13 @@ Tylko kontrola widoczna. Bez prac technicznych, bez ogrodnictwa, bez diagnozy.
 | Element wrażliwy widoczny; nie sfotografowano | [ ] tak — opis: `______`<br>[ ] nie dotyczy |
 | Referencja dowodów | `______` |
 
-Nie fotografować: dokumentów tożsamości i dokumentów prawnych; kart płatniczych i dokumentów bankowych; kodów, haseł, PIN-ów, routerów / etykiet Wi-Fi i kodów sejfu; ekranów z wiadomościami, kontami lub danymi logowania; dzieci i zdjęć rodzinnych; leków i dokumentów medycznych; przedmiotów intymnych; wnętrza zamkniętych szaf, sejfów i prywatnych schowków; kosztowności ani rzeczy gości — chyba że są bezpośrednio związane ze zgłaszanym problemem; wtedy materiał ogranicz lub wykadruj.
+Nie fotografować (pogrupowane dla czytelności — wszystkie pozycje obowiązują):
+
+- **Dokumenty i dane:** dokumenty tożsamości i prawne; karty płatnicze i dokumenty bankowe.
+- **Dostęp i bezpieczeństwo:** kody, hasła, PIN-y, routery / etykiety Wi-Fi i kody sejfu; ekrany z wiadomościami, kontami lub danymi logowania.
+- **Osoby i prywatność:** dzieci i zdjęcia rodzinne; leki i dokumenty medyczne; przedmioty intymne.
+- **Rzeczy osobiste i zamknięte strefy:** wnętrza zamkniętych szaf, sejfów i prywatnych schowków; kosztowności i rzeczy gości.
+- **Wyjątek operacyjny:** jeżeli przedmiot jest bezpośrednio związany ze zgłaszanym problemem, materiał ogranicz lub wykadruj.
 
 ## 8. Wynik gotowości
 
