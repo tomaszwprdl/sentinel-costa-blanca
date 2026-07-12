@@ -123,6 +123,8 @@ Accepted and protected unless a confirmed regression or explicit Owner scope app
 
 Do not reopen Services polish because of visual preference alone.
 
+Post-estimator fatigue pattern (accepted, `7145474`): after the estimator the page leads with a compact owner-facing confirmation section (starting scope, usage model, what to bring, plus a direct CTA), and the dense operational record / execution-only detail is collapsed behind a desktop disclosure the same way it already collapses on mobile. This is an accepted direction, not a hard freeze — the exact copy, card count, and disclosure styling may still be tuned. Do not, however, silently re-expand the collapsed operational/execution-only blocks to always-open on desktop or drop the after-estimator section; that would reintroduce the fatigue this addressed. Collapsing preserves the boundary/legal content — protected boundaries still apply.
+
 ## About Page
 
 About is shipped and launch-grade after the editorial-depth/team-introduction pass.

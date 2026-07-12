@@ -5,10 +5,11 @@ Current project state only. This document is descriptive; `DECISIONS.md` is bind
 ## Snapshot
 
 - Branch at this documentation update: `main`.
-- Latest app/content beta-test clarity commit: `c0736d0` (`refine: address beta-test clarity findings`); `origin/main` already contains this commit.
+- Latest local app/content commit: `7145474` (`refine: address beta feedback (home property cue + services fatigue)`); committed locally, **not yet pushed**. `origin/main` does not contain it.
+- Previous app/content beta-test clarity commit: `c0736d0` (`refine: address beta-test clarity findings`); `origin/main` already contains this commit.
 - Last pushed docs checkpoint before this phase update: `50a292c` (`docs: add Sentinel document-system drafts`).
 - Site phase: pre-launch / soft-launch review.
-- The page-by-page polish pass is complete; the beta-test clarity bundle (`c0736d0`) is now applied on top of it. This is the core polish gate, not "launch-final forever."
+- The page-by-page polish pass is complete; the beta-test clarity bundle (`c0736d0`) and then the beta fatigue / property-cue bundle (`7145474`) are applied on top of it. This is the core polish gate, not "launch-final forever."
 - Website implementation is paused/frozen except for critical fixes; website proof polish is not the active bottleneck.
 - Current active phase: Sentinel document production from the repo draft system.
 - `noindex,nofollow` remains active until Owner approves indexing.
@@ -23,6 +24,18 @@ Owner-accepted clarity changes on top of the closed polish pass. App/content com
 - Services: package responsibility/deliverable summaries clarified; tablet package ladder layout corrected. Full package visit rhythm is `min. 3/mies.` / `min. 3/month`.
 - Estimator: mixed/undetermined use is a classification-before-estimate path (Option A). Selecting "Nie wiem jeszcze / model mieszany" and clicking Next shows a full-width classification notice — no numeric range, no narrow result side rail. Private/guest priced flow is unchanged.
 - Protected contracts unchanged: estimator matrix/pricing/ranges, contact API/schema/payload, routes/slugs/query behavior, legal/noindex, package names/count, emergency authority limits.
+
+## Beta Fatigue / Property-Cue Bundle (7145474)
+
+Owner-accepted changes on top of `c0736d0`, from a later beta-test finding. Local app commit `7145474`, **not yet pushed**. This is the current source truth for Home and Services.
+
+- Home: the usage selector title (`Wybierz sposób używania nieruchomości` / `Choose how the property is used`) now carries one small apartment/property outline glyph for instant property recognition. Restrained institutional line glyph, inline before the title; it does not overpower the title or the pathway cards. Same single glyph across the gate, change-state, and Suspense-fallback render paths.
+- Services: post-estimator information fatigue reduced without removing content.
+  - A compact owner-facing after-estimator section (`Po estymacji wiesz, co potwierdzić dalej.` / `After the estimate you know what to confirm next.`) sits directly after the estimator: three decision cards (starting scope, usage model, what to bring), an assurance line (Sentinel confirms visit rhythm, access, and responsibility limits before start), and a direct contact CTA.
+  - The dense operational layer (operational record + execution-only appendix) now collapses behind a `Zobacz szczegóły` / `See details` disclosure on desktop too, matching existing mobile behaviour. All boundary/legal content is preserved, only compressed.
+  - Mobile Services IA order updated so the new section follows the estimator.
+- Protected contracts unchanged: estimator logic/matrix/pricing/ranges/result behaviour, contact API/schema/payload, routes/slugs/query behaviour, legal/noindex, package names/count, Full `min. 3/mies.` / `min. 3/month`, emergency authority limits. PL/EN parity kept.
+- Validation: lint, build, and `git diff --check` clean; production screenshots (PL/EN home desktop + 390, PL/EN Services desktop, PL Services 390, PL Services ~1024 tablet) all `overflowPx 0` with no console errors, failed requests, or 4xx/5xx.
 
 ## Documentation System Status
 
@@ -55,9 +68,9 @@ Owner-accepted clarity changes on top of the closed polish pass. App/content com
 
 All pages pass the core polish gate. Do not reopen a passed page without a real regression or explicit Owner scope.
 
-- Home: pass. Clearer first-screen hero on the unselected state; shared-core floor is a compact connected dossier/spine panel; unselected hero moved upward on desktop to tighten the opening. Beta bundle: estimator CTA is now a real button, the capability sentence names keys/access and cleaning/readiness, and the shared-core line adds property readiness.
+- Home: pass. Clearer first-screen hero on the unselected state; shared-core floor is a compact connected dossier/spine panel; unselected hero moved upward on desktop to tighten the opening. Beta bundle: estimator CTA is now a real button, the capability sentence names keys/access and cleaning/readiness, and the shared-core line adds property readiness. Fatigue/property-cue bundle (`7145474`): the usage selector title now carries a small apartment/property glyph for instant property recognition.
 - Pathway states: pass. Hero detail simplified into a compact summary; detailed operational logic moved into pathway-specific process spines; private / guest / mixed differentiated in rhythm and copy; guest comparison carousel no longer auto-advances on desktop.
-- Services: pass. Desktop stays dossier/specification style; mobile uses a separate buyer-oriented IA (hero → shortcut rail → short model summary → package summary → estimator → collapsed proof sections → final CTA) with estimator early, a compact segmented package selector, and a compact vertical responsibility ladder. Beta bundle: package responsibility/deliverable summaries clarified, tablet package ladder layout corrected, Full package visit rhythm `min. 3/mies.` / `min. 3/month`.
+- Services: pass. Desktop stays dossier/specification style; mobile uses a separate buyer-oriented IA (hero → shortcut rail → short model summary → package summary → estimator → collapsed proof sections → final CTA) with estimator early, a compact segmented package selector, and a compact vertical responsibility ladder. Beta bundle: package responsibility/deliverable summaries clarified, tablet package ladder layout corrected, Full package visit rhythm `min. 3/mies.` / `min. 3/month`. Fatigue/property-cue bundle (`7145474`): a compact owner-facing after-estimator confirmation section follows the estimator, and the dense operational record / execution-only detail now collapses behind desktop disclosure (mobile order places the new section after the estimator). Boundaries preserved, only compressed.
 - FAQ: pass. Mobile quick questions are compact action rows; search/category access comes earlier; wrong assumptions reduced on mobile behind reveal. Answer substance and business boundaries unchanged.
 - About: pass. Mobile spacing tightened; operating/team structure more compact on mobile. Trust meaning, local team proof, Aleksy proof, and "Sentinel jest / nie jest" substance unchanged.
 - Contact: pass. Mobile form reads as four compact numbered steps; "Po wysłaniu" steps are compact rows on mobile; direct contact stays before the form. Schema/API/payload, required fields, and form behavior unchanged.
@@ -102,6 +115,7 @@ Current active phase:
 
 ## Not Done
 
+- Push of the local stack (app commit `7145474` + this docs commit) to `origin/main`, then deployed smoke QA. Owner will push the stack together after this docs commit; do not push before that.
 - Production contact email end-to-end confirmation.
 - Final commercial pricing/range confirmation.
 - Legal/entity/GDPR review.

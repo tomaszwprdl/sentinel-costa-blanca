@@ -6,7 +6,17 @@ This file tracks the next action only. Binding contracts live in `DECISIONS.md`.
 
 The page-by-page polish pass and the beta-test clarity bundle (`c0736d0`) are complete. The website is not the active bottleneck.
 
-Website implementation and proof polish are paused/frozen except for critical fixes. Do not reopen website polish during this phase.
+### Latest completed website task — beta fatigue / property-cue bundle (7145474)
+
+Owner reopened Home and Services under explicit scope (later beta-test finding) and accepted the result. Local app commit `7145474`, **not yet pushed**. Complete:
+
+- Home: small apartment/property glyph added to the usage selector title for instant property recognition (restrained, single glyph, does not overpower title or pathway cards).
+- Services: post-estimator information fatigue reduced — compact owner-facing after-estimator confirmation section + CTA follows the estimator; dense operational record / execution-only detail collapses behind desktop disclosure; mobile ordering fixed so the new section follows the estimator. Boundaries compressed, not removed.
+- Protected contracts unchanged: estimator logic/matrix/pricing/ranges/result behaviour, contact API/schema/payload, routes/slugs/query behaviour, legal/noindex, package names/count, Full `min. 3/month`, emergency authority limits. PL/EN parity kept.
+- Validation passed (lint, build, `git diff --check`, production screenshots per `doc/QA.md`).
+- Next steps: push the local stack (`7145474` + this docs commit) together, then deployed smoke QA only. No new website polish task is open. Do not reopen Services unless production shows an actual regression.
+
+Website implementation and proof polish are otherwise paused/frozen except for critical fixes. Do not reopen website polish during this phase.
 
 Current task: produce a clean working document set from the existing Sentinel draft architecture, templates, and test fills. These are working documents, not final customer-ready documents until simulation, beta reading, and legal/accounting gates are cleared.
 
@@ -53,9 +63,9 @@ Launch / `noindex,nofollow` removal remains a later Owner-owned decision.
 
 ## Current Shipped State
 
-- Home is passed after the hero/shared-core polish.
+- Home is passed after the hero/shared-core polish; the usage selector title now carries a small apartment/property glyph (`7145474`).
 - Pathway states are passed after the hero-summary / process-spine split and pathway differentiation.
-- Services page is shipped/live and protected; mobile uses a separate buyer-oriented IA (see `DECISIONS.md`).
+- Services page is shipped/live and protected; mobile uses a separate buyer-oriented IA (see `DECISIONS.md`). Post-estimator fatigue reduced (`7145474`): compact after-estimator confirmation section + CTA, dense operational detail collapsed behind desktop disclosure.
 - Estimator is shipped/live and protected. Mixed/undetermined use is classification-before-estimate (Option A): full-width classification notice, no numeric range. See `DECISIONS.md`.
 - FAQ is shipped/live and protected after the mobile compression pass.
 - About is shipped/live and launch-grade after the editorial-depth/team-introduction and mobile-tightening passes.
