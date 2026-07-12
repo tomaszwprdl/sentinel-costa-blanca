@@ -5,15 +5,15 @@ customer_facing: false
 lawyer_review_required: partial
 accountant_review_required: false
 owner_review_required: true
-version: 0.2-working
-supersedes: DOCX v0.1
-source: AKC-03 v0.2 warmth/clarity micro-patch (no structural change)
+version: 0.3-working
+supersedes: DOCX v0.2
+source: AKC-03 v0.3 blind-feedback micro-patch
 ---
 
 <!--
-v0.2 = warmth/clarity micro-patch after SCO-01: owner reassurance, who-fills line,
-prominent no-secrets rule, digital-access skip note, mixed key-test exception note,
-handover/return block instruction. Structure and custody doctrine unchanged.
+v0.3 = blind-feedback micro-patch: top label OSTRZEŻENIE -> WAŻNE, one line explaining
+internal document numbers, confirmation-format clarification, softened liability wording.
+Structure and custody doctrine unchanged.
 -->
 
 # AKC-03 — Potwierdzenie przekazania / zwrotu kluczy i dostępu
@@ -27,6 +27,8 @@ Ten dokument chroni właściciela i Sentinel: zapisuje, co dokładnie przekazano
 **Dla bezpieczeństwa nie zapisuje się tu:** pełnego adresu, kodów, haseł, PIN-ów, etykiet Wi-Fi ani kodów sejfu. Dostęp cyfrowy zapisujemy wyłącznie jako status (np. przyznany / przetestowany / cofnięty).
 
 Jeden dokument dokumentuje jedno zdarzenie: przekazanie, odbiór albo zwrot. Liczba, identyfikatory i widoczny stan kluczy oraz status dostępu należą tutaj, a nie do SCO-01. To potwierdzenie nie tworzy uprawnień dostępu ponad SCO-01.
+
+Właściciel nie musi znać numerów dokumentów Sentinel; służą one do powiązania tego potwierdzenia z ustalonym zakresem obsługi i dalszymi zapisami operacyjnymi.
 
 ## 1. Rekord zdarzenia
 
@@ -129,6 +131,8 @@ Wypełnij tylko blok odpowiadający temu zdarzeniu. Drugi blok oznacz jako `nie 
 | Różnice / braki / problem | `______` |
 | Potwierdzenie (bez podpisu prawnego) | `______` |
 
+Potwierdzenie może oznaczać imię i nazwisko osoby potwierdzającej, potwierdzenie w wiadomości albo wpis operatora wskazujący sposób potwierdzenia; nie zastępuje podpisu prawnego ani umowy.
+
 Potwierdzenie jest dowodem operacyjnym, nie finalną klauzulą prawną. Odnotowuje się wyłącznie widoczne fakty; nie ma ukrytego przyjęcia szkód lub braków ponad to, co widocznie zapisano.
 
 ## 8. Różnice, braki, problem z dostępem
@@ -150,7 +154,7 @@ Potwierdzenie jest dowodem operacyjnym, nie finalną klauzulą prawną. Odnotowu
 - Nie tworzy uprawnień dostępu ponad SCO-01 lub pisemną instrukcję właściciela.
 - Nie zapisuje rzeczywistych kodów, haseł ani PIN-ów.
 - Nie diagnozuje zamków ani systemów technicznych.
-- Nie tworzy nieograniczonej odpowiedzialności.
+- Nie rozstrzyga odpowiedzialności za szkody lub braki poza widocznie zapisanymi faktami.
 - Każdy problem z dostępem dokumentuje się osobno.
 
 ## 10. Notatki operatora / archiwum
