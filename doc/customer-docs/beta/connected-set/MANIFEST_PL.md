@@ -16,7 +16,7 @@ Internal manifest for the connected-set beta packet. Not customer-facing wording
 
 | # | Dokument | Źródło DOCX (repo) |
 |---|---|---|
-| 1 | SCO-01 v0.6 — Potwierdzenie zakresu | `doc/customer-docs/working/exports/01-PROPERTY-SCOPE-CONFIRMATION-WORKING-DRAFT-PL-v0.6.docx` |
+| 1 | SCO-01 v0.7 — Potwierdzenie zakresu | `doc/customer-docs/working/exports/01-PROPERTY-SCOPE-CONFIRMATION-WORKING-DRAFT-PL-v0.7.docx` |
 | 2 | AKC-03 v0.1 — Przekazanie / zwrot kluczy | `doc/customer-docs/working/exports/AKC-03-KEY-HANDOVER-RETURN-RECEIPT-WORKING-DRAFT-PL-v0.1.docx` |
 | 3 | CLN-02 v0.1 — Checklista sprzątania / gotowości | `doc/customer-docs/working/exports/CLN-02-CLEANING-READINESS-CHECKLIST-WORKING-DRAFT-PL-v0.1.docx` |
 | 4 | REC-01 v0.1 — Raport wizyty | `doc/customer-docs/working/exports/REC-01-VISIT-REPORT-WORKING-DRAFT-PL-v0.1.docx` |
@@ -24,7 +24,7 @@ Internal manifest for the connected-set beta packet. Not customer-facing wording
 
 Markdown sources sit next to each export in `doc/customer-docs/working/`.
 
-SCO-01 v0.6 zastępuje v0.5 w połączonym teście beta (poprawki po opiniach: intake prowadzony przez pracownika, mapa pojęć, lżejsze sekcje 3/4, prostsze statusy). v0.5 pozostaje w repo dla historii.
+SCO-01 v0.7 zastępuje v0.6 w połączonym teście beta (mikro-poprawka: cieplejsze ramowanie roli, zdanie uspokajające przed sekcją 3, prostsze objaśnienia limitu Full i działania awaryjnego). v0.7 jest bieżącym eksportem DOCX; wcześniejsze eksporty SCO-01 pozostają wyłącznie w historii Git.
 
 ## Canonical packet files (kanoniczne pliki paczki — w repo)
 
@@ -41,7 +41,7 @@ Pliki (8):
 | Nazwa do wysyłki | Pochodzenie |
 |---|---|
 | `00_READ_ME_FIRST_PL.md` | kopia z `beta/connected-set/` |
-| `01_SCOPE_CONFIRMATION_SCO-01_v0.6.docx` | kopia eksportu SCO-01 v0.6 |
+| `01_SCOPE_CONFIRMATION_SCO-01_v0.7.docx` | kopia eksportu SCO-01 v0.7 |
 | `02_KEY_HANDOVER_AKC-03_v0.1.docx` | kopia eksportu AKC-03 v0.1 |
 | `03_CLEANING_READINESS_CLN-02_v0.1.docx` | kopia eksportu CLN-02 v0.1 |
 | `04_VISIT_REPORT_REC-01_v0.1.docx` | kopia eksportu REC-01 v0.1 |
