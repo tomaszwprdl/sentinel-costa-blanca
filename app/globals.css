@@ -29381,24 +29381,28 @@ html:has(.hiw-page),
 }
 
 /* ============================================================
-   Beta feedback (homepage): property-recognition glyph beside
-   the usage-selector title. One restrained institutional line
-   glyph; must not overpower the title or the pathway cards.
+   Beta feedback (homepage): property-recognition glyph on the
+   LEFT hero, leading the eyebrow label so "this is about
+   property" reads before the headline. One restrained
+   institutional line glyph; it takes the place of the eyebrow's
+   copper leading dash on the home hero only (other heroes keep
+   the dash) so it supports the headline without a new motif.
    ============================================================ */
-.usage-selector-title__glyph {
-  display: inline-block;
-  vertical-align: -0.16em;
-  margin-right: 0.5rem;
-  width: 1.4rem;
-  height: 1.4rem;
-  color: color-mix(in srgb, var(--support) 82%, var(--heading));
-  opacity: 0.9;
+.hero-kicker--property::before {
+  display: none;
+}
+
+.hero-kicker__glyph {
+  flex: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  color: color-mix(in srgb, var(--authority-on-dark) 62%, var(--copper));
 }
 
 @media (min-width: 768px) {
-  .usage-selector-title__glyph {
-    width: 1.55rem;
-    height: 1.55rem;
+  .hero-kicker__glyph {
+    width: 1.25rem;
+    height: 1.25rem;
   }
 }
 

@@ -103,10 +103,7 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
             <div className="diagnostic-result-shell motion-panel-reveal mb-8">
               <div className="diagnostic-result-top">
                 <div>
-                  <h2 className="usage-selector-title text-2xl md:text-3xl">
-                    <PropertyGlyph className="usage-selector-title__glyph" />
-                    {tp('selectorTitle')}
-                  </h2>
+                  <h2 className="text-2xl md:text-3xl">{tp('selectorTitle')}</h2>
                   <p className="mt-2 max-w-2xl text-sm text-body">{tp('selectorInstruction')}</p>
                 </div>
               </div>
@@ -325,7 +322,10 @@ function DiagnosticGateIntro({
       <div className="visual-hero-content motion-entrance">
         <div className="hero-copy-panel motion-entrance">
           <div className="hero-copy-stack">
-            <p className="hero-kicker">{tp('companyEyebrow')}</p>
+            <p className="hero-kicker hero-kicker--property">
+              <PropertyGlyph className="hero-kicker__glyph" />
+              {tp('companyEyebrow')}
+            </p>
             <h1 className="hero-display hero-gate-title">
               <span className="hero-gate-title__question">{tp('companyHeadlineQuestion')}</span>
               <span className="hero-gate-title__answer">
@@ -353,8 +353,7 @@ function DiagnosticGateIntro({
         </div>
 
         <div id="usage-situation-gate" className="diagnostic-panel diagnostic-panel--gate motion-panel-reveal scroll-mt-28">
-          <h2 className="usage-selector-title text-2xl leading-tight md:text-3xl">
-            <PropertyGlyph className="usage-selector-title__glyph" />
+          <h2 className="text-2xl leading-tight md:text-3xl">
             {tp('selectorTitle')}
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-body">

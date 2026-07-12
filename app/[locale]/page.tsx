@@ -139,7 +139,10 @@ function UsagePathwayFallback({
           <div className="visual-hero-content">
             <div className="hero-copy-panel">
               <div className="hero-copy-stack">
-                <p className="hero-kicker">{t('pathway.companyEyebrow')}</p>
+                <p className="hero-kicker hero-kicker--property">
+                  <PropertyGlyph className="hero-kicker__glyph" />
+                  {t('pathway.companyEyebrow')}
+                </p>
                 <h1 className="hero-display hero-gate-title">
                   <span className="hero-gate-title__question">{t('pathway.companyHeadlineQuestion')}</span>
                   <span className="hero-gate-title__answer">
@@ -167,8 +170,7 @@ function UsagePathwayFallback({
             </div>
 
             <div id="usage-situation-gate" className="diagnostic-panel diagnostic-panel--gate scroll-mt-28">
-              <h2 className="usage-selector-title text-2xl leading-tight md:text-3xl">
-                <PropertyGlyph className="usage-selector-title__glyph" />
+              <h2 className="text-2xl leading-tight md:text-3xl">
                 {t('pathway.selectorTitle')}
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-body">{t('pathway.selectorInstruction')}</p>
