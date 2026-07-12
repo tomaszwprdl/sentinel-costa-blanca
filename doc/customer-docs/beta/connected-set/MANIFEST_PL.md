@@ -17,7 +17,7 @@ Internal manifest for the connected-set beta packet. Not customer-facing wording
 | # | Dokument | Źródło DOCX (repo) |
 |---|---|---|
 | 1 | SCO-01 v0.7 — Potwierdzenie zakresu | `doc/customer-docs/working/exports/01-PROPERTY-SCOPE-CONFIRMATION-WORKING-DRAFT-PL-v0.7.docx` |
-| 2 | AKC-03 v0.1 — Przekazanie / zwrot kluczy | `doc/customer-docs/working/exports/AKC-03-KEY-HANDOVER-RETURN-RECEIPT-WORKING-DRAFT-PL-v0.1.docx` |
+| 2 | AKC-03 v0.2 — Przekazanie / zwrot kluczy | `doc/customer-docs/working/exports/AKC-03-KEY-HANDOVER-RETURN-RECEIPT-WORKING-DRAFT-PL-v0.2.docx` |
 | 3 | CLN-02 v0.1 — Checklista sprzątania / gotowości | `doc/customer-docs/working/exports/CLN-02-CLEANING-READINESS-CHECKLIST-WORKING-DRAFT-PL-v0.1.docx` |
 | 4 | REC-01 v0.1 — Raport wizyty | `doc/customer-docs/working/exports/REC-01-VISIT-REPORT-WORKING-DRAFT-PL-v0.1.docx` |
 | 5 | REC-03 v0.1 — Wniosek decyzyjny | `doc/customer-docs/working/exports/REC-03-DECISION-REQUEST-WORKING-DRAFT-PL-v0.1.docx` |
@@ -25,6 +25,8 @@ Internal manifest for the connected-set beta packet. Not customer-facing wording
 Markdown sources sit next to each export in `doc/customer-docs/working/`.
 
 SCO-01 v0.7 zastępuje v0.6 w połączonym teście beta (mikro-poprawka: cieplejsze ramowanie roli, zdanie uspokajające przed sekcją 3, prostsze objaśnienia limitu Full i działania awaryjnego). v0.7 jest bieżącym eksportem DOCX; wcześniejsze eksporty SCO-01 pozostają wyłącznie w historii Git.
+
+AKC-03 v0.2 zastępuje v0.1 w połączonym teście beta (mikro-poprawka: uspokojenie właściciela, „kto wypełnia", mocniejsza reguła bez-sekretów, instrukcje pominięcia dostępu cyfrowego, mieszanego testu kluczy i bloku przekazanie/zwrot). v0.2 jest bieżącym eksportem DOCX; wcześniejsze eksporty AKC-03 pozostają wyłącznie w historii Git.
 
 ## Canonical packet files (kanoniczne pliki paczki — w repo)
 
@@ -42,7 +44,7 @@ Pliki (8):
 |---|---|
 | `00_READ_ME_FIRST_PL.md` | kopia z `beta/connected-set/` |
 | `01_SCOPE_CONFIRMATION_SCO-01_v0.7.docx` | kopia eksportu SCO-01 v0.7 |
-| `02_KEY_HANDOVER_AKC-03_v0.1.docx` | kopia eksportu AKC-03 v0.1 |
+| `02_KEY_HANDOVER_AKC-03_v0.2.docx` | kopia eksportu AKC-03 v0.2 |
 | `03_CLEANING_READINESS_CLN-02_v0.1.docx` | kopia eksportu CLN-02 v0.1 |
 | `04_VISIT_REPORT_REC-01_v0.1.docx` | kopia eksportu REC-01 v0.1 |
 | `05_DECISION_REQUEST_REC-03_v0.1.docx` | kopia eksportu REC-03 v0.1 |
