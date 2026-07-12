@@ -7,23 +7,25 @@ accountant_review_required: partial
 owner_review_required: true
 language: pl
 pathway: private / guest / mixed selectable
-version: 0.6-working
-supersedes: DOCX v0.5
-source: SCO-01 v0.6 beta-feedback usability patch (employee-led owner intake)
+version: 0.7-working
+supersedes: DOCX v0.6
+source: SCO-01 v0.7 micro-patch after cold-reader feedback (warmth/clarity, no structural change)
 ---
 
 <!--
 Internal metadata above must not render in the Word/PDF body.
-DOCX v0.5 is superseded by this v0.6 working source; v0.5 export is kept for history.
-v0.6 = beta-feedback usability patch: employee-led owner intake framing, term map,
-lighter Section 3, simplified status vocabulary, reworded internal/legalistic phrases.
-Doctrine unchanged. Moved codes, record links and review-gate destinations live in:
+DOCX v0.6 is superseded by this v0.7 working source; v0.6 export is kept for history.
+v0.7 = micro-patch after cold-reader feedback: positive role sentence, a reassurance line
+before Section 3, plain-language notes for Full EUR 300/500 and emergency/community action.
+Structure and doctrine unchanged. Moved codes, record links and review-gate destinations live in:
 doc/customer-docs/internal/01-PROPERTY-SCOPE-CONFIRMATION-OPERATOR-DATA-MAP.md
 -->
 
 # Potwierdzenie zakresu obsługi nieruchomości
 
 Ten dokument to wspólne ustalenie, jak Sentinel ma zajmować się Państwa nieruchomością pod Państwa nieobecność: co sprawdzamy, jak dostajemy dostęp, co Państwo otrzymują po wizycie i kiedy pytamy o decyzję. Ustala też wyraźnie, czego Sentinel nie robi.
+
+Rolą Sentinel jest zauważyć, udokumentować i pomóc uruchomić właściwą decyzję, osobę albo następny krok — bez przejmowania nieograniczonego zarządzania nieruchomością.
 
 **Kto wypełnia:** formularz wypełnia pracownik Sentinel podczas rozmowy wstępnej, na podstawie Państwa odpowiedzi. Nie trzeba znać ani wypełniać każdego pola samodzielnie — od tego jest nasza rozmowa. Czego jeszcze nie wiadomo, zaznaczamy jako `nie dotyczy`, `do decyzji właściciela` albo `do ustalenia po pierwszej wizycie`. Gotowy, wypełniony dokument wraca do Państwa do przejrzenia.
 
@@ -75,6 +77,8 @@ Terminy służą wyłącznie do planowania gotowości. Sentinel nie obsługuje r
 SLA oznacza czas reakcji i decyzji, nie gwarancję rozwiązania sprawy. Pakiet określa rytm, intensywność i pozycję decyzyjną; nie przenosi odpowiedzialności właściciela, nie tworzy gwarancji rezultatu i nie oznacza większej odpowiedzialności za szkodę. Sentinel dokumentuje widoczne fakty i nie stawia diagnoz technicznych.
 
 ## 3. Co Sentinel robi i kiedy
+
+Jeżeli któreś pole brzmi technicznie, pracownik Sentinel omawia je z właścicielem prostym językiem i wpisuje uzgodniony status.
 
 Pracownik Sentinel zaznacza tylko te działania, które rzeczywiście mają być wykonywane, i używa pięciu statusów podanych na początku. Puste pola `______` uzupełnia się w rozmowie.
 
@@ -167,14 +171,14 @@ Sprzątanie jest funkcją w ramach uzgodnionego nadzoru, a nie osobną publiczn�
 | Pole | Wartość |
 |---|---|
 | Basic / Extended | W pakietach Basic i Extended Sentinel nie zleca płatnych działań ani nie ponosi wydatków bez wcześniejszej zgody właściciela. |
-| Full | ☐ standardowy limit EUR 300 na decyzję<br>☐ opcjonalny limit EUR 500 uzgodniony<br>Powyżej wybranego limitu wymagana jest zgoda właściciela. |
+| Full | ☐ standardowy limit EUR 300 na decyzję<br>☐ opcjonalny limit EUR 500 uzgodniony<br>Powyżej wybranego limitu wymagana jest zgoda właściciela.<br>Limit dotyczy jednej konkretnej decyzji / sytuacji, a nie stałego miesięcznego budżetu ani otwartego upoważnienia. |
 | Oddzielny dokument uprawnienia | ☐ brak<br>☐ istnieje po wymaganym przeglądzie: `______`<br>☐ do ustalenia po przeglądzie prawnym / księgowym |
 | Kanał ważnej decyzji właściciela | `______` |
 | Potwierdzenie decyzji | ☐ email<br>☐ WhatsApp jako dowód komunikacji + archiwizacja<br>☐ telefon tylko z pisemnym potwierdzeniem<br>☐ inne: `______` |
 | Dowód wydatku | Rachunek wymagany; wyjątki wyłącznie po przeglądzie księgowym. |
 | Wykonawcy zewnętrzni | Sentinel może koordynować dostęp i dokumentację; nie gwarantuje dostępności, ceny, jakości ani rezultatu pracy wykonawcy. |
 
-Dla Basic i Extended nie ustala się żadnego stałego limitu kwotowego — każdy wydatek wymaga wcześniejszej zgody właściciela. Minimalne działanie wymagane przez służby awaryjne albo administrację wspólnoty może zostać udokumentowane, jeżeli sytuacja tego wymaga; nie jest to wcześniej autoryzowany mandat do wydatków w Basic / Extended.
+Dla Basic i Extended nie ustala się żadnego stałego limitu kwotowego — każdy wydatek wymaga wcześniejszej zgody właściciela. Przykładowo: jeżeli służby awaryjne albo administracja wspólnoty wymagają natychmiastowego dostępu lub minimalnego działania ochronnego, Sentinel może odnotować i udokumentować sytuację. Nie jest to jednak zgoda na zlecanie płatnych usług ani stały mandat do wydatków w Basic / Extended.
 
 ## 8. Kontakty, decyzje i dostarczanie raportów
 
