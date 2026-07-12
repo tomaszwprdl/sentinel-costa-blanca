@@ -10,7 +10,7 @@ The page-by-page polish pass and the beta-test clarity bundle (`c0736d0`) are co
 
 Owner reopened Home and Services under explicit scope (later beta-test finding) and accepted the result. Local app commit `7145474`, **not yet pushed**. Complete:
 
-- Home: small apartment/property glyph added to the usage selector title for instant property recognition (restrained, single glyph, does not overpower title or pathway cards).
+- Home: small apartment/property glyph leads the left hero eyebrow (`LOKALNA REPREZENTACJA WŁAŚCICIELA` / `LOCAL OWNER REPRESENTATION`), before the headline, for instant category recognition (restrained single cue; not in the right-side selector title). Placement corrected in `467d192`.
 - Services: post-estimator information fatigue reduced — compact owner-facing after-estimator confirmation section + CTA follows the estimator; dense operational record / execution-only detail collapses behind desktop disclosure; mobile ordering fixed so the new section follows the estimator. Boundaries compressed, not removed.
 - Protected contracts unchanged: estimator logic/matrix/pricing/ranges/result behaviour, contact API/schema/payload, routes/slugs/query behaviour, legal/noindex, package names/count, Full `min. 3/month`, emergency authority limits. PL/EN parity kept.
 - Validation passed (lint, build, `git diff --check`, production screenshots per `doc/QA.md`).
@@ -63,7 +63,7 @@ Launch / `noindex,nofollow` removal remains a later Owner-owned decision.
 
 ## Current Shipped State
 
-- Home is passed after the hero/shared-core polish; the usage selector title now carries a small apartment/property glyph (`7145474`).
+- Home is passed after the hero/shared-core polish; a small apartment/property glyph leads the left hero eyebrow (`7145474`, placement corrected in `467d192`).
 - Pathway states are passed after the hero-summary / process-spine split and pathway differentiation.
 - Services page is shipped/live and protected; mobile uses a separate buyer-oriented IA (see `DECISIONS.md`). Post-estimator fatigue reduced (`7145474`): compact after-estimator confirmation section + CTA, dense operational detail collapsed behind desktop disclosure.
 - Estimator is shipped/live and protected. Mixed/undetermined use is classification-before-estimate (Option A): full-width classification notice, no numeric range. See `DECISIONS.md`.
