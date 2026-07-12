@@ -5,15 +5,36 @@ customer_facing: false
 lawyer_review_required: partial
 accountant_review_required: partial
 owner_review_required: true
-version: 0.1-working
-source: REC-01 old draft + SCO-01 v0.5 + CLN-02 v0.1
+version: 0.2-working
+supersedes: DOCX v0.1
+source: REC-01 v0.2 front-layer blind-feedback micro-patch
 ---
+
+<!--
+v0.2 = front-layer micro-patch: top label OSTRZEŻENIE -> WAŻNE, front owner-status block
+(section 0), strengthened owner summary (section 4), plain-language code note, grouped
+photo/privacy note, softer callout labels. Structure below section 0 and doctrine unchanged.
+-->
 
 # REC-01 — Raport wizyty Sentinel
 
 Dokument roboczy. Nie jest umową. Nie jest diagnozą techniczną ani certyfikatem stanu nieruchomości. Raportuje widoczne fakty z konkretnej wizyty. Zakres wynika z SCO-01 lub późniejszego pisemnego potwierdzenia.
 
 Raport wypełnia się dla jednej wizyty. Podaje widoczne fakty, wynik wizyty, stan gotowości, odniesienia do dowodów i ewentualną potrzebę decyzji właściciela. Nie zmienia zakresu z SCO-01 i nie tworzy uprawnienia do wydatku.
+
+## 0. Status po wizycie — dla właściciela
+
+| Pole | Wartość |
+|---|---|
+| Status po wizycie | [ ] lokal w porządku / gotowy<br>[ ] gotowy z uwagami<br>[ ] decyzja właściciela wymagana<br>[ ] dalsza obserwacja<br>[ ] wizyta częściowo wykonana / niewykonana |
+| Czy potrzebna jest decyzja właściciela? | [ ] nie — raport informacyjny<br>[ ] tak — dotyczy: `______` |
+| Termin odpowiedzi właściciela, jeśli dotyczy | `______` |
+| Czy wykonano płatne działanie? | [ ] nie<br>[ ] tak — tylko jeśli było wcześniej uzgodnione / w zakresie uprawnienia: `______` |
+| Następny krok | `______` |
+
+Jeżeli decyzja właściciela jest potrzebna, raport wskazuje temat i dalszy krok. Bez wymaganej zgody nie podejmuje się nowych płatnych działań.
+
+Skróty dokumentów to wewnętrzne referencje Sentinel: SCO-01 oznacza ustalony zakres obsługi, CLN-02 checklistę sprzątania / gotowości, AKC rekord dostępu / kluczy, a REC-03 wniosek o decyzję właściciela.
 
 ## 1. Rekord raportu
 
@@ -54,9 +75,11 @@ Raport wypełnia się dla jednej wizyty. Podaje widoczne fakty, wynik wizyty, st
 
 Nie wpisuj rzeczywistych kodów, haseł, PIN-ów, etykiet Wi-Fi ani kodów sejfu. Raport zapisuje wyłącznie fakt uzyskania dostępu i ewentualny problem z wejściem.
 
-## 4. Podsumowanie dla właściciela
+## 4. Podsumowanie dla właściciela — opis po ludzku
 
 Napisz tu 2–4 zdania po ludzku, nie jako tabela: co Sentinel zastał, czy lokal jest gotowy, czy jest sprawa do decyzji i czy potrzebne jest działanie właściciela. Przykład tonu: „Wizyta planowa wykonana. Lokal sprawdzony i w porządku, gotowy na przyjazd. Jedna uwaga do decyzji: widoczny ślad wilgoci w łazience — bez działań płatnych do czasu decyzji."
+
+To jest główna część raportu do szybkiego przeczytania; szczegóły i dowody są niżej.
 
 `______`
 
@@ -123,7 +146,14 @@ Basic / Extended: brak autonomicznego płatnego działania domyślnie; zgoda wł
 | Pełny zestaw w archiwum | [ ] tak — ref: `______` |
 | Element wrażliwy widoczny; nie sfotografowano | [ ] tak — opis: `______`<br>[ ] nie dotyczy |
 
-Nie fotografuje się m.in. dokumentów tożsamości, kart płatniczych, kodów / haseł, ekranów z danymi logowania, dzieci, leków, przedmiotów intymnych, wnętrza zamkniętych szaf / sejfów, kosztowności i rzeczy gości — chyba że są bezpośrednio związane ze zgłaszanym problemem; wtedy materiał ogranicz lub wykadruj. Pełny zestaw dowodów jest w bezpiecznym archiwum; WhatsApp nie jest archiwum.
+Nie fotografować (pogrupowane dla czytelności — wszystkie pozycje obowiązują):
+
+- **Dokumenty i dane:** dokumenty tożsamości; karty płatnicze.
+- **Dostęp i bezpieczeństwo:** kody / hasła; ekrany z danymi logowania.
+- **Osoby i prywatność:** dzieci; leki.
+- **Rzeczy osobiste i zamknięte strefy:** przedmioty intymne; wnętrza zamkniętych szaf / sejfów; kosztowności i rzeczy gości.
+- **Wyjątek operacyjny:** jeżeli przedmiot jest bezpośrednio związany ze zgłaszanym problemem, materiał ogranicz lub wykadruj.
+- **Archiwum:** pełny zestaw dowodów jest w bezpiecznym archiwum; WhatsApp nie jest archiwum.
 
 ## 10. Granice raportu
 
