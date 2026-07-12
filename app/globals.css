@@ -28926,20 +28926,24 @@ html:has(.hiw-page),
     order: 5;
   }
 
-  .services-page .services-interface-section--responsibility {
+  .services-page .services-interface-section--after-estimator {
     order: 6;
   }
 
-  .services-page .services-interface-section--boundary {
+  .services-page .services-interface-section--responsibility {
     order: 7;
   }
 
-  .services-page .services-interface-section--modules {
+  .services-page .services-interface-section--boundary {
     order: 8;
   }
 
-  .services-page .services-closing-section {
+  .services-page .services-interface-section--modules {
     order: 9;
+  }
+
+  .services-page .services-closing-section {
+    order: 10;
   }
 
   .services-page .services-journey-nav .journey-nav__link[data-journey-id="what-you-get"] {
@@ -29373,5 +29377,238 @@ html:has(.hiw-page),
 
   .services-page .services-mobile-disclosure--record[data-open="false"] .mobile-disclosure__body {
     display: none;
+  }
+}
+
+/* ============================================================
+   Beta feedback (homepage): property-recognition glyph beside
+   the usage-selector title. One restrained institutional line
+   glyph; must not overpower the title or the pathway cards.
+   ============================================================ */
+.usage-selector-title__glyph {
+  display: inline-block;
+  vertical-align: -0.16em;
+  margin-right: 0.5rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  color: color-mix(in srgb, var(--support) 82%, var(--heading));
+  opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+  .usage-selector-title__glyph {
+    width: 1.55rem;
+    height: 1.55rem;
+  }
+}
+
+/* ============================================================
+   Beta feedback (services): compact post-estimator owner
+   orientation. Turns the page into a buyer decision moment
+   right after the estimator instead of more dense manual text.
+   ============================================================ */
+.services-after-estimator {
+  display: grid;
+  gap: 1.1rem;
+  max-width: 62rem;
+  margin: 0 auto;
+}
+
+.services-after-estimator__copy h2 {
+  margin: 0;
+}
+
+.services-after-estimator__intro {
+  max-width: 60ch;
+  margin: 0.55rem 0 0;
+  color: color-mix(in srgb, var(--svc-ink) 72%, var(--svc-muted));
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.services-after-estimator__cards {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.services-after-estimator__card {
+  min-width: 0;
+  border: 1px solid color-mix(in srgb, var(--svc-rule) 86%, transparent);
+  border-left: 3px solid color-mix(in srgb, var(--svc-field) 60%, var(--svc-rule));
+  border-radius: 0.7rem;
+  background: color-mix(in srgb, var(--svc-paper) 82%, white);
+  padding: 0.85rem 0.95rem;
+}
+
+.services-after-estimator__card-label {
+  display: block;
+  color: color-mix(in srgb, var(--svc-field) 78%, var(--svc-ink));
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.services-after-estimator__card-body {
+  margin: 0.32rem 0 0;
+  color: color-mix(in srgb, var(--svc-ink) 74%, var(--svc-muted));
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.services-after-estimator__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem 1.4rem;
+  border-top: 1px solid color-mix(in srgb, var(--svc-rule) 80%, transparent);
+  padding-top: 1rem;
+}
+
+.services-after-estimator__assurance {
+  max-width: 46ch;
+  margin: 0;
+  color: color-mix(in srgb, var(--svc-ink) 78%, var(--svc-muted));
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.services-after-estimator__cta {
+  flex: none;
+}
+
+@media (min-width: 768px) {
+  .services-after-estimator__cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+}
+
+/* ============================================================
+   Beta feedback (services): desktop progressive disclosure for
+   the dense post-estimator operational layer (operational
+   record + execution-only appendix). On desktop these now start
+   collapsed behind a "Zobacz szczegoly" toggle instead of all
+   text open, matching the existing mobile disclosure behaviour.
+   Content and service boundaries are preserved, only compressed.
+   ============================================================ */
+@media (min-width: 768px) {
+  .services-page .services-mobile-disclosure--desktop-collapse {
+    display: block;
+    min-width: 0;
+  }
+
+  .services-page .services-mobile-disclosure--desktop-collapse .mobile-disclosure__trigger {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border: 0;
+    background:
+      linear-gradient(90deg, color-mix(in srgb, var(--svc-field) 9%, transparent), transparent 62%),
+      var(--svc-paper-strong);
+    color: var(--svc-ink);
+    padding: 0.95rem 1.15rem;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .services-page .services-mobile-disclosure--desktop-collapse[data-open="true"] .mobile-disclosure__trigger {
+    border-bottom: 1px solid color-mix(in srgb, var(--svc-ink) 16%, var(--svc-rule));
+  }
+
+  .services-page .services-mobile-disclosure--desktop-collapse .mobile-disclosure__trigger:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--svc-field) 70%, white);
+    outline-offset: -2px;
+  }
+
+  .services-page .services-mobile-disclosure--desktop-collapse .mobile-disclosure__copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.22rem;
+    min-width: 0;
+  }
+
+  .services-page .services-mobile-disclosure--desktop-collapse .mobile-disclosure__title {
+    font-size: 1.02rem;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    color: var(--svc-ink);
+  }
+
+  .services-page .services-mobile-disclosure--desktop-collapse .mobile-disclosure__summary {
+    font-size: 0.88rem;
+    line-height: 1.4;
+    color: color-mix(in srgb, var(--svc-ink) 62%, var(--svc-muted));
+  }
+
+  .services-page .services-mobile-disclosure--desktop-collapse .mobile-disclosure__action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    flex: none;
+  }
+
+  .services-page .services-mobile-disclosure--desktop-collapse .mobile-disclosure__state {
+    border: 1px solid color-mix(in srgb, var(--svc-field) 40%, var(--svc-rule));
+    border-radius: 999px;
+    padding: 0.3rem 0.66rem;
+    font-size: 0.68rem;
+    font-weight: 850;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: color-mix(in srgb, var(--svc-field) 74%, var(--svc-ink));
+  }
+
+  .services-page .services-mobile-disclosure--desktop-collapse .mobile-disclosure__icon {
+    width: 1.05rem;
+    height: 1.05rem;
+    color: color-mix(in srgb, var(--svc-field) 66%, var(--svc-ink));
+    transition: transform 0.2s ease;
+  }
+
+  .services-page .services-mobile-disclosure--desktop-collapse .mobile-disclosure__icon--open {
+    transform: rotate(180deg);
+  }
+
+  /* Open: body contributes no box, so the inner operational theatre
+     keeps its exact expanded desktop layout. Closed: body collapses. */
+  .services-page .services-mobile-disclosure--desktop-collapse .mobile-disclosure__body {
+    display: contents;
+  }
+
+  .services-page .services-mobile-disclosure--desktop-collapse[data-open="false"] .mobile-disclosure__body {
+    display: none;
+  }
+
+  /* Record trigger sits flush at the top of the existing output-preview
+     shell (that shell already provides the frame). */
+  .services-page .services-operational-record .services-mobile-disclosure--desktop-collapse .mobile-disclosure__trigger {
+    background:
+      linear-gradient(90deg, color-mix(in srgb, var(--svc-field) 10%, transparent), transparent 62%),
+      linear-gradient(180deg, var(--svc-paper-strong), color-mix(in srgb, var(--svc-stone) 18%, var(--svc-paper)));
+  }
+
+  /* Appendix has no outer shell of its own, so the disclosure adopts the
+     checkpoint frame and the inner checkpoint drops its duplicate border. */
+  .services-page .services-mobile-disclosure--appendix.services-mobile-disclosure--desktop-collapse {
+    border: 1px solid color-mix(in srgb, var(--authority, #10263f) 22%, var(--svc-rule));
+    border-radius: 0.7rem;
+    overflow: hidden;
+    background: #fffdf8;
+    box-shadow: 0 22px 46px -34px rgba(7, 21, 36, 0.5);
+  }
+
+  .services-page .services-mobile-disclosure--appendix.services-mobile-disclosure--desktop-collapse .services-checkpoint {
+    margin-top: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
   }
 }

@@ -1045,6 +1045,18 @@
           "property": { "label": "03", "title": "Parametry lokalu", "body": "metraż, pokoje i podstawowy kontekst" }
         }
       },
+      "afterEstimator": {
+        "eyebrow": "Po estymacji",
+        "title": "Po estymacji wiesz, co potwierdzić dalej.",
+        "intro": "Orientacyjny zakres to punkt wyjścia do rozmowy, nie wiążąca wycena. Do rozmowy wystarczą trzy rzeczy.",
+        "cards": {
+          "scope": { "label": "Zakres startowy", "body": "Pakiet i granica decyzji, od których zaczynamy." },
+          "usage": { "label": "Model używania", "body": "Prywatnie, goście albo model mieszany, do potwierdzenia." },
+          "info": { "label": "Do rozmowy", "body": "Lokalizacja, metraż i podstawowy kontekst lokalu." }
+        },
+        "assurance": "Przed startem Sentinel potwierdza rytm wizyt, dostęp i granice odpowiedzialności.",
+        "cta": "Wyślij kontekst do krótkiej oceny"
+      },
       "executionStrip": {
         "thresholdLabel": "Poza modelem pakietowym",
         "sideLabel": "Poza pakietem",

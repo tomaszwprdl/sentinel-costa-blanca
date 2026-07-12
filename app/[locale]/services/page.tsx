@@ -28,6 +28,7 @@ const EXECUTION_ONLY_LIMITATION_KEYS = ['noRegularChecks', 'noCyclicReporting', 
 const OPERATIONAL_OUTPUT_KEYS = ['readiness', 'access', 'coordination', 'decision'] as const;
 const BRIEFING_SIGNAL_KEYS = ['inspections', 'access', 'decisions'] as const;
 const ESTIMATOR_HANDOFF_KEYS = ['responsibility', 'usage', 'property'] as const;
+const AFTER_ESTIMATOR_CARD_KEYS = ['scope', 'usage', 'info'] as const;
 const MOBILE_PACKAGE_SUMMARY_KEYS = [
   { key: 'green', marker: '01' },
   { key: 'orange', marker: '02' },
@@ -317,6 +318,34 @@ export default async function ServicesPage({
           </div>
         </Section>
 
+        <Section tone="light" className="section-primitive--compact services-interface-section services-interface-section--after-estimator" id="after-estimator">
+          <div className="services-after-estimator">
+            <div className="services-after-estimator__copy">
+              <p className="section-label">{t('redesign.afterEstimator.eyebrow')}</p>
+              <h2 className="h2-system mt-3">{t('redesign.afterEstimator.title')}</h2>
+              <p className="services-after-estimator__intro">{t('redesign.afterEstimator.intro')}</p>
+            </div>
+            <ul className="services-after-estimator__cards">
+              {AFTER_ESTIMATOR_CARD_KEYS.map((key) => (
+                <li key={key} className="services-after-estimator__card">
+                  <span className="services-after-estimator__card-label">
+                    {t(`redesign.afterEstimator.cards.${key}.label`)}
+                  </span>
+                  <p className="services-after-estimator__card-body">
+                    {t(`redesign.afterEstimator.cards.${key}.body`)}
+                  </p>
+                </li>
+              ))}
+            </ul>
+            <div className="services-after-estimator__foot">
+              <p className="services-after-estimator__assurance">{t('redesign.afterEstimator.assurance')}</p>
+              <Link href={`/${locale}/contact`} className="btn-primary services-after-estimator__cta">
+                {t('redesign.afterEstimator.cta')}
+              </Link>
+            </div>
+          </div>
+        </Section>
+
         <Section tone="alt" className="section-primitive--compact services-interface-section services-interface-section--boundary" id="scope">
           <div className="services-boundary-contract">
             <MobileDisclosure
@@ -370,7 +399,7 @@ export default async function ServicesPage({
             <div className="services-capability-console">
               <div className="services-operational-record services-output-preview">
                 <MobileDisclosure
-                  className="services-mobile-disclosure--record"
+                  className="services-mobile-disclosure--record services-mobile-disclosure--desktop-collapse"
                   title={t('redesign.mobileDisclosure.recordTitle')}
                   summary={t('redesign.mobileDisclosure.recordSummary')}
                   openLabel={t('redesign.mobileDisclosure.open')}
@@ -418,7 +447,7 @@ export default async function ServicesPage({
               </div>
 
               <MobileDisclosure
-                className="services-mobile-disclosure--appendix"
+                className="services-mobile-disclosure--appendix services-mobile-disclosure--desktop-collapse"
                 title={t('redesign.mobileDisclosure.appendixTitle')}
                 summary={t('redesign.mobileDisclosure.appendixSummary')}
                 openLabel={t('redesign.mobileDisclosure.open')}
@@ -543,7 +572,7 @@ export default async function ServicesPage({
         primaryLabel={t('cta.primaryButton')}
         secondaryHref="#what-you-get"
         secondaryLabel={t('redesign.hero.secondaryCta')}
-        suppressWhenVisible="#what-you-get, #responsibility, #estimator, #scope, #operational-modules"
+        suppressWhenVisible="#what-you-get, #responsibility, #estimator, #after-estimator, #scope, #operational-modules"
       />
       <Footer />
     </>

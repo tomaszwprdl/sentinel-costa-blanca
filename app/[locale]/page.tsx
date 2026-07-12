@@ -7,6 +7,7 @@ import UsagePathwayLayer, {
 } from '@/components/UsagePathwayLayer';
 import HeroGateFrame from '@/components/HeroGateFrame';
 import HomeOperatingFloor from '@/components/HomeOperatingFloor';
+import PropertyGlyph from '@/components/icons/PropertyGlyph';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
@@ -166,7 +167,8 @@ function UsagePathwayFallback({
             </div>
 
             <div id="usage-situation-gate" className="diagnostic-panel diagnostic-panel--gate scroll-mt-28">
-              <h2 className="text-2xl leading-tight md:text-3xl">
+              <h2 className="usage-selector-title text-2xl leading-tight md:text-3xl">
+                <PropertyGlyph className="usage-selector-title__glyph" />
                 {t('pathway.selectorTitle')}
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-body">{t('pathway.selectorInstruction')}</p>

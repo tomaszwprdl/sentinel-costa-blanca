@@ -7,6 +7,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import HeroGateFrame from '@/components/HeroGateFrame';
 import HomeOperatingFloor from '@/components/HomeOperatingFloor';
+import PropertyGlyph from '@/components/icons/PropertyGlyph';
 import Section from '@/components/layout/Section';
 import {
   PATHWAY_KEYS,
@@ -102,7 +103,10 @@ export default function UsagePathwayLayer({ children }: UsagePathwayLayerProps) 
             <div className="diagnostic-result-shell motion-panel-reveal mb-8">
               <div className="diagnostic-result-top">
                 <div>
-                  <h2 className="text-2xl md:text-3xl">{tp('selectorTitle')}</h2>
+                  <h2 className="usage-selector-title text-2xl md:text-3xl">
+                    <PropertyGlyph className="usage-selector-title__glyph" />
+                    {tp('selectorTitle')}
+                  </h2>
                   <p className="mt-2 max-w-2xl text-sm text-body">{tp('selectorInstruction')}</p>
                 </div>
               </div>
@@ -349,7 +353,8 @@ function DiagnosticGateIntro({
         </div>
 
         <div id="usage-situation-gate" className="diagnostic-panel diagnostic-panel--gate motion-panel-reveal scroll-mt-28">
-          <h2 className="text-2xl leading-tight md:text-3xl">
+          <h2 className="usage-selector-title text-2xl leading-tight md:text-3xl">
+            <PropertyGlyph className="usage-selector-title__glyph" />
             {tp('selectorTitle')}
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-body">

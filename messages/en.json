@@ -1045,6 +1045,18 @@
           "property": { "label": "03", "title": "Property parameters", "body": "size, rooms, and basic context" }
         }
       },
+      "afterEstimator": {
+        "eyebrow": "After the estimate",
+        "title": "After the estimate you know what to confirm next.",
+        "intro": "The indicative range is a starting point for the conversation, not a binding quote. Three things are enough to talk.",
+        "cards": {
+          "scope": { "label": "Starting scope", "body": "The package and decision limit we begin from." },
+          "usage": { "label": "Usage model", "body": "Private, guest stays, or mixed, to be confirmed." },
+          "info": { "label": "For the conversation", "body": "Location, size, and the property's basic context." }
+        },
+        "assurance": "Before start, Sentinel confirms the visit rhythm, access, and responsibility limits.",
+        "cta": "Send your context for a short review"
+      },
       "executionStrip": {
         "thresholdLabel": "Outside the package model",
         "sideLabel": "Outside package",
