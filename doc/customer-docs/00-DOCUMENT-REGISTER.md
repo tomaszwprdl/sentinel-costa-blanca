@@ -104,7 +104,7 @@ Values: **Y** = yes/required, **—** = no/not required, **P** = partial/light.
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | AKC-01 | Access & Key Custody annex | legal-review | lawyer-review-required | Y | Y | Y | Y | field | Y | insurance question | Outline for lawyer only | Balanced liability; **no final wording** |
 | AKC-02 | Key custody register | internal | draft-source | — | — | — | Y | — | Y | SCO-01 | Produce clean working Key Custody / Access Register | Key ID not full address |
-| AKC-03 | Key handover / return receipt | internal | draft-source | — | P | — | Y | — | Y | AKC-02 | v0.1 source + DOCX + `simulation-pass`; included in connected beta set; patch only after beta / Owner approval | Signed on handover + return |
+| AKC-03 | Key handover / return receipt | internal | draft-source | — | P | — | Y | — | Y | AKC-02 | v0.2 source + DOCX candidate produced as warmth/clarity micro-patch; v0.1 kept for history until Owner acceptance; next = Owner review / quick acceptance check / connected beta packet update only after Owner acceptance | Signed on handover + return |
 | AKC-04 | Key movement log | internal | draft-source | — | — | — | Y | — | Y | AKC-02 | Draft internal log | Every check-out/in |
 | AKC-05 | Access-failure log | internal | draft-source | — | — | — | Y | — | Y | AKC-02 | Draft internal log | Lock/alarm/access problems |
 

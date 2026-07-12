@@ -5,13 +5,26 @@ customer_facing: false
 lawyer_review_required: partial
 accountant_review_required: false
 owner_review_required: true
-version: 0.1-working
-source: AKC-03 stub + SCO-01 v0.5 access section
+version: 0.2-working
+supersedes: DOCX v0.1
+source: AKC-03 v0.2 warmth/clarity micro-patch (no structural change)
 ---
+
+<!--
+v0.2 = warmth/clarity micro-patch after SCO-01: owner reassurance, who-fills line,
+prominent no-secrets rule, digital-access skip note, mixed key-test exception note,
+handover/return block instruction. Structure and custody doctrine unchanged.
+-->
 
 # AKC-03 — Potwierdzenie przekazania / zwrotu kluczy i dostępu
 
 Dokument roboczy. Nie jest umową ani aneksem odpowiedzialności. Służy do udokumentowania jednego przekazania, odbioru albo zwrotu kluczy / dostępu. Zakres przechowania i użycia dostępu wynika z SCO-01 lub późniejszego pisemnego potwierdzenia. Nie wpisuje się tu kodów, haseł ani pełnych danych dostępowych.
+
+Ten dokument chroni właściciela i Sentinel: zapisuje, co dokładnie przekazano albo zwrócono, kiedy, w jakim widocznym stanie i co wymaga dalszego sprawdzenia.
+
+**Kto wypełnia:** formularz wypełnia operator Sentinel podczas przekazania, odbioru albo zwrotu. Osoba przekazująca lub odbierająca może przejrzeć gotowy zapis.
+
+**Dla bezpieczeństwa nie zapisuje się tu:** pełnego adresu, kodów, haseł, PIN-ów, etykiet Wi-Fi ani kodów sejfu. Dostęp cyfrowy zapisujemy wyłącznie jako status (np. przyznany / przetestowany / cofnięty).
 
 Jeden dokument dokumentuje jedno zdarzenie: przekazanie, odbiór albo zwrot. Liczba, identyfikatory i widoczny stan kluczy oraz status dostępu należą tutaj, a nie do SCO-01. To potwierdzenie nie tworzy uprawnień dostępu ponad SCO-01.
 
@@ -52,6 +65,8 @@ Typ: klucz apartamentu · klucz budynku / wspólnoty · klucz garażu / komórki
 
 ## 4. Dostęp cyfrowy / smart lock / alarm — jeśli dotyczy
 
+Jeżeli nie ma dostępu cyfrowego, zaznacz `nie dotyczy` i pomiń pozostałe pola tej sekcji.
+
 | Pole | Wartość |
 |---|---|
 | Rodzaj dostępu cyfrowego | [ ] aplikacja smart lock<br>[ ] kod tymczasowy<br>[ ] aplikacja alarmu<br>[ ] aplikacja budynku<br>[ ] nie dotyczy |
@@ -73,6 +88,8 @@ W AKC-03 nie zapisuje się rzeczywistych kodów, haseł, PIN-ów, danych logowan
 | Opis problemu | `______` |
 | Potrzebny dalszy krok | `______` |
 
+Jeżeli część kluczy działa, a część nie była testowana albo ma problem, wpisz wyjątek w opisie problemu i w sekcji 8.
+
 ## 6. Zdjęcia / dowody przekazania
 
 | Pole | Wartość |
@@ -85,6 +102,8 @@ W AKC-03 nie zapisuje się rzeczywistych kodów, haseł, PIN-ów, danych logowan
 Zdjęcie może pokazać liczbę i stan kluczy, ale nie może ujawniać etykiet adresowych, kodów ani wrażliwych identyfikatorów.
 
 ## 7. Potwierdzenie odbioru / zwrotu
+
+Wypełnij tylko blok odpowiadający temu zdarzeniu. Drugi blok oznacz jako `nie dotyczy` albo `zdarzenie przyszłe`.
 
 ### A. Przekazanie do Sentinel
 
