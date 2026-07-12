@@ -5,8 +5,9 @@ customer_facing: false
 lawyer_review_required: partial
 accountant_review_required: partial
 owner_review_required: true
-version: 0.1-working
-source: REC-03 old draft + REC-01 v0.1 + SCO-01 v0.5 authority doctrine
+version: 0.2-working
+supersedes: REC-03 DOCX v0.1
+source: REC-03 v0.2 front-decision blind-feedback micro-patch
 ---
 
 # REC-03 — Wniosek decyzyjny właściciela
@@ -14,6 +15,22 @@ source: REC-03 old draft + REC-01 v0.1 + SCO-01 v0.5 authority doctrine
 Dokument roboczy. Nie jest umową, fakturą, wyceną ani zleceniem wykonawcy. Służy do uzyskania decyzji właściciela przed działaniem, kosztem albo eskalacją. Opiera się na REC-01 i widocznych faktach. Nie jest diagnozą techniczną. Nie tworzy nowego uprawnienia do wydatku.
 
 Jeden wniosek dotyczy jednej decyzji. REC-03 powstaje tylko wtedy, gdy potrzebna jest decyzja właściciela, zanim Sentinel zadziała, poniesie koszt, zorganizuje dostęp wykonawcy albo wyjdzie poza normalny zakres. Zwykłe uwagi bez decyzji zostają w REC-01.
+
+## 0. Decyzja do podjęcia — dla właściciela
+
+| Pole | Wartość |
+|---|---|
+| Prosimy o decyzję | `______` |
+| Czego dotyczy sprawa | `______` |
+| Proponowany następny krok | `______` |
+| Czy wiąże się z kosztem? | [ ] nie<br>[ ] tak — kwota znana: `______`<br>[ ] możliwe — potrzebna wycena / potwierdzenie wykonawcy |
+| Czy bez odpowiedzi Sentinel wykona płatne działanie? | [ ] nie<br>[ ] tylko jeśli mieści się w już pisemnie uzgodnionym uprawnieniu / limicie Full |
+| Termin odpowiedzi właściciela | `______` |
+| Co stanie się bez odpowiedzi | `______` |
+
+Brak odpowiedzi nie oznacza zgody. Bez wymaganej zgody Sentinel nie podejmie nowego płatnego działania, nie zleci wykonawcy ani nie wyjdzie poza uzgodniony zakres.
+
+Skróty dokumentów są wewnętrznymi referencjami Sentinel: REC-01 oznacza raport wizyty, SCO-01 ustalony zakres i uprawnienia, REC-03 ten wniosek decyzyjny, a REC-04 późniejsze podsumowanie wykonanego działania, jeśli będzie potrzebne.
 
 ## 1. Rekord wniosku
 
@@ -29,9 +46,11 @@ Jeden wniosek dotyczy jednej decyzji. REC-03 powstaje tylko wtedy, gdy potrzebna
 | Status wniosku | [ ] roboczy<br>[ ] wysłany<br>[ ] zaakceptowany<br>[ ] odrzucony<br>[ ] oczekuje na informacje<br>[ ] zastąpiony |
 | Termin odpowiedzi właściciela | `______` |
 
-## 2. Krótkie podsumowanie dla właściciela
+## 2. Podsumowanie dla właściciela — opis po ludzku
 
 Napisz tu 2–4 zdania po ludzku: co zaobserwowano, dlaczego potrzebna jest decyzja, czy podjęto jakiekolwiek natychmiastowe działanie i co się stanie, jeśli decyzji nie będzie. Przykład tonu: „Podczas wizyty widoczny był ślad wilgoci przy brodziku. Nie postawiono diagnozy i nie podjęto działania płatnego. Prosimy o decyzję, czy zlecić oględziny — do tego czasu monitorujemy stan przy kolejnej wizycie."
+
+To jest część do szybkiego przeczytania; szczegóły decyzji, opcje i dowody są niżej.
 
 `______`
 
@@ -58,14 +77,14 @@ Wyłącznie widoczne fakty; bez diagnozy. „Widoczny ślad wilgoci pod oknem" t
 | Termin odpowiedzi (jeśli dotyczy) | `______` |
 | Pilność | [ ] rutynowa<br>[ ] uwaga<br>[ ] pilna ochronna |
 
-Pilność to klasyfikacja ochronna oparta na faktach, nie perswazja. „Pilna ochronna" oznacza widoczne ryzyko (czynny wyciek, naruszone zabezpieczenie, ryzyko wody lub prądu). Sam wniosek nie jest gwarancją rozwiązania sprawy.
+Pilność to klasyfikacja ochronna oparta na widocznych faktach, nie presja na decyzję ani gwarancja rozwiązania sprawy. „Pilna ochronna" oznacza widoczne ryzyko (czynny wyciek, naruszone zabezpieczenie, ryzyko wody lub prądu).
 
 ## 5. Proponowany następny krok / opcje
 
 | Opcja | Co Sentinel zrobi | Płatne? | Zgoda właściciela? | Uwagi / ograniczenia |
 |---|---|---|---|---|
 | Brak działania / obserwacja | monitoruje w ramach uzgodnionego rytmu | nie | nie | bez gwarancji rozwiązania |
-| Zgoda na zakup drobnych środków | kupuje po zgodzie; rachunek | tak | tak (Basic / Extended); Full: w ramach limitu | kwota do potwierdzenia; brak limitu domyślnego dla Basic / Extended |
+| Zgoda na zakup drobnych środków | kupuje po zgodzie; rachunek | tak | tak, chyba że mieści się w uzgodnionym limicie Full | kwota do potwierdzenia; brak limitu domyślnego dla Basic / Extended |
 | Dostęp wykonawcy po decyzji | organizuje i dokumentuje dostęp | tak | tak | wynik i cena wykonawcy niegwarantowane |
 | Ocena / wycena specjalisty | koordynuje ocenę lub wycenę | tak / oczekuje | tak | bez diagnozy własnej; wynik niegwarantowany |
 | Wizyta kontrolna | sprawdza ponownie przy kolejnej wizycie | nie | nie | w ramach rytmu z SCO-01 |
@@ -105,7 +124,17 @@ Język neutralny: opis widocznych faktów i możliwych kroków, nie perswazja. S
 | Element wrażliwy widoczny; nie sfotografowano | [ ] tak — opis: `______`<br>[ ] nie dotyczy |
 | Referencja archiwum | `______` |
 
-Nie fotografuje się m.in. dokumentów tożsamości, kodów / haseł, ekranów z danymi logowania, dzieci, leków, przedmiotów intymnych, wnętrza zamkniętych szaf / sejfów i rzeczy gości — chyba że są bezpośrednio związane ze sprawą; wtedy materiał ogranicz lub wykadruj. Pełny zestaw dowodów jest w bezpiecznym archiwum; WhatsApp nie jest archiwum.
+**Dokumenty i dane:** nie fotografuje się dokumentów tożsamości ani ekranów z danymi logowania.
+
+**Dostęp i bezpieczeństwo:** nie fotografuje się kodów ani haseł.
+
+**Osoby i prywatność:** nie fotografuje się dzieci, leków ani przedmiotów intymnych.
+
+**Rzeczy osobiste i zamknięte strefy:** nie fotografuje się wnętrza zamkniętych szaf / sejfów ani rzeczy gości.
+
+**Wyjątek operacyjny:** jeśli element jest bezpośrednio związany ze sprawą, materiał ogranicz lub wykadruj.
+
+**Archiwum:** pełny zestaw dowodów jest w bezpiecznym archiwum; WhatsApp nie jest archiwum.
 
 ## 9. Odpowiedź właściciela
 
