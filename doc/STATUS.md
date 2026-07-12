@@ -5,9 +5,9 @@ Current project state only. This document is descriptive; `DECISIONS.md` is bind
 ## Snapshot
 
 - Branch at this documentation update: `main`.
-- Latest local app/content commit: `467d192` (`fix: move homepage property cue to hero`); committed locally, **not yet pushed**. `origin/main` does not contain it. It corrects `7145474` by moving the homepage property glyph from the usage selector title to the left hero eyebrow.
-- Pushed app/content baseline: `7145474` (`refine: address beta feedback (home property cue + services fatigue)`) is on `origin/main` via docs commit `caaa26c`; the property-cue placement in that commit was superseded by `467d192`.
-- Earlier app/content beta-test clarity commit: `c0736d0` (`refine: address beta-test clarity findings`); `origin/main` already contains this commit.
+- `main` and `origin/main` are aligned at `a28b50e` (`docs: correct homepage property cue location`); this is **live in production** and production smoke QA passed. The beta round is closed.
+- App/content commits in that live stack: `7145474` (`refine: address beta feedback (home property cue + services fatigue)`) with its homepage cue placement corrected by `467d192` (`fix: move homepage property cue to hero`) — the property glyph is on the left hero eyebrow, not the usage selector title.
+- Earlier app/content beta-test clarity commit: `c0736d0` (`refine: address beta-test clarity findings`) is also on `origin/main`.
 - Last pushed docs checkpoint before this phase update: `50a292c` (`docs: add Sentinel document-system drafts`).
 - Site phase: pre-launch / soft-launch review.
 - The page-by-page polish pass is complete; the beta-test clarity bundle (`c0736d0`) and then the beta fatigue / property-cue bundle (`7145474`) are applied on top of it. This is the core polish gate, not "launch-final forever."
@@ -28,7 +28,7 @@ Owner-accepted clarity changes on top of the closed polish pass. App/content com
 
 ## Beta Fatigue / Property-Cue Bundle (7145474)
 
-Owner-accepted changes on top of `c0736d0`, from a later beta-test finding. Local app commit `7145474`, **not yet pushed**. This is the current source truth for Home and Services.
+Owner-accepted changes on top of `c0736d0`, from a later beta-test finding. App commit `7145474` (homepage cue placement corrected by `467d192`), now on `origin/main` in the live stack at `a28b50e`. This is the current source truth for Home and Services. Production smoke QA passed.
 
 - Home: one small apartment/property outline glyph leads the left hero eyebrow (`LOKALNA REPREZENTACJA WŁAŚCICIELA` / `LOCAL OWNER REPRESENTATION`), before the headline, for instant category recognition. Restrained institutional line glyph; it replaces the eyebrow's copper leading dash on the home hero only (other heroes keep the dash) and is a subtle recognition cue, not a repeated motif. It is **not** in the right-side usage selector title. (Placement corrected in `467d192`; `7145474` had briefly placed it in the selector title.)
 - Services: post-estimator information fatigue reduced without removing content.
@@ -114,9 +114,12 @@ Current active phase:
 - Owner-directed final polish only if a real regression appears.
 - Do not re-open a passed page unless explicitly requested by Owner.
 
+## Deployed Beta-Smoke Verification (a28b50e)
+
+`origin/main` at `a28b50e` is live in production (`sentinelcostablanca.com`) and production smoke QA passed. Verified: `/pl`, `/en`, `/pl/services`, `/en/services`; homepage left-hero property glyph; homepage estimator button; Services after-estimator section; collapsed dense Services blocks (record + execution-only behind desktop disclosure); mixed estimator path still classification-before-estimate (`Klasyfikacja przed wyceną`, no numeric range, contact CTA); 390px homepage/services. All captures `overflowPx 0` with no console errors, failed requests, or 4xx/5xx. `noindex,nofollow` untouched. No active website task remains open.
+
 ## Not Done
 
-- Push of the local stack (app commit `7145474` + this docs commit) to `origin/main`, then deployed smoke QA. Owner will push the stack together after this docs commit; do not push before that.
 - Production contact email end-to-end confirmation.
 - Final commercial pricing/range confirmation.
 - Legal/entity/GDPR review.

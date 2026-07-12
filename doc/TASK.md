@@ -8,13 +8,13 @@ The page-by-page polish pass and the beta-test clarity bundle (`c0736d0`) are co
 
 ### Latest completed website task — beta fatigue / property-cue bundle (7145474)
 
-Owner reopened Home and Services under explicit scope (later beta-test finding) and accepted the result. Local app commit `7145474`, **not yet pushed**. Complete:
+Owner reopened Home and Services under explicit scope (later beta-test finding) and accepted the result. App commit `7145474` (homepage cue placement corrected by `467d192`) is live on `origin/main` in the stack at `a28b50e`; production smoke QA passed and the beta round is closed. Complete:
 
 - Home: small apartment/property glyph leads the left hero eyebrow (`LOKALNA REPREZENTACJA WŁAŚCICIELA` / `LOCAL OWNER REPRESENTATION`), before the headline, for instant category recognition (restrained single cue; not in the right-side selector title). Placement corrected in `467d192`.
 - Services: post-estimator information fatigue reduced — compact owner-facing after-estimator confirmation section + CTA follows the estimator; dense operational record / execution-only detail collapses behind desktop disclosure; mobile ordering fixed so the new section follows the estimator. Boundaries compressed, not removed.
 - Protected contracts unchanged: estimator logic/matrix/pricing/ranges/result behaviour, contact API/schema/payload, routes/slugs/query behaviour, legal/noindex, package names/count, Full `min. 3/month`, emergency authority limits. PL/EN parity kept.
 - Validation passed (lint, build, `git diff --check`, production screenshots per `doc/QA.md`).
-- Next steps: push the local stack (`7145474` + this docs commit) together, then deployed smoke QA only. No new website polish task is open. Do not reopen Services unless production shows an actual regression.
+- Done: the stack is pushed and live at `a28b50e` and production smoke QA passed (see `doc/STATUS.md` "Deployed Beta-Smoke Verification"). No active website task. No new website polish is open; do not reopen Services unless a new beta tester finds a real issue or production shows an actual regression. Non-polish next steps: production contact email end-to-end confirmation, final commercial pricing/range confirmation, legal/entity/GDPR review, Owner decision on `noindex` removal, real-photo/proof replacement plan.
 
 Website implementation and proof polish are otherwise paused/frozen except for critical fixes. Do not reopen website polish during this phase.
 
