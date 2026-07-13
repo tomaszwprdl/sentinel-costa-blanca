@@ -6130,6 +6130,51 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
 }
 
 /* Contact — qualified intake desk: dashed route field, one elevated form destination */
+/* Five-act schematic case file. */
+.hiw-observation-section { background: radial-gradient(36rem 24rem at 86% 12%, rgba(47,111,115,.08), transparent 70%), linear-gradient(180deg,var(--hiw-paper),var(--hiw-stone)); }
+.hiw-observation-intro { margin-bottom:clamp(1.5rem,3vw,2.5rem); }
+.hiw-observation-board { overflow:hidden; border:1px solid rgba(255,250,242,.2); border-radius:1rem; background:linear-gradient(90deg,rgba(255,250,242,.04) 1px,transparent 1px) 0 0/4rem 100%,linear-gradient(180deg,rgba(255,250,242,.03) 1px,transparent 1px) 0 0/100% 4rem,linear-gradient(145deg,#071523,#10263f 62%,#163b5c); box-shadow:0 32px 75px rgba(7,21,35,.28); color:#fffaf2; }
+.hiw-observation-board__header { display:grid; grid-template-columns:1fr auto 1fr; gap:1rem; align-items:center; border-bottom:1px solid rgba(255,250,242,.16); padding:.8rem 1.1rem; }
+.hiw-observation-board__header span,.hiw-observation-board__header strong { font-size:.65rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+.hiw-observation-board__header span:last-child { text-align:right; color:#9ccbc4; }
+.hiw-observation-board__canvas { display:grid; grid-template-columns:minmax(0,1.55fr) minmax(17rem,.45fr); gap:clamp(1rem,3vw,2.5rem); padding:clamp(1rem,3vw,2.5rem); }
+.hiw-observation-board__diagram { position:relative; min-height:32rem; border:1px solid rgba(255,250,242,.16); background:rgba(3,14,25,.35); }
+.hiw-observation-board__diagram svg { width:100%; height:100%; }
+.hiw-schematic__wall { fill:rgba(255,250,242,.025); stroke:rgba(255,250,242,.3); stroke-width:2; }
+.hiw-schematic__door { fill:rgba(47,111,115,.08); stroke:#9ccbc4; stroke-width:4; }
+.hiw-schematic__glass { fill:rgba(111,182,172,.08); stroke:rgba(156,203,196,.55); stroke-width:2; }
+.hiw-schematic__frame,.hiw-schematic__floor { fill:none; stroke:rgba(255,250,242,.32); stroke-width:2; }
+.hiw-schematic__damp { fill:none; stroke:#d29a57; stroke-width:8; stroke-linecap:round; }
+.hiw-schematic__target { fill:rgba(184,102,74,.08); stroke:#d29a57; stroke-width:2; stroke-dasharray:7 6; }
+.hiw-schematic__leader { fill:none; stroke:#d29a57; stroke-width:2; }
+.hiw-schematic__point { fill:#d29a57; }
+.hiw-observation-board__finding { position:absolute; top:28%; right:4%; width:min(40%,19rem); border-left:3px solid #d29a57; background:rgba(7,21,35,.82); padding:.8rem 1rem; }
+.hiw-observation-board__finding span { color:#d29a57; font-size:.63rem; font-weight:900; letter-spacing:.08em; }
+.hiw-observation-board__finding strong { display:block; margin-top:.35rem; font-family:var(--font-serif),Georgia,serif; font-size:1.25rem; line-height:1.05; }
+.hiw-observation-board__register { display:grid; align-content:center; }
+.hiw-observation-board__register dl { margin:0; border-top:1px solid rgba(255,250,242,.18); }
+.hiw-observation-board__register dl div { border-bottom:1px solid rgba(255,250,242,.18); padding:1rem 0; }
+.hiw-observation-board__register dt { color:#9ccbc4; font-size:.65rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+.hiw-observation-board__register dd { margin:.3rem 0 0; font-size:.9rem; line-height:1.45; }
+.hiw-observation-board__register p { margin:1.25rem 0 0; border-left:3px solid #d29a57; color:rgba(255,250,242,.7); font-size:.78rem; line-height:1.5; padding-left:.8rem; }
+.hiw-case-route-section { background:linear-gradient(180deg,var(--hiw-stone),var(--hiw-paper)); }
+.hiw-case-route { display:grid; grid-template-columns:minmax(15rem,.38fr) minmax(0,1fr); gap:clamp(1.5rem,4vw,4rem); align-items:center; }
+.hiw-case-route__rail { display:grid; grid-template-columns:repeat(4,1fr); margin:0; padding:0; list-style:none; border-top:2px solid var(--hiw-field); }
+.hiw-case-route__rail li { position:relative; min-width:0; padding:1.3rem .8rem .8rem 0; }
+.hiw-case-route__rail li::before { position:absolute; top:-.42rem; left:0; width:.72rem; height:.72rem; border:2px solid var(--hiw-paper); border-radius:50%; background:var(--hiw-field); content:""; }
+.hiw-case-route__rail li[data-threshold="true"]::before { background:var(--hiw-decision); }
+.hiw-case-route__rail span { color:var(--hiw-field); font-size:.62rem; font-weight:900; }
+.hiw-case-route__rail strong { display:block; margin-top:.35rem; color:var(--hiw-ink); font-size:.92rem; }
+.hiw-case-route__rail p { margin:.25rem 0 0; color:var(--hiw-muted); font-size:.72rem; }
+.hiw-final-act { padding-bottom:clamp(2rem,5vw,4rem); }
+.hiw-final-act .hiw-rhythm-band { margin-top:clamp(2rem,4vw,3.5rem); border-top:1px solid rgba(255,250,242,.15); padding-top:1.5rem; }
+.hiw-final-act .hiw-rhythm-band__intro .section-label,.hiw-final-act .hiw-rhythm-band__item h3 { color:#fffaf2; }
+.hiw-final-act .hiw-rhythm-band__item p { color:rgba(255,250,242,.68); }
+.hiw-final-act .hiw-rhythm-band__item { border-color:rgba(255,250,242,.14); background:rgba(255,250,242,.05); box-shadow:none; }
+.hiw-final-act .hiw-handoff { margin-top:clamp(2rem,4vw,3.5rem); }
+@media (max-width:900px) { .hiw-observation-board__canvas { grid-template-columns:minmax(0,1fr); } .hiw-observation-board__diagram { min-height:26rem; } .hiw-case-route { grid-template-columns:minmax(0,1fr); } }
+@media (max-width:767px) { .hiw-observation-board { border-radius:.65rem; } .hiw-observation-board__header { grid-template-columns:1fr auto; } .hiw-observation-board__header strong { display:none; } .hiw-observation-board__canvas { padding:.75rem; } .hiw-observation-board__diagram { min-height:20rem; } .hiw-observation-board__finding { top:auto; right:.75rem; bottom:.75rem; left:.75rem; width:auto; } .hiw-observation-board__finding strong { font-size:1rem; } .hiw-case-route__rail { grid-template-columns:minmax(0,1fr); border-top:0; border-left:2px solid var(--hiw-field); padding-left:1rem; } .hiw-case-route__rail li { padding:.25rem 0 1rem .5rem; } .hiw-case-route__rail li::before { top:.15rem; left:-1.43rem; } }
+
 .contact-page {
   position: relative;
   isolation: isolate;
@@ -21600,7 +21645,7 @@ html:has(.hiw-page),
   --hiw-decision: #b8664a;
   --hiw-muted: #68767a;
   background:
-    linear-gradient(180deg, var(--hiw-stone) 0%, var(--hiw-paper) 32%, var(--hiw-stone) 74%, var(--hiw-ink-deep) 100%);
+    linear-gradient(180deg, var(--hiw-stone) 0%, var(--hiw-paper) 34%, var(--hiw-stone) 100%);
 }
 
 .hiw-procedure-hero {
@@ -23361,6 +23406,1014 @@ html:has(.hiw-page),
 
   .hiw-procedure-journey__stage-panel {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ============================================================
+   How It Works — operational proof rebuild (compact, non-pinned)
+   Supersedes the pinned .hiw-procedure-journey theatre.
+   ============================================================ */
+
+/* --- Operational path (light, compact spine) --- */
+.hiw-procedure-page .hiw-path-section {
+  background:
+    radial-gradient(40rem 26rem at 88% 0%, rgba(47, 111, 115, 0.06), transparent 70%),
+    linear-gradient(180deg, var(--hiw-paper), var(--hiw-stone));
+}
+
+.hiw-path {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.4rem);
+  min-width: 0;
+}
+
+.hiw-path__intro {
+  max-width: 62ch;
+}
+
+.hiw-path__intro .section-label {
+  color: var(--hiw-field);
+}
+
+.hiw-path__steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hiw-path__steps::before {
+  position: absolute;
+  top: 1.25rem;
+  right: 3.1rem;
+  left: 3.1rem;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, color-mix(in srgb, var(--hiw-field) 62%, var(--hiw-rule)) 0 1.35rem, transparent 1.35rem 1.75rem);
+  content: "";
+}
+
+.hiw-procedure-page .hiw-path__step {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.85rem;
+  min-width: 0;
+  border: 1px solid var(--hiw-rule);
+  border-radius: 0.75rem;
+  background: linear-gradient(180deg, var(--hiw-paper-strong), var(--hiw-paper));
+  box-shadow: 0 14px 34px rgba(16, 38, 63, 0.09), inset 0 1px 0 #fff;
+  padding: 1.15rem;
+}
+
+.hiw-procedure-page .hiw-path__step:nth-child(2),
+.hiw-procedure-page .hiw-path__step:nth-child(5) {
+  transform: translateY(0.45rem);
+}
+
+.hiw-procedure-page .hiw-path__step::after {
+  position: absolute;
+  right: 0.7rem;
+  bottom: 0.55rem;
+  width: 2.2rem;
+  height: 0.28rem;
+  border-top: 1px solid color-mix(in srgb, var(--hiw-rule) 82%, white);
+  border-bottom: 1px solid color-mix(in srgb, var(--hiw-rule) 82%, white);
+  content: "";
+  opacity: 0.7;
+}
+
+.hiw-path__node {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid color-mix(in srgb, var(--hiw-field) 40%, var(--hiw-rule));
+  border-radius: 0.4rem;
+  background: rgba(47, 111, 115, 0.06);
+}
+
+.hiw-path__marker {
+  color: var(--hiw-field);
+  font-size: 0.86rem;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+}
+
+.hiw-path__panel {
+  min-width: 0;
+}
+
+.hiw-path__step-title {
+  margin: 0.1rem 0 0;
+  color: var(--hiw-ink);
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.hiw-path__step-body {
+  margin: 0.4rem 0 0;
+  color: var(--hiw-muted);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.hiw-path__artifact {
+  display: grid;
+  gap: 0.15rem;
+  margin-top: 0.7rem;
+  border-top: 1px solid var(--hiw-rule);
+  padding-top: 0.55rem;
+}
+
+.hiw-path__artifact-label {
+  color: var(--hiw-field);
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hiw-path__artifact-items {
+  color: var(--hiw-ink);
+  font-size: 0.78rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.hiw-path__flag {
+  width: fit-content;
+  margin-top: 0.6rem;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.5rem;
+}
+
+.hiw-path__flag--threshold {
+  border: 1px solid color-mix(in srgb, var(--hiw-decision) 50%, var(--hiw-rule));
+  background: rgba(184, 102, 74, 0.1);
+  color: color-mix(in srgb, var(--hiw-decision) 84%, var(--hiw-ink));
+}
+
+.hiw-path__flag--closure {
+  border: 1px solid color-mix(in srgb, var(--hiw-field) 46%, var(--hiw-rule));
+  background: rgba(47, 111, 115, 0.1);
+  color: color-mix(in srgb, var(--hiw-field) 84%, var(--hiw-ink));
+}
+
+.hiw-path__step[data-stage-key="decision"] {
+  border-color: color-mix(in srgb, var(--hiw-decision) 46%, var(--hiw-rule));
+  background:
+    linear-gradient(90deg, rgba(184, 102, 74, 0.08), transparent 42%),
+    linear-gradient(180deg, var(--hiw-paper-strong), var(--hiw-paper));
+  box-shadow: 0 18px 38px rgba(108, 58, 39, 0.12), inset 0 1px 0 #fff;
+}
+
+.hiw-path__step[data-stage-key="decision"] .hiw-path__node {
+  border-color: color-mix(in srgb, var(--hiw-decision) 52%, var(--hiw-rule));
+  background: rgba(184, 102, 74, 0.09);
+}
+
+.hiw-path__step[data-stage-key="decision"] .hiw-path__marker {
+  color: var(--hiw-decision);
+}
+
+.hiw-path__step[data-stage-key="action"] {
+  border-color: color-mix(in srgb, var(--hiw-field) 40%, var(--hiw-rule));
+}
+
+.hiw-path__rules {
+  display: grid;
+  gap: 0.9rem;
+  border-top: 1px solid var(--hiw-rule);
+  padding-top: 1.1rem;
+}
+
+.hiw-path__rules-head {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.hiw-path__rules-head span {
+  color: var(--hiw-field);
+  font-size: 0.7rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hiw-path__rules-head strong {
+  color: var(--hiw-ink);
+  font-size: 1.05rem;
+  font-weight: 900;
+}
+
+.hiw-path__rules-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hiw-path__rules-list li {
+  min-width: 0;
+  border-left: 3px solid color-mix(in srgb, var(--hiw-decision) 60%, var(--hiw-rule));
+  padding-left: 0.7rem;
+}
+
+.hiw-path__rules-list span {
+  color: var(--hiw-field);
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hiw-path__rules-list p {
+  margin: 0.2rem 0 0;
+  color: var(--hiw-muted);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+/* --- Visit checklist (light) --- */
+.hiw-procedure-page .hiw-checks-section {
+  background: linear-gradient(180deg, var(--hiw-stone), var(--hiw-paper));
+}
+
+.hiw-checks {
+  position: relative;
+  display: grid;
+  gap: clamp(1.4rem, 3vw, 2.2rem);
+  min-width: 0;
+  border: 1px solid color-mix(in srgb, var(--hiw-rule) 88%, var(--hiw-field));
+  border-radius: 0.85rem;
+  background:
+    linear-gradient(90deg, transparent 0 4.25rem, rgba(184, 102, 74, 0.2) 4.25rem 4.3rem, transparent 4.3rem),
+    repeating-linear-gradient(180deg, rgba(47, 111, 115, 0.055) 0 1px, transparent 1px 2rem),
+    linear-gradient(145deg, var(--hiw-paper-strong), var(--hiw-paper));
+  box-shadow: 0 22px 50px rgba(16, 38, 63, 0.09), inset 0 1px 0 #fff;
+  padding: clamp(1.35rem, 3vw, 2.4rem) clamp(1rem, 3vw, 2.25rem) clamp(1.4rem, 3vw, 2.1rem) clamp(5.2rem, 8vw, 7rem);
+}
+
+.hiw-checks::before {
+  position: absolute;
+  top: 2rem;
+  left: 1rem;
+  width: 2.35rem;
+  border: 1px solid color-mix(in srgb, var(--hiw-field) 48%, var(--hiw-rule));
+  border-radius: 0.25rem;
+  color: var(--hiw-field);
+  content: "FIELD\A CHECK";
+  font-size: 0.55rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  padding: 0.45rem 0.3rem;
+  text-align: center;
+  white-space: pre;
+}
+
+.hiw-checks__intro {
+  max-width: 58ch;
+}
+
+.hiw-checks__intro .section-label {
+  color: var(--hiw-field);
+}
+
+.hiw-checks__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hiw-procedure-page .hiw-checks__card {
+  position: relative;
+  min-width: 0;
+  border: 1px solid var(--hiw-rule);
+  border-radius: 0.75rem;
+  background: linear-gradient(180deg, var(--hiw-paper-strong), var(--hiw-paper));
+  box-shadow: 0 8px 20px rgba(16, 38, 63, 0.07), inset 0 1px 0 #fff;
+  padding: 1.15rem 1.2rem 1.25rem;
+}
+
+.hiw-checks__mark {
+  display: grid;
+  place-items: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-bottom: 0.7rem;
+  border: 1px solid color-mix(in srgb, var(--hiw-field) 58%, var(--hiw-rule));
+  border-radius: 0.2rem;
+  background: rgba(47, 111, 115, 0.08);
+}
+
+.hiw-checks__mark::after {
+  width: 0.55rem;
+  height: 0.3rem;
+  border-bottom: 2px solid var(--hiw-field);
+  border-left: 2px solid var(--hiw-field);
+  content: "";
+  transform: translateY(-0.08rem) rotate(-45deg);
+}
+
+.hiw-checks__card[data-check-key="water"] .hiw-checks__mark {
+  background: rgba(111, 182, 172, 0.13);
+}
+
+.hiw-checks__card[data-check-key="evidence"] .hiw-checks__mark {
+  border-color: color-mix(in srgb, var(--hiw-decision) 58%, var(--hiw-rule));
+  background: rgba(184, 102, 74, 0.1);
+}
+
+.hiw-checks__card[data-check-key="evidence"] .hiw-checks__mark::after {
+  border-color: var(--hiw-decision);
+}
+
+.hiw-checks__card-title {
+  margin: 0;
+  color: var(--hiw-ink);
+  font-size: 1.02rem;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.hiw-checks__card-body {
+  margin: 0.4rem 0 0;
+  color: var(--hiw-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.hiw-checks__note {
+  margin: 0;
+  color: var(--hiw-field);
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+/* --- Decision threshold (purposeful dark accent) --- */
+.hiw-procedure-page .hiw-threshold-section {
+  background:
+    radial-gradient(34rem 22rem at 84% 12%, rgba(184, 102, 74, 0.22), transparent 72%),
+    radial-gradient(30rem 20rem at 8% 92%, rgba(47, 111, 115, 0.2), transparent 72%),
+    linear-gradient(150deg, #071523 0%, #10263f 60%, #163b5c 100%);
+  color: #fffaf2;
+}
+
+.hiw-threshold {
+  display: grid;
+  gap: clamp(1.4rem, 3vw, 2.2rem);
+  min-width: 0;
+}
+
+.hiw-threshold__intro {
+  max-width: 58ch;
+}
+
+.hiw-threshold__intro .section-label {
+  color: color-mix(in srgb, var(--hiw-decision) 42%, #fffaf2);
+}
+
+.hiw-threshold__intro .h2-system {
+  color: #fffaf2;
+}
+
+.hiw-threshold__intro .text-body {
+  color: rgba(255, 250, 242, 0.78);
+}
+
+.hiw-threshold__cases {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hiw-procedure-page .hiw-threshold__case {
+  position: relative;
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 250, 242, 0.16);
+  border-radius: 0.75rem;
+  background: linear-gradient(160deg, rgba(255, 250, 242, 0.13), rgba(255, 250, 242, 0.045));
+  box-shadow: 0 18px 38px rgba(2, 12, 24, 0.24), inset 0 1px 0 rgba(255, 250, 242, 0.08);
+  padding: 1.2rem 1.25rem 1.3rem;
+}
+
+.hiw-threshold__case::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0.34rem;
+  content: "";
+}
+
+.hiw-threshold__case[data-case-key="record"]::before {
+  background: linear-gradient(180deg, #6fb6ac, rgba(111, 182, 172, 0.4));
+}
+
+.hiw-threshold__case[data-case-key="approval"]::before {
+  background: linear-gradient(180deg, var(--hiw-decision), #d29a57);
+}
+
+.hiw-threshold__case[data-case-key="protective"]::before {
+  background: linear-gradient(180deg, #d29a57, rgba(184, 102, 74, 0.5));
+}
+
+.hiw-threshold__case-index {
+  color: rgba(255, 250, 242, 0.4);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+}
+
+.hiw-threshold__case-tag {
+  width: fit-content;
+  border: 1px solid rgba(255, 250, 242, 0.2);
+  border-radius: 999px;
+  color: #fffaf2;
+  font-size: 0.64rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.55rem;
+}
+
+.hiw-threshold__case-title {
+  margin: 0;
+  color: #fffaf2;
+  font-size: 1.08rem;
+  font-weight: 900;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.hiw-threshold__case-body {
+  margin: 0;
+  color: rgba(255, 250, 242, 0.76);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.hiw-threshold__services {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1rem;
+  border-top: 1px solid rgba(255, 250, 242, 0.14);
+  padding-top: 1.1rem;
+}
+
+.hiw-threshold__services p {
+  margin: 0;
+  color: rgba(255, 250, 242, 0.72);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.hiw-threshold__services-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid rgba(255, 250, 242, 0.3);
+  border-radius: 999px;
+  color: #fffaf2;
+  font-size: 0.82rem;
+  font-weight: 850;
+  padding: 0.5rem 0.9rem;
+  transition: background 200ms ease, border-color 200ms ease;
+}
+
+.hiw-threshold__services-link:hover {
+  background: rgba(255, 250, 242, 0.1);
+  border-color: rgba(255, 250, 242, 0.5);
+}
+
+/* --- Report example-structure stampline --- */
+.hiw-decision-report__stampline {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-top: 1px solid var(--hiw-rule);
+  background: rgba(255, 253, 249, 0.5);
+  padding: 0.7rem 0.9rem;
+}
+
+.hiw-decision-report__stampline-mark {
+  flex: none;
+  width: 1.6rem;
+  height: 1.1rem;
+  border: 1px solid color-mix(in srgb, var(--hiw-rule) 84%, white);
+  border-radius: 0.2rem;
+  background:
+    linear-gradient(90deg, rgba(16, 38, 63, 0.08) 0 1px, transparent 1px 100%) 0 0 / 0.5rem 100%,
+    linear-gradient(180deg, rgba(47, 111, 115, 0.14), rgba(255, 250, 242, 0.3));
+}
+
+.hiw-decision-report__stampline p {
+  margin: 0;
+  color: var(--hiw-muted);
+  font-size: 0.74rem;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+/* --- After activation (compact rhythm band) --- */
+.hiw-rhythm-band {
+  display: grid;
+  gap: 1.2rem;
+  min-width: 0;
+}
+
+.hiw-rhythm-band__intro {
+  max-width: 54ch;
+}
+
+.hiw-rhythm-band__intro .section-label {
+  color: var(--hiw-field);
+}
+
+.hiw-rhythm-band__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hiw-procedure-page .hiw-rhythm-band__item {
+  position: relative;
+  min-width: 0;
+  border: 1px solid var(--hiw-rule);
+  border-top: 2px solid color-mix(in srgb, var(--hiw-field) 50%, var(--hiw-rule));
+  border-right: 0;
+  border-radius: 0;
+  background: linear-gradient(180deg, var(--hiw-paper-strong), rgba(255, 253, 249, 0.82));
+  box-shadow: inset 0 1px 0 #fff;
+  padding: 2rem 1rem 1rem;
+}
+
+.hiw-procedure-page .hiw-rhythm-band__item:first-child {
+  border-radius: 0.45rem 0 0 0.45rem;
+}
+
+.hiw-procedure-page .hiw-rhythm-band__item:last-child {
+  border-right: 1px solid var(--hiw-rule);
+  border-radius: 0 0.45rem 0.45rem 0;
+}
+
+.hiw-procedure-page .hiw-rhythm-band__item::before {
+  position: absolute;
+  top: 0.65rem;
+  left: 1rem;
+  color: var(--hiw-field);
+  content: "REC / 0" counter(list-item);
+  font-size: 0.58rem;
+  font-weight: 950;
+  letter-spacing: 0.09em;
+}
+
+.hiw-rhythm-band__item h3 {
+  margin: 0;
+  color: var(--hiw-ink);
+  font-size: 0.94rem;
+  font-weight: 900;
+}
+
+.hiw-rhythm-band__item p {
+  margin: 0.3rem 0 0;
+  color: var(--hiw-muted);
+  font-size: 0.8rem;
+  line-height: 1.42;
+  overflow-wrap: anywhere;
+}
+
+/* Final artifact composition: route board, field sheet, report desk. */
+.hiw-path__board {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.7fr) minmax(0, 1.3fr);
+  gap: 1.7rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--hiw-field) 25%, var(--hiw-rule));
+  border-radius: 1rem;
+  background:
+    linear-gradient(90deg, rgba(47, 111, 115, 0.045) 0 1px, transparent 1px 100%) 0 0 / 3.5rem 100%,
+    linear-gradient(180deg, rgba(255, 253, 249, 0.96), rgba(242, 238, 230, 0.9));
+  box-shadow: 0 28px 65px rgba(16, 38, 63, 0.11), inset 0 1px 0 #fff;
+  padding: clamp(1.25rem, 2.6vw, 2.25rem);
+}
+
+.hiw-path__board .hiw-path__steps {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  align-content: start;
+  border: 1px solid var(--hiw-rule);
+  border-radius: 0.6rem;
+  background: rgba(255, 253, 249, 0.72);
+  padding: 0.45rem;
+}
+
+.hiw-path__board .hiw-path__steps::before {
+  top: 1.45rem;
+  bottom: 1.45rem;
+  left: 1.7rem;
+  width: 2px;
+  height: auto;
+  background: linear-gradient(180deg, var(--hiw-field), var(--hiw-decision) 72%, var(--hiw-field));
+}
+
+.hiw-procedure-page .hiw-path__board .hiw-path__step,
+.hiw-procedure-page .hiw-path__board .hiw-path__step:nth-child(2),
+.hiw-procedure-page .hiw-path__board .hiw-path__step:nth-child(5),
+.hiw-procedure-page .hiw-path__board .hiw-path__step[data-stage-key="decision"] {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  min-height: 0;
+  border: 0;
+  border-bottom: 1px solid var(--hiw-rule);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 0.65rem;
+  transform: none;
+}
+
+.hiw-procedure-page .hiw-path__board .hiw-path__step:last-child {
+  border-bottom: 0;
+}
+
+.hiw-path__board .hiw-path__node {
+  width: 2rem;
+  height: 2rem;
+  background: var(--hiw-paper-strong);
+}
+
+.hiw-path__board .hiw-path__artifact {
+  margin-top: 0.22rem;
+  border: 0;
+  padding: 0;
+}
+
+.hiw-path__board .hiw-path__flag {
+  margin-top: 0.3rem;
+}
+
+.hiw-path__case-file {
+  position: relative;
+  align-self: stretch;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--hiw-field) 42%, var(--hiw-rule));
+  border-radius: 0.75rem;
+  background:
+    radial-gradient(24rem 18rem at 100% 0%, rgba(47, 111, 115, 0.16), transparent 68%),
+    linear-gradient(145deg, #fffdf8, #f2eee6);
+  box-shadow: 0 20px 45px rgba(16, 38, 63, 0.13), inset 0 1px 0 #fff;
+}
+
+.hiw-path__case-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--hiw-rule);
+  background: var(--hiw-ink);
+  color: #fffaf2;
+  padding: 0.75rem 1rem;
+}
+
+.hiw-path__case-head span,
+.hiw-path__case-head strong {
+  font-size: 0.66rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hiw-path__case-head strong {
+  color: #9ccbc4;
+}
+
+.hiw-path__case-body {
+  display: grid;
+  align-content: center;
+  min-height: 100%;
+  padding: clamp(1.4rem, 4vw, 3rem);
+}
+
+.hiw-path__case-index {
+  width: fit-content;
+  border: 1px solid color-mix(in srgb, var(--hiw-decision) 55%, var(--hiw-rule));
+  color: var(--hiw-decision);
+  font-size: 0.66rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.5rem;
+}
+
+.hiw-path__case-body h3 {
+  max-width: 17ch;
+  margin: 1rem 0 0;
+  color: var(--hiw-ink);
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+  font-weight: 800;
+  line-height: 0.98;
+}
+
+.hiw-path__case-body p {
+  max-width: 52ch;
+  margin: 1rem 0 0;
+  color: var(--hiw-muted);
+  line-height: 1.6;
+}
+
+.hiw-path__case-route {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin-top: 2rem;
+  border-top: 2px solid color-mix(in srgb, var(--hiw-field) 58%, var(--hiw-rule));
+  padding-top: 0.65rem;
+}
+
+.hiw-path__case-route span {
+  color: var(--hiw-field);
+  font-size: 0.65rem;
+  font-weight: 950;
+}
+
+.hiw-path__case-route span[data-threshold="true"] {
+  color: var(--hiw-decision);
+}
+
+.hiw-path__board .hiw-path__rules {
+  grid-column: 1 / -1;
+}
+
+.hiw-procedure-page .hiw-checks__card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 0.8rem;
+  border-width: 0 0 1px;
+  border-radius: 0;
+  background: rgba(255, 253, 249, 0.38);
+  box-shadow: none;
+  padding: 0.9rem 0.7rem;
+}
+
+.hiw-checks__card-title,
+.hiw-checks__card-body {
+  grid-column: 2;
+}
+
+.hiw-checks__mark {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.hiw-path__board::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0.42rem;
+  background: linear-gradient(180deg, var(--hiw-field) 0 64%, var(--hiw-decision) 64% 82%, var(--hiw-field) 82%);
+  content: "";
+}
+
+.hiw-procedure-page .hiw-path__step[data-stage-key="decision"] {
+  z-index: 2;
+  background:
+    linear-gradient(90deg, rgba(184, 102, 74, 0.12), transparent 56%),
+    linear-gradient(180deg, var(--hiw-paper-strong), var(--hiw-paper));
+  box-shadow: 0 20px 42px rgba(108, 58, 39, 0.16), inset 0 1px 0 #fff;
+  transform: translateY(-0.25rem) scale(1.025);
+}
+
+.hiw-path__rules {
+  border: 1px solid color-mix(in srgb, var(--hiw-field) 28%, var(--hiw-rule));
+  border-radius: 0.55rem;
+  background: rgba(47, 111, 115, 0.055);
+  padding: 1rem;
+}
+
+.hiw-checks::before {
+  content: "WIZYTA\A KONTROLA\A ZAPIS";
+}
+
+.hiw-evidence-shell {
+  position: relative;
+  border: 1px solid color-mix(in srgb, var(--hiw-rule) 86%, var(--hiw-ink));
+  border-radius: 1rem;
+  background:
+    radial-gradient(26rem 18rem at 100% 0%, rgba(47, 111, 115, 0.12), transparent 68%),
+    linear-gradient(145deg, #e9e2d7, #f7f2e9 62%, #ded6c9);
+  box-shadow: 0 30px 72px rgba(16, 38, 63, 0.14), inset 0 1px 0 #fff;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.hiw-evidence-shell::after {
+  position: absolute;
+  top: 0;
+  right: clamp(1.25rem, 3vw, 2.5rem);
+  width: 6rem;
+  height: 0.38rem;
+  background: linear-gradient(90deg, var(--hiw-field) 0 64%, var(--hiw-decision) 64%);
+  content: "";
+}
+
+.hiw-evidence-shell__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.48fr) minmax(20rem, 1fr);
+  gap: clamp(1rem, 3vw, 3rem);
+  align-items: end;
+  margin-bottom: clamp(1.4rem, 3vw, 2.4rem);
+}
+
+.hiw-evidence-shell__intro .section-label,
+.hiw-evidence-shell__intro .h2-system {
+  grid-column: 1;
+}
+
+.hiw-evidence-shell__intro .text-body {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  border-left: 3px solid var(--hiw-decision);
+  padding-left: 1rem;
+}
+
+.hiw-evidence-shell .hiw-decision-report {
+  transform: rotate(-0.35deg);
+  box-shadow: 0 26px 55px rgba(16, 38, 63, 0.2), 0 3px 8px rgba(16, 38, 63, 0.12);
+}
+
+@media (max-width: 1023px) {
+  .hiw-path__board {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hiw-path__case-file {
+    grid-row: 1;
+  }
+
+  .hiw-path__board .hiw-path__steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.45rem;
+    padding: 0.55rem;
+  }
+
+  .hiw-procedure-page .hiw-path__board .hiw-path__step,
+  .hiw-procedure-page .hiw-path__board .hiw-path__step:last-child {
+    border: 1px solid var(--hiw-rule);
+    border-radius: 0.35rem;
+  }
+
+  .hiw-path__steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hiw-checks__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hiw-path__steps::before {
+    display: none;
+  }
+
+  .hiw-procedure-page .hiw-path__step:nth-child(2),
+  .hiw-procedure-page .hiw-path__step:nth-child(5),
+  .hiw-procedure-page .hiw-path__step[data-stage-key="decision"] {
+    transform: none;
+  }
+
+  .hiw-path__steps {
+    padding-left: 1.15rem;
+  }
+
+  .hiw-path__steps::after {
+    position: absolute;
+    top: 1.2rem;
+    bottom: 1.2rem;
+    left: 0.25rem;
+    width: 3px;
+    background: linear-gradient(180deg, var(--hiw-field), var(--hiw-decision) 72%, var(--hiw-field));
+    content: "";
+  }
+}
+
+@media (max-width: 900px) {
+  .hiw-rhythm-band__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hiw-procedure-page .hiw-rhythm-band__item:nth-child(2) {
+    border-right: 1px solid var(--hiw-rule);
+    border-radius: 0 0.45rem 0.45rem 0;
+  }
+
+  .hiw-procedure-page .hiw-rhythm-band__item:nth-child(3) {
+    border-radius: 0.45rem 0 0 0.45rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .hiw-path__board {
+    gap: 1.2rem;
+    border-radius: 0.65rem;
+    padding: 1rem 0.85rem 1rem 1rem;
+  }
+
+  .hiw-path__board .hiw-path__steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hiw-path__case-body {
+    padding: 1.25rem;
+  }
+
+  .hiw-path__case-route {
+    margin-top: 1.35rem;
+  }
+
+  .hiw-evidence-shell {
+    border-radius: 0.65rem;
+    padding: 1rem 0.75rem;
+  }
+
+  .hiw-evidence-shell__intro {
+    display: block;
+    margin-bottom: 1.2rem;
+  }
+
+  .hiw-evidence-shell__intro .text-body {
+    margin-top: 0.75rem;
+  }
+
+  .hiw-evidence-shell .hiw-decision-report {
+    transform: none;
+  }
+
+  .hiw-checks {
+    background:
+      repeating-linear-gradient(180deg, rgba(47, 111, 115, 0.05) 0 1px, transparent 1px 2rem),
+      linear-gradient(145deg, var(--hiw-paper-strong), var(--hiw-paper));
+    padding: 1.25rem 1rem;
+  }
+
+  .hiw-checks::before {
+    display: none;
+  }
+  .hiw-path__steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hiw-path__rules-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hiw-checks__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hiw-threshold__cases {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .hiw-rhythm-band__list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hiw-procedure-page .hiw-rhythm-band__item,
+  .hiw-procedure-page .hiw-rhythm-band__item:first-child,
+  .hiw-procedure-page .hiw-rhythm-band__item:nth-child(2),
+  .hiw-procedure-page .hiw-rhythm-band__item:nth-child(3),
+  .hiw-procedure-page .hiw-rhythm-band__item:last-child {
+    border-right: 1px solid var(--hiw-rule);
+    border-radius: 0.35rem;
   }
 }
 
@@ -29614,5 +30667,113 @@ html:has(.hiw-page),
     border: 0;
     border-radius: 0;
     box-shadow: none;
+  }
+}
+
+/* How It Works final act: keep the compact rhythm legible on the dark field. */
+.hiw-procedure-page .hiw-final-act .hiw-rhythm-band__item {
+  border-color: rgba(255, 250, 242, 0.18);
+  background: rgba(7, 21, 35, 0.58);
+  box-shadow: none;
+}
+
+.hiw-procedure-page .hiw-final-act .hiw-rhythm-band__item h3 {
+  color: #fffaf2;
+}
+
+.hiw-procedure-page .hiw-final-act .hiw-rhythm-band__item p {
+  color: rgba(255, 250, 242, 0.72);
+}
+
+/* Surgical composition: schematic first, route attached, rhythm subordinate. */
+.hiw-observation-section > .container {
+  max-width: 92rem;
+}
+
+.hiw-observation-intro {
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+.hiw-observation-intro .h2-system {
+  max-width: 24ch;
+}
+
+.hiw-observation-board__diagram {
+  min-height: clamp(34rem, 48vw, 43rem);
+}
+
+.hiw-case-route--attached {
+  grid-template-columns: minmax(8rem, 0.2fr) minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 2.5rem);
+  margin: -1px clamp(1rem, 3vw, 2.5rem) 0;
+  border: 1px solid color-mix(in srgb, var(--hiw-field) 34%, var(--hiw-rule));
+  border-top: 0;
+  border-radius: 0 0 0.65rem 0.65rem;
+  background: linear-gradient(180deg, rgba(255, 253, 249, 0.96), rgba(242, 238, 230, 0.94));
+  box-shadow: 0 18px 38px rgba(16, 38, 63, 0.1);
+  padding: 1.1rem 1.25rem 0.55rem;
+}
+
+.hiw-case-route__label {
+  margin: 0;
+  color: var(--hiw-field);
+  font-size: 0.66rem;
+  font-weight: 950;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.hiw-final-act .hiw-rhythm-band {
+  grid-template-columns: minmax(12rem, 0.3fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
+.hiw-final-act .hiw-rhythm-band__intro h2 {
+  margin: 0.3rem 0 0;
+  color: #fffaf2;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  font-weight: 750;
+  line-height: 1.05;
+}
+
+.hiw-final-act .hiw-rhythm-band__item {
+  padding: 1.55rem 0.7rem 0.65rem;
+}
+
+.hiw-final-act .hiw-rhythm-band__item h3 {
+  font-size: 0.78rem;
+}
+
+.hiw-final-act .hiw-rhythm-band__item p {
+  font-size: 0.68rem;
+}
+
+@media (max-width: 900px) {
+  .hiw-observation-board__diagram {
+    min-height: 30rem;
+  }
+
+  .hiw-case-route--attached,
+  .hiw-final-act .hiw-rhythm-band {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .hiw-observation-board__diagram {
+    min-height: 21rem;
+  }
+
+  .hiw-case-route--attached {
+    margin: -1px 0.5rem 0;
+    padding: 0.9rem;
+  }
+
+  .hiw-final-act .hiw-rhythm-band {
+    margin-top: 1.5rem;
   }
 }

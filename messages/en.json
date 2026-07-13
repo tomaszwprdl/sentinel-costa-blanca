@@ -624,6 +624,21 @@
         "title": "Same order",
         "body": "Visits, access, and requests follow repeatable steps rather than improvised handling."
       },
+      "schematic": {
+        "eyebrow": "One observation",
+        "heading": "A visible point on site. A controlled owner record.",
+        "intro": "This schematic shows a sample inspection moment: a visible trace at the balcony-door frame is noticed, checked, and documented.",
+        "exampleLabel": "SCHEMATIC EXAMPLE — NOT A CLIENT REPORT",
+        "title": "Inspection board / balcony door",
+        "observationLabel": "OBSERVATION POINT",
+        "accessLabel": "Access",
+        "accessValue": "Entry follows the agreed scope",
+        "checkLabel": "Visible check",
+        "checkValue": "Frame, floor, wall, and surrounding context",
+        "evidenceLabel": "Record",
+        "evidenceValue": "Detail + context + short note",
+        "note": "Visible condition, not a technical diagnosis. No active leak at the time of inspection."
+      },
       "decisions": {
         "label": "Decisions",
         "title": "Limits before response",
@@ -1834,17 +1849,17 @@
       "hero": {
         "eyebrow": "Process at a glance",
         "headline": "From first contact to report and decision",
-        "lead": "The process does not start with an open task list. Property, access, scope, and reporting are confirmed first.",
-        "primaryCta": "Start contact",
-        "secondaryCta": "View the sequence",
-        "registerKicker": "Procedure record",
-        "registerTitle": "Responsibility moves in order",
-        "registerStatus": "controlled sequence",
-        "registerStamp": "inside agreed scope",
+        "lead": "Sentinel replaces an informal stream of messages with a controlled process: scope, access, visit, report, and the owner's decision.",
+        "primaryCta": "Start qualification",
+        "secondaryCta": "See the sequence",
+        "registerKicker": "What a visit produces",
+        "registerTitle": "Every visit leaves a record",
+        "registerStatus": "example structure",
+        "registerStamp": "example, not a client report",
         "registerRows": [
-          { "label": "Before action", "value": "scope, access, and contact rules are established" },
-          { "label": "During visit", "value": "visible checks, entry record, and observations" },
-          { "label": "After visit", "value": "report, decision boundary, and action log" }
+          { "label": "Visit report", "value": "condition, photos, and observations in one document" },
+          { "label": "Decision request", "value": "when a matter exceeds the agreed limit" },
+          { "label": "Action summary", "value": "what was closed and what stays on record" }
         ],
         "facts": [
           { "label": "Start", "value": "qualification and access" },
@@ -1855,10 +1870,28 @@
       "procedure": {
         "eyebrow": "Operational path",
         "title": "From access to action — one controlled path.",
-        "intro": "Each stage follows the previous one: scope, access, visit, record, decision, and execution. The journey shows where Sentinel acts within scope and where the decision returns to the owner.",
+        "intro": "Each stage follows the previous one: scope, then access, visit, record, decision, and execution. You can see where Sentinel acts on its own and where the decision returns to the owner.",
         "visitRecordImageAlt": "Operational placeholder photo of a visit record setup outside an apartment door",
         "thresholdDeviceLabel": "Decision threshold",
         "closureDeviceLabel": "RECORD CLOSED",
+        "caseLabel": "Sample observation route",
+        "caseBody": "During an agreed visit, the point is noticed, photographed, and entered into the record. There is no active leak and no action without a decision.",
+        "caseStatus": "EXAMPLE STRUCTURE",
+        "schematic": {
+          "eyebrow": "One observation",
+          "heading": "A visible point on site. A controlled owner record.",
+          "intro": "This schematic shows a sample inspection moment: a visible trace at the balcony-door frame is noticed, checked, and documented.",
+          "exampleLabel": "SCHEMATIC EXAMPLE — NOT A CLIENT REPORT",
+          "title": "Inspection board / balcony door",
+          "observationLabel": "OBSERVATION POINT",
+          "accessLabel": "Access",
+          "accessValue": "Entry follows the agreed scope",
+          "checkLabel": "Visible check",
+          "checkValue": "Frame, floor, wall, and surrounding context",
+          "evidenceLabel": "Record",
+          "evidenceValue": "Detail + context + short note",
+          "note": "Visible condition, not a technical diagnosis. No active leak at the time of inspection."
+        },
         "rulesEyebrow": "Operating rule",
         "rulesTitle": "No action happens without a record.",
         "rules": [
@@ -1872,7 +1905,7 @@
             "marker": "01",
             "title": "Scope defined",
             "body": "Property data, usage pattern, package, contact people, and communication rules are confirmed before Sentinel starts acting.",
-            "artifactTitle": "Setup note",
+            "artifactTitle": "Agreed scope",
             "artifactItems": ["Property fit", "Owner contact", "Package boundary"]
           },
           {
@@ -1880,7 +1913,7 @@
             "marker": "02",
             "title": "Controlled access",
             "body": "Keys, entry method, third-party access, and entry reasons are handled as part of the agreed scope.",
-            "artifactTitle": "Access note",
+            "artifactTitle": "Access record",
             "artifactItems": ["Key custody", "Entry reason", "After-entry confirmation"]
           },
           {
@@ -1896,7 +1929,7 @@
             "marker": "04",
             "title": "Report and record",
             "body": "Photos, notes, timing, condition, and next-step context are gathered into one owner-facing record.",
-            "artifactTitle": "Report excerpt",
+            "artifactTitle": "Visit report",
             "artifactItems": ["Summary", "Photo references", "Next action"]
           },
           {
@@ -1904,7 +1937,7 @@
             "marker": "05",
             "title": "Decision threshold",
             "body": "If the issue exceeds package scope, authority limit, or prior agreement, the decision returns to the owner.",
-            "artifactTitle": "Threshold record",
+            "artifactTitle": "Decision request",
             "artifactItems": ["Within limit", "Owner approval", "Outside scope"]
           },
           {
@@ -1912,15 +1945,29 @@
             "marker": "06",
             "title": "Action closed",
             "body": "Closed items, pending approvals, access events, and rhythm changes remain in the operating record.",
-            "artifactTitle": "Action log",
+            "artifactTitle": "Action summary",
             "artifactItems": ["Closed", "Pending", "Next rhythm"]
           }
         ]
       },
+      "checks": {
+        "eyebrow": "On-site visit",
+        "title": "What Sentinel checks during a visit",
+        "intro": "A visit is not a general look around. It is a repeatable set of physical checks — the same on every visit.",
+        "scopeNote": "The check scope depends on the package and what was agreed.",
+        "categories": [
+          { "key": "access", "title": "Access and security", "body": "Doors, windows, locks, and entry points — whether everything is closed and undisturbed." },
+          { "key": "water", "title": "Water and damp", "body": "Visible leaks, damp traces, and condition around valves, bathrooms, and under sinks." },
+          { "key": "systems", "title": "Systems and ventilation", "body": "Visible state of the electrical system and boiler/HVAC, plus airing and odours." },
+          { "key": "readiness", "title": "Readiness and cleaning", "body": "If in scope: the property's readiness and cleanliness before arrival or after departure." },
+          { "key": "evidence", "title": "Photos and notes", "body": "Every relevant observation goes into the report as a photo and a short note." }
+        ]
+      },
       "evidence": {
-        "eyebrow": "Report and threshold",
+        "eyebrow": "What the owner receives",
         "title": "The report is where observation becomes owner decision.",
         "intro": "This compact preview shows how a visit observation becomes a written owner record: no alarm, no repair without approval, and a clear decision threshold.",
+        "exampleLabel": "Example record structure. This is not a client report.",
         "sampleReport": {
           "ribbon": "Sample report layout",
           "context": ["Scheduled inspection", "Apartment", "Southern Costa Blanca"],
@@ -1946,6 +1993,18 @@
           "nextActionLabel": "Next action",
           "nextAction": "Sentinel compares the point at the next scheduled visit. The owner is informed if the status changes."
         }
+      },
+      "threshold": {
+        "eyebrow": "Decision threshold",
+        "title": "When Sentinel acts, and when the owner decides",
+        "intro": "The key boundary is not speed but the authority to act. Every observation falls into one of three cases.",
+        "cases": [
+          { "key": "record", "tag": "Record only", "title": "Observation without action", "body": "Sentinel documents the point and compares it at the next visit. Nothing is triggered." },
+          { "key": "approval", "tag": "Owner decision", "title": "Cost or scope needs approval", "body": "When a matter exceeds the agreed scope or limit, the decision returns to the owner with a recommendation." },
+          { "key": "protective", "tag": "Protective action", "title": "Only within authority", "body": "Only where the package and agreed limit allow it — to limit immediate damage." }
+        ],
+        "servicesNote": "Detailed package limits and authority are described on the Services page.",
+        "servicesCta": "See package limits"
       },
       "timeline": {
         "eyebrow": "Whole process",
@@ -2505,7 +2564,7 @@
       "title": "Start property qualification",
       "body": "In the form, provide the property location, usage pattern, expected package, and availability for the initial inspection.",
       "bodyFollowUp": "Sentinel responds within 24–48h to confirm geographic eligibility, required data, and the next onboarding step.",
-      "primaryCta": "Start contact",
+      "primaryCta": "Start qualification",
       "secondaryCta": "View packages",
       "subtitle": "To begin onboarding:",
       "steps": {

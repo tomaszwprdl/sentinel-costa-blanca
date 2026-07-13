@@ -22,24 +22,12 @@ export type DecisionReadyReportContent = {
   nextAction: string;
 };
 
-export type DecisionReadyReportLimits = {
-  title: string;
-  protectiveTitle: string;
-  protectiveIntro: string;
-  authorityTitle: string;
-  authorityScope: string;
-  standard: string;
-  optional: string;
-  approval: string;
-  note: string;
-};
-
 type DecisionReadyReportProps = {
   report: DecisionReadyReportContent;
-  limits: DecisionReadyReportLimits;
+  exampleLabel: string;
 };
 
-export default function DecisionReadyReport({ report, limits }: DecisionReadyReportProps) {
+export default function DecisionReadyReport({ report, exampleLabel }: DecisionReadyReportProps) {
   return (
     <article className="hiw-decision-report" aria-label={report.ribbon}>
       <header className="hiw-decision-report__masthead">
@@ -101,25 +89,9 @@ export default function DecisionReadyReport({ report, limits }: DecisionReadyRep
         </aside>
       </div>
 
-      <footer className="hiw-decision-report__appendix">
-        <p className="hiw-decision-report__appendix-title">{limits.title}</p>
-        <p>
-          <strong>{limits.protectiveTitle}</strong>
-          {' '}
-          {limits.protectiveIntro}
-        </p>
-        <p>
-          <strong>{limits.authorityTitle}</strong>
-          {' '}
-          {limits.authorityScope}
-          {' '}
-          {limits.standard}
-          {' / '}
-          {limits.optional}
-          {'. '}
-          {limits.approval}
-        </p>
-        <p className="hiw-decision-report__appendix-note">{limits.note}</p>
+      <footer className="hiw-decision-report__stampline">
+        <span className="hiw-decision-report__stampline-mark" aria-hidden="true" />
+        <p>{exampleLabel}</p>
       </footer>
     </article>
   );

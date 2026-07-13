@@ -4,20 +4,14 @@ import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
 import Section from '@/components/layout/Section';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
-import ProcedureJourney from '@/components/how-it-works/ProcedureJourney';
+import { type ProcedureJourneyStep } from '@/components/how-it-works/ProcedureJourney';
 import DecisionReadyReport, { type DecisionReadyReportContent } from '@/components/how-it-works/DecisionReadyReport';
+import DecisionThreshold, { type DecisionThresholdCase } from '@/components/how-it-works/DecisionThreshold';
+import ObservationSchematic from '@/components/how-it-works/ObservationSchematic';
 
 type RecordRow = {
   label: string;
   value: string;
-};
-
-type ProcedureStep = {
-  key: string;
-  title: string;
-  body: string;
-  artifactTitle: string;
-  artifactItems: string[];
 };
 
 const RHYTHM_KEYS = ['visits', 'reports', 'access', 'changes'] as const;
@@ -28,9 +22,9 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
   const tCommon = await getTranslations({ locale, namespace: 'common' });
 
   const heroRows = t.raw('redesign.hero.registerRows') as RecordRow[];
-  const procedureSteps = t.raw('redesign.procedure.steps') as ProcedureStep[];
-  const procedureRules = t.raw('redesign.procedure.rules') as RecordRow[];
+  const procedureSteps = t.raw('redesign.procedure.steps') as ProcedureJourneyStep[];
   const sampleReport = t.raw('redesign.evidence.sampleReport') as DecisionReadyReportContent;
+  const thresholdCases = t.raw('redesign.threshold.cases') as DecisionThresholdCase[];
 
   return (
     <>
@@ -47,7 +41,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
                 <Link href={`/${locale}/contact`} className="btn-primary">
                   {t('redesign.hero.primaryCta')}
                 </Link>
-                <Link href="#procedure-corridor" className="btn-secondary btn-secondary-on-dark hiw-hero__secondary-cta">
+                <Link href="#operational-path" className="btn-secondary btn-secondary-on-dark hiw-hero__secondary-cta">
                   {t('redesign.hero.secondaryCta')}
                 </Link>
               </div>
@@ -74,21 +68,39 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
           </div>
         </Section>
 
-        <Section tone="light" id="procedure-corridor" className="section-primitive--compact hiw-interface-section hiw-procedure-section">
-          <ProcedureJourney
-            eyebrow={t('redesign.procedure.eyebrow')}
-            title={t('redesign.procedure.title')}
-            intro={t('redesign.procedure.intro')}
-            ruleEyebrow={t('redesign.procedure.rulesEyebrow')}
-            ruleTitle={t('redesign.procedure.rulesTitle')}
-            rules={procedureRules}
-            steps={procedureSteps}
-            thresholdDeviceLabel={t('redesign.procedure.thresholdDeviceLabel')}
-            closureDeviceLabel={t('redesign.procedure.closureDeviceLabel')}
+        <Section tone="light" id="operational-path" className="section-primitive--compact hiw-interface-section hiw-observation-section">
+          <div className="hiw-observation-intro">
+            <p className="section-label">{t('redesign.procedure.schematic.eyebrow')}</p>
+            <h2 className="h2-system mt-3">{t('redesign.procedure.schematic.heading')}</h2>
+          </div>
+          <ObservationSchematic
+            exampleLabel={t('redesign.procedure.schematic.exampleLabel')}
+            title={t('redesign.procedure.schematic.title')}
+            observationLabel={t('redesign.procedure.schematic.observationLabel')}
+            observation={t('redesign.evidence.sampleReport.finding.title')}
+            accessLabel={t('redesign.procedure.schematic.accessLabel')}
+            accessValue={t('redesign.procedure.schematic.accessValue')}
+            checkLabel={t('redesign.procedure.schematic.checkLabel')}
+            checkValue={t('redesign.procedure.schematic.checkValue')}
+            evidenceLabel={t('redesign.procedure.schematic.evidenceLabel')}
+            evidenceValue={t('redesign.procedure.schematic.evidenceValue')}
+            note={t('redesign.procedure.schematic.note')}
           />
+          <div className="hiw-case-route hiw-case-route--attached" id="case-route">
+            <p className="hiw-case-route__label">{t('redesign.procedure.eyebrow')}</p>
+            <ol className="hiw-case-route__rail" aria-label={t('redesign.procedure.title')}>
+              {procedureSteps.slice(1, 5).map((step, index) => (
+                <li key={step.key} data-threshold={step.key === 'decision'}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <strong>{step.title}</strong>
+                  <p>{step.artifactTitle}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
         </Section>
 
-        <Section tone="alt" id="report-decision" className="section-primitive--compact hiw-interface-section hiw-evidence-section">
+        <Section tone="light" id="report-record" className="section-primitive--compact hiw-interface-section hiw-evidence-section">
           <div className="hiw-evidence-shell">
             <div className="hiw-evidence-shell__intro">
               <p className="section-label">{t('redesign.evidence.eyebrow')}</p>
@@ -98,39 +110,35 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
 
             <DecisionReadyReport
               report={sampleReport}
-              limits={{
-                title: t('redesign.decision.limitsTitle'),
-                protectiveTitle: t('redesign.decision.protectiveTitle'),
-                protectiveIntro: t('redesign.decision.protectiveIntro'),
-                authorityTitle: t('redesign.decision.authorityTitle'),
-                authorityScope: t('redesign.decision.authorityScope'),
-                standard: t('step2.redPackageLimits.standard'),
-                optional: t('step2.redPackageLimits.optional'),
-                approval: t('redesign.decision.ownerApprovalLine'),
-                note: t('redesign.decision.note'),
-              }}
+              exampleLabel={t('redesign.evidence.exampleLabel')}
             />
           </div>
         </Section>
 
-        <Section tone="alt" className="section-primitive--compact hiw-interface-section hiw-section--support">
-          <div className="hiw-action-log">
-            <div>
+        <Section tone="authority" id="decision-threshold" className="section-primitive--compact hiw-interface-section hiw-threshold-section hiw-final-act">
+          <DecisionThreshold
+            eyebrow={t('redesign.threshold.eyebrow')}
+            title={t('redesign.threshold.title')}
+            intro={t('redesign.threshold.intro')}
+            cases={thresholdCases}
+            servicesNote={t('redesign.threshold.servicesNote')}
+            servicesCta={t('redesign.threshold.servicesCta')}
+            servicesHref={`/${locale}/services#package-fit`}
+          />
+          <div className="hiw-rhythm-band">
+            <div className="hiw-rhythm-band__intro">
               <p className="section-label">{t('redesign.rhythm.eyebrow')}</p>
-              <h2 className="h2-system mt-3">{t('redesign.rhythm.title')}</h2>
+              <h2>{t('redesign.rhythm.title')}</h2>
             </div>
-            <ul className="hiw-action-log__list">
+            <ul className="hiw-rhythm-band__list">
               {RHYTHM_KEYS.map((key) => (
-                <li key={key} className="hiw-action-log__item">
+                <li key={key} className="hiw-rhythm-band__item">
                   <h3>{t(`redesign.rhythm.cards.${key}.title`)}</h3>
                   <p>{t(`redesign.rhythm.cards.${key}.body`)}</p>
                 </li>
               ))}
             </ul>
           </div>
-        </Section>
-
-        <Section tone="light" className="hiw-closing-section hiw-section--handoff" id="process-handoff">
           <div className="hiw-handoff">
             <div className="hiw-handoff__copy">
               <p className="section-label">{t('cta.eyebrow')}</p>
@@ -152,9 +160,9 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
       <MobileStickyCTA
         primaryHref={`/${locale}/contact`}
         primaryLabel={tCommon('nav.contact')}
-        secondaryHref="#procedure-corridor"
+        secondaryHref="#operational-path"
         secondaryLabel={t('redesign.procedure.eyebrow')}
-        suppressWhenVisible="footer,.hiw-handoff,.hiw-section--support,#report-decision,#procedure-corridor"
+        suppressWhenVisible="footer,.hiw-handoff,.hiw-section--support,#decision-threshold,#report-record,#operational-path"
       />
       <Footer />
     </>

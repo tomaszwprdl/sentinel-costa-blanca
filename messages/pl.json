@@ -624,6 +624,21 @@
         "title": "Ten sam porządek",
         "body": "Wizyty, dostęp i zgłoszenia przechodzą przez powtarzalne kroki, nie przez improwizację."
       },
+      "schematic": {
+        "eyebrow": "Jedna obserwacja",
+        "heading": "Widoczny punkt na miejscu. Kontrolowany zapis dla właściciela.",
+        "intro": "Schemat pokazuje przykładowy moment kontroli: widoczny ślad przy ramie drzwi balkonowych zostaje zauważony, sprawdzony i udokumentowany.",
+        "exampleLabel": "SCHEMAT PRZYKŁADOWY — NIE RAPORT KLIENTA",
+        "title": "Plansza kontroli / drzwi balkonowe",
+        "observationLabel": "PUNKT OBSERWACJI",
+        "accessLabel": "Dostęp",
+        "accessValue": "Wejście zgodne z uzgodnionym zakresem",
+        "checkLabel": "Kontrola widoczna",
+        "checkValue": "Rama, posadzka, ściana i otoczenie punktu",
+        "evidenceLabel": "Zapis",
+        "evidenceValue": "Detal + kontekst + krótka notatka",
+        "note": "Widoczny stan, nie diagnoza techniczna. Brak aktywnego wycieku w chwili kontroli."
+      },
       "decisions": {
         "label": "Decyzje",
         "title": "Limity przed reakcją",
@@ -1834,17 +1849,17 @@
       "hero": {
         "eyebrow": "Proces w skrócie",
         "headline": "Od pierwszego kontaktu do raportu i decyzji",
-        "lead": "Proces nie zaczyna się od formularza zadań. Najpierw potwierdza się nieruchomość, dostęp, zakres i sposób raportowania.",
-        "primaryCta": "Rozpocznij kontakt",
-        "secondaryCta": "Zobacz sekwencję",
-        "registerKicker": "Zapis procedury",
-        "registerTitle": "Odpowiedzialność przesuwa się po kolei",
-        "registerStatus": "kontrolowana sekwencja",
-        "registerStamp": "w uzgodnionym zakresie",
+        "lead": "Sentinel zastępuje nieformalny ciąg wiadomości kontrolowanym procesem: zakres, dostęp, wizyta, raport i decyzja właściciela.",
+        "primaryCta": "Rozpocznij kwalifikację",
+        "secondaryCta": "Zobacz przebieg",
+        "registerKicker": "Co powstaje z wizyty",
+        "registerTitle": "Każda wizyta zostawia zapis",
+        "registerStatus": "struktura przykładowa",
+        "registerStamp": "przykład, nie raport klienta",
         "registerRows": [
-          { "label": "Przed działaniem", "value": "ustalone są zakres, dostęp i zasady kontaktu" },
-          { "label": "Podczas wizyty", "value": "kontrole widoczne, zapis wejścia i obserwacje" },
-          { "label": "Po wizycie", "value": "raport, granica decyzji i dziennik działania" }
+          { "label": "Raport z wizyty", "value": "stan, zdjęcia i obserwacje w jednym dokumencie" },
+          { "label": "Prośba o decyzję", "value": "gdy sprawa przekracza uzgodniony limit" },
+          { "label": "Podsumowanie działania", "value": "co zamknięto i co pozostaje w zapisie" }
         ],
         "facts": [
           { "label": "Start", "value": "kwalifikacja i dostęp" },
@@ -1855,10 +1870,28 @@
       "procedure": {
         "eyebrow": "Droga operacyjna",
         "title": "Od wejścia do działania — jedna kontrolowana droga.",
-        "intro": "Każdy etap wynika z poprzedniego: najpierw zakres, potem dostęp, wizyta, zapis, decyzja i wykonanie. Scroll pokazuje, gdzie Sentinel działa samodzielnie, a gdzie decyzja wraca do właściciela.",
+        "intro": "Każdy etap wynika z poprzedniego: najpierw zakres, potem dostęp, wizyta, zapis, decyzja i wykonanie. Widać, gdzie Sentinel działa samodzielnie, a gdzie decyzja wraca do właściciela.",
         "visitRecordImageAlt": "Operacyjne zdjęcie zastępcze przygotowania zapisu wizyty przy drzwiach mieszkania",
         "thresholdDeviceLabel": "Próg decyzji",
         "closureDeviceLabel": "ZAPIS ZAMKNIĘTY",
+        "caseLabel": "Przykładowy przebieg obserwacji",
+        "caseBody": "Podczas uzgodnionej wizyty punkt zostaje zauważony, sfotografowany i wpisany do rekordu. Nie ma aktywnego wycieku ani działania bez decyzji.",
+        "caseStatus": "STRUKTURA PRZYKŁADOWA",
+        "schematic": {
+          "eyebrow": "Jedna obserwacja",
+          "heading": "Widoczny punkt na miejscu. Kontrolowany zapis dla właściciela.",
+          "intro": "Schemat pokazuje przykładowy moment kontroli: widoczny ślad przy ramie drzwi balkonowych zostaje zauważony, sprawdzony i udokumentowany.",
+          "exampleLabel": "SCHEMAT PRZYKŁADOWY — NIE RAPORT KLIENTA",
+          "title": "Plansza kontroli / drzwi balkonowe",
+          "observationLabel": "PUNKT OBSERWACJI",
+          "accessLabel": "Dostęp",
+          "accessValue": "Wejście zgodne z uzgodnionym zakresem",
+          "checkLabel": "Kontrola widoczna",
+          "checkValue": "Rama, posadzka, ściana i otoczenie punktu",
+          "evidenceLabel": "Zapis",
+          "evidenceValue": "Detal + kontekst + krótka notatka",
+          "note": "Widoczny stan, nie diagnoza techniczna. Brak aktywnego wycieku w chwili kontroli."
+        },
         "rulesEyebrow": "Zasada operacyjna",
         "rulesTitle": "Nie ma działania bez zapisu.",
         "rules": [
@@ -1872,7 +1905,7 @@
             "marker": "01",
             "title": "Ustalenie zakresu",
             "body": "Dane nieruchomości, sposób używania, pakiet, osoby kontaktowe i zasady komunikacji są potwierdzone zanim Sentinel zacznie działać.",
-            "artifactTitle": "Notatka startowa",
+            "artifactTitle": "Ustalony zakres",
             "artifactItems": ["Dopasowanie lokalu", "Kontakt właściciela", "Granica pakietu"]
           },
           {
@@ -1880,7 +1913,7 @@
             "marker": "02",
             "title": "Kontrolowany dostęp",
             "body": "Klucze, metoda wejścia, dostęp osób trzecich i powody wejścia są prowadzone jako część uzgodnionego zakresu.",
-            "artifactTitle": "Notatka dostępu",
+            "artifactTitle": "Zapis dostępu",
             "artifactItems": ["Przechowanie kluczy", "Powód wejścia", "Potwierdzenie po wejściu"]
           },
           {
@@ -1888,7 +1921,7 @@
             "marker": "03",
             "title": "Wizyta na miejscu",
             "body": "Sentinel sprawdza widoczny stan, punkty dostępu, sygnały wilgoci lub wody, stan wnętrza i uzgodnione punkty operacyjne.",
-            "artifactTitle": "Lista wizyty",
+            "artifactTitle": "Lista kontrolna wizyty",
             "artifactItems": ["Dostęp i zabezpieczenia", "Woda / wilgoć", "Stan wnętrza"]
           },
           {
@@ -1896,7 +1929,7 @@
             "marker": "04",
             "title": "Raport i zapis",
             "body": "Zdjęcia, notatki, czas, stan i kontekst następnego kroku trafiają do jednego zapisu dla właściciela.",
-            "artifactTitle": "Fragment raportu",
+            "artifactTitle": "Raport z wizyty",
             "artifactItems": ["Podsumowanie", "Referencje zdjęć", "Następne działanie"]
           },
           {
@@ -1904,7 +1937,7 @@
             "marker": "05",
             "title": "Próg decyzji",
             "body": "Jeśli sprawa przekracza zakres pakietu, limit uprawnień albo wcześniejsze ustalenie, decyzja wraca do właściciela.",
-            "artifactTitle": "Zapis progu",
+            "artifactTitle": "Prośba o decyzję",
             "artifactItems": ["W limicie", "Zgoda właściciela", "Poza zakresem"]
           },
           {
@@ -1912,15 +1945,29 @@
             "marker": "06",
             "title": "Zamknięcie działania",
             "body": "Zamknięte elementy, oczekujące zgody, zdarzenia dostępu i zmiany rytmu zostają w zapisie operacyjnym.",
-            "artifactTitle": "Dziennik działania",
+            "artifactTitle": "Podsumowanie działania",
             "artifactItems": ["Zamknięte", "Oczekujące", "Następny rytm"]
           }
         ]
       },
+      "checks": {
+        "eyebrow": "Wizyta na miejscu",
+        "title": "Co Sentinel sprawdza podczas wizyty",
+        "intro": "Wizyta to nie ogólne obejrzenie lokalu. To powtarzalny zestaw kontroli fizycznych — ten sam przy każdej wizycie.",
+        "scopeNote": "Zakres kontroli zależy od pakietu i uzgodnień.",
+        "categories": [
+          { "key": "access", "title": "Dostęp i zabezpieczenia", "body": "Drzwi, okna, zamki i punkty wejścia — czy wszystko jest zamknięte i nienaruszone." },
+          { "key": "water", "title": "Woda i wilgoć", "body": "Widoczne wycieki, ślady wilgoci i stan przy zaworach, w łazienkach oraz pod zlewami." },
+          { "key": "systems", "title": "Instalacje i wentylacja", "body": "Wizualny stan instalacji elektrycznej i bojlera/HVAC oraz przewietrzenie i zapachy." },
+          { "key": "readiness", "title": "Gotowość i czystość", "body": "Jeśli w zakresie: stan przygotowania lokalu i czystość przed przyjazdem lub po wyjeździe." },
+          { "key": "evidence", "title": "Zdjęcia i notatki", "body": "Każda istotna obserwacja trafia do raportu jako zdjęcie i krótka notatka." }
+        ]
+      },
       "evidence": {
-        "eyebrow": "Raport i próg",
+        "eyebrow": "Co otrzymuje właściciel",
         "title": "Raport jest miejscem, gdzie obserwacja staje się decyzją właściciela.",
         "intro": "Ten skrócony podgląd pokazuje, jak obserwacja z wizyty staje się pisemnym rekordem dla właściciela: bez alarmu, bez naprawy bez zgody, z jasnym progiem decyzji.",
+        "exampleLabel": "Przykładowa struktura zapisu. Nie jest to raport klienta.",
         "sampleReport": {
           "ribbon": "Przykładowy układ raportu",
           "context": ["Planowana kontrola", "Apartament", "Południowa Costa Blanca"],
@@ -1946,6 +1993,18 @@
           "nextActionLabel": "Następne działanie",
           "nextAction": "Sentinel porównuje punkt przy kolejnej planowanej wizycie. Właściciel otrzymuje informację, jeśli status się zmieni."
         }
+      },
+      "threshold": {
+        "eyebrow": "Próg decyzji",
+        "title": "Kiedy Sentinel działa, a kiedy decyduje właściciel",
+        "intro": "Najważniejsza granica to nie szybkość, tylko uprawnienie do działania. Każda obserwacja trafia do jednego z trzech przypadków.",
+        "cases": [
+          { "key": "record", "tag": "Tylko zapis", "title": "Obserwacja bez działania", "body": "Sentinel dokumentuje punkt i porównuje go przy kolejnej wizycie. Nic nie jest uruchamiane." },
+          { "key": "approval", "tag": "Decyzja właściciela", "title": "Koszt lub zakres wymaga zgody", "body": "Gdy sprawa przekracza uzgodniony zakres lub limit, decyzja wraca do właściciela wraz z rekomendacją." },
+          { "key": "protective", "tag": "Działanie ochronne", "title": "Tylko w granicach uprawnień", "body": "Wyłącznie tam, gdzie pakiet i uzgodniony limit na to pozwalają — aby ograniczyć bezpośrednią szkodę." }
+        ],
+        "servicesNote": "Szczegółowe limity i uprawnienia pakietów są opisane na stronie Usługi.",
+        "servicesCta": "Zobacz limity pakietów"
       },
       "timeline": {
         "eyebrow": "Cały proces",
@@ -2505,7 +2564,7 @@
       "title": "Rozpocznij kwalifikację nieruchomości",
       "body": "W formularzu podaj lokalizację nieruchomości, sposób użytkowania, oczekiwany pakiet oraz dostępność do kontroli wstępnej.",
       "bodyFollowUp": "Sentinel odpowie w ciągu 24–48h, aby potwierdzić kwalifikację geograficzną, wymagane dane i kolejny etap wdrożenia.",
-      "primaryCta": "Rozpocznij kontakt",
+      "primaryCta": "Rozpocznij kwalifikację",
       "secondaryCta": "Zobacz pakiety",
       "subtitle": "Aby rozpocząć wdrożenie:",
       "steps": {
