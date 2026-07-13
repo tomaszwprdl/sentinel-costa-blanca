@@ -4,7 +4,7 @@ This file tracks the next action only. Binding contracts live in `DECISIONS.md`.
 
 ## Current Task
 
-The Owner-approved How It Works operational-proof rebuild is complete in local app commit `aed5e9b` and awaits push/deploy plus deployed smoke QA. Do not reopen its composition before real-use evidence or a regression. Accepted model: schematic example observation → attached controlled route → example report artifact → decision threshold → compact activation rhythm/CTA. The old pinned/500vh journey is retired, including on tablet/mobile. Example material is not real client proof; protected contracts are unchanged.
+The Owner-approved How It Works operational-proof rebuild is pushed and live on `origin/main` at `2f5aa56`; deployed smoke QA passed for PL/EN desktop, PL 768px, and PL/EN 390px. The schematic board, attached route, report artifact, dark decision threshold, and CTA render correctly; overflow is zero, browser/network checks are clean, the old pinned journey is absent, and `noindex,nofollow` is unchanged. No active website implementation task remains. Do not reopen composition or start legacy/orphaned How It Works cleanup without explicit Owner scope.
 
 The page-by-page polish pass and the beta-test clarity bundle (`c0736d0`) are complete. The website is not the active bottleneck.
 
