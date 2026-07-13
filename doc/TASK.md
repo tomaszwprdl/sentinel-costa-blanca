@@ -4,6 +4,8 @@ This file tracks the next action only. Binding contracts live in `DECISIONS.md`.
 
 ## Current Task
 
+The Owner-approved How It Works operational-proof rebuild is complete in local app commit `aed5e9b` and awaits push/deploy plus deployed smoke QA. Do not reopen its composition before real-use evidence or a regression. Accepted model: schematic example observation → attached controlled route → example report artifact → decision threshold → compact activation rhythm/CTA. The old pinned/500vh journey is retired, including on tablet/mobile. Example material is not real client proof; protected contracts are unchanged.
+
 The page-by-page polish pass and the beta-test clarity bundle (`c0736d0`) are complete. The website is not the active bottleneck.
 
 ### Latest completed website task — beta fatigue / property-cue bundle (7145474)

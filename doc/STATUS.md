@@ -4,8 +4,9 @@ Current project state only. This document is descriptive; `DECISIONS.md` is bind
 
 ## Snapshot
 
+- How It Works operational-proof rebuild is Owner-accepted in app commit `aed5e9b` (local `main`, not yet pushed). The page was explicitly reopened because it became the weakest page after Home/Services improvements. Its accepted role is operational proof, not package/estimator/scope selection: a clearly labelled schematic damp-trace observation moves through an attached controlled route, an example report artifact, the decision threshold, and a compact activation-rhythm/CTA close. The old pinned/500vh journey is retired; tablet/mobile use normal flow without scroll hijack. Schematic/report content is example structure, not real client proof. Protected contracts are unchanged.
 - Branch at this documentation update: `main`.
-- `main` and `origin/main` are aligned at `a28b50e` (`docs: correct homepage property cue location`); this is **live in production** and production smoke QA passed. The beta round is closed.
+- Local `main` is ahead of `origin/main` after the Owner-approved How It Works app rebuild; `origin/main` remains at `fa4ea4d` until the approved commits are pushed. The previously deployed beta stack remains live and its production smoke QA passed.
 - App/content commits in that live stack: `7145474` (`refine: address beta feedback (home property cue + services fatigue)`) with its homepage cue placement corrected by `467d192` (`fix: move homepage property cue to hero`) — the property glyph is on the left hero eyebrow, not the usage selector title.
 - Earlier app/content beta-test clarity commit: `c0736d0` (`refine: address beta-test clarity findings`) is also on `origin/main`.
 - Last pushed docs checkpoint before this phase update: `50a292c` (`docs: add Sentinel document-system drafts`).
@@ -101,7 +102,7 @@ Contact is shipped/live as Night Desk controlled intake:
 
 ## Active Task State
 
-No open website implementation task. Website implementation is paused/frozen except for critical fixes. The page-by-page polish pass is closed and the beta-test clarity bundle (`c0736d0`) is accepted.
+The Owner-approved How It Works operational-proof rebuild is committed locally as `aed5e9b`; next website action is push/deploy and deployed smoke QA when the Owner requests it. No further How It Works CSS iteration is open. Website implementation otherwise remains paused/frozen except for critical fixes.
 
 Current active phase:
 
