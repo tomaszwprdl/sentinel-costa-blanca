@@ -4,9 +4,9 @@ This file tracks the next action only. Binding contracts live in `DECISIONS.md`.
 
 ## Current Task
 
-The Owner-approved How It Works visual-assets pass is complete locally at app commit `84112f9` (`refine: add how-it-works inspection matrix`). Pending next: push the app/docs commits, then run deployed smoke QA. Do not reopen composition or start legacy/orphaned How It Works cleanup without explicit Owner scope.
+The Owner-approved How It Works visual-assets pass is pushed and deployed on `origin/main` at `a2b6676` (app commit `84112f9`, docs closure `a2b6676`). Production smoke QA passed. No active website implementation task remains. Do not reopen How It Works visual work unless a real regression appears, and do not start legacy/orphaned cleanup without explicit Owner scope.
 
-Completed locally:
+Completed pass:
 
 - Inspection matrix image added as the main physical-check visual.
 - Compact `Jedna obserwacja` / `One observation` case-thread bridge added.
@@ -16,7 +16,7 @@ Completed locally:
 - No observation photo was added.
 - Protected contracts are unchanged.
 
-The prior How It Works operational-proof rebuild remains pushed and live on `origin/main` at `2f5aa56`; its deployed smoke QA passed for PL/EN desktop, PL 768px, and PL/EN 390px. The new local visual-assets pass is not yet deployed or smoke-verified.
+Deployed verification passed for `/pl/how-it-works` desktop, `/en/how-it-works` desktop, PL 768px, PL 390px, and EN 390px. Live checks confirmed the compact case thread, route-strip image, inspection matrix image, report artifact, decision threshold, and CTA. The old pinned journey is absent; overflow is zero; console errors, failed requests, and 4xx/5xx responses are empty; and `noindex,nofollow` is unchanged. No housekeeping cleanup was performed. Orphaned legacy How It Works code/messages remain optional future housekeeping in a separate scope.
 
 The page-by-page polish pass and the beta-test clarity bundle (`c0736d0`) are complete. The website is not the active bottleneck.
 
