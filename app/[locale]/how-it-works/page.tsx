@@ -4,10 +4,10 @@ import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
 import Section from '@/components/layout/Section';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
-import { type ProcedureJourneyStep } from '@/components/how-it-works/ProcedureJourney';
 import DecisionReadyReport, { type DecisionReadyReportContent } from '@/components/how-it-works/DecisionReadyReport';
 import DecisionThreshold, { type DecisionThresholdCase } from '@/components/how-it-works/DecisionThreshold';
 import ObservationSchematic from '@/components/how-it-works/ObservationSchematic';
+import VisitChecklist, { type VisitCheckCategory } from '@/components/how-it-works/VisitChecklist';
 
 type RecordRow = {
   label: string;
@@ -22,9 +22,10 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
   const tCommon = await getTranslations({ locale, namespace: 'common' });
 
   const heroRows = t.raw('redesign.hero.registerRows') as RecordRow[];
-  const procedureSteps = t.raw('redesign.procedure.steps') as ProcedureJourneyStep[];
+  const caseThreadChips = t.raw('redesign.procedure.schematic.chips') as string[];
   const sampleReport = t.raw('redesign.evidence.sampleReport') as DecisionReadyReportContent;
   const thresholdCases = t.raw('redesign.threshold.cases') as DecisionThresholdCase[];
+  const checkCategories = t.raw('redesign.checks.categories') as VisitCheckCategory[];
 
   return (
     <>
@@ -69,35 +70,25 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
         </Section>
 
         <Section tone="light" id="operational-path" className="section-primitive--compact hiw-interface-section hiw-observation-section">
-          <div className="hiw-observation-intro">
-            <p className="section-label">{t('redesign.procedure.schematic.eyebrow')}</p>
-            <h2 className="h2-system mt-3">{t('redesign.procedure.schematic.heading')}</h2>
-          </div>
           <ObservationSchematic
-            exampleLabel={t('redesign.procedure.schematic.exampleLabel')}
-            title={t('redesign.procedure.schematic.title')}
-            observationLabel={t('redesign.procedure.schematic.observationLabel')}
+            eyebrow={t('redesign.procedure.schematic.eyebrow')}
             observation={t('redesign.evidence.sampleReport.finding.title')}
-            accessLabel={t('redesign.procedure.schematic.accessLabel')}
-            accessValue={t('redesign.procedure.schematic.accessValue')}
-            checkLabel={t('redesign.procedure.schematic.checkLabel')}
-            checkValue={t('redesign.procedure.schematic.checkValue')}
-            evidenceLabel={t('redesign.procedure.schematic.evidenceLabel')}
-            evidenceValue={t('redesign.procedure.schematic.evidenceValue')}
-            note={t('redesign.procedure.schematic.note')}
+            exampleLabel={t('redesign.procedure.schematic.exampleLabel')}
+            routeImageAlt={t('redesign.procedure.schematic.routeImageAlt')}
+            chips={caseThreadChips}
           />
-          <div className="hiw-case-route hiw-case-route--attached" id="case-route">
-            <p className="hiw-case-route__label">{t('redesign.procedure.eyebrow')}</p>
-            <ol className="hiw-case-route__rail" aria-label={t('redesign.procedure.title')}>
-              {procedureSteps.slice(1, 5).map((step, index) => (
-                <li key={step.key} data-threshold={step.key === 'decision'}>
-                  <span>{String(index + 1).padStart(2, '0')}</span>
-                  <strong>{step.title}</strong>
-                  <p>{step.artifactTitle}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
+        </Section>
+
+        <Section tone="light" id="visit-checks" className="section-primitive--compact hiw-interface-section hiw-checks-section">
+          <VisitChecklist
+            eyebrow={t('redesign.checks.eyebrow')}
+            title={t('redesign.checks.title')}
+            intro={t('redesign.checks.intro')}
+            scopeNote={t('redesign.checks.scopeNote')}
+            exampleLabel={t('redesign.checks.exampleLabel')}
+            imageAlt={t('redesign.checks.imageAlt')}
+            categories={checkCategories}
+          />
         </Section>
 
         <Section tone="light" id="report-record" className="section-primitive--compact hiw-interface-section hiw-evidence-section">
