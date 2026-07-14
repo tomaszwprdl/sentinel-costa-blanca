@@ -20,7 +20,7 @@ Raport dotyczy jednej wizyty. Pokazuje wynik wizyty, stan gotowości, odniesieni
 
 | Pole | Wartość |
 |---|---|
-| Status po wizycie | [ ] lokal gotowy<br>[ ] gotowy z uwagami<br>[ ] decyzja właściciela wymagana<br>[ ] dalsza obserwacja<br>[ ] wizyta częściowo wykonana / niewykonana |
+| Status po wizycie | [ ] lokal gotowy<br>[ ] gotowy z uwagami<br>[ ] dalsza obserwacja<br>[ ] wizyta częściowo wykonana |
 | Czy potrzebna jest decyzja właściciela? | [ ] nie — raport informacyjny<br>[ ] tak — dotyczy: `______` |
 | Termin odpowiedzi właściciela, jeśli dotyczy | `______` |
 | Czy wykonano płatne działanie? | [ ] nie<br>[ ] tak — tylko jeśli było wcześniej uzgodnione / w zakresie uprawnienia: `______` |
@@ -135,7 +135,6 @@ Basic / Extended: brak autonomicznego płatnego działania domyślnie; zgoda wł
 
 | Pole | Wartość |
 |---|---|
-| Referencja zestawu dowodów / archiwum | `______` |
 | Wybrane zdjęcia dostarczone | [ ] email z raportem<br>[ ] link z archiwum<br>[ ] nie dotyczy |
 | Pełny zestaw w archiwum | [ ] tak — ref: `______` |
 | Element wrażliwy widoczny; nie sfotografowano | [ ] tak — opis: `______`<br>[ ] nie dotyczy |
