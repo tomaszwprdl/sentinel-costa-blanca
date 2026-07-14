@@ -4,9 +4,10 @@ Current project state only. This document is descriptive; `DECISIONS.md` is bind
 
 ## Snapshot
 
+- How It Works visual-assets pass is complete locally at app commit `84112f9` (`refine: add how-it-works inspection matrix`). It adds an inspection matrix image as the main physical-check visual, a compact `Jedna obserwacja` / `One observation` case-thread bridge, and a route-strip image for access → check → report → decision. The role split is now explicit: case thread = example route / narrative bridge; inspection matrix = physical checks; report artifact = owner record; decision threshold = action vs owner-approval boundary. All case-thread, schematic, and report materials are example structure only, not client proof. No observation photo was added. Protected contracts are unchanged. Pending next: push and deployed smoke QA.
 - How It Works operational-proof rebuild is Owner-accepted, pushed, and live: app commit `aed5e9b`, documented at `2f5aa56` on `origin/main`. Its accepted role is operational proof, not package/estimator/scope selection: a clearly labelled schematic damp-trace observation moves through an attached controlled route, an example report artifact, the decision threshold, and a compact activation-rhythm/CTA close. The old pinned/500vh journey is retired; tablet/mobile use normal flow without scroll hijack. Schematic/report content is example structure, not real client proof. Protected contracts are unchanged.
 - Branch at this documentation update: `main`.
-- `main` and `origin/main` are aligned at `2f5aa56`; the How It Works operational-proof rebuild is live and production-smoke verified.
+- Local `main` is at app commit `84112f9`, one commit ahead of `origin/main`; the new How It Works visual-assets pass is local only. The prior operational-proof rebuild remains live and production-smoke verified at the deployed docs checkpoint `2f5aa56`.
 - App/content commits in that live stack: `7145474` (`refine: address beta feedback (home property cue + services fatigue)`) with its homepage cue placement corrected by `467d192` (`fix: move homepage property cue to hero`) — the property glyph is on the left hero eyebrow, not the usage selector title.
 - Earlier app/content beta-test clarity commit: `c0736d0` (`refine: address beta-test clarity findings`) is also on `origin/main`.
 - Last pushed docs checkpoint before this phase update: `50a292c` (`docs: add Sentinel document-system drafts`).
@@ -102,7 +103,9 @@ Contact is shipped/live as Night Desk controlled intake:
 
 ## Active Task State
 
-No active website implementation task. The Owner-approved How It Works operational-proof rebuild is pushed, deployed, and smoke-verified; no further CSS iteration or housekeeping cleanup is open. Website implementation remains paused/frozen except for critical fixes or explicit Owner scope.
+The Owner-approved How It Works visual-assets pass is complete locally at app commit `84112f9`. No further local implementation is open. Pending next: push the app/docs commits and run deployed smoke QA. Until then, the previously deployed How It Works operational-proof rebuild remains the production state.
+
+The completed local pass adds the inspection matrix as the main physical-check visual, a compact `Jedna obserwacja` / `One observation` case-thread bridge, and a route-strip image for access → check → report → decision. Responsibilities are separated: the case thread provides an example route and narrative bridge; the inspection matrix shows physical checks; the report artifact is the owner record; and the decision threshold marks action versus owner-approval authority. These are example/schematic/report structures only, not client proof. No observation photo was added. Protected contracts remain unchanged.
 
 ### Deployed How It Works Smoke Verification (`2f5aa56`)
 

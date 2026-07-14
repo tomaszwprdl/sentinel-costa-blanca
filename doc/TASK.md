@@ -4,7 +4,19 @@ This file tracks the next action only. Binding contracts live in `DECISIONS.md`.
 
 ## Current Task
 
-The Owner-approved How It Works operational-proof rebuild is pushed and live on `origin/main` at `2f5aa56`; deployed smoke QA passed for PL/EN desktop, PL 768px, and PL/EN 390px. The schematic board, attached route, report artifact, dark decision threshold, and CTA render correctly; overflow is zero, browser/network checks are clean, the old pinned journey is absent, and `noindex,nofollow` is unchanged. No active website implementation task remains. Do not reopen composition or start legacy/orphaned How It Works cleanup without explicit Owner scope.
+The Owner-approved How It Works visual-assets pass is complete locally at app commit `84112f9` (`refine: add how-it-works inspection matrix`). Pending next: push the app/docs commits, then run deployed smoke QA. Do not reopen composition or start legacy/orphaned How It Works cleanup without explicit Owner scope.
+
+Completed locally:
+
+- Inspection matrix image added as the main physical-check visual.
+- Compact `Jedna obserwacja` / `One observation` case-thread bridge added.
+- Route-strip image added for access → check → report → decision.
+- Role split clarified: case thread = example route / narrative bridge; inspection matrix = physical checks; report artifact = owner record; decision threshold = action vs owner-approval boundary.
+- Case-thread, schematic, and report materials remain example structure only, not client proof.
+- No observation photo was added.
+- Protected contracts are unchanged.
+
+The prior How It Works operational-proof rebuild remains pushed and live on `origin/main` at `2f5aa56`; its deployed smoke QA passed for PL/EN desktop, PL 768px, and PL/EN 390px. The new local visual-assets pass is not yet deployed or smoke-verified.
 
 The page-by-page polish pass and the beta-test clarity bundle (`c0736d0`) are complete. The website is not the active bottleneck.
 
