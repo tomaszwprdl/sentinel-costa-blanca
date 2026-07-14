@@ -1,32 +1,26 @@
 ---
-title: Visit Report - Working Draft PL
-status: draft-source
+title: Visit Report - Operational Template PL
+status: owner-approved-operational
 customer_facing: false
 lawyer_review_required: partial
 accountant_review_required: partial
 owner_review_required: true
-version: 0.2-working
-supersedes: DOCX v0.1
-source: REC-01 v0.2 front-layer blind-feedback micro-patch
+version: 1.0-owner-approved-operational
+supersedes: DOCX v0.2
+source: REC-01 v1.0 from Owner manual-review copy after beta/copy review
 ---
-
-<!--
-v0.2 = front-layer micro-patch: top label OSTRZEŻENIE -> WAŻNE, front owner-status block
-(section 0), strengthened owner summary (section 4), plain-language code note, grouped
-photo/privacy note, softer callout labels. Structure below section 0 and doctrine unchanged.
--->
 
 # REC-01 — Raport wizyty Sentinel
 
-Dokument roboczy. Nie jest umową. Nie jest diagnozą techniczną ani certyfikatem stanu nieruchomości. Raportuje widoczne fakty z konkretnej wizyty. Zakres wynika z SCO-01 lub późniejszego pisemnego potwierdzenia.
+ZAKRES RAPORTU: Ten raport nie jest umową, diagnozą techniczną ani certyfikatem stanu nieruchomości. Dokumentuje widoczne fakty z konkretnej wizyty. Zakres wynika z SCO-01 lub późniejszego pisemnego potwierdzenia.
 
-Raport wypełnia się dla jednej wizyty. Podaje widoczne fakty, wynik wizyty, stan gotowości, odniesienia do dowodów i ewentualną potrzebę decyzji właściciela. Nie zmienia zakresu z SCO-01 i nie tworzy uprawnienia do wydatku.
+Raport dotyczy jednej wizyty. Pokazuje wynik wizyty, stan gotowości, odniesienia do dowodów i ewentualną potrzebę decyzji właściciela. Nie zmienia zakresu z SCO-01 i nie tworzy uprawnienia do wydatku.
 
 ## 0. Status po wizycie — dla właściciela
 
 | Pole | Wartość |
 |---|---|
-| Status po wizycie | [ ] lokal w porządku / gotowy<br>[ ] gotowy z uwagami<br>[ ] decyzja właściciela wymagana<br>[ ] dalsza obserwacja<br>[ ] wizyta częściowo wykonana / niewykonana |
+| Status po wizycie | [ ] lokal gotowy<br>[ ] gotowy z uwagami<br>[ ] decyzja właściciela wymagana<br>[ ] dalsza obserwacja<br>[ ] wizyta częściowo wykonana / niewykonana |
 | Czy potrzebna jest decyzja właściciela? | [ ] nie — raport informacyjny<br>[ ] tak — dotyczy: `______` |
 | Termin odpowiedzi właściciela, jeśli dotyczy | `______` |
 | Czy wykonano płatne działanie? | [ ] nie<br>[ ] tak — tylko jeśli było wcześniej uzgodnione / w zakresie uprawnienia: `______` |
@@ -49,7 +43,7 @@ Skróty dokumentów to wewnętrzne referencje Sentinel: SCO-01 oznacza ustalony 
 | Źródło zakresu | [ ] SCO-01<br>[ ] późniejsze pisemne potwierdzenie: `______` |
 | Powiązane dokumenty | [ ] CLN-02 (jeśli sprzątanie / gotowość)<br>[ ] rekord dostępu AKC (jeśli dotyczy)<br>[ ] REC-03 (jeśli wymagana decyzja) |
 | Język raportu | [ ] PL<br>[ ] EN |
-| Status raportu | [ ] roboczy<br>[ ] wysłany<br>[ ] skorygowany<br>[ ] zastąpiony |
+| Status raportu | [ ] przygotowany<br>[ ] wysłany<br>[ ] skorygowany<br>[ ] zastąpiony |
 
 ## 2. Cel wizyty i zakres wykonany
 
@@ -141,7 +135,7 @@ Basic / Extended: brak autonomicznego płatnego działania domyślnie; zgoda wł
 
 | Pole | Wartość |
 |---|---|
-| Referencja zestawu dowodów | `______` |
+| Referencja zestawu dowodów / archiwum | `______` |
 | Wybrane zdjęcia dostarczone | [ ] email z raportem<br>[ ] link z archiwum<br>[ ] nie dotyczy |
 | Pełny zestaw w archiwum | [ ] tak — ref: `______` |
 | Element wrażliwy widoczny; nie sfotografowano | [ ] tak — opis: `______`<br>[ ] nie dotyczy |
