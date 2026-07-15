@@ -72,7 +72,7 @@ Team/local-presence imagery is identity/team proof only. Do not imply client-pro
 
 ### How It Works / Contact
 
-How It Works proof structure stays protected unless separately briefed.
+How It Works is shipped as an operational-proof sequence: compact hero; labelled case thread with route strip; inspection matrix; photographed REC-01-style example report; decision threshold; continuing rhythm/activation notes; and CTA. The report section uses a desktop evidence board and stacked tablet/mobile layout with observation/evidence/next-step cards. Its photographed document is approved example/documentary material only and must keep the not-client-report disclaimer; it is not real client proof or downloadable public paperwork. No generated damp/stain finding photo is approved. Further visual changes or legacy cleanup require separate Owner scope.
 
 Contact is shipped/live as Night Desk controlled intake:
 

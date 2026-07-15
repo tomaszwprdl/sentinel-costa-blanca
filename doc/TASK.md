@@ -4,21 +4,25 @@ This file tracks the next action only. Binding contracts live in `DECISIONS.md`.
 
 ## Current Task
 
-The Owner-approved How It Works report proof rebuild is pushed, deployed, and smoke-verified (app commit `eeae1dd`, deployment docs commit `6ca538f`). The owner report section centers a real photographed REC-01-style report document as example/documentary material, not client proof. Desktop uses compact top copy, a dominant centered report photo, and observation/evidence/next-step cards with restrained leader lines; tablet/mobile use a stacked layout. PL/EN desktop, PL 768px, and PL/EN 390px passed with the report photo and all current modules present, intact photo corners, no old native report mockup, zero overflow, clean console/network checks, and unchanged `noindex,nofollow`. No generated damp/stain photo was added. Protected contracts are unchanged. No active website implementation task remains.
+The Owner-approved How It Works operational-proof page is complete, pushed, deployed, and smoke-verified through `0481852` (latest app commit `eeae1dd`). No active website implementation task remains.
 
-The Owner-approved How It Works visual-assets pass is pushed and deployed on `origin/main` at `a2b6676` (app commit `84112f9`, docs closure `a2b6676`). Production smoke QA passed. No active website implementation task remains. Do not reopen How It Works visual work unless a real regression appears, and do not start legacy/orphaned cleanup without explicit Owner scope.
+Current live structure:
 
-Completed pass:
+- Compact hero.
+- `Jedna obserwacja` / `One observation` case thread with route-strip visual.
+- Inspection matrix as the main physical-check visual.
+- Owner report proof centered on a photographed REC-01-style example document.
+- Decision threshold.
+- Continuing rhythm / activation notes.
+- CTA.
 
-- Inspection matrix image added as the main physical-check visual.
-- Compact `Jedna obserwacja` / `One observation` case-thread bridge added.
-- Route-strip image added for access → check → report → decision.
-- Role split clarified: case thread = example route / narrative bridge; inspection matrix = physical checks; report artifact = owner record; decision threshold = action vs owner-approval boundary.
-- Case-thread, schematic, and report materials remain example structure only, not client proof.
-- No observation photo was added.
-- Protected contracts are unchanged.
+The report section uses compact copy above a dominant centered photo and observation/evidence/next-step cards with restrained leader lines on desktop; tablet/mobile use a stacked layout. It carries an example-document/not-client-report disclaimer. The photographed operational document is source/example material, not real client proof or downloadable public paperwork. No generated damp/stain photo was added.
 
-Deployed verification passed for `/pl/how-it-works` desktop, `/en/how-it-works` desktop, PL 768px, PL 390px, and EN 390px. Live checks confirmed the compact case thread, route-strip image, inspection matrix image, report artifact, decision threshold, and CTA. The old pinned journey is absent; overflow is zero; console errors, failed requests, and 4xx/5xx responses are empty; and `noindex,nofollow` is unchanged. No housekeeping cleanup was performed. Orphaned legacy How It Works code/messages remain optional future housekeeping in a separate scope.
+Deployed verification passed for `/pl/how-it-works` desktop, `/en/how-it-works` desktop, PL 768px, PL 390px, and EN 390px. The report photo and all current modules render, photo corners are intact, the old pinned journey/native report mockup is absent, overflow is zero, console errors/failed requests/4xx/5xx are empty, and `noindex,nofollow` is unchanged.
+
+Protected contracts are unchanged: estimator logic and pricing/ranges; package names/count and Full `min. 3/mies.` / `min. 3/month`; SLA/emergency authority; contact schema/API/payload; routes/slugs/query behavior; and legal/noindex.
+
+Optional orphaned legacy How It Works code/messages/CSS cleanup remains separate and requires explicit Owner authorization.
 
 The page-by-page polish pass and the beta-test clarity bundle (`c0736d0`) are complete. The website is not the active bottleneck.
 

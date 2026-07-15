@@ -25,7 +25,7 @@ Strengths (keep, do not weaken):
 - The Shared Operating Core (§6: scope → access → inspection → record → decision → action) is a genuine reusable spine and matches the live website's "how it works" logic.
 - The Standard Protocol Template (§9) and its rule "a protocol without exclusions is incomplete" are the correct discipline.
 - The Escalation Model (§11) is decision-driven, not urgency-driven, and correctly re-states the protected rule: SLA = response/decision timing, not guaranteed resolution; above-limit needs Owner approval; EUR 300 standard / optional EUR 500 autonomous limit.
-- Report architecture (§10: visit / issue / decision request / completed action) is the right minimum set and is already partially realised in the live `SampleInspectionReport` component.
+- Report architecture (§10: visit / issue / decision request / completed action) is the right minimum set. The live How It Works proof now uses a photographed REC-01-style example document rather than the retired native `SampleInspectionReport` component.
 - Pathway language discipline (§7) already bakes in the "start scope, not wrong package" rule.
 
 ### 1.2 Gaps that remain before real customer documents
@@ -293,11 +293,11 @@ Guest-rotation-only protocols (turnover, rotation timeline) can wait until the *
 
 ## 9. Website Implications
 
-What may appear on **How It Works** (and where the live `SampleInspectionReport` already sits), governed by PROOF-LAYER-INVENTORY.md.
+What may appear on **How It Works**, governed by PROOF-LAYER-INVENTORY.md. The current live report proof is the photographed REC-01-style example document deployed in `eeae1dd`, not the retired native `SampleInspectionReport` / `DecisionReadyReport` mockup.
 
 | Document fragment | Public status | Condition |
 |---|---|---|
-| Report skeleton / architecture (header → scope → observations → decision) | **Allowed as example structure** | Must carry the label. Already realised in `SampleInspectionReport`. |
+| Photographed REC-01-style report document / report architecture | **Allowed as example/documentary structure** | Must carry the example-document/not-client-report label. Source proof only; not client proof or downloadable public paperwork. |
 | Anonymised checklist structure | **Allowed as example structure** | No real property/client data. |
 | Decision-log format ("one observation → one owner decision") | **Allowed as example structure** | Illustrative only. |
 | Access register excerpt | **Allowed as example structure** | Fake property data, clearly marked. |

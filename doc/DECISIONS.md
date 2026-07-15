@@ -185,7 +185,9 @@ Synthetic or AI-like proof-layer images are temporary shot-planning placeholders
 
 They must not claim actual Sentinel work, real client property, real reports, real operator identity, or final operational evidence.
 
-Real proof/report artifacts remain deferred until real redacted reports exist. Do not close this gap with fabricated case studies, sample reports, or synthetic evidence. The polish pass did not solve proof; it left proof honestly deferred.
+The accepted How It Works report-proof section may show the photographed REC-01-style example document now deployed in app commit `eeae1dd`. It is documentary/source material demonstrating report structure, not a real client report, client-property evidence, a case study, or downloadable public paperwork. It must retain an explicit example-document/not-client-report disclaimer.
+
+Real client proof/report artifacts remain deferred until real client records exist, are appropriately redacted, and are approved for public use. Do not close that gap with fabricated case studies, synthetic evidence, or claims of operational history. No generated damp/stain finding photo is part of the accepted How It Works proof layer.
 
 Asset notes:
 

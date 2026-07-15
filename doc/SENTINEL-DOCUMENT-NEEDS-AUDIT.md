@@ -94,10 +94,10 @@ For each route: **explicit promises** · **implied operational obligations** · 
 
 ### 1.3 How It Works — `/pl/how-it-works`
 
-- **Explicit promises:** a defined procedure (access → checklist → photo findings → report → decision);
-  a decision-ready **sample report** (already realised in `SampleInspectionReport` / `DecisionReadyReport`);
-  stated rhythm for visits/reports/access/changes; the EUR 300 / EUR 500 authority limit and owner-approval
-  rule shown on the report artifact.
+- **Explicit promises:** a defined procedure presented through the compact hero, labelled case-thread/route strip,
+  inspection matrix, photographed REC-01-style example report, decision threshold, continuing rhythm/activation
+  notes, and CTA. The report proof demonstrates observation, evidence, and next-step structure; authority boundaries
+  remain in the separate decision-threshold section.
 - **Implied obligations:** every visit yields a record; every finding that exceeds scope/limit yields a
   decision request; protective action stays within the limit; report structure includes "checked / not
   checked" honesty.
@@ -107,7 +107,8 @@ For each route: **explicit promises** · **implied operational obligations** · 
   evidence photos, decision options + indicative cost, authority basis.
 - **Documents required:** Standard visit report; Issue report; Decision request; Completed action summary;
   Decision & action log; the internal visit checklist(s) behind the report; the authority-limit instrument.
-  Public sample fragments must keep the "example structure, not a client report" label (PROOF-LAYER rule).
+  Public sample fragments must keep the example-document/not-client-report label (PROOF-LAYER rule). The current
+  photographed document is documentary/source material, not real client proof or downloadable public paperwork.
 
 ### 1.4 FAQ — `/pl/faq`
 
@@ -435,8 +436,8 @@ they unblock the most downstream work and carry the least legal risk — are:
 2. **Scope Register + Exclusions master.** Internal-approved reference that every contract, SOP, and record
    points to; directly backs the live "if not listed, not included" promise; low legal risk.
 3. **Standard record set — visit report, issue report, decision request, completed-action summary.**
-   Already partially realised on the site (`SampleInspectionReport` / `DecisionReadyReport`); these carry no
-   new legal promise and make the delivered-record promise real.
+   The live site now shows a photographed REC-01-style example document as labelled report-structure proof;
+   the operational record set remains the source system behind that public example.
 4. **Visit checklist — private variant + Package↔checklist depth map.** Internal field forms behind the
    private report; enables a real first (private-use) customer without touching legal wording.
 5. **Intake / qualification SOP.** Backs the Contact page's 24–48h reply + service-area check + fit
