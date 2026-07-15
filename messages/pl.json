@@ -1969,9 +1969,15 @@
       },
       "evidence": {
         "eyebrow": "Co otrzymuje właściciel",
-        "title": "Raport jest miejscem, gdzie obserwacja staje się decyzją właściciela.",
-        "intro": "Ten skrócony podgląd pokazuje, jak obserwacja z wizyty staje się pisemnym rekordem dla właściciela: bez alarmu, bez naprawy bez zgody, z jasnym progiem decyzji.",
-        "exampleLabel": "Przykładowa struktura zapisu. Nie jest to raport klienta.",
+        "title": "Raport zamienia obserwację w decyzję.",
+        "intro": "Właściciel dostaje pisemny zapis z wizyty: obserwację, dowód i następny krok. Bez alarmu, bez naprawy bez zgody, z jasnym progiem decyzji.",
+        "photoAlt": "Przykładowy papierowy raport wizyty Sentinel na ciemnym biurku, obok klucze i pióro.",
+        "cards": [
+          { "key": "observation", "title": "Obserwacja", "body": "Widoczny punkt zapisany w raporcie." },
+          { "key": "evidence", "title": "Dowód", "body": "Notatki, zdjęcia i kontekst kontroli." },
+          { "key": "next", "title": "Następny krok", "body": "Monitorować, zdecydować albo działać w limicie." }
+        ],
+        "exampleLabel": "Przykładowy dokument — nie raport klienta.",
         "sampleReport": {
           "ribbon": "Przykładowy układ raportu",
           "context": ["Planowana kontrola", "Apartament", "Południowa Costa Blanca"],

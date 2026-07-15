@@ -4,7 +4,7 @@ import HeaderClient from '@/components/HeaderClient';
 import Footer from '@/components/Footer';
 import Section from '@/components/layout/Section';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
-import DecisionReadyReport, { type DecisionReadyReportContent } from '@/components/how-it-works/DecisionReadyReport';
+import ReportArtifact, { type ReportMeaningCard } from '@/components/how-it-works/ReportArtifact';
 import DecisionThreshold, { type DecisionThresholdCase } from '@/components/how-it-works/DecisionThreshold';
 import ObservationSchematic from '@/components/how-it-works/ObservationSchematic';
 import VisitChecklist, { type VisitCheckCategory } from '@/components/how-it-works/VisitChecklist';
@@ -23,7 +23,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
 
   const heroRows = t.raw('redesign.hero.registerRows') as RecordRow[];
   const caseThreadChips = t.raw('redesign.procedure.schematic.chips') as string[];
-  const sampleReport = t.raw('redesign.evidence.sampleReport') as DecisionReadyReportContent;
+  const reportCards = t.raw('redesign.evidence.cards') as ReportMeaningCard[];
   const thresholdCases = t.raw('redesign.threshold.cases') as DecisionThresholdCase[];
   const checkCategories = t.raw('redesign.checks.categories') as VisitCheckCategory[];
 
@@ -91,19 +91,15 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
           />
         </Section>
 
-        <Section tone="light" id="report-record" className="section-primitive--compact hiw-interface-section hiw-evidence-section">
-          <div className="hiw-evidence-shell">
-            <div className="hiw-evidence-shell__intro">
-              <p className="section-label">{t('redesign.evidence.eyebrow')}</p>
-              <h2 className="h2-system mt-3">{t('redesign.evidence.title')}</h2>
-              <p className="mt-3 max-w-[62ch] text-body">{t('redesign.evidence.intro')}</p>
-            </div>
-
-            <DecisionReadyReport
-              report={sampleReport}
-              exampleLabel={t('redesign.evidence.exampleLabel')}
-            />
-          </div>
+        <Section tone="authority" id="report-record" className="section-primitive--compact hiw-interface-section hiw-evidence-section">
+          <ReportArtifact
+            eyebrow={t('redesign.evidence.eyebrow')}
+            title={t('redesign.evidence.title')}
+            intro={t('redesign.evidence.intro')}
+            photoAlt={t('redesign.evidence.photoAlt')}
+            cards={reportCards}
+            exampleLabel={t('redesign.evidence.exampleLabel')}
+          />
         </Section>
 
         <Section tone="authority" id="decision-threshold" className="section-primitive--compact hiw-interface-section hiw-threshold-section hiw-final-act">

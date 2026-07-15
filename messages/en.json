@@ -1969,9 +1969,15 @@
       },
       "evidence": {
         "eyebrow": "What the owner receives",
-        "title": "The report is where observation becomes owner decision.",
-        "intro": "This compact preview shows how a visit observation becomes a written owner record: no alarm, no repair without approval, and a clear decision threshold.",
-        "exampleLabel": "Example record structure. This is not a client report.",
+        "title": "The report turns an observation into a decision.",
+        "intro": "The owner gets a written record from the visit: the observation, the evidence, and the next step. No alarm, no repair without approval, and a clear decision threshold.",
+        "photoAlt": "Example paper Sentinel visit report on a dark desk, with keys and a pen beside it.",
+        "cards": [
+          { "key": "observation", "title": "Observation", "body": "The visible point is recorded." },
+          { "key": "evidence", "title": "Evidence", "body": "Notes, photos, and visit context." },
+          { "key": "next", "title": "Next step", "body": "Monitor, decide, or act within the agreed limit." }
+        ],
+        "exampleLabel": "Example document — not a client report.",
         "sampleReport": {
           "ribbon": "Sample report layout",
           "context": ["Scheduled inspection", "Apartment", "Southern Costa Blanca"],
