@@ -4,6 +4,8 @@ This file tracks the next action only. Binding contracts live in `DECISIONS.md`.
 
 ## Current Task
 
+Deploy and smoke-verify the Owner-approved How It Works report proof rebuild committed at `eeae1dd`. The owner report section now centers a real photographed REC-01-style report document as example/documentary material, not client proof. Desktop uses compact top copy, a dominant centered report photo, and observation/evidence/next-step cards with restrained leader lines; tablet/mobile use a stacked layout. No generated damp/stain photo was added. Protected contracts are unchanged. Pending: push and deployed smoke QA for PL/EN desktop, PL 768px, and PL/EN 390px.
+
 The Owner-approved How It Works visual-assets pass is pushed and deployed on `origin/main` at `a2b6676` (app commit `84112f9`, docs closure `a2b6676`). Production smoke QA passed. No active website implementation task remains. Do not reopen How It Works visual work unless a real regression appears, and do not start legacy/orphaned cleanup without explicit Owner scope.
 
 Completed pass:
