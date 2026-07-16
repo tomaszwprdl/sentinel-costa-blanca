@@ -41,8 +41,7 @@ Accepted proof/structure:
 
 - Ruled Scope Register boundary.
 - Estimator affordance.
-- Operational Layer output record.
-- About category clarity split.
+- Operational Layer output record as proof of owner-facing outputs, not a full process explanation.
 
 Protected:
 
@@ -58,11 +57,11 @@ Keep:
 
 - Command Desk / Answer Register direction.
 - Grouped answer register.
-- Diagnostic assumption board.
+- Direct questions, definitions, edge cases, and unique operational boundary answers, including q20.
 - Final routing decision panel.
 - JourneyNav cleanup.
 
-Do not change FAQ answer meanings without explicit Owner approval.
+The former assumptions board is removed. Do not restore it or change FAQ answer meanings without explicit Owner approval. About owns the full category-boundary treatment.
 
 ### About
 

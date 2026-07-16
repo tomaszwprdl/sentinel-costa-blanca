@@ -122,6 +122,19 @@ Rules:
 
 ---
 
+# 4B. Whole-Site Coherence Terms (Binding)
+
+- `property use` is the general classification term. Preserve the approved public pathway labels and protected pathway slugs.
+- `qualification` means the pre-service fit/scope review. `inquiry` means the form or message submitted to Sentinel; they are not synonyms.
+- The canonical primary route-to-Contact CTA is `Start qualification`. Accepted special-purpose CTA exceptions remain valid for genuinely different actions.
+- Exact artifact terms are `visit report`, `operational record`, `decision request`, and `action summary`.
+- When several artifacts are meant, use ordinary collective language such as `documentation` or `documents and records`. Do not turn `owner record` into a general branded category.
+- Use the full term when introducing or controlling meaning. After context is established, `Selected property use`, `Change selection`, and `After selection` are approved contextual labels.
+- Avoid mechanical repetition of `agreed process`, `operating scope`, and similar framework nouns. Prefer concrete English such as check scope, access rules, visit rhythm, response timing, next steps, or action limits when those are the facts meant.
+- Natural English must not imply that Sentinel owns the whole situation, accepts unlimited responsibility, or changes package, authority, SLA, or liability meaning.
+
+---
+
 # 5. Prohibited English Drift
 
 The following semantic drifts are prohibited:

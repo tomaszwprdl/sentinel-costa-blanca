@@ -109,6 +109,37 @@ Contact page visual model is locked:
 
 Do not revert Contact to beige paperwork. Do not add casual contact imagery, call-center visuals, beach/lifestyle imagery, testimonials, or sales urgency.
 
+## Whole-Site Information and Copy Coherence
+
+The Owner-accepted whole-site coherence model is binding. Do not restore removed repetition or blur page ownership without explicit Owner approval.
+
+Page ownership:
+
+- Home: category recognition, local/operator cue, property-use routing, and the short shared core.
+- Pathway states: pathway-specific application, rhythm, risk, and next step for private, guest, and mixed/undetermined property use.
+- Services: commercial specification — packages, operating scope, estimator, exclusions, commercial conditions, and qualification handoff.
+- How It Works: operational demonstration — sequence, physical checks, records, evidence, decision thresholds, and post-activation rhythm.
+- FAQ: direct questions, definitions, objections, edge cases, limits, and routing.
+- About: company purpose, local legitimacy, team, and the full category boundary.
+- Contact: structured qualification intake, inquiry submission, direct contact, and post-submission expectations.
+
+Copy contracts:
+
+- Package configuration is not liability. As defined under `SLA And Emergency Authority`, packages control visit rhythm, access scope, response timing, and autonomous-action limits; liability remains a separate legal layer.
+- Canonical PL terms: `sposób używania nieruchomości`, `pakiet`, `zakres działania`, `raport po wizycie`, `zapis operacyjny`, `prośba o decyzję`, `podsumowanie działania`, `kwalifikacja`, `zapytanie`.
+- Canonical EN terms: `property use`, `package`, `operating scope`, `visit report`, `operational record`, `decision request`, `action summary`, `qualification`, `inquiry`.
+- Qualification is the pre-service fit/scope review. Inquiry is the submitted form or message.
+- The canonical route-to-Contact CTA is `Rozpocznij kwalifikację` / `Start qualification`. Accepted special-purpose CTA exceptions remain valid.
+- Use full canonical terminology when a concept is introduced or controls meaning. After context is established, concise interface labels such as `Wybrany wariant`, `Zmień wariant`, `Selected property use`, `Change selection`, and `After selection` are allowed.
+- Exact artifact names above remain distinct. When several artifact types are grouped, use ordinary category language such as `dokumentacja`, `dokumenty i zapisy`, `documentation`, or `documents and records`; do not invent a branded umbrella term.
+- Prefer concrete variables such as check scope, access rules, visit rhythm, response timing, and action limits when repeating `operating scope` would add no clarity. Natural variation must not restore whole-situation responsibility or other liability drift.
+
+Ownership boundaries:
+
+- FAQ must not restore the removed `Częste błędne założenia` / `Common wrong assumptions` board. About owns the full `Sentinel jest / Sentinel nie jest` category treatment; FAQ retains unique operational boundary answers, including q20.
+- Services must not retell the full operating process. Its operational-record layer is output proof and remains collapsed with the execution-only layer. How It Works owns the full sequence and process demonstration. The Services secondary link `Zobacz, jak działa proces` / `See how the process works` is accepted.
+- The accepted Services architecture remains: opening classification → package ladder → estimator → after-estimator confirmation → scope/boundary comparison → collapsed operational-record layer → collapsed execution-only layer → final qualification panel.
+
 ## Services Page
 
 Services is shipped and launch-grade enough to stop active polishing.
@@ -118,12 +149,12 @@ Accepted and protected unless a confirmed regression or explicit Owner scope app
 - Services boundary as Ruled Scope Register.
 - Estimator affordance described above.
 - Operational Layer output record.
-- About category clarity split.
+- Commercial specification ownership defined under `Whole-Site Information And Copy Coherence`.
 - Existing execution-only checkpoint state.
 
 Do not reopen Services polish because of visual preference alone.
 
-Post-estimator fatigue pattern (accepted, `7145474`): after the estimator the page leads with a compact owner-facing confirmation section (starting scope, usage model, what to bring, plus a direct CTA), and the dense operational record / execution-only detail is collapsed behind a desktop disclosure the same way it already collapses on mobile. This is an accepted direction, not a hard freeze — the exact copy, card count, and disclosure styling may still be tuned. Do not, however, silently re-expand the collapsed operational/execution-only blocks to always-open on desktop or drop the after-estimator section; that would reintroduce the fatigue this addressed. Collapsing preserves the boundary/legal content — protected boundaries still apply.
+Post-estimator fatigue pattern (accepted, `7145474`): after the estimator the page leads with a compact owner-facing confirmation section (starting scope, property use, what to bring, plus a direct CTA), and the dense operational record / execution-only detail is collapsed behind a desktop disclosure the same way it already collapses on mobile. The coherence audit accepted this copy and architecture; further tuning requires the reopening criteria above. Do not silently re-expand the collapsed blocks or drop the after-estimator section. Collapsing preserves the boundary/legal content.
 
 ## About Page
 
@@ -146,7 +177,7 @@ Accepted and protected unless a confirmed regression or explicit Owner scope app
 
 - Fast objection resolution.
 - Category-left / accordion-right mechanics.
-- Diagnostic assumption board.
+- Direct questions, definitions, edge cases, limits, and routing without a separate assumptions board.
 - Final routing decision panel.
 
 Protected:

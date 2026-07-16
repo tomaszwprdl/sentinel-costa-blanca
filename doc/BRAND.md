@@ -65,6 +65,15 @@ Clarity and process matter more than charm — but clarity can be delivered in c
 
 Copy may be clearer, warmer, and more human without becoming promotional or concierge-like. See `COPY-DISCIPLINE-CODEX.md`.
 
+### One voice, distinct pages
+
+The whole site now speaks with one institutional but human voice. Authority comes from precise facts, boundaries, and decisions; it does not require repeating the complete doctrine on every page.
+
+- Page distinction is expected. Home routes, Services specifies, How It Works demonstrates, FAQ resolves, About establishes legitimacy and category boundaries, and Contact qualifies.
+- Once structural meaning is established, prefer concrete verbs and variables over repeated framework nouns such as process, operating scope, or responsibility.
+- Do not over-systematise ordinary owner-facing language. Natural variation is valid when package, authority, liability, and artifact meanings remain intact.
+- Do not replace removed repetition with decorative marketing copy, emotional reassurance, or new abstract brand language.
+
 ---
 
 ## 5. Visual posture (website)

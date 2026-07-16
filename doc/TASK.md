@@ -26,7 +26,13 @@ Optional orphaned legacy How It Works code/messages/CSS cleanup remains separate
 
 The page-by-page polish pass and the beta-test clarity bundle (`c0736d0`) are complete. The website is not the active bottleneck.
 
-### Latest completed website task — beta fatigue / property-cue bundle (7145474)
+### Latest completed website work — whole-site coherence audit
+
+The Owner accepted Patches 1–4 as uncommitted working-tree app/content work. The bundle separates package configuration from liability; locks canonical terminology and the qualification/inquiry distinction; removes the FAQ assumptions board while preserving q20's unique boundary meaning; gives About the full category boundary; separates Services commercial specification from How It Works operational demonstration; and naturalises repeated framework language without weakening authority or exact artifact terms.
+
+No further website copy or structural work is active. Reopening requires a confirmed regression, real user evidence, a legal/commercial correction, or explicit Owner scope. The accepted website diff must remain untouched until the Owner reviews the app/content and documentation commit scopes.
+
+### Earlier completed website task — beta fatigue / property-cue bundle (7145474)
 
 Owner reopened Home and Services under explicit scope (later beta-test finding) and accepted the result. App commit `7145474` (homepage cue placement corrected by `467d192`) is live on `origin/main` in the stack at `a28b50e`; production smoke QA passed and the beta round is closed. Complete:
 

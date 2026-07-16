@@ -212,6 +212,21 @@ When touched or nearby, verify:
 - Contact schema, field names, validation, payload, and API route unchanged.
 - Legal/noindex unchanged unless launch brief says otherwise.
 
+## Coherence Regression QA
+
+For future whole-site copy or information-architecture work, confirm:
+
+- Package configuration is not presented as liability or whole-situation responsibility.
+- Canonical terminology and meaning remain aligned in PL and EN.
+- The primary route-to-Contact CTA remains `Rozpocznij kwalifikację` / `Start qualification`; accepted special-purpose actions remain action-specific.
+- Qualification remains the pre-service fit/scope review; Contact submission remains an inquiry.
+- The removed FAQ assumptions board is not restored. FAQ retains direct answers and unique rules; About retains the full category boundary.
+- Services remains the commercial specification and keeps its accepted section architecture. How It Works remains the operational demonstration.
+- Services does not gain a duplicate full-process explanation; its operational-record layer remains output proof.
+- `visit report`, `operational record`, `decision request`, and `action summary` remain distinguishable in both languages.
+- Collective artifact language stays ordinary (`documentation`, `documents and records`) rather than becoming a new branded abstraction.
+- Contextual shorthand appears only after the full meaning has been established.
+
 ## Artifacts
 
 Do not stage screenshots, `output/`, QA artifacts, temp scripts, `.env`, zips, or generated folders.

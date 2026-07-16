@@ -69,6 +69,32 @@ Prefer:
 
 Do not soften into concierge, lifestyle, rental-management, or vague reassurance language.
 
+## 2.2 Canonical terminology and contextual naturalness
+
+Canonical public terms:
+
+| Meaning | PL | EN |
+| --- | --- | --- |
+| Property-use classification | `sposób używania nieruchomości` | `property use` |
+| Package | `pakiet` | `package` |
+| Operating scope | `zakres działania` | `operating scope` |
+| Visit output | `raport po wizycie` | `visit report` |
+| Continuing history | `zapis operacyjny` | `operational record` |
+| Approval artifact | `prośba o decyzję` | `decision request` |
+| Completed-action artifact | `podsumowanie działania` | `action summary` |
+| Pre-service review | `kwalifikacja` | `qualification` |
+| Submitted form/message | `zapytanie` | `inquiry` |
+
+Rules:
+
+- Use the full canonical term when a concept is introduced, controls a choice, or would otherwise be ambiguous.
+- After context is established, concise interface labels are allowed: `Wybrany wariant`, `Zmień wariant`, `Po wyborze wariantu`, `Selected property use`, `Change selection`, `After selection`.
+- Qualification is the pre-service fit/scope review. Inquiry is the form or message submitted to Sentinel. Do not use them as synonyms.
+- Preserve exact artifact names when the specific output matters. When several types are grouped, use ordinary collective language: `dokumentacja`, `dokumenty i zapisy`, `documentation`, `documents and records`.
+- Keep `zapis operacyjny` / `operational record` for the continuing operational history, not as an umbrella for every owner-facing document.
+- Use `zakres działania` / `operating scope` where the whole concept matters. Once established, prefer the concrete variable: check scope, access rules, visit rhythm, response timing, or action limits.
+- Natural variation is encouraged when it removes mechanical repetition. It must not imply that Sentinel owns the whole situation, assumes unlimited responsibility, or changes package, authority, SLA, or liability meaning.
+
 ---
 
 # 3. Sentence Architecture Rules
@@ -374,6 +400,13 @@ CTAs must be:
 - Neutral
 - Structural
 - Action-specific
+
+The canonical primary route-to-Contact CTA is:
+
+- PL: `Rozpocznij kwalifikację`
+- EN: `Start qualification`
+
+Do not diversify this CTA merely to avoid repetition. Accepted special-purpose exceptions remain valid when the action is genuinely different, such as comparing packages, opening the estimator, changing a selection, or submitting the Contact form as an inquiry.
 
 Allowed:
 

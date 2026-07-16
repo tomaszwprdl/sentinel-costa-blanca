@@ -17,6 +17,7 @@
 - Contact visual work must not alter schema, field names, validation, payload, or `app/api/contact/route.ts`.
 - Estimator visual work must not alter pricing/range logic or contact handoff payload.
 - User-facing copy must update PL and EN together.
+- Whole-site copy or structure changes must be checked against the page-ownership model and canonical terminology in `doc/DECISIONS.md` before implementation.
 
 ## Validation
 
