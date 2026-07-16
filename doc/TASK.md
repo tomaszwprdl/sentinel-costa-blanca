@@ -4,7 +4,36 @@ This file tracks the next action only. Binding contracts live in `DECISIONS.md`.
 
 ## Current Task
 
-The Owner-approved How It Works operational-proof page is complete, pushed, deployed, and smoke-verified through `0481852` (latest app commit `eeae1dd`). No active website implementation task remains.
+The website customer-journey phase is **closed**. Patch 5 (`db2e5c2`), Patch 6A (`60ebfac`), and Patch 6B (`457a33d`) are deployed and production-verified, and the customer-journey audit verdict is PASS VERIFIED. No active website implementation task remains. See `doc/STATUS.md`.
+
+The current active workstream is unchanged: **Sentinel operational-document production, with the connected beta-read packet as the primary business-document workstream** (see "Immediate next step" below).
+
+### Next website readiness audit — Accessibility audit
+
+This is the next website readiness **audit**, not an implementation task. It is not started, and it is not a launch blocker in itself. Do not begin remediation work from it without explicit Owner scope.
+
+Scope:
+
+- Keyboard-only navigation.
+- Focus visibility and order.
+- Landmarks and headings.
+- Form labels and errors.
+- Accordion semantics.
+- Screen-reader announcements.
+- Colour contrast.
+- Reduced motion.
+- Alt text.
+- Touch-target size.
+- Skip navigation.
+- Automated axe results plus manual verification.
+
+Known relevant context: Patch 6A added `role="alert"`, `aria-invalid`, and `aria-describedby` to Contact form errors, so Contact error semantics are a starting point rather than an open gap. FAQ and Services use accordion/disclosure and tab patterns that the audit should exercise directly.
+
+Launch blockers are not complete. The Accessibility audit does not close any of the gates listed under "Remaining Launch Gates" in `doc/STATUS.md`.
+
+### Earlier completed website task — How It Works operational proof
+
+The Owner-approved How It Works operational-proof page is complete, pushed, deployed, and smoke-verified through `0481852` (latest app commit `eeae1dd`).
 
 Current live structure:
 
@@ -26,11 +55,11 @@ Optional orphaned legacy How It Works code/messages/CSS cleanup remains separate
 
 The page-by-page polish pass and the beta-test clarity bundle (`c0736d0`) are complete. The website is not the active bottleneck.
 
-### Latest completed website work — whole-site coherence audit
+### Earlier completed website work — whole-site coherence audit
 
-The Owner accepted Patches 1–4 as uncommitted working-tree app/content work. The bundle separates package configuration from liability; locks canonical terminology and the qualification/inquiry distinction; removes the FAQ assumptions board while preserving q20's unique boundary meaning; gives About the full category boundary; separates Services commercial specification from How It Works operational demonstration; and naturalises repeated framework language without weakening authority or exact artifact terms.
+The Owner accepted Patches 1–4; they are now committed, pushed, and deployed. The bundle separates package configuration from liability; locks canonical terminology and the qualification/inquiry distinction; removes the FAQ assumptions board while preserving q20's unique boundary meaning; gives About the full category boundary; separates Services commercial specification from How It Works operational demonstration; and naturalises repeated framework language without weakening authority or exact artifact terms.
 
-No further website copy or structural work is active. Reopening requires a confirmed regression, real user evidence, a legal/commercial correction, or explicit Owner scope. The accepted website diff must remain untouched until the Owner reviews the app/content and documentation commit scopes.
+No further website copy or structural work is active. Reopening requires a confirmed regression, real user evidence, a legal/commercial correction, or explicit Owner scope. Patch 6 was such a legal/commercial correction and is now closed.
 
 ### Earlier completed website task — beta fatigue / property-cue bundle (7145474)
 

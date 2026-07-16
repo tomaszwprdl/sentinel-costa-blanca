@@ -6,7 +6,8 @@ The public site is bilingual (`/pl`, `/en`) and is currently pre-launch with `no
 
 ## Current State
 
-- The page-by-page polish pass and Owner-accepted whole-site coherence audit are complete. The coherence bundle is currently uncommitted working-tree work; website implementation is frozen while Sentinel document production remains the active phase.
+- The page-by-page polish pass, the Owner-accepted whole-site coherence audit, and Patches 5 and 6 are complete, deployed, and production-verified. Website implementation is frozen while Sentinel document production remains the active phase.
+- The website customer-journey phase is closed (PASS VERIFIED). The next website readiness audit is the Accessibility audit. Launch blockers are not complete; see "Remaining Launch Gates" in `doc/STATUS.md`.
 - Home, Pathway states, Services, How It Works, FAQ, About, and Contact pass the current website gate. Reopening requires a confirmed regression, real user evidence, a legal/commercial correction, or explicit Owner scope.
 - Mobile may use a buyer-oriented IA distinct from the desktop dossier layout where usability requires it (see `doc/DECISIONS.md`).
 - Services, estimator, FAQ, About, and Contact are shipped/live and protected unless the Owner explicitly reopens them.

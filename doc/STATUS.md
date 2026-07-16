@@ -5,8 +5,9 @@ Current project state only. This document is descriptive; `DECISIONS.md` is bind
 ## Snapshot
 
 - How It Works is pushed, deployed, and smoke-verified in its current operational-proof form on `origin/main` (latest app commit `eeae1dd`, deployment docs `6ca538f`, smoke closure `0481852`). The live sequence is: compact hero; `Jedna obserwacja` / `One observation` case thread with route-strip visual; inspection matrix as the main physical-check visual; owner report proof; decision threshold; continuing rhythm/activation notes; and CTA. The `Co otrzymuje właściciel` / owner report section centers a photographed REC-01-style example document. Desktop uses compact copy above a dominant centered photo with observation/evidence/next-step cards and restrained leader lines; tablet/mobile use a stacked layout. The example-document/not-client-report disclaimer remains explicit: this is documentary/source material, not real client proof or downloadable public paperwork. No generated damp/stain photo was added. Production smoke passed for PL/EN desktop, PL 768px, and PL/EN 390px with intact photo corners, all current modules present, the old native report mockup absent, zero overflow, clean console/network checks, and unchanged `noindex,nofollow`. Protected contracts are unchanged.
-- Branch at this documentation update: `main`.
-- The Owner-accepted whole-site coherence bundle (Patches 1–4) is complete in the current working tree. It is not yet committed or pushed; do not describe it as deployed until that happens.
+- Branch at this documentation update: `main`. HEAD and `origin/main` are both `457a33deeee0b070a69d9255630ca2189215e799`; the tracked tree is clean.
+- The Owner-accepted whole-site coherence bundle (Patches 1–4) is committed, pushed, and deployed. It is no longer uncommitted working-tree work.
+- Patch 5 and Patch 6 are deployed and production-verified. The website customer-journey phase is closed. See "Patch 5 / Patch 6 — Deployed" and "Customer-Journey Audit — Closed".
 - App/content commits in that live stack: `7145474` (`refine: address beta feedback (home property cue + services fatigue)`) with its homepage cue placement corrected by `467d192` (`fix: move homepage property cue to hero`) — the property glyph is on the left hero eyebrow, not the usage selector title.
 - Earlier app/content beta-test clarity commit: `c0736d0` (`refine: address beta-test clarity findings`) is also on `origin/main`.
 - Last pushed docs checkpoint before this phase update: `50a292c` (`docs: add Sentinel document-system drafts`).
@@ -18,9 +19,76 @@ Current project state only. This document is descriptive; `DECISIONS.md` is bind
 
 Always verify current branch, HEAD, and status with git preflight.
 
+## Patch 5 / Patch 6 — Deployed
+
+All three commits are on `origin/main` and verified in production. None of them changed protected contracts: package names/count, visit cadence, response timing, Full `min. 3/mies.` / `min. 3/month`, the EUR 300 / EUR 500 values, estimator logic/matrix/pricing/ranges/payload, contact schema/field names/required status/payload/API route, routes/slugs/pathway query behavior, and legal/`noindex` are all unchanged.
+
+### Patch 5 — `db2e5c2f12339a5fc10994c0ae3c46ee48930104`
+
+- `refine: improve human language and legibility`.
+- Human-language and meaningful-text legibility pass.
+- Mounted meaningful secondary text is a minimum of 14px.
+
+### Patch 6A — `60ebfaca40524e1311602c41ebbc5c3e8b409121`
+
+- `fix: clarify authority and form errors`.
+- Basic / Extended paid-action approval clarified: both now read `Każdy wydatek wymaga zgody` / `Every paid action needs approval` on Services.
+- Full authority preserved: `Uzgodniony limit` / `Agreed limit`, with EUR 300 standard and EUR 500 optional unchanged in FAQ q11 and Regulamin/Terms section 5.
+- FAQ contradiction closed. `faq.sections.emergencies.questions.q10.answer` previously stated an unscoped EUR 300 securing authority, which implied a Basic / Extended euro amount and contradicted the locked Option A doctrine in `DECISIONS.md`. It now scopes EUR 300 to Full and states that Basic and Extended require owner approval before any paid action.
+- No Basic / Extended euro amount is stated or implied anywhere mounted. No `0 €` was introduced.
+- How It Works decision-threshold link now promises package authority rules rather than numerical limits (`Zobacz zasady działania pakietów` / `See package authority rules`), because Services publishes no euro figures.
+- Human PL/EN Contact validation errors. Raw Zod defaults previously leaked internal enum values (for example `Invalid option: expected one of "private-use-only"|...`) to users in both locales. Explicit messages now cover property use, package, property type, contact method, and preferred language, plus a distinct invalid-email-format message separate from required-empty.
+- Accessible error association added: each error renders with `role="alert"` and a stable id, and its control carries `aria-invalid` and `aria-describedby` while the error is active.
+
+### Patch 6B — `457a33deeee0b070a69d9255630ca2189215e799`
+
+- `fix: handle sitemap and unknown root routes`.
+- `app/sitemap.ts` added, publishing 16 canonical PL/EN URLs (8 public routes per locale: locale home, services, how-it-works, faq, about, contact, terms, privacy). Enumerated from the real route tree, not assumed. Sitemap contents are deliberately not gated on `PRE_LIVE_REVIEW`.
+- Unknown root-level paths now return 404 rather than 500. `export const dynamicParams = false;` in `app/[locale]/layout.tsx` means locale params outside `generateStaticParams` 404 before any message import runs.
+- Root cause recorded for future reference: `app/[locale]` is a root-level dynamic segment, so any unknown single-segment path was matched as a locale and interpolated into `await import('@/messages/<segment>.json')`, throwing `MODULE_NOT_FOUND` in `generateMetadata` and the next-intl request config before the layout's `notFound()` guard could run.
+- PL/EN routing, pathway queries, locale static generation, `app/robots.ts`, `proxy.ts`, and `netlify.toml` are unchanged.
+
+## Customer-Journey Audit — Closed
+
+Verdict: **PASS VERIFIED**.
+
+- Verified: property-use pathways (all three, PL and EN), locale continuity, in-page anchors, mobile behaviour, Contact rendering, and Contact validation.
+- Production checks: all 17 public routes and `/robots.txt` return 200; `/` redirects to `/pl`; unknown root paths and unknown PL/EN subpaths return 404; `/sitemap.xml` returns valid XML with all 16 listed URLs returning 200; no console errors; no failed requests; no overflow; no unintended POST submissions during validation checks.
+- No further customer-journey patch is active. The website customer-journey phase is closed.
+
+## Indexing State
+
+- `robots.txt` returns `Disallow: /`.
+- Page metadata returns `noindex,nofollow`.
+- The `X-Robots-Tag` production response header is currently absent despite being configured in `netlify.toml`. This predates Patch 6 and was not caused by it.
+- Indexing remains blocked through `robots.txt` and page metadata.
+- The header issue is assigned to the technical launch audit, not to current implementation.
+- `noindex,nofollow` has not been removed. Removing it remains an Owner decision.
+
+## Deferred Technical Notes
+
+Recorded for later triage. These are **not active tasks** and require explicit Owner scope before any work:
+
+- Handled `NoFallbackError` log noise on root-level 404s. Status codes are correct; this is log output only, and it replaced the previous `MODULE_NOT_FOUND` failures.
+- Unreachable branded locale not-found component (`app/[locale]/not-found.tsx`). All 404s currently render Next's default page.
+- Orphaned doctrine-conflicting message keys. Several unmounted keys under `services.comparison.*`, `services.green.*`, `services.orange.*`, `services.red.*`, `howItWorks.step2.redPackageLimits.*`, and `about.*` still imply Basic / Extended spend authority or contain PL/EN divergence. They are not rendered on any route. Cleanup requires separate Owner authorization.
+- Redundant root redirect (`app/page.tsx` duplicating the proxy's `/` handling).
+
+## Remaining Launch Gates
+
+Launch blockers are **not** complete. All of the following remain open:
+
+- Legal / entity / GDPR closure.
+- Trust and Proof factual closure.
+- Domain email and real Contact delivery test.
+- Final pricing confirmation.
+- Operational document readiness.
+- Technical launch audit (includes the absent `X-Robots-Tag` header).
+- Owner indexing decision.
+
 ## Whole-Site Coherence Audit — Complete
 
-The Owner accepted the complete coherence bundle as uncommitted working-tree app/content work. It affects Home/pathway copy, Services, How It Works, FAQ, About, Contact terminology, and shared PL/EN messages without changing protected service, estimator, contact, routing, legal, or proof contracts.
+The Owner accepted the complete coherence bundle. It is now committed, pushed, and deployed. It affects Home/pathway copy, Services, How It Works, FAQ, About, Contact terminology, and shared PL/EN messages without changing protected service, estimator, contact, routing, legal, or proof contracts.
 
 - Patch 1 separated package configuration from liability. Packages define visit rhythm, access scope, response timing, and autonomous-action limits; About no longer implies responsibility for the whole property or situation.
 - Patch 2 established canonical PL/EN public terminology, the `Rozpocznij kwalifikację` / `Start qualification` route-to-Contact CTA, and the distinction between qualification (pre-service fit/scope review) and inquiry (submitted form or message).
@@ -116,7 +184,11 @@ Contact is shipped/live as Night Desk controlled intake:
 
 ## Active Task State
 
-The Owner-approved How It Works operational-proof page is complete, deployed, and smoke-verified through `0481852`. No active website implementation task remains. Do not reopen it without a real regression or explicit Owner scope.
+The website customer-journey phase is closed after Patch 5 and Patch 6 (PASS VERIFIED). No active website implementation task remains. Do not reopen a closed page without a real regression or explicit Owner scope.
+
+The next website readiness audit is the **Accessibility audit**. It is an audit, not an implementation task; see `doc/TASK.md` for its scope. The operational-document beta packet remains the primary business-document workstream.
+
+The Owner-approved How It Works operational-proof page is complete, deployed, and smoke-verified through `0481852`.
 
 The current page uses a compact hero, the case-thread/route strip, inspection matrix, photographed REC-01-style example report, decision threshold, continuing rhythm/activation notes, and CTA. Role boundaries remain clear: case thread = example route; inspection matrix = physical checks; report proof = owner record structure; decision threshold = action versus owner-approval boundary. The photographed document is source/example material only, not client proof and not downloadable public paperwork. No generated damp/stain photo was added. Protected contracts remain unchanged.
 
@@ -145,10 +217,16 @@ Current active phase:
 
 ## Not Done
 
-- Production contact email end-to-end confirmation.
+See "Remaining Launch Gates" for the authoritative list. Launch blockers are not complete.
+
+- Legal/entity/GDPR closure.
+- Trust and Proof factual closure.
+- Domain email and real Contact delivery test (production contact email end-to-end confirmation).
 - Final commercial pricing/range confirmation.
-- Legal/entity/GDPR review.
+- Operational document readiness.
+- Technical launch audit, including the absent `X-Robots-Tag` production header.
 - Owner decision to remove `noindex,nofollow`.
+- Accessibility audit (next website readiness audit; see `doc/TASK.md`).
 - Real-photo replacement plan for accepted synthetic placeholders.
 
 ## Protected During Current Work
