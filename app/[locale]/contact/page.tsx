@@ -65,20 +65,40 @@ function isBedroomsKey(value: string): value is BedroomsKey {
 
 const createContactFormSchema = (t: (key: string) => string) => z.object({
   fullName: z.string().min(2, t('form.requiredField')),
-  email: z.string().email(t('form.requiredField')),
+  email: z.string().min(1, t('form.requiredField')).email(t('form.errors.invalidEmail')),
   phone: z.string().min(5, t('form.requiredField')),
-  preferredContactMethod: z.enum(['Email', 'WhatsApp', 'Phone']),
-  preferredLanguage: z.enum(['English', 'Polish']),
+  preferredContactMethod: z.enum(['Email', 'WhatsApp', 'Phone'], {
+    error: t('form.errors.preferredContactMethod'),
+  }),
+  preferredLanguage: z.enum(['English', 'Polish'], {
+    error: t('form.errors.preferredLanguage'),
+  }),
   propertyLocation: z.string().min(3, t('form.requiredField')),
-  propertyType: z.enum(['Apartment', 'House', 'Villa', 'Other']),
-  currentStatus: z.enum(['private-use-only', 'regular-guest-stays', 'mixed-not-defined']),
-  expectedPackage: z.enum(['Basic', 'Extended', 'Full', 'Not sure - need consultation']),
+  propertyType: z.enum(['Apartment', 'House', 'Villa', 'Other'], {
+    error: t('form.errors.propertyType'),
+  }),
+  currentStatus: z.enum(['private-use-only', 'regular-guest-stays', 'mixed-not-defined'], {
+    error: t('form.errors.currentStatus'),
+  }),
+  expectedPackage: z.enum(['Basic', 'Extended', 'Full', 'Not sure - need consultation'], {
+    error: t('form.errors.expectedPackage'),
+  }),
   expectedAccessFrequency: z.string().optional(),
-  primaryServiceNeeds: z.string().max(500, t('form.requiredField')).optional(),
+  primaryServiceNeeds: z.string().max(500, t('form.maxCharacters')).optional(),
   acknowledgment: z.boolean().refine((val) => val === true, {
     message: t('form.requiredField'),
   }),
 });
+
+function FieldError({ id, message }: { id: string; message?: string }) {
+  if (!message) return null;
+
+  return (
+    <p id={id} className="contact-field-error" role="alert">
+      {message}
+    </p>
+  );
+}
 
 function ContactInfoList({
   items,
@@ -177,6 +197,11 @@ function ContactPageInner() {
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
   });
+
+  const fieldErrorProps = (name: keyof ContactFormData) =>
+    errors[name]
+      ? { 'aria-invalid': true as const, 'aria-describedby': `${name}-error` }
+      : {};
 
   useEffect(() => {
     if (pathwayKey) {
@@ -361,11 +386,10 @@ function ContactPageInner() {
                           type="text"
                           id="fullName"
                           {...register('fullName')}
+                          {...fieldErrorProps('fullName')}
                           className="form-control"
                         />
-                        {errors.fullName && (
-                          <p className="contact-field-error">{errors.fullName.message}</p>
-                        )}
+                        <FieldError id="fullName-error" message={errors.fullName?.message} />
                       </div>
 
                       <div>
@@ -376,11 +400,10 @@ function ContactPageInner() {
                           type="email"
                           id="email"
                           {...register('email')}
+                          {...fieldErrorProps('email')}
                           className="form-control"
                         />
-                        {errors.email && (
-                          <p className="contact-field-error">{errors.email.message}</p>
-                        )}
+                        <FieldError id="email-error" message={errors.email?.message} />
                       </div>
 
                       <div>
@@ -391,12 +414,11 @@ function ContactPageInner() {
                           type="tel"
                           id="phone"
                           {...register('phone')}
+                          {...fieldErrorProps('phone')}
                           placeholder={t('form.phonePlaceholder')}
                           className="form-control"
                         />
-                        {errors.phone && (
-                          <p className="contact-field-error">{errors.phone.message}</p>
-                        )}
+                        <FieldError id="phone-error" message={errors.phone?.message} />
                       </div>
 
                       <div>
@@ -406,6 +428,7 @@ function ContactPageInner() {
                         <select
                           id="preferredContactMethod"
                           {...register('preferredContactMethod')}
+                          {...fieldErrorProps('preferredContactMethod')}
                           className="form-control"
                         >
                           <option value="">{t('form.selectPlaceholder')}</option>
@@ -413,9 +436,7 @@ function ContactPageInner() {
                           <option value="WhatsApp">{t('form.contactMethods.whatsapp')}</option>
                           <option value="Phone">{t('form.contactMethods.phone')}</option>
                         </select>
-                        {errors.preferredContactMethod && (
-                          <p className="contact-field-error">{errors.preferredContactMethod.message}</p>
-                        )}
+                        <FieldError id="preferredContactMethod-error" message={errors.preferredContactMethod?.message} />
                       </div>
 
                       <div>
@@ -425,15 +446,14 @@ function ContactPageInner() {
                         <select
                           id="preferredLanguage"
                           {...register('preferredLanguage')}
+                          {...fieldErrorProps('preferredLanguage')}
                           className="form-control"
                         >
                           <option value="">{t('form.selectPlaceholder')}</option>
                           <option value="English">{t('form.languages.english')}</option>
                           <option value="Polish">{t('form.languages.polish')}</option>
                         </select>
-                        {errors.preferredLanguage && (
-                          <p className="contact-field-error">{errors.preferredLanguage.message}</p>
-                        )}
+                        <FieldError id="preferredLanguage-error" message={errors.preferredLanguage?.message} />
                       </div>
                     </div>
                   </fieldset>
@@ -452,15 +472,14 @@ function ContactPageInner() {
                           type="text"
                           id="propertyLocation"
                           {...register('propertyLocation')}
+                          {...fieldErrorProps('propertyLocation')}
                           placeholder={t('form.propertyLocationPlaceholder')}
                           className="form-control"
                         />
                         <p className="contact-field-help">
                           {t('form.propertyLocationHelp')}
                         </p>
-                        {errors.propertyLocation && (
-                          <p className="contact-field-error">{errors.propertyLocation.message}</p>
-                        )}
+                        <FieldError id="propertyLocation-error" message={errors.propertyLocation?.message} />
                       </div>
 
                       <div className="grid gap-5 md:grid-cols-2">
@@ -471,6 +490,7 @@ function ContactPageInner() {
                           <select
                             id="propertyType"
                             {...register('propertyType')}
+                            {...fieldErrorProps('propertyType')}
                             className="form-control"
                           >
                             <option value="">{t('form.selectPlaceholder')}</option>
@@ -479,9 +499,7 @@ function ContactPageInner() {
                             <option value="Villa">{t('form.propertyTypes.villa')}</option>
                             <option value="Other">{t('form.propertyTypes.other')}</option>
                           </select>
-                          {errors.propertyType && (
-                            <p className="contact-field-error">{errors.propertyType.message}</p>
-                          )}
+                          <FieldError id="propertyType-error" message={errors.propertyType?.message} />
                         </div>
 
                         <div>
@@ -491,6 +509,7 @@ function ContactPageInner() {
                           <select
                             id="currentStatus"
                             {...register('currentStatus')}
+                            {...fieldErrorProps('currentStatus')}
                             className="form-control"
                           >
                             <option value="">{t('form.selectPlaceholder')}</option>
@@ -500,9 +519,7 @@ function ContactPageInner() {
                               </option>
                             ))}
                           </select>
-                          {errors.currentStatus && (
-                            <p className="contact-field-error">{errors.currentStatus.message}</p>
-                          )}
+                          <FieldError id="currentStatus-error" message={errors.currentStatus?.message} />
                         </div>
                       </div>
                     </div>
@@ -521,6 +538,7 @@ function ContactPageInner() {
                         <select
                           id="expectedPackage"
                           {...register('expectedPackage')}
+                          {...fieldErrorProps('expectedPackage')}
                           className="form-control"
                         >
                           <option value="">{t('form.selectPlaceholder')}</option>
@@ -529,9 +547,7 @@ function ContactPageInner() {
                           <option value="Full">{t('form.packages.red')}</option>
                           <option value="Not sure - need consultation">{t('form.packages.consultation')}</option>
                         </select>
-                        {errors.expectedPackage && (
-                          <p className="contact-field-error">{errors.expectedPackage.message}</p>
-                        )}
+                        <FieldError id="expectedPackage-error" message={errors.expectedPackage?.message} />
                       </div>
 
                       {(expectedPackage === 'Extended' || expectedPackage === 'Full') && (
@@ -542,6 +558,7 @@ function ContactPageInner() {
                           <select
                             id="expectedAccessFrequency"
                             {...register('expectedAccessFrequency')}
+                            {...fieldErrorProps('expectedAccessFrequency')}
                             className="form-control"
                           >
                             <option value="">{t('form.selectPlaceholder')}</option>
@@ -550,9 +567,7 @@ function ContactPageInner() {
                             <option value="More than 5 times per month">{t('form.accessFrequencies.moreThanFive')}</option>
                             <option value="Varies seasonally">{t('form.accessFrequencies.seasonal')}</option>
                           </select>
-                          {errors.expectedAccessFrequency && (
-                            <p className="contact-field-error">{errors.expectedAccessFrequency.message}</p>
-                          )}
+                          <FieldError id="expectedAccessFrequency-error" message={errors.expectedAccessFrequency?.message} />
                         </div>
                       )}
 
@@ -563,15 +578,14 @@ function ContactPageInner() {
                         <textarea
                           id="primaryServiceNeeds"
                           {...register('primaryServiceNeeds')}
+                          {...fieldErrorProps('primaryServiceNeeds')}
                           placeholder={t('form.primaryNeedsPlaceholder')}
                           rows={5}
                           maxLength={500}
                           className="form-control"
                         />
                         <p className="contact-field-help">{t('form.maxCharacters')}</p>
-                        {errors.primaryServiceNeeds && (
-                          <p className="contact-field-error">{errors.primaryServiceNeeds.message}</p>
-                        )}
+                        <FieldError id="primaryServiceNeeds-error" message={errors.primaryServiceNeeds?.message} />
                       </div>
                     </div>
                   </fieldset>
@@ -586,14 +600,13 @@ function ContactPageInner() {
                         type="checkbox"
                         id="acknowledgment"
                         {...register('acknowledgment')}
+                        {...fieldErrorProps('acknowledgment')}
                       />
                       <label htmlFor="acknowledgment">
                         {t('form.acknowledgment')} *
                       </label>
                     </div>
-                    {errors.acknowledgment && (
-                      <p className="contact-field-error">{errors.acknowledgment.message}</p>
-                    )}
+                    <FieldError id="acknowledgment-error" message={errors.acknowledgment?.message} />
                   </fieldset>
 
                   <div className="contact-submit-row">

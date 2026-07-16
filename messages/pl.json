@@ -1228,7 +1228,7 @@
         "accessLabel": "Koordynacja dostępu:",
         "accessValue": "właściciel organizuje",
         "decisionsLabel": "Decyzje awaryjne:",
-        "decisionsValue": "ograniczone zabezp.",
+        "decisionsValue": "Każdy wydatek wymaga zgody",
         "ownerLabel": "Właściciel otrzymuje:",
         "ownerValue": "raport po wizycie i status; sam prowadzi wejścia, techników i większość decyzji"
       }
@@ -1268,7 +1268,7 @@
         "accessLabel": "Koordynacja dostępu:",
         "accessValue": "technicy, sprzątanie, wejścia",
         "decisionsLabel": "Decyzje awaryjne:",
-        "decisionsValue": "limit + zgoda",
+        "decisionsValue": "Każdy wydatek wymaga zgody",
         "ownerLabel": "Właściciel otrzymuje:",
         "ownerValue": "raporty po wizytach i koordynację osób; nie łączy sam techników, sprzątania i dostępu"
       }
@@ -1314,7 +1314,7 @@
         "accessLabel": "Koordynacja dostępu:",
         "accessValue": "najsilniejsza koordynacja",
         "decisionsLabel": "Decyzje awaryjne:",
-        "decisionsValue": "ustalony limit",
+        "decisionsValue": "Uzgodniony limit",
         "ownerLabel": "Właściciel otrzymuje:",
         "ownerValue": "lokalną warstwę decyzji; mniej koordynowania z zagranicy w ustalonych granicach"
       }
@@ -1643,6 +1643,14 @@
       "maxCharacters": "Maksymalnie 500 znaków",
       "acknowledgment": "Rozumiem, że Sentinel pracuje w miesięcznych pakietach. Usługi poza wybranym pakietem są organizowane i wyceniane osobno.",
       "submitButton": "Wyślij zapytanie",
+      "errors": {
+        "invalidEmail": "Podaj prawidłowy adres e-mail.",
+        "preferredContactMethod": "Wybierz metodę kontaktu.",
+        "preferredLanguage": "Wybierz preferowany język.",
+        "propertyType": "Wybierz typ nieruchomości.",
+        "currentStatus": "Wybierz sposób używania nieruchomości.",
+        "expectedPackage": "Wybierz pakiet."
+      },
       "requiredField": "Pole wymagane",
       "submitError": "Nie udało się wysłać zapytania.",
       "submitErrorGeneric": "Wystąpił błąd podczas wysyłania zapytania. Spróbuj ponownie."
@@ -2014,8 +2022,8 @@
           { "key": "approval", "tag": "Decyzja właściciela", "title": "Koszt lub zakres wymaga zgody", "body": "Gdy sprawa przekracza uzgodniony zakres lub limit, decyzja wraca do właściciela wraz z rekomendacją." },
           { "key": "protective", "tag": "Działanie ochronne", "title": "Tylko w granicach uprawnień", "body": "Wyłącznie tam, gdzie pakiet i uzgodniony limit na to pozwalają — aby ograniczyć bezpośrednią szkodę." }
         ],
-        "servicesNote": "Szczegółowe limity i uprawnienia pakietów są opisane na stronie Usługi.",
-        "servicesCta": "Zobacz limity pakietów"
+        "servicesNote": "Zasady działania pakietów i moment, w którym wymagana jest zgoda właściciela, są opisane na stronie Usługi.",
+        "servicesCta": "Zobacz zasady działania pakietów"
       },
       "timeline": {
         "eyebrow": "Cały proces",
@@ -2680,7 +2688,7 @@
           },
           "q10": {
             "question": "Co się dzieje w nagłym wypadku, jeśli nie odbieram telefonu?",
-            "answer": "Jeśli zagrożenie jest natychmiastowe, a właściciel nie odbiera, Sentinel może zabezpieczyć nieruchomość do limitu 300€ i wszystko udokumentować. W Pełnym działanie odbywa się w uzgodnionym limicie decyzji, standardowo 300€, opcjonalnie 500€."
+            "answer": "W Pakiecie Pełnym Sentinel może zabezpieczyć nieruchomość do uzgodnionego limitu 300 €. W pakietach Podstawowym i Rozszerzonym każde płatne działanie wymaga wcześniejszej zgody właściciela. Niezależnie od pakietu Sentinel dokumentuje zdarzenie."
           },
           "q11": {
             "question": "Jaki jest limit decyzji w Pakiecie Pełnym?",

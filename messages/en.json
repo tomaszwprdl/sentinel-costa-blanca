@@ -1228,7 +1228,7 @@
         "accessLabel": "Access coordination:",
         "accessValue": "owner arranges",
         "decisionsLabel": "Emergency decisions:",
-        "decisionsValue": "limited securing",
+        "decisionsValue": "Every paid action needs approval",
         "ownerLabel": "Owner receives:",
         "ownerValue": "visit report and status; owner still handles entries, technicians, and most decisions"
       }
@@ -1268,7 +1268,7 @@
         "accessLabel": "Access coordination:",
         "accessValue": "technicians, cleaning, entries",
         "decisionsLabel": "Emergency decisions:",
-        "decisionsValue": "limit + approval",
+        "decisionsValue": "Every paid action needs approval",
         "ownerLabel": "Owner receives:",
         "ownerValue": "visit reports and people coordination; owner is not connecting technicians, cleaning, and access remotely"
       }
@@ -1314,7 +1314,7 @@
         "accessLabel": "Access coordination:",
         "accessValue": "strongest coordination",
         "decisionsLabel": "Emergency decisions:",
-        "decisionsValue": "agreed limit",
+        "decisionsValue": "Agreed limit",
         "ownerLabel": "Owner receives:",
         "ownerValue": "a local decision layer; less remote coordination from abroad within defined boundaries"
       }
@@ -1643,6 +1643,14 @@
       "maxCharacters": "Maximum 500 characters",
       "acknowledgment": "I understand that Sentinel works through monthly packages. Services outside the selected package are arranged and priced separately.",
       "submitButton": "Send inquiry",
+      "errors": {
+        "invalidEmail": "Enter a valid email address.",
+        "preferredContactMethod": "Choose a contact method.",
+        "preferredLanguage": "Choose a preferred language.",
+        "propertyType": "Choose a property type.",
+        "currentStatus": "Choose how the property is used.",
+        "expectedPackage": "Choose a package."
+      },
       "requiredField": "Required field",
       "submitError": "Failed to submit inquiry.",
       "submitErrorGeneric": "An error occurred while submitting the inquiry. Please try again."
@@ -2014,8 +2022,8 @@
           { "key": "approval", "tag": "Owner decision", "title": "Cost or scope needs approval", "body": "When a matter exceeds the agreed scope or limit, the decision returns to the owner with a recommendation." },
           { "key": "protective", "tag": "Protective action", "title": "Only within authority", "body": "Only where the package and agreed limit allow it — to limit immediate damage." }
         ],
-        "servicesNote": "Detailed package limits and authority are described on the Services page.",
-        "servicesCta": "See package limits"
+        "servicesNote": "Package authority rules, and when owner approval is required, are described on the Services page.",
+        "servicesCta": "See package authority rules"
       },
       "timeline": {
         "eyebrow": "Whole process",
@@ -2680,7 +2688,7 @@
           },
           "q10": {
             "question": "What happens in emergency if I don't answer phone?",
-            "answer": "If the threat is immediate and the owner cannot be reached, Sentinel may secure the property up to the €300 limit and document the action. In Full, action follows the agreed decision limit, normally €300 and optionally €500."
+            "answer": "In the Full package, Sentinel may secure the property up to the agreed €300 limit. In Basic and Extended, every paid action requires the owner’s prior approval. Whatever the package, Sentinel documents the event."
           },
           "q11": {
             "question": "What is the decision limit in Full package?",
