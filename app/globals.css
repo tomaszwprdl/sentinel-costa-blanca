@@ -31002,6 +31002,83 @@ html:has(.hiw-page),
   font-size: 0.68rem;
 }
 
+/* Patch 5: 14px floor for mounted secondary text that carries
+   package, authority, exclusion, estimator, process, or form meaning. */
+.services-page .services-briefing-signal p,
+.services-page .services-briefing-decision p,
+.services-page .services-briefing-register__note,
+.services-page .services-responsibility-principle__kicker,
+.services-page .services-responsibility-principle__cues li,
+.services-page .services-boundary-contract .services-boundary-item small,
+.services-page .services-boundary-contract .services-boundary-note .disclosure-trigger__summary,
+.services-page .services-boundary-contract .services-boundary-clause p,
+.services-page .services-boundary-contract .services-boundary-clause li,
+.services-page .services-operational-output__text p,
+.services-page .services-operational-guardrail,
+.services-page .services-responsibility-node__sla,
+.services-page .services-responsibility-reveal__header > span.services-responsibility-reveal__sla,
+.services-page .services-responsibility-metrics dt,
+.services-page .services-responsibility-console__cost-note,
+.services-page .services-estimator-handoff__step p,
+.services-page .services-estimator-ticket__caption,
+.services-page .services-estimator-ticket__result,
+.services-page .estimator-choice-card__body span,
+.services-page .estimator-mode-card span,
+.services-page .estimator-scope-pill em,
+.services-page .estimator-compatibility-note,
+.services-page .estimator-live-panel > p,
+.services-page .estimator-live-summary dt,
+.services-page .estimator-live-summary dd,
+.services-page .estimator-live-panel__pending span,
+.services-page .estimator-result-output span,
+.services-page .estimator-result-output ul,
+.services-page .estimator-package-active-card p,
+.services-page .services-capability-record .operational-module-tile .text-body,
+.services-page .services-capability-record .operational-module-tile__list li,
+.services-page .services-capability-footnotes .services-partner-note,
+.services-page .services-checkpoint__rule,
+.services-page .services-checkpoint__list li,
+.services-page .services-checkpoint__sequence li,
+.services-page .services-checkpoint__gate-note,
+.services-page .services-execution-inset--subordinate p,
+.services-page .services-execution-inset--subordinate .services-execution-list li,
+.services-page .services-execution-inset--subordinate .services-execution-inset__footer p,
+.hiw-procedure-page .hiw-checks__legend-body,
+.hiw-procedure-page .hiw-checks__note,
+.hiw-procedure-page .hiw-report__card-body,
+.hiw-procedure-page .hiw-threshold__case-body,
+.hiw-procedure-page .hiw-threshold__services p,
+.hiw-procedure-page .hiw-final-act .hiw-rhythm-band__item p,
+.faq-page .faq-decision-strip__body,
+.contact-page .contact-field-label,
+.contact-page .contact-field-help,
+.contact-page .contact-field-error,
+.contact-page .contact-submit-row p {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 900px) {
+  .services-page .mobile-disclosure__summary,
+  .services-page .services-mobile-package-card p,
+  .services-page .services-mobile-package-card__facts dt,
+  .services-page .services-mobile-package-card__facts dd,
+  .services-page .services-responsibility-node__mobile-scope,
+  .services-page .services-responsibility-reveal__body > p,
+  .services-page .services-responsibility-reveal__body strong,
+  .services-page .services-responsibility-metrics dd {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .faq-page .faq-answer-console__rail .faq-accordion__intro .text-body,
+  .contact-page .contact-consent-panel__check label,
+  .contact-page .contact-next-shell--attached .contact-section-heading p:not(.section-label),
+  .contact-page .contact-next-shell--attached .contact-next-step p {
+    font-size: 0.875rem;
+  }
+}
+
 @media (max-width: 900px) {
   .hiw-observation-board__diagram {
     min-height: 30rem;
