@@ -9,7 +9,6 @@ import Section from '@/components/layout/Section';
 import FAQDecisionPanel from '@/components/FAQDecisionPanel';
 import FAQGroupedAccordion, { type FAQGroup } from '@/components/FAQGroupedAccordion';
 import FAQQuickAnswerCards from '@/components/FAQQuickAnswerCards';
-import FAQWrongAssumptions from '@/components/FAQWrongAssumptions';
 import MobileStickyCTA from '@/components/MobileStickyCTA';
 import FAQRoutingDiagram from '@/components/visuals/FAQRoutingDiagram';
 import OperationalField from '@/components/graphics/OperationalField';
@@ -26,11 +25,6 @@ type QuickAnswerSource = {
   targetQuestionId: string;
 };
 
-type AssumptionItem = {
-  assumption: string;
-  boundary: string;
-};
-
 export default function FAQPage() {
   const locale = useLocale();
   const t = useTranslations('faq');
@@ -45,8 +39,6 @@ export default function FAQPage() {
     ...item,
     linkLabel: t('redesign.quick.linkLabel'),
   }));
-  const assumptionItems = t.raw('redesign.assumptions.items') as AssumptionItem[];
-
   const decisionItems = [
     {
       title: t('redesign.decision.items.services.title'),
@@ -64,7 +56,7 @@ export default function FAQPage() {
       title: t('redesign.decision.items.contact.title'),
       body: t('redesign.decision.items.contact.body'),
       href: `/${locale}/contact`,
-      label: tCommon('nav.contact'),
+      label: t('redesign.hero.primaryCta'),
     },
     {
       title: t('redesign.decision.items.decline.title'),
@@ -281,19 +273,6 @@ export default function FAQPage() {
           />
         </Section>
 
-        <Section tone="light" className="faq-section faq-section--assumptions">
-          <FAQWrongAssumptions
-            eyebrow={t('redesign.assumptions.eyebrow')}
-            title={t('redesign.assumptions.title')}
-            intro={t('redesign.assumptions.intro')}
-            assumptionLabel={t('redesign.assumptions.assumptionLabel')}
-            boundaryLabel={t('redesign.assumptions.boundaryLabel')}
-            showMoreLabel={t('redesign.assumptions.showMoreLabel')}
-            showLessLabel={t('redesign.assumptions.showLessLabel')}
-            items={assumptionItems}
-          />
-        </Section>
-
         <Section tone="alt" id="faq-decision" className="faq-section faq-section--decision">
           <FAQDecisionPanel
             eyebrow={t('redesign.decision.eyebrow')}
@@ -305,7 +284,7 @@ export default function FAQPage() {
       </main>
       <MobileStickyCTA
         primaryHref={`/${locale}/contact`}
-        primaryLabel={tCommon('nav.contact')}
+        primaryLabel={t('redesign.hero.primaryCta')}
         secondaryHref="#faq-details"
         secondaryLabel={t('redesign.details.eyebrow')}
       />

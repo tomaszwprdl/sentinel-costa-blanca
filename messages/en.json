@@ -142,15 +142,15 @@
       "selectorTitle": "Choose how the property is used",
       "selectorInstruction": "This defines the local oversight structure.",
       "gateInstruction": "Not sure which fits? Start with Mixed / Undetermined, or talk to Aleksy.",
-      "gateScrollCue": "Choose your situation below",
+      "gateScrollCue": "Choose property use below",
       "chooseModel": "Choose this model",
-      "selectedSituationLabel": "Selected situation:",
-      "changeSituation": "Change situation",
-    "selectedLabel": "Selected situation:",
+      "selectedSituationLabel": "Selected property use:",
+      "changeSituation": "Change selection",
+    "selectedLabel": "Selected property use:",
     "priorityLabel": "Sentinel priority:",
     "changesLabel": "What this changes:",
-    "cta": "Discuss this situation",
-    "reviewCta": "Start an inquiry",
+    "cta": "Start qualification",
+    "reviewCta": "Start qualification",
     "servicesCta": "Compare service scope",
     "meaningLabel": "Operational meaning",
     "nextLabel": "Owner next step",
@@ -253,9 +253,9 @@
           }
         },
       "mixed-not-defined": {
-        "priority": "We first classify how the property is actually used and set a starting scope. The model can change after the first assessment — without assuming the wrong oversight rhythm upfront.",
-        "meaning": "When the use pattern may change, the starting scope is set carefully and confirmed after the first assessment — instead of being assumed upfront.",
-        "next": "Start an initial inquiry assessment so private use, guest stays, and required scope can be separated.",
+        "priority": "We first classify actual property use and set a starting scope. After the first assessment, that scope can be adjusted — without assuming the oversight rhythm upfront.",
+        "meaning": "When plans for the property may change, the starting scope is set carefully and confirmed after the first assessment.",
+        "next": "Start qualification so private use, guest stays, and the required scope can be separated.",
         "point1": "Private use now, possible rental later",
         "point2": "Avoiding the wrong scope choice",
         "point3": "Avoiding unnecessary guest-service intensity",
@@ -293,7 +293,7 @@
           "decisions": {
             "label": "Arrival",
             "title": "Ready before arrival",
-            "body": "The owner receives a record of the condition and the points to confirm before arrival."
+            "body": "The owner receives a visit report with the condition and the points to confirm before arrival."
           }
         },
         "contrast": {
@@ -316,7 +316,7 @@
       },
       "regular-guest-stays": {
         "systemIntroContext": "For regular guest stays, what matters is order between departures: access, cleaning, condition, and event documentation.",
-        "systemIntroLens": "Each turnover returns to the same rhythm: entry, preparation, check, and record before the next use.",
+        "systemIntroLens": "Each turnover returns to the same rhythm: entry, preparation, check, and an operational record before the next use.",
         "systemIntroPosture": "Guest departure → access and cleaning → post-stay condition → ready for the next arrival",
         "systemIntroProcess": {
           "scope": {
@@ -330,9 +330,9 @@
             "body": "We coordinate keys, entry, cleaning, and basic readiness before guests arrive."
           },
           "procedure": {
-            "label": "Record",
+            "label": "Operational record",
             "title": "Post-stay condition",
-            "body": "We record missing items, damage, reference photos, and anything that needs a decision."
+            "body": "The operational record captures missing items, damage, reference photos, and anything that needs a decision."
           },
           "decisions": {
             "label": "Readiness",
@@ -359,8 +359,8 @@
         "finalCtaSupport": "Sentinel runs the order between stays: access, cleaning, post-stay condition checks, and documented readiness before the next arrival."
       },
       "mixed-not-defined": {
-        "systemIntroContext": "When the use pattern is not yet clear, it must be described first. Scope is set after property situation assessment.",
-        "systemIntroLens": "The use model is identified first. Only after that classification can scope be set without guessing.",
+        "systemIntroContext": "When it is not yet clear whether the property will be used privately, by guests, or both, the situation needs to be described first. Scope is set after qualification.",
+        "systemIntroLens": "We identify the actual model first. Only then do we set the scope without guessing.",
         "systemIntroPosture": "First assessment → classification → starting scope → confirmed plan",
         "systemIntroProcess": {
           "scope": {
@@ -369,7 +369,7 @@
             "body": "First we establish how the property will actually be used: privately, by guests, or both."
           },
           "documentation": {
-            "label": "Usage model",
+            "label": "Property use",
             "title": "Classification",
             "body": "We separate permanent needs from those that come only with occasional stays."
           },
@@ -397,16 +397,16 @@
           "right4": "Final scope follows initial inquiry assessment, not an online guess.",
           "rightClosing": "Classification first, then scope."
         },
-        "distinctionIntro": "Sentinel first clarifies how the property is used before operating scope, local presence, documentation, and decision boundaries are selected.",
-        "finalContext": "This is not a third pricing mode. The next step is initial inquiry assessment and classification.",
+        "distinctionIntro": "Sentinel first establishes how the property will be used. Only then does it set the check scope, visit rhythm, documentation, and decision boundaries.",
+        "finalContext": "This is not a third pricing mode. The next step is qualification: private use, guest stays, or mixed use.",
         "finalCtaTitle": "You do not have to pick the final scope today. Start with classification.",
-        "finalCtaSupport": "The initial inquiry assessment separates private use from guest stays. The starting scope is confirmed after the first review."
+        "finalCtaSupport": "Qualification separates private use from guest stays. The starting scope is confirmed after the first assessment."
       }
     },
     "floor": {
       "eyebrow": "The shared core",
       "title": "In every model we operate through the same core.",
-      "lead": "Your situation sets the frequency and scope. The mechanism itself stays constant: agreed terms, access, property readiness, on-site checks, and a record for the owner.",
+      "lead": "Property use sets the frequency and scope. The mechanism itself stays constant: agreed terms, access, property readiness, on-site checks, and a visit report for the owner.",
       "steps": {
         "scope": {
           "title": "We agree the scope",
@@ -421,11 +421,11 @@
           "body": "The check happens physically on site: water, power, ventilation, and visible condition."
         },
         "record": {
-          "title": "A record for the owner",
-          "body": "After each visit you receive a record of the condition, the actions taken, and the points that need your decision."
+          "title": "Visit report",
+          "body": "After each visit you receive a report on the condition, the actions taken, and the points that need your decision."
         }
       },
-      "note": "Choose a situation above to see the variant matched to how your property is used."
+      "note": "Choose property use above to see the matching variant."
     },
     "exposure": {
       "title": "What do you really risk without local representation?",
@@ -574,9 +574,9 @@
       },
       "slides": {
         "wrongStartingAssumption": {
-          "title": "The wrong starting assumption sets the wrong operating model.",
+          "title": "Misreading how the property will be used can distort the check rhythm and access rules.",
           "body": "A property may begin as private-use and later receive guests. If the scope is chosen from an assumption, later needs become exceptions.",
-          "responseLead": "We first identify how the property is actually being used.",
+          "responseLead": "We first check how the property is actually used.",
           "responseBody": "Sentinel separates private use, guest stays, and mixed use before scope, visit rhythm, and decision level are defined.",
           "alt": "A bedroom prepared for both an owner stay and possible guest use."
         },
@@ -769,7 +769,7 @@
       "title": "You can react after a problem appears. Or follow an agreed on-site plan.",
       "p1": "Reactive management is based on reacting. The system is based on steady control.",
       "p2": "Sentinel helps keep local operations structured: scope, documentation, access, and decisions within defined limits.",
-      "cta": "Start an inquiry",
+      "cta": "Start qualification",
       "secondaryCta": "View packages",
       "mediaAlt": "Operational placeholder photo of a handoff checklist, keys, and a notebook on a table"
     }
@@ -788,10 +788,10 @@
     "redesign": {
       "journey": {
         "overview": "What we establish",
-        "situation": "Situation",
-        "responsibility": "Responsibility",
-        "scope": "Scope",
-        "modules": "Record",
+        "situation": "Property use",
+        "responsibility": "Package scope",
+        "scope": "Operating scope",
+        "modules": "Operational record",
         "estimator": "Estimator"
       },
       "hero": {
@@ -827,27 +827,27 @@
       },
       "skim": {
         "eyebrow": "Operating setup",
-        "title": "First, establish the property operating model.",
-        "intro": "A package starts with four setup points: property condition, access, record, and decision boundary.",
+        "title": "First, establish property use and the operating scope.",
+        "intro": "The package defines check scope, access rules, owner documentation, and the decision boundary.",
         "protocolLabel": "Four setup points",
-        "protocolNote": "After this, the estimator has context and the scope is not guessed.",
+        "protocolNote": "These points define the package and estimator context.",
         "items": {
           "inspections": { "label": "Property condition", "title": "What gets checked", "body": "Checks cover visible condition and agreed points, not an open list of tasks." },
           "access": { "label": "Access", "title": "Who may enter", "body": "Owner, technician, cleaner, or partner entry follows the agreed access method." },
-          "decisions": { "label": "Record", "title": "What enters the report", "body": "The record shows what was checked, what was done, and what needs the next step." },
+          "decisions": { "label": "Documentation", "title": "What the owner receives", "body": "A visit report or other documentation suited to the event." },
           "approval": { "label": "Decision boundary", "title": "What needs approval", "body": "A higher cost or scope change requires owner approval before action." }
         }
       },
       "ladder": {
-        "eyebrow": "Responsibility level",
-        "title": "The package defines what Sentinel is responsible for.",
+        "eyebrow": "Package rhythm and limits",
+        "title": "The package defines visit rhythm, access scope, response timing, and the limits of autonomous action.",
         "intro": "Packages differ in visit rhythm, access coordination, priority, and decision limit.",
-        "bridgeLine": "First we establish how the property is used. Then we match the service level.",
+        "bridgeLine": "First we establish property use. Then we match the package.",
         "cueLabels": ["Visit rhythm", "Access & coordination", "Decision limit"],
         "detailCta": "View full scope",
         "estimatorCta": "Open estimator",
         "costNote": "Cost depends on package, property size, and how the property is used. The estimator shows the exact range.",
-        "responsibilityLabel": "Primary responsibility",
+        "responsibilityLabel": "Sentinel's primary role",
         "depthLabel": "Operating depth",
         "mobileScope": {
           "basic": "Control",
@@ -870,17 +870,17 @@
       "mobileDisclosure": {
         "open": "Show details",
         "close": "Hide",
-        "responsibilityTitle": "Package responsibility details",
+        "responsibilityTitle": "Package scope details",
         "responsibilitySummary": "Visit rhythm, access, decisions, and the path to full scope.",
         "estimatorTitle": "What the estimator uses",
-        "estimatorSummary": "Package, usage model, and property parameters before the range.",
+        "estimatorSummary": "Package, property use, and property parameters before the range.",
         "scopeTitle": "Full frame and exclusions",
         "scopeSummary": "Visit rules, decision limits, and items outside scope.",
-        "recordTitle": "What enters the record",
-        "recordSummary": "Readiness, access, coordination, and decisions in one record.",
+        "recordTitle": "Which documents and records the owner receives",
+        "recordSummary": "Visit report, operational record, decision request, or action summary.",
         "appendixTitle": "Outside the package model",
         "appendixSummary": "When single actions are exceptions and need separate review.",
-        "packageProofTitle": "Package responsibility",
+        "packageProofTitle": "Package scope",
         "packageProofSummary": "Visit rhythm, access, decisions, and detailed differences between packages."
       },
       "mobilePackageSummary": {
@@ -968,36 +968,37 @@
       "boundary": {
         "eyebrow": "Service boundaries",
         "title": "What sits inside the agreed scope.",
-        "intro": "Here you see what we check, what we coordinate, and what needs separate approval.",
+        "intro": "Direct rules: included, conditional, excluded, or subject to owner approval.",
         "eligibility": "Location eligibility: Torrevieja + 50–70 km radius.",
         "doesTitle": "Inside agreed scope",
         "doesNotTitle": "Outside agreed scope",
         "does": {
-          "oversight": { "title": "Local oversight", "body": "Scheduled condition checks and a record of what was visible on site." },
+          "oversight": { "title": "Local oversight", "body": "Scheduled condition checks at the rhythm defined by the package." },
           "access": { "title": "Controlled access", "body": "Keys, entries, and third-party presence handled by agreed rules." },
-          "documentation": { "title": "Decision documentation", "body": "Reports show condition, completed actions, and points requiring owner decision." },
+          "documentation": { "title": "Owner documentation", "body": "Reports and decision requests when required by the event or scope." },
           "coordination": { "title": "Operational coordination", "body": "Contact with technician, cleaning, or contractor when it fits the agreement." }
         },
         "doesNot": {
           "bookings": { "title": "Bookings and platforms", "body": "Pricing, licensing, listings, and platform communication require separate agreement." },
           "administration": { "title": "Financial or owner administration", "body": "Finances, disputes, owner documents, and decisions outside the agreed model require separate agreement." },
-          "lifestyleTasks": { "title": "Personal and lifestyle tasks", "body": "Personal errands and tasks without defined responsibility are outside the current operating scope." },
+          "lifestyleTasks": { "title": "Personal and lifestyle tasks", "body": "Personal errands and tasks without defined responsibility remain outside the service." },
           "unlimitedEmergency": { "title": "Unlimited emergency work", "body": "Emergency work and costs have package limits; action beyond the limit requires owner approval." },
           "undefinedTasks": { "title": "Tasks outside the agreement", "body": "Work outside the package or current agreement requires separate approval before execution." }
         }
       },
       "modules": {
         "eyebrow": "Operational layer",
-        "title": "The owner sees readiness, access, and decisions in one record.",
-        "intro": "Oversight turns practical work into a record: what is ready, who entered, what was coordinated, and what requires the owner's decision.",
-        "recordLabel": "Record preview",
+        "title": "The owner receives a document or record suited to the event.",
+        "intro": "The scope may produce a visit report, operational record, decision request, or action summary.",
+        "processCta": "See how the process works",
+        "recordLabel": "Documents and records preview",
         "handoffLabel": "What the owner sees",
-        "recordSummary": "One record organizes property status, entries, coordination, and decision points.",
+        "recordSummary": "The document or record covers property status, access, completed action, or the point awaiting approval.",
         "outputs": {
-          "readiness": { "title": "Readiness", "body": "The condition of the property before arrival or after a guest stay is checked and recorded within the agreed scope." },
-          "access": { "title": "Access", "body": "Each entry leaves a record: purpose, time, and who was present." },
-          "coordination": { "title": "Coordination", "body": "Cleaning, technicians, seasonal preparation, and partner actions are carried out only where they fit the agreed scope." },
-          "decision": { "title": "Decision", "body": "Anything beyond scope, limit, or authority returns to the owner before action." }
+          "readiness": { "title": "Visit report", "body": "The agreed check results and property status after the visit." },
+          "access": { "title": "Operational record", "body": "Access events and ongoing coordination retained for the agreed scope." },
+          "coordination": { "title": "Action summary", "body": "The action completed within scope and its current status." },
+          "decision": { "title": "Decision request", "body": "Cost, scope change, or action beyond authority — for owner approval." }
         },
         "capabilityImageAlt": "Keys, notebook, and cleaning cloth prepared for an access or readiness task",
         "cleaning": {
@@ -1015,7 +1016,7 @@
         "stackLabel": "Controlled capabilities",
         "stackTitle": "Access and seasonal readiness operate within the package.",
         "guardrailLabel": "Rule",
-        "guardrailBody": "Operational capabilities work within the package. They do not change the SLA, limits, or exclusions.",
+        "guardrailBody": "The record type does not change the package, SLA, limits, or exclusions.",
         "moduleBodies": {
           "rental": "Readiness cleaning, turnover cleaning support, and guest entry handled as documented execution inside the agreed oversight scope.",
           "access": "Keys, one-off entries, and partner logistics — controlled coordination inside oversight.",
@@ -1056,7 +1057,7 @@
         "body": "The estimator does not choose the package for you. It converts the agreed model into an indicative monthly range for the conversation.",
         "steps": {
           "responsibility": { "label": "01", "title": "Scope", "body": "package and decision boundary" },
-          "usage": { "label": "02", "title": "Usage model", "body": "private use, guests, or mixed model" },
+          "usage": { "label": "02", "title": "Property use", "body": "private use, guests, or mixed" },
           "property": { "label": "03", "title": "Property parameters", "body": "size, rooms, and basic context" }
         }
       },
@@ -1066,11 +1067,11 @@
         "intro": "The indicative range is a starting point for the conversation, not a binding quote. Three things are enough to talk.",
         "cards": {
           "scope": { "label": "Starting scope", "body": "The package and decision limit we begin from." },
-          "usage": { "label": "Usage model", "body": "Private, guest stays, or mixed, to be confirmed." },
+          "usage": { "label": "Property use", "body": "Private, guest stays, or mixed, to be confirmed." },
           "info": { "label": "For the conversation", "body": "Location, size, and the property's basic context." }
         },
-        "assurance": "Before start, Sentinel confirms the visit rhythm, access, and responsibility limits.",
-        "cta": "Send your context for a short review"
+        "assurance": "Before start, Sentinel confirms the visit rhythm, access, and limits of autonomous action.",
+        "cta": "Start qualification"
       },
       "executionStrip": {
         "thresholdLabel": "Outside the package model",
@@ -1088,12 +1089,12 @@
         "frameworkLabel": "Service frame and minimum term",
         "frameworkExplainer": "Minimum term and visit rules — part of the operating agreement.",
         "notIncludedLabel": "Full exclusion list",
-        "notIncludedExplainer": "Exclusions apply within the agreed operating scope."
+        "notIncludedExplainer": "Exclusions follow the agreed package limits."
       },
       "finalRegistry": {
-        "review": { "label": "Review", "body": "Location and usage pattern first." },
+        "review": { "label": "Qualification", "body": "Location and property use first." },
         "scope": { "label": "Scope", "body": "You know what will be checked and when approval is required." },
-        "next": { "label": "Next step", "body": "Send the property context for a short review." }
+        "next": { "label": "Next step", "body": "Send the property context to start qualification." }
       },
       "finalCta": {
         "eyebrow": "After reviewing scope",
@@ -1229,7 +1230,7 @@
         "decisionsLabel": "Emergency decisions:",
         "decisionsValue": "limited securing",
         "ownerLabel": "Owner receives:",
-        "ownerValue": "report and status; owner still handles entries, technicians, and most decisions"
+        "ownerValue": "visit report and status; owner still handles entries, technicians, and most decisions"
       }
     },
     "orange": {
@@ -1269,7 +1270,7 @@
         "decisionsLabel": "Emergency decisions:",
         "decisionsValue": "limit + approval",
         "ownerLabel": "Owner receives:",
-        "ownerValue": "reporting and people coordination; owner is not connecting technicians, cleaning, and access remotely"
+        "ownerValue": "visit reports and people coordination; owner is not connecting technicians, cleaning, and access remotely"
       }
     },
     "red": {
@@ -1419,7 +1420,7 @@
     },
     "estimator": {
       "heading": "Indicative monthly range",
-      "orientationIntro": "Establish usage situation and responsibility depth before calculating an indicative range.",
+      "orientationIntro": "Establish property use and operating scope before calculating an indicative range.",
       "wizard": {
         "outputTitle": "Estimated scope",
         "pendingRange": "Pending",
@@ -1428,8 +1429,8 @@
         "scopeNone": "No additional elements",
         "emptyValue": "—"
       },
-      "stepJurisdiction": "1. Responsibility level",
-      "stepMode": "2. Usage intensity",
+      "stepJurisdiction": "1. Operating scope",
+      "stepMode": "2. Property use",
       "stepParameters": "3. Property parameters",
       "stepScope": "4. Additional scope",
       "groupJurisdiction": "Package and service level",
@@ -1445,9 +1446,9 @@
         "active_oversight": "Checks + access, technician, cleaning, and entry coordination within the agreed scope.",
         "extended_jurisdiction": "Priority response, strongest coordination, and emergency decisions within the agreed limit."
       },
-      "groupMode": "Operational Mode",
-      "groupModeAnchor": "Operational mode reflects oversight intensity resulting from property usage.",
-      "modeLabel": "Operational Mode",
+      "groupMode": "Property use",
+      "groupModeAnchor": "Property use determines the oversight intensity used by the estimator.",
+      "modeLabel": "Property use",
       "modePrivateUse": "Private Use Only",
       "modeActiveGuest": "Regular Guest Stays",
       "modeMixedUse": "Not sure yet / mixed use",
@@ -1491,7 +1492,7 @@
       "paramsChangedCue": "Parameters changed. Recalculate.",
       "compatibilityWarning": "Selected package may not include full coordination for guest turnover.",
       "compatibilityNote": "Note: This package may be insufficient for regular guest turnover.",
-      "reasonWhatModeling": "You are setting the package, usage intensity, property parameters, and optional additional service elements.",
+      "reasonWhatModeling": "You are setting the package, property use, property parameters, and optional additional service elements.",
       "reasonGuestModeChange": "Guest Mode increases visit frequency, coordination load, and communication.",
       "reasonSelectedStructure": "Selected structure",
       "reasonPriceAfterCalculate": "Price appears only after Calculate.",
@@ -1500,8 +1501,8 @@
       "modeWhatGuest1": "Higher frequency of control visits.",
       "modeWhatGuest2": "Higher operational coordination.",
       "modeWhatGuest3": "Higher communication and event handling.",
-      "modeWhatMixed1": "You do not need to choose the model at the start. If the property is used in different ways or guest stays are only being planned, describe the situation.",
-      "modeWhatMixed2": "Sentinel will help define the right scope after a conversation.",
+      "modeWhatMixed1": "You do not need to define final property use at the start. If the property is used in different ways or guest stays are only being planned, describe the situation.",
+      "modeWhatMixed2": "After a conversation, Sentinel will help set the check scope, visit rhythm, and access rules.",
       "scopeElementBilledByUse": "Billed by use.",
       "gateBefore": "Range will appear after parameters are set.",
       "gateReady": "Selections are complete. Determine range to show the bracket.",
@@ -1516,7 +1517,7 @@
       "driverBullet4": "selected additional service elements",
       "driverBulletGuest": "guest turnover",
       "resultJurisdiction": "Package",
-      "resultMode": "Mode",
+      "resultMode": "Property use",
       "resultArea": "Area",
       "resultBedrooms": "Bedrooms",
       "resultScopeElements": "Additional scope",
@@ -1526,13 +1527,13 @@
       "ctaProceed": "Continue to inquiry",
       "mixedPanelLabel": "Scope classification",
       "mixedRangeHeading": "Classification before estimate",
-      "mixedResultBody": "This model requires a short classification before pricing. Send a description of the situation and we will confirm the right scope: private, active guest use, or mixed.",
+      "mixedResultBody": "This selection requires a short classification before pricing. Send a description of the situation. We will confirm whether the property is for private use, regular guest stays, or mixed use, then set the check scope and access rules.",
       "mixedCtaProceed": "Send an inquiry with situation details"
     },
     "cta": {
       "headline": "Request a package comparison for your property.",
       "subheadline": "Contact us to compare packages and confirm scope.",
-      "primaryButton": "Request structured review",
+      "primaryButton": "Start qualification",
       "secondaryButton": "I have questions"
     }
   },
@@ -1614,7 +1615,7 @@
         "villa": "Villa",
         "other": "Other (specify)"
       },
-      "propertyStatus": "Property usage situation",
+      "propertyStatus": "Property use",
       "propertyStatuses": {
         "private-use-only": "Private Use Only",
         "regular-guest-stays": "Regular Guest Stays",
@@ -1641,7 +1642,7 @@
       "optionalLabel": "optional",
       "maxCharacters": "Maximum 500 characters",
       "acknowledgment": "I understand that Sentinel operates on a package-based service model. Services not included in the selected package are arranged and priced separately.",
-      "submitButton": "Submit Inquiry",
+      "submitButton": "Send inquiry",
       "requiredField": "Required field",
       "submitError": "Failed to submit inquiry.",
       "submitErrorGeneric": "An error occurred while submitting the inquiry. Please try again."
@@ -1715,7 +1716,7 @@
       "hero": {
         "eyebrow": "Initial inquiry",
         "headline": "Tell us what property and situation we're checking.",
-        "lead": "Send a no-obligation inquiry. We'll check the location, how the property is used, and the scope — and come back to you with the next step.",
+        "lead": "Send a no-obligation inquiry. We'll check the location, property use, and operating scope — and come back to you with the next step.",
         "primaryCta": "Go to form",
         "secondaryCta": "What to prepare",
         "artifactTitle": "What we check in an inquiry",
@@ -1746,7 +1747,7 @@
         "notDecidedItems": [
           { "title": "Service acceptance", "body": "Submitting an inquiry does not mean the property has been accepted for service." },
           { "title": "Emergency response", "body": "The public form is not an emergency channel or an active-client operational line." },
-          { "title": "Package scope", "body": "Package level and responsibility are confirmed only after the context is reviewed." }
+          { "title": "Package scope", "body": "Package level and operating scope are confirmed only after the context is reviewed." }
         ],
         "summaryItems": [
           { "label": "Purpose", "value": "scope qualification" },
@@ -1762,7 +1763,7 @@
         "items": [
           { "marker": "01", "title": "Property location", "body": "Town, area, or address so the service radius can be checked." },
           { "marker": "02", "title": "Type and access", "body": "Apartment, house, villa, and whether keys, codes, or technician access are involved." },
-          { "marker": "03", "title": "Usage and package", "body": "Private use, guest stays, or mixed use; the expected package if you already know it." },
+          { "marker": "03", "title": "Property use and package", "body": "Private use, guest stays, or mixed use; the expected package if you already know it." },
           { "marker": "04", "title": "Package if known", "body": "Basic, Extended, Full, or not sure if classification is needed first." },
           { "marker": "05", "title": "Access and keys", "body": "Whether keys, access codes, community gates, or technician access are involved." },
           { "marker": "06", "title": "Operational needs", "body": "Cleaning readiness, guest activity, technical checks, or documentation needs." },
@@ -1806,10 +1807,10 @@
       "form": {
         "eyebrow": "Inquiry form",
         "title": "Complete your inquiry",
-        "intro": "A few fields about you, the property, and how it's used. Clear context helps us review fit faster; usually takes a minute.",
+        "intro": "A few fields about you, the property, and property use. Clear context helps us review fit faster; usually takes a minute.",
         "ownerSection": "Owner details",
         "propertySection": "Property details",
-        "serviceSection": "Usage and needs",
+        "serviceSection": "Property use and needs",
         "consentSection": "Scope acknowledgment",
         "submitNote": "This is an inquiry, not an order — we read it first and reply. It isn't an emergency channel.",
         "submitFollowUp": "After submission, Sentinel checks the location, scope, and next possible step."
@@ -1848,22 +1849,22 @@
     "redesign": {
       "hero": {
         "eyebrow": "Process at a glance",
-        "headline": "From first contact to report and decision",
-        "lead": "Sentinel replaces an informal stream of messages with a controlled process: scope, access, visit, report, and the owner's decision.",
+        "headline": "From qualification to visit report and decision",
+        "lead": "Sentinel replaces an informal stream of messages with a controlled process: operating scope, access, visit, visit report, and the owner's decision.",
         "primaryCta": "Start qualification",
         "secondaryCta": "See the sequence",
         "registerKicker": "What a visit produces",
-        "registerTitle": "Every visit leaves a record",
+        "registerTitle": "Every visit enters the operational record",
         "registerStatus": "example structure",
         "registerStamp": "example, not a client report",
         "registerRows": [
           { "label": "Visit report", "value": "condition, photos, and observations in one document" },
           { "label": "Decision request", "value": "when a matter exceeds the agreed limit" },
-          { "label": "Action summary", "value": "what was closed and what stays on record" }
+          { "label": "Action summary", "value": "what was closed and what stays in the operational record" }
         ],
         "facts": [
           { "label": "Start", "value": "qualification and access" },
-          { "label": "Proof", "value": "report after visit" },
+          { "label": "Proof", "value": "visit report" },
           { "label": "Boundary", "value": "decisions within limit" }
         ]
       },
@@ -1883,8 +1884,8 @@
           "intro": "This schematic shows a sample inspection moment: a visible trace at the balcony-door frame is noticed, checked, and documented.",
           "exampleLabel": "Example — not a client report.",
           "title": "Observation card / balcony door",
-          "chips": ["Access", "Check", "Report", "Decision"],
-          "routeImageAlt": "Horizontal example-observation route on paper with a ruler frame: access (door and keys), check (window, damp trace, magnifier), report (document with photos and a table), and decision threshold (valve with branching arrows).",
+          "chips": ["Access", "Check", "Visit report", "Decision"],
+          "routeImageAlt": "Horizontal example-observation route on paper with a ruler frame: access (door and keys), check (window, damp trace, magnifier), visit report (document with photos and a table), and decision threshold (valve with branching arrows).",
           "observationLabel": "OBSERVATION POINT",
           "accessLabel": "Access",
           "accessValue": "Entry follows the agreed scope",
@@ -1964,16 +1965,16 @@
           { "key": "water", "title": "Water and damp", "body": "Visible leaks, damp traces, and condition around valves, bathrooms, and under sinks." },
           { "key": "systems", "title": "Systems and ventilation", "body": "Visible state of the electrical system and boiler/HVAC, plus airing and odours." },
           { "key": "readiness", "title": "Readiness and cleaning", "body": "If in scope: the property's readiness and cleanliness before arrival or after departure." },
-          { "key": "evidence", "title": "Photos and notes", "body": "Every relevant observation goes into the report as a photo and a short note." }
+          { "key": "evidence", "title": "Photos and notes", "body": "Every relevant observation goes into the visit report as a photo and a short note." }
         ]
       },
       "evidence": {
         "eyebrow": "What the owner receives",
-        "title": "The report turns an observation into a decision.",
-        "intro": "The owner gets a written record from the visit: the observation, the evidence, and the next step. No alarm, no repair without approval, and a clear decision threshold.",
+        "title": "The visit report turns an observation into a decision.",
+        "intro": "The owner gets a visit report: the observation, the evidence, and the next step. No alarm, no repair without approval, and a clear decision threshold.",
         "photoAlt": "Example paper Sentinel visit report on a dark desk, with keys and a pen beside it.",
         "cards": [
-          { "key": "observation", "title": "Observation", "body": "The visible point is recorded." },
+          { "key": "observation", "title": "Observation", "body": "The visible point is recorded in the visit report." },
           { "key": "evidence", "title": "Evidence", "body": "Notes, photos, and visit context." },
           { "key": "next", "title": "Next step", "body": "Monitor, decide, or act within the agreed limit." }
         ],
@@ -2009,7 +2010,7 @@
         "title": "When Sentinel acts, and when the owner decides",
         "intro": "The key boundary is not speed but the authority to act. Every observation falls into one of three cases.",
         "cases": [
-          { "key": "record", "tag": "Record only", "title": "Observation without action", "body": "Sentinel documents the point and compares it at the next visit. Nothing is triggered." },
+          { "key": "record", "tag": "Operational record only", "title": "Observation without action", "body": "Sentinel documents the point and compares it at the next visit. Nothing is triggered." },
           { "key": "approval", "tag": "Owner decision", "title": "Cost or scope needs approval", "body": "When a matter exceeds the agreed scope or limit, the decision returns to the owner with a recommendation." },
           { "key": "protective", "tag": "Protective action", "title": "Only within authority", "body": "Only where the package and agreed limit allow it — to limit immediate damage." }
         ],
@@ -2116,10 +2117,10 @@
       },
       "rhythm": {
         "eyebrow": "After activation",
-        "title": "After activation, the rhythm is steady: visit, report, decision, record.",
+        "title": "After activation, the rhythm is steady: visit, visit report, decision, operational record.",
         "cards": {
           "visits": { "title": "Visits", "body": "The schedule and additional entries operate inside the package." },
-          "reports": { "title": "Reports", "body": "Each relevant visit or event leaves a clear record." },
+          "reports": { "title": "Visit reports", "body": "Each relevant visit produces a visit report; events and decisions stay in the operational record." },
           "access": { "title": "Access", "body": "Third-party entries are coordinated only inside the agreed scope." },
           "changes": { "title": "Changes", "body": "Extensions, temporary needs, and termination require documented agreement." }
         }
@@ -2572,7 +2573,7 @@
     "cta": {
       "eyebrow": "Next step",
       "title": "Start property qualification",
-      "body": "In the form, provide the property location, usage pattern, expected package, and availability for the initial inspection.",
+      "body": "In the form, provide the property location, property use, expected package, and availability for the initial inspection.",
       "bodyFollowUp": "Sentinel responds within 24–48h to confirm geographic eligibility, required data, and the next onboarding step.",
       "primaryCta": "Start qualification",
       "secondaryCta": "View packages",
@@ -2635,7 +2636,7 @@
           },
           "q2": {
             "question": "Can I order a single visit without a package?",
-            "answer": "No. Sentinel works through a monthly package because context, access, and continuity matter. For a single visit, a local contractor is usually the better fit; Sentinel starts after package onboarding."
+            "answer": "No. Sentinel works through a monthly package because context, access, and continuity of the agreed process matter. For a single visit, a local contractor is usually the better fit; Sentinel starts after package onboarding."
           },
           "q3": {
             "question": "What if I need something not in my package?",
@@ -2709,7 +2710,7 @@
           },
           "q16": {
             "question": "Can I have only one visit per month?",
-            "answer": "The standard rhythm is 2 visits per month. A lower frequency can be discussed, but it increases time between checks and may limit accountability. It must be clearly agreed."
+            "answer": "The standard rhythm is 2 visits per month. A lower frequency can be discussed, but it increases time between checks and may limit the scope of checks and actions. It must be clearly agreed."
           },
           "q17": {
             "question": "Can I change my package during cooperation?",
@@ -2731,7 +2732,7 @@
           },
           "q20": {
             "question": "Can you refuse cooperation?",
-            "answer": "Yes. Sentinel may decline if the property is outside the area, expectations do not fit the package model, or service would not be workable. This check happens before onboarding."
+            "answer": "Yes. Sentinel may decline if the property is outside the area, expectations do not fit the package model, or service would not be workable. The service area is an operational boundary, not a travel surcharge. This check happens before onboarding."
           },
           "q21": {
             "question": "Can prices and terms change?",
@@ -2773,7 +2774,7 @@
       "eyebrow": "Guided answers",
       "headline": "Find the answer before you contact Sentinel",
       "lead": "This FAQ is for service fit, scope, access, reports, emergency limits, pricing context, and contact routes. It resolves common hesitation without changing the package model.",
-      "primaryCta": "Contact Sentinel",
+      "primaryCta": "Start qualification",
       "secondaryCta": "View services",
       "facts": [
         { "label": "Scope", "value": "packages and boundaries" },
@@ -2819,22 +2820,6 @@
       "title": "Detailed FAQ, grouped by operating area.",
       "intro": "Detailed answers remain grouped by service fit, access, emergencies, operations, communication, and fit questions."
     },
-    "assumptions": {
-      "eyebrow": "Common wrong assumptions",
-      "title": "Precise context produces the right answer.",
-      "intro": "These assumptions create most category drift.",
-      "assumptionLabel": "Common assumption",
-      "boundaryLabel": "How Sentinel works",
-      "showMoreLabel": "Show remaining assumptions",
-      "showLessLabel": "Hide remaining assumptions",
-      "items": [
-        { "assumption": "Keys alone mean full oversight", "boundary": "Keys provide access. Oversight depends on the package scope, entry rules, and reporting model." },
-        { "assumption": "The SLA guarantees the issue is solved within that time", "boundary": "The SLA defines response and decision timing. Resolution can depend on parts, contractors, and availability." },
-        { "assumption": "Cleaning means rental management", "boundary": "We can coordinate property readiness within the agreed scope. Bookings and rental operations are outside the model." },
-        { "assumption": "An emergency means automatic action on demand", "boundary": "Emergency channels apply to active clients within package terms, authority, and spending limits." },
-        { "assumption": "Outside the area can simply be added for a fee", "boundary": "The service area is an operational boundary, not a price item to negotiate." }
-      ]
-    },
     "decision": {
       "eyebrow": "Still unsure",
       "title": "Choose the next page by the uncertainty.",
@@ -2850,7 +2835,7 @@
         },
         "contact": {
           "title": "Think the property fits?",
-          "body": "Use Contact to start structured intake."
+          "body": "Use Contact to start qualification."
         },
         "decline": {
           "title": "Outside scope?",
@@ -3136,22 +3121,22 @@
     "redesign": {
       "hero": {
         "eyebrow": "Sentinel Costa Blanca",
-        "headline": "When you are away, someone local has to own the situation.",
-        "lead": "A property does not pause because its owner left. Keys, access, water, technicians, and decisions carry on — and someone on site has to answer for the whole of it, not just the tasks. Sentinel is that local layer.",
-        "primaryCta": "Start an inquiry",
+        "headline": "When you are away, someone local has to maintain continuity.",
+        "lead": "A property does not pause because its owner left. Keys, access, water, technicians, and decisions carry on — and someone on site has to keep the situation moving, not just complete isolated tasks. Sentinel is that local operating layer.",
+        "primaryCta": "Start qualification",
         "boundaryCta": "What Sentinel is — and is not",
-        "photoAlt": "Keys and a visit record prepared on a table before a property handover.",
-        "photoCaption": "Keys, record, handover — the working end of owner representation."
+        "photoAlt": "Keys and an operational record prepared on a table before a property handover.",
+        "photoCaption": "Keys, operational record, handover — the working end of owner representation."
       },
       "why": {
         "eyebrow": "Why Sentinel exists",
-        "title": "Remote ownership does not fail at cleaning. It fails at responsibility.",
-        "body": "Most owners can find someone to mop a floor or water the plants. What breaks is the chain around those tasks: who holds the keys, who lets the technician in, who decides at what cost, who writes down what was found — and who answers for it afterwards. Sentinel was built to own that chain.",
+        "title": "Remote ownership does not fail at cleaning. It fails when work stops after the first task.",
+        "body": "Most owners can find someone to mop a floor or water the plants. What breaks is the chain around those tasks: who holds the keys, who lets the technician in, who decides at what cost, who writes down what was found — and who carries the next step forward. Sentinel was built so each of those steps leads to the next.",
         "points": [
           {
             "marker": "01",
-            "title": "Nobody local owns the whole",
-            "body": "Helpers each hold a piece — a key, a chore, a phone number. No one is responsible for the situation."
+            "title": "Nobody local carries the situation forward",
+            "body": "Helpers each hold a piece — a key, a chore, a phone number. No one sees the work through from one step to the next."
           },
           {
             "marker": "02",
@@ -3168,12 +3153,12 @@
       },
       "accessBreak": {
         "alt": "Access check at a property entrance.",
-        "caption": "Access, locks and keys are part of responsibility — not an add-on to cleaning."
+        "caption": "Access rules include locks and keys — they are not an add-on to cleaning."
       },
       "contrast": {
         "eyebrow": "The difference",
         "title": "Cleaning is a task. Oversight is a chain.",
-        "intro": "Property oversight is a chain of access, decisions, timing, documentation, and accountability. A task can be hired out. The chain has to be owned.",
+        "intro": "Property oversight is a chain of access, decisions, timing, and documentation. A task can be hired out. Someone still has to connect the next steps and carry the situation through to a decision.",
         "rows": [
           {
             "role": "A cleaner",
@@ -3187,11 +3172,11 @@
           },
           {
             "role": "Sentinel",
-            "action": "owns the operating situation",
-            "body": "Access, timing, decisions, records, escalation — coordinated on site, inside your agreed scope, with your authority protected."
+            "action": "coordinates the next steps",
+            "body": "Access, timing, decisions, records, and escalation are coordinated on site within the agreed scope. You retain decision authority."
           }
         ],
-        "closing": "Others do work at the property. Sentinel answers for what happens around it."
+        "closing": "Others do work at the property. Sentinel maintains continuity between those tasks."
       },
       "team": {
         "eyebrow": "The local team",
@@ -3281,9 +3266,9 @@
         ]
       },
       "cta": {
-        "title": "If nobody local owns your situation, that is the gap Sentinel fills.",
+        "title": "If nobody local carries the situation from observation to decision, that is the gap Sentinel fills.",
         "intro": "Tell us about the property and how you use it. You will get a plain answer on whether the model fits.",
-        "primaryCta": "Start an inquiry",
+        "primaryCta": "Start qualification",
         "secondaryCta": "View service scope"
       }
     }

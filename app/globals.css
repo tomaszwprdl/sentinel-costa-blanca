@@ -6836,10 +6836,6 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   background: linear-gradient(180deg, rgba(235, 228, 217, 0.48), transparent 60%);
 }
 
-.faq-section--assumptions::before {
-  background: radial-gradient(30rem 13rem at 18% 0%, rgba(255, 253, 249, 0.72), transparent 66%);
-}
-
 .faq-section--decision::before {
   background: linear-gradient(180deg, rgba(228, 236, 233, 0.5), transparent 68%);
 }
@@ -7091,113 +7087,6 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   color: var(--body);
 }
 
-.faq-boundary-strip {
-  overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--line) 60%, var(--support));
-  border-radius: var(--site-radius-shell);
-  background:
-    linear-gradient(90deg, color-mix(in srgb, var(--support) 5%, transparent), transparent 52%),
-    var(--site-surface-shell);
-  box-shadow: var(--site-shadow-shell);
-}
-
-.faq-boundary-strip__header {
-  max-width: none;
-  border-bottom: 1px solid color-mix(in srgb, var(--line) 64%, var(--support));
-  background: var(--site-surface-shell-cool);
-  padding: 1.25rem;
-}
-
-.faq-boundary-strip__grid {
-  display: grid;
-}
-
-.faq-boundary-strip__item {
-  display: grid;
-  gap: 0.85rem;
-  min-width: 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--line) 66%, var(--support));
-  padding: 1rem 1.15rem;
-}
-
-.faq-boundary-strip__item:last-child {
-  border-bottom: 0;
-}
-
-.faq-boundary-strip__label {
-  margin: 0 0 0.3rem;
-  font-size: 0.68rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  line-height: 1.3;
-  text-transform: uppercase;
-}
-
-.faq-boundary-strip__label--wrong {
-  color: color-mix(in srgb, var(--accent) 74%, var(--muted));
-}
-
-.faq-boundary-strip__label--right {
-  color: color-mix(in srgb, var(--support) 78%, var(--authority));
-}
-
-.faq-boundary-strip__assumption,
-.faq-boundary-strip__boundary {
-  margin: 0;
-  line-height: 1.5;
-}
-
-.faq-boundary-strip__assumption {
-  color: var(--muted);
-  font-size: 0.86rem;
-  font-weight: 800;
-}
-
-.faq-boundary-strip__boundary {
-  color: var(--heading);
-  font-size: 0.92rem;
-  font-weight: 700;
-}
-
-@media (min-width: 768px) {
-  .faq-boundary-strip__header {
-    padding: 1.4rem 1.6rem;
-  }
-
-  .faq-boundary-strip__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .faq-boundary-strip__item {
-    border-right: 1px solid color-mix(in srgb, var(--line) 66%, var(--support));
-    padding: 1.1rem 1.2rem;
-  }
-
-  .faq-boundary-strip__item:nth-child(2n),
-  .faq-boundary-strip__item:last-child {
-    border-right: 0;
-  }
-}
-
-@media (min-width: 1180px) {
-  .faq-boundary-strip__grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-
-  .faq-boundary-strip__item {
-    border-bottom: 0;
-    border-right: 1px solid color-mix(in srgb, var(--line) 66%, var(--support));
-  }
-
-  .faq-boundary-strip__item:nth-child(2n) {
-    border-right: 1px solid color-mix(in srgb, var(--line) 66%, var(--support));
-  }
-
-  .faq-boundary-strip__item:last-child {
-    border-right: 0;
-  }
-}
-
 .faq-decision-strip {
   display: grid;
 }
@@ -7327,8 +7216,7 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   .faq-shell,
   .faq-boundary-console,
   .faq-boundary-registry,
-  .faq-assumption-ledger,
-  .faq-boundary-strip {
+  .faq-assumption-ledger {
     border-radius: 1rem;
   }
 }
@@ -7648,11 +7536,6 @@ main.home-page:not(:has(.home-pathway-body)) + .site-footer {
   padding-bottom: 0.65rem;
   font-size: 0.86rem;
   font-weight: 800;
-}
-
-.faq-section--assumptions .faq-assumption-ledger__row {
-  padding: 1.2rem 1.25rem;
-  gap: 0.65rem;
 }
 
 @media (min-width: 640px) {
@@ -27160,8 +27043,7 @@ html:has(.hiw-page),
 .home-contrast-band,
 .faq-shell,
 .faq-boundary-registry,
-.faq-assumption-ledger,
-.faq-boundary-strip {
+.faq-assumption-ledger {
   border: 1px solid color-mix(in srgb, var(--line) 60%, var(--support));
   box-shadow: var(--site-shadow-shell);
 }
@@ -27254,8 +27136,7 @@ html:has(.hiw-page),
   .home-contrast-band,
   .faq-shell,
   .faq-boundary-registry,
-  .faq-assumption-ledger,
-  .faq-boundary-strip {
+  .faq-assumption-ledger {
     border-radius: 1rem;
   }
 }
@@ -28557,14 +28438,6 @@ html:has(.hiw-page),
     linear-gradient(168deg, rgba(138, 146, 194, 0.16) 6%, rgba(27, 58, 78, 0.1) 94%);
 }
 
-.faq-page .faq-section--assumptions::before {
-  background:
-    radial-gradient(68rem 40rem at 72% 30%, rgba(214, 137, 87, 0.34), transparent 70%),
-    radial-gradient(58rem 34rem at 16% 12%, rgba(122, 143, 163, 0.18), transparent 72%),
-    radial-gradient(52rem 30rem at 22% 86%, rgba(206, 116, 78, 0.2), transparent 72%),
-    linear-gradient(136deg, rgba(103, 178, 169, 0.1) 0%, rgba(226, 160, 108, 0.24) 64%, transparent 100%);
-}
-
 .faq-page .faq-section--decision::before {
   background:
     radial-gradient(64rem 40rem at 68% 12%, rgba(122, 143, 163, 0.28), transparent 70%),
@@ -28935,144 +28808,6 @@ html:has(.hiw-page),
   line-height: 1.58;
 }
 
-.faq-boundary-strip {
-  overflow: hidden;
-  border-color: color-mix(in srgb, var(--line) 54%, var(--faq-desk-teal));
-  border-radius: 1rem;
-  background:
-    linear-gradient(90deg, rgba(16, 38, 63, 0.032) 1px, transparent 1px) 0 0 / 4.25rem 100%,
-    linear-gradient(180deg, rgba(255, 253, 247, 0.9), rgba(238, 229, 216, 0.94));
-  box-shadow:
-    inset 0 1px 0 rgba(255, 253, 247, 0.86),
-    0 22px 44px -34px rgba(16, 38, 63, 0.4);
-}
-
-.faq-boundary-strip__header {
-  border-bottom-color: color-mix(in srgb, var(--line) 60%, var(--faq-desk-teal));
-  background:
-    linear-gradient(90deg, rgba(47, 111, 115, 0.065), transparent 62%),
-    rgba(255, 253, 247, 0.42);
-}
-
-.faq-boundary-strip__header .text-body {
-  color: color-mix(in srgb, var(--body) 72%, var(--muted));
-}
-
-.faq-boundary-strip__board {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.72rem;
-  padding: 0.82rem;
-}
-
-.faq-boundary-strip__tile {
-  position: relative;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  min-width: 0;
-  overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--line) 64%, var(--faq-desk-teal));
-  border-radius: 0.78rem;
-  background:
-    linear-gradient(90deg, rgba(184, 102, 74, 0.045), transparent 46%),
-    linear-gradient(180deg, rgba(255, 253, 247, 0.78), rgba(247, 240, 229, 0.9));
-  box-shadow:
-    inset 0 1px 0 rgba(255, 253, 247, 0.82),
-    0 14px 28px -28px rgba(16, 38, 63, 0.3);
-}
-
-.faq-boundary-strip__tile::before {
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 0.22rem;
-  background: linear-gradient(180deg, var(--faq-desk-copper), color-mix(in srgb, var(--faq-desk-teal) 72%, var(--faq-desk-ink)));
-  content: "";
-  opacity: 0.72;
-}
-
-.faq-boundary-strip__tile-top {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  min-width: 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--line) 62%, var(--faq-desk-teal));
-  background:
-    linear-gradient(90deg, rgba(184, 102, 74, 0.08), transparent 72%),
-    rgba(255, 253, 247, 0.36);
-  padding: 0.64rem 0.78rem 0.58rem 0.95rem;
-}
-
-.faq-boundary-strip__marker {
-  display: inline-flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  width: 1.72rem;
-  height: 1.72rem;
-  border: 1px solid color-mix(in srgb, var(--faq-desk-copper) 38%, var(--line));
-  border-radius: 0.48rem;
-  background: color-mix(in srgb, var(--faq-desk-copper) 8%, var(--faq-desk-paper));
-  color: color-mix(in srgb, var(--faq-desk-copper) 74%, var(--faq-desk-ink));
-  font-size: 0.62rem;
-  font-weight: 900;
-  letter-spacing: 0.06em;
-}
-
-.faq-boundary-strip__tile-body {
-  display: grid;
-  gap: 0.68rem;
-  align-content: start;
-  padding: 0.78rem 0.82rem 0.86rem 0.95rem;
-}
-
-.faq-boundary-strip__label {
-  margin: 0;
-  color: color-mix(in srgb, var(--muted) 78%, var(--body));
-  font-size: 0.6rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
-.faq-boundary-strip__label--wrong {
-  color: color-mix(in srgb, var(--faq-desk-copper) 58%, var(--muted));
-}
-
-.faq-boundary-strip__label--right {
-  color: color-mix(in srgb, var(--faq-desk-teal) 68%, var(--faq-desk-ink));
-}
-
-.faq-boundary-strip__assumption {
-  margin: 0;
-  color: color-mix(in srgb, var(--body) 56%, var(--muted));
-  font-size: 0.82rem;
-  font-weight: 720;
-  line-height: 1.4;
-}
-
-.faq-boundary-strip__correction {
-  display: grid;
-  gap: 0.28rem;
-  border-top: 1px solid color-mix(in srgb, var(--line) 58%, var(--faq-desk-teal));
-  background:
-    linear-gradient(90deg, rgba(47, 111, 115, 0.07), transparent 78%);
-  margin-inline: -0.2rem;
-  padding: 0.62rem 0.2rem 0;
-}
-
-.faq-boundary-strip__boundary {
-  margin: 0;
-  color: color-mix(in srgb, var(--heading) 88%, black);
-  font-size: 0.89rem;
-  font-weight: 780;
-  line-height: 1.46;
-}
-
-.faq-boundary-strip__mobile-toggle {
-  display: none;
-}
-
 .faq-shell--decision {
   border-color: rgba(255, 250, 242, 0.15);
   border-radius: 1rem;
@@ -29213,10 +28948,6 @@ html:has(.hiw-page),
     transform: translateX(2px);
   }
 
-  .faq-boundary-strip__board {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   .faq-decision-strip {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -29279,7 +29010,6 @@ html:has(.hiw-page),
 
   .faq-answer-console__rail,
   .faq-answer-console__body,
-  .faq-boundary-strip,
   .faq-shell--decision {
     border-radius: 0.86rem;
   }
@@ -29335,42 +29065,6 @@ html:has(.hiw-page),
     scroll-snap-align: start;
   }
 
-  .faq-boundary-strip__board {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.58rem;
-    padding: 0.58rem;
-  }
-
-  .faq-boundary-strip__tile[data-mobile-secondary="true"] {
-    display: none;
-  }
-
-  .faq-boundary-strip__board[data-mobile-expanded="true"] .faq-boundary-strip__tile[data-mobile-secondary="true"] {
-    display: grid;
-  }
-
-  .faq-boundary-strip__tile-body {
-    gap: 0.56rem;
-    padding: 0.7rem 0.78rem 0.78rem 0.9rem;
-  }
-
-  .faq-boundary-strip__mobile-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: calc(100% - 1.16rem);
-    min-height: 2.55rem;
-    margin: 0 0.58rem 0.58rem;
-    border: 1px solid color-mix(in srgb, var(--faq-desk-teal) 42%, var(--line));
-    border-radius: 0.64rem;
-    background:
-      linear-gradient(90deg, rgba(47, 111, 115, 0.07), transparent 68%),
-      rgba(255, 253, 247, 0.76);
-    color: color-mix(in srgb, var(--faq-desk-teal) 78%, var(--faq-desk-ink));
-    cursor: pointer;
-    font-size: 0.82rem;
-    font-weight: 850;
-  }
 }
 
 @media (max-width: 640px) {

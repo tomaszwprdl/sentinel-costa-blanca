@@ -410,6 +410,9 @@ export default async function ServicesPage({
                       <p className="section-label">{t('redesign.modules.eyebrow')}</p>
                       <h2 className="h2-system mt-3">{t('redesign.modules.title')}</h2>
                       <p className="services-operational-record__intro mt-3">{t('redesign.modules.intro')}</p>
+                      <Link href={`/${locale}/how-it-works`} className="btn-secondary mt-4 inline-flex">
+                        {t('redesign.modules.processCta')}
+                      </Link>
                     </div>
                     <p className="services-output-preview__stamp">{t('redesign.modules.recordLabel')}</p>
                   </div>

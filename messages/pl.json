@@ -142,15 +142,15 @@
       "selectorTitle": "Wybierz sposób używania nieruchomości",
       "selectorInstruction": "Od tego zależy zakres lokalnego nadzoru.",
       "gateInstruction": "Nie wiesz, który wariant pasuje? Wybierz model mieszany albo porozmawiaj z Aleksym.",
-      "gateScrollCue": "Wybierz sytuację poniżej",
+      "gateScrollCue": "Wybierz sposób używania poniżej",
       "chooseModel": "Wybierz ten model",
-      "selectedSituationLabel": "Wybrana sytuacja:",
-      "changeSituation": "Zmień sytuację",
-    "selectedLabel": "Wybrana sytuacja:",
+      "selectedSituationLabel": "Wybrany wariant:",
+      "changeSituation": "Zmień wariant",
+    "selectedLabel": "Wybrany sposób używania nieruchomości:",
     "priorityLabel": "Priorytet Sentinel:",
     "changesLabel": "Co to zmienia:",
-    "cta": "Omów tę sytuację",
-    "reviewCta": "Rozpocznij zapytanie",
+    "cta": "Rozpocznij kwalifikację",
+    "reviewCta": "Rozpocznij kwalifikację",
     "servicesCta": "Porównaj zakres usług",
     "meaningLabel": "Znaczenie operacyjne",
     "nextLabel": "Następny krok właściciela",
@@ -253,9 +253,9 @@
           }
         },
       "mixed-not-defined": {
-        "priority": "Najpierw klasyfikujemy faktyczny sposób używania lokalu i ustalamy zakres startowy. Model może się zmienić po pierwszej ocenie — bez zakładania z góry niewłaściwego rytmu nadzoru.",
-        "meaning": "Gdy model używania może się zmienić, zakres startowy ustala się ostrożnie i potwierdza po pierwszej ocenie — zamiast zakładać go z góry.",
-        "next": "Rozpocznij wstępną ocenę zapytania, aby rozdzielić użytek prywatny, pobyty gości i potrzebny zakres.",
+        "priority": "Najpierw klasyfikujemy faktyczny sposób używania nieruchomości i ustalamy zakres startowy. Po pierwszej ocenie można go skorygować — bez zakładania z góry rytmu nadzoru.",
+        "meaning": "Gdy plan używania lokalu może się zmienić, zakres startowy ustala się ostrożnie i potwierdza po pierwszej ocenie.",
+        "next": "Rozpocznij kwalifikację, aby rozdzielić użytek prywatny, pobyty gości i potrzebny zakres.",
         "point1": "Dziś użytek prywatny, później możliwy wynajem",
         "point2": "Uniknięcie złego wyboru zakresu",
         "point3": "Uniknięcie niepotrzebnej intensywności obsługi gości",
@@ -293,7 +293,7 @@
           "decisions": {
             "label": "Przyjazd",
             "title": "Gotowość przed przyjazdem",
-            "body": "Właściciel dostaje zapis stanu i punktów, które trzeba potwierdzić przed przyjazdem."
+            "body": "Właściciel dostaje raport po wizycie ze stanem i punktami, które trzeba potwierdzić przed przyjazdem."
           }
         },
         "contrast": {
@@ -316,7 +316,7 @@
       },
       "regular-guest-stays": {
         "systemIntroContext": "Przy regularnych pobytach gości liczy się porządek między wyjazdami: dostęp, sprzątanie, stan i dokumentacja zdarzeń.",
-        "systemIntroLens": "Każda rotacja wraca do tego samego rytmu: wejście, przygotowanie, kontrola i zapis przed kolejnym użyciem.",
+        "systemIntroLens": "Każda rotacja wraca do tego samego rytmu: wejście, przygotowanie, kontrola i zapis operacyjny przed kolejnym użyciem.",
         "systemIntroPosture": "Wyjazd gości → dostęp i sprzątanie → stan po pobycie → gotowość na kolejny przyjazd",
         "systemIntroProcess": {
           "scope": {
@@ -330,9 +330,9 @@
             "body": "Koordynujemy klucze, wejście, sprzątanie i podstawową gotowość przed przyjazdem gości."
           },
           "procedure": {
-            "label": "Zapis",
+            "label": "Zapis operacyjny",
             "title": "Stan po pobycie",
-            "body": "Zapisujemy braki, szkody, zdjęcia referencyjne i rzeczy wymagające decyzji."
+            "body": "Zapis operacyjny obejmuje braki, szkody, zdjęcia referencyjne i rzeczy wymagające decyzji."
           },
           "decisions": {
             "label": "Gotowość",
@@ -359,8 +359,8 @@
         "finalCtaSupport": "Sentinel prowadzi porządek między pobytami: dostęp, sprzątanie, kontrolę stanu po pobycie i udokumentowaną gotowość przed kolejnym przyjazdem."
       },
       "mixed-not-defined": {
-        "systemIntroContext": "Gdy model użytkowania nie jest jeszcze jasny, najpierw trzeba go opisać. Zakres ustala się po ocenie sytuacji nieruchomości.",
-        "systemIntroLens": "Najpierw rozpoznaje się model używania. Dopiero po tej klasyfikacji zakres może być ustawiony bez zgadywania.",
+        "systemIntroContext": "Gdy nie jest jeszcze jasne, czy lokal będzie używany prywatnie, przez gości czy mieszanie, najpierw trzeba to opisać. Zakres ustala się po kwalifikacji.",
+        "systemIntroLens": "Najpierw rozpoznajemy faktyczny model. Dopiero potem ustawiamy zakres bez zgadywania.",
         "systemIntroPosture": "Pierwsza ocena → klasyfikacja → zakres startowy → potwierdzony plan",
         "systemIntroProcess": {
           "scope": {
@@ -369,7 +369,7 @@
             "body": "Najpierw ustalamy, jak lokal faktycznie będzie używany: prywatnie, gościnnie albo mieszanie."
           },
           "documentation": {
-            "label": "Model użycia",
+            "label": "Sposób używania nieruchomości",
             "title": "Klasyfikacja",
             "body": "Oddzielamy potrzeby stałe od tych, które wynikają tylko z okazjonalnych pobytów."
           },
@@ -397,16 +397,16 @@
           "right4": "Końcowy zakres wynika z wstępnej oceny zapytania, nie z domysłu online.",
           "rightClosing": "Najpierw klasyfikacja, potem zakres."
         },
-        "distinctionIntro": "Sentinel najpierw porządkuje sposób używania lokalu, zanim zostanie dobrany zakres obsługi, rytm obecności, dokumentacja i granice decyzji.",
-        "finalContext": "To nie trzeci wariant wyceny. Następny krok to wstępna ocena zapytania i klasyfikacja.",
+        "distinctionIntro": "Sentinel najpierw ustala, jak lokal będzie używany. Dopiero potem dobiera zakres kontroli, rytm wizyt, dokumentację i granice decyzji.",
+        "finalContext": "To nie trzeci wariant wyceny. Następny krok to kwalifikacja: użytek prywatny, pobyty gości albo model mieszany.",
         "finalCtaTitle": "Nie musisz dziś wybierać docelowego zakresu. Zacznij od klasyfikacji.",
-        "finalCtaSupport": "Wstępna ocena zapytania rozdziela użytek prywatny i pobyty gości. Zakres startowy zostaje potwierdzony po pierwszej ocenie."
+        "finalCtaSupport": "Kwalifikacja rozdziela użytek prywatny i pobyty gości. Zakres startowy zostaje potwierdzony po pierwszej ocenie."
       }
     },
     "floor": {
       "eyebrow": "Wspólny rdzeń",
       "title": "W każdym modelu działamy przez ten sam rdzeń.",
-      "lead": "Wybór sytuacji dopasowuje częstotliwość i zakres. Sam mechanizm pozostaje stały: ustalenia, dostęp, gotowość lokalu, kontrola na miejscu i zapis dla właściciela.",
+      "lead": "Sposób używania nieruchomości określa częstotliwość i zakres. Sam mechanizm pozostaje stały: ustalenia, dostęp, gotowość lokalu, kontrola na miejscu i raport po wizycie dla właściciela.",
       "steps": {
         "scope": {
           "title": "Ustalamy zakres",
@@ -421,11 +421,11 @@
           "body": "Kontrola odbywa się fizycznie na miejscu: woda, prąd, wentylacja i widoczny stan."
         },
         "record": {
-          "title": "Zapis dla właściciela",
-          "body": "Po wizycie otrzymujesz zapis stanu, wykonanych działań i punktów wymagających decyzji."
+          "title": "Raport po wizycie",
+          "body": "Po wizycie otrzymujesz raport o stanie, wykonanych działaniach i punktach wymagających decyzji."
         }
       },
-      "note": "Wybierz sytuację powyżej, żeby zobaczyć wariant dopasowany do sposobu używania lokalu."
+      "note": "Wybierz sposób używania nieruchomości powyżej, żeby zobaczyć dopasowany wariant."
     },
     "exposure": {
       "title": "Czym naprawdę ryzykujesz bez lokalnej reprezentacji?",
@@ -437,7 +437,7 @@
       "close2": "Chodzi o to, że dowiesz się o tym za późno."
     },
   "contrast": {
-    "eyebrow": "Po wyborze sytuacji",
+    "eyebrow": "Po wyborze wariantu",
     "title": "Bez nas / Z nami",
     "intro": "Poniżej różnica między sytuacją bez lokalnej reprezentacji a stałą kontrolą na miejscu.",
     "leftModeLabel": "Ryzyko bez struktury",
@@ -574,9 +574,9 @@
       },
       "slides": {
         "wrongStartingAssumption": {
-          "title": "Błędne założenie na starcie ustawia zły model obsługi.",
+          "title": "Błędna ocena użycia lokalu może ustawić niewłaściwy rytm kontroli i zasady dostępu.",
           "body": "Lokal może zaczynać jako prywatny, a później przyjmować gości. Jeśli zakres zostanie wybrany z założenia, kolejne potrzeby stają się wyjątkami.",
-          "responseLead": "Najpierw rozpoznajemy faktyczny sposób używania lokalu.",
+          "responseLead": "Najpierw sprawdzamy, jak lokal jest faktycznie używany.",
           "responseBody": "Sentinel oddziela użytek prywatny, pobyty gości i model mieszany, zanim zostanie dobrany zakres, rytm kontroli i poziom decyzji.",
           "alt": "Sypialnia przygotowana jednocześnie pod pobyt właściciela i możliwy pobyt gości."
         },
@@ -769,7 +769,7 @@
       "title": "Możesz reagować dopiero po problemie. Albo działać według ustalonego planu.",
       "p1": "Zarządzanie reaktywne opiera się na reagowaniu. System opiera się na stałej kontroli.",
       "p2": "Sentinel pomaga utrzymać lokalny porządek działań: zakres, dokumentację, dostęp i decyzje w określonych granicach.",
-      "cta": "Rozpocznij zapytanie",
+      "cta": "Rozpocznij kwalifikację",
       "secondaryCta": "Zobacz pakiety",
       "mediaAlt": "Operacyjne zdjęcie zastępcze listy przekazania, kluczy i notatnika na stole"
     }
@@ -788,10 +788,10 @@
     "redesign": {
       "journey": {
         "overview": "Co ustalamy",
-        "situation": "Sytuacja",
-        "responsibility": "Odpowiedzialność",
-        "scope": "Zakres",
-        "modules": "Zapis",
+        "situation": "Sposób używania nieruchomości",
+        "responsibility": "Zakres pakietu",
+        "scope": "Zakres działania",
+        "modules": "Zapis operacyjny",
         "estimator": "Estymator"
       },
       "hero": {
@@ -827,27 +827,27 @@
       },
       "skim": {
         "eyebrow": "Ustalenie modelu",
-        "title": "Najpierw ustalamy model działania lokalu.",
-        "intro": "Pakiet zaczyna się od czterech ustaleń: stanu lokalu, dostępu, zapisu i granicy decyzji.",
+        "title": "Najpierw ustalamy sposób używania nieruchomości i zakres działania.",
+        "intro": "Pakiet określa zakres kontroli, zasady dostępu, dokumentację dla właściciela i granicę decyzji.",
         "protocolLabel": "Cztery ustalenia",
-        "protocolNote": "Po tym etapie estymator ma kontekst, a zakres nie jest zgadywany.",
+        "protocolNote": "Te ustalenia wyznaczają pakiet i kontekst estymacji.",
         "items": {
           "inspections": { "label": "Stan lokalu", "title": "Co sprawdzamy", "body": "Kontrole obejmują widoczny stan i uzgodnione punkty, nie otwartą listę zadań." },
           "access": { "label": "Dostęp", "title": "Kto może wejść", "body": "Właściciel, technik, sprzątanie lub partner działają według ustalonego sposobu dostępu." },
-          "decisions": { "label": "Zapis", "title": "Co trafia do raportu", "body": "Zapis pokazuje, co sprawdzono, co wykonano i co wymaga kolejnego kroku." },
+          "decisions": { "label": "Dokumentacja", "title": "Co otrzymuje właściciel", "body": "Raport po wizycie lub inna dokumentacja odpowiednia do zdarzenia." },
           "approval": { "label": "Granica decyzji", "title": "Co wymaga zgody", "body": "Wyższy koszt albo zmiana zakresu wymaga zgody właściciela przed działaniem." }
         }
       },
       "ladder": {
-        "eyebrow": "Poziom odpowiedzialności",
-        "title": "Pakiet określa, za co Sentinel odpowiada.",
+        "eyebrow": "Rytm i granice pakietu",
+        "title": "Pakiet określa rytm wizyt, zakres dostępu, czas reakcji i granice samodzielnego działania.",
         "intro": "Pakiety różnią się rytmem wizyt, koordynacją dostępu, priorytetem i limitem decyzji.",
-        "bridgeLine": "Najpierw ustalamy, jak nieruchomość jest używana. Dopiero potem dobieramy poziom obsługi.",
+        "bridgeLine": "Najpierw ustalamy sposób używania nieruchomości. Dopiero potem dobieramy pakiet.",
         "cueLabels": ["Rytm wizyt", "Dostęp i koordynacja", "Limit decyzji"],
         "detailCta": "Zobacz pełny zakres",
         "estimatorCta": "Przejdź do estymatora",
         "costNote": "Koszt zależy od pakietu, metrażu i sposobu używania nieruchomości. Dokładny przedział pokaże estymator.",
-        "responsibilityLabel": "Główna odpowiedzialność",
+        "responsibilityLabel": "Główna rola Sentinel",
         "depthLabel": "Zakres działania",
         "mobileScope": {
           "basic": "Kontrola",
@@ -870,17 +870,17 @@
       "mobileDisclosure": {
         "open": "Pokaż szczegóły",
         "close": "Ukryj",
-        "responsibilityTitle": "Szczegóły odpowiedzialności pakietu",
+        "responsibilityTitle": "Szczegóły zakresu pakietu",
         "responsibilitySummary": "Rytm wizyt, dostęp, decyzje i przejście do zakresu.",
         "estimatorTitle": "Co estymator bierze pod uwagę",
-        "estimatorSummary": "Pakiet, sposób używania i parametry lokalu przed widełkami.",
+        "estimatorSummary": "Pakiet, sposób używania nieruchomości i parametry lokalu przed widełkami.",
         "scopeTitle": "Pełne ramy i wyłączenia",
         "scopeSummary": "Zasady wizyt, limity decyzji i lista rzeczy poza zakresem.",
-        "recordTitle": "Co trafia do zapisu",
-        "recordSummary": "Gotowość, dostęp, koordynacja i decyzje w jednym zapisie.",
+        "recordTitle": "Jakie dokumenty i zapisy otrzymuje właściciel",
+        "recordSummary": "Raport po wizycie, zapis operacyjny, prośba o decyzję lub podsumowanie działania.",
         "appendixTitle": "Poza modelem pakietowym",
         "appendixSummary": "Kiedy pojedyncze czynności są wyjątkiem i wymagają osobnej oceny.",
-        "packageProofTitle": "Odpowiedzialność pakietów",
+        "packageProofTitle": "Zakres pakietów",
         "packageProofSummary": "Rytm wizyt, dostęp, decyzje i szczegółowe różnice między pakietami."
       },
       "mobilePackageSummary": {
@@ -968,36 +968,37 @@
       "boundary": {
         "eyebrow": "Granice usługi",
         "title": "Co mieści się w ustalonym zakresie.",
-        "intro": "Tu widać, co sprawdzamy, co koordynujemy i co wymaga osobnej zgody.",
+        "intro": "Bezpośrednie zasady: w zakresie, warunkowo, poza zakresem albo za zgodą właściciela.",
         "eligibility": "Kwalifikacja lokalizacji: Torrevieja + promień 50–70 km.",
         "doesTitle": "W uzgodnionym zakresie",
         "doesNotTitle": "Poza uzgodnionym zakresem",
         "does": {
-          "oversight": { "title": "Lokalny nadzór", "body": "Zaplanowane kontrole stanu i zapis tego, co było widoczne na miejscu." },
+          "oversight": { "title": "Lokalny nadzór", "body": "Zaplanowane kontrole stanu w rytmie określonym przez pakiet." },
           "access": { "title": "Kontrolowany dostęp", "body": "Klucze, wejścia i obecność osób trzecich prowadzone według uzgodnionych zasad." },
-          "documentation": { "title": "Dokumentacja decyzji", "body": "Raporty pokazują stan, wykonane działania i punkty wymagające decyzji właściciela." },
+          "documentation": { "title": "Dokumentacja dla właściciela", "body": "Raporty i prośby o decyzję, gdy wymaga tego zdarzenie lub zakres." },
           "coordination": { "title": "Koordynacja operacyjna", "body": "Kontakt z technikiem, sprzątaniem lub wykonawcą, gdy mieści się w ustaleniach." }
         },
         "doesNot": {
           "bookings": { "title": "Rezerwacje i platformy", "body": "Ceny, licencje, ogłoszenia i komunikacja z platformami wymagają osobnego ustalenia." },
           "administration": { "title": "Administracja finansowa lub właścicielska", "body": "Finanse, spory, dokumenty właścicielskie i decyzje poza ustalonym modelem wymagają osobnego ustalenia." },
-          "lifestyleTasks": { "title": "Zadania osobiste i lifestyle", "body": "Sprawy osobiste i zadania bez ustalonej odpowiedzialności nie wchodzą w bieżący zakres obsługi." },
+          "lifestyleTasks": { "title": "Zadania osobiste i lifestyle", "body": "Sprawy osobiste i zadania bez ustalonej odpowiedzialności pozostają poza usługą." },
           "unlimitedEmergency": { "title": "Nieograniczone prace awaryjne", "body": "Prace awaryjne i koszty mają limity pakietu; działania poza limitem wymagają zgody właściciela." },
           "undefinedTasks": { "title": "Zadania poza ustaleniem", "body": "Czynności spoza pakietu lub bieżącego ustalenia wymagają osobnej zgody przed wykonaniem." }
         }
       },
       "modules": {
         "eyebrow": "Warstwa operacyjna",
-        "title": "Właściciel widzi gotowość, dostęp i decyzje w jednym zapisie.",
-        "intro": "Nadzór zamienia praktyczne działania na zapis: co jest gotowe, kto wszedł, co zostało skoordynowane i co wymaga decyzji właściciela.",
-        "recordLabel": "Podgląd zapisu",
+        "title": "Właściciel otrzymuje dokument lub zapis odpowiedni do zdarzenia.",
+        "intro": "Zakres może obejmować raport po wizycie, zapis operacyjny, prośbę o decyzję lub podsumowanie działania.",
+        "processCta": "Zobacz, jak działa proces",
+        "recordLabel": "Podgląd dokumentów i zapisów",
         "handoffLabel": "Co widzi właściciel",
-        "recordSummary": "Jeden zapis porządkuje status lokalu, wejścia, koordynację i punkty wymagające decyzji.",
+        "recordSummary": "Dokument lub zapis obejmuje status lokalu, dostęp, wykonane działanie albo punkt czekający na zgodę.",
         "outputs": {
-          "readiness": { "title": "Gotowość", "body": "Stan lokalu przed przyjazdem lub po pobycie gości jest sprawdzany i zapisywany w ustalonym zakresie." },
-          "access": { "title": "Dostęp", "body": "Każde wejście zostawia zapis: powód, czas i kto był obecny." },
-          "coordination": { "title": "Koordynacja", "body": "Sprzątanie, technicy, przygotowanie sezonowe i działania partnerów są prowadzone tylko wtedy, gdy mieszczą się w zakresie." },
-          "decision": { "title": "Decyzja", "body": "Sprawy poza zakresem, limitem lub uprawnieniem wracają do właściciela przed działaniem." }
+          "readiness": { "title": "Raport po wizycie", "body": "Wynik uzgodnionych punktów kontroli i status lokalu po wizycie." },
+          "access": { "title": "Zapis operacyjny", "body": "Zdarzenia dostępu i bieżąca koordynacja zachowane dla ustalonego zakresu." },
+          "coordination": { "title": "Podsumowanie działania", "body": "Działanie wykonane w zakresie i jego aktualny status." },
+          "decision": { "title": "Prośba o decyzję", "body": "Koszt, zmiana zakresu lub działanie przekraczające uprawnienie — do zgody właściciela." }
         },
         "capabilityImageAlt": "Klucze, notatnik i ściereczka przygotowane do zadania dostępu lub gotowości",
         "cleaning": {
@@ -1015,7 +1016,7 @@
         "stackLabel": "Kontrolowane zdolności",
         "stackTitle": "Dostęp i gotowość sezonowa działają w ramach pakietu.",
         "guardrailLabel": "Zasada",
-        "guardrailBody": "Zdolności operacyjne działają w ramach pakietu. Nie zmieniają SLA, limitów ani wyłączeń.",
+        "guardrailBody": "Rodzaj zapisu nie zmienia pakietu, SLA, limitów ani wyłączeń.",
         "moduleBodies": {
           "rental": "Sprzątanie przygotowawcze, sprzątanie między pobytami i wejścia gości prowadzone jako udokumentowane wykonanie w uzgodnionym zakresie nadzoru.",
           "access": "Klucze, jednorazowe wejścia i logistyka partnerska — kontrolowana koordynacja w nadzorze.",
@@ -1056,7 +1057,7 @@
         "body": "Estymator nie wybiera pakietu za Ciebie. Przelicza ustalony model na orientacyjny miesięczny zakres rozmowy.",
         "steps": {
           "responsibility": { "label": "01", "title": "Zakres", "body": "pakiet i granica decyzji" },
-          "usage": { "label": "02", "title": "Sposób używania", "body": "prywatnie, goście albo model mieszany" },
+          "usage": { "label": "02", "title": "Sposób używania nieruchomości", "body": "prywatnie, goście albo model mieszany" },
           "property": { "label": "03", "title": "Parametry lokalu", "body": "metraż, pokoje i podstawowy kontekst" }
         }
       },
@@ -1066,11 +1067,11 @@
         "intro": "Orientacyjny zakres to punkt wyjścia do rozmowy, nie wiążąca wycena. Do rozmowy wystarczą trzy rzeczy.",
         "cards": {
           "scope": { "label": "Zakres startowy", "body": "Pakiet i granica decyzji, od których zaczynamy." },
-          "usage": { "label": "Model używania", "body": "Prywatnie, goście albo model mieszany, do potwierdzenia." },
+          "usage": { "label": "Sposób używania nieruchomości", "body": "Prywatnie, goście albo model mieszany, do potwierdzenia." },
           "info": { "label": "Do rozmowy", "body": "Lokalizacja, metraż i podstawowy kontekst lokalu." }
         },
-        "assurance": "Przed startem Sentinel potwierdza rytm wizyt, dostęp i granice odpowiedzialności.",
-        "cta": "Wyślij kontekst do krótkiej oceny"
+        "assurance": "Przed startem Sentinel potwierdza rytm wizyt, dostęp i granice samodzielnego działania.",
+        "cta": "Rozpocznij kwalifikację"
       },
       "executionStrip": {
         "thresholdLabel": "Poza modelem pakietowym",
@@ -1088,12 +1089,12 @@
         "frameworkLabel": "Ramy usługi i minimalny okres",
         "frameworkExplainer": "Minimalny okres i zasady wizyt — element operacyjnej umowy.",
         "notIncludedLabel": "Pełna lista wyłączeń",
-        "notIncludedExplainer": "Wyłączenia obowiązują w ustalonym zakresie obsługi."
+        "notIncludedExplainer": "Wyłączenia wynikają z ustalonych granic pakietu."
       },
       "finalRegistry": {
-        "review": { "label": "Kwalifikacja", "body": "Najpierw lokalizacja i sposób używania." },
+        "review": { "label": "Kwalifikacja", "body": "Najpierw lokalizacja i sposób używania nieruchomości." },
         "scope": { "label": "Zakres", "body": "Wiesz, co będzie sprawdzane i kiedy potrzebna jest zgoda." },
-        "next": { "label": "Następny krok", "body": "Wyślij kontekst nieruchomości do krótkiej oceny." }
+        "next": { "label": "Następny krok", "body": "Wyślij kontekst nieruchomości, aby rozpocząć kwalifikację." }
       },
       "finalCta": {
         "eyebrow": "Po przeglądzie zakresu",
@@ -1229,7 +1230,7 @@
         "decisionsLabel": "Decyzje awaryjne:",
         "decisionsValue": "ograniczone zabezp.",
         "ownerLabel": "Właściciel otrzymuje:",
-        "ownerValue": "raport i status; sam prowadzi wejścia, techników i większość decyzji"
+        "ownerValue": "raport po wizycie i status; sam prowadzi wejścia, techników i większość decyzji"
       }
     },
     "orange": {
@@ -1269,7 +1270,7 @@
         "decisionsLabel": "Decyzje awaryjne:",
         "decisionsValue": "limit + zgoda",
         "ownerLabel": "Właściciel otrzymuje:",
-        "ownerValue": "raport i koordynację osób; nie łączy sam techników, sprzątania i dostępu"
+        "ownerValue": "raporty po wizytach i koordynację osób; nie łączy sam techników, sprzątania i dostępu"
       }
     },
     "red": {
@@ -1419,7 +1420,7 @@
     },
     "estimator": {
       "heading": "Orientacyjny zakres miesięczny",
-      "orientationIntro": "Ustal sytuację użycia i poziom odpowiedzialności, zanim policzysz orientacyjny zakres.",
+      "orientationIntro": "Ustal sposób używania nieruchomości i zakres działania, zanim policzysz orientacyjny zakres.",
       "wizard": {
         "outputTitle": "Orientacyjny zakres",
         "pendingRange": "Do ustalenia",
@@ -1428,8 +1429,8 @@
         "scopeNone": "Brak dodatkowych elementów",
         "emptyValue": "—"
       },
-      "stepJurisdiction": "1. Poziom odpowiedzialności",
-      "stepMode": "2. Intensywność użytkowania",
+      "stepJurisdiction": "1. Zakres działania",
+      "stepMode": "2. Sposób używania nieruchomości",
       "stepParameters": "3. Parametry nieruchomości",
       "stepScope": "4. Dodatkowy zakres",
       "groupJurisdiction": "Pakiet i poziom obsługi",
@@ -1445,9 +1446,9 @@
         "active_oversight": "Kontrole + koordynacja dostępu, techników, sprzątania i wejść w uzgodnionym zakresie.",
         "extended_jurisdiction": "Priorytetowa reakcja, najsilniejsza koordynacja i decyzje awaryjne w uzgodnionym limicie."
       },
-      "groupMode": "Tryb operacyjny",
-      "groupModeAnchor": "Tryb operacyjny określa intensywność nadzoru wynikającą z użytkowania nieruchomości.",
-      "modeLabel": "Tryb operacyjny",
+      "groupMode": "Sposób używania nieruchomości",
+      "groupModeAnchor": "Sposób używania nieruchomości określa intensywność nadzoru przyjmowaną przez estymator.",
+      "modeLabel": "Sposób używania nieruchomości",
       "modePrivateUse": "Tylko użytek prywatny",
       "modeActiveGuest": "Regularne pobyty gości",
       "modeMixedUse": "Nie wiem jeszcze / model mieszany",
@@ -1491,7 +1492,7 @@
       "paramsChangedCue": "Parametry zmienione. Ustal zakres ponownie.",
       "compatibilityWarning": "Wybrany pakiet może nie obejmować pełnej koordynacji przy rotacji gości.",
       "compatibilityNote": "Uwaga: Ten pakiet może być niewystarczający przy regularnej rotacji gości.",
-      "reasonWhatModeling": "Ustawiasz pakiet, intensywność użytkowania, parametry nieruchomości oraz opcjonalne elementy dodatkowej obsługi.",
+      "reasonWhatModeling": "Ustawiasz pakiet, sposób używania nieruchomości, parametry nieruchomości oraz opcjonalne elementy dodatkowej obsługi.",
       "reasonGuestModeChange": "Tryb gościnny zwiększa częstotliwość wizyt, obciążenie koordynacją i komunikację.",
       "reasonSelectedStructure": "Wybrana struktura",
       "reasonPriceAfterCalculate": "Zakres pojawi się po naciśnięciu Ustal zakres.",
@@ -1500,8 +1501,8 @@
       "modeWhatGuest1": "Zwiększona częstotliwość wizyt kontrolnych.",
       "modeWhatGuest2": "Większa koordynacja operacyjna.",
       "modeWhatGuest3": "Większa komunikacja i obsługa zdarzeń.",
-      "modeWhatMixed1": "Nie musisz wybierać modelu na start. Jeśli lokal bywa używany różnie albo dopiero planujesz wynajem, opisz sytuację.",
-      "modeWhatMixed2": "Sentinel pomoże dobrać właściwy zakres po rozmowie.",
+      "modeWhatMixed1": "Nie musisz określać docelowego sposobu używania nieruchomości na starcie. Jeśli lokal bywa używany różnie albo dopiero planujesz wynajem, opisz sytuację.",
+      "modeWhatMixed2": "Po rozmowie Sentinel pomoże ustalić zakres kontroli, rytm wizyt i zasady dostępu.",
       "scopeElementBilledByUse": "Rozliczane według użycia.",
       "gateBefore": "Zakres pojawi się po ustaleniu parametrów.",
       "gateReady": "Wybory są kompletne. Ustal zakres, aby pokazać widełki.",
@@ -1516,7 +1517,7 @@
       "driverBullet4": "wybranych elementów dodatkowej obsługi",
       "driverBulletGuest": "rotacji gości",
       "resultJurisdiction": "Pakiet",
-      "resultMode": "Tryb",
+      "resultMode": "Sposób używania nieruchomości",
       "resultArea": "Metraż",
       "resultBedrooms": "Sypialnie",
       "resultScopeElements": "Dodatkowy zakres",
@@ -1526,13 +1527,13 @@
       "ctaProceed": "Przejdź do zapytania",
       "mixedPanelLabel": "Klasyfikacja zakresu",
       "mixedRangeHeading": "Klasyfikacja przed wyceną",
-      "mixedResultBody": "Ten model wymaga krótkiej klasyfikacji przed wyceną. Wyślij opis sytuacji, a ustalimy właściwy zakres: prywatny, rotacyjny albo mieszany.",
+      "mixedResultBody": "Ten wybór wymaga krótkiej klasyfikacji przed wyceną. Wyślij opis sytuacji. Potwierdzimy, czy chodzi o użytek prywatny, regularne pobyty gości czy model mieszany, a następnie ustalimy zakres kontroli i zasady dostępu.",
       "mixedCtaProceed": "Wyślij zapytanie z opisem sytuacji"
     },
     "cta": {
       "headline": "Poproś o porównanie pakietów dla swojej nieruchomości.",
       "subheadline": "Skontaktuj się, aby porównać pakiety i potwierdzić zakres.",
-      "primaryButton": "Złóż zapytanie o pakiet",
+      "primaryButton": "Rozpocznij kwalifikację",
       "secondaryButton": "Mam pytania"
     }
   },
@@ -1614,7 +1615,7 @@
         "villa": "Willa",
         "other": "Inne (proszę określić)"
       },
-      "propertyStatus": "Sytuacja użytkowania nieruchomości",
+      "propertyStatus": "Sposób używania nieruchomości",
       "propertyStatuses": {
         "private-use-only": "Tylko użytek prywatny",
         "regular-guest-stays": "Regularne pobyty gości",
@@ -1715,7 +1716,7 @@
       "hero": {
         "eyebrow": "Zapytanie wstępne",
         "headline": "Powiedz nam, jaką nieruchomość i sytuację sprawdzamy.",
-        "lead": "Wyślij zapytanie bez zobowiązań. Sprawdzimy lokalizację, sposób używania i zakres — i odezwiemy się z następnym krokiem.",
+        "lead": "Wyślij zapytanie bez zobowiązań. Sprawdzimy lokalizację, sposób używania nieruchomości i zakres działania — i odezwiemy się z następnym krokiem.",
         "primaryCta": "Przejdź do formularza",
         "secondaryCta": "Co przygotować",
         "artifactTitle": "Co sprawdzamy w zapytaniu",
@@ -1746,7 +1747,7 @@
         "notDecidedItems": [
           { "title": "Akceptacja usługi", "body": "Wysłanie zapytania nie oznacza przyjęcia nieruchomości do obsługi." },
           { "title": "Reakcja awaryjna", "body": "Publiczny formularz nie jest kanałem awaryjnym ani linią operacyjną aktywnego klienta." },
-          { "title": "Zakres pakietu", "body": "Pakiet i odpowiedzialność są potwierdzane dopiero po sprawdzeniu kontekstu." }
+          { "title": "Zakres pakietu", "body": "Pakiet i zakres działania są potwierdzane dopiero po sprawdzeniu kontekstu." }
         ],
         "summaryItems": [
           { "label": "Cel", "value": "kwalifikacja zakresu" },
@@ -1762,7 +1763,7 @@
         "items": [
           { "marker": "01", "title": "Lokalizacja nieruchomości", "body": "Miasto, okolica albo adres, aby można było sprawdzić obszar obsługi." },
           { "marker": "02", "title": "Typ i dostęp", "body": "Apartament, dom, willa oraz informacja, czy w grę wchodzą klucze, kody lub wejścia techników." },
-          { "marker": "03", "title": "Używanie i pakiet", "body": "Tylko użytek prywatny, pobyty gości albo model mieszany; pakiet, jeśli jest już znany." },
+          { "marker": "03", "title": "Sposób używania nieruchomości i pakiet", "body": "Tylko użytek prywatny, pobyty gości albo model mieszany; pakiet, jeśli jest już znany." },
           { "marker": "04", "title": "Pakiet, jeśli znany", "body": "Podstawowy, Rozszerzony, Pełny albo brak pewności, jeśli najpierw potrzebna jest klasyfikacja." },
           { "marker": "05", "title": "Dostęp i klucze", "body": "Czy w grę wchodzą klucze, kody, bramy wspólnoty albo wejścia techników." },
           { "marker": "06", "title": "Potrzeby operacyjne", "body": "Przygotowanie lokalu, pobyty gości, kontrole techniczne albo dokumentacja." },
@@ -1806,10 +1807,10 @@
       "form": {
         "eyebrow": "Formularz zapytania",
         "title": "Uzupełnij zapytanie",
-        "intro": "Kilka pól o Tobie, nieruchomości i sposobie używania. Jasny kontekst pomaga szybciej ocenić dopasowanie; zwykle zajmuje minutę.",
+        "intro": "Kilka pól o Tobie, nieruchomości i sposobie używania nieruchomości. Jasny kontekst pomaga szybciej ocenić dopasowanie; zwykle zajmuje minutę.",
         "ownerSection": "Dane właściciela",
         "propertySection": "Dane nieruchomości",
-        "serviceSection": "Sposób używania i potrzeby",
+        "serviceSection": "Sposób używania nieruchomości i potrzeby",
         "consentSection": "Potwierdzenie zakresu",
         "submitNote": "To zapytanie, nie zlecenie — najpierw je przeczytamy i odpowiemy. Nie jest to kanał awaryjny.",
         "submitFollowUp": "Po wysłaniu Sentinel sprawdzi lokalizację, zakres i kolejny możliwy krok."
@@ -1848,18 +1849,18 @@
     "redesign": {
       "hero": {
         "eyebrow": "Proces w skrócie",
-        "headline": "Od pierwszego kontaktu do raportu i decyzji",
-        "lead": "Sentinel zastępuje nieformalny ciąg wiadomości kontrolowanym procesem: zakres, dostęp, wizyta, raport i decyzja właściciela.",
+        "headline": "Od kwalifikacji do raportu po wizycie i decyzji",
+        "lead": "Sentinel zastępuje nieformalny ciąg wiadomości kontrolowanym procesem: zakres działania, dostęp, wizyta, raport po wizycie i decyzja właściciela.",
         "primaryCta": "Rozpocznij kwalifikację",
         "secondaryCta": "Zobacz przebieg",
         "registerKicker": "Co powstaje z wizyty",
-        "registerTitle": "Każda wizyta zostawia zapis",
+        "registerTitle": "Każda wizyta trafia do zapisu operacyjnego",
         "registerStatus": "struktura przykładowa",
         "registerStamp": "przykład, nie raport klienta",
         "registerRows": [
-          { "label": "Raport z wizyty", "value": "stan, zdjęcia i obserwacje w jednym dokumencie" },
+          { "label": "Raport po wizycie", "value": "stan, zdjęcia i obserwacje w jednym dokumencie" },
           { "label": "Prośba o decyzję", "value": "gdy sprawa przekracza uzgodniony limit" },
-          { "label": "Podsumowanie działania", "value": "co zamknięto i co pozostaje w zapisie" }
+          { "label": "Podsumowanie działania", "value": "co zamknięto i co pozostaje w zapisie operacyjnym" }
         ],
         "facts": [
           { "label": "Start", "value": "kwalifikacja i dostęp" },
@@ -1883,8 +1884,8 @@
           "intro": "Schemat pokazuje przykładowy moment kontroli: widoczny ślad przy ramie drzwi balkonowych zostaje zauważony, sprawdzony i udokumentowany.",
           "exampleLabel": "Przykład — nie raport klienta.",
           "title": "Karta obserwacji / drzwi balkonowe",
-          "chips": ["Dostęp", "Kontrola", "Raport", "Próg decyzji"],
-          "routeImageAlt": "Pozioma ścieżka przykładowej obserwacji na papierze z ramką miarki: dostęp (drzwi i klucze), kontrola (okno, ślad wilgoci, lupa), raport (dokument ze zdjęciami i tabelą) oraz próg decyzji (zawór z rozgałęzionymi strzałkami).",
+          "chips": ["Dostęp", "Kontrola", "Raport po wizycie", "Próg decyzji"],
+          "routeImageAlt": "Pozioma ścieżka przykładowej obserwacji na papierze z ramką miarki: dostęp (drzwi i klucze), kontrola (okno, ślad wilgoci, lupa), raport po wizycie (dokument ze zdjęciami i tabelą) oraz próg decyzji (zawór z rozgałęzionymi strzałkami).",
           "observationLabel": "PUNKT OBSERWACJI",
           "accessLabel": "Dostęp",
           "accessValue": "Wejście zgodne z uzgodnionym zakresem",
@@ -1964,16 +1965,16 @@
           { "key": "water", "title": "Woda i wilgoć", "body": "Widoczne wycieki, ślady wilgoci i stan przy zaworach, w łazienkach oraz pod zlewami." },
           { "key": "systems", "title": "Instalacje i wentylacja", "body": "Wizualny stan instalacji elektrycznej i bojlera/HVAC oraz przewietrzenie i zapachy." },
           { "key": "readiness", "title": "Gotowość i czystość", "body": "Jeśli w zakresie: stan przygotowania lokalu i czystość przed przyjazdem lub po wyjeździe." },
-          { "key": "evidence", "title": "Zdjęcia i notatki", "body": "Każda istotna obserwacja trafia do raportu jako zdjęcie i krótka notatka." }
+          { "key": "evidence", "title": "Zdjęcia i notatki", "body": "Każda istotna obserwacja trafia do raportu po wizycie jako zdjęcie i krótka notatka." }
         ]
       },
       "evidence": {
         "eyebrow": "Co otrzymuje właściciel",
-        "title": "Raport zamienia obserwację w decyzję.",
-        "intro": "Właściciel dostaje pisemny zapis z wizyty: obserwację, dowód i następny krok. Bez alarmu, bez naprawy bez zgody, z jasnym progiem decyzji.",
-        "photoAlt": "Przykładowy papierowy raport wizyty Sentinel na ciemnym biurku, obok klucze i pióro.",
+        "title": "Raport po wizycie zamienia obserwację w decyzję.",
+        "intro": "Właściciel dostaje raport po wizycie: obserwację, dowód i następny krok. Bez alarmu, bez naprawy bez zgody, z jasnym progiem decyzji.",
+        "photoAlt": "Przykładowy papierowy raport po wizycie Sentinel na ciemnym biurku, obok klucze i pióro.",
         "cards": [
-          { "key": "observation", "title": "Obserwacja", "body": "Widoczny punkt zapisany w raporcie." },
+          { "key": "observation", "title": "Obserwacja", "body": "Widoczny punkt zapisany w raporcie po wizycie." },
           { "key": "evidence", "title": "Dowód", "body": "Notatki, zdjęcia i kontekst kontroli." },
           { "key": "next", "title": "Następny krok", "body": "Monitorować, zdecydować albo działać w limicie." }
         ],
@@ -2009,7 +2010,7 @@
         "title": "Kiedy Sentinel działa, a kiedy decyduje właściciel",
         "intro": "Najważniejsza granica to nie szybkość, tylko uprawnienie do działania. Każda obserwacja trafia do jednego z trzech przypadków.",
         "cases": [
-          { "key": "record", "tag": "Tylko zapis", "title": "Obserwacja bez działania", "body": "Sentinel dokumentuje punkt i porównuje go przy kolejnej wizycie. Nic nie jest uruchamiane." },
+          { "key": "record", "tag": "Tylko zapis operacyjny", "title": "Obserwacja bez działania", "body": "Sentinel dokumentuje punkt i porównuje go przy kolejnej wizycie. Nic nie jest uruchamiane." },
           { "key": "approval", "tag": "Decyzja właściciela", "title": "Koszt lub zakres wymaga zgody", "body": "Gdy sprawa przekracza uzgodniony zakres lub limit, decyzja wraca do właściciela wraz z rekomendacją." },
           { "key": "protective", "tag": "Działanie ochronne", "title": "Tylko w granicach uprawnień", "body": "Wyłącznie tam, gdzie pakiet i uzgodniony limit na to pozwalają — aby ograniczyć bezpośrednią szkodę." }
         ],
@@ -2116,10 +2117,10 @@
       },
       "rhythm": {
         "eyebrow": "Po aktywacji",
-        "title": "Po aktywacji rytm jest stały: wizyta, raport, decyzja, zapis.",
+        "title": "Po aktywacji rytm jest stały: wizyta, raport po wizycie, decyzja, zapis operacyjny.",
         "cards": {
           "visits": { "title": "Wizyty", "body": "Harmonogram i dodatkowe wejścia działają w granicach pakietu." },
-          "reports": { "title": "Raporty", "body": "Każda istotna wizyta lub zdarzenie zostawia czytelny zapis." },
+          "reports": { "title": "Raporty po wizytach", "body": "Każda istotna wizyta tworzy raport po wizycie; zdarzenia i decyzje pozostają w zapisie operacyjnym." },
           "access": { "title": "Dostęp", "body": "Wejścia osób trzecich są koordynowane tylko w ustalonym zakresie." },
           "changes": { "title": "Zmiany", "body": "Rozszerzenia, czasowe potrzeby i zakończenie wymagają udokumentowanego ustalenia." }
         }
@@ -2572,7 +2573,7 @@
     "cta": {
       "eyebrow": "Następny krok",
       "title": "Rozpocznij kwalifikację nieruchomości",
-      "body": "W formularzu podaj lokalizację nieruchomości, sposób użytkowania, oczekiwany pakiet oraz dostępność do kontroli wstępnej.",
+      "body": "W formularzu podaj lokalizację nieruchomości, sposób używania nieruchomości, oczekiwany pakiet oraz dostępność do kontroli wstępnej.",
       "bodyFollowUp": "Sentinel odpowie w ciągu 24–48h, aby potwierdzić kwalifikację geograficzną, wymagane dane i kolejny etap wdrożenia.",
       "primaryCta": "Rozpocznij kwalifikację",
       "secondaryCta": "Zobacz pakiety",
@@ -2635,7 +2636,7 @@
           },
           "q2": {
             "question": "Czy mogę zamówić pojedynczą wizytę bez pakietu?",
-            "answer": "Nie. Sentinel działa w miesięcznym pakiecie, bo wtedy ma kontekst, dostęp i odpowiedzialność za ciągłość. Do pojedynczej wizyty lepiej pasuje lokalny wykonawca; Sentinel zaczyna pracę po wdrożeniu do pakietu."
+            "answer": "Nie. Sentinel działa w miesięcznym pakiecie, bo wtedy ma kontekst, dostęp i ciągłość ustalonego procesu. Do pojedynczej wizyty lepiej pasuje lokalny wykonawca; Sentinel zaczyna pracę po wdrożeniu do pakietu."
           },
           "q3": {
             "question": "Co jeśli potrzebuję czegoś, co nie jest w moim pakiecie?",
@@ -2709,7 +2710,7 @@
           },
           "q16": {
             "question": "Czy mogę mieć tylko jedną wizytę w miesiącu?",
-            "answer": "Standard to 2 wizyty miesięcznie. Rzadszy rytm można omówić, ale zwiększa odstęp między kontrolami i może ograniczyć zakres odpowiedzialności. Taka zmiana musi być jasno uzgodniona."
+            "answer": "Standard to 2 wizyty miesięcznie. Rzadszy rytm można omówić, ale zwiększa odstęp między kontrolami i może ograniczyć zakres kontroli i działań. Taka zmiana musi być jasno uzgodniona."
           },
           "q17": {
             "question": "Czy mogę zmienić pakiet podczas współpracy?",
@@ -2731,7 +2732,7 @@
           },
           "q20": {
             "question": "Czy możecie odmówić współpracy?",
-            "answer": "Tak. Sentinel może odmówić, jeśli nieruchomość jest poza obszarem, oczekiwania nie pasują do modelu pakietowego albo obsługa nie byłaby wykonalna. Ocena odbywa się przed wdrożeniem."
+            "answer": "Tak. Sentinel może odmówić, jeśli nieruchomość jest poza obszarem, oczekiwania nie pasują do modelu pakietowego albo obsługa nie byłaby wykonalna. Obszar działania jest granicą operacyjną, nie dopłatą za dojazd. Ocena odbywa się przed wdrożeniem."
           },
           "q21": {
             "question": "Czy ceny i warunki mogą się zmieniać?",
@@ -2773,7 +2774,7 @@
       "eyebrow": "Najważniejsze odpowiedzi",
       "headline": "Znajdź odpowiedź przed kontaktem z Sentinel",
       "lead": "FAQ dotyczy dopasowania usługi, zakresu, dostępu, raportów, limitów awaryjnych, kontekstu ceny i kanałów kontaktu. Ma wyjaśnić typowe wątpliwości bez zmiany modelu pakietowego.",
-      "primaryCta": "Skontaktuj się z Sentinel",
+      "primaryCta": "Rozpocznij kwalifikację",
       "secondaryCta": "Zobacz usługi",
       "facts": [
         { "label": "Zakres", "value": "pakiety i granice" },
@@ -2818,22 +2819,6 @@
       "eyebrow": "Szczegółowe odpowiedzi",
       "title": "FAQ pogrupowane według obszarów działania.",
       "intro": "Szczegółowe odpowiedzi są pogrupowane według dopasowania usługi, dostępu, awarii, operacji, komunikacji i warunków dopasowania."
-    },
-    "assumptions": {
-      "eyebrow": "Częste błędne założenia",
-      "title": "Precyzyjne pytanie skraca odpowiedź.",
-      "intro": "Te założenia najczęściej przesuwają usługę w złą kategorię.",
-      "assumptionLabel": "Częste założenie",
-      "boundaryLabel": "Jak działa Sentinel",
-      "showMoreLabel": "Pokaż pozostałe założenia",
-      "showLessLabel": "Ukryj pozostałe założenia",
-      "items": [
-        { "assumption": "Same klucze oznaczają pełny nadzór", "boundary": "Klucze dają dostęp. Zakres nadzoru wynika z pakietu, zasad wejścia i raportowania." },
-        { "assumption": "SLA oznacza rozwiązanie sprawy w podanym czasie", "boundary": "SLA określa czas reakcji i decyzji. Termin rozwiązania zależy od części, wykonawców i dostępności." },
-        { "assumption": "Sprzątanie oznacza zarządzanie wynajmem", "boundary": "Możemy koordynować gotowość lokalu w ustalonym zakresie. Rezerwacje i obsługa najmu są poza modelem." },
-        { "assumption": "Awaria oznacza automatyczne działanie na żądanie", "boundary": "Działania awaryjne są dostępne dla aktywnych klientów i w granicach pakietu, uprawnień oraz limitów." },
-        { "assumption": "Poza obszarem można po prostu dopłacić", "boundary": "Obszar działania jest granicą operacyjną, nie pozycją do negocjacji w cenie." }
-      ]
     },
     "decision": {
       "eyebrow": "Nadal niepewne",
@@ -3136,22 +3121,22 @@
     "redesign": {
       "hero": {
         "eyebrow": "Sentinel Costa Blanca",
-        "headline": "Gdy Ciebie nie ma, ktoś na miejscu musi odpowiadać za sytuację.",
-        "lead": "Nieruchomość nie robi przerwy dlatego, że właściciel wyjechał. Klucze, dostęp, woda, technicy i decyzje toczą się dalej — a ktoś na miejscu musi odpowiadać za całość, nie tylko za pojedyncze zadania. Sentinel jest tą lokalną warstwą.",
-        "primaryCta": "Rozpocznij zapytanie",
+        "headline": "Gdy Ciebie nie ma, ktoś na miejscu musi utrzymać ciągłość działań.",
+        "lead": "Nieruchomość nie robi przerwy dlatego, że właściciel wyjechał. Klucze, dostęp, woda, technicy i decyzje toczą się dalej — a ktoś na miejscu musi prowadzić sprawę dalej, nie tylko wykonywać pojedyncze zadania. Sentinel jest tą lokalną warstwą operacyjną.",
+        "primaryCta": "Rozpocznij kwalifikację",
         "boundaryCta": "Czym Sentinel jest — a czym nie",
-        "photoAlt": "Klucze i zapis wizyty przygotowane na stole przed przekazaniem nieruchomości.",
-        "photoCaption": "Klucze, zapis, przekazanie — codzienny warsztat reprezentacji właściciela."
+        "photoAlt": "Klucze i zapis operacyjny przygotowane na stole przed przekazaniem nieruchomości.",
+        "photoCaption": "Klucze, zapis operacyjny, przekazanie — codzienny warsztat reprezentacji właściciela."
       },
       "why": {
         "eyebrow": "Dlaczego istnieje Sentinel",
-        "title": "Zdalne posiadanie nie zawodzi na sprzątaniu. Zawodzi na odpowiedzialności.",
-        "body": "Większość właścicieli znajdzie kogoś, kto umyje podłogę albo podleje kwiaty. Pęka natomiast łańcuch wokół tych zadań: kto trzyma klucze, kto wpuszcza technika, kto decyduje i do jakiej kwoty, kto zapisuje, co zastał — i kto potem za to odpowiada. Sentinel powstał po to, żeby ten łańcuch prowadzić w całości.",
+        "title": "Zdalne posiadanie nie zawodzi na sprzątaniu. Zawodzi, gdy praca urywa się po pierwszym zadaniu.",
+        "body": "Większość właścicieli znajdzie kogoś, kto umyje podłogę albo podleje kwiaty. Pęka natomiast łańcuch wokół tych zadań: kto trzyma klucze, kto wpuszcza technika, kto decyduje i do jakiej kwoty, kto zapisuje, co zastał — i kto prowadzi kolejny krok. Sentinel powstał po to, żeby każdy z tych kroków prowadził do następnego.",
         "points": [
           {
             "marker": "01",
-            "title": "Nikt lokalnie nie odpowiada za całość",
-            "body": "Każdy pomocnik trzyma swój fragment — klucz, zadanie, numer telefonu. Za sytuację nie odpowiada nikt."
+            "title": "Nikt lokalnie nie prowadzi sprawy dalej",
+            "body": "Każdy pomocnik trzyma swój fragment — klucz, zadanie, numer telefonu. Nikt nie dopilnowuje przejścia od jednego kroku do następnego."
           },
           {
             "marker": "02",
@@ -3168,12 +3153,12 @@
       },
       "accessBreak": {
         "alt": "Sprawdzenie dostępu przy wejściu do nieruchomości.",
-        "caption": "Dostęp, zamki i klucze są częścią odpowiedzialności — nie dodatkiem do sprzątania."
+        "caption": "Zasady dostępu obejmują zamki i klucze — to nie dodatek do sprzątania."
       },
       "contrast": {
         "eyebrow": "Różnica",
         "title": "Sprzątanie to zadanie. Nadzór to łańcuch.",
-        "intro": "Nadzór nad nieruchomością to łańcuch dostępu, decyzji, terminów, dokumentacji i odpowiedzialności. Zadanie można zlecić. Łańcuch trzeba komuś powierzyć w całości.",
+        "intro": "Nadzór nad nieruchomością to łańcuch dostępu, decyzji, terminów i dokumentacji. Zadanie można zlecić. Ktoś nadal musi połączyć kolejne kroki i doprowadzić sprawę do decyzji.",
         "rows": [
           {
             "role": "Osoba sprzątająca",
@@ -3187,11 +3172,11 @@
           },
           {
             "role": "Sentinel",
-            "action": "prowadzi sytuację operacyjną",
-            "body": "Dostęp, terminy, decyzje, zapisy, eskalacja — koordynowane na miejscu, w uzgodnionym zakresie, z zachowaniem Twojej decyzji."
+            "action": "koordynuje kolejne kroki",
+            "body": "Dostęp, terminy, decyzje, zapisy i eskalacja są koordynowane na miejscu, w uzgodnionym zakresie. Decyzja nadal należy do Ciebie."
           }
         ],
-        "closing": "Inni wykonują pracę przy nieruchomości. Sentinel odpowiada za to, co dzieje się wokół niej."
+        "closing": "Inni wykonują pracę przy nieruchomości. Sentinel utrzymuje ciągłość między tymi zadaniami."
       },
       "team": {
         "eyebrow": "Lokalny zespół",
@@ -3281,9 +3266,9 @@
         ]
       },
       "cta": {
-        "title": "Jeśli nikt na miejscu nie odpowiada za Twoją sytuację, właśnie tę lukę wypełnia Sentinel.",
+        "title": "Jeśli nikt na miejscu nie prowadzi sprawy od obserwacji do decyzji, właśnie tę lukę wypełnia Sentinel.",
         "intro": "Opowiedz nam o nieruchomości i o tym, jak z niej korzystasz. Dostaniesz prostą odpowiedź, czy ten model pasuje.",
-        "primaryCta": "Rozpocznij zapytanie",
+        "primaryCta": "Rozpocznij kwalifikację",
         "secondaryCta": "Zobacz zakres usług"
       }
     }

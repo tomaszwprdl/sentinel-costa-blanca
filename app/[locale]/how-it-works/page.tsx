@@ -19,7 +19,6 @@ const RHYTHM_KEYS = ['visits', 'reports', 'access', 'changes'] as const;
 export default async function HowItWorksPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'howItWorks' });
-  const tCommon = await getTranslations({ locale, namespace: 'common' });
 
   const heroRows = t.raw('redesign.hero.registerRows') as RecordRow[];
   const caseThreadChips = t.raw('redesign.procedure.schematic.chips') as string[];
@@ -146,7 +145,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
       </main>
       <MobileStickyCTA
         primaryHref={`/${locale}/contact`}
-        primaryLabel={tCommon('nav.contact')}
+        primaryLabel={t('redesign.hero.primaryCta')}
         secondaryHref="#operational-path"
         secondaryLabel={t('redesign.procedure.eyebrow')}
         suppressWhenVisible="footer,.hiw-handoff,.hiw-section--support,#decision-threshold,#report-record,#operational-path"
