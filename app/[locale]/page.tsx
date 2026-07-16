@@ -37,7 +37,7 @@ export default async function HomePage({
   return (
     <>
       <HeaderClient />
-      <main className="home-page min-h-screen flex flex-col bg-surface-light">
+      <main id="main-content" tabIndex={-1} className="home-page min-h-screen flex flex-col bg-surface-light">
         <Suspense fallback={<UsagePathwayFallback locale={locale} selected={null} t={t} />}>
           <UsagePathwayLayer>
         <div className="home-pathway-body">

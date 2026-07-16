@@ -29,7 +29,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
   return (
     <>
       <HeaderClient />
-      <main className="hiw-page hiw-procedure-page min-h-screen">
+      <main id="main-content" tabIndex={-1} className="hiw-page hiw-procedure-page min-h-screen">
         <Section tone="authority" className="section-primitive--first hiw-hero hiw-procedure-hero" id="process-start">
           <span className="gfx-ruler" aria-hidden="true" />
           <div className="hiw-procedure-hero__grid">

@@ -71,7 +71,7 @@ export default async function AboutPage({
   return (
     <>
       <HeaderClient />
-      <main className="about-page about-operator-page min-h-screen">
+      <main id="main-content" tabIndex={-1} className="about-page about-operator-page min-h-screen">
         <Section tone="authority" className="section-primitive--first about-operator-hero" id="about-start">
           <div className="about-operator-hero__grid">
             <div className="about-operator-hero__copy">

@@ -79,7 +79,7 @@ export default async function ServicesPage({
   return (
     <>
       <HeaderClient />
-      <main className="services-page min-h-screen">
+      <main id="main-content" tabIndex={-1} className="services-page min-h-screen">
         <Section tone="authority" className="section-primitive--first services-command-hero" id="qualification">
           <span className="gfx-ruler" aria-hidden="true" />
           <GridFrame className="services-command-hero__grid items-center">

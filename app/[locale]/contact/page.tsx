@@ -261,7 +261,7 @@ function ContactPageInner() {
     return (
       <>
         <HeaderClient />
-        <main className="contact-page min-h-screen">
+        <main id="main-content" tabIndex={-1} className="contact-page min-h-screen">
           <Section tone="authority" className="section-primitive--first contact-hero contact-dossier-hero contact-success-hero">
             <div className="contact-hero-grid contact-hero-grid--success">
               <div>
@@ -313,7 +313,7 @@ function ContactPageInner() {
   return (
     <>
       <HeaderClient />
-      <main className="contact-page min-h-screen">
+      <main id="main-content" tabIndex={-1} className="contact-page min-h-screen">
         <Section tone="authority" className="section-primitive--first contact-hero contact-dossier-hero" id="contact-start">
           <div className="contact-hero-grid">
             <div className="contact-hero-copy">
@@ -385,6 +385,7 @@ function ContactPageInner() {
                         <input
                           type="text"
                           id="fullName"
+                          autoComplete="name"
                           {...register('fullName')}
                           {...fieldErrorProps('fullName')}
                           className="form-control"
@@ -399,6 +400,7 @@ function ContactPageInner() {
                         <input
                           type="email"
                           id="email"
+                          autoComplete="email"
                           {...register('email')}
                           {...fieldErrorProps('email')}
                           className="form-control"
@@ -413,6 +415,7 @@ function ContactPageInner() {
                         <input
                           type="tel"
                           id="phone"
+                          autoComplete="tel"
                           {...register('phone')}
                           {...fieldErrorProps('phone')}
                           placeholder={t('form.phonePlaceholder')}
@@ -703,7 +706,7 @@ export default function ContactPage() {
     <Suspense fallback={
       <>
         <HeaderClient />
-        <main className="min-h-screen">
+        <main id="main-content" tabIndex={-1} className="min-h-screen">
           <Section tone="light" className="section-primitive--first">
             <div className="py-20"><p className="text-muted">{tCommon('loading')}</p></div>
           </Section>

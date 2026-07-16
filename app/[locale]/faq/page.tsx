@@ -202,7 +202,7 @@ export default function FAQPage() {
   return (
     <>
       <HeaderClient />
-      <main className="faq-page min-h-screen">
+      <main id="main-content" tabIndex={-1} className="faq-page min-h-screen">
         <Section tone="authority" className="section-primitive--first faq-hero" id="faq-start">
           <OperationalField variant="index" />
           <span className="gfx-ruler" aria-hidden="true" />

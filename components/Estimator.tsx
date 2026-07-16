@@ -216,7 +216,7 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
             <h3>{stepTitles.jurisdiction}</h3>
             <span>{t('groupJurisdictionAnchor')}</span>
           </div>
-          <div className="estimator-option-grid estimator-option-grid--packages" role="radiogroup" aria-label={t('packageLabel')}>
+          <div className="estimator-option-grid estimator-option-grid--packages" role="group" aria-label={t('packageLabel')}>
             {PACKAGE_KEYS.map((k, index) => (
               <button
                 key={k}
@@ -254,7 +254,7 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
             <h3>{stepTitles.mode}</h3>
             <span>{t('groupModeAnchor')}</span>
           </div>
-          <div className="estimator-option-grid estimator-option-grid--mode" role="radiogroup" aria-label={t('modeLabel')}>
+          <div className="estimator-option-grid estimator-option-grid--mode" role="group" aria-label={t('modeLabel')}>
             <button
               type="button"
               aria-pressed={modeKey === 'private_use'}
@@ -328,7 +328,7 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
 
             <div className="estimator-bedroom-card">
               <p>{t('bedroomsLabel')}</p>
-              <div className="estimator-bedroom-options" role="radiogroup" aria-label={t('bedroomsLabel')}>
+              <div className="estimator-bedroom-options" role="group" aria-label={t('bedroomsLabel')}>
                 {BEDROOMS_KEYS.map((k) => (
                   <button
                     key={k}
@@ -346,7 +346,7 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
 
             <div className="estimator-bedroom-card">
               <p>{t('bathroomsLabel')}</p>
-              <div className="estimator-bedroom-options" role="radiogroup" aria-label={t('bathroomsLabel')}>
+              <div className="estimator-bedroom-options" role="group" aria-label={t('bathroomsLabel')}>
                 {BATHROOMS_KEYS.map((k) => (
                   <button
                     key={k}
@@ -364,7 +364,7 @@ export default function Estimator({ embedded = false }: EstimatorProps) {
 
             <div className="estimator-bedroom-card estimator-bedroom-card--outdoor">
               <p>{t('outdoorLabel')}</p>
-              <div className="estimator-bedroom-options estimator-bedroom-options--outdoor" role="radiogroup" aria-label={t('outdoorLabel')}>
+              <div className="estimator-bedroom-options estimator-bedroom-options--outdoor" role="group" aria-label={t('outdoorLabel')}>
                 {OUTDOOR_KEYS.map((k) => (
                   <button
                     key={k}

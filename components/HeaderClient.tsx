@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -24,6 +24,7 @@ export default function HeaderClient() {
   const [navOpen, setNavOpen] = useState(false);
   const [navMounted, setNavMounted] = useState(false);
   const closeTimerRef = useRef<number | null>(null);
+  const navTriggerRef = useRef<HTMLButtonElement | null>(null);
 
   const navLinks = [
     { href: `/${locale}/services`, label: t('nav.services') },
@@ -36,12 +37,12 @@ export default function HeaderClient() {
   const isCurrent = (href: string) =>
     pathname === href || pathname?.startsWith(`${href}/`);
 
-  const clearCloseTimer = () => {
+  const clearCloseTimer = useCallback(() => {
     if (closeTimerRef.current !== null) {
       window.clearTimeout(closeTimerRef.current);
       closeTimerRef.current = null;
     }
-  };
+  }, []);
 
   const openNav = () => {
     clearCloseTimer();
@@ -49,14 +50,14 @@ export default function HeaderClient() {
     setNavOpen(true);
   };
 
-  const closeNav = () => {
+  const closeNav = useCallback(() => {
     setNavOpen(false);
     clearCloseTimer();
     closeTimerRef.current = window.setTimeout(() => {
       setNavMounted(false);
       closeTimerRef.current = null;
     }, 220);
-  };
+  }, [clearCloseTimer]);
 
   const toggleNav = () => {
     if (navOpen) {
@@ -75,15 +76,36 @@ export default function HeaderClient() {
     }
   }, [navOpen]);
 
+  // Escape closes the mobile menu and returns focus to its trigger.
+  // The listener only exists while the menu is open.
+  useEffect(() => {
+    if (!navOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+
+      closeNav();
+      navTriggerRef.current?.focus();
+    };
+
+    document.addEventListener('keydown', onKeyDown);
+
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [navOpen, closeNav]);
+
   useEffect(() => {
     return () => {
       clearCloseTimer();
       document.documentElement.removeAttribute('data-mobile-menu-open');
     };
-  }, []);
+  }, [clearCloseTimer]);
 
   return (
-    <header className="site-header sticky top-0 z-50 w-full">
+    <>
+      <a href="#main-content" className="skip-to-content">
+        {t('skipToContent')}
+      </a>
+      <header className="site-header sticky top-0 z-50 w-full">
       <div className="container flex min-h-[76px] items-center justify-between gap-5">
         <Link
           href={`/${locale}`}
@@ -123,6 +145,7 @@ export default function HeaderClient() {
             <LanguageControl />
           </div>
           <button
+            ref={navTriggerRef}
             type="button"
             className="mobile-menu-button focus:outline-none focus-visible:ring-2 focus-visible:ring-support"
             onClick={toggleNav}
@@ -160,6 +183,7 @@ export default function HeaderClient() {
           </div>
         </div>
       )}
-    </header>
+      </header>
+    </>
   );
 }

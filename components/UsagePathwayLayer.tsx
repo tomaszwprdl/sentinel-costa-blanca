@@ -200,7 +200,6 @@ export function PathwayProcessRail() {
     <div
       className="home-command-system"
       data-pathway={selected}
-      aria-label={t('systemIntro.title')}
     >
       <svg
         className="home-property-trace"

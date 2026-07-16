@@ -25,7 +25,7 @@ export default function LegalDocument({
   sections,
 }: LegalDocumentProps) {
   return (
-    <main className="legal-page min-h-screen">
+    <main id="main-content" tabIndex={-1} className="legal-page min-h-screen">
       <Section tone="light" className="section-primitive--first legal-page__section">
         <article className="legal-document">
           <header className="legal-document__header">
