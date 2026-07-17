@@ -8886,14 +8886,14 @@ html:has(.hiw-page),
 
 .services-briefing-panel__copy h2 {
   position: relative;
-  max-width: 13ch;
+  max-width: 15ch;
   margin: 0;
   color: var(--authority-on-dark);
   font-family: var(--font-display);
-  font-size: clamp(2.05rem, 5.4vw, 4.4rem);
+  font-size: clamp(2.05rem, 3.35vw, 3rem);
   font-weight: 850;
   letter-spacing: 0;
-  line-height: 0.96;
+  line-height: 1.02;
   overflow-wrap: normal;
   word-break: normal;
 }
@@ -18375,7 +18375,8 @@ html:has(.hiw-page),
   initial-value: 80%;
 }
 
-.services-page {
+.services-page,
+.hiw-procedure-page {
   --svc-ink: #10263f;
   --svc-ink-deep: #071524;
   --svc-ink-mid: #12384a;
@@ -21577,8 +21578,6 @@ html:has(.hiw-page),
   --hiw-field: #2f6f73;
   --hiw-decision: #b8664a;
   --hiw-muted: #68767a;
-  background:
-    linear-gradient(180deg, var(--hiw-stone) 0%, var(--hiw-paper) 34%, var(--hiw-stone) 100%);
 }
 
 .hiw-procedure-hero {
@@ -23898,7 +23897,7 @@ html:has(.hiw-page),
 
 /* --- Visit checklist (light) --- */
 .hiw-procedure-page .hiw-checks-section {
-  background: linear-gradient(180deg, var(--hiw-stone), var(--hiw-paper));
+  background: transparent;
 }
 
 .hiw-checks {
