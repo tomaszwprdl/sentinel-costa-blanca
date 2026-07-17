@@ -210,7 +210,7 @@ When touched or nearby, verify:
 - Estimator logic unchanged.
 - Estimator pricing/ranges and contact handoff payload unchanged.
 - Contact schema, field names, validation, payload, and API route unchanged.
-- Legal/noindex unchanged unless launch brief says otherwise.
+- Legal substance and the current indexing/robots state unchanged unless an explicit Owner launch brief says otherwise.
 
 ## Coherence Regression QA
 

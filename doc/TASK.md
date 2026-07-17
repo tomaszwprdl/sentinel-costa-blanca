@@ -4,19 +4,19 @@ This file tracks the next action only. Binding contracts live in `DECISIONS.md`.
 
 ## Current Task
 
-The website customer-journey phase is **closed**. Patch 5 (`db2e5c2`), Patch 6A (`60ebfac`), Patch 6B (`457a33d`), the How It Works payload cleanup (`b9dab063`), and the final scoped visual maintenance fix (`d0a9da8`) are deployed and production-verified, and the customer-journey audit verdict is PASS VERIFIED. The maintenance fix corrected the Services model-heading fit and aligned the How It Works canvas with the shared site atmosphere; protected contracts were unchanged. No active website implementation task remains. See `doc/STATUS.md`.
+The website customer-journey phase is **closed**. Patch 5 (`db2e5c2`), Patch 6A (`60ebfac`), Patch 6B (`457a33d`), the How It Works payload cleanup (`b9dab063`), and the final scoped visual maintenance fix (`d0a9da8`) are deployed and production-verified, and the customer-journey audit verdict is PASS VERIFIED. The Owner approved public indexing, enabled by app commit `2bc4e9a`; website code/design remains closed and frozen. No active website implementation task remains. See `doc/STATUS.md`.
 
 The current active workstream is unchanged: **Sentinel operational-document production, with the connected beta-read packet as the primary business-document workstream** (see "Immediate next step" below).
 
 Remaining operational-readiness work:
 
-- Production Contact email end-to-end test.
 - Final commercial pricing/range confirmation.
 - Prepare and send the connected document beta-read packet.
 - Review beta feedback and apply an Owner-approved patch.
 - Lawyer/accountant review.
 - End-to-end operational dry-run.
-- Owner decision on removing `noindex,nofollow`.
+
+Production Contact email is functional. Public indexing is approved and no longer an open readiness item.
 
 ### Deferred website readiness audit — Accessibility audit
 
@@ -124,7 +124,7 @@ Testing sequence:
 4. Public-safe sample report.
 5. Final website proof integration.
 
-Launch / `noindex,nofollow` removal remains a later Owner-owned decision.
+Public indexing is enabled by explicit Owner decision. Future indexing/robots changes require explicit Owner approval.
 
 ## Current Shipped State
 
@@ -134,14 +134,14 @@ Launch / `noindex,nofollow` removal remains a later Owner-owned decision.
 - Estimator is shipped/live and protected. Mixed/undetermined use is classification-before-estimate (Option A): full-width classification notice, no numeric range. See `DECISIONS.md`.
 - FAQ is shipped/live and protected after the mobile compression pass.
 - About is shipped/live and launch-grade after the editorial-depth/team-introduction and mobile-tightening passes.
-- Contact is shipped/live as Night Desk controlled intake; mobile form is the tightened four-step presentation.
+- Contact is shipped/live as Night Desk controlled intake; mobile form is the tightened four-step presentation, and the production Contact email flow is functional.
 
 ## Default Scope
 
 Unless the Owner gives a new explicit implementation brief:
 
 - Do not re-open shipped pages.
-- Do not change app code, CSS, messages, assets, package files, routes, legal/noindex, estimator logic, contact API, or form contracts.
+- Do not change app code, CSS, messages, assets, package files, routes, legal/indexing state, estimator logic, contact API, or form contracts.
 - Document production and docs/status updates may proceed only when requested and scoped by Owner.
 - Do not create final customer-facing documents, legal clauses, or public proof examples before the required simulation, beta, legal/accounting, and Owner approval gates.
 
@@ -156,7 +156,7 @@ Do not change without explicit Owner approval:
 - Contact schema, field names, validation, payload, or `app/api/contact/route.ts`.
 - Estimator logic, matrix, pricing/ranges, result behavior, or contact handoff payload.
 - Routes/slugs/query behavior.
-- Legal/noindex.
+- Legal substance and the current indexing/robots state.
 - Package names/count.
 - SLA/emergency authority.
 

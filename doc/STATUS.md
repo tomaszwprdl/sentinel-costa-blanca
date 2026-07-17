@@ -5,17 +5,17 @@ Current project state only. This document is descriptive; `DECISIONS.md` is bind
 ## Snapshot
 
 - How It Works is pushed, deployed, and smoke-verified in its current operational-proof form on `origin/main` (latest app maintenance commit `d0a9da8`; payload cleanup `b9dab063`; operational-proof app commit `eeae1dd`, deployment docs `6ca538f`, earlier smoke closure `0481852`). The live sequence is: compact hero; `Jedna obserwacja` / `One observation` case thread with route-strip visual; inspection matrix as the main physical-check visual; owner report proof; decision threshold; continuing rhythm/activation notes; and CTA. The `Co otrzymuje właściciel` / owner report section centers a photographed REC-01-style example document. Desktop uses compact copy above a dominant centered photo with observation/evidence/next-step cards and restrained leader lines; tablet/mobile use a stacked layout. The example-document/not-client-report disclaimer remains explicit: this is documentary/source material, not real client proof or downloadable public paperwork. Retired How It Works PL/EN message blocks are absent from the production hydration payload, the EN 390px `qualification` wrap is improved, the canvas uses the shared Services/About/Contact atmosphere, and the Services `Access chain` key remains intentionally untouched. Production smoke passed for PL/EN desktop and 390px with intact photo corners, all current modules present, the old native report mockup absent, zero overflow, clean console/network checks, and unchanged `noindex,nofollow`. Protected contracts are unchanged.
-- Branch at this documentation update: `main`. The latest app maintenance commit on `origin/main` is `d0a9da87f53ce7e1054dd706a0418ed9fe884b6c`; the tracked tree was clean before this documentation closure.
+- Branch at this documentation update: `main`. The latest app maintenance commit is `2bc4e9ad9b844361d49f8f48b77b4b8515bf1ea9`, which enables public indexing; the tracked tree was clean before this documentation closure.
 - The Owner-accepted whole-site coherence bundle (Patches 1–4) is committed, pushed, and deployed. It is no longer uncommitted working-tree work.
 - Patch 5 and Patch 6 are deployed and production-verified. The website customer-journey phase is closed. See "Patch 5 / Patch 6 — Deployed" and "Customer-Journey Audit — Closed".
 - App/content commits in that live stack: `7145474` (`refine: address beta feedback (home property cue + services fatigue)`) with its homepage cue placement corrected by `467d192` (`fix: move homepage property cue to hero`) — the property glyph is on the left hero eyebrow, not the usage selector title.
 - Earlier app/content beta-test clarity commit: `c0736d0` (`refine: address beta-test clarity findings`) is also on `origin/main`.
 - Last pushed docs checkpoint before this phase update: `50a292c` (`docs: add Sentinel document-system drafts`).
-- Site phase: pre-launch / soft-launch review.
+- Site phase: public indexing enabled; non-website operational readiness continues.
 - The page-by-page polish pass is complete; the beta-test clarity bundle (`c0736d0`) and then the beta fatigue / property-cue bundle (`7145474`) are applied on top of it. This is the core polish gate, not "launch-final forever."
 - Website implementation is paused/frozen except for critical fixes; website proof polish is not the active bottleneck.
 - Current active phase: Sentinel document production from the repo draft system.
-- `noindex,nofollow` remains active until Owner approves indexing.
+- The Owner approved public indexing. Future indexing/robots changes require explicit Owner approval.
 
 Always verify current branch, HEAD, and status with git preflight.
 
@@ -74,12 +74,10 @@ Verdict: **PASS VERIFIED**.
 
 ## Indexing State
 
-- `robots.txt` returns `Disallow: /`.
-- Page metadata returns `noindex,nofollow`.
-- The `X-Robots-Tag` production response header is currently absent despite being configured in `netlify.toml`. This predates Patch 6 and was not caused by it.
-- Indexing remains blocked through `robots.txt` and page metadata.
-- The header issue is assigned to the technical launch audit, not to current implementation.
-- `noindex,nofollow` has not been removed. Removing it remains an Owner decision.
+- The Owner explicitly approved public indexing on 2026-07-17.
+- App commit `2bc4e9ad9b844361d49f8f48b77b4b8515bf1ea9` removes the conditional `noindex,nofollow` metadata, makes `robots.txt` allow `/`, and removes the Netlify pre-live build flag and `X-Robots-Tag` block.
+- The public PL/EN pages are intended to be indexable; the sitemap and route structure are unchanged.
+- Website code/design remains closed and frozen. Future indexing/robots changes require explicit Owner approval.
 
 ## Deferred Technical Notes
 
@@ -94,13 +92,13 @@ Recorded for later triage. These are **not active tasks** and require explicit O
 
 Launch blockers are **not** complete. Remaining active work is non-website operational readiness:
 
-- Production Contact email end-to-end test.
 - Final commercial pricing/range confirmation.
 - Prepare and send the connected document beta-read packet.
 - Triage beta feedback and apply an Owner-approved patch.
 - Lawyer/accountant review.
 - End-to-end operational dry-run.
-- Owner decision on removing `noindex,nofollow`.
+
+Production Contact email is functional. Public indexing has been approved and is no longer an open launch gate.
 
 ## Whole-Site Coherence Audit — Complete
 
@@ -202,6 +200,8 @@ Contact is shipped/live as Night Desk controlled intake:
 
 The website customer-journey phase is closed after Patch 5 and Patch 6 (PASS VERIFIED). No active website implementation task remains. Do not reopen a closed page without a real regression or explicit Owner scope.
 
+Public indexing is Owner-approved and enabled by `2bc4e9a`. Contact email is functional. The website code/design remains closed and frozen.
+
 The **Accessibility audit** remains deferred and is not an active implementation task; see `doc/TASK.md` for its scope. The operational-document beta packet remains the primary business-document workstream.
 
 The Owner-approved How It Works operational-proof page is complete, deployed, and smoke-verified through the final scoped visual maintenance commit at `d0a9da8` (payload cleanup `b9dab063`).
@@ -223,7 +223,7 @@ Current active phase:
 - Existing repo docs are not finished customer-ready documents.
 - Testing order: internal simulation, beta tester read, lawyer/accountant review, public-safe sample report, then final website proof integration.
 - Legal/accountant review remains required before customer-facing use of the document system.
-- Launch / `noindex,nofollow` removal remains a later Owner decision.
+- Public indexing is enabled; future indexing/robots changes require explicit Owner approval.
 - Owner-directed final polish only if a real regression appears.
 - Do not re-open a passed page unless explicitly requested by Owner.
 
@@ -235,13 +235,11 @@ Current active phase:
 
 See "Remaining Launch Gates" for the authoritative list. Launch blockers are not complete.
 
-- Production Contact email end-to-end confirmation.
 - Final commercial pricing/range confirmation.
 - Connected document beta-read packet.
 - Beta review, triage, and Owner-approved patch.
 - Lawyer/accountant review.
 - End-to-end operational dry-run.
-- Owner decision to remove `noindex,nofollow`.
 
 ## Protected During Current Work
 
@@ -252,7 +250,7 @@ See "Remaining Launch Gates" for the authoritative list. Launch blockers are not
 - Contact Night Desk visual model unless explicitly reopened.
 - Estimator logic/matrix/pricing/ranges/result behavior/contact handoff payload.
 - Routes/slugs/query behavior.
-- Legal/noindex.
+- Legal substance and the current indexing/robots state.
 - Package names/count.
 - SLA/emergency authority.
 - Contact details and service area.

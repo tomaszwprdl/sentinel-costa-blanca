@@ -95,7 +95,8 @@ Protected:
   - `mixed-not-defined`
 - Route and query behavior.
 - Legal substance.
-- `noindex,nofollow` until Owner approves launch indexing.
+- Public indexing is approved by the Owner as of 2026-07-17. Public pages must not emit `noindex,nofollow`, `robots.txt` must allow crawling, and no blocking `X-Robots-Tag` may be configured.
+- Future indexing/robots changes require explicit Owner approval.
 
 Contact page visual model is locked:
 
@@ -185,7 +186,7 @@ Protected:
 - FAQ answer meanings unless explicitly approved.
 - PL/EN parity.
 - Routes/slugs.
-- Legal/noindex.
+- Legal substance and the current indexing/robots state.
 - Services and estimator contracts.
 
 ## Responsive IA (Mobile vs Desktop)
@@ -228,4 +229,5 @@ Asset notes:
 
 - Do not push unless Owner approves.
 - DNS, Netlify production, indexing, and environment changes require explicit Owner/Cloudie approval.
+- Public indexing is the approved current state; changing robots metadata, `robots.txt`, sitemap exposure, or crawler headers requires a new explicit Owner decision.
 - Do not stage `output/`, screenshots, QA artifacts, temp scripts, `.env`, zips, or generated files.
