@@ -34,13 +34,9 @@ export async function generateMetadata({
   const common = messages?.common as { meta?: { defaultTitle?: string; defaultDescription?: string } } | undefined;
   const title = common?.meta?.defaultTitle ?? 'Sentinel';
   const description = common?.meta?.defaultDescription ?? undefined;
-  const preLiveReview = process.env.PRE_LIVE_REVIEW === 'true';
   return {
     title,
     description,
-    ...(preLiveReview
-      ? { robots: { index: false, follow: false, googleBot: { index: false, follow: false } } }
-      : {}),
     icons: {
       icon: [
         { url: '/images/sentinel-mark-primary.svg', type: 'image/svg+xml', sizes: 'any' },
