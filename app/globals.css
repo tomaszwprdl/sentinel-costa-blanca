@@ -23499,6 +23499,11 @@ html:has(.hiw-page),
     word-break: normal;
   }
 
+  html[lang="en"] .hiw-procedure-hero .hero-display {
+    max-width: 100%;
+    overflow-wrap: normal;
+  }
+
   .hiw-procedure-step {
     grid-template-columns: 3.25rem minmax(0, 1fr);
     gap: 0.65rem;
