@@ -1174,9 +1174,7 @@
         "low": "Low",
         "medium": "Medium",
         "high": "High",
-        "twoToFour": "2-4",
-        "euroLimit300": "€300 limit",
-        "euroLimit300to500": "€300-500"
+        "twoToFour": "2-4"
       }
     },
     "green": {
@@ -1208,14 +1206,12 @@
       "emergencyIntro": "In urgent situations:",
       "emergencyItems": {
         "assessment": "Initial assessment",
-        "actions": "Immediate protective action within agreed limit",
         "documentation": "Documentation and owner notification"
       },
       "notIncludedTitle": "Not Included",
       "notIncludedItems": {
         "thirdPartyAccess": "Third-party access coordination",
         "repairCoordination": "Repair supervision",
-        "financialDecisions": "Independent financial decisions beyond limit",
         "contractorOversight": "Contractor oversight"
       },
       "slaTitle": "Response Time (SLA)",
@@ -1255,7 +1251,6 @@
       "notIncludedTitle": "Not Included",
       "notIncludedItems": {
         "renovationSupervision": "Ongoing renovation supervision",
-        "extendedResponsibility": "Autonomous financial authority beyond defined limits",
         "majorWorks": "Project management services"
       },
       "slaTitle": "Response Time (SLA)",
@@ -1388,7 +1383,7 @@
         "additional": "Additional visits by agreement"
       },
       "decisionLimitsTitle": "Decision Limits",
-      "decisionLimitsText": "Each package defines a maximum financial decision limit per action. Decisions above that require owner approval.",
+      "decisionLimitsText": "In Basic and Extended, every paid action or vendor spend requires the owner’s prior approval. In Full, Sentinel may take autonomous protective action only within the agreed limit; anything above it requires owner approval.",
       "communicationTitle": "Communication",
       "communicationItems": {
         "reports": "Operational matters: phone / email",
@@ -1713,7 +1708,6 @@
       "intro": "Sentinel cannot assist with:",
       "items": {
         "outsideArea": "Properties outside Torrevieja + 50-70km service area",
-        "oneTime": "One-time or ad-hoc services without monthly package",
         "fullPM": "Full property management or rental agency services (available only as add-on to package)",
         "concierge": "24/7 concierge or unlimited personal assistance",
         "construction": "Construction/renovation project management as general contractor"
@@ -1788,17 +1782,6 @@
           { "marker": "Active client", "title": "Use onboarding channels", "body": "Existing clients receive dedicated operational contact details after onboarding.", "note": "Do not use the public form for routine active-client requests." },
           { "marker": "Emergency", "title": "Not a public hotline", "body": "Emergency channels exist only for eligible active clients under agreed package terms.", "note": "The public page does not provide open emergency response." }
         ]
-      },
-      "fit": {
-        "eyebrow": "Before you send",
-        "title": "Before you send — three things worth knowing.",
-        "intro": "We work within clear limits. It helps us reply faster.",
-        "cards": [
-          { "title": "Area", "body": "Torrevieja and nearby, about 50-70 km. Outside that, we can't help." },
-          { "title": "Model", "body": "We work on a monthly package — not one-off, and not concierge." },
-          { "title": "Channel", "body": "This is a new-inquiry form. Active clients have separate channels; it isn't an emergency line." }
-        ],
-        "note": "An in-area inquiry is a good start — we settle scope and details after we talk."
       },
       "unsuitable": {
         "eyebrow": "Not suitable",
@@ -2107,7 +2090,7 @@
           },
           "q2": {
             "question": "Can I order a single visit without a package?",
-            "answer": "No. Sentinel works through a monthly package because a consistent process, access, and full context matter. For a single visit, a local contractor is usually the better fit; Sentinel starts after package onboarding."
+            "answer": "Sometimes—after qualification and a separate agreement for a limited operational task. It does not include recurring oversight, cyclical inspections or reporting, an emergency-response SLA, or authority for Sentinel to take paid action independently. An ongoing relationship begins only if a package is activated separately."
           },
           "q3": {
             "question": "What if I need something not in my package?",

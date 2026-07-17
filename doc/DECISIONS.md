@@ -35,6 +35,13 @@ Full package visit rhythm is locked at `min. 3/mies.` / `min. 3/month`. This is 
 
 Mixed pathway copy must not weaken the package model. Do not use "wrong package", "package lock-in", or package-lock framing. Use scope language: `zakres`, `zakres startowy`, `potwierdzony rytm i zakres`. A mixed/undetermined use case is a starting scope to confirm, not a mispurchase to unwind.
 
+Individual operational tasks are a qualified exception, not an ad-hoc service model:
+
+- Sentinel may sometimes accept a separately agreed individual operational task after qualification.
+- The task does not include recurring oversight, cyclical inspections or reporting, an emergency-response SLA, or autonomous paid-action authority.
+- It does not create an ongoing package relationship unless a package is activated separately.
+- Do not describe this exception as unrestricted single-visit or open-ended ad-hoc help.
+
 ## SLA And Emergency Authority
 
 - SLA means response/decision timing, not guaranteed resolution timing.

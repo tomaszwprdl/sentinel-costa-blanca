@@ -4,6 +4,8 @@ Current project state only. This document is descriptive; `DECISIONS.md` is bind
 
 ## Snapshot
 
+- Final website closure consistency is complete and locally validated. PL/EN FAQ now describes the qualified individual operational-task exception consistently with Services; mounted Services explicitly states that Basic / Extended require owner approval before every paid action or vendor spend, while Full autonomous protective action remains limited to its agreed authority. Proven-unused contradictory message keys were removed after exact repository reference searches. No legal substance was reviewed or changed.
+- Final runtime closure QA passed on the production build: PL/EN Services and FAQ at desktop and 390px have zero overflow, console errors, failed requests, and 4xx/5xx; FAQ interaction, priced and mixed estimator paths, Contact prefill and client validation passed; public indexing remains enabled. The website is now **CLOSED / MAINTENANCE MODE** with no active implementation task. Future website work requires a real regression, new verified user evidence, an Owner-approved business change, or externally supplied legal copy.
 - How It Works is pushed, deployed, and smoke-verified in its current operational-proof form on `origin/main` (latest app maintenance commit `d0a9da8`; payload cleanup `b9dab063`; operational-proof app commit `eeae1dd`, deployment docs `6ca538f`, earlier smoke closure `0481852`). The live sequence is: compact hero; `Jedna obserwacja` / `One observation` case thread with route-strip visual; inspection matrix as the main physical-check visual; owner report proof; decision threshold; continuing rhythm/activation notes; and CTA. The `Co otrzymuje właściciel` / owner report section centers a photographed REC-01-style example document. Desktop uses compact copy above a dominant centered photo with observation/evidence/next-step cards and restrained leader lines; tablet/mobile use a stacked layout. The example-document/not-client-report disclaimer remains explicit: this is documentary/source material, not real client proof or downloadable public paperwork. Retired How It Works PL/EN message blocks are absent from the production hydration payload, the EN 390px `qualification` wrap is improved, the canvas uses the shared Services/About/Contact atmosphere, and the Services `Access chain` key remains intentionally untouched. Production smoke passed for PL/EN desktop and 390px with intact photo corners, all current modules present, the old native report mockup absent, zero overflow, clean console/network checks, and unchanged `noindex,nofollow`. Protected contracts are unchanged.
 - Branch at this documentation update: `main`. The latest app maintenance commit is `2bc4e9ad9b844361d49f8f48b77b4b8515bf1ea9`, which enables public indexing; the tracked tree was clean before this documentation closure.
 - The Owner-accepted whole-site coherence bundle (Patches 1–4) is committed, pushed, and deployed. It is no longer uncommitted working-tree work.
@@ -85,7 +87,6 @@ Recorded for later triage. These are **not active tasks** and require explicit O
 
 - Handled `NoFallbackError` log noise on root-level 404s. Status codes are correct; this is log output only, and it replaced the previous `MODULE_NOT_FOUND` failures.
 - Unreachable branded locale not-found component (`app/[locale]/not-found.tsx`). All 404s currently render Next's default page.
-- Orphaned doctrine-conflicting message keys. Several unmounted keys under `services.comparison.*`, `services.green.*`, `services.orange.*`, `services.red.*`, and `about.*` still imply Basic / Extended spend authority or contain PL/EN divergence. They are not rendered on any route. Cleanup requires separate Owner authorization.
 - Redundant root redirect (`app/page.tsx` duplicating the proxy's `/` handling).
 
 ## Remaining Launch Gates
@@ -201,8 +202,6 @@ Contact is shipped/live as Night Desk controlled intake:
 The website customer-journey phase is closed after Patch 5 and Patch 6 (PASS VERIFIED). No active website implementation task remains. Do not reopen a closed page without a real regression or explicit Owner scope.
 
 Public indexing is Owner-approved and enabled by `2bc4e9a`. Contact email is functional. The website code/design remains closed and frozen.
-
-The **Accessibility audit** remains deferred and is not an active implementation task; see `doc/TASK.md` for its scope. The operational-document beta packet remains the primary business-document workstream.
 
 The Owner-approved How It Works operational-proof page is complete, deployed, and smoke-verified through the final scoped visual maintenance commit at `d0a9da8` (payload cleanup `b9dab063`).
 

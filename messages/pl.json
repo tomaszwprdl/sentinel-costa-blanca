@@ -1174,9 +1174,7 @@
         "low": "Niski",
         "medium": "Średni",
         "high": "Wysoki",
-        "twoToFour": "2-4",
-        "euroLimit300": "limit 300€",
-        "euroLimit300to500": "300-500€"
+        "twoToFour": "2-4"
       }
     },
     "green": {
@@ -1208,14 +1206,12 @@
       "emergencyIntro": "W nagłych przypadkach:",
       "emergencyItems": {
         "assessment": "Wstępna ocena sytuacji",
-        "actions": "Podjęcie działań zabezpieczających do ustalonego limitu",
         "documentation": "Dokumentacja i kontakt z właścicielem"
       },
       "notIncludedTitle": "Nie obejmuje",
       "notIncludedItems": {
         "thirdPartyAccess": "Organizacji dostępu osób trzecich",
         "repairCoordination": "Koordynacji prac technicznych",
-        "financialDecisions": "Samodzielnych decyzji finansowych powyżej limitu",
         "contractorOversight": "Nadzoru nad wykonawcami"
       },
       "slaTitle": "Czas reakcji (SLA)",
@@ -1255,7 +1251,6 @@
       "notIncludedTitle": "Nie obejmuje",
       "notIncludedItems": {
         "renovationSupervision": "Stałego nadzoru nad remontami",
-        "extendedResponsibility": "Rozszerzonej odpowiedzialności decyzyjnej",
         "majorWorks": "Samodzielnego zlecania większych prac bez zgody właściciela"
       },
       "slaTitle": "Czas reakcji (SLA)",
@@ -1388,7 +1383,7 @@
         "additional": "Dodatkowe wizyty po uzgodnieniu"
       },
       "decisionLimitsTitle": "Limity decyzyjne",
-      "decisionLimitsText": "Każdy pakiet określa maksymalny limit pojedynczej decyzji finansowej. Decyzje powyżej limitu wymagają zgody właściciela.",
+      "decisionLimitsText": "W pakietach Podstawowym i Rozszerzonym każde płatne działanie lub wydatek na wykonawcę wymaga wcześniejszej zgody właściciela. W Pakiecie Pełnym Sentinel może samodzielnie podjąć działanie zabezpieczające wyłącznie w granicach uzgodnionego limitu; powyżej limitu wymagana jest zgoda właściciela.",
       "communicationTitle": "Komunikacja",
       "communicationItems": {
         "reports": "Zgłoszenia: e-mail / telefon",
@@ -1713,7 +1708,6 @@
       "intro": "Sentinel nie może pomóc w:",
       "items": {
         "outsideArea": "Nieruchomościach poza obszarem obsługi Torrevieja + 50-70km",
-        "oneTime": "Usługach jednorazowych lub ad-hoc bez pakietu miesięcznego",
         "fullPM": "Pełnym zarządzaniu nieruchomością lub usługach agencji wynajmu (dostępne tylko jako dodatek do pakietu)",
         "concierge": "Usługach concierge 24/7 lub nieograniczonej pomocy osobistej",
         "construction": "Zarządzaniu projektem budowlanym/remontowym jako generalny wykonawca"
@@ -1788,17 +1782,6 @@
           { "marker": "Aktywny klient", "title": "Użyj kanałów z wdrożenia", "body": "Istniejący klienci otrzymują dedykowane dane kontaktowe po wdrożeniu.", "note": "Nie używaj formularza publicznego do bieżących spraw operacyjnych." },
           { "marker": "Sytuacja awaryjna", "title": "To nie jest publiczna linia awaryjna", "body": "Kanały awaryjne istnieją tylko dla uprawnionych aktywnych klientów zgodnie z warunkami pakietu.", "note": "Strona publiczna nie zapewnia otwartej reakcji awaryjnej." }
         ]
-      },
-      "fit": {
-        "eyebrow": "Zanim wyślesz",
-        "title": "Zanim wyślesz — trzy rzeczy, które warto wiedzieć.",
-        "intro": "Działamy w jasnych granicach. To pomaga nam szybciej odpowiedzieć.",
-        "cards": [
-          { "title": "Obszar", "body": "Torrevieja i okolica, około 50-70 km. Poza tym obszarem nie zadziałamy." },
-          { "title": "Model", "body": "Pracujemy w miesięcznym pakiecie — nie dorywczo i nie jako concierge." },
-          { "title": "Kanał", "body": "To formularz nowego zapytania. Aktywni klienci mają osobne kanały; to nie jest linia awaryjna." }
-        ],
-        "note": "Zgłoszenie z naszego obszaru to dobry początek — zakres i szczegóły ustalamy po kontakcie."
       },
       "unsuitable": {
         "eyebrow": "Poza dopasowaniem",
@@ -2107,7 +2090,7 @@
           },
           "q2": {
             "question": "Czy mogę zamówić pojedynczą wizytę bez pakietu?",
-            "answer": "Nie. Sentinel działa w miesięcznym pakiecie, bo wtedy ma stały sposób działania, dostęp i pełny kontekst. Do pojedynczej wizyty lepiej pasuje lokalny wykonawca; Sentinel zaczyna pracę po wdrożeniu do pakietu."
+            "answer": "Czasem — po kwalifikacji i osobnym uzgodnieniu ograniczonego zadania operacyjnego. Taka czynność nie obejmuje stałego nadzoru, cyklicznych kontroli ani raportowania, SLA awaryjnego ani prawa Sentinel do samodzielnego podejmowania płatnych działań. Stała współpraca zaczyna się dopiero po osobnej aktywacji pakietu."
           },
           "q3": {
             "question": "Co jeśli potrzebuję czegoś, co nie jest w moim pakiecie?",

@@ -4,7 +4,7 @@ This file tracks the next action only. Binding contracts live in `DECISIONS.md`.
 
 ## Current Task
 
-The website customer-journey phase is **closed**. Patch 5 (`db2e5c2`), Patch 6A (`60ebfac`), Patch 6B (`457a33d`), the How It Works payload cleanup (`b9dab063`), and the final scoped visual maintenance fix (`d0a9da8`) are deployed and production-verified, and the customer-journey audit verdict is PASS VERIFIED. The Owner approved public indexing, enabled by app commit `2bc4e9a`; website code/design remains closed and frozen. No active website implementation task remains. See `doc/STATUS.md`.
+The website project is **CLOSED / MAINTENANCE MODE**. The final PL/EN consistency patch aligns the qualified individual operational-task exception, makes Basic / Extended paid-action approval explicit, and removes proven-unused conflicting message keys. Production-build closure QA passed for PL/EN Services and FAQ at desktop and 390px, protected estimator and Contact flows, and public indexing. No legal substance was reviewed or changed. No active or deferred website implementation or audit task remains. Future website work requires a real regression, new verified user evidence, an Owner-approved business change, or externally supplied legal copy. See `doc/STATUS.md`.
 
 The current active workstream is unchanged: **Sentinel operational-document production, with the connected beta-read packet as the primary business-document workstream** (see "Immediate next step" below).
 
@@ -17,29 +17,6 @@ Remaining operational-readiness work:
 - End-to-end operational dry-run.
 
 Production Contact email is functional. Public indexing is approved and no longer an open readiness item.
-
-### Deferred website readiness audit — Accessibility audit
-
-This is the next website readiness **audit**, not an implementation task. It is not started, and it is not a launch blocker in itself. Do not begin remediation work from it without explicit Owner scope.
-
-Scope:
-
-- Keyboard-only navigation.
-- Focus visibility and order.
-- Landmarks and headings.
-- Form labels and errors.
-- Accordion semantics.
-- Screen-reader announcements.
-- Colour contrast.
-- Reduced motion.
-- Alt text.
-- Touch-target size.
-- Skip navigation.
-- Automated axe results plus manual verification.
-
-Known relevant context: Patch 6A added `role="alert"`, `aria-invalid`, and `aria-describedby` to Contact form errors, so Contact error semantics are a starting point rather than an open gap. FAQ and Services use accordion/disclosure and tab patterns that the audit should exercise directly.
-
-The audit remains deferred and is not part of the active operational-readiness work above. Do not begin remediation work without explicit Owner scope.
 
 ### Earlier completed website task — How It Works operational proof
 
@@ -79,7 +56,7 @@ Owner reopened Home and Services under explicit scope (later beta-test finding) 
 - Services: post-estimator information fatigue reduced — compact owner-facing after-estimator confirmation section + CTA follows the estimator; dense operational record / execution-only detail collapses behind desktop disclosure; mobile ordering fixed so the new section follows the estimator. Boundaries compressed, not removed.
 - Protected contracts unchanged: estimator logic/matrix/pricing/ranges/result behaviour, contact API/schema/payload, routes/slugs/query behaviour, legal/noindex, package names/count, Full `min. 3/month`, emergency authority limits. PL/EN parity kept.
 - Validation passed (lint, build, `git diff --check`, production screenshots per `doc/QA.md`).
-- Done: the stack is pushed and live at `a28b50e` and production smoke QA passed (see `doc/STATUS.md` "Deployed Beta-Smoke Verification"). No active website task. No new website polish is open; do not reopen Services unless a new beta tester finds a real issue or production shows an actual regression. Non-polish next steps: production contact email end-to-end confirmation, final commercial pricing/range confirmation, legal/entity/GDPR review, Owner decision on `noindex` removal, real-photo/proof replacement plan.
+- Done: the stack is pushed and live at `a28b50e` and production smoke QA passed (see `doc/STATUS.md` "Deployed Beta-Smoke Verification"). No active website task. No new website polish is open; do not reopen Services unless a new beta tester finds a real issue or production shows an actual regression.
 
 Website implementation and proof polish are otherwise paused/frozen except for critical fixes. Do not reopen website polish during this phase.
 
