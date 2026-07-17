@@ -4,7 +4,7 @@ This file tracks the next action only. Binding contracts live in `DECISIONS.md`.
 
 ## Current Task
 
-The website customer-journey phase is **closed**. Patch 5 (`db2e5c2`), Patch 6A (`60ebfac`), Patch 6B (`457a33d`), and the How It Works payload cleanup (`b9dab063`) are deployed and production-verified, and the customer-journey audit verdict is PASS VERIFIED. No active website implementation task remains. See `doc/STATUS.md`.
+The website customer-journey phase is **closed**. Patch 5 (`db2e5c2`), Patch 6A (`60ebfac`), Patch 6B (`457a33d`), the How It Works payload cleanup (`b9dab063`), and the final scoped visual maintenance fix (`d0a9da8`) are deployed and production-verified, and the customer-journey audit verdict is PASS VERIFIED. The maintenance fix corrected the Services model-heading fit and aligned the How It Works canvas with the shared site atmosphere; protected contracts were unchanged. No active website implementation task remains. See `doc/STATUS.md`.
 
 The current active workstream is unchanged: **Sentinel operational-document production, with the connected beta-read packet as the primary business-document workstream** (see "Immediate next step" below).
 
@@ -43,7 +43,7 @@ The audit remains deferred and is not part of the active operational-readiness w
 
 ### Earlier completed website task — How It Works operational proof
 
-The Owner-approved How It Works operational-proof page is complete, pushed, deployed, and smoke-verified through the payload cleanup at `b9dab063` (operational-proof app commit `eeae1dd`).
+The Owner-approved How It Works operational-proof page is complete, pushed, deployed, and smoke-verified through the final scoped visual maintenance commit at `d0a9da8` (payload cleanup `b9dab063`; operational-proof app commit `eeae1dd`).
 
 Current live structure:
 

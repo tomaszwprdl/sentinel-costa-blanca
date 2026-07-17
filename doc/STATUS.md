@@ -4,8 +4,8 @@ Current project state only. This document is descriptive; `DECISIONS.md` is bind
 
 ## Snapshot
 
-- How It Works is pushed, deployed, and smoke-verified in its current operational-proof form on `origin/main` (latest app cleanup commit `b9dab063`; operational-proof app commit `eeae1dd`, deployment docs `6ca538f`, earlier smoke closure `0481852`). The live sequence is: compact hero; `Jedna obserwacja` / `One observation` case thread with route-strip visual; inspection matrix as the main physical-check visual; owner report proof; decision threshold; continuing rhythm/activation notes; and CTA. The `Co otrzymuje właściciel` / owner report section centers a photographed REC-01-style example document. Desktop uses compact copy above a dominant centered photo with observation/evidence/next-step cards and restrained leader lines; tablet/mobile use a stacked layout. The example-document/not-client-report disclaimer remains explicit: this is documentary/source material, not real client proof or downloadable public paperwork. Retired How It Works PL/EN message blocks are absent from the production hydration payload, the EN 390px `qualification` wrap is improved, and the Services `Access chain` key remains intentionally untouched. Production smoke passed for PL/EN desktop and 390px with intact photo corners, all current modules present, the old native report mockup absent, zero overflow, clean console/network checks, and unchanged `noindex,nofollow`. Protected contracts are unchanged.
-- Branch at this documentation update: `main`. The latest app cleanup commit on `origin/main` is `b9dab063e058bc9561d743050f4ccd8e4305fdf2`; the tracked tree was clean before this documentation closure.
+- How It Works is pushed, deployed, and smoke-verified in its current operational-proof form on `origin/main` (latest app maintenance commit `d0a9da8`; payload cleanup `b9dab063`; operational-proof app commit `eeae1dd`, deployment docs `6ca538f`, earlier smoke closure `0481852`). The live sequence is: compact hero; `Jedna obserwacja` / `One observation` case thread with route-strip visual; inspection matrix as the main physical-check visual; owner report proof; decision threshold; continuing rhythm/activation notes; and CTA. The `Co otrzymuje właściciel` / owner report section centers a photographed REC-01-style example document. Desktop uses compact copy above a dominant centered photo with observation/evidence/next-step cards and restrained leader lines; tablet/mobile use a stacked layout. The example-document/not-client-report disclaimer remains explicit: this is documentary/source material, not real client proof or downloadable public paperwork. Retired How It Works PL/EN message blocks are absent from the production hydration payload, the EN 390px `qualification` wrap is improved, the canvas uses the shared Services/About/Contact atmosphere, and the Services `Access chain` key remains intentionally untouched. Production smoke passed for PL/EN desktop and 390px with intact photo corners, all current modules present, the old native report mockup absent, zero overflow, clean console/network checks, and unchanged `noindex,nofollow`. Protected contracts are unchanged.
+- Branch at this documentation update: `main`. The latest app maintenance commit on `origin/main` is `d0a9da87f53ce7e1054dd706a0418ed9fe884b6c`; the tracked tree was clean before this documentation closure.
 - The Owner-accepted whole-site coherence bundle (Patches 1–4) is committed, pushed, and deployed. It is no longer uncommitted working-tree work.
 - Patch 5 and Patch 6 are deployed and production-verified. The website customer-journey phase is closed. See "Patch 5 / Patch 6 — Deployed" and "Customer-Journey Audit — Closed".
 - App/content commits in that live stack: `7145474` (`refine: address beta feedback (home property cue + services fatigue)`) with its homepage cue placement corrected by `467d192` (`fix: move homepage property cue to hero`) — the property glyph is on the left hero eyebrow, not the usage selector title.
@@ -63,6 +63,13 @@ Verdict: **PASS VERIFIED**.
 - `Access chain` remains only through the separate Services key `services.redesign.custody.eyebrow`; it was intentionally left untouched because Services was outside the cleanup scope.
 - The EN mobile hero wrap was improved so `qualification` no longer breaks awkwardly at 390px.
 - Post-deploy production smoke passed for PL/EN desktop and 390px: the current report proof/photo renders with intact corners, the old native report mockup is absent, overflow is zero, console/network/HTTP checks are clean, and `noindex,nofollow` remains present.
+- No protected contract changed. No active website implementation task remains.
+
+## Final Visual Maintenance — Deployed (`d0a9da8`)
+
+- Commit `d0a9da87f53ce7e1054dd706a0418ed9fe884b6c` reduced the Services model-setup headline so the controlling PL copy fits the desktop dark panel while retaining its editorial hierarchy.
+- The same scoped CSS commit aligned the How It Works canvas with the existing Services/About/Contact atmosphere without changing its structure, copy, report proof, or decision flow.
+- Post-deploy PL/EN Services and How It Works smoke passed, including PL Services 390px and PL/EN How It Works 390px: zero overflow, clean console/network/HTTP checks, report proof intact, retired native report mockup absent, and `noindex,nofollow` unchanged.
 - No protected contract changed. No active website implementation task remains.
 
 ## Indexing State
@@ -197,7 +204,7 @@ The website customer-journey phase is closed after Patch 5 and Patch 6 (PASS VER
 
 The **Accessibility audit** remains deferred and is not an active implementation task; see `doc/TASK.md` for its scope. The operational-document beta packet remains the primary business-document workstream.
 
-The Owner-approved How It Works operational-proof page is complete, deployed, and smoke-verified through the payload cleanup at `b9dab063`.
+The Owner-approved How It Works operational-proof page is complete, deployed, and smoke-verified through the final scoped visual maintenance commit at `d0a9da8` (payload cleanup `b9dab063`).
 
 The current page uses a compact hero, the case-thread/route strip, inspection matrix, photographed REC-01-style example report, decision threshold, continuing rhythm/activation notes, and CTA. Role boundaries remain clear: case thread = example route; inspection matrix = physical checks; report proof = owner record structure; decision threshold = action versus owner-approval boundary. The photographed document is source/example material only, not client proof and not downloadable public paperwork. No generated damp/stain photo was added. Protected contracts remain unchanged.
 
