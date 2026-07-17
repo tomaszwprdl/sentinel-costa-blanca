@@ -4,11 +4,21 @@ This file tracks the next action only. Binding contracts live in `DECISIONS.md`.
 
 ## Current Task
 
-The website customer-journey phase is **closed**. Patch 5 (`db2e5c2`), Patch 6A (`60ebfac`), and Patch 6B (`457a33d`) are deployed and production-verified, and the customer-journey audit verdict is PASS VERIFIED. No active website implementation task remains. See `doc/STATUS.md`.
+The website customer-journey phase is **closed**. Patch 5 (`db2e5c2`), Patch 6A (`60ebfac`), Patch 6B (`457a33d`), and the How It Works payload cleanup (`b9dab063`) are deployed and production-verified, and the customer-journey audit verdict is PASS VERIFIED. No active website implementation task remains. See `doc/STATUS.md`.
 
 The current active workstream is unchanged: **Sentinel operational-document production, with the connected beta-read packet as the primary business-document workstream** (see "Immediate next step" below).
 
-### Next website readiness audit — Accessibility audit
+Remaining operational-readiness work:
+
+- Production Contact email end-to-end test.
+- Final commercial pricing/range confirmation.
+- Prepare and send the connected document beta-read packet.
+- Review beta feedback and apply an Owner-approved patch.
+- Lawyer/accountant review.
+- End-to-end operational dry-run.
+- Owner decision on removing `noindex,nofollow`.
+
+### Deferred website readiness audit — Accessibility audit
 
 This is the next website readiness **audit**, not an implementation task. It is not started, and it is not a launch blocker in itself. Do not begin remediation work from it without explicit Owner scope.
 
@@ -29,11 +39,11 @@ Scope:
 
 Known relevant context: Patch 6A added `role="alert"`, `aria-invalid`, and `aria-describedby` to Contact form errors, so Contact error semantics are a starting point rather than an open gap. FAQ and Services use accordion/disclosure and tab patterns that the audit should exercise directly.
 
-Launch blockers are not complete. The Accessibility audit does not close any of the gates listed under "Remaining Launch Gates" in `doc/STATUS.md`.
+The audit remains deferred and is not part of the active operational-readiness work above. Do not begin remediation work without explicit Owner scope.
 
 ### Earlier completed website task — How It Works operational proof
 
-The Owner-approved How It Works operational-proof page is complete, pushed, deployed, and smoke-verified through `0481852` (latest app commit `eeae1dd`).
+The Owner-approved How It Works operational-proof page is complete, pushed, deployed, and smoke-verified through the payload cleanup at `b9dab063` (operational-proof app commit `eeae1dd`).
 
 Current live structure:
 
@@ -51,7 +61,7 @@ Deployed verification passed for `/pl/how-it-works` desktop, `/en/how-it-works` 
 
 Protected contracts are unchanged: estimator logic and pricing/ranges; package names/count and Full `min. 3/mies.` / `min. 3/month`; SLA/emergency authority; contact schema/API/payload; routes/slugs/query behavior; and legal/noindex.
 
-Optional orphaned legacy How It Works code/messages/CSS cleanup remains separate and requires explicit Owner authorization.
+Retired How It Works message blocks have been removed from both PL and EN production payloads. The EN 390px `qualification` wrap is improved. The separate Services key `services.redesign.custody.eyebrow` (`Access chain`) was intentionally left untouched because it belongs to Services.
 
 The page-by-page polish pass and the beta-test clarity bundle (`c0736d0`) are complete. The website is not the active bottleneck.
 

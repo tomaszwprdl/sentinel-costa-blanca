@@ -4,8 +4,8 @@ Current project state only. This document is descriptive; `DECISIONS.md` is bind
 
 ## Snapshot
 
-- How It Works is pushed, deployed, and smoke-verified in its current operational-proof form on `origin/main` (latest app commit `eeae1dd`, deployment docs `6ca538f`, smoke closure `0481852`). The live sequence is: compact hero; `Jedna obserwacja` / `One observation` case thread with route-strip visual; inspection matrix as the main physical-check visual; owner report proof; decision threshold; continuing rhythm/activation notes; and CTA. The `Co otrzymuje właściciel` / owner report section centers a photographed REC-01-style example document. Desktop uses compact copy above a dominant centered photo with observation/evidence/next-step cards and restrained leader lines; tablet/mobile use a stacked layout. The example-document/not-client-report disclaimer remains explicit: this is documentary/source material, not real client proof or downloadable public paperwork. No generated damp/stain photo was added. Production smoke passed for PL/EN desktop, PL 768px, and PL/EN 390px with intact photo corners, all current modules present, the old native report mockup absent, zero overflow, clean console/network checks, and unchanged `noindex,nofollow`. Protected contracts are unchanged.
-- Branch at this documentation update: `main`. HEAD and `origin/main` are both `457a33deeee0b070a69d9255630ca2189215e799`; the tracked tree is clean.
+- How It Works is pushed, deployed, and smoke-verified in its current operational-proof form on `origin/main` (latest app cleanup commit `b9dab063`; operational-proof app commit `eeae1dd`, deployment docs `6ca538f`, earlier smoke closure `0481852`). The live sequence is: compact hero; `Jedna obserwacja` / `One observation` case thread with route-strip visual; inspection matrix as the main physical-check visual; owner report proof; decision threshold; continuing rhythm/activation notes; and CTA. The `Co otrzymuje właściciel` / owner report section centers a photographed REC-01-style example document. Desktop uses compact copy above a dominant centered photo with observation/evidence/next-step cards and restrained leader lines; tablet/mobile use a stacked layout. The example-document/not-client-report disclaimer remains explicit: this is documentary/source material, not real client proof or downloadable public paperwork. Retired How It Works PL/EN message blocks are absent from the production hydration payload, the EN 390px `qualification` wrap is improved, and the Services `Access chain` key remains intentionally untouched. Production smoke passed for PL/EN desktop and 390px with intact photo corners, all current modules present, the old native report mockup absent, zero overflow, clean console/network checks, and unchanged `noindex,nofollow`. Protected contracts are unchanged.
+- Branch at this documentation update: `main`. The latest app cleanup commit on `origin/main` is `b9dab063e058bc9561d743050f4ccd8e4305fdf2`; the tracked tree was clean before this documentation closure.
 - The Owner-accepted whole-site coherence bundle (Patches 1–4) is committed, pushed, and deployed. It is no longer uncommitted working-tree work.
 - Patch 5 and Patch 6 are deployed and production-verified. The website customer-journey phase is closed. See "Patch 5 / Patch 6 — Deployed" and "Customer-Journey Audit — Closed".
 - App/content commits in that live stack: `7145474` (`refine: address beta feedback (home property cue + services fatigue)`) with its homepage cue placement corrected by `467d192` (`fix: move homepage property cue to hero`) — the property glyph is on the left hero eyebrow, not the usage selector title.
@@ -56,6 +56,15 @@ Verdict: **PASS VERIFIED**.
 - Production checks: all 17 public routes and `/robots.txt` return 200; `/` redirects to `/pl`; unknown root paths and unknown PL/EN subpaths return 404; `/sitemap.xml` returns valid XML with all 16 listed URLs returning 200; no console errors; no failed requests; no overflow; no unintended POST submissions during validation checks.
 - No further customer-journey patch is active. The website customer-journey phase is closed.
 
+## How It Works Payload Cleanup — Deployed (`b9dab063`)
+
+- Commit `b9dab063e058bc9561d743050f4ccd8e4305fdf2` removed retired How It Works message blocks from both `messages/pl.json` and `messages/en.json`; current visible How It Works copy and structure are unchanged.
+- The retired strings `Whole process`, `What happens during a typical visit`, `Sample Initial Inspection Report`, and `Onboarding detail` are absent from the production payload.
+- `Access chain` remains only through the separate Services key `services.redesign.custody.eyebrow`; it was intentionally left untouched because Services was outside the cleanup scope.
+- The EN mobile hero wrap was improved so `qualification` no longer breaks awkwardly at 390px.
+- Post-deploy production smoke passed for PL/EN desktop and 390px: the current report proof/photo renders with intact corners, the old native report mockup is absent, overflow is zero, console/network/HTTP checks are clean, and `noindex,nofollow` remains present.
+- No protected contract changed. No active website implementation task remains.
+
 ## Indexing State
 
 - `robots.txt` returns `Disallow: /`.
@@ -71,20 +80,20 @@ Recorded for later triage. These are **not active tasks** and require explicit O
 
 - Handled `NoFallbackError` log noise on root-level 404s. Status codes are correct; this is log output only, and it replaced the previous `MODULE_NOT_FOUND` failures.
 - Unreachable branded locale not-found component (`app/[locale]/not-found.tsx`). All 404s currently render Next's default page.
-- Orphaned doctrine-conflicting message keys. Several unmounted keys under `services.comparison.*`, `services.green.*`, `services.orange.*`, `services.red.*`, `howItWorks.step2.redPackageLimits.*`, and `about.*` still imply Basic / Extended spend authority or contain PL/EN divergence. They are not rendered on any route. Cleanup requires separate Owner authorization.
+- Orphaned doctrine-conflicting message keys. Several unmounted keys under `services.comparison.*`, `services.green.*`, `services.orange.*`, `services.red.*`, and `about.*` still imply Basic / Extended spend authority or contain PL/EN divergence. They are not rendered on any route. Cleanup requires separate Owner authorization.
 - Redundant root redirect (`app/page.tsx` duplicating the proxy's `/` handling).
 
 ## Remaining Launch Gates
 
-Launch blockers are **not** complete. All of the following remain open:
+Launch blockers are **not** complete. Remaining active work is non-website operational readiness:
 
-- Legal / entity / GDPR closure.
-- Trust and Proof factual closure.
-- Domain email and real Contact delivery test.
-- Final pricing confirmation.
-- Operational document readiness.
-- Technical launch audit (includes the absent `X-Robots-Tag` header).
-- Owner indexing decision.
+- Production Contact email end-to-end test.
+- Final commercial pricing/range confirmation.
+- Prepare and send the connected document beta-read packet.
+- Triage beta feedback and apply an Owner-approved patch.
+- Lawyer/accountant review.
+- End-to-end operational dry-run.
+- Owner decision on removing `noindex,nofollow`.
 
 ## Whole-Site Coherence Audit — Complete
 
@@ -186,9 +195,9 @@ Contact is shipped/live as Night Desk controlled intake:
 
 The website customer-journey phase is closed after Patch 5 and Patch 6 (PASS VERIFIED). No active website implementation task remains. Do not reopen a closed page without a real regression or explicit Owner scope.
 
-The next website readiness audit is the **Accessibility audit**. It is an audit, not an implementation task; see `doc/TASK.md` for its scope. The operational-document beta packet remains the primary business-document workstream.
+The **Accessibility audit** remains deferred and is not an active implementation task; see `doc/TASK.md` for its scope. The operational-document beta packet remains the primary business-document workstream.
 
-The Owner-approved How It Works operational-proof page is complete, deployed, and smoke-verified through `0481852`.
+The Owner-approved How It Works operational-proof page is complete, deployed, and smoke-verified through the payload cleanup at `b9dab063`.
 
 The current page uses a compact hero, the case-thread/route strip, inspection matrix, photographed REC-01-style example report, decision threshold, continuing rhythm/activation notes, and CTA. Role boundaries remain clear: case thread = example route; inspection matrix = physical checks; report proof = owner record structure; decision threshold = action versus owner-approval boundary. The photographed document is source/example material only, not client proof and not downloadable public paperwork. No generated damp/stain photo was added. Protected contracts remain unchanged.
 
@@ -198,7 +207,7 @@ The current page uses a compact hero, the case-thread/route strip, inspection ma
 - Verified live elements: compact hero; `Jedna obserwacja` / `One observation` case thread and route strip; inspection matrix; photographed report proof with observation/evidence/next-step cards; decision threshold; continuing rhythm/activation notes; and CTA.
 - Desktop evidence-board and tablet/mobile stacked layouts render correctly; photographed report corners remain intact. Old pinned journey and native report mockup markup are absent. All captures reported `overflowPx 0`, with no console errors, failed requests, or 4xx/5xx responses.
 - `noindex,nofollow` remains active in PL and EN. Protected contracts are unchanged.
-- No housekeeping cleanup was performed. Orphaned legacy How It Works code/messages/CSS remain optional future housekeeping requiring separate Owner authorization.
+- Retired How It Works PL/EN message blocks were removed by `b9dab063`; the Services `Access chain` key was intentionally left untouched. The EN 390px hero wrap improvement is live.
 
 Current active phase:
 
@@ -219,15 +228,13 @@ Current active phase:
 
 See "Remaining Launch Gates" for the authoritative list. Launch blockers are not complete.
 
-- Legal/entity/GDPR closure.
-- Trust and Proof factual closure.
-- Domain email and real Contact delivery test (production contact email end-to-end confirmation).
+- Production Contact email end-to-end confirmation.
 - Final commercial pricing/range confirmation.
-- Operational document readiness.
-- Technical launch audit, including the absent `X-Robots-Tag` production header.
+- Connected document beta-read packet.
+- Beta review, triage, and Owner-approved patch.
+- Lawyer/accountant review.
+- End-to-end operational dry-run.
 - Owner decision to remove `noindex,nofollow`.
-- Accessibility audit (next website readiness audit; see `doc/TASK.md`).
-- Real-photo replacement plan for accepted synthetic placeholders.
 
 ## Protected During Current Work
 
